@@ -1,0 +1,22 @@
+=== 2012-10-10 11:56:35 ===============================
+FILES:Array
+(
+)
+
+POST:Array
+(
+    [title] => asd
+    [description] => asadsasddas
+)
+
+=== 2012-10-10 11:56:36 ===============================
+FILES:Array
+(
+)
+
+POST:Array
+(
+    [title] => asd
+    [description] => asadsasddas
+)
+

@@ -1,0 +1,17 @@
+.iphone-panel{
+	background: url("../img/iphone-bg.png");
+	display:block;
+	width:200px;
+	height:410px;
+	overflow:hidden;
+	margin:auto;
+}
+.iphone-content{
+	position: relative;
+	display:block;
+	top:75px;
+	left:21px;
+	width:160px;
+	height:274px;
+	overflow:hidden;
+}
