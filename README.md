@@ -1,3 +1,0 @@
-Royappty
-===================================
-Royappty Project
