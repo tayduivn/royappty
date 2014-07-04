@@ -75,6 +75,8 @@
 	$data["name"]=$_POST["admin_name"];
 	$data["password"]=md5($_POST["admin_password"]);
 	$data["active"]=1;
+	$data["verified"]=0;
+	$data["verfication_code"]=md5("verification".$_POST["admin_email"].$timestamp);
 	$data["created"]=$timestamp;
 	$data["last_connection"]=0;
 
@@ -107,6 +109,9 @@
  	$admin=array();
  	$admin["id_admin"]=addInBD($table,$data);
 
+	$admin["verification_code"]=$data["verfication_code"];
+	$admin["email"]=$data["email"];
+
  	$table="apps";
  	$data=array();
 
@@ -116,7 +121,10 @@
 	$app=array();
 	$app["id_app"]=addInBD($table,$data);
 
-
+	$mail_for=$admin["email"];
+	$mail_content=htmlentities($signup_s["mail_content_header"], ENT_QUOTES, "UTF-8")."<br/><br/><a href='".$url_server."app/verification/?code=".$admin["verification_code"]."'></a>".$url_server."verification/?code=".$admin["verification_code"]."<br/><br/>".htmlentities($signup_s["mail_content_footer"], ENT_QUOTES, "UTF-8");
+	$mail_subject=htmlentities($signup_s["mail_subject"], ENT_QUOTES, "UTF-8");
+	corporate_email($mail_for,$mail_subject,$mail_content);
 
  	echo json_encode($response);
 

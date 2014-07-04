@@ -24,6 +24,10 @@ $s["save_changes"] = "Guardar cambios";
 $s["euros_symbol"] = "€";
 $s["select_an_option"] = "Seleccione una opción";
 
+//Mail
+$s["follow_us"] = "Siguenos";
+$s["follow_us_content"] = "Sigue nuestros perfiles en las redes sociales y descubre las últimas novedades";
+
 //login
 $s["login"] = "Accede a tu cuenta";
 $s["did_you_lose_your_password"] = "¿Has olvidado tu contraseña?";
@@ -70,13 +74,17 @@ $signup_s["app_data"] = "Datos de la Aplicación";
 $signup_s["app_data_help"] = "Elige un nombre para tu aplicación, este nombre será por el que te buscarán tus clientes a la hora de buscar la aplicación. Es importante que comprendas que este nombre tiene que ser aceptado por Apple y Google para meterlo en su market. Este proceso de verificación suele llevar unos días, en caso de que sea necesario cambiar el nombre se podrá hacer sin problemas. Te aconsejamos que uses el nombre de tu marca o establecimiento y si este es muy genenéirco, añadas la palaba promociones, royappty o algo que indique que vas a lanzar promociones en esa aplicación.";
 $signup_s["app_name"] = "Nombre de la aplicación";
 $signup_s["app_name_help"] = "Este será el nombre de la aplicación que se publicará para iPhone y Android.";
-$signup_up["success_title"] = "Tu cuenta ha sido creada";
-$signup_up["success_subtitle"] = "Bienvenido a Royappty, tu cuenta ha sido creada. Te hemos enviado un correo al correo electrónico de administración para que actives la cuenta.";
+$signup_s["success_title"] = "Tu cuenta ha sido creada";
+$signup_s["success_subtitle"] = "Bienvenido a Royappty, tu cuenta ha sido creada. Te hemos enviado un correo al correo electrónico de administración para que actives la cuenta.";
+$signup_s["mail_subject"] = "Bienvenido a Royappty";
+$signup_s["mail_content_header"] = "Muchas gracias por resgristrarte en Royappty. Necesitamos que actives tu cuenta de usuario pinchando en el siguiente link:";
+$signup_s["mail_content_footer"] = "En caso de que no puedas abrir el link, cópialo y pégalo en la barra de dirección de tu navegador.";
 
 //Recovery Password
 $s["recovery_password"] = "Recuperar contraseña";
 $recovery_s["success_title"] = "Operación Completada";
 $recovery_s["success_subtitle"] = "Revisa tu correo electrónico, hemos enviado un email con un link que tendrás que abrir para verificar que la cuenta es tuya y te permitirá modificar la contraseña de acceso.";
+
 
 // Menu
 $s["home"] = "Inicio";

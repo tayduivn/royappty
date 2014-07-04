@@ -1,4 +1,69 @@
 <?php
+function corporate_email($mail_for,$mail_subject,$content){
+	global $url_server;
+	global $CONFIG;
+	global $lang_email;
+	global $s;
+
+	$mail_content ="
+		<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+		<html  b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' dir='ltr' lang='".$lang_email."' xml:lang='".$lang_email."' xmlns:b='http://www.google.com/2005/gml/b' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:og='http://opengraphprotocol.org/schema/'>
+		<head>
+			<meta http-equiv='content-type' content='text/html; charset=utf-8' />
+		</head>
+		<style type='text/css'>
+			a{ color:color:#666; }
+			a:hover{ color:#000; }
+			b{ color:#000; font-weight:300 }
+			.important{ color:#000; }
+			.uppercase{ text-transform: uppercase; }
+			.underline{ text-decoration:underline; }
+			th{}
+			td{ padding:5px 10px; }
+			.preview img{ height:100px; }
+			.right{ text-align:right; }
+			.left{ text-align:left; }
+			.semifooter{ padding-top:20px; font-size:10px; }
+			h3{ font-size:14px; color:#000; font-weight:300}
+		</style>
+		<body style='font-family: \"Open Sans\", sans-serif;margin:0;padding:0'>
+			<div style='display:block;margin:auto;margin:20px 0px 30px 0px;text-align:center'>
+				<img style='margin:auto;min-width:300px;max-width:300px' src='".$url_server.$CONFIG["company_logo_path"]."'/>
+			</div>
+			<div class='content' style='margin:20px 20px 40px 20px;font-weight:100;font-size:14px;'>
+			".$content."
+			</div>
+
+			<div style='display:block;margin:auto;padding:40px 0px;background-color:#f4f4f4;overflow:auto;color:#666 !important;font-size:10px;'>
+				<div style='float:left;padding-left:20px;padding-bottom:10px;'>
+					<div>
+						<a href='http://www.okycoky.net/classics/'>
+							<img style='min-height:30px;max-height:30px;padding-bottom:10px;' src='".$url_server.$CONFIG["company_logo_path"]."'/>
+						</a>
+					</div>
+					".$CONFIG["company_street"]."<br/>
+					".$CONFIG["company_town"]." ".$CONFIG["company_country"]."<br/>
+					".$CONFIG["company_phone"]."<br/>
+					".$CONFIG["company_info_mail"]."<br/>
+				</div>
+				<div style='float:right;padding-right:20px;text-align:left;width:300px;font-size:11px;padding-bottom:10px;'>
+					<div style='font-weight:bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
+					<div style='text-align:left;margin-top:5px;'>
+						".htmlentities($s["follow_us_content"], ENT_QUOTES, "UTF-8")."
+					</div>
+				</div>
+			</div>
+			<div style='text-align:center;background:#fff;padding:20px;font-weight:100;font-size:12px;'>
+				<p>".date('Y').htmlentities(" © ".$CONFIG["company_name"], ENT_QUOTES, "UTF-8")."</p>
+				<p>".$CONFIG["footer_mail"]."</p>
+			</div>
+		</body>
+		</html>";
+		$mail_header="Content-type: text/html\r\nFrom: ".$CONFIG["mail_header_email"];
+		mail($mail_for,$mail_subject,$mail_content,$mail_header);
+		return true;
+}
+
 
 function create_block_data($block_data_code,$data1,$data2){
 

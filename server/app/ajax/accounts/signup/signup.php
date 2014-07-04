@@ -18,11 +18,7 @@
 		<div class='text-center m-b-20'>
 			<img class='' style='width:200px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
 			<h3>".htmlentities($s["create_account"], ENT_QUOTES, "UTF-8")."</h3>
-		</div>
-
-
-	";
-
+		</div>";
 
 	$response["data"]["signup-step-1"]="
 				<div id='form-warning'></div>
@@ -300,8 +296,8 @@
 $response["data"]["signup-step-success"]="
 	<div class='text-center'>
 		<h1 class='text-center'><i class='fa fa-check'></i></h1>
-		<h3 class='text-center'>".htmlentities($signup_up["success_title"], ENT_QUOTES, "UTF-8")."</h3>
-		<div class='msg'>".htmlentities($signup_up["success_subtitle"], ENT_QUOTES, "UTF-8")."</div>
+		<h3 class='text-center'>".htmlentities($signup_s["success_title"], ENT_QUOTES, "UTF-8")."</h3>
+		<div class='msg'>".htmlentities($signup_s["success_subtitle"], ENT_QUOTES, "UTF-8")."</div>
 		<div class='m-t-20'>
 			<a href='../' class='btn btn-white m-r-10'>".htmlentities($s["login"], ENT_QUOTES, "UTF-8")."</a>
 		</div>
