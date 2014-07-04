@@ -7,14 +7,14 @@ $(document).ready(function(){
 		data: {
 		},
 		error: function(data, textStatus, jqXHR) {
-			
+
 		},
 		success: function(response) {
 			if(response.result){
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
-			} 
+			}
 		}
 	});
 });
@@ -43,14 +43,16 @@ function prevstep(){
 	$("#form-wizard #form-step"+current_step).css("display","block");
 }
 function loadingstep(){
-	$("#form-wizard #form-step"+current_step).css("display","none");
-	$("#form-wizard #form-loading").css("display","block");
+$("#form-wizard #form-step"+current_step).css("display","none");
+$("#form-wizard #form-error").css("display","none");
+$("#form-wizard #form-success").css("display","none");
+$("#form-wizard #form-loading").css("display","block");
 }
 function successstep(){
 	$("#form-wizard #form-step"+current_step).css("display","none");
 	$("#form-wizard #form-error").css("display","none");
-	$("#form-wizard #form-success").css("display","none");
-	$("#form-wizard #form-loading").css("display","block");
+	$("#form-wizard #form-loading").css("display","none");
+	$("#form-wizard #form-success").css("display","block");
 }
 function errorstep(){
 	$("#form-wizard #form-step"+current_step).css("display","none");
@@ -58,17 +60,17 @@ function errorstep(){
 	$("#form-wizard #form-success").css("display","none");
 	$("#form-wizard #form-error").css("display","block");
 }
-	
+
 $(document).ready(function() {
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-		
+
 	$("#form-step1").validate({
 		messages:{
 			name:{
-				required:"Este campo es obligatorio",	
+				required:"Este campo es obligatorio",
 			  	maxlength: "No puede exceder de 75 caracteres",
 			  	minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
 			},
@@ -100,7 +102,7 @@ $(document).ready(function() {
 		},
 		rules:{
 			name:{
-				required:true,	
+				required:true,
 			  	maxlength: 75,
 			  	minlength: 4
 			},
@@ -148,20 +150,16 @@ $(document).ready(function() {
 			admin_name:{
 			},
 			admin_email:{
-				required:"Este campo es obligatorio",	
-			  	email: "El formato de correo electr&oacute;nico no es correcto"
-			},
-			admin_promo_password:{
-				required:"Este campo es obligatorio",	
-			  	maxlength: "No puede exceder de 25 caracteres",
-			  	minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+				required:"Este campo es obligatorio",
+			  email: "El formato de correo electr&oacute;nico no es correcto"
 			},
 			admin_password:{
-				required:"Este campo es obligatorio",	
-			  	maxlength: "No puede exceder de 25 caracteres",
-			  	minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+				required:"Este campo es obligatorio",
+			  maxlength: "No puede exceder de 25 caracteres",
+			  minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
 			},
 			admin_password_repeat:{
+				required:"Este campo es obligatorio",
 				equalTo:"Las claves no coinciden"
 			}
 		},
@@ -169,29 +167,22 @@ $(document).ready(function() {
 			admin_name:{
 			},
 			admin_email:{
-				required:true,	
-			  	email: true
-			},
-			admin_promo_password:{
-				required:true,	
-			  	maxlength: 25,
-			  	minlength: 4
+				required:true,
+			  email: true
 			},
 			admin_password:{
-				required:true,	
-			  	maxlength: 25,
-			  	minlength: 4
+				required:true,
+			  maxlength: 25,
+			  minlength: 4
 			},
 			admin_password_repeat:{
-				equalTo:"#admin_password",	
-			  	maxlength: 25,
-			  	minlength: 4
+				required:true,
+				equalTo:"#admin_password"
 			}
 		},
 		submitHandler:function(form){
 			$('#form-end #admin_name').val($('#form-step2 #admin_name').val());
 			$('#form-end #admin_email').val($('#form-step2 #admin_email').val());
-			$('#form-end #admin_promo_password').val($('#form-step2 #admin_promo_password').val());
 			$('#form-end #admin_password').val($('#form-step2 #admin_password').val());
 			nextstep();
 
@@ -237,16 +228,16 @@ $(document).ready(function() {
 						}
 					});
 				});
-				nextstep();	
+				nextstep();
 			}
-			
+
 		}
 	});
 	$("#form-step4").validate({
 		messages:{
 		},
 		rules:{
-			
+
 		},
 		submitHandler:function(form){
 			$('#form-end #payment_plan').val($('#form-step4 #payment_plan').val());
@@ -257,7 +248,7 @@ $(document).ready(function() {
 	$("#form-step5").validate({
 		messages:{
 			app_name:{
-		  		required:"Este campo es obligatorio",	
+		  		required:"Este campo es obligatorio",
 			  	maxlength: "No puede exceder de 75 caracteres",
 			  	minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
 		  	}
@@ -271,9 +262,8 @@ $(document).ready(function() {
 		},
 		submitHandler:function(form){
 			$('#form-end #app_name').val($('#form-step5 #app_name').val());
-			$('#form-end #app_description').val($('#form-step5 #app_description').val());
-			
-			
+
+
 			loadingstep();
 		 	$.ajax({
 				type: "POST",
@@ -291,27 +281,22 @@ $(document).ready(function() {
 					contact_country:$('#form-end #contact_country').val(),
 					admin_name:$('#form-end #admin_name').val(),
 					admin_email:$('#form-end #admin_email').val(),
-					admin_promo_password:$('#form-end #admin_promo_password').val(),
 					admin_password:$('#form-end #admin_password').val(),
 					subscription_type:$('#form-end #subscription_type').val(),
 					payment_plan:$('#form-end #payment_plan').val(),
 					payment_method:$('#form-end #payment_method').val(),
-					app_name:$('#form-end #app_name').val(),
-					app_description:$('#form-end #app_description').val(),
-					app_icon_path:$('#form-end #app_icon_path').val(),
-					app_bg_path:$('#form-end #app_bg_path').val()
-
+					app_name:$('#form-end #app_name').val()
 				},
 				error: function(data, textStatus, jqXHR) {
 					errorstep();
 				},
 				success: function(response) {
 					if(response.result){
-						window.location.href = "../";
+						successstep();
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
@@ -321,10 +306,10 @@ $(document).ready(function() {
 			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>Piche o arraste aqu&iacute; la imagen <br/>a subir',
 			'init' : function(result){},
 			'start' : function(area){
-				area.find('.error').remove(); 
+				area.find('.error').remove();
 			},
 			'error' : function(result, input, area){
-				$('<div class="error">').html(result.error).prependTo(area); 
+				$('<div class="error">').html(result.error).prependTo(area);
 				return 0;
 			},
 			'complete' : function(result, file, input, area){
@@ -335,8 +320,8 @@ $(document).ready(function() {
 					$('#form-end #'+result.label).val(result.path);
 				}
 			}
-		});	
+		});
 	});
-	
-	
+
+
 });

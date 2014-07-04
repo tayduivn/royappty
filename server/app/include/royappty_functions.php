@@ -12,7 +12,7 @@ function create_block_data($block_data_code,$data1,$data2){
 			$block_data=countInBD($table,$filter);
 			if(!issetandnotempty($block_data)){$block_data=0;}
 			break;
-			
+
 		case "usage_this_month":
 			$mounth=strtotime(date("Y-m-1 00:00:00"));
 			$table="used_codes_month_summaries";
@@ -41,7 +41,7 @@ function create_block_data($block_data_code,$data1,$data2){
 			$block_data=countInBD($table,$filter);
 			if(!issetandnotempty($block_data)){$block_data=0;}
 			break;
-		
+
 		case "admin_validated_this_month":
 			$mounth=strtotime(date("Y-m-1 00:00:00"));
 			$table="validated_codes_month_summaries";
@@ -98,16 +98,16 @@ function create_block_data($block_data_code,$data1,$data2){
 			$block_data=sumInBD($table,$filter,$sumfield);
 			if(!issetandnotempty($block_data)){$block_data=0;}
 			break;
-		
+
 	}
-	
+
 	return $block_data;
 }
 
 function checkBrand($brand){
 	global $page_path;
 	global $response;
-	
+
 	if(!issetandnotempty($brand["id_brand"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing id_brand");
@@ -126,11 +126,11 @@ function checkBrand($brand){
  		$response["error"]="ERROR Data Missing not exists or inactive";
  		$response["error_code"]="brand_not_valid";
  		return false;
- 		die();	 	
+ 		die();
  	}
  	return true;
  	die();
- 
+
 }
 
 function checkAdmin($admin){
@@ -145,7 +145,7 @@ function checkAdmin($admin){
 		return false;
  		die();
  	}
- 	
+
  	$table="admins";
  	$filter=array();
  	$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
@@ -155,9 +155,9 @@ function checkAdmin($admin){
  		$response["error"]="ERROR User not in the system";
  		$response["error_code"]="admin_not_valid";
  		return false;
- 		die(); 	
+ 		die();
  	}
- 	
+
  	$table="admins";
  	$filter=array();
  	$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
@@ -168,7 +168,7 @@ function checkAdmin($admin){
  		$response["error"]="ERROR User not in the system";
   		$response["error_code"]="admin_inactive";
 		echo json_encode($response);
- 		die();	 	
+ 		die();
  	}
  	return true;
  	die();
@@ -179,7 +179,7 @@ function error_handler(){
 	global $_POST;
 	global $error_s;
 
-	if(issetandnotempty($_POST["error"])){
+	if((isset($_POST["error"]))&&(!empty($_POST["error"]))&&($_POST["error"]!="undefined")){
 		$error_alert=$error_s[$_POST["error"]];
 	}
 }

@@ -4,25 +4,25 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:m:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/new/add_admin";
 	debug_log("[".$page_path."] START");
-	
-		 
+
+
 	$response=array();
 
 
 	$response["result"]=true;
-					
+
 	$table="brands";
 	$data=array();
 	$data["name"]=$_POST["name"];
 	$data["cif"]=$_POST["cif"];
 	$data["active"]=1;
 	$data["app_name"]=$_POST["app_name"];
-	
+
 	$data["resume_block_1_display"] = 1;
 	$data["resume_block_1_title"] = "campaigns";
 	$data["resume_block_1_data"] = "0";
@@ -46,8 +46,8 @@
 	$data["resume_block_4_data"] = "0";
 	$data["resume_block_4_link_content"] = "view_more";
 	$data["resume_block_4_link"] = "";
-	
-	
+
+
 	$data["subscription_type"]=$_POST["subscription_type"];
 	if($data["subscription_type"]=="welcome"){
 		$data["expiration_date"]=strtotime("+3 month", $timestamp);
@@ -63,10 +63,10 @@
 	$data["contact_country"]=$_POST["contact_country"];
 	$data["payment_method"]=$_POST["payment_method"];
 	$data["payment_plan"]=$_POST["payment_plan"];
-	
+
 	$brand=array();
 	$brand["id_brand"]=addInBD($table,$data);
-	
+
 	$table="admins";
 	$data=array();
 	$data["id_brand"]=$brand["id_brand"];
@@ -74,11 +74,10 @@
 	$data["email"]=$_POST["admin_email"];
 	$data["name"]=$_POST["admin_name"];
 	$data["password"]=md5($_POST["admin_password"]);
-	$data["promo_password"]=$_POST["admin_promo_password"];
 	$data["active"]=1;
 	$data["created"]=$timestamp;
 	$data["last_connection"]=0;
-	
+
 	$data["resume_block_1_display"] = 1;
 	$data["resume_block_1_title"] = "admin_validated_this_month";
 	$data["resume_block_1_data"] = "0";
@@ -104,19 +103,16 @@
 	$data["can_manage_users"]=1;
 	$data["can_manage_app"]=1;
 	$data["can_manage_brand"]=1;
- 	
+
  	$admin=array();
  	$admin["id_admin"]=addInBD($table,$data);
- 	
+
  	$table="apps";
  	$data=array();
- 	
+
 	$data["id_brand"]=$brand["id_brand"];
 	$data["name"]=$_POST["app_name"];
-	$data["description"]=$_POST["app_description"];
-	$data["app_icon_path"]=$_POST["app_icon_path"];
-	$data["app_bg_path"]=$_POST["app_bg_path"];
-	
+
 	$app=array();
 	$app["id_app"]=addInBD($table,$data);
 
