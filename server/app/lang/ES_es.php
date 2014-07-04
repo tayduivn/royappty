@@ -73,6 +73,10 @@ $signup_s["app_name_help"] = "Este será el nombre de la aplicación que se publ
 $signup_up["success_title"] = "Tu cuenta ha sido creada";
 $signup_up["success_subtitle"] = "Bienvenido a Royappty, tu cuenta ha sido creada. Te hemos enviado un correo al correo electrónico de administración para que actives la cuenta.";
 
+//Recovery Password
+$s["recovery_password"] = "Recuperar contraseña";
+$recovery_s["success_title"] = "Operación Completada";
+$recovery_s["success_subtitle"] = "Revisa tu correo electrónico, hemos enviado un email con un link que tendrás que abrir para verificar que la cuenta es tuya y te permitirá modificar la contraseña de acceso.";
 
 // Menu
 $s["home"] = "Inicio";
@@ -683,6 +687,7 @@ $subscription_type_helper["unlimited"] = "Actualmente estás usando una cuenta R
 
 //Error Alerts
 $error_s["login_error"] = "El correo o la contraseña no son válidos";
+$error_s["recovery_not_email"] = "Este correo electrónico no se encuentra en nuestra base de datos";
 
 
 ?>

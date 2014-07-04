@@ -444,3 +444,10 @@ CREATE TABLE `validated_codes_month_summaries` (
    `start` int(11) not null,
    PRIMARY KEY (`id_validated_codes_month_summary`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=3;
+
+CREATE TABLE `recovery_codes` (
+   `id_recovery_code` int(11) not null auto_increment,
+   `email` varchar(255),
+   `code` varchar(255) not null,
+   PRIMARY KEY (`id_recovery_code`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
