@@ -3,36 +3,36 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/login";
 	debug_log("[".$page_path."] START");
-	
+
  	$response=array();
- 	
+
 	$response["result"]=true;
-	
+
 	$response["data"]["login-title"]="
-		<div class='text-center' style='height:100%'>	
+		<div class='text-center' style='height:100%'>
 			<img style='width:320px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
 			<h3>".htmlentities($s["login"], ENT_QUOTES, "UTF-8")."</h3>
 		</div>
-		
-		
+
+
 	";
-	
+
 	//Form error handeler
 	$error_alert="";
 	error_handler();
-	
-	
+
+
 	$response["data"]["login-step-1"]="
 			<form id='form-step1'>
 				<div id='form-warning'>".$error_alert."</div>
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($login_s["email"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($new_coupon_s["email_help"], ENT_QUOTES, "UTF-8")."</span>
+					<span class='help'>".htmlentities($login_s["email_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
 						<input type='text' id='email' name='email' class='form-control'>
 					</div>
@@ -78,7 +78,7 @@
 			</div>
 		</div>
 	";
-	
+
 
  	echo json_encode($response);
 	debug_log("[server/ajax/campaigns/get_campaign] END");
