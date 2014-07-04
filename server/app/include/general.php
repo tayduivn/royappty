@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function debug_log($str){
 	global $CONFIG;
@@ -6,7 +6,7 @@ function debug_log($str){
 	if($CONFIG["debug_mode"]==1){
 		error_log("[DEBUG]".$str);
 	}
-	
+
 }
 function issetandnotempty($var){
 	if((isset($var))&&(!empty($var))&&($var!="undefined")){
