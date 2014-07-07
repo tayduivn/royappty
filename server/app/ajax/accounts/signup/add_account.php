@@ -1,17 +1,39 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 07-07-2014
+	* Version: 0.91
+	*
+	*********************************************************/
 
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:m:00"));
-
-
-
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/admins/new/add_admin";
+	$page_path = "server/app/ajax/accounts/signup/add_acount";
 	debug_log("[".$page_path."] START");
-
-
 	$response=array();
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
 
 
 	$response["result"]=true;
@@ -138,12 +160,45 @@
 
 	$app["id_app"]=addInBD($table,$data);
 
+	$table="brand_user_fields";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
+	deleteInBD($table,$filter);
+	$brand_user_fields=explode("::", $_POST["brand_user_fields"]);
+	$table="brand_user_fields";
+	$data=array();
+	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
+	foreach($brand_user_fields as $key=>$id_user_field){
+		$data["id_user_field"]=$id_user_field;
+		$data["main_field"]=1;
+		addInBD($table,$data);
+	}
+
 	$mail_for=$admin["email"];
 	$mail_content=htmlentities($signup_s["mail_content_header"], ENT_QUOTES, "UTF-8")."<br/><br/><a href='".$url_server."app/verification/?code=".$admin["verification_code"]."'></a>".$url_server."verification/?code=".$admin["verification_code"]."<br/><br/>".htmlentities($signup_s["mail_content_footer"], ENT_QUOTES, "UTF-8");
 	$mail_subject=htmlentities($signup_s["mail_subject"], ENT_QUOTES, "UTF-8");
 	corporate_email($mail_for,$mail_subject,$mail_content);
 
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+	$table="requests";
+	$data=array();
+	$data["code"]=strtoupper(dechex(strtotime(date("Y-m-d H:i:s")).$_SESSION["admin"]["id_brand"]));
+	$data["id_brand"]=$brand["id_brand"];
+	$data["type"]="app_creation";
+	$data["status"]="in_process";
+	$data["created"]=$timestamp;
+	addInBD($table,$data);
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
  	echo json_encode($response);
 
- 	debug_log("[".$page_path."] END");
 ?>

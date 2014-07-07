@@ -168,7 +168,31 @@
 						</div>
 					</div>
 				</div>
-
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($app_s["user_fields"], ENT_QUOTES, "UTF-8")."</label>
+					<span class='help'>".htmlentities($app_s["user_fields_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='m-t-10'>";
+	$table="user_fields";
+	$user_fields=listInBD($table);
+	$table="brand_user_fields";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+	$brand_user_fields=listInBD($table,$filter);
+	$coma="";
+	foreach($user_fields as $key=>$user_field){
+		$response["data"]["signup-step-3"].="
+						<div class='row-fluid'>
+							<div class='checkbox check-default'>
+								<input id='".$user_field["id_user_field"]."' class='user_field_checkbox' type='checkbox'>
+								<label for='".$user_field["id_user_field"]."' class='p-l-30'>".htmlentities($user_field_title_s[$user_field["title"]], ENT_QUOTES, "UTF-8")."</label>
+							</div>
+						</div>";
+	}
+	$response["data"]["signup-step-3"].="
+				</div>
+			</div>
+		</div>
+	</div>
 
 				<div style='overflow:auto'>
 					<div class='form-group'>
@@ -298,6 +322,7 @@
 			<input type='hidden' id='app_description' />
 			<input type='hidden' id='app_icon_path' />
 			<input type='hidden' id='app_bg_path' />
+			<input type='hidden' id='brand_user_fields' />
 	";
 	$response["data"]["signup-step-loading"]="
 		<div class='text-center'>

@@ -1,23 +1,23 @@
 <?php
 	/*********************************************************
-	*	
+	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 	* Last Edit: 22-06-2014
-	* Version: 1.01
+	* Version: 0.90
 	*
  	*********************************************************/
-	
+
 	/*********************************************************
 	* AJAX RETURNS
 	*
 	* ERROR CODES
 	*
 	*********************************************************/
- 	
+
  	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
- 	
+
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
@@ -25,10 +25,10 @@
 	$page_path = "server/app/ajax/apps/edit/update_app";
  	debug_log("[".$page_path."] START");
  	$response=array();
- 	
- 	
- 	
-		 
+
+
+
+
 
  	/*********************************************************
  	* DATA CHECK
@@ -40,9 +40,9 @@
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
+
 	$response["result"]=true;
- 
+
 	$table="brand_user_fields";
 	$filter=array();
  	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -60,7 +60,7 @@
  	$table="apps";
   	$filter=array();
  	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
- 	
+
  	$data=array();
 	foreach($_POST as $key => $value){
 		$data[$key]=$value;
@@ -83,7 +83,8 @@
  	/*********************************************************
  	* DATABASE REGISTRATION
  	*********************************************************/
- 	$table="requests";
+
+	$table="requests";
 	$data=array();
 	$data["code"]=strtoupper(dechex(strtotime(date("Y-m-d H:i:s")).$_SESSION["admin"]["id_brand"]));
 	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
@@ -91,7 +92,7 @@
 	$data["status"]="in_process";
 	$data["created"]=$timestamp;
 	addInBD($table,$data);
-	
+
 
  	/*********************************************************
  	* AJAX CALL RETURN

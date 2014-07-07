@@ -22,7 +22,7 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 });
@@ -62,7 +62,7 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
+
 $(document).ready(function() {
 	$('.input-append.date').datepicker({
 		autoclose: true,
@@ -71,16 +71,16 @@ $(document).ready(function() {
 	 $('.timepicker-24').timepicker({
 	 	showMeridian: false
      });
-     
+
 
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
-	
 
-	
+
+
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -104,7 +104,7 @@ $(document).ready(function() {
 		},
 		submitHandler:function(form){
 			$('#form-end #app_icon_path').val($('#app_icon_path-preview').attr("src"));
-		 	nextstep();	
+		 	nextstep();
 		}
 	});
 	$("#form-step3").validate({
@@ -114,7 +114,7 @@ $(document).ready(function() {
 		},
 		submitHandler:function(form){
 			$('#form-end #app_bg_path').val($('#app_bg_path-preview').attr("src"));
-		 	nextstep();	
+		 	nextstep();
 		}
 	});
 	$("#form-step4").validate({
@@ -136,7 +136,7 @@ $(document).ready(function() {
 			if($('#form-step4 #published_google_play').attr('checked')){
 				$('#form-end #published_google_play').val("1");
 			}
-			
+
 			var brand_user_fields= "";
 			var separator= "";
 			$(".user_field_checkbox").each(function(){
@@ -145,10 +145,9 @@ $(document).ready(function() {
 					separator="::";
 				}
 			});
-			
+
 		 	$('#form-end #brand_user_fields').val(brand_user_fields);
-		 	
-		 	alert($('#form-end #brand_user_fields').val());
+
 			loadingstep();
 		 	$.ajax({
 				type: "POST",
@@ -177,21 +176,21 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
-	
+
 	$('.droparea').each(function(){
 		$(this).droparea({
 			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>Piche o arraste aqu&iacute; la imagen <br/>a subir',
 			'init' : function(result){},
 			'start' : function(area){
-				area.find('.error').remove(); 
+				area.find('.error').remove();
 			},
 			'error' : function(result, input, area){
-				$('<div class="error">').html(result.error).prependTo(area); 
+				$('<div class="error">').html(result.error).prependTo(area);
 				return 0;
 			},
 			'complete' : function(result, file, input, area){
@@ -201,9 +200,8 @@ $(document).ready(function() {
 					$('#'+result.preview).attr("src",result.filename);
 				}
 			}
-		});	
+		});
 	});
-	
-	
-});
 
+
+});

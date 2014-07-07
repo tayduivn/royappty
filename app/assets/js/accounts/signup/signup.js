@@ -203,7 +203,17 @@ $(document).ready(function() {
 		submitHandler:function(form){
 			$('#form-end #app_name').val($('#form-step3 #app_name').val());
 			$('#form-end #app_description').val($('#form-step3 #app_description').val());
-		nextstep();
+			var brand_user_fields= "";
+			var separator= "";
+			$(".user_field_checkbox").each(function(){
+				if($(this).attr('checked')){
+					brand_user_fields=brand_user_fields+separator+$(this).attr('id');
+					separator="::";
+				}
+			});
+			$('#form-end #brand_user_fields').val(brand_user_fields);
+
+			nextstep();
 		}
 	});
 
@@ -239,7 +249,8 @@ $(document).ready(function() {
 						app_name:$('#form-end #app_name').val(),
 						app_description:$('#form-end #app_description').val(),
 						app_icon_path:$('#form-end #app_icon_path').val(),
-						app_bg_path:$('#form-end #app_bg_path').val()
+						app_bg_path:$('#form-end #app_bg_path').val(),
+						brand_user_fields:$('#form-end #brand_user_fields').val()
 					},
 					error: function(data, textStatus, jqXHR) {
 						errorstep();
@@ -281,7 +292,8 @@ $(document).ready(function() {
 						app_name:$('#form-end #app_name').val(),
 						app_description:$('#form-end #app_description').val(),
 						app_icon_path:$('#form-end #app_icon_path').val(),
-						app_bg_path:$('#form-end #app_bg_path').val()
+						app_bg_path:$('#form-end #app_bg_path').val(),
+						brand_user_fields:$('#form-end #brand_user_fields').val()
 					},
 					error: function(data, textStatus, jqXHR) {
 						errorstep();
@@ -358,7 +370,8 @@ $(document).ready(function() {
 					app_name:$('#form-end #app_name').val(),
 					app_description:$('#form-end #app_description').val(),
 					app_icon_path:$('#form-end #app_icon_path').val(),
-					app_bg_path:$('#form-end #app_bg_path').val()
+					app_bg_path:$('#form-end #app_bg_path').val(),
+					brand_user_fields:$('#form-end #brand_user_fields').val()
 				},
 				error: function(data, textStatus, jqXHR) {
 					errorstep();
@@ -391,7 +404,6 @@ $(document).ready(function() {
 				}else{
 					$('#'+result.preview).attr("src",result.filename);
 					$('#form-end #'+result.label).val(result.path);
-					alert(result.path);
 				}
 			}
 		});
