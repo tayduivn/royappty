@@ -3,18 +3,18 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:m:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/signup/signup";
 	debug_log("[".$page_path."] START");
-	
+
  	$response=array();
- 	
- 	
+
+
 	$response["result"]=true;
-	
-	$response["data"]["signup-step-4"]="
+
+	$response["data"]["signup-step-5"]="
 			<h4 class='m-t-0'>".htmlentities($s["select_payment_plan"], ENT_QUOTES, "UTF-8")."</h4>
 				<div id='form-warning'></div>
 				<div class='form-group m-t-20'>
@@ -35,7 +35,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -90,10 +90,10 @@
 					</div>
 				</div>
 				";
-				
-	
-	
-	
+
+
+
+
  	echo json_encode($response);
 	debug_log("[server/ajax/campaigns/get_campaign] END");
 

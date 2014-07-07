@@ -8,7 +8,7 @@ $conf = array(
 	'bdpass' => 'root',
 	'bdprefix' => ''
 );
-$url_server = "http://localhost:8888/roytappty/";
+$url_server = "http://localhost:8888/royappty/";
 
 $campaign_bd_type[2]="discount";
 $campaign_bd_type[1]="coupon";

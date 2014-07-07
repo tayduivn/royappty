@@ -54,9 +54,6 @@
 	}else if($data["subscription_type"]=="starter"){
 		$data["expiration_date"]=-1;
 	}
-	$data["contact_name"]=$_POST["contact_name"];
-	$data["contact_email"]=$_POST["contact_email"];
-	$data["contact_phone"]=$_POST["contact_phone"];
 	$data["contact_address"]=$_POST["contact_address"];
 	$data["contact_postal_code"]=$_POST["contact_postal_code"];
 	$data["contact_city"]=$_POST["contact_city"];
@@ -112,13 +109,33 @@
 	$admin["verification_code"]=$data["verfication_code"];
 	$admin["email"]=$data["email"];
 
- 	$table="apps";
+
+	$app=array();
+
+	if(issetandnotempty($_POST["app_icon_path"])){
+		copy(PATH."../../".$_POST["app_icon_path"],PATH."../../resources/app-icon/".$timestamp.".jpg");
+		$app["app_icon_path"] = $timestamp.".jpg";
+	}else{
+		copy(PATH."../../server/app/assets/img/default-app-icon.jpg",PATH."../../resources/app-icon/".$timestamp.".jpg");
+		$app["app_icon_path"] = $timestamp.".jpg";
+	}
+	if(issetandnotempty($_POST["app_bg_path"])){
+		copy(PATH."../../".$_POST["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
+		$app["app_bg_path"] = $timestamp.".jpg";
+	}else{
+		copy(PATH."../../server/app/assets/img/default-app-background.jpg",PATH."../../resources/bg-image/".$timestamp.".jpg");
+		$app["app_bg_path"] = $timestamp.".jpg";
+	}
+
+	$table="apps";
  	$data=array();
 
 	$data["id_brand"]=$brand["id_brand"];
 	$data["name"]=$_POST["app_name"];
+	$data["description"]=$_POST["app_description"];
+	$data["app_icon_path"]=$app["app_icon_path"];
+	$data["app_bg_path"]=$app["app_bg_path"];
 
-	$app=array();
 	$app["id_app"]=addInBD($table,$data);
 
 	$mail_for=$admin["email"];

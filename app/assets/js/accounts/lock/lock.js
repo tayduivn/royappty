@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	localStorage.removeItem('id_brand');
+	localStorage.removeItem('id_admin');
 	$.ajax({
 		async: false,
 		type: "POST",
@@ -7,14 +9,14 @@ $(document).ready(function(){
 		data: {
 		},
 		error: function(data, textStatus, jqXHR) {
-			
+
 		},
 		success: function(response) {
 			if(response.result){
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
-			} 
+			}
 		}
 	});
 });

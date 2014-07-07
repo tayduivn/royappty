@@ -21,90 +21,10 @@
 		</div>";
 
 	$response["data"]["signup-step-1"]="
-				<div id='form-warning'></div>
-				<div class='row'>
-					<div class='col-md-6'>
-						<h4 class='m-t-0'>".htmlentities($signup_s["brand_data"], ENT_QUOTES, "UTF-8")."</h4>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["name_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='name' name='name' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["cif"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["cif_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='cif' name='cif' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["contact_address"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["contact_address_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='contact_address' name='contact_address' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["contact_postal_code"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["contact_postal_code_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='contact_postal_code' name='contact_postal_code' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["contact_city"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["contact_city_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='contact_city' name='contact_city' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["contact_country"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["contact_country_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='contact_country' name='contact_country' class='form-control'>
-							</div>
-						</div>
-					</div>
-					<div class='col-md-6'>
-						<h4 class='m-t-0'>".htmlentities($signup_s["contact_data"], ENT_QUOTES, "UTF-8")."</h4>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["contact_name"], ENT_QUOTES, "UTF-8")."</label>
-							<span class='help'>".htmlentities($signup_s["contact_name_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='contact_name' name='contact_name' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["contact_phone"], ENT_QUOTES, "UTF-8")."</label>
-							<span class='help'>".htmlentities($signup_s["contact_phone_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='contact_phone' name='contact_phone' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["contact_email"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["contact_email_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='contact_email' name='contact_email' class='form-control'>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div style='overflow:auto'>
-					<div class='form-group'>
-						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
-						<a href='../' class='btn btn-white pull-left'>".htmlentities($s["cancel"], ENT_QUOTES, "UTF-8")."</a>
-					</div>
-				</div>
-	";
-	$response["data"]["signup-step-2"]="
 			<h4 class='m-t-0'>".htmlentities($signup_s["admin_data"], ENT_QUOTES, "UTF-8")."</h4>
 				<div id='form-warning'></div>
 				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["admin_name"], ENT_QUOTES, "UTF-8")."</label>
+					<label class='form-label'>".htmlentities($signup_s["admin_name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["admin_name_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
 						<input type='text' id='admin_name' name='admin_name' class='form-control'>
@@ -133,12 +53,133 @@
 				</div>
 				<div style='overflow:auto'>
 					<div class='form-group'>
+						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
+						<a href='../' class='btn btn-white pull-left'>".htmlentities($s["cancel"], ENT_QUOTES, "UTF-8")."</a>
+					</div>
+				</div>
+	";
+	$response["data"]["signup-step-2"]="
+				<div id='form-warning'></div>
+				<h4 class='m-t-0'>".htmlentities($signup_s["brand_data"], ENT_QUOTES, "UTF-8")."</h4>
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["name_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='name' name='name' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["cif"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["cif_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='cif' name='cif' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["contact_address"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["contact_address_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='contact_address' name='contact_address' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["contact_postal_code"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["contact_postal_code_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='contact_postal_code' name='contact_postal_code' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["contact_city"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["contact_city_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='contact_city' name='contact_city' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["contact_province"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["contact_province_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='contact_province' name='contact_province' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["contact_country"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["contact_country_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='contact_country' name='contact_country' class='form-control'>
+					</div>
+				</div>
+				<div style='overflow:auto'>
+					<div class='form-group'>
 							<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
 						<a href='javascript:prevstep()' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
 					</div>
 				</div>
 	";
 	$response["data"]["signup-step-3"]="
+		<h4 class='m-t-0'>".htmlentities($signup_s["app_data"], ENT_QUOTES, "UTF-8")."</h4>
+				<div id='form-warning'></div>
+				<div class='row'>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($signup_s["app_name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+							<span class='help'>".htmlentities($signup_s["app_name_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='app_name' name='app_name' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($signup_s["app_description"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($signup_s["app_description_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<textarea style='height:465px;' id='app_description' name='app_description' class='form-control'></textarea>
+							</div>
+						</div>
+					</div>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($signup_s["app_icon"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($signup_s["app_icon_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='row'>
+								<div class='col-md-6'>
+									<div class='controls'>
+										<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/accounts/signup/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_icon_path' />
+									</div>
+								</div>
+								<div class='col-md-6'>
+									<img style='width:200px;padding-top:8px;' id='app_icon_path-preview' class='full-width' src='".$url_server."server/app/assets/img/default-app-icon.jpg'/>
+								</div>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($signup_s["app_background"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($signup_s["app_background_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='row'>
+								<div class='col-md-6'>
+									<div class='controls app_background'>
+										<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/accounts/signup/upload-image.php?type=icon&width=660&height=1200&crop=1&label=app_bg_path' />
+									</div>
+								</div>
+								<div class='col-md-6'>
+									<img style='width:200px;padding-top:8px;' id='app_bg_path-preview' class='full-width' src='".$url_server."server/app/assets/img/default-app-background.jpg'/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div style='overflow:auto'>
+					<div class='form-group'>
+							<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["save"], ENT_QUOTES, "UTF-8")."' />
+						<a href='javascript:prevstep()' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
+					</div>
+				</div>
+
+	";
+	$response["data"]["signup-step-4"]="
+
 			<h4 class='m-t-0'>".htmlentities($s["select_subscription_type"], ENT_QUOTES, "UTF-8")."</h4>
 				<div id='form-warning'></div>
 				<div class='form-group m-t-20'>
@@ -237,35 +278,14 @@
 					</div>
 				</div>
 	";
-	$response["data"]["signup-step-5"]="
-			<h4 class='m-t-0'>".htmlentities($signup_s["app_data"], ENT_QUOTES, "UTF-8")."</h4>
-			<p class='box box-success-muted m-b-10'>".htmlentities($signup_s["app_data_help"], ENT_QUOTES, "UTF-8")."</p>
-			<div id='form-warning'></div>
-			<div class='form-group'>
-				<label class='form-label'>".htmlentities($signup_s["app_name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-				<span class='help'>".htmlentities($signup_s["app_name_help"], ENT_QUOTES, "UTF-8")."</span>
-				<div class='controls'>
-					<input type='text' id='app_name' name='app_name' class='form-control'>
-				</div>
-			</div>
-
-			<div style='overflow:auto'>
-				<div class='form-group'>
-						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["save"], ENT_QUOTES, "UTF-8")."' />
-					<a href='javascript:gotostep(3)' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
-				</div>
-			</div>
-	";
 
 	$response["data"]["signup-step-end"]="
 			<input type='hidden' id='name' />
 			<input type='hidden' id='cif' />
-			<input type='hidden' id='contact_name' />
-			<input type='hidden' id='contact_email' />
-			<input type='hidden' id='contact_phone' />
 			<input type='hidden' id='contact_address' />
 			<input type='hidden' id='contact_postal_code' />
 			<input type='hidden' id='contact_city' />
+			<input type='hidden' id='contact_province' />
 			<input type='hidden' id='contact_country' />
 			<input type='hidden' id='end_date_hour' />
 			<input type='hidden' id='admin_name' />
@@ -275,6 +295,9 @@
 			<input type='hidden' id='payment_plan' />
 			<input type='hidden' id='payment_method' />
 			<input type='hidden' id='app_name' />
+			<input type='hidden' id='app_description' />
+			<input type='hidden' id='app_icon_path' />
+			<input type='hidden' id='app_bg_path' />
 	";
 	$response["data"]["signup-step-loading"]="
 		<div class='text-center'>
