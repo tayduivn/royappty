@@ -92,6 +92,18 @@ $signup_s["mail_content_footer"] = "En caso de que no puedas abrir el link, cóp
 $s["recovery_password"] = "Recuperar contraseña";
 $recovery_s["success_title"] = "Operación Completada";
 $recovery_s["success_subtitle"] = "Revisa tu correo electrónico, hemos enviado un email con un link que tendrás que abrir para verificar que la cuenta es tuya y te permitirá modificar la contraseña de acceso.";
+$revocery_s["mail_subject"] = "Recuperar contraseña";
+$revocery_s["revocery_content_header"] = "Se ha iniciado el proceso de recuperación de contraseña. Para poder cambiar tu contraseña accede al siguiente link y sigue las instrucciones.";
+$revocery_s["revocery_content_footer"] = "En caso de que no puedas abrir el link, cópialo y pégalo en la barra de dirección de tu navegador.";
+
+//Set new password
+$s["set_password"] = "Cambiar contraseña";
+$set_password_s["password"] = "Nueva contraseña";
+$set_password_s["password_help"] = "Elige una contraseña de mínimo 8 caracteres.";
+$set_password_s["password_repeat"] = "Repetir Contraseña";
+$set_password_s["password_repeat_help"] = "";
+$set_password_s["success_title"] = "Contraseña Actualizada";
+$set_password_s["success_subtitle"] = "La contraseña se ha actualizado con éxito, pulse volver y acceda al sistema.";
 
 //Verification
 $s["verification_title"] = "Activar cuenta";
