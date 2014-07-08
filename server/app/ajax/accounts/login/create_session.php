@@ -1,5 +1,13 @@
 <?php
- 	define('PATH', str_replace('\\', '/','../../../'));
+ 	/*********************************************************
+  *
+  * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+  * Last Edit: 23-06-2014
+  * Version: 0.91
+  *
+   *********************************************************/
+
+  define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."include/inbd.php");
@@ -7,8 +15,8 @@
  	debug_log("[".$page_path."] START");
 
  	$response=array();
- 	
- 	  	
+
+
  	if(!issetandnotempty($_POST["email"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing email");
@@ -23,7 +31,7 @@
   		echo json_encode($response);
  		die();
  	}
- 	
+
  	$table="admins";
  	$filter=array();
  	$filter["email"]=array("operation"=>"=","value"=>$_POST["email"]);
@@ -33,20 +41,20 @@
 		debug_log("[".$page_path."] ERROR Login error {email:'".$_POST["email"]."'}");
   		$response["error_code"]="reload";
   		echo json_encode($response);
- 		die();	 	
+ 		die();
  	}
  	$admin=getInBD($table,$filter);
- 	
-  	// BRAND 
- 	$brand=array();$brand["id_brand"]=$admin["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}	
- 	// ADMIN
-	if(!checkAdmin($admin)){echo json_encode($response);die();}	
 
-	
- 	
+  	// BRAND
+ 	$brand=array();$brand["id_brand"]=$admin["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
+ 	// ADMIN
+	if(!checkAdmin($admin)){echo json_encode($response);die();}
+
+
+
 	$response["result"]=true;
- 
+
   	$_SESSION['admin']=array();
     $_SESSION['admin']["id_admin"] = $admin["id_admin"];
     $_SESSION['admin']["id_brand"] = $admin["id_brand"];
@@ -66,7 +74,7 @@
 
 	debug_log("[".$page_path."] Session Created user:{id_admin:".$_SESSION['admin']["id_admin"].",id_brand:".$_SESSION['admin']["id_brand"]."}");
  	debug_log("[".$page_path."] END");
- 	
- 	
+
+
  	echo json_encode($response);
 ?>

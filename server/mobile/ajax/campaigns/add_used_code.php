@@ -1,12 +1,12 @@
 <?php
 	/*********************************************************
-	*	
+	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 	* Last Edit: 23-06-2014
-	* Version: 1.01
+	* Version: 0.91
 	*
  	*********************************************************/
-	
+
 	/*********************************************************
 	* AJAX RETURNS
 	*
@@ -19,7 +19,7 @@
 	*
 	*********************************************************/
 
-	
+
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
@@ -30,29 +30,29 @@
 	$page_path = "server/mobile/ajax/session/create";
  	debug_log("[".$page_path."] START");
  	$response=array();
- 	
- 	
- 	
+
+
+
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
- 	
- 	// BRAND 
+
+ 	// BRAND
  	$brand=array();$brand["id_brand"]=$_SESSION["user"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}	
+	if(!checkBrand($brand)){echo json_encode($response);die();}
  	// USER
   	$user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
-	if(!checkUser($user)){echo json_encode($response);die();}	
+	if(!checkUser($user)){echo json_encode($response);die();}
  	// Code
   	$code=array();$code["id_brand"]=$_SESSION["user"]["id_brand"];$code["promo_password"]=$_POST["promo_password"];
-	if(!checkCode($code)){echo json_encode($response);die();}	
- 	
- 	
- 	
+	if(!checkCode($code)){echo json_encode($response);die();}
+
+
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
+
  	$response["result"]=true;
 
  	$table="admins";
@@ -60,7 +60,7 @@
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
 	$filter["promo_password"]=array("operation"=>"=","value"=>$_POST["promo_password"]);
  	$admin=getInBD($table,$filter);
- 	
+
  	$table="used_codes";
  	$data=array();
  	$data["id_user"] = $_SESSION["user"]["id_user"];
@@ -70,7 +70,7 @@
  	$data["created"] = $timestamp;
  	$data["code"] = $_POST["code"];
  	addInBD($table,$data);
- 	
+
 
 
 
@@ -83,8 +83,8 @@
 	$data=array();
 	$data["last_connection"]=$timestamp;
 	updateInBD($table,$filter,$data);
-	
-	
+
+
 	$day=strtotime(date("Y-m-d 00:00:00"));
 	$month=strtotime(date("Y-m-1 00:00:00"));
 
@@ -104,7 +104,7 @@
 		$data["used_codes_amount"]=1;
 		addInBD($table,$data);
 	}
-	
+
 	$table='used_codes_day_summaries';
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
@@ -123,8 +123,8 @@
 		$data["used_codes_amount"]=1;
 		addInBD($table,$data);
 	}
-	
-	
+
+
 	$table='used_codes_month_summaries';
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
@@ -143,7 +143,7 @@
 		$data["used_codes_amount"]=1;
 		addInBD($table,$data);
 	}
-	
+
 	$table='used_codes_user_day_summaries';
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
@@ -162,7 +162,7 @@
 		$data["used_codes_amount"]=1;
 		addInBD($table,$data);
 	}
-	
+
 	$table='used_codes_user_summaries';
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
@@ -179,7 +179,7 @@
 		$data["used_codes_amount"]=1;
 		addInBD($table,$data);
 	}
-	
+
  	$table="validated_codes_month_summaries";
  	$filter=array();
 	$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
@@ -196,7 +196,7 @@
 		$data["validated_codes_amount"]=1;
 		addInBD($table,$data);
 	}
-	
+
 	$table="validated_codes_day_summaries";
  	$filter=array();
 	$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
@@ -213,17 +213,17 @@
 		$data["validated_codes_amount"]=1;
 		addInBD($table,$data);
 	}
- 	
- 	
+
+
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
- 	
+
  	debug_log("[".$page_path."] END");
  	echo json_encode($response);
 
 
 
- 	
+
 
 ?>
