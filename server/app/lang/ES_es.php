@@ -93,6 +93,11 @@ $s["recovery_password"] = "Recuperar contraseña";
 $recovery_s["success_title"] = "Operación Completada";
 $recovery_s["success_subtitle"] = "Revisa tu correo electrónico, hemos enviado un email con un link que tendrás que abrir para verificar que la cuenta es tuya y te permitirá modificar la contraseña de acceso.";
 
+//Verification
+$s["verification_title"] = "Activar cuenta";
+$s["verification_subtitle_success"] = "Su cuenta ha sido activada";
+$s["verification_subtitle_error"] = "No se ha podido activar su cuenta, código no válido.";
+
 
 // Menu
 $s["home"] = "Inicio";

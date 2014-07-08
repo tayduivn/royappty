@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 07-07-2014 a las 19:27:31
+-- Tiempo de generación: 08-07-2014 a las 10:14:58
 -- Versión del servidor: 5.5.34
 -- Versión de PHP: 5.5.10
 
@@ -30,7 +30,7 @@ CREATE TABLE `admins` (
   `promo_password` varchar(255) NOT NULL,
   `active` int(1) NOT NULL,
   `verified` int(1) NOT NULL,
-  `verfication_code` varchar(255) NOT NULL,
+  `verification_code` varchar(255) NOT NULL,
   `created` int(11) NOT NULL,
   `last_connection` int(11) NOT NULL,
   `resume_block_1_display` int(1) NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE `brand_user_fields` (
   `id_user_field` int(11) NOT NULL,
   `main_field` int(1) NOT NULL,
   PRIMARY KEY (`id_brand_user_field`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -245,7 +245,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id_config`, `used`, `company_logo_path`, `company_name`, `company_street`, `company_town`, `company_country`, `company_phone`, `company_info_mail`, `mail_header_email`, `footer_mail`, `debug_mode`, `bank_name`, `bank_swift`, `bank_iban`, `bank_account_number`, `bank_transfer_beneficiary`) VALUES
-(1, 1, 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'info@royappty.com', 'Royappty<noreply@royappty.com>', 'La Aplicación de Fidelización para tu Negocio', 0, '0000', '0000', '0000', '0000', '0000');
+(1, 1, 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'info@royappty.com', 'Royappty<noreply@royappty.com>', 'La Aplicación de Fidelización para tu Negocio', 1, '0000', '0000', '0000', '0000', '0000');
 
 -- --------------------------------------------------------
 
@@ -382,7 +382,7 @@ CREATE TABLE `requests` (
   `created` int(11) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id_request`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

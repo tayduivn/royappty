@@ -95,7 +95,7 @@
 	$data["password"]=md5($_POST["admin_password"]);
 	$data["active"]=1;
 	$data["verified"]=0;
-	$data["verfication_code"]=md5("verification".$_POST["admin_email"].$timestamp);
+	$data["verification_code"]=md5("verification".$_POST["admin_email"].$timestamp);
 	$data["created"]=$timestamp;
 	$data["last_connection"]=0;
 
@@ -128,7 +128,7 @@
  	$admin=array();
  	$admin["id_admin"]=addInBD($table,$data);
 
-	$admin["verification_code"]=$data["verfication_code"];
+	$admin["verification_code"]=$data["verification_code"];
 	$admin["email"]=$data["email"];
 
 

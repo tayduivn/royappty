@@ -17,7 +17,6 @@ function loadjscssfile(filename, filetype){
 
 loadjscssfile($SERVER_PATH+"server/app/assets/css/server_style.css", "css");
 
-
 (function (){
   window.$GET = [];
   if(location.search){
