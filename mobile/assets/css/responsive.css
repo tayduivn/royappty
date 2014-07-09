@@ -381,7 +381,6 @@ and (orientation : portrait) {
 		margin:0px;
 	}
 	.page-content .content {
-		padding:25px;
 		padding-top:95px;
 	}
 
@@ -492,7 +491,6 @@ and (orientation : portrait) {
 	}
 	/*** Page content ***/
 	.page-content .content {
-		padding:8px;
 		padding-top:95px;
 	}
 	/*** Page title	***/
@@ -559,8 +557,7 @@ and (orientation : portrait) {
 		width:80%;
 	}
 	.page-content .content {
-		 padding:8px;
-		 padding-top:50px;
+		 padding-top:95px;
 		 overflow-x:hidden;
 	}
 	.page-sidebar{

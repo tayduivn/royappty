@@ -12,6 +12,40 @@
   }
 })();
 
+var page_selected="index";
+function show_page(page){
+  $(".center_mobile_page").addClass("left_mobile_page");
+  $("#"+page).removeClass("right_mobile_page");
+  $("#"+page).addClass("center_mobile_page");
+
+  $("#"+page).addClass("show_mobile_page");
+  $("#"+page).removeClass("hide_mobile_page");
+  $(".page").not("#"+page).addClass("hide_mobile_page");
+  $(".page").not("#"+page).removeClass("show_mobile_page");
+
+  page_selected=page;
+}
+
+function transition_left(old_page,new_page){
+  $("#"+old_page).removeClass("center_mobile_page");
+  $("#"+old_page).addClass("left_mobile_page");
+  $("#"+new_page).removeClass("left_mobile_page");
+  $("#"+new_page).removeClass("rigth_mobile_page");
+  $("#"+new_page).addClass("center_mobile_page");
+  page_selected=new_page;
+}
+
+function transition_right(old_page,new_page){
+    $("#"+old_page).removeClass("center_mobile_page");
+    $("#"+old_page).addClass("right_mobile_page");
+    $("#"+new_page).removeClass("left_mobile_page");
+    $("#"+new_page).removeClass("rigth_mobile_page");
+    $("#"+new_page).addClass("center_mobile_page");
+  page_selected=new_page;
+}
+
+
+
 function show_modal(modal_id,accept_function){
 	$('.modal').modal('hide');
 	$('#'+modal_id).modal('show');

@@ -1,38 +1,41 @@
 $(document).ready(function() {
-	need_update=true;
-	if ((typeof localStorage.getItem('last_update') == 'undefined')||(($timestamp-localStorage.getItem('last_update'))>60)) {
-		need_update=true;
-	}
-	if(need_update){
-		$.ajax({
-			async: false,
-			type: "POST",
-			dataType: 'json',
-			url: $SERVER_PATH+"server/mobile/ajax/campaigns/all_data.php",
-			data: {
-			},
-			error: function(data, textStatus, jqXHR) {
-				error_handeler("ajax_error");
-			},
-			success: function(response) {
-				if(response.result){
-					jQuery.each(response.data,function(key,value){
-						localStorage.setItem(key, value);
-					});
-				} else {
-					error_handeler(response.error_code);
-				}
 
-			}
-		});
-		localStorage.setItem('last_update', $timestamp);
+
+	function update(){
+		if(page_selected=="index"){
+				$.ajax({
+					async: false,
+					type: "POST",
+					dataType: 'json',
+					url: $SERVER_PATH+"server/mobile/ajax/campaigns/all_data.php",
+					data: {
+					},
+					error: function(data, textStatus, jqXHR) {
+						error_handeler("ajax_error");
+					},
+					success: function(response) {
+						if(response.result){
+							jQuery.each(response.data,function(key,value){
+								localStorage.setItem(key, value);
+							});
+						} else {
+							error_handeler(response.error_code);
+						}
+
+					}
+				});
+				for( var key in localStorage){
+					$(".ajax-loader-"+key).html(localStorage.getItem(key));
+				}
+				$("#form-wizard form").submit(function(e){
+						e.preventDefault();
+				});
+		}
+		setInterval(update, 60000);
 	}
-	for( var key in localStorage){
-		$(".ajax-loader-"+key).html(localStorage.getItem(key));
-	}
-		$("#form-wizard form").submit(function(e){
-        e.preventDefault();
-	});
+	update();
+
+
 });
 
 function validate_promo(campaign){
@@ -57,11 +60,4 @@ function validate_promo(campaign){
 			}
 		}
 	});
-}
-
-
-function show_page(page){
-
-	$(".page").slideUp();
-	$("#"+page).slideDown();
 }
