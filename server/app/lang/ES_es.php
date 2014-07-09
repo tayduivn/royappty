@@ -87,6 +87,15 @@ $signup_s["success_subtitle"] = "Bienvenido a Royappty, tu cuenta ha sido creada
 $signup_s["mail_subject"] = "Bienvenido a Royappty";
 $signup_s["mail_content_header"] = "Muchas gracias por resgristrarte en Royappty. Necesitamos que actives tu cuenta de usuario pinchando en el siguiente link:";
 $signup_s["mail_content_footer"] = "En caso de que no puedas abrir el link, cópialo y pégalo en la barra de dirección de tu navegador.";
+$signup_s["accept_policy"] = "Acepto la política de privacidad";
+
+//Policy
+
+$policy_s["security"]["title"] = "Política de Seguridad";
+$policy_s["security"]["content"][0] = "VIVA LA CLOUD, S.L. te informa que según lo dispuesto en la Ley Orgánica 15/1999 de 13 de diciembre Ley de Protección de Datos de Carácter Personal y el R.D. 1720/2007 que regula la aplicación de dicha ley, que sus datos de carácter personal aquí recogidos y los recogidos en un futuro serán incluidos, siguiendo las indicaciones de la Ley, en un fichero de carácter mixto llamado \"ROYAPPTY CLIENTES\" cuyo titular es VIVA LA CLOUD, S.L. y cuya finalidad es \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACION\".";
+$policy_s["security"]["content"][1] = "Nos gustaría destacar que estos datos serán tratados única y exclusivamente para la prestación del servicio y que guardaremos una confidencialidad total sobre los mismos. Al darte de alta en ROYAPPTY prestas tu consentimiento para que podamos tratar estos datos y permites que podamos enviarte información sobre las mejoras y novedades de nuestra aplicación.";
+$policy_s["security"]["content"][2] = "Para ejercer tus derechos de acceso, rectificación, cancelación y oposición puedes escribirnos a hola@royappty.com adjuntando una copia del DNI del titular de la cuenta (para poder verificarlo).";
+$policy_s["security"]["content"][3] = "Puedes consultar nuestra política de privacidad al completo a través de este enlace y las condiciones de uso de ROYAPPTY a través de este otro.";
 
 //Recovery Password
 $s["recovery_password"] = "Recuperar contraseña";
@@ -721,6 +730,8 @@ $subscription_type_helper["unlimited"] = "Actualmente estás usando una cuenta R
 //Error Alerts
 $error_s["login_error"] = "El correo o la contraseña no son válidos";
 $error_s["recovery_not_email"] = "Este correo electrónico no se encuentra en nuestra base de datos";
+
+
 
 
 ?>

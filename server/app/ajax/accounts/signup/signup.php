@@ -51,6 +51,10 @@
 						<input type='password' id='admin_password_repeat' name='admin_password_repeat' class='form-control'>
 					</div>
 				</div>
+				<div class='form-group'>
+					<label class='form-label'><a target='_blank' class='m-r-5' href='".$url_server."app/policy/?policy_type=security'><i class='fa fa-external-link'></i></a>".htmlentities($signup_s["accept_policy"], ENT_QUOTES, "UTF-8")."</label>
+					<input id='accept_policy' name='accept_policy' type='checkbox'>
+				</div>
 				<div style='overflow:auto'>
 					<div class='form-group'>
 						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
