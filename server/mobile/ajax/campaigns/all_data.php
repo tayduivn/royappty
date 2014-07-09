@@ -130,7 +130,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"index\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"campaign-".$campaign["id_campaign"]."\",\"index\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>
@@ -177,11 +177,11 @@
 										";
 				if($is_promo_success){
 					$campaign_pages.="
-										<a href='javascript:transition_left(\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block btn-success'>".htmlentities($s["promo_success"], ENT_QUOTES, "UTF-8")."</a>
+										<a href='javascript:transition_left(\"campaign-".$campaign["id_campaign"]."\",\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block btn-success'>".htmlentities($s["promo_success"], ENT_QUOTES, "UTF-8")."</a>
 					";
 				}else{
 					$campaign_pages.="
-										<a href='javascript:transition_left(\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block'>".htmlentities($campaign["button_title"], ENT_QUOTES, "UTF-8")."</a>
+										<a href='javascript:transition_left(\"campaign-".$campaign["id_campaign"]."\",\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block'>".htmlentities($campaign["button_title"], ENT_QUOTES, "UTF-8")."</a>
 					";
 				}
 				$campaign_pages.="
@@ -190,7 +190,7 @@
 			}else if($campaign["type"]==2){
 				$campaign_pages.="
 									<div class='text-center m-t-20 m-l-20 m-r-20'>
-										<a href='javascript:transition_left(\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block btn-success'>".htmlentities($campaign["button_title"], ENT_QUOTES, "UTF-8")."</a>
+										<a href='javascript:transition_left(\"campaign-".$campaign["id_campaign"]."\",\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block btn-success'>".htmlentities($campaign["button_title"], ENT_QUOTES, "UTF-8")."</a>
 									</div>
 					";
 			}
@@ -206,7 +206,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"campaign-".$campaign["id_campaign"]."\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-1\",\"campaign-".$campaign["id_campaign"]."\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>
@@ -222,7 +222,7 @@
 									<h5 class='text-center'>".htmlentities($s["promo_code"], ENT_QUOTES, "UTF-8")."</h5>
 									<h4 class='text-center'>".strtoupper(dec32($user["id_user"].$campaign["id_campaign"].$timestamp))."</h4>
 									<div class='text-center m-t-40 m-l-20 m-r-20'>
-										<a class='btn btn-block' href='javascript:transition_left(\"validate-".$campaign["id_campaign"]."-2\")'>".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."</a>
+										<a class='btn btn-block' href='javascript:transition_left(\"validate-".$campaign["id_campaign"]."-1\",\"validate-".$campaign["id_campaign"]."-2\")'>".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."</a>
 									</div>
 								</div>
 							</div>
@@ -234,7 +234,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-2\",\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>
@@ -266,7 +266,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-loading\",\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>
@@ -282,7 +282,7 @@
 										<h3>".htmlentities($s["loading..."], ENT_QUOTES, "UTF-8")."</h3>
 										<h5 class='msg'>".htmlentities($s["this_may_take_several_seconds"], ENT_QUOTES, "UTF-8")."</h5>
 										<div class='m-t-20'>
-											<a href='javascript:transition_left(\"campaign-".$campaign["id_campaign"]."\")' class='btn btn-block'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
+											<a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-loading\",\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
 										</div>
 									</div>
 								</div>
@@ -295,7 +295,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-error\",\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>
@@ -324,7 +324,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-success\",\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>

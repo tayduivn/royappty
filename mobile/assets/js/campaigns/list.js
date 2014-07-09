@@ -39,7 +39,6 @@ $(document).ready(function() {
 });
 
 function validate_promo(campaign){
-	show_page("validate-"+campaign+"-loading");
 	$.ajax({
 		type: "POST",
 		dataType: 'json',
@@ -54,9 +53,9 @@ function validate_promo(campaign){
 		},
 		success: function(response) {
 			if(response.result){
-				show_page("validate-"+campaign+"-success");
+				transition_left("validate-"+campaign+"-2","validate-"+campaign+"-success");
 			} else {
-				show_page("validate-"+campaign+"-error");
+				transition_left("validate-"+campaign+"-2","validate-"+campaign+"-error");
 			}
 		}
 	});
