@@ -145,7 +145,7 @@
 		copy(PATH."../../".$_POST["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
 		$app["app_bg_path"] = $timestamp.".jpg";
 	}else{
-		copy(PATH."../../server/app/assets/img/default-app-background.jpg",PATH."../../resources/bg-image/".$timestamp.".jpg");
+		copy(PATH."../../server/app/assets/img/default-app-background.jpg",PATH."../../resources/app-bg/".$timestamp.".jpg");
 		$app["app_bg_path"] = $timestamp.".jpg";
 	}
 
@@ -154,6 +154,7 @@
 
 	$data["id_brand"]=$brand["id_brand"];
 	$data["name"]=$_POST["app_name"];
+	$data["app_title"]=$_POST["app_title"];
 	$data["description"]=$_POST["app_description"];
 	$data["app_icon_path"]=$app["app_icon_path"];
 	$data["app_bg_path"]=$app["app_bg_path"];
@@ -167,7 +168,7 @@
 	$brand_user_fields=explode("::", $_POST["brand_user_fields"]);
 	$table="brand_user_fields";
 	$data=array();
-	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
+	$data["id_brand"]=$brand["id_brand"];
 	foreach($brand_user_fields as $key=>$id_user_field){
 		$data["id_user_field"]=$id_user_field;
 		$data["main_field"]=1;

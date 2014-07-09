@@ -171,17 +171,28 @@ $(document).ready(function(){
 					required:"Este campo es obligatorio",
 					maxlength: "No puede exceder de 75 caracteres",
 					minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
-				}
+				},
+			app_title:{
+				required:"Este campo es obligatorio",
+				maxlength: "No puede exceder de 20 caracteres",
+				minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+			}
 		},
 		rules:{
 			app_name:{
-					required:true,
-					maxlength: 75,
-					minlength: 4
-				}
+				required:true,
+				maxlength: 75,
+				minlength: 4
+			},
+			app_title:{
+				required:true,
+				maxlength: 20,
+				minlength: 4
+			}
 		},
 		submitHandler:function(form){
 			$('#form-end #app_name').val($('#form-step3 #app_name').val());
+			$('#form-end #app_title').val($('#form-step3 #app_title').val());
 			$('#form-end #app_description').val($('#form-step3 #app_description').val());
 			var brand_user_fields= "";
 			var separator= "";
@@ -227,6 +238,7 @@ $(document).ready(function(){
 						payment_plan:$('#form-end #payment_plan').val(),
 						payment_method:$('#form-end #payment_method').val(),
 						app_name:$('#form-end #app_name').val(),
+						app_title:$('#form-end #app_title').val(),
 						app_description:$('#form-end #app_description').val(),
 						app_icon_path:$('#form-end #app_icon_path').val(),
 						app_bg_path:$('#form-end #app_bg_path').val(),

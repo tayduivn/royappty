@@ -119,7 +119,7 @@
 			<h3 class='text-center'>".htmlentities($set_password_s["success_title"], ENT_QUOTES, "UTF-8")."</h3>
 			<div class='msg'>".htmlentities($set_password_s["success_subtitle"], ENT_QUOTES, "UTF-8")."</div>
 			<div class='m-t-20'>
-				<a href='../' class='btn btn-white m-r-10'>".htmlentities($s["login"], ENT_QUOTES, "UTF-8")."</a>
+				<a href='../../' class='btn btn-white m-r-10'>".htmlentities($s["login"], ENT_QUOTES, "UTF-8")."</a>
 			</div>
 		</div>
 	";

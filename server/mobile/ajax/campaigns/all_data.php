@@ -1,12 +1,12 @@
 <?php
 	/*********************************************************
-	*	
+	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 	* Last Edit: 22-06-2014
 	* Version: 1.01
 	*
  	*********************************************************/
-	
+
 	/*********************************************************
 	* AJAX RETURNS
 	*
@@ -19,7 +19,7 @@
 	*
 	*********************************************************/
 
-	
+
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
@@ -30,34 +30,34 @@
 	$page_path = "server/mobile/ajax/campaigns/all_data";
  	debug_log("[".$page_path."] START");
  	$response=array();
- 	
- 	
+
+
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
- 	
- 	// BRAND 
+
+ 	// BRAND
  	$brand=array();$brand["id_brand"]=$_SESSION["user"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}	
+	if(!checkBrand($brand)){echo json_encode($response);die();}
  	// USER
   	$user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
-	if(!checkUser($user)){echo json_encode($response);die();}	
- 	
- 	
- 	
+	if(!checkUser($user)){echo json_encode($response);die();}
+
+
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
+
  	$day=date("Ymd");
- 	
+
 	$response["result"]=true;
 
 	$table="apps";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
 	$app=getInBD($table,$filter);
-	
+
  	$table="campaigns";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
@@ -66,19 +66,19 @@
 	$campaigns=listInBD($table,$filter,$fields);
 	$response["data"]["page"]="
 	<div class='page' id='index'>
-		<div class='header navbar navbar-inverse'> 
+		<div class='header navbar navbar-inverse'>
 			<div class='navbar-inner'>
 				<table style='width:100%'>
 					<tr>
-						<td class='text-center' style='width:100%'><h4 class='text-center'>".htmlentities($app["name"], ENT_QUOTES, "UTF-8")."</h4></td>
+						<td class='text-center' style='width:100%'><h4 class='text-center'>".htmlentities($app["app_title"], ENT_QUOTES, "UTF-8")."</h4></td>
 					</tr>
 				</table>
 	 		</div>
 		</div>
 		<div class='page-container row'>
-			<div class='page-content bg-white page-mobile'>  
-				<div class='content'>  
-				
+			<div class='page-content bg-white page-mobile'>
+				<div class='content'>
+
  	";
  	$campaign_pages="";
 	foreach($campaigns as $key=>$campaign){
@@ -91,7 +91,7 @@
 		if($campaign["type"]==1){
 			if($count_used_codes>0){
 				$steps_completed=intval($count_used_codes/($campaign["coupons_number"]+1));
-				$step_count_used_codes=$count_used_codes%($campaign["coupons_number"]+1);		
+				$step_count_used_codes=$count_used_codes%($campaign["coupons_number"]+1);
 			}
 			if($step_count_used_codes==$campaign["coupons_number"]){
 				$is_promo_success=true;
@@ -104,28 +104,28 @@
 			$is_usage_limit=true;
 		}
 		if(!$is_usage_limit){
-			
-		
+
+
 			$img_file = PATH."../resources/campaign-icon/".$campaign["campaign_icon_path"];
 			$imgData = base64_encode(file_get_contents($img_file));
 			$src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
-	
+
 			$response["data"]["page"].="
-			
+
 			<div class='col-md-12'>
 				<a href='javascript:show_page(\"campaign-".$campaign["id_campaign"]."\")'>
 					<img class='full-width' src='".$src."'/>
 				</a>
 			</div>
 			";
-			
+
 			$img_file = PATH."../resources/campaign-image/".$campaign["campaign_image_path"];
 			$imgData = base64_encode(file_get_contents($img_file));
 			$src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
-			
+
 			$campaign_pages.="
 				<div class='page' id='campaign-".$campaign["id_campaign"]."' style='display:none'>
-					<div class='header navbar navbar-inverse'> 
+					<div class='header navbar navbar-inverse'>
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
@@ -137,7 +137,7 @@
 				 		</div>
 					</div>
 					<div class='page-container row'>
-						<div class='page-content bg-white page-mobile'>  
+						<div class='page-content bg-white page-mobile'>
 							<div class='content'>
 								<div class='col-md-12'>
 									<div>
@@ -146,12 +146,12 @@
 									<h5 class='text-center'>".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."</h5>
 								";
 			if($campaign["type"]==1){
-				
+
 				$end="";
 				for($i=0;$i<$campaign["coupons_number"];$i++){
 					if($i%3==0){
 						$campaign_pages.=$end."
-									<div style='overflow:auto;' class='m-l-20 m-r-20'>						
+									<div style='overflow:auto;' class='m-l-20 m-r-20'>
 						";
 						$end="</div>";
 					}
@@ -162,16 +162,16 @@
 					$campaign_pages.="'></i>
 						</div>
 					";
-					
+
 				}
 				if($i%3!=0){
 					$campaign_pages.="
 					</div>
 					";
 				}
-				
+
 				$campaign_pages.="
-									
+
 									<div class='text-center m-t-20 m-l-20 m-r-20'>
 										";
 				if($is_promo_success){
@@ -196,12 +196,12 @@
 			$campaign_pages.="
 								</div>
 							</div>
-						</div> 
+						</div>
 					</div>
 				</div>
-				
+
 				<div class='page' id='validate-".$campaign["id_campaign"]."-1' style='display:none'>
-					<div class='header navbar navbar-inverse'> 
+					<div class='header navbar navbar-inverse'>
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
@@ -213,7 +213,7 @@
 				 		</div>
 					</div>
 					<div class='page-container row'>
-						<div class='page-content bg-white page-mobile'>  
+						<div class='page-content bg-white page-mobile'>
 							<div class='content'>
 								<div class='col-md-12'>
 									<h2 class='text-center m-t-80'>".htmlentities($s["validate_code_title"], ENT_QUOTES, "UTF-8")."</h2>
@@ -225,11 +225,11 @@
 									</div>
 								</div>
 							</div>
-						</div> 
+						</div>
 					</div>
 				</div>
 				<div class='page' id='validate-".$campaign["id_campaign"]."-2' style='display:none'>
-					<div class='header navbar navbar-inverse'> 
+					<div class='header navbar navbar-inverse'>
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
@@ -241,7 +241,7 @@
 				 		</div>
 					</div>
 					<div class='page-container row'>
-						<div class='page-content bg-white page-mobile'>  
+						<div class='page-content bg-white page-mobile'>
 							<div class='content'>
 								<div class='col-md-12'>
 									<h2 class='text-center m-t-80'>".htmlentities($s["validate_code_title"], ENT_QUOTES, "UTF-8")."</h2>
@@ -257,11 +257,11 @@
 									</div>
 								</div>
 							</div>
-						</div> 
+						</div>
 					</div>
 				</div>
 				<div class='page' id='validate-".$campaign["id_campaign"]."-loading' style='display:none'>
-					<div class='header navbar navbar-inverse'> 
+					<div class='header navbar navbar-inverse'>
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
@@ -273,7 +273,7 @@
 				 		</div>
 					</div>
 					<div class='page-container row'>
-						<div class='page-content bg-white page-mobile'>  
+						<div class='page-content bg-white page-mobile'>
 							<div class='content'>
 								<div class='col-md-12'>
 									<div class='text-center m-t-40 m-l-20 m-r-20'>
@@ -286,11 +286,11 @@
 									</div>
 								</div>
 							</div>
-						</div> 
+						</div>
 					</div>
 				</div>
 				<div class='page' id='validate-".$campaign["id_campaign"]."-error' style='display:none'>
-					<div class='header navbar navbar-inverse'> 
+					<div class='header navbar navbar-inverse'>
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
@@ -302,7 +302,7 @@
 				 		</div>
 					</div>
 					<div class='page-container row'>
-						<div class='page-content bg-white page-mobile'>  
+						<div class='page-content bg-white page-mobile'>
 							<div class='content'>
 								<div class='col-md-12'>
 									<div class='text-center m-t-20 m-l-20 m-r-20'>
@@ -315,11 +315,11 @@
 									</div>
 								</div>
 							</div>
-						</div> 
+						</div>
 					</div>
 				</div>
 				<div class='page' id='validate-".$campaign["id_campaign"]."-success' style='display:none'>
-					<div class='header navbar navbar-inverse'> 
+					<div class='header navbar navbar-inverse'>
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
@@ -331,7 +331,7 @@
 				 		</div>
 					</div>
 					<div class='page-container row'>
-						<div class='page-content bg-white page-mobile'>  
+						<div class='page-content bg-white page-mobile'>
 							<div class='content'>
 								<div class='col-md-12'>
 									<div class='text-center m-t-20 m-l-20 m-r-20'>
@@ -344,40 +344,40 @@
 									</div>
 								</div>
 							</div>
-						</div> 
+						</div>
 					</div>
 				</div>
 			";
-		
+
 		}
-		
+
 	}
 	$response["data"]["page"].="
 				</div>
-			</div> 
+			</div>
 		</div>
 	</div>
 	".$campaign_pages;
- 	
+
 
  	/*********************************************************
  	* DATABASE REGISTRATION
  	*********************************************************/
- 	
- 	
- 	
- 	
+
+
+
+
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
- 	
- 	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 
  	echo json_encode($response);
 	debug_log("[server/mobile/ajax/campaigns/list] END");

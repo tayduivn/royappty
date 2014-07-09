@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 function checkBrand($brand){
 	global $page_path;
 	global $response;
-	
+
 	if(!issetandnotempty($brand["id_brand"])){
 	 	$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Missing id_brand");
+		debug_log("[".$page_path."] (checkBrand) ERROR Data Missing id_brand");
  		$response["error"]="ERROR Data Missing brand identificator";
   		$response["error_code"]="no_brand";
  		return false;
@@ -18,15 +18,15 @@ function checkBrand($brand){
  	$filter["active"]=array("operation"=>"=","value"=>1);
  	if(!isInBD($table,$filter)){
 	 	$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Brand not exists or inactive (id_brand=".$brand["id_brand"]." | active=1)");
+		debug_log("[".$page_path."] (checkBrand) ERROR Brand not exists or inactive (id_brand=".$brand["id_brand"]." | active=1)");
  		$response["error"]="ERROR Data Missing not exists or inactive";
  		$response["error_code"]="brand_not_valid";
  		return false;
- 		die();	 	
+ 		die();
  	}
  	return true;
  	die();
- 
+
 }
 
 function checkUser($user){
@@ -41,7 +41,7 @@ function checkUser($user){
 		return false;
  		die();
  	}
- 	
+
  	$table="users";
  	$filter=array();
  	$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
@@ -51,9 +51,9 @@ function checkUser($user){
  		$response["error"]="ERROR User not in the system";
  		$response["error_code"]="user_not_valid";
  		return false;
- 		die(); 	
+ 		die();
  	}
- 	
+
  	$table="users";
  	$filter=array();
  	$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
@@ -64,7 +64,7 @@ function checkUser($user){
  		$response["error"]="ERROR User not in the system";
   		$response["error_code"]="user_inactive";
 		echo json_encode($response);
- 		die();	 	
+ 		die();
  	}
  	return true;
  	die();
@@ -74,7 +74,7 @@ function checkUser($user){
 function checkCode($code){
 	global $page_path;
 	global $response;
-	
+
  	$table="admins";
  	$filter=array();
  	$filter["id_brand"]=array("operation"=>"=","value"=>$code["id_brand"]);
@@ -85,11 +85,11 @@ function checkCode($code){
  		$response["error"]="ERROR Promo Password not valid";
  		$response["error_code"]="promo_password_not_valid";
  		return false;
- 		die();	 	
+ 		die();
  	}
  	return true;
  	die();
- 
+
 }
 
 ?>

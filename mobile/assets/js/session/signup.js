@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 	$.ajax({
 		async: false,
 		type: "POST",
@@ -19,10 +19,10 @@ $(document).ready(function() {
 			} else {
 				error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
-	
+
 
 });
 function signup(){
@@ -63,20 +63,20 @@ function signup(){
 					success: function(response) {
 						if(response.result){
 							localStorage.setItem('id_user', response.data.id_user);
-							window.location.href = "./index.html";
+							window.location.href = "../";
 						} else {
 							error_handeler(response.error_code);
 						}
-							
+
 					}
 				});
-				
-				
-				
+
+
+
 			} else {
 				error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
 }

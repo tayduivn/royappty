@@ -22,10 +22,10 @@ $(document).ready(function() {
 				} else {
 					error_handeler(response.error_code);
 				}
-					
+
 			}
 		});
-		localStorage.setItem('last_update', $timestamp);	
+		localStorage.setItem('last_update', $timestamp);
 	}
 	for( var key in localStorage){
 		$(".ajax-loader-"+key).html(localStorage.getItem(key));

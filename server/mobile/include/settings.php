@@ -5,10 +5,10 @@ $conf = array(
 	'bdport' => '',
 	'bd' => 'royappty',
 	'bduser' => 'root',
-	'bdpass' => '2CuW2St9',
+	'bdpass' => 'root',
 	'bdprefix' => ''
 );
-$url_server = "http://www.climbbu.com/sandbox/royappty/";
+$url_server = "http://localhost:8888/royappty/";
 
 $campaign_bd_type[2]="discount";
 

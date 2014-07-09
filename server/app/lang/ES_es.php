@@ -76,8 +76,10 @@ $signup_s["app_data"] = "Datos de la Aplicación";
 $signup_s["app_data_help"] = "";
 $signup_s["app_name"] = "Nombre de la aplicación";
 $signup_s["app_name_help"] = "";
-$signup_s["app_description"] = "Descripción de la Aplicación";
-$signup_s["app_description_help"] = "Escribe unas lineas sobre lo que promociones piensas ofrecer.";
+$signup_s["app_title"] = "Título menú aplicación";
+$signup_s["app_title_help"] = "Ej.: Promociones";
+$signup_s["app_description"] = "Descripción de la aplicación";
+$signup_s["app_description_help"] = "Describe qué tipo de promociones vas a realizar.";
 $signup_s["app_icon"] = "Icono";
 $signup_s["app_icon_help"] = "Resolución recomendada 500x500";
 $signup_s["app_background"] = "Fondo";
@@ -731,6 +733,10 @@ $subscription_type_helper["unlimited"] = "Actualmente estás usando una cuenta R
 $error_s["login_error"] = "El correo o la contraseña no son válidos";
 $error_s["recovery_not_email"] = "Este correo electrónico no se encuentra en nuestra base de datos";
 
+$error_s["set_password_code_not_valid"]["title"]="Código no Válido";
+$error_s["set_password_code_not_valid"]["content"]="Ha ocurrido un error al tratar de cambiar la constraseña de su cuenta, el código de validación no es válido.";
+$error_s["ajax_error"]["title"]="Error en el Servidor";
+$error_s["ajax_error"]["content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
 
 

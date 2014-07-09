@@ -134,10 +134,17 @@
 							</div>
 						</div>
 						<div class='form-group'>
+							<label class='form-label'>".htmlentities($signup_s["app_title"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+							<span class='help'>".htmlentities($signup_s["app_title_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='app_title' name='app_title' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
 							<label class='form-label'>".htmlentities($signup_s["app_description"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($signup_s["app_description_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<textarea style='height:465px;' id='app_description' name='app_description' class='form-control'></textarea>
+								<textarea style='height:430px;' id='app_description' name='app_description' class='form-control'></textarea>
 							</div>
 						</div>
 					</div>
@@ -323,6 +330,7 @@
 			<input type='hidden' id='payment_plan' />
 			<input type='hidden' id='payment_method' />
 			<input type='hidden' id='app_name' />
+			<input type='hidden' id='app_title' />
 			<input type='hidden' id='app_description' />
 			<input type='hidden' id='app_icon_path' />
 			<input type='hidden' id='app_bg_path' />

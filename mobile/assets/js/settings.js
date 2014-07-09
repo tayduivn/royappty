@@ -1,8 +1,8 @@
 //request.open('GET', 'http://www.royappty.com/', true);
 //Server Path for WEB
-//var $SERVER_PATH = $PATH+"../";
+var $SERVER_PATH = $PATH+"../";
 //Server Path for App
-var $SERVER_PATH = "http://www.royappty.com/";
+//var $SERVER_PATH = "http://www.royappty.com/";
 
 function loadjscssfile(filename, filetype){
  if (filetype=="js"){ //if filename is a external JavaScript file
@@ -52,9 +52,9 @@ $(document).ready(function(){
 				localStorage.setItem('brand',response.data.id_brand);
 				$BRAND=response.data.id_brand;
 			} else {
-				error_handeler("no_brand");									
+				error_handeler("no_brand");
 			}
-				
+
 		}
 	});
 
