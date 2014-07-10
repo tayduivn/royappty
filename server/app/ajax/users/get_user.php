@@ -3,18 +3,18 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/users/get_user";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+
+
  	// Data check START
- 	
+
  	$table="users";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -26,24 +26,24 @@
  		echo json_encode($response);
  		die();
 	}
- 	
+
  	// Data check END
-	
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="users";
 	$filter=array();
 	$filter["id_user"]=array("operation"=>"=","value"=>$_POST["id_user"]);
 	$user=getInBD($table,$filter);
-	
+
 	$response["data"]["modals"]="
 	<div class='modal fade' id='user_notes_viewer' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 		<div class='modal-dialog'>
 	    	<div class='modal-content'>
 	    		<div class='modal-msg'>
 	    		</div>
-	        		
+
 				<div class='modal-footer'>
 					<a type='button' href='#' class='btn btn-danger pull-left accept_button'>".htmlentities($s["delete_note"], ENT_QUOTES, "UTF-8")."</a>
 					<button type='button' class='btn btn-default' data-dismiss='modal'>".htmlentities($s["close"], ENT_QUOTES, "UTF-8")."</button>
@@ -91,37 +91,37 @@
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$filter["main_field"]=array("operation"=>"=","value"=>1);
 	$brand_user_fields=getInBD($table,$filter);
-	
+
 	$table='user_field_data';
 	$filter=array();
 	$filter["id_user_field"]=array("operation"=>"=","value"=>$brand_user_fields["id_user_field"]);
 	$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
 	$user_field_data=getInBD($table,$filter);
-	
+
 	$response["data"]["page-title"]="<a href='../users/'>".htmlentities($s["users"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($user_field_data["field_value"], ENT_QUOTES, "UTF-8");
 	$response["data"]["page-options"]="";
-	
-	
+
+
 	$response["data"]["user-data"]="
 		<h3 class='m-t-0'>".htmlentities($user_field_data["field_value"], ENT_QUOTES, "UTF-8")."</h3>
 		<h5>";
-	
+
 	if($user["created"]==0){
 		$response["data"]["user-data"].=htmlentities($s["without_created_date"], ENT_QUOTES, "UTF-8");
 	}else{
-		$response["data"]["user-data"].=htmlentities($s["created_date_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y  H:m",$user["created"]);	
+		$response["data"]["user-data"].=htmlentities($s["created_date_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y  H:m",$user["created"]);
 	}
-	
-	
+
+
 	$response["data"]["user-data"].="
 		</h5>
 		<h5>";
 	if($user["last_connection"]==0){
 		$response["data"]["user-data"].=htmlentities($s["without_last_connection"], ENT_QUOTES, "UTF-8");
 	}else{
-		$response["data"]["user-data"].=htmlentities($s["last_connection_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y  H:m",$user["last_connection"]);	
+		$response["data"]["user-data"].=htmlentities($s["last_connection_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y  H:m",$user["last_connection"]);
 	}
-	
+
 	$response["data"]["user-data"].="
 		</h5>";
 
@@ -137,9 +137,9 @@
 		$user_field=getInBD($table,$filter);
 		$response["data"]["user-data"].="<p><b>".$user_field_title_s[$user_field["title"]]."</b> ".$user_field_data["field_value"]."</p>";
 	}
-	
-	
-	
+
+
+
 
  	$table="user_notes";
 	$filter=array();
@@ -160,14 +160,18 @@
 			</p>
 			<a class='btn btn-white' href='javascript:show_modal(\"user_notes_add\",\"\")'>".htmlentities($s["add_first_note"], ENT_QUOTES, "UTF-8")."</a>
 		</div>";
-		
-		
-		
+
+
+
 	if(isInBD($table,$filter)){
 		$response["data"]["notes-list"]="<h4 class='m-t-0'>".htmlentities($s["notes"], ENT_QUOTES, "UTF-8")." <a href='javascript:show_modal(\"user_notes_add\",\"\")' class='btn btn-white btn-mini pull-right'><i class='fa fa-plus'></i> ".htmlentities($s["add_note"], ENT_QUOTES, "UTF-8")."</a></h4>";
 		$user_notes=listInBD($table,$filter,$fields,$table_order,$limit);
 		foreach($user_notes as $key=>$user_note){
-			$response["data"]["notes-list"].="<div class=''><span class='text-black'>".date("d/m/Y",$user_note["created"])."</span> <a href='javascript:view_note(".$user_note["id_user_note"].")' class='text-success'>".substr($user_note["title"],0,14)."</a></div>";
+			$user_note["title_preview"]=$user_note["title"];
+			if(strlen($user_note["title"])>23){
+				$user_note["title_preview"]=substr($user_note["title"],0,20)."...";
+			}
+			$response["data"]["notes-list"].="<div class=''><span class='text-black'>".date("d/m/Y",$user_note["created"])."</span> <a href='javascript:view_note(".$user_note["id_user_note"].")' class='text-success'>".htmlentities($user_note["title_preview"], ENT_QUOTES, "UTF-8")."</a></div>";
 		}
 		if(countInBD($table,$filter)>10){
 			$response["data"]["notes-list"].="
@@ -175,7 +179,7 @@
 					<a href='javascript:show_modal(\"user_all_notes\",\"\")' class='btn btn-mini btn-white'>".htmlentities($s["view_all_notes"], ENT_QUOTES, "UTF-8")."</a>
 				</div>";
 			$user_notes=listInBD($table,$filter,$fields,$table_order);
-			
+
 			$response["data"]["modals"].="
 			<div class='modal fade' id='user_all_notes' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 				<div class='modal-dialog'>
@@ -186,10 +190,10 @@
 							<h4 id='myModalLabel' class='semi-bold'>".htmlentities($s["view_all_notes"], ENT_QUOTES, "UTF-8")."</h4>
 						</div>
 						<div class='modal-body'>
-							
+
 			";
 			foreach($user_notes as $key=>$user_note){
-				$response["data"]["modals"].="<div class=''><span class='text-black'>".date("d/m/Y",$user_note["created"])."</span> <a href='javascript:view_note(".$user_note["id_user_note"].")' class='text-success'>".substr($user_note["title"],0,25)."</a></div>";
+				$response["data"]["modals"].="<div class=''><span class='text-black'>".date("d/m/Y",$user_note["created"])."</span> <a href='javascript:view_note(".$user_note["id_user_note"].")' class='text-success'>".htmlentities($user_note["title"], ENT_QUOTES, "UTF-8")."</a></div>";
 			}
 			$response["data"]["modals"].="
 						</div>
@@ -201,9 +205,9 @@
 				</div>
 			</div>";
 		}
-	
+
 	}
-	
+
 	for($i=1;$i<=4;$i++){
 		$response["data"]["resume-block-".$i]="";
 		if($user["resume_block_".$i."_display"]==1){
@@ -211,27 +215,27 @@
 			$filter=array();
 			$filter["id_user"]=array("operation"=>"=","value"=>$_POST["id_user"]);
 			$fields=array("resume_block_".$i."_title","resume_block_".$i."_data","resume_block_".$i."_link","resume_block_".$i."_link_content");
-			
+
 			$resume_block=getInBD($table,$filter,$fields);
-			
+
 			$response["data"]["resume-block-".$i]="
 			<div class='tiles pink'>
-				<div class='tiles-body'>	
+				<div class='tiles-body'>
 					<h6 class='text-white all-caps no-margin'>
 						".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
 					</h6>
 					<div class='heading'>
 						".stripslashes($resume_block["resume_block_".$i."_data"])."
-					</div>			
+					</div>
 					<div class='description'>
 						<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
 					</div>
-				</div>	
+				</div>
 			</div>";
 		}
-		
+
 	}
-	
+
 	$table="used_codes";
 	$filter=array();
 	$filter["id_user"]=array("operation"=>"=","value"=>$_POST["id_user"]);
@@ -268,7 +272,7 @@
 			</table>
 		";
 	}
-	
+
 	$response["data"]["graph-title"]="<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>";
 	$table="used_codes_user_day_summaries";
 	$filter=array();
@@ -279,13 +283,13 @@
 		$response["data"]["graph-value-".$i]=0;
 		if(isInBD($table,$filter)){
 			$used_codes_day_summary=getInBD($table,$filter,$fields,$order,$limit);
-			$response["data"]["graph-value-".$i]=$used_codes_day_summary["used_codes_amount"];	
+			$response["data"]["graph-value-".$i]=$used_codes_day_summary["used_codes_amount"];
 		}
-		
+
 	}
-	
-	
-	
+
+
+
 
  	echo json_encode($response);
 	debug_log("[server/ajax/users/get_user] END");

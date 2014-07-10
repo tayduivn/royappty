@@ -112,12 +112,13 @@
 			$src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
 			$response["data"]["page"].="
-
-			<div class='col-md-12'>
-				<a href='javascript:transition_left(\"index\",\"campaign-".$campaign["id_campaign"]."\")'>
-					<img class='full-width' src='".$src."'/>
-				</a>
-			</div>
+      <div class='row'>
+  			<div class='col-md-12'>
+  				<a href='javascript:transition_left(\"index\",\"campaign-".$campaign["id_campaign"]."\")'>
+  					<img class='full-width' src='".$src."'/>
+  				</a>
+  			</div>
+      </div>
 			";
 
 			$img_file = PATH."../resources/campaign-image/".$campaign["campaign_image_path"];
@@ -295,7 +296,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-error\",\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>
@@ -311,7 +312,7 @@
 										<h3 class='text-center'>".htmlentities($s["error"], ENT_QUOTES, "UTF-8")."</h3>
 										<h5 class='msg'>".htmlentities($s["there_was_an_error_please_try_later"], ENT_QUOTES, "UTF-8")."</h5>
 										<div class='m-t-20'>
-											<a href='javascript:transition_left(\"validate-".$campaign["id_campaign"]."-2\")' class='btn btn-block'>".htmlentities($s["try_again"], ENT_QUOTES, "UTF-8")."</a>
+											<a href='javascript:location.reload()' class='btn btn-block'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
 										</div>
 									</div>
 								</div>
@@ -324,7 +325,7 @@
 						<div class='navbar-inner'>
 							<table style='width:100%'>
 								<tr>
-									<td class='text-left' style='width:25%'><a href='javascript:transition_right(\"validate-".$campaign["id_campaign"]."-success\",\"validate-".$campaign["id_campaign"]."-1\")' class='m-l-10 h4' style=''><i class='fa fa-chevron-left'></i> ".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a></td>
+									<td class='text-left' style='width:25%'></td>
 									<td class='text-center' style='width:50%'><h4 class='text-center'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</h4></td>
 									<td class='text-right' style='width:25%'></td>
 								</tr>

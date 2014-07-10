@@ -3,18 +3,18 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/get_campaign";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+
+
  	// Data check START
- 	
+
  	$table="campaigns";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -26,25 +26,25 @@
  		echo json_encode($response);
  		die();
 	}
- 	
+
  	// Data check END
-	
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="campaigns";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
 	$fields=array("id_campaign","name","description","type","status","campaign_icon_path","cost","profit","usage_limit","resume_block_1_display","resume_block_2_display","resume_block_3_display","resume_block_4_display");
 	$campaign=getInBD($table,$filter,$fields);
-	
+
 	$response["data"]["modals"]="
 	<div class='modal fade' id='campaign_notes_viewer' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 		<div class='modal-dialog'>
 	    	<div class='modal-content'>
 	    		<div class='modal-msg'>
 	    		</div>
-	        		
+
 				<div class='modal-footer'>
 					<a type='button' href='#' class='btn btn-danger pull-left accept_button'>".htmlentities($s["delete_note"], ENT_QUOTES, "UTF-8")."</a>
 					<button type='button' class='btn btn-default' data-dismiss='modal'>".htmlentities($s["close"], ENT_QUOTES, "UTF-8")."</button>
@@ -123,14 +123,14 @@
 		</div>
 	</div>
 	";
-	
+
 	$response["data"]["page-title"]="<a href='../campaigns/'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."<a href='../campaign/edit/".$campaign_bd_type[$campaign["type"]]."/?id_campaign=".$_POST["id_campaign"]."' class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_campaign"], ENT_QUOTES, "UTF-8")."</a>"."<a href='javascript:show_modal(\"delete_campaign_alert\",\"javascript:delete_campaign(".$campaign["id_campaign"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
 	$response["data"]["page-options"]="";
-	
-	
-	
+
+
+
 	$response["data"]["promo-icon"]="<img class='full-width' src='".$url_server."/resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>";
-	
+
 	$response["data"]["campaign-data"]="
 		<h3 class='m-t-0'>".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."</h3>
 		<h5>".$s["campaigns_status_icon"][$campaign["status"]]." ".htmlentities($s["campaigns_status"][$campaign["status"]], ENT_QUOTES, "UTF-8")."</h5>
@@ -138,18 +138,18 @@
 		<p>".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."</p>
 		<p class='text-black'>".htmlentities($s["the_promo_cost_is"].$campaign["cost"]." ".$s["euros_icon"]." ".$s["and_profit_of"].$campaign["profit"]." ".$s["euros_icon"], ENT_QUOTES, "UTF-8")."</p>
 		<p>".htmlentities($s["this_campaign_has_a_limit_of"], ENT_QUOTES, "UTF-8")." <span class='text-black'>";
-		
+
 	if ($campaign["usage_limit"]=="0"){
 		$response["data"]["campaign-data"].=htmlentities($s["without_limit"], ENT_QUOTES, "UTF-8");
 	}else{
-		$response["data"]["campaign-data"].=$campaign["usage_limit"];	
+		$response["data"]["campaign-data"].=$campaign["usage_limit"];
 	}
 	$response["data"]["campaign-data"].="</span></p>";
-	
-	
-	
-	
-	
+
+
+
+
+
 
  	$table="campaign_notes";
 	$filter=array();
@@ -170,14 +170,18 @@
 			</p>
 			<a class='btn btn-white' href='javascript:show_modal(\"campaign_notes_add\",\"\")'>".htmlentities($s["add_first_note"], ENT_QUOTES, "UTF-8")."</a>
 		</div>";
-		
-		
-		
+
+
+
 	if(isInBD($table,$filter)){
 		$response["data"]["notes-list"]="<h4 class='m-t-0'>".htmlentities($s["notes"], ENT_QUOTES, "UTF-8")." <a href='javascript:show_modal(\"campaign_notes_add\",\"\")' class='btn btn-white btn-mini pull-right'><i class='fa fa-plus'></i> ".htmlentities($s["add_note"], ENT_QUOTES, "UTF-8")."</a></h4>";
 		$campaign_notes=listInBD($table,$filter,$fields,$table_order,$limit);
 		foreach($campaign_notes as $key=>$campaign_note){
-			$response["data"]["notes-list"].="<div class=''><span class='text-black'>".date("d/m/Y",$campaign_note["created"])."</span> <a href='javascript:view_note(".$campaign_note["id_campaign_note"].")' class='text-success'>".substr($campaign_note["title"],0,14)."</a></div>";
+			$campaign_note["title_preview"]=$campaign_note["title"];
+			if(strlen($campaign_note["title"])>23){
+				$campaign_note["title_preview"]=substr($campaign_note["title"],0,20)."...";
+			}
+			$response["data"]["notes-list"].="<div class=''><span class='text-black'>".date("d/m/Y",$campaign_note["created"])."</span> <a href='javascript:view_note(".$campaign_note["id_campaign_note"].")' class='text-success'>".htmlentities($campaign_note["title_preview"], ENT_QUOTES, "UTF-8")."</a></div>";
 		}
 		if(countInBD($table,$filter)>10){
 			$response["data"]["notes-list"].="
@@ -185,7 +189,7 @@
 					<a href='javascript:show_modal(\"campaign_all_notes\",\"\")' class='btn btn-mini btn-white'>".htmlentities($s["view_all_notes"], ENT_QUOTES, "UTF-8")."</a>
 				</div>";
 			$campaign_notes=listInBD($table,$filter,$fields,$table_order);
-			
+
 			$response["data"]["modals"].="
 			<div class='modal fade' id='campaign_all_notes' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 				<div class='modal-dialog'>
@@ -196,10 +200,10 @@
 							<h4 id='myModalLabel' class='semi-bold'>".htmlentities($s["view_all_notes"], ENT_QUOTES, "UTF-8")."</h4>
 						</div>
 						<div class='modal-body'>
-							
+
 			";
 			foreach($campaign_notes as $key=>$campaign_note){
-				$response["data"]["modals"].="<div class=''><span class='text-black'>".date("d/m/Y",$campaign_note["created"])."</span> <a href='javascript:view_note(".$campaign_note["id_campaign_note"].")' class='text-success'>".substr($campaign_note["title"],0,25)."</a></div>";
+				$response["data"]["modals"].="<div class=''><span class='text-black'>".date("d/m/Y",$campaign_note["created"])."</span> <a href='javascript:view_note(".$campaign_note["id_campaign_note"].")' class='text-success'>".htmlentities($campaign_note["title"], ENT_QUOTES, "UTF-8")."</a></div>";
 			}
 			$response["data"]["modals"].="
 						</div>
@@ -211,9 +215,9 @@
 				</div>
 			</div>";
 		}
-	
+
 	}
-	
+
 	$blocks_count=0;
 	for($i=1;$i<=4;$i++){
 		if($campaign["resume_block_".$i."_display"]==1){
@@ -222,9 +226,9 @@
 	}
 	$blocks_width=100;
 	if($blocks_count>0){
-		$blocks_width=12/$blocks_count;	
+		$blocks_width=12/$blocks_count;
 	}
-	$response["data"]["resume-blocks"]="";		
+	$response["data"]["resume-blocks"]="";
 	for($i=1;$i<=4;$i++){
 		$response["data"]["resume-block-".$i]="";
 		if($campaign["resume_block_".$i."_display"]==1){
@@ -232,34 +236,34 @@
 			$filter=array();
 			$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
 			$fields=array("resume_block_".$i."_title","resume_block_".$i."_data","resume_block_".$i."_link","resume_block_".$i."_link_content");
-			
+
 			$resume_block=getInBD($table,$filter,$fields);
-			
+
 			$response["data"]["resume-blocks"].="
 			<div class='col-md-".$blocks_width."'>
 				<div class='grid simple'>
 					<div class='tiles pink'>
-						<div class='tiles-body'>	
+						<div class='tiles-body'>
 							<h6 class='text-white all-caps no-margin'>
 								".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
 							</h6>
 							<div class='heading'>";
 						$block_data=create_block_data($resume_block["resume_block_".$i."_title"],$campaign["id_campaign"]);
 						$response["data"]["resume-blocks"].="
-						
+
 							<h1><span class='animate-number text-white' data-value='".$block_data."' data-animation-duration='1200'>0</h1>
-							</div>			
+							</div>
 							<div class='description'>
 								<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>";
 		}
-		
+
 	}
-	
+
 	$table="used_codes";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
@@ -284,19 +288,19 @@
 		$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 		$filter["main_field"]=array("operation"=>"=","value"=>1);
 		$brand_user_field=getInBD($table,$filter);
-		
+
 		foreach($used_codes as $key=>$used_code){
 			$table="users";
 			$filter=array();
 			$filter["id_user"]=array("operation"=>"=","value"=>$used_code["id_user"]);
 			$user=getInBD($table,$filter);
-			
+
 			$table='user_field_data';
 			$filter=array();
 			$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
 			$filter["id_user_field"]=array("operation"=>"=","value"=>$brand_user_field["id_user_field"]);
 			$user_field_data=getInBD($table,$filter);
-			
+
 			$response["data"]["used-codes-list"].="
 			<tr>
             	<td><a href='./user/?id_user=".$user["id_user"]."' class='text-success'><i class='fa fa-user m-r-5'></i>".$user_field_data["field_value"]."</a></td>
@@ -309,9 +313,9 @@
 			</table>
 		";
 	}
-	
+
 	$response["data"]["graph-title"]="<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>";
-	
+
 	$table="used_codes_day_summaries";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
@@ -321,13 +325,13 @@
 		$response["data"]["graph-value-".$i]=0;
 		if(isInBD($table,$filter)){
 			$used_codes_day_summary=getInBD($table,$filter,$fields,$order,$limit);
-			$response["data"]["graph-value-".$i]=$used_codes_day_summary["used_codes_amount"];	
+			$response["data"]["graph-value-".$i]=$used_codes_day_summary["used_codes_amount"];
 		}
-		
+
 	}
-	
-	
-	
+
+
+
 
  	echo json_encode($response);
 	debug_log("[server/ajax/campaigns/get_campaign] END");

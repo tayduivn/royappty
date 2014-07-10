@@ -3,18 +3,18 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/groups/get_group";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+
+
  	// Data check START
- 	
+
  	$table="groups";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -26,24 +26,24 @@
  		echo json_encode($response);
  		die();
 	}
- 	
+
  	// Data check END
-	
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="groups";
 	$filter=array();
 	$filter["id_group"]=array("operation"=>"=","value"=>$_POST["id_group"]);
 	$group=getInBD($table,$filter);
-	
+
 	$response["data"]["modals"]="
 	<div class='modal fade' id='group_notes_viewer' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 		<div class='modal-dialog'>
 	    	<div class='modal-content'>
 	    		<div class='modal-msg'>
 	    		</div>
-	        		
+
 				<div class='modal-footer'>
 					<a type='button' href='#' class='btn btn-danger pull-left accept_button'>".htmlentities($s["delete_note"], ENT_QUOTES, "UTF-8")."</a>
 					<button type='button' class='btn btn-default' data-dismiss='modal'>".htmlentities($s["close"], ENT_QUOTES, "UTF-8")."</button>
@@ -122,31 +122,31 @@
 		</div>
 	</div>
 	";
-	
-	$response["data"]["page-title"]="<a href='../groups/'>".htmlentities($s["groups"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($group["name"], ENT_QUOTES, "UTF-8")."<a href='../group/edit/?id_group=".$_POST["id_group"]."' class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_group"], ENT_QUOTES, "UTF-8")."</a>"."<a href='javascript:show_modal(\"delete_group_alert\",\"javascript:delete_group(".$group["id_group"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
-	$response["data"]["page-options"]="";
-	
-	
 
-	
+	$response["data"]["page-title"]="<a href='../groups/'>".htmlentities($s["groups"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($group["name"], ENT_QUOTES, "UTF-8")."<a href='../group/edit/?id_group=".$_POST["id_group"]."' class='m-l-10 pull-right m-t-3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_group"], ENT_QUOTES, "UTF-8")."</a>"."<a href='javascript:show_modal(\"delete_campaign_alert\",\"javascript:delete_group(".$group["id_group"].")\")' class='pull-right m-t-3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
+	$response["data"]["page-options"]="";
+
+
+
+
 	$response["data"]["group-data"]="
 		<h3 class='m-t-0'>".htmlentities($group["name"], ENT_QUOTES, "UTF-8")."</h3>
 		<h5>";
-	
+
 	if($group["created"]==0){
 		$response["data"]["group-data"].=htmlentities($s["without_created_date"], ENT_QUOTES, "UTF-8");
 	}else{
-		$response["data"]["group-data"].=htmlentities($s["created_date_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y",$group["created"]);	
+		$response["data"]["group-data"].=htmlentities($s["created_date_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y",$group["created"]);
 	}
-	
-	
+
+
 	$response["data"]["group-data"].="
 		</h5>
 		<h5>";
-	
-	
-	
-	
+
+
+
+
 
  	$table="group_notes";
 	$filter=array();
@@ -167,14 +167,18 @@
 			</p>
 			<a class='btn btn-white' href='javascript:show_modal(\"group_notes_add\",\"\")'>".htmlentities($s["add_first_note"], ENT_QUOTES, "UTF-8")."</a>
 		</div>";
-		
-		
-		
+
+
+
 	if(isInBD($table,$filter)){
 		$response["data"]["notes-list"]="<h4 class='m-t-0'>".htmlentities($s["notes"], ENT_QUOTES, "UTF-8")." <a href='javascript:show_modal(\"group_notes_add\",\"\")' class='btn btn-white btn-mini pull-right'><i class='fa fa-plus'></i> ".htmlentities($s["add_note"], ENT_QUOTES, "UTF-8")."</a></h4>";
 		$group_notes=listInBD($table,$filter,$fields,$table_order,$limit);
 		foreach($group_notes as $key=>$group_note){
-			$response["data"]["notes-list"].="<div class=''><span class='text-black'>".date("d/m/Y",$group_note["created"])."</span> <a href='javascript:view_note(".$group_note["id_group_note"].")' class='text-success'>".substr($group_note["title"],0,14)."</a></div>";
+			$group_note["title_preview"]=$group_note["title"];
+			if(strlen($group_note["title"])>23){
+				$group_note["title_preview"]=substr($group_note["title"],0,20)."...";
+			}
+			$response["data"]["notes-list"].="<div class=''><span class='text-black'>".date("d/m/Y",$group_note["created"])."</span> <a href='javascript:view_note(".$group_note["id_group_note"].")' class='text-success'>".htmlentities($group_note["title_preview"], ENT_QUOTES, "UTF-8")."</a></div>";
 		}
 		if(countInBD($table,$filter)>10){
 			$response["data"]["notes-list"].="
@@ -182,7 +186,7 @@
 					<a href='javascript:show_modal(\"group_all_notes\",\"\")' class='btn btn-mini btn-white'>".htmlentities($s["view_all_notes"], ENT_QUOTES, "UTF-8")."</a>
 				</div>";
 			$group_notes=listInBD($table,$filter,$fields,$table_order);
-			
+
 			$response["data"]["modals"].="
 			<div class='modal fade' id='group_all_notes' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 				<div class='modal-dialog'>
@@ -193,10 +197,10 @@
 							<h4 id='myModalLabel' class='semi-bold'>".htmlentities($s["view_all_notes"], ENT_QUOTES, "UTF-8")."</h4>
 						</div>
 						<div class='modal-body'>
-							
+
 			";
 			foreach($group_notes as $key=>$group_note){
-				$response["data"]["modals"].="<div class=''><span class='text-black'>".date("d/m/Y",$group_note["created"])."</span> <a href='javascript:view_note(".$group_note["id_group_note"].")' class='text-success'>".substr($group_note["title"],0,25)."</a></div>";
+				$response["data"]["modals"].="<div class=''><span class='text-black'>".date("d/m/Y",$group_note["created"])."</span> <a href='javascript:view_note(".$group_note["id_group_note"].")' class='text-success'>".htmlentities($group_note["title"], ENT_QUOTES, "UTF-8")."</a></div>";
 			}
 			$response["data"]["modals"].="
 						</div>
@@ -208,9 +212,9 @@
 				</div>
 			</div>";
 		}
-	
+
 	}
-	
+
 	for($i=1;$i<=4;$i++){
 		$response["data"]["resume-block-".$i]="";
 		if($group["resume_block_".$i."_display"]==1){
@@ -218,28 +222,28 @@
 			$filter=array();
 			$filter["id_group"]=array("operation"=>"=","value"=>$_POST["id_group"]);
 			$fields=array("resume_block_".$i."_title","resume_block_".$i."_data","resume_block_".$i."_link","resume_block_".$i."_link_content");
-			
+
 			$resume_block=getInBD($table,$filter,$fields);
-			
+
 			$response["data"]["resume-block-".$i]="
 			<div class='tiles pink'>
-				<div class='tiles-body'>	
+				<div class='tiles-body'>
 					<h6 class='text-white all-caps no-margin'>
 						".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
 					</h6>
 					<div class='heading'>
 						".stripslashes($resume_block["resume_block_".$i."_data"])."
-					</div>			
+					</div>
 					<div class='description'>
 						<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
 					</div>
-				</div>	
+				</div>
 			</div>";
 		}
-		
+
 	}
-	
-	
+
+
 	$sql_complex="false";
 	$table="user_groups";
 	$filter=array();
@@ -251,10 +255,10 @@
 		foreach ($user_groups as $key=>$user_group){
 			$sql_complex.=$or." id_user=".$user_group["id_user"];
 			$or=" or";
-		}		
+		}
 	}
-	
-	
+
+
 	$table="used_codes";
 	$filter=array();
 	$filter["complex"]=$sql_complex;
@@ -291,8 +295,8 @@
 			</table>
 		";
 	}
-	
-	
+
+
 	$response["data"]["graph-title"]="<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>";
 	$table="used_codes_user_day_summaries";
 	$filter=array();
@@ -303,13 +307,13 @@
 		$response["data"]["graph-value-".$i]=0;
 		if(isInBD($table,$filter)){
 			$used_codes_day_summary=getInBD($table,$filter,$fields,$order,$limit);
-			$response["data"]["graph-value-".$i]=$used_codes_day_summary["used_codes_amount"];	
+			$response["data"]["graph-value-".$i]=$used_codes_day_summary["used_codes_amount"];
 		}
-		
+
 	}
-	
-	
-	
+
+
+
 
  	echo json_encode($response);
 	debug_log("[server/ajax/groups/get_group] END");
