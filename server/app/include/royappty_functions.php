@@ -1,4 +1,12 @@
 <?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 function corporate_email($mail_for,$mail_subject,$content){
 	global $url_server;
 	global $CONFIG;

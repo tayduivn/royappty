@@ -1,13 +1,10 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 09-07-2014
-* Version: 0.92
-* Description:
-* Form-wirzard library
+* Last Edit: 23-06-2014
+* Version: 0.91
 *
 *********************************************************/
-
 
 var current_step=1;
 function gotostep(step){

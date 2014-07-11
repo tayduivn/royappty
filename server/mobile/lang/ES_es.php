@@ -1,5 +1,11 @@
 <?php
-	
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 23-06-2014
+	* Version: 0.91
+	*
+	*********************************************************/
 
 	$s["back"] = "Volver";
 	$s["insert_code"] = "Inserte Código";
@@ -16,9 +22,9 @@
 	$s["validate_code_success_title"] = "Promoción canjeada";
 	$s["validate_code_success_subtitle"] = "Su promoción ha sido registrada";
 	$s["promo_code"] = "Código de la promoción";
-	
+
 	//Signup
-	$s["signup_title"] = "Registro";	
+	$s["signup_title"] = "Registro";
 	$s["signup_subtitle"] = "Por favor rellena el formulario";
 	$s["signup_button"] = "Enviar";
 
@@ -27,7 +33,7 @@
 
 
 	$user_field_title_s["name"]="Nombre";
-	
+
 	$error["no_brand"]="No nos es posible encontrar los datos de campañas. Vuelve a intentarlo o descárgate de nuevo la aplicación";
 	$error["brand_not_valid"]="Es una pena, pero la aplicación ha sido cerrada.";
 	$error["user_inactive"]="Tu usuario se encuentra bloqueado, contacta con el establecimiento, ellos podrán ayudarte.";

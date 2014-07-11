@@ -1,9 +1,17 @@
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 function error_handeler(error_code){
-	
+
 	error_block:{
 		//Genral
 		if(error_code=="login_error"){window.location.href = $PATH+"login/?error=login_error";break error_block;}
-		
+
 		//Brand check errors
 		if(error_code=="no_brand"){window.location.href = $PATH+"login/";break error_block;}
 		if(error_code=="brand_not_valid"){window.location.href = $PATH+"lock/";break error_block;}
@@ -20,11 +28,11 @@ function error_handeler(error_code){
 
 
 function error_handler(error_code){
-	
+
 	error_block:{
 		//Genral
 		if(error_code=="login_error"){window.location.href = $PATH+"login/?error=login_error";break error_block;}
-		
+
 		//Brand check errors
 		if(error_code=="no_brand"){window.location.href = $PATH+"login/";break error_block;}
 		if(error_code=="brand_not_valid"){window.location.href = $PATH+"lock/";break error_block;}
@@ -43,7 +51,7 @@ function print_area(){
 	$(".only_printable").css("display","block");
 	$("body").css("background-color","white");
 	var printContents = document.getElementById("printable").innerHTML;
-	
+
     var originalContents = document.body.innerHTML;
 
     document.body.innerHTML = printContents;

@@ -1,4 +1,12 @@
 <?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 /*$fp = fopen('upload-log.txt', 'a');
 fwrite($fp, $log);
 fclose($fp);*/

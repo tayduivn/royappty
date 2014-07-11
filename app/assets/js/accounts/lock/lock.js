@@ -1,3 +1,11 @@
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 $(document).ready(function(){
 	localStorage.removeItem('id_brand');
 	localStorage.removeItem('id_admin');

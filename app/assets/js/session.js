@@ -1,3 +1,11 @@
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 function logout(){
 	localStorage.removeItem('id_brand');
 	localStorage.removeItem('id_admin');
@@ -32,10 +40,10 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 				} else {
 					error_handeler(response.error_code);
 				}
-					
+
 			}
 		});
-		
+
 		$(document).ready(function() {
 			$.ajax({
 				async: false,
@@ -60,7 +68,7 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 						$("#ajax_error .modal-msg").html(response.error);
 						show_modal("ajax_error","");
 					}
-						
+
 				}
 			});
 		});

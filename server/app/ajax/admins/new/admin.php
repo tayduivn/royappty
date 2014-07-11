@@ -1,22 +1,30 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 23-06-2014
+	* Version: 0.91
+	*
+	*********************************************************/
+	
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/new/admin";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
+
  	$response["result"]=true;
-	
+
 	$response["data"]["page-title"]="<a href='../../admins'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8");
 	$response["data"]["page-options"]="";
-	
+
 	$response["data"]["new-admin-step-1"]="
 			<h4 class='m-t-0'>".htmlentities($s["add_admin_title"], ENT_QUOTES, "UTF-8")."</h4>
 			<form id='form-step1'>
@@ -117,7 +125,7 @@
 				</div>
 			</form>
 						";
-	
+
 	$response["data"]["new-admin-step-end"]="
 		<form id='form-end'>
 			<input type='hidden' id='name' />
@@ -164,8 +172,8 @@
 			</div>
 		</div>
 	";
-	
-	
+
+
  	echo json_encode($response);
 	debug_log("[server/ajax/admins/get_admin] END");
 

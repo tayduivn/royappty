@@ -1,4 +1,11 @@
-<?php 
+<?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 include_once(PATH."mobile/include/settings.php");
 include_once(PATH."mobile/include/bd.php");
@@ -8,19 +15,19 @@ include_once(PATH."mobile/include/royappty_functions.php");
 if(!isset($manejador)) {
 	$manejador = db_connect();
 }
-	
+
 
 function isInBD($table,$filter=array()){
 	global $manejador;
 	global $conf;
-	
+
 	$query = "select * from ".$conf["bdprefix"].$table." where ";
 	$and="";
 	foreach($filter as $key => $value) {
 		if($key=="complex"){
 			$query.=$and." (".$value.") ";
 		}else{
-			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";		
+			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";
 		}
 		$and="and";
 	}
@@ -37,7 +44,7 @@ function isInBD($table,$filter=array()){
 function getInBD($table,$filter=array(),$fields = array()){
 	global $manejador;
 	global $conf;
-	
+
 	$query = "select ";
 	$selected_fields = "*";
 	if(!empty($fields)){
@@ -55,7 +62,7 @@ function getInBD($table,$filter=array(),$fields = array()){
 		if($key=="complex"){
 			$query.=$and." (".$value.") ";
 		}else{
-			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";		
+			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";
 		}
 		$and="and";
 	}
@@ -71,7 +78,7 @@ function getInBD($table,$filter=array(),$fields = array()){
 function listInBD($table,$filter=array(),$fields = array(),$order="",$limit=0){
 	global $manejador;
 	global $conf;
-	
+
 	$query = "select ";
 	$selected_fields = "*";
 	if(!empty($fields)){
@@ -89,7 +96,7 @@ function listInBD($table,$filter=array(),$fields = array(),$order="",$limit=0){
 		if($key=="complex"){
 			$query.=$and." (".$value.") ";
 		}else{
-			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";		
+			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";
 		}
 		$and="and";
 	}
@@ -114,14 +121,14 @@ function listInBD($table,$filter=array(),$fields = array(),$order="",$limit=0){
 function countInBD($table,$filter=array()){
 	global $manejador;
 	global $conf;
-	
+
 	$query = "select count(*) as c from ".$conf["bdprefix"].$table." where ";
 	$and="";
 	foreach($filter as $key => $value) {
 		if($key=="complex"){
 			$query.=$and." (".$value.") ";
 		}else{
-			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";		
+			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";
 		}
 		$and="and";
 	}
@@ -133,17 +140,17 @@ function countInBD($table,$filter=array()){
 }
 
 function sumInBD($table,$filter=array(),$sum_field){
-	
+
 	global $manejador;
 	global $conf;
-	
+
 	$query = "select sum(".$sum_field.") as s from ".$conf["bdprefix"].$table." where ";
 	$and="";
 	foreach($filter as $key => $value) {
 		if($key=="complex"){
 			$query.=$and." (".$value.") ";
 		}else{
-			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";		
+			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";
 		}
 		$and="and";
 	}
@@ -159,21 +166,21 @@ function sumInBD($table,$filter=array(),$sum_field){
 function updateInBD($table,$filter=array(),$update_data = array()){
 	global $manejador;
 	global $conf;
-	
+
 	$query = "update ".$conf["bdprefix"].$table." set ";
 	$coma = "";
 	foreach($update_data as $key=>$value){
 		$query .= $coma.$key." = '".db_secure_field($value,$manejador)."'";
 		$coma=",";
 	}
-	
+
 	$query .= " where ";
 	$and="";
 	foreach($filter as $key => $value) {
 		if($key=="complex"){
 			$query.=$and." (".$value.") ";
 		}else{
-			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";		
+			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";
 		}
 		$and="and";
 	}
@@ -186,7 +193,7 @@ function updateInBD($table,$filter=array(),$update_data = array()){
 function addInBD($table,$data){
 	global $manejador;
 	global $conf;
-	
+
 	$query = "insert into ".$conf["bdprefix"].$table."  (";
 	$coma = "";
 	$values = "";
@@ -211,7 +218,7 @@ function deleteInBD($table,$filter=array()) {
 		if($key=="complex"){
 			$query.=$and." (".$value.") ";
 		}else{
-			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";		
+			$query.=$and." ".$key." ".$value["operation"]." '".$value["value"]."' ";
 		}
 		$and="and";
 	}

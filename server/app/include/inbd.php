@@ -1,4 +1,11 @@
 <?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 include_once(PATH."include/settings.php");
 include_once(PATH."include/bd.php");

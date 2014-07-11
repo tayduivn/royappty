@@ -1,34 +1,42 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 23-06-2014
+	* Version: 0.91
+	*
+	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/get_campaign";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$brand=getInBD($table,$filter);
-	
+
 
 	$response["data"]["page-title"]="<a href='../../'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / <a href='../'>".htmlentities($s["subscription"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["change_subscription_type"], ENT_QUOTES, "UTF-8");
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	$response["data"]["form-step-2"]="
 			<h4 class='m-t-0'>".htmlentities($s["select_payment_plan"], ENT_QUOTES, "UTF-8")."</h4>
 				<div id='form-warning'></div>
@@ -54,7 +62,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -80,7 +88,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -106,7 +114,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -117,8 +125,8 @@
 					</div>
 				</div>
 			";
-			
-	
+
+
  	echo json_encode($response);
 	debug_log("[server/ajax/campaigns/get_campaign] END");
 
