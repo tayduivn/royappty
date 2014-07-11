@@ -60,7 +60,7 @@
 					<h4 id='myModalLabel' class='semi-bold'><i class='fa fa-file-text-o'></i> ".htmlentities($s["add_note"], ENT_QUOTES, "UTF-8")."</h4>
 				</div>
 				<div class='modal-body'>
-					<form id='user_notes_add_form'>
+					<form id='user_notes_add_form' action='javascript:add_user_note()'>
 						<div id='form-warning'></div>
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($s["title"], ENT_QUOTES, "UTF-8")."</label>

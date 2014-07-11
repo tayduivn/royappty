@@ -38,6 +38,13 @@
 					</div>
 				</div>
 				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["admin_promo_password"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["admin_promo_password_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='admin_promo_password' name='admin_promo_password' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
 					<label class='form-label'>".htmlentities($signup_s["admin_password"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["admin_password_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
@@ -325,6 +332,7 @@
 			<input type='hidden' id='end_date_hour' />
 			<input type='hidden' id='admin_name' />
 			<input type='hidden' id='admin_email' />
+			<input type='hidden' id='admin_promo_password' />
 			<input type='hidden' id='admin_password' />
 			<input type='hidden' id='subscription_type' />
 			<input type='hidden' id='payment_plan' />

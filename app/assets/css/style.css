@@ -1061,7 +1061,8 @@ span.iconset{
   display: inline-block;
   margin-top: 0px;
   margin: 0;
-  font-size: 30px;
+  font-size: 20px;
+  margin:5px;
   color:#656565 !important;
 }
 .header .nav > li.quicklinks > a{

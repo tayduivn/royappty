@@ -65,7 +65,7 @@ function corporate_email($mail_for,$mail_subject,$content){
 }
 
 
-function create_block_data($block_data_code,$data1,$data2){
+function create_block_data($block_data_code,$data1="",$data2=""){
 
 	$block_data="?";
 	switch ($block_data_code){
@@ -79,11 +79,11 @@ function create_block_data($block_data_code,$data1,$data2){
 			break;
 
 		case "usage_this_month":
-			$mounth=strtotime(date("Y-m-1 00:00:00"));
+			$month=strtotime(date("Y-m-d 00:00:00",strtotime("-1 month")));
 			$table="used_codes_month_summaries";
 			$filter=array();
 			$filter["id_brand"]=array("operation"=>"=","value"=>$data1);
-			$filter["start"]=array("operation"=>"=","value"=>$mounth);
+			$filter["start"]=array("operation"=>"=","value"=>$month);
 			$sumfield="used_codes_amount";
 			$block_data=sumInBD($table,$filter,$sumfield);
 			if(!issetandnotempty($block_data)){$block_data=0;}
@@ -108,11 +108,11 @@ function create_block_data($block_data_code,$data1,$data2){
 			break;
 
 		case "admin_validated_this_month":
-			$mounth=strtotime(date("Y-m-1 00:00:00"));
+			$month=strtotime(date("Y-m-d 00:00:00",strtotime("-1 month")));
 			$table="validated_codes_month_summaries";
 			$filter=array();
 			$filter["id_admin"]=array("operation"=>"=","value"=>$data1);
-			$filter["start"]=array("operation"=>"=","value"=>$mounth);
+			$filter["start"]=array("operation"=>"=","value"=>$month);
 			$tmp=getInBD($table,$filter);
 			$block_data=$tmp["validated_codes_amount"];
 			if(!issetandnotempty($block_data)){$block_data=0;}
@@ -136,11 +136,11 @@ function create_block_data($block_data_code,$data1,$data2){
 			if(!issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "campaign_usage_this_month":
-			$mounth=strtotime("Y-m-d 00:00:00","-1 month");
+			$month=strtotime(date("Y-m-d 00:00:00",strtotime("-1 month")));
 			$table="used_codes_day_summaries";
 			$filter=array();
 			$filter["id_campaign"]=array("operation"=>"=","value"=>$data1);
-			$filter["start"]=array("operation"=>">","value"=>$mounth);
+			$filter["start"]=array("operation"=>">","value"=>$month);
 			$sumfield="used_codes_amount";
 			$block_data=sumInBD($table,$filter,$sumfield);
 			if(!issetandnotempty($block_data)){$block_data=0;}
@@ -161,6 +161,60 @@ function create_block_data($block_data_code,$data1,$data2){
 			$filter["id_campaign"]=array("operation"=>"=","value"=>$data1);
 			$sumfield="used_codes_amount";
 			$block_data=sumInBD($table,$filter,$sumfield);
+			if(!issetandnotempty($block_data)){$block_data=0;}
+			break;
+
+		case "group_usage_this_month":
+			$month=strtotime(date("Y-m-d 00:00:00",strtotime("-1 month")));
+			$table="user_groups";
+			$filter=array();
+			$filter["id_group"]=array("operation"=>"=","value"=>$data1);
+			$block_data=0;
+			if(isInBD($table,$filter)){
+					$user_groups=listInBD($table,$filter);
+					$table="used_codes_user_day_summaries";
+					$filter=array();
+					$filter["start"]=array("operation"=>">","value"=>$month);
+					$filter["complex"]="";
+					$or="";
+					foreach($user_groups as $key => $user_group){
+							$filter["complex"].=$or."id_user=".$user_group["id_user"];
+							$or=" or ";
+					}
+					$sumfield="used_codes_amount";
+					$block_data=sumInBD($table,$filter,$sumfield);
+			}
+			if(!issetandnotempty($block_data)){$block_data=0;}
+			break;
+
+		case "group_usage_today":
+			$day=strtotime(date("Y-m-d 00:00:00"));
+			$table="user_groups";
+			$filter=array();
+			$filter["id_group"]=array("operation"=>"=","value"=>$data1);
+			$block_data=0;
+			if(isInBD($table,$filter)){
+					$user_groups=listInBD($table,$filter);
+					$table="used_codes_user_day_summaries";
+					$filter=array();
+					$filter["start"]=array("operation"=>">","value"=>$day);
+					$filter["complex"]="";
+					$or="";
+					foreach($user_groups as $key => $user_group){
+							$filter["complex"].=$or."id_user=".$user_group["id_user"];
+							$or=" or ";
+					}
+					$sumfield="used_codes_amount";
+					$block_data=sumInBD($table,$filter,$sumfield);
+			}
+			if(!issetandnotempty($block_data)){$block_data=0;}
+			break;
+
+		case "group_users":
+			$table="user_groups";
+			$filter=array();
+			$filter["id_group"]=array("operation"=>"=","value"=>$data1);
+			$block_data=countInBD($table,$filter,$sumfield);
 			if(!issetandnotempty($block_data)){$block_data=0;}
 			break;
 

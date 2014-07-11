@@ -1,8 +1,8 @@
 <?php
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-	
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/dashboard/get_dashboard";
 	debug_log("[".$page_path."] START");
@@ -11,7 +11,7 @@
 
  	$response=array();
 
- 	
+
  	$response=array();
 
  	$table="admins";
@@ -20,7 +20,7 @@
 	$filter["id_admin"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_admin"]);
 
 	if(isInBD($table,$filter)){
-	
+
  		$response["result"]=true;
 
 		$table="brands";
@@ -29,7 +29,7 @@
 		$fields = array("resume_block_1_display","resume_block_2_display","resume_block_3_display","resume_block_4_display");
  		$response["data"]["page-title"]="<a href='./index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["dashboard"], ENT_QUOTES, "UTF-8");
  		$brand=getInBD($table,$filter,$fields);
- 			
+
  		for($i=1;$i<=4;$i++){
 			$response["data"]["resume-block-".$i]="";
 			if($brand["resume_block_".$i."_display"]==1){
@@ -38,10 +38,10 @@
 				$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 				$fields=array("resume_block_".$i."_title","resume_block_".$i."_data","resume_block_".$i."_link","resume_block_".$i."_link_content");
 				$resume_block=getInBD($table,$filter,$fields);
-				
+
 				$response["data"]["resume-block-".$i]="
 				<div class='tiles pink'>
-					<div class='tiles-body'>	
+					<div class='tiles-body'>
 						<h6 class='text-white all-caps no-margin'>
 							".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
 						</h6>
@@ -49,13 +49,13 @@
 				$block_data=create_block_data($resume_block["resume_block_".$i."_title"],$_SESSION["admin"]["id_brand"]);
 				$response["data"]["resume-block-".$i].="
 							<h1><span class='animate-number text-white' data-value='".$block_data."' data-animation-duration='1200'>0</h1>
-						</div>			
+						</div>
 						<div class='description'>
 							<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
 						</div>
-					</div>	
+					</div>
 				</div>";
-			}			
+			}
 		}
 
   		$table="campaigns";
@@ -74,7 +74,7 @@
  			$fields=array("id_campaign","name","campaign_usage_last_month");
  			$order = "campaign_usage_last_month desc, campaign_usage desc, id_campaign desc";
 	 		$campaigns=listInBD($table,$filter,$fields,$order);
-	 		
+
 	 		$response["data"]["campaigns-list"]="
 	 			<h4 class='m-t-0'>".htmlentities($s["active_campaigns"], ENT_QUOTES, "UTF-8")."</h4>
 				<table class='full-width'>
@@ -102,7 +102,7 @@
 		 		if(isInBD($table,$filter)){
 			 		$used_code_month_summary=getInBD($table,$filter);
 		 		}
-		 		
+
 		 		$response["data"]["campaigns-list"].="
 		 				".$used_code_month_summary["used_codes_amount"]."
 		 			</td>
@@ -119,14 +119,14 @@
 			$filter["start"]=array("operation"=>"=","value"=>$timestamp-((14-$i)*86400));
 			$response["data"]["graph-label-".$i]=date("d/m",$timestamp-((14-$i)*86400));
 			$response["data"]["graph-value-".$i]=0;
-			if(isInBD($table,$filter)){	
+			if(isInBD($table,$filter)){
 				$sum_field="used_codes_amount";
 				$sum_used_codes_day_summary=sumInBD($table,$filter,$sum_field);
-				$response["data"]["graph-value-".$i]=$sum_used_codes_day_summary;	
+				$response["data"]["graph-value-".$i]=$sum_used_codes_day_summary;
 			}
-			
+
 		}
- 		
+
  		$table="software_news";
  		$filter=array();
  		$software_news=listInBD($table,$filter);
@@ -142,8 +142,8 @@
 	 		$response["data"]["software-news"].="</p>
 								</div>";
  		}
- 		
- 		
+
+
 	}else{
  		$response["result"]=false;
 		error_log("[server/app/ajax/dashboard/get_dashboard] ERROR There is no Admin (".$_SESSION["admin"]["id_admin"].") for this Brand (".$_SESSION["admin"]["id_brand"].")");
@@ -151,7 +151,7 @@
  		echo json_encode($response);
  		die();
 	}
-		 
+
  	echo json_encode($response);
 	debug_log("[".$page_path."] END");
 

@@ -44,7 +44,7 @@
   	$user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
 	if(!checkUser($user)){echo json_encode($response);die();}
  	// Code
-  	$code=array();$code["id_brand"]=$_SESSION["user"]["id_brand"];$code["promo_password"]=$_POST["promo_password"];
+  $code=array();$code["id_brand"]=$_SESSION["user"]["id_brand"];$code["promo_password"]=$_POST["promo_password"];
 	if(!checkCode($code)){echo json_encode($response);die();}
 
 

@@ -53,6 +53,11 @@ $(document).ready(function(){
 				required:"Este campo es obligatorio",
 				email: "El formato de correo electr&oacute;nico no es correcto"
 			},
+			admin_promo_password:{
+				required:"Este campo es obligatorio",
+				maxlength: "No puede exceder de 10 caracteres",
+				minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+			},
 			admin_password:{
 				required:"Este campo es obligatorio",
 				maxlength: "No puede exceder de 25 caracteres",
@@ -77,6 +82,11 @@ $(document).ready(function(){
 				required:true,
 				email: true
 			},
+			admin_promo_password:{
+				required:true,
+				maxlength: 10,
+				minlength: 4
+			},
 			admin_password:{
 				required:true,
 				maxlength: 25,
@@ -93,6 +103,7 @@ $(document).ready(function(){
 		submitHandler:function(form){
 			$('#form-end #admin_name').val($('#form-step1 #admin_name').val());
 			$('#form-end #admin_email').val($('#form-step1 #admin_email').val());
+			$('#form-end #admin_promo_password').val($('#form-step1 #admin_promo_password').val());
 			$('#form-end #admin_password').val($('#form-step1 #admin_password').val());
 			nextstep();
 		}
@@ -233,6 +244,7 @@ $(document).ready(function(){
 						contact_country:$('#form-end #contact_country').val(),
 						admin_name:$('#form-end #admin_name').val(),
 						admin_email:$('#form-end #admin_email').val(),
+						admin_promo_password:$('#form-end #admin_promo_password').val(),
 						admin_password:$('#form-end #admin_password').val(),
 						subscription_type:$('#form-end #subscription_type').val(),
 						payment_plan:$('#form-end #payment_plan').val(),

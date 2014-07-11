@@ -60,7 +60,7 @@
 					<h4 id='myModalLabel' class='semi-bold'><i class='fa fa-file-text-o'></i> ".htmlentities($s["add_note"], ENT_QUOTES, "UTF-8")."</h4>
 				</div>
 				<div class='modal-body'>
-					<form id='group_notes_add_form'>
+					<form id='group_notes_add_form' action='javascript:add_group_note()'>
 						<div id='form-warning'></div>
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($s["title"], ENT_QUOTES, "UTF-8")."</label>
@@ -123,9 +123,13 @@
 	</div>
 	";
 
-	$response["data"]["page-title"]="<a href='../groups/'>".htmlentities($s["groups"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($group["name"], ENT_QUOTES, "UTF-8")."<a href='../group/edit/?id_group=".$_POST["id_group"]."' class='m-l-10 pull-right m-t-3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_group"], ENT_QUOTES, "UTF-8")."</a>"."<a href='javascript:show_modal(\"delete_campaign_alert\",\"javascript:delete_group(".$group["id_group"].")\")' class='pull-right m-t-3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
-	$response["data"]["page-options"]="";
 
+	$response["data"]["page-title"]="<a href='../groups/'>".htmlentities($s["groups"], ENT_QUOTES, "UTF-8")."</a> / ";
+	$response["data"]["page-title"].=htmlentities($group["name"], ENT_QUOTES, "UTF-8")."<a href='../group/edit/?id_group=".$_POST["id_group"]."' ";
+	$response["data"]["page-title"].="class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_group"], ENT_QUOTES, "UTF-8")."</a>";
+	$response["data"]["page-title"].="<a href='javascript:show_modal(\"delete_group_alert\",\"javascript:delete_group(".$group["id_group"].")\")' ";
+	$response["data"]["page-title"].=" class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
+	$response["data"]["page-options"]="";
 
 
 
@@ -215,6 +219,17 @@
 
 	}
 
+	$blocks_count=0;
+	for($i=1;$i<=4;$i++){
+		if($group["resume_block_".$i."_display"]==1){
+			$blocks_count++;
+		}
+	}
+	$blocks_width=100;
+	if($blocks_count>0){
+		$blocks_width=12/$blocks_count;
+	}
+	$response["data"]["resume-blocks"]="";
 	for($i=1;$i<=4;$i++){
 		$response["data"]["resume-block-".$i]="";
 		if($group["resume_block_".$i."_display"]==1){
@@ -225,20 +240,30 @@
 
 			$resume_block=getInBD($table,$filter,$fields);
 
-			$response["data"]["resume-block-".$i]="
-			<div class='tiles pink'>
-				<div class='tiles-body'>
-					<h6 class='text-white all-caps no-margin'>
-						".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
-					</h6>
-					<div class='heading'>
-						".stripslashes($resume_block["resume_block_".$i."_data"])."
-					</div>
-					<div class='description'>
-						<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
+			$response["data"]["resume-blocks"].="
+			<div class='col-md-".$blocks_width."'>
+				<div class='grid simple'>
+					<div class='tiles pink'>
+						<div class='tiles-body'>
+							<h6 class='text-white all-caps no-margin'>
+								".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
+							</h6>
+							<div class='heading'>";
+						$block_data=create_block_data($resume_block["resume_block_".$i."_title"],$group["id_group"]);
+						$response["data"]["resume-blocks"].="
+
+							<h1><span class='animate-number text-white' data-value='".$block_data."' data-animation-duration='1200'>0</h1>
+							</div>
+							<div class='description'>
+								<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>";
+
+
+
 		}
 
 	}

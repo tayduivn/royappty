@@ -75,6 +75,15 @@ function checkCode($code){
 	global $page_path;
 	global $response;
 
+	if(!issetandnotempty($code["promo_password"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] (checkCode) ERROR Data Missing promo_code");
+		$response["error"]="ERROR Data Missing brand identificator";
+			$response["error_code"]="no_brand";
+		return false;
+		die();
+	}
+
  	$table="admins";
  	$filter=array();
  	$filter["id_brand"]=array("operation"=>"=","value"=>$code["id_brand"]);

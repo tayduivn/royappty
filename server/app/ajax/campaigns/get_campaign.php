@@ -1,7 +1,7 @@
 <?php
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
 
 
@@ -61,7 +61,7 @@
 					<h4 id='myModalLabel' class='semi-bold'><i class='fa fa-file-text-o'></i> ".htmlentities($s["add_note"], ENT_QUOTES, "UTF-8")."</h4>
 				</div>
 				<div class='modal-body'>
-					<form id='campaign_notes_add_form'>
+					<form id='campaign_notes_add_form' action='javascript:add_campaign_note()'>
 						<div id='form-warning'></div>
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($s["title"], ENT_QUOTES, "UTF-8")."</label>
@@ -124,9 +124,13 @@
 	</div>
 	";
 
-	$response["data"]["page-title"]="<a href='../campaigns/'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."<a href='../campaign/edit/".$campaign_bd_type[$campaign["type"]]."/?id_campaign=".$_POST["id_campaign"]."' class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_campaign"], ENT_QUOTES, "UTF-8")."</a>"."<a href='javascript:show_modal(\"delete_campaign_alert\",\"javascript:delete_campaign(".$campaign["id_campaign"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
-	$response["data"]["page-options"]="";
 
+	$response["data"]["page-title"]="<a href='../campaigns/'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</a> / ";
+	$response["data"]["page-title"].=htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."<a href='../campaign/edit/".$campaign_bd_type[$campaign["type"]]."/?id_campaign=".$_POST["id_campaign"]."' ";
+	$response["data"]["page-title"].="class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_campaign"], ENT_QUOTES, "UTF-8")."</a>";
+	$response["data"]["page-title"].="<a href='javascript:show_modal(\"delete_campaign_alert\",\"javascript:delete_campaign(".$campaign["id_campaign"].")\")' ";
+	$response["data"]["page-title"].=" class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
+	$response["data"]["page-options"]="";
 
 
 	$response["data"]["promo-icon"]="<img class='full-width' src='".$url_server."/resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>";

@@ -67,6 +67,8 @@ $signup_s["admin_name"] = "Nombre";
 $signup_s["admin_name_help"] = "";
 $signup_s["admin_email"] = "Correo electrónico";
 $signup_s["admin_email_help"] = "Este será el correo que se usará para acceder a la adminsitración de la aplicación.";
+$signup_s["admin_promo_password"] = "Código de validación";
+$signup_s["admin_promo_password_help"] = "Elige el código que usarás para validar promociones.";
 $signup_s["admin_password"] = "Contraseña del Administrador";
 $signup_s["admin_password_help"] = "Elige una contraseña de mínimo 8 caracteres.";
 $signup_s["admin_password_repeat"] = "Repetir contraseña";
@@ -672,6 +674,10 @@ $resume_block_s["campaign_usage_total"]="Uso total";
 $resume_block_s["admin_validated_this_month"]="Validados este mes";
 $resume_block_s["admin_validated_this_today"]="Validados hoy";
 $resume_block_s["admin_validated"]="Validados total";
+
+$resume_block_s["group_usage_this_month"]="Uso este mes";
+$resume_block_s["group_usage_today"]="Uso hoy";
+$resume_block_s["group_users"]="Usuarios";
 
 
 

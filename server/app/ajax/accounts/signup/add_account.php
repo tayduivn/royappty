@@ -48,25 +48,25 @@
 	$data["resume_block_1_display"] = 1;
 	$data["resume_block_1_title"] = "campaigns";
 	$data["resume_block_1_data"] = "0";
-	$data["resume_block_1_link_content"] = "view_more";
+	$data["resume_block_1_link_content"] = "";
 	$data["resume_block_1_link"] = "";
 
 	$data["resume_block_2_display"] = 1;
 	$data["resume_block_2_title"] = "usage_this_month";
 	$data["resume_block_2_data"] = "0";
-	$data["resume_block_2_link_content"] = "view_more";
+	$data["resume_block_2_link_content"] = "";
 	$data["resume_block_2_link"] = "";
 
 	$data["resume_block_3_display"] = 1;
 	$data["resume_block_3_title"] = "usage_this_today";
 	$data["resume_block_3_data"] = "0";
-	$data["resume_block_3_link_content"] = "view_more";
+	$data["resume_block_3_link_content"] = "";
 	$data["resume_block_3_link"] = "";
 
 	$data["resume_block_4_display"] = 1;
 	$data["resume_block_4_title"] = "users";
 	$data["resume_block_4_data"] = "0";
-	$data["resume_block_4_link_content"] = "view_more";
+	$data["resume_block_4_link_content"] = "";
 	$data["resume_block_4_link"] = "";
 
 

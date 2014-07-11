@@ -52,6 +52,7 @@ function show_modal(id_modal,accept_action){
 	$("#"+id_modal).modal();
 	$("#"+id_modal+" .accept_button").attr("href",accept_action);
 }
+
 function input_only_numbers(id_field){
 	if(isNaN($("#"+id_field).val())){
 		$("#"+id_field).val(0);
@@ -490,7 +491,4 @@ $( window ).resize(function() {
 });
 function calculateHeight(){
 		var contentHeight=parseInt($('.page-content').height());
-		if(911 > contentHeight){
-			console.log("Small");
-		}
 }

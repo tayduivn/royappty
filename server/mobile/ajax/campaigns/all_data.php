@@ -43,8 +43,30 @@
   	$user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
 	if(!checkUser($user)){echo json_encode($response);die();}
 
+  $table="apps";
+  $filter=array();
+  $filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
+  $app=getInBD($table,$filter);
 
+  $table="campaigns";
+  $filter=array();
+  $filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
+  $filter["status"]=array("operation"=>"=","value"=>1);
+  $fields=array();
+  if(!isInBD($table,$filter,$fields)){
+     $img_file = PATH."../resources/app-bg/".$app["app_bg_path"];
+     $imgData = base64_encode(file_get_contents($img_file));
+     $src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
+     $response["result"]=true;
+     $response["data"]["page"]="
+       <div class='page center_mobile_page' id='index'>
+         <img class='full-width full-height' src='".$src."'/>
+       </div>
+     ";
+     echo json_encode($response);
+     die();
+  }
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
@@ -53,16 +75,9 @@
 
 	$response["result"]=true;
 
-	$table="apps";
-	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
-	$app=getInBD($table,$filter);
 
- 	$table="campaigns";
-	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
-	$filter["status"]=array("operation"=>"=","value"=>1);
-	$fields=array();
+
+
 	$campaigns=listInBD($table,$filter,$fields);
 	$response["data"]["page"]="
 	<div class='page center_mobile_page' id='index'>
@@ -145,7 +160,7 @@
 									<div>
 										<img class='full-width' src='".$src."'/>
 									</div>
-									<h5 class='text-center m-l-10 m-r-10'>".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."</h5>
+									<h5 class='text-center m-t-40 m-b-40 m-l-30 m-r-30'>".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."</h5>
 								";
 			if($campaign["type"]==1){
 
