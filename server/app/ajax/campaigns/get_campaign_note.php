@@ -1,15 +1,39 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 14-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-	
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/get_campaign_note";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");	
+
  	$response=array();
- 	
- 	
+
+ 	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+	include(PATH."functions/check_session.php");
+	
  	// Data check START
 	if(!issetandnotempty($_POST["id_campaign_note"])){
 	 	$response["result"]=false;
@@ -30,8 +54,11 @@
  		die();
 	}
  	// Data check END
- 	
- 	
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
  	$table="campaign_notes";
 	$filter=array();
@@ -44,11 +71,22 @@
         <h4 class='semi-bold'><i class='fa fa-file-text-o'></i> ".$campaign_note["title"]."</h4>
 	</div>
 	<div class='modal-body'>
-		".$campaign_note["content"]."			
+		".$campaign_note["content"]."
 	</div>
 	";
 
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
  	echo json_encode($response);
 	debug_log("[".$page_path."] END");
+	die();
 
 ?>

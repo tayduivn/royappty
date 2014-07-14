@@ -1,27 +1,57 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 14-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/campaigns/get_campaign";
+	$page_path="server/app/ajax/campaigns/edit/discount";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+	include(PATH."functions/check_session.php");
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
  	$response["result"]=true;
-	
+
 	$table="campaigns";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
 	$campaign=getInBD($table,$filter);
-	
+
 	$response["data"]["page-title"]="<a href='../../../campaigns/'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</a> / <a href='#'>".htmlentities($s["edit_campaign"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8");
 	$response["data"]["page-options"]="";
-	
+
 	$response["data"]["new-discount-step-1"]="
 			<h4 class='m-t-0'>".htmlentities($new_discount_s["step_1_title"], ENT_QUOTES, "UTF-8")." <span class='pull-right text-muted'>".htmlentities($s["step_"], ENT_QUOTES, "UTF-8")." 1 ".htmlentities($s["_of"], ENT_QUOTES, "UTF-8")." 4</span></h4>
 			<form id='form-step1'>
@@ -103,7 +133,7 @@
 									<span class='text-black'>".htmlentities($new_discount_s["our_promos"], ENT_QUOTES, "UTF-8")."</span>
 								</div>
 								<div style='display:block;vertical-align:middle;height:247px;width:100%;overflow:hidden' class='p-l-10 p-r-10 text-center'>
-									<img id='campaign_icon_path-preview' class='full-width m-t-10' src='".$url_server."resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>				                
+									<img id='campaign_icon_path-preview' class='full-width m-t-10' src='".$url_server."resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>
 								<div style='height:136px;overflow:hidden' class='full-width m-t-10'>
 									<img class='full-width' src='".$url_server."server/app/assets/img/default-icon.jpg'/>
 								</div>
@@ -206,7 +236,7 @@
 										<span class='text-black' id='title-preview'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</span>
 									</div>
 									<div style='display:block;vertical-align:middle;height:247px;width:100%;overflow:hidden' class='text-center'>
-										<img id='campaign_image_path-preview' class='full-width' src='".$url_server."resources/campaign-image/".$campaign["campaign_image_path"]."'/>		
+										<img id='campaign_image_path-preview' class='full-width' src='".$url_server."resources/campaign-image/".$campaign["campaign_image_path"]."'/>
 										<div class='m-t-10 p-l-10 p-r-10 text-muted text-small' style='overflow-wrap:break-word;font-size:9px;' id='content-preview'>
 											".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."
 										</div>
@@ -226,7 +256,7 @@
 					</div>
 				</div>
 			</form>
-	
+
 	";
 	$response["data"]["new-discount-step-4"]="
 		<h4 class='m-t-0'>".htmlentities($new_discount_s["step_4_title"], ENT_QUOTES, "UTF-8")."<span class='pull-right text-muted'>".htmlentities($s["step_"], ENT_QUOTES, "UTF-8")." 4 ".htmlentities($s["_of"], ENT_QUOTES, "UTF-8")." 4</span></h4>
@@ -282,7 +312,7 @@
 				</div>
 			</div>
 			<div class='row'>
-				<div class='col-md-12'>			
+				<div class='col-md-12'>
 					<div style='overflow:auto'>
 						<div class='form-group'>
 							<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
@@ -291,9 +321,9 @@
 					</div>
 				</div>
 			</div>
-				
+
 		</form>
-	
+
 	";
 	$response["data"]["new-discount-step-end"]="
 		<form id='form-end'>
@@ -338,9 +368,20 @@
 			</div>
 		</div>
 	";
-	
-	
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
 
 ?>
