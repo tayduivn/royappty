@@ -11,7 +11,8 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* no_brand
+	* brand_not_valid
 	*
 	*
 	*********************************************************/
@@ -26,7 +27,7 @@
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/get_admin";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
+
 
  	$response=array();
 
@@ -34,6 +35,10 @@
  	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
+	// BRAND
+	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
 
  	// Data check START
 

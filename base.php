@@ -1,4 +1,15 @@
 <?php
+
+
+  // BRAND
+  $brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+  if(!checkBrand($brand)){echo json_encode($response);die();}
+
+
+
+
+
+
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
@@ -11,8 +22,8 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
-	*
+	* no_brand
+	* brand_not_valid
 	*
 	*********************************************************/
 
