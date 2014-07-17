@@ -1,15 +1,19 @@
 <?php
 
+
 include_once(PATH."include/settings.php");
 include_once(PATH."include/bd.php");
 include_once(PATH."include/general.php");
 include_once(PATH."include/royappty_functions.php");
 
+error_log("includes");
+
 if(!isset($manejador)) {
+error_log("man");
 	$manejador = db_connect();
 }
 
-
+error_log("functions");
 function isInBD($table,$filter=array()){
 	global $manejador;
 	global $conf;
@@ -219,9 +223,10 @@ function deleteInBD($table,$filter=array()) {
 	$r = db_query($query,$manejador);
 }
 
+error_log("config start");
 $table="config";
 $filter=array();
 $filter["used"]=array("operation"=>"=","value"=>"1");
 $CONFIG=getInBD($table,$filter);
-
+error_log("config end");
 ?>

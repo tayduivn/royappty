@@ -659,7 +659,7 @@ $new_coupon_s["status"] = "Estado de la campaña";
 $new_coupon_s["status_help"] = "Seleccione el estado de la campaña";
 
 
-
+$resume_block_s[""]="";
 $resume_block_s["usage_this_mounth"]="Uso este mes";
 $resume_block_s["view_more"]="Ver más";
 $resume_block_s["campaigns"]="Campañas";

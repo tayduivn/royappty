@@ -1,17 +1,37 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-
-
-
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/apps/get_app";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
 
  	$response=array();
 
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+	include(PATH."functions/check_session.php");
 
  	// Data check START
 
@@ -28,8 +48,11 @@
 
  	// Data check END
 
-	$response["result"]=true;
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
 
+	$response["result"]=true;
 
  	$table="apps";
 	$filter=array();
@@ -107,10 +130,18 @@
 
 
 
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
 
 
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/apps/get_app] END");
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
 
 ?>

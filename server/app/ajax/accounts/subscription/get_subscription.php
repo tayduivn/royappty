@@ -1,30 +1,57 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:m:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/campaigns/get_campaign";
+	$page_path="server/app/ajax/accounts/subscription/get_subscription";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
-	
+
+
  	$response=array();
- 	
- 	
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+	include(PATH."functions/check_session.php");
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
-	
-	
+
  	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$brand=getInBD($table,$filter);
-	
+
 
 	$response["data"]["page-title"]="<a href='../'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["subscription"], ENT_QUOTES, "UTF-8");
-	
-	
+
+
 	$response["data"]["subscription-data"]="
 		<h3 class='m-t-0'>".htmlentities($s["your_subscription_type_is"], ENT_QUOTES, "UTF-8")." <span class='text-success'>".htmlentities($subscription_type_name[$brand["subscription_type"]], ENT_QUOTES, "UTF-8")."</span></h3>
 		<p>".htmlentities($subscription_type_name_helper[$brand["subscription_type"]], ENT_QUOTES, "UTF-8")."</p>
@@ -41,9 +68,9 @@
 			</div>
 
 		";
-			
+
 		}else if($brand["expiration_date"]-$timestamp<21600){
-			$response["data"]["subscription-data"].=" 
+			$response["data"]["subscription-data"].="
 			<div class='box box-warning'>
 				<p class='text-warning'>".htmlentities($s["account_expiration_date"], ENT_QUOTES, "UTF-8")." ".date("d-m-Y",$brand["expiration_date"])."</p>
 				<p class='text-warning'>".htmlentities($s["expiration_date_warning"], ENT_QUOTES, "UTF-8")."</p>
@@ -56,20 +83,32 @@
 			";
 		}
 	}
-		
+
 	$response["data"]["subscription-data"].="
 		";
-		
+
 	$response["data"]["subscription-data"].="
 		<h4 class='m-t-20'>".htmlentities($s["payments"], ENT_QUOTES, "UTF-8")."</h4>
 		<p>".htmlentities($s["payments_helper"], ENT_QUOTES, "UTF-8")."</p>
 		<a href='./receipts/' class='btn btn-white'>".htmlentities($s["view_payments_list"], ENT_QUOTES, "UTF-8")."</a>
 	";
-	
-	
-	
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+
+
+
+ 	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
 
 ?>

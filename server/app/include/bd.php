@@ -1,4 +1,11 @@
-<?php 
+<?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 17-07-2014
+* Version: 1.02
+*
+*********************************************************/
 
 /*
  * Funcion de conexión al servidor de base de datos.
@@ -10,7 +17,7 @@ function db_connect() {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		$manejador = @mysql_connect($conf['bdserver'].":".$conf['bdport'],$conf['bduser'],$conf['bdpass']);
+		$manejador = mysqli_connect($conf['bdserver'],$conf['bduser'],$conf['bdpass']);
 		if(!$manejador) {
 			throw new Exception("bd.php - db_connect(): Error en la conexion de la BD.");
 		}
@@ -32,7 +39,7 @@ function db_choose($manejador) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		$db_selected = @mysql_select_db($conf['bd'],$manejador);
+		$db_selected = mysqli_select_db($manejador,$conf['bd']);
 		if (!$db_selected) {
 			throw new Exception("bd.php - db_choose(): Error al seleccionar tabla.");
 		}
@@ -48,13 +55,13 @@ function db_choose($manejador) {
  *		$query: cadena con la operacion a realizar sobre la base de datos.
  *		$manejador: identificador de conexión con la base de datos.
  * Salidas:
- *		$result: identificador de consulta o resultset. 
+ *		$result: identificador de consulta o resultset.
  */
 function db_exec($query,$manejador) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		$result = mysql_query($query,$manejador);
+		$result = mysqli_query($manejador,$query);
 		if(!$result) {
 			throw new Exception("bd.php - db_exec(): No se ha podido ejecutar la consulta. ".$query);
 		}
@@ -71,13 +78,13 @@ function db_exec($query,$manejador) {
  *		$query: cadena con la consulta a realizar sobre la base de datos.
  *		$manejador: identificador de conexión con la base de datos.
  * Salidas:
- *		$result: identificador de consulta o resultset. 
+ *		$result: identificador de consulta o resultset.
  */
 function db_query($query,$manejador) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		$result = mysql_query($query,$manejador);
+		$result = mysqli_query($manejador,$query);
 		if(!$result) {
 			throw new Exception("bd.php - db_query(): No se ha podido realizar la consulta. ".$query);
 		}
@@ -95,11 +102,11 @@ function db_query($query,$manejador) {
  * Salidas:
  *		$array: array asociativo y por referencia con los datos de una fila de la consulta.
  */
-function db_fetch($result, $type=MYSQL_ASSOC) {
+function db_fetch($result, $type=MYSQLI_BOTH) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		$array = mysql_fetch_array($result,$type);
+		$array = mysqli_fetch_array($result,$type);
 		return $array;
 	} else {
 		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
@@ -118,7 +125,7 @@ function db_count($result) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		$num = mysql_num_rows($result);
+		$num = mysqli_num_rows($result);
 		return $num;
 	} else {
 		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
@@ -138,7 +145,7 @@ function db_result($result,$field) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		$res = mysql_result($result,0,$field);
+		$res = mysqli_result($result,0,$field);
 		return $res;
 	} else {
 		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
@@ -153,9 +160,10 @@ function db_result($result,$field) {
  */
 function db_last_id() {
 	global $conf;
+	global $manejador;
 
 	if($conf['bdtype'] == "mysql") {
-		if($id = mysql_insert_id()) {
+		if($id = mysqli_insert_id($manejador)) {
 			return $id;
 		} else {
 			throw new Exception("bd.php - db_last_id(): Error recuperando el id del ultimo elemento insertado.");
@@ -177,9 +185,9 @@ function db_secure_field($field,$manejador) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		return mysql_real_escape_string(addslashes($field),$manejador);
+		return mysqli_real_escape_string($manejador,addslashes($field));
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysqli_error();
 		throw new Exception($error);
 	}
 }
@@ -194,11 +202,11 @@ function db_close($manejador) {
 	global $conf;
 
 	if($conf['bdtype'] == "mysql") {
-		if(!mysql_close($manejador)) {
+		if(!mysqli_close($manejador)) {
 			throw new Exception("bd.php - db_close(): Error al cerrar la conexion con la BD.");
 		}
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysqli_error();
 		throw new Exception($error);
 	}
 }

@@ -1,31 +1,58 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/receipts/get_receipt";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+	include(PATH."functions/check_session.php");
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="receipts";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$filter["id_receipt"]=array("operation"=>"=","value"=>$_POST["id_receipt"]);
 	$receipt=getInBD($table,$filter);
-	
+
 
  	$response["data"]["page-title"] = "<a href='../../'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / <a href='../'>".htmlentities($s["subscription"], ENT_QUOTES, "UTF-8")."</a> / <a href='../receipts/'>".htmlentities($s["receipts"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["receipt"], ENT_QUOTES, "UTF-8")." #".$receipt["id_receipt"];
-	
-	
+
+
 	$response["data"]["subscription-data"]="
 		<div class='pull-right'>
 			<img style='width:200px' src='".$url_server."server/app/assets/img/royappty-logo.png'/>
@@ -54,7 +81,7 @@
 					<td>".htmlentities($receipt["distributor_id"], ENT_QUOTES, "UTF-8")."</td>
 				</tr>
 			</table>";
-			
+
 	$table='receipt_lines';
 	$filter=array();
 	$filter["id_receipt"]=array("operation"=>"=","value"=>$receipt["id_receipt"]);
@@ -67,9 +94,9 @@
 				<span class='pull-right'>".htmlentities($receipt_line["price_vat"], ENT_QUOTES, "UTF-8")."€</span>
 				".htmlentities($receipt_line["content"], ENT_QUOTES, "UTF-8")."
 			</div>
-		";	
+		";
 	}
-	
+
 	$response["data"]["subscription-data"].="
 		<div class='bg-grey padding-10'>
 			<span class='pull-right'>".$receipt["vat"]."€</span>
@@ -84,12 +111,21 @@
 		<a href='../receipts/' class='btn btn-white'>Volver al listado de recibos</a>
 	</div>
 	";
-	
-	
-	
-	
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
 
 ?>

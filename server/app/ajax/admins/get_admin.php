@@ -1,20 +1,42 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/campaigns/get_campaign";
+	$page_path="server/app/ajax/admins/get_admin";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+
+
+ 	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
  	// Data check START
- 	
+
  	$table="admins";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -26,12 +48,15 @@
  		echo json_encode($response);
  		die();
 	}
- 	
+
  	// Data check END
-	
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
-	
-	
+
  	$table="admins";
 	$filter=array();
 	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
@@ -76,18 +101,18 @@
 				</div>
 			</div>
 		</div>
-		
+
 		";
 	}
-	
+
 	$response["data"]["page-title"]="<a href='../admins/'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / ".$admin["name"]."<a href='../admin/edit/?id_admin=".$_POST["id_admin"]."' class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_admin"], ENT_QUOTES, "UTF-8")."</a> ";
 	if($admin["brand_admin"]!=1){
 		$response["data"]["page-title"].="<a href='javascript:show_modal(\"delete_admin_alert\",\"javascript:delete_admin(".$admin["id_admin"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
 	}
-	
-	
-	
-		
+
+
+
+
 	$response["data"]["admin-data"]="
 		<h3 class='m-t-0'>".htmlentities($admin["name"], ENT_QUOTES, "UTF-8")."</h3>
 		<h5>".$s["admins_active_icon"][$admin["active"]]." ".htmlentities($s["admins_active"][$admin["active"]], ENT_QUOTES, "UTF-8")."</h5>
@@ -96,17 +121,17 @@
 		<h6>".$s["admins_can_validate_codes_icon"][$admin["can_validate_codes"]]." ".htmlentities($s["admins_can_validate_codes"], ENT_QUOTES, "UTF-8")."</h6>
 		<h6>".$s["admins_can_manage_campaigns_icon"][$admin["can_manage_campaigns"]]." ".htmlentities($s["admins_can_manage_campaigns"], ENT_QUOTES, "UTF-8")."</h6>
 		<h6 class='text-black'>";
-	
+
 	if($admin["last_connection"]==0){
 		$response["data"]["admin-data"].=htmlentities($s["without_last_connection"], ENT_QUOTES, "UTF-8");
 	}else{
-		$response["data"]["admin-data"].=htmlentities($s["last_connection_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y  H:m",$admin["last_connection"]);	
+		$response["data"]["admin-data"].=htmlentities($s["last_connection_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y  H:m",$admin["last_connection"]);
 	}
-	
-	
+
+
 	$response["data"]["admin-data"].="
 		</h6>";
-		
+
 	$blocks_count=0;
 	for($i=1;$i<=4;$i++){
 		if($admin["resume_block_".$i."_display"]==1){
@@ -115,9 +140,9 @@
 	}
 	$blocks_width=100;
 	if($blocks_count>0){
-		$blocks_width=12/$blocks_count;	
+		$blocks_width=12/$blocks_count;
 	}
-	$response["data"]["resume-blocks"]="";		
+	$response["data"]["resume-blocks"]="";
 	for($i=1;$i<=4;$i++){
 		$response["data"]["resume-block-".$i]="";
 		if($admin["resume_block_".$i."_display"]==1){
@@ -125,36 +150,36 @@
 			$filter=array();
 			$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
 			$fields=array("resume_block_".$i."_title","resume_block_".$i."_data","resume_block_".$i."_link","resume_block_".$i."_link_content");
-			
+
 			$resume_block=getInBD($table,$filter,$fields);
-			
+
 			$response["data"]["resume-blocks"].="
 			<div class='col-md-".$blocks_width."'>
 				<div class='grid simple'>
 					<div class='tiles pink'>
-						<div class='tiles-body'>	
+						<div class='tiles-body'>
 							<h6 class='text-white all-caps no-margin'>
 								".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
 							</h6>
 							<div class='heading'>";
 						$block_data=create_block_data($resume_block["resume_block_".$i."_title"],$admin["id_admin"]);
 						$response["data"]["resume-blocks"].="
-						
+
 							<h1><span class='animate-number text-white' data-value='".$block_data."' data-animation-duration='1200'>0</h1>
-							</div>			
+							</div>
 							<div class='description'>
 								<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>";
 		}
-		
+
 	}
-	
-	
-	
+
+
+
 	$table="used_codes";
 	$filter=array();
 	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
@@ -191,7 +216,7 @@
 			</table>
 		";
 	}
-	
+
 	$response["data"]["graph-title"]="<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>";
 	$table="validated_codes_day_summaries";
 	$filter=array();
@@ -202,15 +227,26 @@
 		$response["data"]["graph-value-".$i]=0;
 		if(isInBD($table,$filter)){
 			$used_codes_day_summary=getInBD($table,$filter,$fields,$order,$limit);
-			$response["data"]["graph-value-".$i]=$used_codes_day_summary["validated_codes_amount"];	
+			$response["data"]["graph-value-".$i]=$used_codes_day_summary["validated_codes_amount"];
 		}
-		
-	}
-	
-	
-	
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+	}
+
+
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
 
 ?>

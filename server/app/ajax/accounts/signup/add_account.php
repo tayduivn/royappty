@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 07-07-2014
-	* Version: 0.91
+	* Last Edit: 17-07-2014
+	* Version: 0.93
 	*
 	*********************************************************/
 
@@ -138,14 +138,14 @@
 		copy(PATH."../../".$_POST["app_icon_path"],PATH."../../resources/app-icon/".$timestamp.".jpg");
 		$app["app_icon_path"] = $timestamp.".jpg";
 	}else{
-		copy(PATH."../../server/app/assets/img/default-app-icon.jpg",PATH."../../resources/app-icon/".$timestamp.".jpg");
+		copy(PATH."../../server/app/assets/img/default-app-icon.jpg",PATH."resources/app-icon/".$timestamp.".jpg");
 		$app["app_icon_path"] = $timestamp.".jpg";
 	}
 	if(issetandnotempty($_POST["app_bg_path"])){
 		copy(PATH."../../".$_POST["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
 		$app["app_bg_path"] = $timestamp.".jpg";
 	}else{
-		copy(PATH."../../server/app/assets/img/default-app-background.jpg",PATH."../../resources/app-bg/".$timestamp.".jpg");
+		copy(PATH."../../server/app/assets/img/default-app-background.jpg",PATH."resources/app-bg/".$timestamp.".jpg");
 		$app["app_bg_path"] = $timestamp.".jpg";
 	}
 
@@ -187,7 +187,7 @@
 
 	$table="requests";
 	$data=array();
-	$data["code"]=strtoupper(dechex(strtotime(date("Y-m-d H:i:s")).$_SESSION["admin"]["id_brand"]));
+	$data["code"]=strtoupper(dechex(strtotime(date("Y-m-d H:i:s")).$brand["id_brand"]));
 	$data["id_brand"]=$brand["id_brand"];
 	$data["type"]="app_creation";
 	$data["status"]="in_process";
@@ -201,5 +201,6 @@
 
 	debug_log("[".$page_path."] END");
  	echo json_encode($response);
+	die();
 
 ?>

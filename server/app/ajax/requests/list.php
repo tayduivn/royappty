@@ -1,46 +1,73 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/requests/list";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
-	
- 	$response=array();
- 	
 
- 	
-	
+ 	$response=array();
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+	include(PATH."functions/check_session.php");
+
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
  	$response["data"]["page-title"] = "<a href='./'>".htmlentities($s["requests"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["all_requests"], ENT_QUOTES, "UTF-8");
  	$response["data"]["table-header"] = "
  		<th style='width:70%'>".htmlentities($s["id_request"], ENT_QUOTES, "UTF-8")."</th>
  		<th style='width:20%'>".htmlentities($s["status"], ENT_QUOTES, "UTF-8")."</th>
         <th style='width:10%'>".htmlentities($s["creation_date"], ENT_QUOTES, "UTF-8")."</th>";
- 	
+
  	if(!issetandnotempty($_POST["status"])){
 	 	$_POST["status"]=0;
  	}
- 
+
  	for($i=0;$i<=3;$i++){
 	 	$tab_active[$i]="";
 	 	if($_POST["status"]==$i){
 		 	$tab_active[$i]="class='active'";
 	 	}
  	}
- 	
+
  	$response["data"]["tabs"]="
         	<li ".$tab_active[0]."><a href='?status=0'>".htmlentities($s["all_requests"], ENT_QUOTES, "UTF-8")."</a></li>
             <li ".$tab_active[1]."><a href='?status=in_process'>".htmlentities($s["active_requests"], ENT_QUOTES, "UTF-8")."</a></li>
             <li ".$tab_active[2]."><a href='?status=ended'>".htmlentities($s["end_requests"], ENT_QUOTES, "UTF-8")."</a></li>
-           
+
     ";
- 	
- 	$response["data"]["modals"]=" 	
+
+ 	$response["data"]["modals"]="
 		<div class='modal fade' id='delete_request_alert' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 			<div class='modal-dialog'>
 				<div class='modal-content'>
@@ -78,11 +105,22 @@
 			</div>
 		</div>
  	";
-	
-	
-	
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/requests/get_request] END");
+
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
 
 ?>

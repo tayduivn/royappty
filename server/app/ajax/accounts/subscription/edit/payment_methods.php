@@ -1,31 +1,60 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/campaigns/get_campaign";
+	$page_path="server/app/ajax/accounts/subscription/edit/payment_methods";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
  	
- 	
+ 	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+	include(PATH."functions/check_session.php");
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$brand=getInBD($table,$filter);
-	
+
 
 	$response["data"]["page-title"]="<a href='../../'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / <a href='../'>".htmlentities($s["subscription"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["change_subscription_type"], ENT_QUOTES, "UTF-8");
-	
-	
-	
+
+
+
 	$response["data"]["form-step-3"]="
 			<h4 class='m-t-0'>".htmlentities($s["select_payment_method"], ENT_QUOTES, "UTF-8")."</h4>
 				<div id='form-warning'></div>
@@ -51,7 +80,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -77,7 +106,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -100,7 +129,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -123,7 +152,7 @@
 									</td>
 								</tr>
 							</table>
-					         
+
 						</div>
 					</div>
 				</div>
@@ -133,12 +162,12 @@
 						<a href='javascript:prevstep()' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
 					</div>
 				</div>";
-	
-	
 
-			
-			
-	
+
+
+
+
+
 	$response["data"]["form-step-end"]="
 			<input type='hidden' id='subscription_type' value='".$_POST["subscription_type"]."'/>
 			<input type='hidden' id='payment_plan' value='".$_POST["payment_plan"]."'/>
@@ -170,8 +199,19 @@
 			</div>
 		</div>
 	";
-	
-	 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
 
 ?>

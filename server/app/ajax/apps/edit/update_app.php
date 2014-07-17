@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-06-2014
-	* Version: 0.90
+	* Last Edit: 17-07-2014
+	* Version: 0.93
 	*
  	*********************************************************/
 
@@ -100,4 +100,6 @@
 
  	debug_log("[".$page_path."] END");
  	echo json_encode($response);
+	die();
+	
 ?>

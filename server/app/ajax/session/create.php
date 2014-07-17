@@ -2,7 +2,7 @@
   /*********************************************************
   *
   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-  * Last Edit: 14-07-2014
+  * Last Edit: 17-07-2014
   * Version: 0.93
   *
    *********************************************************/
@@ -11,7 +11,7 @@
   * AJAX RETURNS
   *
   * ERROR CODES
-  *	
+  *
   *
   *
   *********************************************************/
@@ -24,7 +24,8 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."include/inbd.php");
- 	debug_log("[server/app/ajax/session/create] START");
+  $page_path = "server/app/ajax/session/create";
+ 	debug_log("[".$page_path."] START");
  	$response=array();
 
 

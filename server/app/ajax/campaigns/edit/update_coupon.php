@@ -24,7 +24,7 @@
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/campaigns/edit/update_discount";
+	$page_path="server/app/ajax/campaigns/edit/update_coupon";
 	debug_log("[".$page_path."] START");
 
 	$response=array();

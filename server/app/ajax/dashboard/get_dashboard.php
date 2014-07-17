@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 14-07-2014
+	* Last Edit: 17-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -26,18 +26,19 @@
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/dashboard/get_dashboard";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
+
 	$response=array();
 
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+	include(PATH."functions/check_session.php");
 
  	$table="admins";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$filter["id_admin"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_admin"]);
 
-	/*********************************************************
-	* DATA CHECK
-	*********************************************************/
 
 	if(isInBD($table,$filter)){
 
@@ -176,15 +177,15 @@
  		die();
 	}
 
-/*********************************************************
-* DATABASE REGISTRATION
-*********************************************************/
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
 
 
 
-/*********************************************************
-* AJAX CALL RETURN
-*********************************************************/
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
  	echo json_encode($response);
 	debug_log("[".$page_path."] END");
 	die();

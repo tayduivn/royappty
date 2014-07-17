@@ -2,24 +2,55 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-06-2014
-	* Version: 0.91
+	* Last Edit: 17-07-2014
+	* Version: 0.93
 	*
 	*********************************************************/
 
-	define('PATH', str_replace('\\', '/','../../../'));
-	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
 
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+	error_log("1");
+	define('PATH', str_replace('\\', '/','../../../'));
+	error_log("2");
+	@session_start();
+	error_log("3");
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+	error_log("4");
 
 
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/accounts/login";
+
+	error_log("4.0");
+	$page_path="server/app/ajax/accounts/login/login";
 	debug_log("[".$page_path."] START");
 
+	error_log("4.1");
  	$response=array();
 
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
+
+	error_log("4.2");
 
 	$response["data"]["login-title"]="
 		<div class='text-center' style='height:100%'>
@@ -30,6 +61,7 @@
 
 	";
 
+	error_log("5");
 	//Form error handeler
 	$error_alert="";
 	error_handler();
@@ -63,6 +95,7 @@
 				</div>
 			</form>
 	";
+
 	$response["data"]["login-step-end"]="
 		<form id='form-end'>
 			<input type='hidden' id='email' />
@@ -86,9 +119,22 @@
 			</div>
 		</div>
 	";
+error_log("6");
 
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
 
 ?>

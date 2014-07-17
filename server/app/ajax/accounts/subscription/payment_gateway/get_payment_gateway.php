@@ -1,32 +1,60 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
 	define('PATH', str_replace('\\', '/','../../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:m:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/campaigns/get_campaign";
+	$page_path="server/app/ajax/accounts/subscription/payment_gateway/get_payment_gateway";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+	include(PATH."functions/check_session.php");
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$brand=getInBD($table,$filter);
-	
+
 	$table="subscription_method_plans";
 	$filter=array();
 	$filter["subscription_type"]=array("operation"=>"=","value"=>$brand["subscription_type"]);
 	$filter["payment_plan"]=array("operation"=>"=","value"=>$brand["payment_plan"]);
 	$subscription_method_plans=getInBD($table,$filter);
-	
+
 	$table="orders";
 	$data=array();
 	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
@@ -37,12 +65,12 @@
 	$data["amount"]=$subscription_method_plans["price"];
 	$order=array();
 	$order["id_order"]=addInBD($table,$data);
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	$table="config";
 	$filter=array();
 	$filter["used"]=array("operation"=>"=","value"=>1);
@@ -52,7 +80,7 @@
 	$royappty_bank["bank_transfer_amount"]=number_format($subscription_method_plans["price"],2);
 
 	$response["data"]["page-title"]="<a href='../../'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / <a href='../'>".htmlentities($s["subscription"], ENT_QUOTES, "UTF-8")." </a>/ ".htmlentities($s["payment_gateway"], ENT_QUOTES, "UTF-8");
-	
+
 	switch ($brand["payment_method"]){
 		case "paypal":
 			$response["data"]["payment-gateway"]="
@@ -75,7 +103,7 @@
 			";
 			break;
 		case "bank_transfer":
-		
+
 			$table="requests";
 			$data=array();
 			$data["id_brand"]=$_SESSION["admin"]["id_brand"];
@@ -86,8 +114,8 @@
 			$data["data"]=$order["id_order"];
 			$request=array();
 			$request["id_request"]=addInBD($table,$data);
-	
-	
+
+
 			$response["data"]["payment-gateway"]="
 				<h3 class='m-t-0'>".htmlentities($payment_method["bank_transfer"], ENT_QUOTES, "UTF-8")."</h3>
 				<div class='m-t-20' id='printable'>
@@ -163,7 +191,7 @@
 							</td>
 						</tr>
 					</table>
-					
+
 				</div>
 				<div class='text-center m-t-20 m-b-20'>
 					<a href='javascript:print_area()' class='btn btn-white'>".htmlentities($s["print"], ENT_QUOTES, "UTF-8")."</a>
@@ -178,7 +206,7 @@
 					<div id='form-content'>
 						<div id='step-1' class='ajax-loader-new-discount-step-1'>
 							<h3 class='m-t-0'>".htmlentities($payment_method["standing_order_payment"], ENT_QUOTES, "UTF-8")."</h3>
-				
+
 							<div class='box box-warning m-b-10'>
 								<p class='text-warning m-b-0'>".htmlentities($s["standing_order_payment_data_helper"], ENT_QUOTES, "UTF-8")."</p>
 							</div>
@@ -208,7 +236,7 @@
 												</div>
 											</div>
 										</div>
-			
+
 									</div>
 								</div>
 								<div class='form-group text-center'>
@@ -222,7 +250,7 @@
 							</form>
 						</div>
 					</div>
-					<div id='form-loading' class='ajax-loader-new-discount-step-loading' style='display:none'>											
+					<div id='form-loading' class='ajax-loader-new-discount-step-loading' style='display:none'>
 						<div class='text-center'>
 							<div class='loader-activity'></div>
 							<h3>".htmlentities($s["loading..."], ENT_QUOTES, "UTF-8")."</h3>
@@ -247,17 +275,27 @@
 							<div class='m-t-20'>
 								<a href='../' class='btn btn-white m-r-10'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
 							</div>
-						</div>						
+						</div>
 					</div>
 				</div>
 			</div>
 			";
-			break;	
+			break;
 	}
-	
-	
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
 
 ?>

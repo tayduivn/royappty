@@ -1,18 +1,43 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/list";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
- 	
+	
+ 	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+
+
+
  	if(!issetandnotempty($_POST["active"])){
 	 	$_POST["active"]=0;
  	}
@@ -22,16 +47,19 @@
 		 	$tab_active[$i]="class='active'";
 	 	}
  	}
- 	
- 	
+
+
  	$response["data"]["tabs"]="
         	<li ".$tab_active[0]."><a href='?active=0'>".htmlentities($s["all_admins"], ENT_QUOTES, "UTF-8")."</a></li>
             <li ".$tab_active[1]."><a href='?active=1'>".htmlentities($s["active_admins"], ENT_QUOTES, "UTF-8")."</a></li>
             <li ".$tab_active[2]."><a href='?active=2'>".htmlentities($s["inactive_admins"], ENT_QUOTES, "UTF-8")."</a></li>
-           
+
     ";
- 	
-	
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
 	$response["result"]=true;
  	$response["data"]["page-title"] = "<a href='./'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["all_admins"], ENT_QUOTES, "UTF-8")."<a href='../admin/new/' class='m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8")."</a>";
  	$response["data"]["table-header"] = "
@@ -40,7 +68,7 @@
         <th style='width:20%;' class='text-center'>".htmlentities($s["can_manage_campaigns"], ENT_QUOTES, "UTF-8")."</th>
         <th style='width:20%;'>".htmlentities($s["last_action"], ENT_QUOTES, "UTF-8")."</th>
         <th style='width:10%;'>".htmlentities($s["validated_codes"], ENT_QUOTES, "UTF-8")."</th>";
- 	$response["data"]["delete-modal"]=" 	
+ 	$response["data"]["delete-modal"]="
 		<div class='modal fade' id='delete_admin_alert' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 			<div class='modal-dialog'>
 				<div class='modal-content'>
@@ -61,8 +89,20 @@
 			</div>
 		</div>
  	";
-	
- 	echo json_encode($response);
+
+ /*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
 	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
 
 ?>

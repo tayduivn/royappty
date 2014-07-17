@@ -1,10 +1,29 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
-	
-	
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/signup/upload_image";
 	debug_log("[".$page_path."] START");
@@ -14,6 +33,11 @@
 	$res = new stdClass();
 	// Result content type
 	header('content-type: application/json');
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
 
 	// Maximum file size
 	$maxsize = 10; //Mb
@@ -28,14 +52,20 @@
 		echo json_encode($res);
 	    die();
 	}
-	
-	
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
+
 	$types = Array('image/png', 'image/gif', 'image/jpeg');
-	
+
 	$source = file_get_contents($_FILES["xfile"]["tmp_name"]);
 	$folder="../../../../../resources/tmp/";
 	$filename = $folder . $timestamp . '.jpg';
-	
+
 	$width=0;
 	if(isset($_GET["width"])&&(!empty($_GET["width"]))){
 		$width=$_GET["width"];
@@ -48,12 +78,12 @@
 	if(isset($_GET["crop"])&&(!empty($_GET["crop"]))){
 		$crop=true;
 	}
-	
+
 	imageresize($source, $filename,$width,$height,$crop);
-	
+
 	$path = str_replace('upload.php', '', $_SERVER['SCRIPT_NAME']);
-	
-	
+
+
 	// Result data
 	$res->filename = $url_server.'resources/tmp/'.$timestamp . '.jpg';
 	$res->path = 'resources/tmp/'.$timestamp . '.jpg';
@@ -62,11 +92,24 @@
 	$res->indice = "temp";
 	$res->img = '<img src="'.$url_server.'resources/tmp/'.'temp'.'.jpg" alt="image" />';
 	$res->error =false;
-	
+
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
 	// Return to JSON
 	echo json_encode($res);
-	
 	debug_log("[".$page_path."] END");
+	die();
+
+	
 
 
 // Image resize function with php + gd2 lib
