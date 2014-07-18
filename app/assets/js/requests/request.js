@@ -12,7 +12,7 @@ $(document).ready(function(){
 			$(".modal").modal("hide");
 			$("#ajax_error").modal("show");
 			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);			
+				$("#ajax_error .modal-msg").html(jqXHR);
 			}
 		},
 		success: function(response) {
@@ -21,10 +21,9 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
 });
@@ -42,7 +41,7 @@ function delete_request(id_request){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide'); 
+			$('.modal').modal('hide');
 			$('#ajax_error').modal('show');
 			$('#ajax_error .msg-modal').html(jqXHR);
 		},
@@ -50,9 +49,9 @@ function delete_request(id_request){
 			if(response.status){
 				show_modal("deleted_request_success_alert","javascript:window.location=\"../requests/\"");
             }else{
-            	
+
 			}
-				
+
 		}
 	});
 }

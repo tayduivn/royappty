@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 14-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -33,7 +33,6 @@
 	* DATA CHECK
 	*********************************************************/
 
-	include(PATH."functions/check_session.php");
 
 
 
@@ -44,7 +43,7 @@
 	$table="campaigns";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	if(issetandnotempty($_GET["status"])){
+	if(@issetandnotempty($_GET["status"])){
 		$filter["status"]=array("operation"=>"=","value"=>$_GET["status"]);
  	}
 	if(isInBD($table,$filter)){
@@ -81,8 +80,8 @@
 	 		$filter["id_campaign"]=array("operation"=>"=","value"=>$campaign["id_campaign"]);
 	 		$used_codes_summary=getInBD($table,$filter);
 
-	 		if(!issetandnotempty($used_codes_month_summary["used_codes_amount"])){$used_codes_month_summary["used_codes_amount"]=0;}
-	 		if(!issetandnotempty($used_codes_summary["used_codes_amount"])){$used_codes_summary["used_codes_amount"]=0;}
+	 		if(!@issetandnotempty($used_codes_month_summary["used_codes_amount"])){$used_codes_month_summary["used_codes_amount"]=0;}
+	 		if(!@issetandnotempty($used_codes_summary["used_codes_amount"])){$used_codes_summary["used_codes_amount"]=0;}
 
 	 		$response["aaData"][]=array(
 

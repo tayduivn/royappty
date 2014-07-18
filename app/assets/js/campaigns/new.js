@@ -19,10 +19,9 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
 });

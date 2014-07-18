@@ -190,6 +190,7 @@ $s["no_used_codes"] = "No se ha usado esta promoción";
 $s["edit_campaign"] = "Editar campaña";
 $s["campaign_deleted"] = "Campaña Borrada";
 $s["view_all_notes"] = "Ver todas las notas";
+$s["there_is_no_notes_to_show"]="No hay notas que mostrar";
 
 //Campaign / new
 $s["select_campaign_type"] = "Seleccione tipo de Campaña";
@@ -298,7 +299,7 @@ $s["user_didnt_used_codes"] = "No ha validado ningún código";
 //Users / get
 $s["without_created_date"] = "Sin fecha de creación";
 $s["created_date_the"] = "Creado el ";
-
+$s["user_there_is_no_notes_to_show"]= "No hay notas que mostrar";
 
 //Groups / List
 $s["users_amount"] = "Número de Usuarios";
@@ -309,9 +310,10 @@ $s["group_deleted"] = "Grupo Borrado";
 
 // Group / Get
 $s["edit_group"] = "Editar Grupo";
-
+$s["group_there_is_no_notes_to_show"]="No hay notas que mostrar";
 
 // Group / add
+$s["add_group_title"]= "Añadir grupo";
 $s["group_name"] = "Nombre del grupo";
 $s["group_name_help"] = "Seleccione un nombre para el grupo";
 $s["select_users"] = "Usuarios del grupo";
@@ -376,11 +378,15 @@ $s["id_request"] = "Identificador de Solicitud";
 $s["active_requests"] = "En Proceso";
 $s["end_requests"] = "Finalizadas";
 $s["view_request"] = "Ver solicitud";
-$s["requests_types"]["app_update"]="Cambios en Aplicación";
+$s["requests_types"]["app_creation"]="Creación de la Aplicación";
+$s["requests_types"]["app_update"]="Cambios en la Aplicación";
 $s["requests_types"]["bank_transfer_confirmation"]="Confirmación de Transferencia";
 $s["requests_types"]["standing_order_payment_confirmation"]="Confirmación Domiciliación Bancaria";
 $s["requests_status"]["in_process"]="En Proceso";
 $s["requests_status"]["ended"]="Finalizado";
+
+$s["requests_status_help"]["in_process"]["app_creation"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando en la creación de la aplicacion. Recuerde que el proceso de creación de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
+$s["requests_status_help"]["ended"]["app_creation"]="La aplicación ya ha sido actualizada";
 
 $s["requests_status_help"]["in_process"]["app_update"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando para poder solucionarla realizar los cambios solicitados. Recuerde que los procesos de actualización de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
 $s["requests_status_help"]["ended"]["app_update"]="La aplicación ya ha sido actualizada";
@@ -390,6 +396,11 @@ $s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="La transferen
 
 $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Nuestro equipo está validando tu número de cuenta para empezar con la Domiciliación Bancaria, en uno o dos días laborables estará validada.";
 $s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Ya se ha validado tu cuenta para la realización de Domiciliación Bancara.";
+
+$s["delete_request"]= "Eliminar solicitud";
+$s["delete_request_alert"]= "Atención se va a eliminar esta solicitud";
+$s["request_deleted"]= "Solicitud borrada";
+
 
 // My Account
 $s["details"] = "Detalles";
@@ -681,7 +692,7 @@ $resume_block_s["group_users"]="Usuarios";
 
 
 
-
+$user_field_title_s[""]="";
 $user_field_title_s["name"]="Nombre";
 
 
@@ -732,6 +743,7 @@ $payment_plans["annual"]["price_unlimited"] = "999.90 € / año";
 
 $subscription_type_helper["starter"] = "Actualmente estás usando una cuenta Royappty Starter. Nuestro plan gratuito, para que sirva de toma de contacto, con limitación a una única campaña activa.";
 $subscription_type_helper["professional"] = "Actualmente estás usando una cuenta Royappty Professional. Nuestra solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
+$subscription_type_helper["welcome"] = "Actualmente estás usando una cuenta Royappty Welcome. Nuestra solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
 $subscription_type_helper["unlimited"] = "Actualmente estás usando una cuenta Royappty Professional. Nuestra solución para grandes empresas con varios establecimientos y campañas focalizadas.";
 
 

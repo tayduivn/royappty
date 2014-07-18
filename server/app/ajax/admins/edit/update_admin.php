@@ -55,7 +55,7 @@
 	}
 	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
 
-	if (issetandnotempty($data["password"])){$data["password"]=md5($data["password"]);}else{unset($data["password"]);}
+	if (@issetandnotempty($data["password"])){$data["password"]=md5($data["password"]);}else{unset($data["password"]);}
 
 
 	updateInBD($table,$filter,$data);

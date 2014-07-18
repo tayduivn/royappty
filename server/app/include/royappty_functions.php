@@ -75,7 +75,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["id_brand"]=array("operation"=>"=","value"=>$data1);
 			$filter["status"]=array("operation"=>"=","value"=>1);
 			$block_data=countInBD($table,$filter);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
 		case "usage_this_month":
@@ -86,7 +86,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["start"]=array("operation"=>"=","value"=>$month);
 			$sumfield="used_codes_amount";
 			$block_data=sumInBD($table,$filter,$sumfield);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "usage_this_today":
 			$day=strtotime(date("Y-m-d 00:00:00"));
@@ -96,7 +96,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["start"]=array("operation"=>"=","value"=>$day);
 			$sumfield="used_codes_amount";
 			$block_data=sumInBD($table,$filter,$sumfield);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "users":
 			$table="users";
@@ -104,7 +104,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["id_brand"]=array("operation"=>"=","value"=>$data1);
 			$filter["active"]=array("operation"=>"=","value"=>1);
 			$block_data=countInBD($table,$filter);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
 		case "admin_validated_this_month":
@@ -115,7 +115,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["start"]=array("operation"=>"=","value"=>$month);
 			$tmp=getInBD($table,$filter);
 			$block_data=$tmp["validated_codes_amount"];
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "admin_validated_this_today":
 			$day=strtotime(date("Y-m-d 00:00:00"));
@@ -125,7 +125,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["start"]=array("operation"=>"=","value"=>$day);
 			$tmp=getInBD($table,$filter);
 			$block_data=$tmp["validated_codes_amount"];
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "admin_validated":
 			$table="validated_codes_month_summaries";
@@ -133,7 +133,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["id_admin"]=array("operation"=>"=","value"=>$data1);
 			$sumfield="validated_codes_amount";
 			$block_data=countInBD($table,$filter);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "campaign_usage_this_month":
 			$month=strtotime(date("Y-m-d 00:00:00",strtotime("-1 month")));
@@ -143,7 +143,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["start"]=array("operation"=>">","value"=>$month);
 			$sumfield="used_codes_amount";
 			$block_data=sumInBD($table,$filter,$sumfield);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "campaign_usage_today":
 			$day=strtotime(date("Y-m-d 00:00:00"));
@@ -153,7 +153,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["start"]=array("operation"=>"=","value"=>$day);
 			$tmp=getInBD($table,$filter);
 			$block_data=$tmp["used_codes_amount"];
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 		case "campaign_usage_total":
 			$table="used_codes_month_summaries";
@@ -161,7 +161,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["id_campaign"]=array("operation"=>"=","value"=>$data1);
 			$sumfield="used_codes_amount";
 			$block_data=sumInBD($table,$filter,$sumfield);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
 		case "group_usage_this_month":
@@ -184,7 +184,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 					$sumfield="used_codes_amount";
 					$block_data=sumInBD($table,$filter,$sumfield);
 			}
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
 		case "group_usage_today":
@@ -207,7 +207,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 					$sumfield="used_codes_amount";
 					$block_data=sumInBD($table,$filter,$sumfield);
 			}
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
 		case "group_users":
@@ -215,7 +215,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter=array();
 			$filter["id_group"]=array("operation"=>"=","value"=>$data1);
 			$block_data=countInBD($table,$filter,$sumfield);
-			if(!issetandnotempty($block_data)){$block_data=0;}
+			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
 	}
@@ -227,7 +227,7 @@ function checkBrand($brand){
 	global $page_path;
 	global $response;
 
-	if(!issetandnotempty($brand["id_brand"])){
+	if(!@issetandnotempty($brand["id_brand"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing id_brand");
  		$response["error"]="ERROR Data Missing brand identificator";
@@ -256,7 +256,7 @@ function checkAdmin($admin){
 	global $page_path;
 	global $response;
 
-	if(!issetandnotempty($admin["id_admin"])){
+	if(!@issetandnotempty($admin["id_admin"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing id_admin");
  		$response["error"]="ERROR Data Missing admin identificator";

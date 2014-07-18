@@ -13,7 +13,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
  	*********************************************************/
@@ -48,6 +48,7 @@
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
 
+  //include(PATH."functions/check_session.php");
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/

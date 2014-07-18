@@ -43,7 +43,7 @@
 			<img class='m-t-40 m-b-0' style='width:320px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
 			<h3>".htmlentities($policy_s[$_POST["policy_type"]]["title"], ENT_QUOTES, "UTF-8")."</h3>
 			";
-	if(issetandnotempty($policy_s[$_POST["policy_type"]]["content"])){
+	if(@issetandnotempty($policy_s[$_POST["policy_type"]]["content"])){
 			foreach ($policy_s[$_POST["policy_type"]]["content"] as $key=>$policy_paragraph){
 				$response["data"]["policy-data"].="
 					<p class='text-justify'>".htmlentities($policy_paragraph, ENT_QUOTES, "UTF-8")."</p>

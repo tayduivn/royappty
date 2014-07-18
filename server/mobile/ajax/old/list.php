@@ -11,14 +11,14 @@
  	
  	
  	// Data check START
- 	if(!issetandnotempty($_SESSION["user"]["id_user"])){
+ 	if(!@issetandnotempty($_SESSION["user"]["id_user"])){
 	 	$response["result"]=false;
 		error_log("[server/mobile/ajax/campaigns/list] ERROR Data Missing: Session User ID ( ".$_SESSION["user"]["id_user"]." )");
  		$response["error"]="ERROR Data Missing: Session User ID ( ".$_SESSION["user"]["id_user"]." )";
  		echo json_encode($response);
  		die();
  	}
-	if(!issetandnotempty($_SESSION["user"]["id_brand"])){
+	if(!@issetandnotempty($_SESSION["user"]["id_brand"])){
 	 	$response["result"]=false;
 		error_log("[server/mobile/ajax/campaigns/list] ERROR Data Missing: Session Brand ID");
  		$response["error"]="ERROR Data Missing: Session Brand ID";

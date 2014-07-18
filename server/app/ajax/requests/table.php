@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -35,7 +35,7 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
-	include(PATH."functions/check_session.php");
+
 
 
 
@@ -47,7 +47,7 @@
 	$table="requests";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	if(issetandnotempty($_GET["status"])){
+	if(@issetandnotempty($_GET["status"])){
 		$filter["status"]=array("operation"=>"=","value"=>$_GET["status"]);
  	}
 	if(isInBD($table,$filter)){

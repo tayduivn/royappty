@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -11,7 +11,8 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* no_brand
+	* brand_not_valid
 	*
 	*
 	*********************************************************/
@@ -34,7 +35,9 @@
 	* DATA CHECK
 	*********************************************************/
 
-	include(PATH."functions/check_session.php");
+	// BRAND
+	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
 
 
 
@@ -82,7 +85,7 @@
 		$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
 		$sum_field="used_codes_amount";
 		$user_codes_amount_total=sumInBD($table,$filter,$sum_field);
-		if(!issetandnotempty($user_codes_amount_total)){
+		if(!@issetandnotempty($user_codes_amount_total)){
 			$user_codes_amount_total=htmlentities($s["user_didnt_used_codes"], ENT_QUOTES, "UTF-8");
 	 	}
 

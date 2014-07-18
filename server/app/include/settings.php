@@ -1,5 +1,5 @@
 <?php
-error_log("settings");
+
 $conf = array(
 	'bdtype' => 'mysql',
 	'bdserver' => 'localhost',
@@ -17,5 +17,5 @@ $campaign_bd_type[1]="coupon";
 $lang = "ES_es";
 $lang_email = "es";
 include_once(PATH."lang/".$lang.".php");
-error_log("settings end");
+
 ?>

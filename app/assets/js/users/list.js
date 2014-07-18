@@ -21,17 +21,16 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#users-list');
 
     tableElement.dataTable( {
@@ -62,6 +61,5 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
-});
 
+});

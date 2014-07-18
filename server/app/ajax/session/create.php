@@ -2,7 +2,7 @@
   /*********************************************************
   *
   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-  * Last Edit: 17-07-2014
+  * Last Edit: 18-07-2014
   * Version: 0.93
   *
    *********************************************************/
@@ -11,7 +11,8 @@
   * AJAX RETURNS
   *
   * ERROR CODES
-  *
+  * no_brand
+  * brand_not_valid
   *
   *
   *********************************************************/
@@ -36,6 +37,7 @@
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
+
  	// ADMIN
   $admin=array();$admin["id_admin"]=$_POST["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}

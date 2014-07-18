@@ -30,7 +30,7 @@
   * DATA CHECK
   *********************************************************/
 
-  if(!issetandnotempty($_POST["email"])){
+  if(!@issetandnotempty($_POST["email"])){
     $response["result"]=false;
    debug_log("[".$page_path."] ERROR Data Missing email");
      $response["error_code"]="reload";

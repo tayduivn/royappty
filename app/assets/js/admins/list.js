@@ -13,7 +13,7 @@ $(document).ready(function() {
 				$("#ajax_error .modal-msg").html(jqXHR);
 				show_modal("ajax_error","");
 			}
-		
+
 		},
 		success: function(response) {
 			if(response.result){
@@ -21,17 +21,16 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+			error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#admins-list');
     tableElement.dataTable( {
 		"sDom": "<'row'<'col-md-6'><'col-md-6'f>>t<'row'<'col-md-12'p i>>",
@@ -61,7 +60,7 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
+
 });
 
 
@@ -78,7 +77,7 @@ function delete_admin(id_admin){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide'); 
+			$('.modal').modal('hide');
 			$('#ajax_error').modal('show');
 			$('#ajax_error .ajax_err_msg').html(jqXHR);
 		},
@@ -105,12 +104,11 @@ function delete_admin(id_admin){
 					   	}
 					}
 	    		}
-				
+
             }else{
-            	
+
 			}
-				
+
 		}
 	});
 }
-

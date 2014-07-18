@@ -19,17 +19,16 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
 	var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#groups-list');
 
     tableElement.dataTable( {
@@ -95,17 +94,17 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
+
 $(document).ready(function() {
 
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
-	
 
-	
+
+
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -117,7 +116,7 @@ $(document).ready(function() {
 		  	}
 		},
 		submitHandler:function(form){
-			
+
 			$('#form-end #name').val($('#form-step1 #name').val());
 			var users_groups= "";
 			var separator= "";
@@ -127,10 +126,10 @@ $(document).ready(function() {
 					separator="::";
 				}
 			});
-			
+
 		 	$('#form-end #users_groups').val("");
-		 
-		 	
+
+
 			loadingstep();
 		 	$.ajax({
 				type: "POST",
@@ -155,13 +154,12 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
-	
-	
-	
-});
 
+
+
+});

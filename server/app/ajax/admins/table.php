@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -27,7 +27,6 @@
 	$page_path="server/app/ajax/admins/table";
 	debug_log("[".$page_path."] START");
 
-
 	$response=array();
  	$response["aaData"]=array();
 
@@ -36,7 +35,6 @@
 	* DATA CHECK
 	*********************************************************/
 
-	include(PATH."functions/check_session.php");
 
 
 	/*********************************************************
@@ -46,7 +44,7 @@
 	$table="admins";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	if(issetandnotempty($_GET["active"])){
+	if(@issetandnotempty($_GET["active"])){
 	 	$filter["active"]=array("operation"=>"=","value"=>$_GET["active"]);
  	}
 	if(isInBD($table,$filter)){
@@ -123,7 +121,7 @@
  			$filter=array();
  			$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
  			$validated_codes_amount=getInBD($table,$filter);
- 			if(!issetandnotempty($validated_codes_amount)){
+ 			if(!@issetandnotempty($validated_codes_amount)){
 	 			$validated_codes_amount["validated_codes_amount"]=0;
  			}
 
@@ -137,7 +135,7 @@
  		}
 
 	}
-	
+
 	/*********************************************************
 	* DATABASE REGISTRATION
 	*********************************************************/

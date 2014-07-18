@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -11,7 +11,8 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* no_brand
+	* brand_not_valid
 	*
 	*
 	*********************************************************/
@@ -27,18 +28,20 @@
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/list";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
 
  	$response=array();
-	
+
  	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
 
+	// BRAND
+	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
 
 
 
- 	if(!issetandnotempty($_POST["active"])){
+ 	if(!@issetandnotempty($_POST["active"])){
 	 	$_POST["active"]=0;
  	}
  	for($i=0;$i<=2;$i++){

@@ -134,14 +134,14 @@
 
 	$app=array();
 
-	if(issetandnotempty($_POST["app_icon_path"])){
+	if(@issetandnotempty($_POST["app_icon_path"])){
 		copy(PATH."../../".$_POST["app_icon_path"],PATH."../../resources/app-icon/".$timestamp.".jpg");
 		$app["app_icon_path"] = $timestamp.".jpg";
 	}else{
 		copy(PATH."../../server/app/assets/img/default-app-icon.jpg",PATH."resources/app-icon/".$timestamp.".jpg");
 		$app["app_icon_path"] = $timestamp.".jpg";
 	}
-	if(issetandnotempty($_POST["app_bg_path"])){
+	if(@issetandnotempty($_POST["app_bg_path"])){
 		copy(PATH."../../".$_POST["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
 		$app["app_bg_path"] = $timestamp.".jpg";
 	}else{

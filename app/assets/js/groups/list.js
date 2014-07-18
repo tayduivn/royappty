@@ -20,17 +20,16 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#groups-list');
 
     tableElement.dataTable( {
@@ -61,7 +60,7 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
+
 });
 
 
@@ -78,7 +77,7 @@ function delete_group(id_group){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide'); 
+			$('.modal').modal('hide');
 			$('#ajax_error').modal('show');
 			$('#ajax_error .ajax_err_msg').html(jqXHR);
 		},
@@ -94,7 +93,7 @@ function delete_group(id_group){
 						filter_str:filter_str
 					},
 					error: function(data, textStatus, jqXHR) {
-						$('.modal').modal('hide'); 
+						$('.modal').modal('hide');
 						$('#ajax_error').modal('show');
 						$('#ajax_error .ajax_err_msg').html(jqXHR);
 					},
@@ -111,7 +110,7 @@ function delete_group(id_group){
 										filter_str:filter_str
 									},
 									error: function(data, textStatus, jqXHR) {
-										$('.modal').modal('hide'); 
+										$('.modal').modal('hide');
 										$('#ajax_error').modal('show');
 										$('#ajax_error .ajax_err_msg').html(jqXHR);
 									},
@@ -138,28 +137,27 @@ function delete_group(id_group){
 												   	}
 												}
 								    		}
-											
+
 							            }else{
-							            	
+
 										}
-											
+
 									}
 								});
 				    		}
-							
+
 			            }else{
-			            	
+
 						}
-							
+
 					}
 				});
-				
+
             }else{
-            	
+
 			}
-				
+
 		}
 	});
-	
-}
 
+}

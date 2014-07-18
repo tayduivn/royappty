@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -11,7 +11,8 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* no_brand
+	* brand_not_valid
 	*
 	*
 	*********************************************************/
@@ -32,7 +33,9 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
-	include(PATH."functions/check_session.php");
+	// BRAND
+	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
 
  	// Data check START
 
@@ -67,7 +70,7 @@
 
 	$response["data"]["request-data"]="
 		<h3 class='m-t-0'>#".$request["code"]." - ".htmlentities($s["requests_types"][$request["type"]], ENT_QUOTES, "UTF-8")."</h3>
-		<h5>".$s["requests_status_icon"][$request["status"]]." ".htmlentities($s["requests_status"][$request["status"]], ENT_QUOTES, "UTF-8")."</h5>
+		<h5>".htmlentities($s["requests_status"][$request["status"]], ENT_QUOTES, "UTF-8")."</h5>
 		<p>".htmlentities($s["requests_status_help"][$request["status"]][$request["type"]], ENT_QUOTES, "UTF-8")."</p>
 		<h5>".htmlentities($s["requests_types"][$request["type"]], ENT_QUOTES, "UTF-8")."</h5>
 		<h5>".htmlentities($s["created"], ENT_QUOTES, "UTF-8")." ".date("d-m-Y",$request["created"])."</h5>";
@@ -168,13 +171,6 @@
 
 		";
 	}
-
-	if ($request["usage_limit"]=="0"){
-		$response["data"]["request-data"].=htmlentities($s["without_limit"], ENT_QUOTES, "UTF-8");
-	}else{
-		$response["data"]["request-data"].=$request["usage_limit"];
-	}
-	$response["data"]["request-data"].="</span></p>";
 
 
 

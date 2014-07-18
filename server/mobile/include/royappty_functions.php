@@ -4,7 +4,7 @@ function checkBrand($brand){
 	global $page_path;
 	global $response;
 
-	if(!issetandnotempty($brand["id_brand"])){
+	if(!@issetandnotempty($brand["id_brand"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] (checkBrand) ERROR Data Missing id_brand");
  		$response["error"]="ERROR Data Missing brand identificator";
@@ -33,7 +33,7 @@ function checkUser($user){
 	global $page_path;
 	global $response;
 
-	if(!issetandnotempty($user["id_user"])){
+	if(!@issetandnotempty($user["id_user"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing id_user");
  		$response["error"]="ERROR Data Missing user identificator";
@@ -75,7 +75,7 @@ function checkCode($code){
 	global $page_path;
 	global $response;
 
-	if(!issetandnotempty($code["promo_password"])){
+	if(!@issetandnotempty($code["promo_password"])){
 		$response["result"]=false;
 		debug_log("[".$page_path."] (checkCode) ERROR Data Missing promo_code");
 		$response["error"]="ERROR Data Missing brand identificator";

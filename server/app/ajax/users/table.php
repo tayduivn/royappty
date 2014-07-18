@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -19,7 +19,7 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
-	define('PATH', str_replace('\\', '/','../../../'));
+
 	@session_start();
 	define('PATH', str_replace('\\', '/','../../'));
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
@@ -27,7 +27,6 @@
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/users/table";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
 
 	$response=array();
  	$response["aaData"]=array();
@@ -54,7 +53,7 @@
 	 		$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
 	 		$sum_field="used_codes_amount";
 	 		$used_codes_user_summary=sumInBD($table,$filter,$sum_field);
-	 		if(!issetandnotempty($used_codes_user_summary)){
+	 		if(!@issetandnotempty($used_codes_user_summary)){
 		 		$used_codes_user_summary=0;
 	 		}
 

@@ -33,14 +33,14 @@
   * DATA CHECK
   *********************************************************/
 
- 	if(!issetandnotempty($_POST["email"])){
+ 	if(!@issetandnotempty($_POST["email"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing email");
   		$response["error_code"]="reload";
   		echo json_encode($response);
  		die();
  	}
- 	if(!issetandnotempty($_POST["password"])){
+ 	if(!@issetandnotempty($_POST["password"])){
 	 	$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing password");
   		$response["error_code"]="reload";

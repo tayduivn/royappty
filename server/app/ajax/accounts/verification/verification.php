@@ -39,7 +39,7 @@
 	*********************************************************/
 
 	$codeverification=false;
-	if(!issetandnotempty($_POST["verification_code"])){
+	if(!@issetandnotempty($_POST["verification_code"])){
 		debug_log("[".$page_path."] ERROR Data Missing code");
 	}else{
 		$table='admins';
