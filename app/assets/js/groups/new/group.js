@@ -22,14 +22,14 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 	var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#groups-list');
 
     tableElement.dataTable( {
@@ -40,9 +40,9 @@ $(document).ready(function(){
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+			"sSearch": $s["group_search"],
+			"sInfo": $s["group_showing_from_entry"]+"<b>_START_"+$s["group_to_entry"]+"_END_</b>"+$s["group_of"] +"_TOTAL_"+ $s["group_entries"],
+			"sZeroRecords": $s["group_search_no_entry"]
 			},
 		 bAutoWidth     : false,
         fnPreDrawCallback: function () {
@@ -95,17 +95,17 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
+
 $(document).ready(function() {
 
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
-	
 
-	
+
+
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -117,7 +117,7 @@ $(document).ready(function() {
 		  	}
 		},
 		submitHandler:function(form){
-			
+
 			$('#form-end #name').val($('#form-step1 #name').val());
 			var users_groups= "";
 			var separator= "";
@@ -127,10 +127,10 @@ $(document).ready(function() {
 					separator="::";
 				}
 			});
-			
+
 		 	$('#form-end #users_groups').val("");
-		 
-		 	
+
+
 			loadingstep();
 		 	$.ajax({
 				type: "POST",
@@ -155,13 +155,12 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
-	
-	
-	
-});
 
+
+
+});

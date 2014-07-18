@@ -23,14 +23,14 @@ $(document).ready(function() {
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#groups-list');
 
     tableElement.dataTable( {
@@ -42,9 +42,9 @@ $(document).ready(function() {
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+			"sSearch": $s["group_list_search"],
+			"sInfo": $s["group_list_showing_from_entry"]+"<b>_START_"+$s["group_list_to_entry"]+"_END_</b>"+$s["group_list_of"] +"_TOTAL_"+ $s["group_list_entries"],
+			"sZeroRecords": $s["group_list_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/groups/table.php?status="+$GET["status"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,
@@ -61,7 +61,7 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
+
 });
 
 
@@ -78,7 +78,7 @@ function delete_group(id_group){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide'); 
+			$('.modal').modal('hide');
 			$('#ajax_error').modal('show');
 			$('#ajax_error .ajax_err_msg').html(jqXHR);
 		},
@@ -94,7 +94,7 @@ function delete_group(id_group){
 						filter_str:filter_str
 					},
 					error: function(data, textStatus, jqXHR) {
-						$('.modal').modal('hide'); 
+						$('.modal').modal('hide');
 						$('#ajax_error').modal('show');
 						$('#ajax_error .ajax_err_msg').html(jqXHR);
 					},
@@ -111,7 +111,7 @@ function delete_group(id_group){
 										filter_str:filter_str
 									},
 									error: function(data, textStatus, jqXHR) {
-										$('.modal').modal('hide'); 
+										$('.modal').modal('hide');
 										$('#ajax_error').modal('show');
 										$('#ajax_error .ajax_err_msg').html(jqXHR);
 									},
@@ -138,28 +138,27 @@ function delete_group(id_group){
 												   	}
 												}
 								    		}
-											
+
 							            }else{
-							            	
+
 										}
-											
+
 									}
 								});
 				    		}
-							
+
 			            }else{
-			            	
+
 						}
-							
+
 					}
 				});
-				
+
             }else{
-            	
+
 			}
-				
+
 		}
 	});
-	
-}
 
+}

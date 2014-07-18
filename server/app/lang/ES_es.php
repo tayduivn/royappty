@@ -26,7 +26,7 @@ $s["select_an_option"] = "Seleccione una opción";
 
 //Mail
 $s["follow_us"] = "Síguenos";
-$s["follow_us_content"] = "Sigue nuestros perfiles en las redes sociales y descubre las últimas novedades";
+$s["follow_us_content"] = "Sigue nuestros perfiles en las redes sociales y descubre las últimas novedades.";
 
 //login
 $s["login"] = "Accede a tu cuenta";
@@ -42,15 +42,15 @@ $login_s["login_button"] = "Acceder";
 $signup_s["brand_data"] = "Datos de la compañía";
 $signup_s["contact_data"] = "Datos de contacto";
 $signup_s["name"] = "Nombre de la Empresa";
-$signup_s["name_help"] = "Si eres un particular escribe aquí tu nombre";
+$signup_s["name_help"] = "Si eres un particular, escribe aquí tu nombre.";
 $signup_s["cif"] = "CIF";
-$signup_s["cif_help"] = "Si eres no eres empresa indícanos tu DNI";
+$signup_s["cif_help"] = "Si no eres una empresa, indícanos tu DNI.";
 $signup_s["contact_name"] = "Persona de contacto";
 $signup_s["contact_name_help"] = "Si pasa algo ¿Con quién podríamos contactar?";
 $signup_s["contact_phone"] = "Teléfono";
-$signup_s["contact_phone_help"] = "Proporciones un teléfono en que podamos contactar con vosotros.";
+$signup_s["contact_phone_help"] = "Proporcionanos un teléfono con el que podamos contactar con vosotros.";
 $signup_s["contact_email"] = "Email de contacto";
-$signup_s["contact_email_help"] = "A este mail enviaremos todas las alertas imporantes.";
+$signup_s["contact_email_help"] = "A este email enviaremos todas las alertas importantes.";
 $signup_s["contact_address"] = "Dirección";
 $signup_s["contact_address_help"] = "";
 $signup_s["contact_postal_code"] = "Código postal";
@@ -59,14 +59,14 @@ $signup_s["contact_city"] = "Ciudad";
 $signup_s["contact_city_help"] = "";
 $signup_s["contact_province"] = "Provincia";
 $signup_s["contact_province_help"] = "";
-$signup_s["contact_country"] = "Pais";
+$signup_s["contact_country"] = "País";
 $signup_s["contact_country_help"] = "";
 $signup_s["admin_data"] = "Datos de acceso";
 $signup_s["admin_data_info"] = "";
 $signup_s["admin_name"] = "Nombre";
 $signup_s["admin_name_help"] = "";
 $signup_s["admin_email"] = "Correo electrónico";
-$signup_s["admin_email_help"] = "Este será el correo que se usará para acceder a la adminsitración de la aplicación.";
+$signup_s["admin_email_help"] = "Este será el correo que se usará para acceder a la administración de la aplicación.";
 $signup_s["admin_promo_password"] = "Código de validación";
 $signup_s["admin_promo_password_help"] = "Elige el código que usarás para validar promociones.";
 $signup_s["admin_password"] = "Contraseña del Administrador";
@@ -78,7 +78,7 @@ $signup_s["app_data"] = "Datos de la Aplicación";
 $signup_s["app_data_help"] = "";
 $signup_s["app_name"] = "Nombre de la aplicación";
 $signup_s["app_name_help"] = "";
-$signup_s["app_title"] = "Título menú aplicación";
+$signup_s["app_title"] = "Título del menú de la aplicación";
 $signup_s["app_title_help"] = "Ej.: Promociones";
 $signup_s["app_description"] = "Descripción de la aplicación";
 $signup_s["app_description_help"] = "Describe qué tipo de promociones vas a realizar.";
@@ -86,12 +86,12 @@ $signup_s["app_icon"] = "Icono";
 $signup_s["app_icon_help"] = "Resolución recomendada 500x500";
 $signup_s["app_background"] = "Fondo";
 $signup_s["app_background_help"] = "Resolución recomendada 660x1200";
-$signup_s["success_title"] = "Tu cuenta ha sido creada";
+$signup_s["success_title"] = "Tu cuenta ha sido creada.";
 $signup_s["success_subtitle"] = "Bienvenido a Royappty, tu cuenta ha sido creada. Te hemos enviado un correo al correo electrónico de administración para que actives la cuenta.";
 $signup_s["mail_subject"] = "Bienvenido a Royappty";
 $signup_s["mail_content_header"] = "Muchas gracias por resgristrarte en Royappty. Necesitamos que actives tu cuenta de usuario pinchando en el siguiente link:";
 $signup_s["mail_content_footer"] = "En caso de que no puedas abrir el link, cópialo y pégalo en la barra de dirección de tu navegador.";
-$signup_s["accept_policy"] = "Acepto la política de privacidad";
+$signup_s["accept_policy"] = "Acepto la política de privacidad.";
 
 //Policy
 
@@ -120,7 +120,7 @@ $set_password_s["success_subtitle"] = "La contraseña se ha actualizado con éxi
 
 //Verification
 $s["verification_title"] = "Activar cuenta";
-$s["verification_subtitle_success"] = "Su cuenta ha sido activada";
+$s["verification_subtitle_success"] = "Su cuenta ha sido activada.";
 $s["verification_subtitle_error"] = "No se ha podido activar su cuenta, código no válido.";
 
 
@@ -185,11 +185,12 @@ $s["from_date"] = "Desde el";
 $s["to_date"] = "hasta el";
 $s["without_end_date"]="sin fecha de fin";
 $s["this_campaign_has_a_limit_of"]="Limite de utilización por usuario:";
-$s["without_limit"]="Sin Límite";
+$s["without_limit"]="Sin límite";
 $s["no_used_codes"] = "No se ha usado esta promoción";
 $s["edit_campaign"] = "Editar campaña";
 $s["campaign_deleted"] = "Campaña Borrada";
 $s["view_all_notes"] = "Ver todas las notas";
+$s["there_is_no_notes_to_show"] = "No hay notas que mostrar";
 
 //Campaign / new
 $s["select_campaign_type"] = "Seleccione tipo de Campaña";
@@ -285,7 +286,7 @@ $s["admins_can_login_icon"][1]="<i class='fa fa-check'></i>";
 $s["admins_can_manage_campaigns"] = "Crear, editar y eliminar campañas";
 $s["admins_can_manage_campaigns_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_manage_campaigns_icon"][1]="<i class='fa fa-check'></i>";
-$s["without_last_connection"] = "ún no ha realizado ninguna operación";
+$s["without_last_connection"] = "Aún no ha realizado ninguna operación";
 $s["last_connection_the"] = "Última actividad el";
 $s["no_codes_validated"] = "No se ha validado ningún código";
 $s["last_validated_codes"] = "Últimos códigos validados";
@@ -298,7 +299,7 @@ $s["user_didnt_used_codes"] = "No ha validado ningún código";
 //Users / get
 $s["without_created_date"] = "Sin fecha de creación";
 $s["created_date_the"] = "Creado el ";
-
+$s["user_there_are_no_notes_to_show"] = "No hay notas que mostrar";
 
 //Groups / List
 $s["users_amount"] = "Número de Usuarios";
@@ -309,9 +310,10 @@ $s["group_deleted"] = "Grupo Borrado";
 
 // Group / Get
 $s["edit_group"] = "Editar Grupo";
-
+$s["group_there_is_no_notes_to_show"] = "No hay notas que mostrar";
 
 // Group / add
+$s["add_group_title"] = "Añadir grupo";
 $s["group_name"] = "Nombre del grupo";
 $s["group_name_help"] = "Seleccione un nombre para el grupo";
 $s["select_users"] = "Usuarios del grupo";
@@ -326,7 +328,7 @@ $s["view_group"] = "Ver grupo";
 $s["app_name_description_and_sreenshots"] = "Nombre, Descripción y Capturas de pantalla";
 $s["name_and_description"] = "Nombre y descripción";
 $s["screenshots"] = "Capturas de Pantalla";
-$s["app_name_description_and_sreenshots_help_1"] = "Estos son el nombre y la descripción que se está utilizando para la aplicación, recuerda que si decides cambiarlos este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación y los nuevos usuarios no te encontrarán con el nombre antiguo. Si ya has solicitado un cambio de nombre revisa tu ";
+$s["app_name_description_and_sreenshots_help_1"] = "Estos son el nombre y la descripción que se está utilizando para la aplicación; recuerda que si decides cambiarlos este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación y los nuevos usuarios no te encontrarán con el nombre antiguo. Si ya has solicitado un cambio de nombre revisa tu ";
 $s["request_list"] = "Listado de solicitudes";
 $s["app_name_description_and_sreenshots_help_2"] = "para comprobar el estado de tu solicitud.";
 $s["edit_app"] = "Editar aplicación";
@@ -336,10 +338,10 @@ $s["published_play_store"] = "Publicado para Android";
 $s["app_published_status_help_1"] = "Su aplicación está publicada correctamente en App Store y Google Play. Podrá solicitar que se retire su aplicación, impidiendo que nuevos usuarios puedan descargarse la aplicación, recuerde que este proceso puede tardar varios días. Si has solicitado la retirada de la aplicación revisa tu ";
 $s["app_published_status_help_2"] = "para comprobar el estado de tu solicitud.";
 $s["app_icon"] = "Icono de la aplicación";
-$s["app_icon_help_1"] = "Este es el icono que se está utilizando actualmente en tu aplicación, recuerda que si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación, no pudiendo ver los cambios hasta que realicen dicha actualización. Si ya has solicitado un cambio de icono revisa tu";
+$s["app_icon_help_1"] = "Este es el icono que se está utilizando actualmente en tu aplicación; recuerda que si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación, no pudiendo ver los cambios hasta que realicen dicha actualización. Si ya has solicitado un cambio de icono revisa tu";
 $s["app_icon_help_2"] = "para comprobar el estado de tu solicitud.";
 $s["app_bg"] = "Imagen de Bienvenida";
-$s["app_bg_help_1"] = "Este es la imagen de bienvenida de la aplicación, cuando el usuario accede a tu aplicación y se están cargando los datos, recuerda que al igual que el icono de la aplicación, si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación, no pudiendo ver los cambios hasta que realicen dicha actualización. Si ya has solicitado un cambio de imagen de bienvenida revisa tu";
+$s["app_bg_help_1"] = "Este es la imagen de bienvenida de la aplicación, cuando el usuario accede a tu aplicación y se están cargando los datos; recuerda que al igual que el icono de la aplicación, si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación, no pudiendo ver los cambios hasta que realicen dicha actualización. Si ya has solicitado un cambio de imagen de bienvenida revisa tu";
 $s["app_bg_help_2"] = "para comprobar el estado de tu solicitud.";
 $s["user_fields"] = "Datos que se solicitan a los usuarios";
 $s["no_user_fields"] = "No se solicita ningún dato";
@@ -348,7 +350,7 @@ $s["edit_user_fields"] = "Editar datos de recogida";
 //App / new / edit
 $app_s["step_1_title"] = "Datos de la Aplicación";
 $app_s["app_name"] = "Nombre de la Aplicación";
-$app_s["app_name_help"] = "Este será el nombre se utilizará para publicar su aplicación";
+$app_s["app_name_help"] = "Este será el nombre que se utilizará para publicar tu aplicación";
 $app_s["description"] = "Descripción";
 $app_s["description_help"] = "Todas las aplicaciones incluyen una descripción para explicar su funcionalidad";
 $app_s["step_2_title"] = "Icono de la aplicación";
@@ -364,7 +366,7 @@ $app_s["publish_in_google_play"] = "Publicar para Android";
 $app_s["publish_plataforms"] = "Plataformas de publicación";
 $app_s["publish_plataforms_help"] = "Seleccione en que plataformas quiere publicar la aplicación";
 $app_s["success_title"] = "Actualización enviada";
-$app_s["success_subtitle_1"] = "La actualización de la aplicación ha sido recibida correctamente, recuerda que este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación. Para ver en estado de este proceso de actualización puedes visitar tu";
+$app_s["success_subtitle_1"] = "La actualización de la aplicación ha sido recibida correctamente, recuerda que este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación. Para ver el estado de este proceso de actualización puedes visitar tu";
 $app_s["success_subtitle_2"] = "para comprobar el estado de tu solicitud.";
 $app_s["user_fields"] = "Datos de recogida de usuarios";
 $app_s["user_fields_help"] = "Seleccione los datos que se piden a los usuarios cuando se registran en la aplicación";
@@ -376,11 +378,15 @@ $s["id_request"] = "Identificador de Solicitud";
 $s["active_requests"] = "En Proceso";
 $s["end_requests"] = "Finalizadas";
 $s["view_request"] = "Ver solicitud";
-$s["requests_types"]["app_update"]="Cambios en Aplicación";
+$s["requests_types"]["app_creation"]="Creación de la Aplicación";
+$s["requests_types"]["app_update"]="Cambios en la Aplicación";
 $s["requests_types"]["bank_transfer_confirmation"]="Confirmación de Transferencia";
 $s["requests_types"]["standing_order_payment_confirmation"]="Confirmación Domiciliación Bancaria";
 $s["requests_status"]["in_process"]="En Proceso";
 $s["requests_status"]["ended"]="Finalizado";
+
+$s["requests_status_help"]["in_process"]["app_creation"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando en la creación de la aplicación. Recuerde que el proceso de creación de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
+$s["requests_status_help"]["ended"]["app_creation"]="La aplicación ya ha sido actualizada";
 
 $s["requests_status_help"]["in_process"]["app_update"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando para poder solucionarla y realizar los cambios solicitados. Recuerde que los procesos de actualización de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
 $s["requests_status_help"]["ended"]["app_update"]="La aplicación ya ha sido actualizada";
@@ -389,7 +395,12 @@ $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Tu solic
 $s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="La transferencia ha sido confirmada";
 
 $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Nuestro equipo está validando tu número de cuenta para empezar con la Domiciliación Bancaria, en uno o dos días laborables estará validada.";
-$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Ya se ha validado tu cuenta para la realización de Domiciliación Bancara.";
+$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Ya se ha validado tu cuenta para la realización de la Domiciliación Bancara.";
+
+
+$s["delete_request"]="Eliminar solicitud";
+$s["delete_request_alert"]="Atención, se va a eliminar esta solicitud";
+$s["request_deleted"]="Solicitud borrada";
 
 // My Account
 $s["details"] = "Detalles";
@@ -401,7 +412,7 @@ $s["contact_name"] = "Persona de Contacto";
 $s["address"] = "Dirección";
 $s["postal_code"] = "Código Postal";
 $s["city"] = "Ciudad";
-$s["country"] = "Pais";
+$s["country"] = "País";
 $s["edit_personal_info"] = "Editar información personal";
 $s["subscription_type"] = "Tipo de Subscripción";
 $s["change_subscription_type"] = "Cambiar tipo de subscripción";
@@ -454,9 +465,9 @@ $s["here"] = "aquí";
 $s["delete_account"] = "Eliminar cuenta";
 $s["delete_account_warning_title"] = "Atención, es importante que leas la siguiente advertencia";
 $s["delete_account_warning"] = "Estas a punto de iniciar el proceso de eliminación de tu cuenta royappty, ahora podrás escoger entre dos opciones: Bloquear o Eliminar ahora.";
-$s["lock_account_selection_warning"] = "Bloqueo permitirá que tus datos (campañas, administradores, usuarios, configuración e informes) queden almacenados durante 6 meses. Una vez pasado este periodo de tiempo se eliminarán del sistema. Esta opción te permitirá en que durante este plazo de 6 meses puedas volver a activar tu cuenta sin ninguna pérdida de datos.";
+$s["lock_account_selection_warning"] = "Bloqueo permitirá que tus datos (campañas, administradores, usuarios, configuración e informes) queden almacenados durante 6 meses. Una vez pasado este periodo de tiempo se eliminarán del sistema. Esta opción te permitirá que durante este plazo de 6 meses puedas volver a activar tu cuenta sin ninguna pérdida de datos.";
 $s["delete_account_selection_warning"] = "Eliminar ahora borrará todos los datos asociados a tu cuenta (campañas, administradores, usuarios, informes y todas las configuraciones de tu app). Es muy importante, que entiendas que esta opción no podrá deshacerse una vez iniciada.";
-$s["app_delete_account_warning"] = "Tanto el proceso de Bloqueo como el proceso de Eliminación ahora harán que tu aplicación de móvil deje de estar disponible en los markets de Android y iPhone. Los usuarios que hayan descargado tu aplicación antes de la eliminación o bloqueo de tu cuenta seguirán teniéndola en su móvil; pero al acceder a ella, les informará que la aplicación ha dejado de existir.";
+$s["app_delete_account_warning"] = "Tanto el proceso de Bloqueo como el proceso de Eliminación ahora harán que tu aplicación de móvil deje de estar disponible en los markets de Android y iPhone. Los usuarios que hayan descargado tu aplicación antes de la eliminación o bloqueo de tu cuenta seguirán teniéndola en su móvil; pero, al acceder a ella, les informará que la aplicación ha dejado de existir.";
 $s["select_delete_option"] = "Seleccione opción de eliminación";
 $s["select_delete_option_help"] = "";
 $s["lock"] = "Bloquear";
@@ -575,7 +586,7 @@ $new_discount_s["button_title"] = "Texto del Botón";
 $new_discount_s["button_title_help"] = "Introduce el texto que quieres que muestre el botón";
 $new_discount_s["button_title_placeholder"] = "Texto del botón";
 $new_discount_s["promo_image"] = "Imagen de la promoción";
-$new_discount_s["promo_image_help"] = "Máximo";
+$new_discount_s["promo_image_help"] = "Máximo 700x500";
 $new_discount_s["or_select_predefined_image"] = "O selecciona una imagen predefinida";
 $new_discount_s["promo_content"] = "Texto de la promoción";
 $new_discount_s["promo_content_help"] = "Máximo 300 caracteres";
@@ -622,7 +633,7 @@ $new_coupon_s["promo_title_help"] = "Introduce el título que se mostrará en el
 $new_coupon_s["promo_title_placeholder"] = "Título de la campaña";
 
 $new_coupon_s["promo_image"] = "Imagen de la promoción";
-$new_coupon_s["promo_image_help"] = "Máximo";
+$new_coupon_s["promo_image_help"] = "Máximo 700x500";
 $new_coupon_s["or_select_predefined_image"] = "O selecciona una imagen predefinida";
 $new_coupon_s["promo_content"] = "Texto de la promoción";
 $new_coupon_s["promo_content_help"] = "Máximo 300 caracteres";
@@ -646,7 +657,7 @@ $new_coupon_s["coupons_number"] = "Número de cupones que tiene la campaña";
 $new_coupon_s["coupons_number_help"] = "Selecciona el número de cupones que tiene que rellenar";
 $new_coupon_s["coupons_number_placeholder"] = "Número de cupones a rellenar";
 
-$new_coupon_s["promo_usage_limit"] = "Limite de uso por usuario";
+$new_coupon_s["promo_usage_limit"] = "Límite de uso por usuario";
 $new_coupon_s["promo_usage_limit_help"] = "Selecciona el número de veces que un usuario puede repetir (para no tener límite pon 0)";
 $new_coupon_s["promo_usage_limit_placeholder"] = "¿Cuantas veces puede usar el usuario esta campaña?";
 $new_coupon_s["success_title"] = "Campaña creada";
@@ -681,7 +692,7 @@ $resume_block_s["group_users"]="Usuarios";
 
 
 
-
+$user_field_title_s[""]="";
 $user_field_title_s["name"]="Nombre";
 
 
@@ -696,7 +707,7 @@ $royappty_plans["starter"]["subtitle"]="Nuestro plan gratuito, para que sirva de
 $royappty_plans["starter"]["price"]="Gratis";
 
 $royappty_plans["professional"]["title"]="Royappty Professional";
-$royappty_plans["professional"]["subtitle"]="Nuestro solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
+$royappty_plans["professional"]["subtitle"]="Nuestra solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
 $royappty_plans["professional"]["price"]="9.99 € / mes";
 
 $royappty_plans["unlimited"]["title"]="Royappty Unlimited";
@@ -704,7 +715,7 @@ $royappty_plans["unlimited"]["subtitle"]="Nuestra solución para grandes empresa
 $royappty_plans["unlimited"]["price"]="99.99 € / mes";
 
 $payment_methods["paypal"]["title"]="Paypal";
-$payment_methods["paypal"]["subtitle"]="Popular método de pago seguro por internet. En unos segundo tendrás activada tu cuenta";
+$payment_methods["paypal"]["subtitle"]="Popular método de pago seguro por internet. En unos segundos tendrás activada tu cuenta";
 
 $payment_methods["credit_card"]["title"]="Tarjeta de Crédito";
 $payment_methods["credit_card"]["subtitle"]="A través de nuestra pasarela virtual, podrás realizar el pago de forma segura y en segundos.";
@@ -732,6 +743,7 @@ $payment_plans["annual"]["price_unlimited"] = "999.90 € / año";
 
 $subscription_type_helper["starter"] = "Actualmente estás usando una cuenta Royappty Starter. Nuestro plan gratuito, para que sirva de toma de contacto, con limitación a una única campaña activa.";
 $subscription_type_helper["professional"] = "Actualmente estás usando una cuenta Royappty Professional. Nuestra solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
+$subscription_type_helper["welcome"] = "Actualmente estás usando una cuenta Royappty Welcome. Nuestra solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
 $subscription_type_helper["unlimited"] = "Actualmente estás usando una cuenta Royappty Professional. Nuestra solución para grandes empresas con varios establecimientos y campañas focalizadas.";
 
 

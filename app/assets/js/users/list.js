@@ -24,14 +24,14 @@ $(document).ready(function() {
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#users-list');
 
     tableElement.dataTable( {
@@ -43,9 +43,9 @@ $(document).ready(function() {
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+		"sSearch": $s["users_search"],
+		"sInfo": $s["users_showing_from_entry"]+"<b>_START_"+$s["users_to_entry"]+"_END_</b>"+$s["users_of"] +"_TOTAL_"+ $s["users_entries"],
+		"sZeroRecords": $s["users_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/users/table.php?status="+$GET["status"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,
@@ -62,6 +62,5 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
-});
 
+});

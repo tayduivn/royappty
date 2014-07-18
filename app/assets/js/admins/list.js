@@ -13,7 +13,7 @@ $(document).ready(function() {
 				$("#ajax_error .modal-msg").html(jqXHR);
 				show_modal("ajax_error","");
 			}
-		
+
 		},
 		success: function(response) {
 			if(response.result){
@@ -24,14 +24,14 @@ $(document).ready(function() {
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#admins-list');
     tableElement.dataTable( {
 		"sDom": "<'row'<'col-md-6'><'col-md-6'f>>t<'row'<'col-md-12'p i>>",
@@ -42,9 +42,9 @@ $(document).ready(function() {
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+			"sSearch": $s["admin_search"],
+			"sInfo": $s["admin_showing_from_entry"]+"<b>_START_"+$s["admin_to_entry"]+"_END_</b>"+$s["admin_of"] +"_TOTAL_"+ $s["admin_entries"],
+			"sZeroRecords": $s["admin_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/admins/table.php?active="+$GET["active"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,
@@ -61,7 +61,7 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
+
 });
 
 
@@ -78,7 +78,7 @@ function delete_admin(id_admin){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide'); 
+			$('.modal').modal('hide');
 			$('#ajax_error').modal('show');
 			$('#ajax_error .ajax_err_msg').html(jqXHR);
 		},
@@ -105,12 +105,11 @@ function delete_admin(id_admin){
 					   	}
 					}
 	    		}
-				
+
             }else{
-            	
+
 			}
-				
+
 		}
 	});
 }
-
