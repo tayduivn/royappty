@@ -25,7 +25,7 @@ $s["euros_symbol"] = "€";
 $s["select_an_option"] = "Seleccione una opción";
 
 //Mail
-$s["follow_us"] = "Siguenos";
+$s["follow_us"] = "Síguenos";
 $s["follow_us_content"] = "Sigue nuestros perfiles en las redes sociales y descubre las últimas novedades";
 
 //login
@@ -326,7 +326,7 @@ $s["view_group"] = "Ver grupo";
 $s["app_name_description_and_sreenshots"] = "Nombre, Descripción y Capturas de pantalla";
 $s["name_and_description"] = "Nombre y descripción";
 $s["screenshots"] = "Capturas de Pantalla";
-$s["app_name_description_and_sreenshots_help_1"] = "Estos son el nombre y la descripción que se está utilizando para la aplicación, recuerda que si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación y los nuevos usuarios no te encontrarán con el nombre antiguo. Si ya has solicitado un cambio de nombre revisa el tu ";
+$s["app_name_description_and_sreenshots_help_1"] = "Estos son el nombre y la descripción que se está utilizando para la aplicación, recuerda que si decides cambiarlos este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación y los nuevos usuarios no te encontrarán con el nombre antiguo. Si ya has solicitado un cambio de nombre revisa tu ";
 $s["request_list"] = "Listado de solicitudes";
 $s["app_name_description_and_sreenshots_help_2"] = "para comprobar el estado de tu solicitud.";
 $s["edit_app"] = "Editar aplicación";
@@ -361,7 +361,7 @@ $app_s["app_bg_help"] = "Este fondo aparecerá mientras la aplicación se está 
 $app_s["step_4_title"] = "Opciones de publicación";
 $app_s["publish_in_app_store"] = "Publicar para iPhone";
 $app_s["publish_in_google_play"] = "Publicar para Android";
-$app_s["publish_plataforms"] = "Plataformas de sublicación";
+$app_s["publish_plataforms"] = "Plataformas de publicación";
 $app_s["publish_plataforms_help"] = "Seleccione en que plataformas quiere publicar la aplicación";
 $app_s["success_title"] = "Actualización enviada";
 $app_s["success_subtitle_1"] = "La actualización de la aplicación ha sido recibida correctamente, recuerda que este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación. Para ver en estado de este proceso de actualización puedes visitar tu";
@@ -382,7 +382,7 @@ $s["requests_types"]["standing_order_payment_confirmation"]="Confirmación Domic
 $s["requests_status"]["in_process"]="En Proceso";
 $s["requests_status"]["ended"]="Finalizado";
 
-$s["requests_status_help"]["in_process"]["app_update"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando para poder solucionarla realizar los cambios solicitados. Recuerde que los procesos de actualización de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
+$s["requests_status_help"]["in_process"]["app_update"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando para poder solucionarla y realizar los cambios solicitados. Recuerde que los procesos de actualización de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
 $s["requests_status_help"]["ended"]["app_update"]="La aplicación ya ha sido actualizada";
 
 $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
@@ -454,9 +454,9 @@ $s["here"] = "aquí";
 $s["delete_account"] = "Eliminar cuenta";
 $s["delete_account_warning_title"] = "Atención, es importante que leas la siguiente advertencia";
 $s["delete_account_warning"] = "Estas a punto de iniciar el proceso de eliminación de tu cuenta royappty, ahora podrás escoger entre dos opciones: Bloquear o Eliminar ahora.";
-$s["lock_account_selection_warning"] = "Bloqueo, permitirá que tus datos (campañas, administradores, usuarios, configuración e informes) queden almacenados durante 6 meses. Una vez pasado este periodo de tiempo se eliminarán del sistema. Esta opción te permitirá en que durante este plazo de 6 meses puedas volver a activar tu cuenta sin ninguna pérdida de datos.";
-$s["delete_account_selection_warning"] = "Eliminar ahora, borrará todos los datos asociados a tu cuenta (campañas, administradores, usuarios, informes y todas las configuraciones de tu app). Es muy importante, que entiendas que esta opción no podrá deshacerse y una vez iniciado.";
-$s["app_delete_account_warning"] = "Tanto el proceso de Bloqueo como el proceso de Eliminación ahora, harán que tu aplicación de móvil deje de estar disponible en los markets de Android y iPhone. Los usuarios que hayan descargado tu aplicación antes de la eliminación o bloqueo de tu cuenta, seguirán teniéndola en su móvil, pero al acceder a ella, les informará que la aplicación ha dejado de existir.";
+$s["lock_account_selection_warning"] = "Bloqueo permitirá que tus datos (campañas, administradores, usuarios, configuración e informes) queden almacenados durante 6 meses. Una vez pasado este periodo de tiempo se eliminarán del sistema. Esta opción te permitirá en que durante este plazo de 6 meses puedas volver a activar tu cuenta sin ninguna pérdida de datos.";
+$s["delete_account_selection_warning"] = "Eliminar ahora borrará todos los datos asociados a tu cuenta (campañas, administradores, usuarios, informes y todas las configuraciones de tu app). Es muy importante, que entiendas que esta opción no podrá deshacerse una vez iniciada.";
+$s["app_delete_account_warning"] = "Tanto el proceso de Bloqueo como el proceso de Eliminación ahora harán que tu aplicación de móvil deje de estar disponible en los markets de Android y iPhone. Los usuarios que hayan descargado tu aplicación antes de la eliminación o bloqueo de tu cuenta seguirán teniéndola en su móvil; pero al acceder a ella, les informará que la aplicación ha dejado de existir.";
 $s["select_delete_option"] = "Seleccione opción de eliminación";
 $s["select_delete_option_help"] = "";
 $s["lock"] = "Bloquear";
@@ -590,7 +590,7 @@ $new_discount_s["promo_ini_date_help"] = "Selecciona la fecha de inicio de la pr
 $new_discount_s["promo_ini_placeholder"] = "Día de inicio";
 $new_discount_s["promo_ini_date_hour_placeholder"] = "Hora de inicio";
 $new_discount_s["promo_end_date"] = "Fin de la promoción";
-$new_discount_s["promo_end_date_help"] = "Selecciona la fecha de inicio de la promoción";
+$new_discount_s["promo_end_date_help"] = "Selecciona la fecha de fin de la promoción";
 $new_discount_s["promo_end_date_placeholder"] = "Día de finalización";
 $new_discount_s["promo_end_date_hour_placeholder"] = "Hora de finalización";
 $new_discount_s["promo_usage_limit"] = "Limite de uso por usuario";
@@ -639,7 +639,7 @@ $new_coupon_s["promo_ini_date_help"] = "Selecciona la fecha de inicio de la prom
 $new_coupon_s["promo_ini_placeholder"] = "Día de inicio";
 $new_coupon_s["promo_ini_date_hour_placeholder"] = "Hora de inicio";
 $new_coupon_s["promo_end_date"] = "Fin de la promoción";
-$new_coupon_s["promo_end_date_help"] = "Selecciona la fecha de inicio de la promoción";
+$new_coupon_s["promo_end_date_help"] = "Selecciona la fecha de fin de la promoción";
 $new_coupon_s["promo_end_date_placeholder"] = "Día de finalización";
 $new_coupon_s["promo_end_date_hour_placeholder"] = "Hora de finalización";
 $new_coupon_s["coupons_number"] = "Número de cupones que tiene la campaña";
@@ -659,7 +659,7 @@ $new_coupon_s["status"] = "Estado de la campaña";
 $new_coupon_s["status_help"] = "Seleccione el estado de la campaña";
 
 
-
+$resume_block_s[""]="";
 $resume_block_s["usage_this_mounth"]="Uso este mes";
 $resume_block_s["view_more"]="Ver más";
 $resume_block_s["campaigns"]="Campañas";

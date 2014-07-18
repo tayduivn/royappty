@@ -3,7 +3,7 @@
 
 //General
 $s["cancel"] = "Cancel";
-$s["delete"] = "Delete" 
+$s["delete"] = "Delete";
 $s["close"] = "Close";
 $s["add"] = "Add";
 $s["warning"] = "Warning";
@@ -31,7 +31,7 @@ $s["follow_us_content"] = "Folow our profiles in social networks and find out ou
 //login
 $s["login"] = "Log in your account";
 $s["did_you_lose_your_password"] = "Have you lost your password?";
-$s["create_account"] = "Create a new account"
+$s["create_account"] = "Create a new account";
 $login_s["email"]="email";
 $login_s["email_help"]="";
 $login_s["password"]="Password";
@@ -43,7 +43,7 @@ $signup_s["brand_data"] = "Company information";
 $signup_s["contact_data"] = "Contact information";
 $signup_s["name"] = "Company name";
 $signup_s["name_help"] = "In case of particular use , write your name here";
-$signup_s["cif"] = "VAT";
+$signup_s["cif"] = "VATIN";
 $signup_s["cif_help"] = "If you are not a company, write your ID number ";
 $signup_s["contact_name"] = "Contact name";
 $signup_s["contact_name_help"] = "If something happens, who will we be in contact with ?";
@@ -57,7 +57,7 @@ $signup_s["contact_postal_code"] = "Postcode";
 $signup_s["contact_postal_code_help"] = "";
 $signup_s["contact_city"] = "City";
 $signup_s["contact_city_help"] = "";
-$signup_s["contact_province"] = "Provincia";
+$signup_s["contact_province"] = "County";
 $signup_s["contact_province_help"] = "";
 $signup_s["contact_country"] = "Country";
 $signup_s["contact_country_help"] = "";
@@ -97,389 +97,389 @@ $signup_s["accept_policy"] = "I accept Privacy Policy terms";
 
 $policy_s["security"]["title"] = "Privacy Policy";
 $policy_s["security"]["content"][0] = "According to what is set forth in the Fundamental Law \"Ley Orgánica 15/1999\", of the 13 December of Personal Data Protection and the Order \" R.D. 1720/2007\" which regulates this law application, both included into the Spanish legislation, VIVA LA CLOUD, S.L. informs you your personal data, gathered here now or in a future, will be included in a mixed-typed file called \"ROYAPPTY CLIENTES\" owed by VIVA LA CLOUD, S.L. and whose purpose is \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACIÓN\".";
-$policy_s["security"]["content"][1] = "We would like to highlight those data will be considered only and exclusively to the provision of a service and we will keepthem under a complete confidentiality.*********** Al darte de alta en ROYAPPTY prestas tu consentimiento para que podamos tratar estos datos y permites que podamos enviarte información sobre las mejoras y novedades de nuestra aplicación.";
-$policy_s["security"]["content"][2] = "Para ejercer tus derechos de acceso, rectificación, cancelación y oposición puedes escribirnos a hola@royappty.com adjuntando una copia del DNI del titular de la cuenta (para poder verificarlo).";
-$policy_s["security"]["content"][3] = "Puedes consultar nuestra política de privacidad al completo a través de este enlace y las condiciones de uso de ROYAPPTY a través de este otro.";
+$policy_s["security"]["content"][1] = "We would like to highlight those data will be considered only and exclusively to the provision of a service and we will keep them under a complete confidentiality. When you sign up into ROYAPPTY, you are in accordance with alowwing we can treat them and send you information about developments and last news of our apps";
+$policy_s["security"]["content"][2] = "You can email us to hola@royappty.com to exercise your rights of access, rectification, cancellation or disagreement attaching an ID copy of the account owner (in order to verify it)";
+$policy_s["security"]["content"][3] = "You can look up our complete privacy pthrough this link and ROYAPPTY terms of use lthrough this another one.";
 
 //Recovery Password
-$s["recovery_password"] = "Recuperar contraseña";
-$recovery_s["success_title"] = "Operación Completada";
-$recovery_s["success_subtitle"] = "Revisa tu correo electrónico, hemos enviado un email con un link que tendrás que abrir para verificar que la cuenta es tuya y te permitirá modificar la contraseña de acceso.";
-$revocery_s["mail_subject"] = "Recuperar contraseña";
-$revocery_s["revocery_content_header"] = "Se ha iniciado el proceso de recuperación de contraseña. Para poder cambiar tu contraseña accede al siguiente link y sigue las instrucciones.";
-$revocery_s["revocery_content_footer"] = "En caso de que no puedas abrir el link, cópialo y pégalo en la barra de dirección de tu navegador.";
+$s["recovery_password"] = "Password recovery";
+$recovery_s["success_title"] = "Completed operation";
+$recovery_s["success_subtitle"] = "Check your email account, an email has been sent with a link you must open to verify theaccount is yours and it allow you modify the access password.";
+$revocery_s["mail_subject"] = "Password recovery";
+$revocery_s["revocery_content_header"] = "Password recovery process has been started. Click into the following link to change your password y follow the instructions.";
+$revocery_s["revocery_content_footer"] = "In case you cannot open the link, copy and paste it into the address bar.";
 
 //Set new password
-$s["set_password"] = "Cambiar contraseña";
-$set_password_s["password"] = "Nueva contraseña";
-$set_password_s["password_help"] = "Elige una contraseña de mínimo 8 caracteres.";
-$set_password_s["password_repeat"] = "Repetir Contraseña";
+$s["set_password"] = "Change password";
+$set_password_s["password"] = "New password";
+$set_password_s["password_help"] = "Choose a password with 8 characters minimun.";
+$set_password_s["password_repeat"] = "Repeat password";
 $set_password_s["password_repeat_help"] = "";
-$set_password_s["success_title"] = "Contraseña Actualizada";
-$set_password_s["success_subtitle"] = "La contraseña se ha actualizado con éxito, pulse volver y acceda al sistema.";
+$set_password_s["success_title"] = "Updated password";
+$set_password_s["success_subtitle"] = "The password has been updated sucessfully, click back and acces into the system.";
 
 //Verification
-$s["verification_title"] = "Activar cuenta";
-$s["verification_subtitle_success"] = "Su cuenta ha sido activada";
-$s["verification_subtitle_error"] = "No se ha podido activar su cuenta, código no válido.";
+$s["verification_title"] = "Activate account";
+$s["verification_subtitle_success"] = "Your account has been activated";
+$s["verification_subtitle_error"] = "Your account has not been activateed, unvalid code.";
 
 
 // Menu
-$s["home"] = "Inicio";
-$s["dashboard"] = "Panel de Actividad";
-$s["campaigns"] = "Campañas";
-$s["all_campaigns"] = "Todas las Campañas";
-$s["new_campaign"]= "Crear nueva Campaña";
-$s["admins"] = "Administradores";
-$s["all_admins"] = "Todos los Administradores";
-$s["new_admin"] = "Añadir nuevo Administrador";
-$s["all_admin_groups"] = "Todos los grupos";
-$s["new_admin_group"] = "Crear nuevo grupo";
-$s["users"] = "Usuarios";
-$s["all_users"] = "Todos los usuarios";
-$s["all_groups"] = "Todos los grupos";
-$s["new_group"] = "Crear nuevo grupo";
-$s["settings"] = "Configuración";
-$s["my_app"] = "Mi aplicación";
-$s["all_requests"] = "Listado de Solicitudes";
-$s["my_account"] = "Mi cuenta";
-$s["logout"] = "Cerrar Sesión";
-$s["print"] = "Imprimir";
+$s["home"] = "Home";
+$s["dashboard"] = "Dashboard";
+$s["campaigns"] = "Campaigns";
+$s["all_campaigns"] = "All campaigns";
+$s["new_campaign"]= "Create new campaing";
+$s["admins"] = "Administrator";
+$s["all_admins"] = "All Administrators";
+$s["new_admin"] = "Add new Administrator";
+$s["all_admin_groups"] = "All groups";
+$s["new_admin_group"] = "Create new group";
+$s["users"] = "Users";
+$s["all_users"] = "All users";
+$s["all_groups"] = "All groups";
+$s["new_group"] = "Create new group";
+$s["settings"] = "Configuration";
+$s["my_app"] = "My app";
+$s["all_requests"] = "Request list";
+$s["my_account"] = "My account";
+$s["logout"] = "Log out";
+$s["print"] = "Print";
 
 
 // Modal Ajax Error
 $s["error"] = "Error";
-$s["ajax_error_1"] = "Ha ocurrido un error al realizar la operación y no se a podido llevar acabo, el código del error es:";
-$s["ajax_error_2"] = "Por favor vuelva a intentarlo más tarde, si el error persiste contacte con nuestro servicio técnico.";
+$s["ajax_error_1"] = "An error has happened when operation was been carrying out and it could not be brought about, the error code is:";
+$s["ajax_error_2"] = "Please, try it again later. If the error remains, contact with our  technical service.";
 
 //Dashboard
-$s["there_is_not_campaigns"] = "No tienes ninguna campaña activa";
-$s["create_your_first_campaign"] = "Crea tu primera campaña";
+$s["there_is_not_campaigns"] = "There is no activated campaign";
+$s["create_your_first_campaign"] = "Create your first campaign";
 
 //Campaigns / List
-$s["name"] = "Nombre";
-$s["type"] = "Tipo";
-$s["status"] = "Estado";
+$s["name"] = "Name";
+$s["type"] = "Type";
+$s["status"] = "Status";
 $s["total"] = "Total";
-$s["last_month"] = "Últ. Mes";
-$s["delete_campaign"]= "Eliminar Campaña";
-$s["delete_campaign_alert"]="Esta operación eliminará todos los datos de la campaña y no podrá deshacerse ¿De verdad quiere realizar esta operación?";
-$s["active_campaigns"] = "campaigns_status activas";
-$s["draft_campaigns"] = "Borradores";
-$s["inactive_campaigns"] = "Campañas inactivas";
+$s["last_month"] = "Last month";
+$s["delete_campaign"]= "Delete campaign";
+$s["delete_campaign_alert"]="This operation will delete eall campign data and cannot be undone. Do you really want to continue with this operation?";
+$s["active_campaigns"] = "active campaigns_status";
+$s["draft_campaigns"] = "Drafts";
+$s["inactive_campaigns"] = "Inactive campaigns.";
 
 //Campaign / get
 
-$s["add_note"]="Añadir Nota";
-$s["delete_note"] = "Borrar Nota";
-$s["title"]="Título";
-$s["title_note_help"]="Este título se mostrará en el listado";
-$s["content"]="Contenido";
-$s["content_note_help"]="Escribe aquí el contenido de tu nota";
+$s["add_note"]="Add note.";
+$s["delete_note"] = "Delete note.";
+$s["title"]="Title";
+$s["title_note_help"]="This title will show you the list.";
+$s["content"]="Content";
+$s["content_note_help"]="Write here your note content.";
 $s["close"]="Cerrar";
-$s["the_promo_cost_is"]="Esta promoción tiene un coste de ";
-$s["and_profit_of"]=" y un beneficio de ";
+$s["the_promo_cost_is"]="This promotion has a cost of ";
+$s["and_profit_of"]=" and a benefit of ";
 $s["euros_icon"] = "€";
-$s["without_ini_date"]="Sin fecha de inicio";
-$s["from_date"] = "Desde el";
-$s["to_date"] = "hasta el";
-$s["without_end_date"]="sin fecha de fin";
-$s["this_campaign_has_a_limit_of"]="Limite de utilización por usuario:";
-$s["without_limit"]="Sin Límite";
-$s["no_used_codes"] = "No se ha usado esta promoción";
-$s["edit_campaign"] = "Editar campaña";
-$s["campaign_deleted"] = "Campaña Borrada";
-$s["view_all_notes"] = "Ver todas las notas";
+$s["without_ini_date"]="Without beginning date";
+$s["from_date"] = "From";
+$s["to_date"] = "to";
+$s["without_end_date"]="without ending date";
+$s["this_campaign_has_a_limit_of"]="User limit:";
+$s["without_limit"]="Without limit";
+$s["no_used_codes"] = "This promotion has not been used";
+$s["edit_campaign"] = "Edit campaign";
+$s["campaign_deleted"] = "Deleted campaign";
+$s["view_all_notes"] = "View all notes";
 
 //Campaign / new
-$s["select_campaign_type"] = "Seleccione tipo de Campaña";
-$s["add_discount_promo"] = "Crear Promoción Directa";
-$s["add_coupon_promo"] = "Crear Tarjeta de cupones";
-$s["loading..."] = "Cargando...";
-$s["this_may_take_several_seconds"] = "Esta operación puede llevar varios segundos";
-$s["view_campaign"] = "Ver Campaña";
+$s["select_campaign_type"] = "Choose campaign type.";
+$s["add_discount_promo"] = "Create direct promotion.";
+$s["add_coupon_promo"] = "Create coupon card.";
+$s["loading..."] = "Loading...";
+$s["this_may_take_several_seconds"] = "This operation may take several seconds.";
+$s["view_campaign"] = "View Campaign.";
 
-$s["add_coupon_promo"] = "Crear Tarjeta de Cupones";
+$s["add_coupon_promo"] = "Create coupon card";
 
 
 
 
 //Admins / List
 $s["can_login"] = "Manager";
-$s["can_manage_campaigns"] = "Campañas";
-$s["can_validate_codes"] = "Códigos";
-$s["last_action"] = "Últ. Actividad";
-$s["delete_admin"]= "Desactivar Administrador";
-$s["delete_admin_alert"]="Este proceso desactivará a este administrador y no podrá realizar ninguna operación hasta que vuelva a activarse ¿De verdad quiere realizar esta operación?";
-$s["view_report"] = "Ver Informe";
-$s["edit"] = "Editar";
-$s["delete"] = "Eliminar";
-$s["active_admins"] = "Activos";
-$s["inactive_admins"] = "Inactivos";
-$s["inactive_admin"] = "Inactivo";
-$s["brand_admin"] = "Principal";
-$s["validated_codes"] = "Validaciones";
+$s["can_manage_campaigns"] = "Campaigns";
+$s["can_validate_codes"] = "Codes";
+$s["last_action"] = "Last activity";
+$s["delete_admin"]= "Deactivate administrator";
+$s["delete_admin_alert"]="This process will deactivate this administrator and it could not carry out any operation  untit it will be reactivated again. Do you really want to continue with this operation?";
+$s["view_report"] = "View report.";
+$s["edit"] = "Edit";
+$s["delete"] = "Delete";
+$s["active_admins"] = "Active administrators";
+$s["inactive_admins"] = "Inactive administrators";
+$s["inactive_admin"] = "Inactive administrator";
+$s["brand_admin"] = "Main";
+$s["validated_codes"] = "Validation.";
 
 
-$s["can_login_tooltip"] = "Puede acceder al administrador";
-$s["can_manage_campaigns_tooltip"] = "Puede administrar campañas";
-$s["can_manage_admins_tooltip"] = "Puede administrar administradores";
-$s["can_manage_users_tooltip"] = "Puede administrar usuarios";
-$s["can_manage_app_tooltip"] = "Puede administrar la aplicación";
-$s["can_validate_codes_tooltip"] = "Puede validar códigos";
+$s["can_login_tooltip"] = "You can access to the administrator";
+$s["can_manage_campaigns_tooltip"] = "You can manage campaigns.";
+$s["can_manage_admins_tooltip"] = "You can manage administrators.";
+$s["can_manage_users_tooltip"] = "You can manage users.";
+$s["can_manage_app_tooltip"] = "You can manage the app.";
+$s["can_validate_codes_tooltip"] = "You can validate codes.";
 
-$s["cant_login_tooltip"] = "No puede acceder al administrador";
-$s["cant_manage_campaigns_tooltip"] = "No puede administrar campañas";
-$s["cant_manage_admins_tooltip"] = "No puede administrar administradores";
-$s["cant_manage_users_tooltip"] = "No puede administrar usuarios";
-$s["cant_manage_app_tooltip"] = "No puede administrar la aplicación";
-$s["cant_validate_codes_tooltip"] = "No puede validar códigos";
+$s["cant_login_tooltip"] = "You cannot access to the administrator.";
+$s["cant_manage_campaigns_tooltip"] = "You cannot manage campaigns.";
+$s["cant_manage_admins_tooltip"] = "You cannot manage administrators.";
+$s["cant_manage_users_tooltip"] = "You cannot manage users.";
+$s["cant_manage_app_tooltip"] = "You cannot manage the app.";
+$s["cant_validate_codes_tooltip"] = "You can validate codes.";
 
 
 
 
 //Admins / Add
-$s["add_admin_title"] = "Datos del Administrador";
-$s["admin_name"] = "Nombre";
-$s["admin_name_help"] = "Introduce el nombre del administrador";
-$s["promo_options"] = "Canjeo de cupones";
+$s["add_admin_title"] = "Administrator data";
+$s["admin_name"] = "Name";
+$s["admin_name_help"] = "Insert administrator name";
+$s["promo_options"] = "Coupons exchange";
 $s["promo_options_help"] = "";
-$s["manager_options"] = "Permisos de Acceso";
-$s["manager_options_help"] = "Selecciona que puede hacer el administrador";
+$s["manager_options"] = "Access permission";
+$s["manager_options_help"] = "Select what administrator can do.";
 $s["admin_avatar"] = "Avatar";
-$s["admin_can_login"] = "Permitir a este Administrador acceder al manager de Royappty";
-$s["admin_can_manage_dashboard"] = "Permitir acceso al Panel de Actividad";
-$s["admin_can_manage_campaigns"] = "Permitir acceso a la administración de Campañas";
-$s["admin_can_manage_admins"] = "Permitir acceso a la administración de Administradores";
-$s["admin_can_manage_users"] = "Permitir acceso a la administración de Usuarios";
-$s["admin_can_manage_app"] = "Permitir acceso a la administración de la Aplicación";
-$s["admin_can_manage_brand"] = "Permitir acceso a la administración de la cuenta de Royappty";
-$s["admin_status"] = "Estado del administrador";
-$s["admin_status_help"] = "Un administrador inactivo no podrá realizar ninguna operación";
+$s["admin_can_login"] = "Let this administrator to log in Royappty manager.";
+$s["admin_can_manage_dashboard"] = "Let access to Dashboard.";
+$s["admin_can_manage_campaigns"] = "Let access to Campaigns administration.";
+$s["admin_can_manage_admins"] = "Let access to Administrators management.";
+$s["admin_can_manage_users"] = "Let acceso to Users management.";
+$s["admin_can_manage_app"] = "Let acceso to App management.";
+$s["admin_can_manage_brand"] = "Let access to Royappty account management.";
+$s["admin_status"] = "Administrator status.";
+$s["admin_status_help"] = "An inactive administrator cannot carry out any operation.";
 
-$s["admin_email"] = "Correo Electrónico";
-$s["admin_email_help"] = "Este correo para el acceso a la administración";
-$s["admin_password"] = "Contraseña";
-$s["admin_password_help"] = "Contraseña de acceso a la administración";
-$s["admin_can_validate_codes"] = "Permitir a este Administrador canjear códigos de promoción";
-$s["admin_promo_password"] = "Código de validación de cupones";
-$s["admin_promo_password_help"] = "Este código de 4 dígitos se usará para validar las promociones";
-$s["view_admin"] = "Ver Administrador";
-$s["admin_success_title"] = "Administrador añadido";
-$s["admin_success_subtitle"] = "Has creado una nuevo administrador";
+$s["admin_email"] = "Email";
+$s["admin_email_help"] = "This email to management access.";
+$s["admin_password"] = "Password";
+$s["admin_password_help"] = "Management access passsword.";
+$s["admin_can_validate_codes"] = "Let this administrator to exchange promotion codes.";
+$s["admin_promo_password"] = "Validation coupon codes.";
+$s["admin_promo_password_help"] = "This 4-digit code will be used to validate promotions.";
+$s["view_admin"] = "View Administrator.";
+$s["admin_success_title"] = "Added dministrator.";
+$s["admin_success_subtitle"] = "A new administrator has been created.";
 
 //Admin / Get
-$s["admins_active"][0]="Inactivo";
-$s["admins_active"][1]="Activo";
+$s["admins_active"][0]="Inactive";
+$s["admins_active"][1]="Active";
 
 $s["admins_active_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_active_icon"][1]="<i class='fa fa-check'></i>";
-$s["permissions"] = "Permisos";
+$s["permissions"] = "Permission";
 
-$s["admins_can_validate_codes"] = "Validar promociones";
+$s["admins_can_validate_codes"] = "Validate promotions";
 $s["admins_can_validate_codes_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_validate_codes_icon"][1]="<i class='fa fa-check'></i>";
-$s["admins_can_login"] = "Consultar campañas";
+$s["admins_can_login"] = "Consult campaigns.";
 $s["admins_can_login_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_login_icon"][1]="<i class='fa fa-check'></i>";
-$s["admins_can_manage_campaigns"] = "Crear, editar y eliminar campañas";
+$s["admins_can_manage_campaigns"] = "Create, edit and delete campaigns.";
 $s["admins_can_manage_campaigns_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_manage_campaigns_icon"][1]="<i class='fa fa-check'></i>";
-$s["without_last_connection"] = "ún no ha realizado ninguna operación";
-$s["last_connection_the"] = "Última actividad el";
-$s["no_codes_validated"] = "No se ha validado ningún código";
-$s["last_validated_codes"] = "Últimos códigos validados";
-$s["edit_admin"] = "Editar Administrador";
-$s["admin_deleted"] = "Administrador Borrado";
+$s["without_last_connection"] = "No operation has been carried out yet.";
+$s["last_connection_the"] = "Last activity on";
+$s["no_codes_validated"] = "No code has been validated yet.";
+$s["last_validated_codes"] = "Last validated codes.";
+$s["edit_admin"] = "Edit Administrator.";
+$s["admin_deleted"] = "deleted administrator.";
 
 //Users / List
-$s["user_didnt_used_codes"] = "No ha validado ningún código";
+$s["user_didnt_used_codes"] = "No code has been validated.";
 
 //Users / get
-$s["without_created_date"] = "Sin fecha de creación";
-$s["created_date_the"] = "Creado el ";
+$s["without_created_date"] = "Without creation date.";
+$s["created_date_the"] = "Created on ";
 
 
 //Groups / List
-$s["users_amount"] = "Número de Usuarios";
-$s["delete_group"] = "Borrar Grupo";
-$s["delete_group_alert"] = "Esta operación eliminará todos los datos del grupo y no podrá deshacerse ¿De verdad quiere realizar esta operación?";
-$s["group_deleted"] = "Grupo Borrado";
+$s["users_amount"] = "Users number.";
+$s["delete_group"] = "Delete group";
+$s["delete_group_alert"] = "This operation will delete all group data and cannot be undone. Do you really want to continue with this operation?";
+$s["group_deleted"] = "Group delated";
 
 
 // Group / Get
-$s["edit_group"] = "Editar Grupo";
+$s["edit_group"] = "Deleted group";
 
 
 // Group / add
-$s["group_name"] = "Nombre del grupo";
-$s["group_name_help"] = "Seleccione un nombre para el grupo";
-$s["select_users"] = "Usuarios del grupo";
-$s["select_users_help"] = "Seleccione los miembros del grupo";
-$s["group_success_title"] = "Grupo creado";
-$s["group_success_subtitle"] = "El grupo se ha creado con éxito";
-$s["view_group"] = "Ver grupo";
+$s["group_name"] = "Group name.";
+$s["group_name_help"] = "Choose an group name";
+$s["select_users"] = "Group users";
+$s["select_users_help"] = "Choose group members";
+$s["group_success_title"] = "Group created";
+$s["group_success_subtitle"] = "The group has been created successfully.";
+$s["view_group"] = "View group";
 
 
 //App / get
 
-$s["app_name_description_and_sreenshots"] = "Nombre, Descripción y Capturas de pantalla";
-$s["name_and_description"] = "Nombre y descripción";
-$s["screenshots"] = "Capturas de Pantalla";
-$s["app_name_description_and_sreenshots_help_1"] = "Estos son el nombre y la descripción que se está utilizando para la aplicación, recuerda que si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación y los nuevos usuarios no te encontrarán con el nombre antiguo. Si ya has solicitado un cambio de nombre revisa el tu ";
-$s["request_list"] = "Listado de solicitudes";
-$s["app_name_description_and_sreenshots_help_2"] = "para comprobar el estado de tu solicitud.";
-$s["edit_app"] = "Editar aplicación";
-$s["app_published_status"] = "Estado de la aplicación";
-$s["published_apple_store"] = "Publicado para iPhone";
-$s["published_play_store"] = "Publicado para Android";
-$s["app_published_status_help_1"] = "Su aplicación está publicada correctamente en App Store y Google Play. Podrá solicitar que se retire su aplicación, impidiendo que nuevos usuarios puedan descargarse la aplicación, recuerde que este proceso puede tardar varios días. Si has solicitado la retirada de la aplicación revisa tu ";
-$s["app_published_status_help_2"] = "para comprobar el estado de tu solicitud.";
-$s["app_icon"] = "Icono de la aplicación";
-$s["app_icon_help_1"] = "Este es el icono que se está utilizando actualmente en tu aplicación, recuerda que si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación, no pudiendo ver los cambios hasta que realicen dicha actualización. Si ya has solicitado un cambio de icono revisa tu";
-$s["app_icon_help_2"] = "para comprobar el estado de tu solicitud.";
-$s["app_bg"] = "Imagen de Bienvenida";
-$s["app_bg_help_1"] = "Este es la imagen de bienvenida de la aplicación, cuando el usuario accede a tu aplicación y se están cargando los datos, recuerda que al igual que el icono de la aplicación, si decides cambiarlo este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación, no pudiendo ver los cambios hasta que realicen dicha actualización. Si ya has solicitado un cambio de imagen de bienvenida revisa tu";
-$s["app_bg_help_2"] = "para comprobar el estado de tu solicitud.";
-$s["user_fields"] = "Datos que se solicitan a los usuarios";
-$s["no_user_fields"] = "No se solicita ningún dato";
-$s["edit_user_fields"] = "Editar datos de recogida";
+$s["app_name_description_and_sreenshots"] = "Name, description and screen shot.";
+$s["name_and_description"] = "Name and description";
+$s["screenshots"] = "Screen shot";
+$s["app_name_description_and_sreenshots_help_1"] = "Those ones are the name and the description being used to the app. Remember if you decide to change them, this process may last several days and force users to update the app and new users wont find you with the old name. If you has already asked for a name change, check your ";
+$s["request_list"] = "Request list";
+$s["app_name_description_and_sreenshots_help_2"] = "to check your request status.";
+$s["edit_app"] = "Edit app";
+$s["app_published_status"] = "App status.";
+$s["published_apple_store"] = "Published to iPhone";
+$s["published_play_store"] = "Published to Android";
+$s["app_published_status_help_1"] = "Your app is correctly published in App Store and Google Play. You could ask for your app withdrawal impeding new users can download the app. Remember this process may last several days. If you has already asked for the withdrawal, check your";
+$s["app_published_status_help_2"] = "to check your request status.";
+$s["app_icon"] = "App icon";
+$s["app_icon_help_1"] = "This is the icon being currently used to the app. Remember if you decide to change it, this process may last several days and force users to update the app impeding them to view changes until they carry out this update. If you has already asked for an icon change, check your ";
+$s["app_icon_help_2"] = "to check your request status.";
+$s["app_bg"] = "Welcome image";
+$s["app_bg_help_1"] = "This one is the app welcome image when user access to your app and data are loading. Remember, as well as app icon, if you decide to change it,  this process may last several days and force users to update the app impeding them to view changes until they carry out this update.  SIf you has already asked for a welcome image, check your ";
+$s["app_bg_help_2"] = "to check your request status.";
+$s["user_fields"] = "Required data  to users";
+$s["no_user_fields"] = "No data has been requested.";
+$s["edit_user_fields"] = "Edit collected data";
 
 //App / new / edit
-$app_s["step_1_title"] = "Datos de la Aplicación";
-$app_s["app_name"] = "Nombre de la Aplicación";
-$app_s["app_name_help"] = "Este será el nombre se utilizará para publicar su aplicación";
-$app_s["description"] = "Descripción";
-$app_s["description_help"] = "Todas las aplicaciones incluyen una descripción para explicar su funcionalidad";
-$app_s["step_2_title"] = "Icono de la aplicación";
-$app_s["icon"] = "Icono de la aplicación";
-$app_s["icon_help"] = "Este icono deberá tener un tamaño mínimo de 545px x 545px";
-$app_s["icon_preview"] = "Previsualización";
-$app_s["step_3_title"] = "Fondo de la aplicación";
-$app_s["app_bg"] = "Fondo";
-$app_s["app_bg_help"] = "Este fondo aparecerá mientras la aplicación se está cargado";
-$app_s["step_4_title"] = "Opciones de publicación";
-$app_s["publish_in_app_store"] = "Publicar para iPhone";
-$app_s["publish_in_google_play"] = "Publicar para Android";
-$app_s["publish_plataforms"] = "Plataformas de sublicación";
-$app_s["publish_plataforms_help"] = "Seleccione en que plataformas quiere publicar la aplicación";
-$app_s["success_title"] = "Actualización enviada";
-$app_s["success_subtitle_1"] = "La actualización de la aplicación ha sido recibida correctamente, recuerda que este proceso puede tardar varios días y obligará a los usuarios a actualizar la aplicación. Para ver en estado de este proceso de actualización puedes visitar tu";
-$app_s["success_subtitle_2"] = "para comprobar el estado de tu solicitud.";
-$app_s["user_fields"] = "Datos de recogida de usuarios";
-$app_s["user_fields_help"] = "Seleccione los datos que se piden a los usuarios cuando se registran en la aplicación";
+$app_s["step_1_title"] = "App data";
+$app_s["app_name"] = "App name";
+$app_s["app_name_help"] = "This one will be the name used to publish your app.";
+$app_s["description"] = "Description";
+$app_s["description_help"] = "All apps include a description explaining their usefulness";
+$app_s["step_2_title"] = "App icon";
+$app_s["icon"] = "App icon";
+$app_s["icon_help"] = "This icon should have a minimun size of 545px x 545px";
+$app_s["icon_preview"] = "Preview display.";
+$app_s["step_3_title"] = "App background";
+$app_s["app_bg"] = "Background";
+$app_s["app_bg_help"] = "This background will be shown while the app is loading.";
+$app_s["step_4_title"] = "Publishing options";
+$app_s["publish_in_app_store"] = "Publish to iPhone";
+$app_s["publish_in_google_play"] = "Publish to Android";
+$app_s["publish_plataforms"] = "Publishing platform";
+$app_s["publish_plataforms_help"] = "Choose in which platform you want to publish the app.";
+$app_s["success_title"] = "Sent upadate.";
+$app_s["success_subtitle_1"] = "The app update has been received correctly, Remember this process may last several days and force users to update the app. In oder to check the status of this update process, visit your";
+$app_s["success_subtitle_2"] = "to check your request status.";
+$app_s["user_fields"] = "Gathering of user data.";
+$app_s["user_fields_help"] = "Choose data asked to users when they register into the app.";
 
 
 //Request / List
-$s["requests"] = "Solicitudes";
-$s["id_request"] = "Identificador de Solicitud";
-$s["active_requests"] = "En Proceso";
-$s["end_requests"] = "Finalizadas";
-$s["view_request"] = "Ver solicitud";
-$s["requests_types"]["app_update"]="Cambios en Aplicación";
-$s["requests_types"]["bank_transfer_confirmation"]="Confirmación de Transferencia";
-$s["requests_types"]["standing_order_payment_confirmation"]="Confirmación Domiciliación Bancaria";
-$s["requests_status"]["in_process"]="En Proceso";
-$s["requests_status"]["ended"]="Finalizado";
+$s["requests"] = "Requests";
+$s["id_request"] = "Request identifier";
+$s["active_requests"] = "In process";
+$s["end_requests"] = "Finished";
+$s["view_request"] = "View request";
+$s["requests_types"]["app_update"]="App changes";
+$s["requests_types"]["bank_transfer_confirmation"]=" Transfer confirmation";
+$s["requests_types"]["standing_order_payment_confirmation"]="Direct debit confirmation";
+$s["requests_status"]["in_process"]="In process";
+$s["requests_status"]["ended"]="Finished";
 
-$s["requests_status_help"]["in_process"]["app_update"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando para poder solucionarla realizar los cambios solicitados. Recuerde que los procesos de actualización de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
-$s["requests_status_help"]["ended"]["app_update"]="La aplicación ya ha sido actualizada";
+$s["requests_status_help"]["in_process"]["app_update"]="Your request has been sent correctly, our team is already working to solve it and carry out the requested changes. Remember app update processes may last days. We will email you an alert having solved it.";
+$s["requests_status_help"]["ended"]["app_update"]="The app has already been updated.";
 
-$s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
-$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="La transferencia ha sido confirmada";
+$s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Your transfer request has been created. Remember you must send us payment justification to payments@royappty.com having done the transfer.";
+$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="The transfer has been confirmed.";
 
-$s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Nuestro equipo está validando tu número de cuenta para empezar con la Domiciliación Bancaria, en uno o dos días laborables estará validada.";
-$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Ya se ha validado tu cuenta para la realización de Domiciliación Bancara.";
+$s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Our tema is validating your account number to start with the direct debit, it will be validated in one or two working days.";
+$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Your account has already been validated to fulfill the direct debit.";
 
 // My Account
-$s["details"] = "Detalles";
-$s["personal_info"] = "Información Personal";
-$s["cif"] = "CIF/DNI";
-$s["email"] = "Correo Electrónico";
-$s["phone"] = "Teléfono";
-$s["contact_name"] = "Persona de Contacto";
-$s["address"] = "Dirección";
-$s["postal_code"] = "Código Postal";
-$s["city"] = "Ciudad";
-$s["country"] = "Pais";
-$s["edit_personal_info"] = "Editar información personal";
-$s["subscription_type"] = "Tipo de Subscripción";
-$s["change_subscription_type"] = "Cambiar tipo de subscripción";
-$s["manage_subscription_and_payments"] = "Gestionar subscripciones y pagos";
-$s["your_subscription_type_is"] = "Estás usando";
-$s["payment_method"] = "Método de pago";
-$s["payment_method_data"] = "Datos almacenados";
-$s["delete_payment_method"] = "Borrar método de pago";
-$s["payments"] = "Recibos";
-$s["payments_helper"] = "Puedes consultar todo el listado de recibos generados hasta el momento.";
-$s["view_payments_list"] = "Ver listado de pagos";
-$s["subscription"] = "Subscripción";
-$s["receipts"] = "Recibos";
-$s["receipt_number"] = "Número de Recibo";
-$s["amount"] = "Importe";
-$s["all_receipts"] = "Todos los recibos";
-$s["receipt"] = "Recibo";
-$s["view_receipt"] = "Ver recibo";
-$s["order_number"] = "Número de Pedido";
-$s["payment_method"] = "Forma de Pago";
-$s["distributor"] = "Distribuidor";
-$s["company_id"] = "CIF";
-$s["VAT"] = "IVA";
-$s["select_subscription_type"]="Seleccione plan de precios";
-$s["select_payment_method"] = "Seleccione método de pago";
-$s["subscription_success_title"] = "Subscripción Actualizada";
-$s["subscription_success_subtitle"] = "Sus datos de subscripción han sido actualizados";
-$s["select_payment_plan"] = "Seleccionar plan de pago";
-$s["account_expiration_date"] = "Fecha de expiración ";
-$s["expiration_date_warning"] = "Atención este producto expirará en menos de 15 días. Renueve su servicio o modifique su plan de precios.";
-$s["expired_plan"] = "Su cuenta ha expirado, renueve su servicio o modifique a nuestro servicios gratuitos para continuar usando la aplicación.";
-$s["renew_subscription"] = "Renovar subscripción";
-$s["payment_gateway"] = "Pasarela de Pago";
-$s["redirecting_to_paypal"] = "Redireccionando a Paypal";
-$s["redirecting_to_gateway"] = "Redireccionando a Pasarela Virtual";
-$s["bank_transfer_title"] = "Datos para realizar la transferencia bancaria";
-$s["bank_transfer_subtitle"] = "Recuerde que es necesario enviar el justificante de pago de la transferencia mediante correo electrónico a payments@royappty.com";
-$s["bank_name"] = "Banco";
+$s["details"] = "Details";
+$s["personal_info"] = "Personal information";
+$s["cif"] = "VAT/ID number";
+$s["email"] = "Email";
+$s["phone"] = "Phone number";
+$s["contact_name"] = "Constact person";
+$s["address"] = "Adress";
+$s["postal_code"] = "Post code";
+$s["city"] = "City";
+$s["country"] = "Country";
+$s["edit_personal_info"] = "Edit personal information";
+$s["subscription_type"] = "Subscription type";
+$s["change_subscription_type"] = "Change subscription type";
+$s["manage_subscription_and_payments"] = "Manage subcriptions and payments";
+$s["your_subscription_type_is"] = "You are using";
+$s["payment_method"] = "Payment method";
+$s["payment_method_data"] = "Stored datas";
+$s["delete_payment_method"] = "Delete payment methods";
+$s["payments"] = "Receipt";
+$s["payments_helper"] = "You can consult all the receipt list generated up to now.";
+$s["view_payments_list"] = "View payment list";
+$s["subscription"] = "Subscription";
+$s["receipts"] = "Receipts";
+$s["receipt_number"] = "Receipt number";
+$s["amount"] = "Amount";
+$s["all_receipts"] = "All receipts";
+$s["receipt"] = "Receipt";
+$s["view_receipt"] = "View recipt";
+$s["order_number"] = "Order number";
+$s["payment_method"] = "Payment methodo";
+$s["distributor"] = "Distributor";
+$s["company_id"] = "VATIN";
+$s["VAT"] = "VAT";
+$s["select_subscription_type"]="Select price plan.";
+$s["select_payment_method"] = "Select payment method.";
+$s["subscription_success_title"] = "Updated subscription";
+$s["subscription_success_subtitle"] = "Your subscription data has been updated.";
+$s["select_payment_plan"] = "Select payment method";
+$s["account_expiration_date"] = "Expiration date";
+$s["expiration_date_warning"] = "Warning, this product will expire in less than 15 days. Renew tour dervice or modify your price plan.";
+$s["expired_plan"] = "Your account has expired, renew your service or modify to our free services to continue enjoying the app.";
+$s["renew_subscription"] = "Renew subscription";
+$s["payment_gateway"] = "Payment gateway";
+$s["redirecting_to_paypal"] = "Paypal adressing";
+$s["redirecting_to_gateway"] = "Gateway adressing";
+$s["bank_transfer_title"] = "Data to carry out bank transfer";
+$s["bank_transfer_subtitle"] = "Remember it is necessary ro send the transfer payment justification by email to payments@royappty.com";
+$s["bank_name"] = "Bank";
 $s["bank_swift"] = "SWIFT";
 $s["bank_iban"] = "IBAN";
-$s["bank_account_number"] = "Número de cuenta";
-$s["bank_account_number_helper"] = "Indícanos el número de cuenta donde quieres que domiciliemos tus recibos";
-$s["bank_transfer_beneficiary"] = "Beneficiario";
-$s["bank_transfer_concept"] = "Concepto";
-$s["bank_transfer_amount"] = "Importe";
-$s["fill_up_standing_order_payment_data"] = "Datos de cuenta bancaria";
-$s["standing_order_payment_data_helper"] = "Para poder realizar una domiciliación bancaria es necesario que nos proporciones tu cuenta bancaria, una vez nos la hayas proporcionado, nuestro equipo de ventas dará de alta tu cuenta y podremos domiciliarte los recibos.";
-$s["delete_your_account_help"] = "Si quieres darte de baja del servicio royappty, puedes bloquear y eliminar tu cuenta. Pulsado";
-$s["here"] = "aquí";
-$s["delete_account"] = "Eliminar cuenta";
-$s["delete_account_warning_title"] = "Atención, es importante que leas la siguiente advertencia";
-$s["delete_account_warning"] = "Estas a punto de iniciar el proceso de eliminación de tu cuenta royappty, ahora podrás escoger entre dos opciones: Bloquear o Eliminar ahora.";
-$s["lock_account_selection_warning"] = "Bloqueo, permitirá que tus datos (campañas, administradores, usuarios, configuración e informes) queden almacenados durante 6 meses. Una vez pasado este periodo de tiempo se eliminarán del sistema. Esta opción te permitirá en que durante este plazo de 6 meses puedas volver a activar tu cuenta sin ninguna pérdida de datos.";
-$s["delete_account_selection_warning"] = "Eliminar ahora, borrará todos los datos asociados a tu cuenta (campañas, administradores, usuarios, informes y todas las configuraciones de tu app). Es muy importante, que entiendas que esta opción no podrá deshacerse y una vez iniciado.";
-$s["app_delete_account_warning"] = "Tanto el proceso de Bloqueo como el proceso de Eliminación ahora, harán que tu aplicación de móvil deje de estar disponible en los markets de Android y iPhone. Los usuarios que hayan descargado tu aplicación antes de la eliminación o bloqueo de tu cuenta, seguirán teniéndola en su móvil, pero al acceder a ella, les informará que la aplicación ha dejado de existir.";
-$s["select_delete_option"] = "Seleccione opción de eliminación";
+$s["bank_account_number"] = "Account number";
+$s["bank_account_number_helper"] = "Indicate the account number where you want to set up the direct deposit of your receipts";
+$s["bank_transfer_beneficiary"] = "Beneficiary";
+$s["bank_transfer_concept"] = "Concept";
+$s["bank_transfer_amount"] = "Amount";
+$s["fill_up_standing_order_payment_data"] = "Bank account data";
+$s["standing_order_payment_data_helper"] = "In order to carry out a direct debit is necessary you provide us your bank account. As soon as you have provided it to us, our sales team will register your account and we will be able to set up the direct deposit of your receipts.";
+$s["delete_your_account_help"] = "If you want to unregister from our royappty service, you can block and delete your account. Push it";
+$s["here"] = "here";
+$s["delete_account"] = "Delete account";
+$s["delete_account_warning_title"] = "Warning, read the following warning is important.";
+$s["delete_account_warning"] = "You are about to iniciate the elimination process of your royappty account. Now you could choose between two options: Block or Delete now.";
+$s["lock_account_selection_warning"] = "Block allow your data (campaigns, administrators, users, configuration and reports) remain stored for 6 months. Having past this time period, it will be deleted from the system. This option will allow you reactivate your account without any data loss after this 6 month deadline.";
+$s["delete_account_selection_warning"] = "Delete now will delete all data associated to your account (campaigns, administrators, users, reports and all app configuration). It is really important you should understand you cannot undo this option having started.";
+$s["app_delete_account_warning"] = "Block process as well as Delete now process will do your mobile app stop being available in Android and iPhone markets. Users who had downloaded your app before your account elimination or block will continue having it on their mobiles; but when they access it, they will be informed the app has stopped existing.";
+$s["select_delete_option"] = "Select elimination option";
 $s["select_delete_option_help"] = "";
-$s["lock"] = "Bloquear";
-$s["delete_now"] = "Borrar ahora";
-$s["lock_account_title"] = "Esta cuenta está inactiva";
+$s["lock"] = "Block";
+$s["delete_now"] = "Delete now";
+$s["lock_account_title"] = "This account is inactive.";
 $s["lock_account_subtitle"] = "";
 
 
 
-$s["bank_account_number_bank"] = "Entidad";
-$s["bank_account_number_office"] = "Oficina";
-$s["bank_account_number_control_digit"] = "D. control";
-$s["bank_account_number_account_number"] = "Número de cuenta";
+$s["bank_account_number_bank"] = "Bank";
+$s["bank_account_number_office"] = "Office";
+$s["bank_account_number_control_digit"] = "Check digits.";
+$s["bank_account_number_account_number"] = "Account number";
 
-$payment_gateway_s["success_title"] = "Suscripción Actualizada";
-$payment_gateway_s["success_subtitle"] = "Su subscripción ha sido actualizada con éxito.";
+$payment_gateway_s["success_title"] = "Updated subscription";
+$payment_gateway_s["success_subtitle"] = "Your subscription has been updated successfully.";
 
 
-$payment_method["free"]="Gratuito";
+$payment_method["free"]="Free";
 $payment_method["paypal"]="Paypal";
-$payment_method["credit_card"]="Tarjeta de Crédito";
-$payment_method["bank_transfer"]="Transferencia Bancaria";
-$payment_method["standing_order_payment"]="Domiciliación Bancaria";
+$payment_method["credit_card"]=" Credito card";
+$payment_method["bank_transfer"]="Bank Transfer";
+$payment_method["standing_order_payment"]="Direct debit";
 
 
 $subscription_type_name["welcome"]= "Royappty Professional Welcome Pack";
@@ -487,55 +487,55 @@ $subscription_type_name["starter"]= "Royappty Starter";
 $subscription_type_name["professional"]= "Royappty Professional";
 $subscription_type_name["unlimited"]= "Royappty Unlimited";
 
-$subscription_type_name_helper["welcome"]="Disfruta de nuestro servicio Professional durante 3 Meses totalmente gratis.";
-$subscription_type_name_helper["starter"]="Nuestro plan gratuito, para que sirva de toma de contacto, con limitación a una única campaña activa.";
-$subscription_type_name_helper["professional"]="Nuestra solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
-$subscription_type_name_helper["unlimited"]="Nuestra solución para grandes empresas con varios establecimientos y campañas focalizadas.";
+$subscription_type_name_helper["welcome"]="Enjoy our Professional service for 3 months totally free.";
+$subscription_type_name_helper["starter"]="Our free plan, as first contact, with a limitation to just one active campaign.";
+$subscription_type_name_helper["professional"]="Our  professional answer to any kind of establishment with a limitation to 10 active campaigns.";
+$subscription_type_name_helper["unlimited"]="Our answer to big companies with several establishments and focused campaigns.";
 
-$payment_plan_helper["monthly"]="Pago Mensual";
-$payment_plan_helper["semiannual"]="Pago Semestral";
-$payment_plan_helper["annual"]="Pago Anual";
+$payment_plan_helper["monthly"]="Monthly payment";
+$payment_plan_helper["semiannual"]="Biannual payment";
+$payment_plan_helper["annual"]="Annual payment";
 
-$payment_method_helper["free"]="sin método de pago";
-$payment_method_helper["paypal"]="mediante Paypal";
-$payment_method_helper["credit_card"]="mediante Tarjeta de Crédito";
-$payment_method_helper["bank_transfer"]="mediante Transferencia Bancaria";
-$payment_method_helper["standing_order_payment"]="mediante Domiciliación Bancaria";
+$payment_method_helper["free"]="without payment method";
+$payment_method_helper["paypal"]="by Paypal";
+$payment_method_helper["credit_card"]="by Credit card";
+$payment_method_helper["bank_transfer"]="by Bank Transfer";
+$payment_method_helper["standing_order_payment"]="by Direct debit ";
 
 
 //Account data
-$s["account_data"] = "Información cuenta";
-$s["update_account_data"] = "Actualizar información";
+$s["account_data"] = "Account information";
+$s["update_account_data"] = "Update information";
 
 //Form wizard
-$s["step_"]="Paso";
-$s["_of"]="de";
-$s["next"] = "Siguiente";
-$s["previous"] = "Anterior";
-$s["there_was_an_error_please_try_later"] = "Ha ocurrido un error, por favor vuelva a intentarlo más tarde";
-$s["changes_saved_title"] = "Cambios gradados";
-$s["changes_saved_subtitle"] = "Los datos has sido guardados con éxito";
+$s["step_"]="Step";
+$s["_of"]="og";
+$s["next"] = "Next";
+$s["previous"] = "Previous";
+$s["there_was_an_error_please_try_later"] = "An error has happened, please try it again later.";
+$s["changes_saved_title"] = "Changes changed";
+$s["changes_saved_subtitle"] = "The data has been saved succesfully.";
 
-$brand_s["name"] = "Nombre de la Empresa";
-$brand_s["name_help"] = "Si eres un particular escribe aquí tu nombre";
-$brand_s["cif"] = "CIF";
-$brand_s["cif_help"] = "Si el pago lo realizas como particular indícanos tu DNI";
-$brand_s["contact_name"] = "Persona de contacto";
-$brand_s["contact_name_help"] = "Indícanos la persona o departamento que podemos dirigirnos.";
-$brand_s["contact_phone"] = "Teléfono";
-$brand_s["contact_phone_help"] = "Es importante que nos proporciones un teléfono en que podamos contactar con vosotros.";
-$brand_s["contact_email"] = "Email de contacto";
-$brand_s["contact_email_help"] = "En este email se recibirán notificaciones y alertas, es importante que sea un mail que se lea con regularidad.";
-$brand_s["contact_address"] = "Dirección";
+$brand_s["name"] = "Company name";
+$brand_s["name_help"] = "In case of particular use , write your name here";
+$brand_s["cif"] = "VATIN";
+$brand_s["cif_help"] = "In case of particula user payment, indicate your ID";
+$brand_s["contact_name"] = "Contact person";
+$brand_s["contact_name_help"] = "Indicate the person or deparment we can address to.";
+$brand_s["contact_phone"] = "Phone number";
+$brand_s["contact_phone_help"] = "It is realy important to provide us a phone number to be in contact with.";
+$brand_s["contact_email"] = "Contact email";
+$brand_s["contact_email_help"] = "In this email, notifications and alerts will be received. It is important this email is usually read.";
+$brand_s["contact_address"] = "Address";
 $brand_s["contact_address_help"] = "";
-$brand_s["contact_postal_code"] = "Código postal";
+$brand_s["contact_postal_code"] = "Post code";
 $brand_s["contact_postal_code_help"] = "";
-$brand_s["contact_city"] = "Ciudad";
+$brand_s["contact_city"] = "City";
 $brand_s["contact_city_help"] = "";
-$brand_s["contact_country"] = "Pais";
+$brand_s["contact_country"] = "Country";
 $brand_s["contact_country_help"] = "";
-$s["account_data_success_title"] = "Información actualizada";
-$s["account_data_success_subtitle"] = "Tu información ha sido actualizada con éxito";
+$s["account_data_success_title"] = "Updated information";
+$s["account_data_success_subtitle"] = "Your information has been updated succesfully";
 
 
 $s["campaigns_status"][3]="Borrador";
@@ -546,150 +546,150 @@ $s["campaigns_status_icon"][3]="<i class='fa fa-pause'></i>";
 $s["campaigns_status_icon"][2]="<i class='fa fa-times'></i>";
 $s["campaigns_status_icon"][1]="<i class='fa fa-check'></i>";
 
-$s["campaigns_types"][1]="Tarjeta de Cupones";
-$s["campaigns_types"][2]="Promoción Directa";
+$s["campaigns_types"][1]="Coupons Card";
+$s["campaigns_types"][2]="Direct Promotion";
 
-$s["no_date"]="Sin Fecha";
-$s["last_promo_used"] = "Últimos Usos";
-$s["notes"] = "Notas";
-$s["add_note"] = "Añadir nota";
-$s["last_15_days"]="Últimos 15 días";
-$s["add_first_note"]="Añadir primera nota";
+$s["no_date"]="Without date";
+$s["last_promo_used"] = "Last uses";
+$s["notes"] = "Notes";
+$s["add_note"] = "Add note";
+$s["last_15_days"]="Last 15 days";
+$s["add_first_note"]="Add first note";
 
-$s["campaign"]="Campaña";
-$s["active_campaigns"]="Campañas activas";
+$s["campaign"]="Campaign";
+$s["active_campaigns"]="Active campaigns";
 $s["usage"]="Uso";
 
 // Create Discount
-$new_discount_s["step_1_title"]="Datos de la Campaña";
-$new_discount_s["campaign_title"] = "Título de la Campaña";
-$new_discount_s["campaign_title_help"] = "ej. El 5 café gratis";
-$new_discount_s["description"] = "Descripción";
-$new_discount_s["description_help"] = "Explica aquí la campaña";
-$new_discount_s["step_2_title"] = "Icono de la campaña";
-$new_discount_s["icon"] = "Icono";
-$new_discount_s["icon_help"] = "Tamaño 500x500";
-$new_discount_s["our_promos"] = "Nuestras Promociones";
-$new_discount_s["step_3_title"] = "Diseño de la campaña";
-$new_discount_s["button_title"] = "Texto del Botón";
-$new_discount_s["button_title_help"] = "Introduce el texto que quieres que muestre el botón";
-$new_discount_s["button_title_placeholder"] = "Texto del botón";
-$new_discount_s["promo_image"] = "Imagen de la promoción";
-$new_discount_s["promo_image_help"] = "Máximo";
-$new_discount_s["or_select_predefined_image"] = "O selecciona una imagen predefinida";
-$new_discount_s["promo_content"] = "Texto de la promoción";
-$new_discount_s["promo_content_help"] = "Máximo 300 caracteres";
-$new_discount_s["promo_content_preview"] = "Introduce aquí el texto de la promoción";
-$new_discount_s["promo_title"] = "Título de la promoción";
-$new_discount_s["promo_title_help"] = "Introduce el título que se mostrará en el menú";
-$new_discount_s["promo_title_placeholder"] = "Título de la campaña";
-$new_discount_s["use_promo"] = "Usar promoción";
-$new_discount_s["step_4_title"] = "Reglas de la campaña";
-$new_discount_s["promo_ini_date"] = "Inicio de la promoción";
-$new_discount_s["promo_ini_date_help"] = "Selecciona la fecha de inicio de la promoción";
-$new_discount_s["promo_ini_placeholder"] = "Día de inicio";
-$new_discount_s["promo_ini_date_hour_placeholder"] = "Hora de inicio";
-$new_discount_s["promo_end_date"] = "Fin de la promoción";
-$new_discount_s["promo_end_date_help"] = "Selecciona la fecha de inicio de la promoción";
-$new_discount_s["promo_end_date_placeholder"] = "Día de finalización";
-$new_discount_s["promo_end_date_hour_placeholder"] = "Hora de finalización";
-$new_discount_s["promo_usage_limit"] = "Limite de uso por usuario";
-$new_discount_s["promo_usage_limit_help"] = "Selecciona el número de veces que un usuario puede repetir (para no tener límite pon 0)";
-$new_discount_s["promo_usage_limit_placeholder"] = "¿Cuantas veces puede usar el usuario esta campaña?";
-$new_discount_s["success_title"] = "Campaña creada";
-$new_discount_s["success_subtitle"] = "Has creado una campaña nueva";
-$new_discount_s["promo_profit"] = "Beneficio ( € )";
-$new_discount_s["promo_profit_help"] = "Pon en Euros el beneficio de la promo ej. 3.00";
-$new_discount_s["promo_cost"] = "Coste ( € )";
-$new_discount_s["promo_cost_help"] = "Pon en Euros el coste de la promo ej. 1.00";
-$new_discount_s["status"] = "Estado de la campaña";
-$new_discount_s["status_help"] = "Seleccione el estado de la campaña";
+$new_discount_s["step_1_title"]="Campaign data";
+$new_discount_s["campaign_title"] = "Campaign title";
+$new_discount_s["campaign_title_help"] = "eg. 5th coffee free";
+$new_discount_s["description"] = "Description";
+$new_discount_s["description_help"] = "Explain the campaign here";
+$new_discount_s["step_2_title"] = "Campaign icon";
+$new_discount_s["icon"] = "Icon";
+$new_discount_s["icon_help"] = "Size 500x500";
+$new_discount_s["our_promos"] = "Our Promotions";
+$new_discount_s["step_3_title"] = "Campaign design";
+$new_discount_s["button_title"] = "Button text";
+$new_discount_s["button_title_help"] = "Insert the text you want to be shown in the button";
+$new_discount_s["button_title_placeholder"] = "Button text";
+$new_discount_s["promo_image"] = "Promotion image";
+$new_discount_s["promo_image_help"] = "Maximum";
+$new_discount_s["or_select_predefined_image"] = "Or select a predefined image";
+$new_discount_s["promo_content"] = "Promotion text";
+$new_discount_s["promo_content_help"] = "Maximum 300 characters";
+$new_discount_s["promo_content_preview"] = "Insert promotion text here";
+$new_discount_s["promo_title"] = "Promotion title";
+$new_discount_s["promo_title_help"] = "Insert the title to be shown into the menu";
+$new_discount_s["promo_title_placeholder"] = "Campaign title";
+$new_discount_s["use_promo"] = "Use promotion";
+$new_discount_s["step_4_title"] = "Campaign rules";
+$new_discount_s["promo_ini_date"] = "Promotion beginning";
+$new_discount_s["promo_ini_date_help"] = "Select promotion beginning date";
+$new_discount_s["promo_ini_placeholder"] = "Beginning day";
+$new_discount_s["promo_ini_date_hour_placeholder"] = "Beginning hour";
+$new_discount_s["promo_end_date"] = "Promotion ending";
+$new_discount_s["promo_end_date_help"] = "Select promotion ending date";
+$new_discount_s["promo_end_date_placeholder"] = "Ending day";
+$new_discount_s["promo_end_date_hour_placeholder"] = "Ending hour";
+$new_discount_s["promo_usage_limit"] = "Use limit for each user";
+$new_discount_s["promo_usage_limit_help"] = "Select how many times an user can repeat (to avoid a limit choose 0)";
+$new_discount_s["promo_usage_limit_placeholder"] = "How many times can the user exchange this campaign?";
+$new_discount_s["success_title"] = "Campaign created";
+$new_discount_s["success_subtitle"] = "You has created a new campaign.";
+$new_discount_s["promo_profit"] = "Profit ( € )";
+$new_discount_s["promo_profit_help"] = "Put in Euros the promotion profit e.g. 3.00";
+$new_discount_s["promo_cost"] = "Cost ( € )";
+$new_discount_s["promo_cost_help"] = "Put in Euros the promotion cost e.g. 1.00";
+$new_discount_s["status"] = "Campaign status";
+$new_discount_s["status_help"] = "Select campaign status";
 
 
 // Create Coupon
-$new_coupon_s["step_1_title"]="Datos de la Campaña";
-$new_coupon_s["campaign_title"] = "Título de la Campaña";
-$new_coupon_s["campaign_title_help"] = "ej. El 5 café gratis";
-$new_coupon_s["description"] = "Descripción";
-$new_coupon_s["description_help"] = "Explica aquí la campaña";
-$new_coupon_s["step_2_title"] = "Icono de la campaña";
-$new_coupon_s["icon"] = "Icono";
-$new_coupon_s["icon_help"] = "Tamaño 500x500";
-$new_coupon_s["our_promos"] = "Nuestras Promociones";
-$new_coupon_s["step_3_title"] = "Diseño de la campaña";
-$new_coupon_s["promo_title"] = "Título de la promoción";
-$new_coupon_s["promo_title_help"] = "Introduce el título que se mostrará en el menú";
-$new_coupon_s["promo_title_placeholder"] = "Título de la campaña";
+$new_coupon_s["step_1_title"]="Campaign data";
+$new_coupon_s["campaign_title"] = "Campaign title";
+$new_coupon_s["campaign_title_help"] = "e.g. 5th coffee free";
+$new_coupon_s["description"] = "Description";
+$new_coupon_s["description_help"] = "Explain the campaign here";
+$new_coupon_s["step_2_title"] = "Campaign icon";
+$new_coupon_s["icon"] = "Icon";
+$new_coupon_s["icon_help"] = "Size 500x500";
+$new_coupon_s["our_promos"] = "Our Promotions";
+$new_coupon_s["step_3_title"] = "Campaign design";
+$new_coupon_s["promo_title"] = "Promotion title";
+$new_coupon_s["promo_title_help"] = "Insert the title to be shown into the menu";
+$new_coupon_s["promo_title_placeholder"] = "Campaign title";
 
-$new_coupon_s["promo_image"] = "Imagen de la promoción";
-$new_coupon_s["promo_image_help"] = "Máximo";
-$new_coupon_s["or_select_predefined_image"] = "O selecciona una imagen predefinida";
-$new_coupon_s["promo_content"] = "Texto de la promoción";
-$new_coupon_s["promo_content_help"] = "Máximo 300 caracteres";
-$new_coupon_s["promo_content_preview"] = "Introduce aquí el texto de la promoción";
+$new_coupon_s["promo_image"] = "Promotion image";
+$new_coupon_s["promo_image_help"] = "Maximum";
+$new_coupon_s["or_select_predefined_image"] = "Or select a predefined image.";
+$new_coupon_s["promo_content"] = "Promotion text";
+$new_coupon_s["promo_content_help"] = "Maximum 300 characters";
+$new_coupon_s["promo_content_preview"] = "Insert promotion text here";
 
-$new_coupon_s["button_title"] = "Texto del Botón";
-$new_coupon_s["button_title_help"] = "Introduce el texto que quieres que muestre el botón";
-$new_coupon_s["button_title_placeholder"] = "Texto del botón";
+$new_coupon_s["button_title"] = "Button Text";
+$new_coupon_s["button_title_help"] = "Insert the text to be shown into the button";
+$new_coupon_s["button_title_placeholder"] = "Button Text";
 
-$new_coupon_s["use_promo"] = "Usar promoción";
-$new_coupon_s["step_4_title"] = "Reglas de la campaña";
-$new_coupon_s["promo_ini_date"] = "Inicio de la promoción";
-$new_coupon_s["promo_ini_date_help"] = "Selecciona la fecha de inicio de la promoción";
-$new_coupon_s["promo_ini_placeholder"] = "Día de inicio";
-$new_coupon_s["promo_ini_date_hour_placeholder"] = "Hora de inicio";
-$new_coupon_s["promo_end_date"] = "Fin de la promoción";
-$new_coupon_s["promo_end_date_help"] = "Selecciona la fecha de inicio de la promoción";
-$new_coupon_s["promo_end_date_placeholder"] = "Día de finalización";
-$new_coupon_s["promo_end_date_hour_placeholder"] = "Hora de finalización";
-$new_coupon_s["coupons_number"] = "Número de cupones que tiene la campaña";
-$new_coupon_s["coupons_number_help"] = "Selecciona el número de cupones que tiene que rellenar";
-$new_coupon_s["coupons_number_placeholder"] = "Número de cupones a rellenar";
+$new_coupon_s["use_promo"] = "Use promotion";
+$new_coupon_s["step_4_title"] = "Campaign rules";
+$new_coupon_s["promo_ini_date"] = "Protion beginning";
+$new_coupon_s["promo_ini_date_help"] = "Select promotion beginning date";
+$new_coupon_s["promo_ini_placeholder"] = "Beginning day";
+$new_coupon_s["promo_ini_date_hour_placeholder"] = "Beginning hour";
+$new_coupon_s["promo_end_date"] = "Promotion ending";
+$new_coupon_s["promo_end_date_help"] = "Select promotion ending date";
+$new_coupon_s["promo_end_date_placeholder"] = "Ending day";
+$new_coupon_s["promo_end_date_hour_placeholder"] = "Ending hour";
+$new_coupon_s["coupons_number"] = "Campaign number of coupons";
+$new_coupon_s["coupons_number_help"] = "Select the number of coupons to fill";
+$new_coupon_s["coupons_number_placeholder"] = "Number of coupons to fill";
 
-$new_coupon_s["promo_usage_limit"] = "Limite de uso por usuario";
-$new_coupon_s["promo_usage_limit_help"] = "Selecciona el número de veces que un usuario puede repetir (para no tener límite pon 0)";
-$new_coupon_s["promo_usage_limit_placeholder"] = "¿Cuantas veces puede usar el usuario esta campaña?";
-$new_coupon_s["success_title"] = "Campaña creada";
-$new_coupon_s["success_subtitle"] = "Has creado una campaña nueva";
-$new_coupon_s["promo_profit"] = "Beneficio ( € )";
-$new_coupon_s["promo_profit_help"] = "Pon en Euros el beneficio de la promo ej. 3.00";
-$new_coupon_s["promo_cost"] = "Coste ( € )";
-$new_coupon_s["promo_cost_help"] = "Pon en Euros el coste de la promo ej. 1.00";
-$new_coupon_s["status"] = "Estado de la campaña";
-$new_coupon_s["status_help"] = "Seleccione el estado de la campaña";
-
-
-
-$resume_block_s["usage_this_mounth"]="Uso este mes";
-$resume_block_s["view_more"]="Ver más";
-$resume_block_s["campaigns"]="Campañas";
-$resume_block_s["usage_this_month"]="Uso este mes";
-$resume_block_s["usage_this_today"]="Uso hoy";
-$resume_block_s["users"]="Usuarios";
-
-$resume_block_s["campaign_usage_this_month"]="Uso este mes";
-$resume_block_s["campaign_usage_today"]="Uso hoy";
-$resume_block_s["campaign_usage_total"]="Uso total";
-
-$resume_block_s["admin_validated_this_month"]="Validados este mes";
-$resume_block_s["admin_validated_this_today"]="Validados hoy";
-$resume_block_s["admin_validated"]="Validados total";
-
-$resume_block_s["group_usage_this_month"]="Uso este mes";
-$resume_block_s["group_usage_today"]="Uso hoy";
-$resume_block_s["group_users"]="Usuarios";
+$new_coupon_s["promo_usage_limit"] = "Use limit for each user";
+$new_coupon_s["promo_usage_limit_help"] = "Select how many times an user can repeat(to avoid a limit choose 0)";
+$new_coupon_s["promo_usage_limit_placeholder"] = "How many times can the user exchange this campaign?";
+$new_coupon_s["success_title"] = "Campaign created";
+$new_coupon_s["success_subtitle"] = "You has created a new campaign.";
+$new_coupon_s["promo_profit"] = "Profit ( € )";
+$new_coupon_s["promo_profit_help"] = "Put in Euros the promotion profit e.g. 3.00";
+$new_coupon_s["promo_cost"] = "Cost ( € )";
+$new_coupon_s["promo_cost_help"] = "Put in Euros the promotion cost e.g. 1.00";
+$new_coupon_s["status"] = "Campaign status";
+$new_coupon_s["status_help"] = "Select campaign status";
 
 
+$resume_block_s[""]="";
+$resume_block_s["usage_this_mounth"]="Use this month";
+$resume_block_s["view_more"]="View more";
+$resume_block_s["campaigns"]="Campaigns";
+$resume_block_s["usage_this_month"]="Use this month";
+$resume_block_s["usage_this_today"]="Use today";
+$resume_block_s["users"]="Users";
+
+$resume_block_s["campaign_usage_this_month"]="Use this month";
+$resume_block_s["campaign_usage_today"]="Use today";
+$resume_block_s["campaign_usage_total"]="Total use";
+
+$resume_block_s["admin_validated_this_month"]="Validated this month";
+$resume_block_s["admin_validated_this_today"]="Validated today";
+$resume_block_s["admin_validated"]="Total validated";
+
+$resume_block_s["group_usage_this_month"]="Use this month";
+$resume_block_s["group_usage_today"]="Use today";
+$resume_block_s["group_users"]="Users";
 
 
-$user_field_title_s["name"]="Nombre";
+
+
+$user_field_title_s["name"]="Name";
 
 
 
 $royappty_plans["welcome"]["title"]="Royappty Profesional Welcome Pack";
-$royappty_plans["welcome"]["subtitle"]="Disfruta de nuestro servicio Professional durante 3 Meses totalmente Gratis.";
-$royappty_plans["welcome"]["price"]="3 Meses gratis";
-$royappty_plans["welcome"]["help"]="ATENCIÓN. Esta promoción sólo estará disponible hasta el 31 de Octubre.";
+$royappty_plans["welcome"]["subtitle"]="Enjoy our Professional  service for 3 Months totally Free.";
+$royappty_plans["welcome"]["price"]="3 Months free";
+$royappty_plans["welcome"]["help"]="ATENTION. This promotion bille be just available to October 31.";
 
 $royappty_plans["starter"]["title"]="Royappty Starter";
 $royappty_plans["starter"]["subtitle"]="Nuestro plan gratuito, para que sirva de toma de contacto, con limitación a una única campaña activa.";

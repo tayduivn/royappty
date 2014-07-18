@@ -3,17 +3,17 @@ $conf = array(
 	'bdtype' => 'mysql',
 	'bdserver' => 'localhost',
 	'bdport' => '',
-	'bd' => 'royappty',
-	'bduser' => 'root',
-	'bdpass' => 'root',
+	'bd' => 'royappty3',
+	'bduser' => 'royappty3',
+	'bdpass' => 'royappty3',
 	'bdprefix' => ''
 );
-$url_server = "http://localhost:8888/royappty/";
+$url_server = "http://royappty3/";
 
 $campaign_bd_type[2]="discount";
 $campaign_bd_type[1]="coupon";
 
-$lang = "ES_es";
-$lang_email = "es";
+$lang = "EN_en";
+$lang_email = "en";
 include_once(PATH."lang/".$lang.".php");
 ?>

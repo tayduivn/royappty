@@ -192,10 +192,6 @@
 					<div class='m-t-10'>";
 	$table="user_fields";
 	$user_fields=listInBD($table);
-	$table="brand_user_fields";
-	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	$brand_user_fields=listInBD($table,$filter);
 	$coma="";
 	foreach($user_fields as $key=>$user_field){
 		$response["data"]["signup-step-3"].="

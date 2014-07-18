@@ -10,11 +10,11 @@ function logout(){
 if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getItem('id_brand') == 'null')){
 	error_handeler("no_brand");
 }else{
-	$SESSION=localStorage.getItem('id_brand');
+	$BRAND=localStorage.getItem('id_brand');
 	if ((typeof localStorage.getItem('id_admin') == 'undefined')||(localStorage.getItem('id_admin') == 'null')) {
 		error_handeler("no_admin");
 	}else{
-		$BRAND=localStorage.getItem('id_admin');
+		$SESSION=localStorage.getItem('id_admin');
 		$.ajax({
 			async:false,
 			type: "POST",
@@ -32,10 +32,10 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 				} else {
 					error_handeler(response.error_code);
 				}
-					
+
 			}
 		});
-		
+
 		$(document).ready(function() {
 			$.ajax({
 				async: false,
@@ -60,7 +60,7 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 						$("#ajax_error .modal-msg").html(response.error);
 						show_modal("ajax_error","");
 					}
-						
+
 				}
 			});
 		});
