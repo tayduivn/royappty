@@ -1,12 +1,25 @@
 <?php
+  /*********************************************************
+  * AJAX RETURNS
+  *
+  * ERROR CODES
+  * no_brand
+  * brand_not_valid
 
+  * no_admin
+  * admin_not_valid
+  * admin_inactive
+  *
+  *********************************************************/
 
   // BRAND
   $brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
   if(!checkBrand($brand)){echo json_encode($response);die();}
 
 
-
+  // ADMIN
+  $admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
+  if(!checkAdmin($admin)){echo json_encode($response);die();}
 
 
 
@@ -18,14 +31,13 @@
 	*
  	*********************************************************/
 
-	/*********************************************************
-	* AJAX RETURNS
-	*
-	* ERROR CODES
-	* no_brand
-	* brand_not_valid
-	*
-	*********************************************************/
+if(!@issetandnotempty($_POST["id_admin"])){
+  $response["result"]=false;
+  debug_log("[".$page_path."] ERROR Data Post Missing id_admin");
+  $response["error_code"]="post_no_admin";
+  echo json_encode($response);
+  die();
+}
 
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES

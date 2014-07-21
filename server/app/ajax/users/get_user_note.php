@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 18-07-2014
+	* Last Edit: 21-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -13,7 +13,10 @@
 	* ERROR CODES
 	* no_brand
 	* brand_not_valid
-	*
+	*	no_admin
+	* admin_not_valid
+	* admin_inactive
+	*	post_no_user_note
 	*
 	*********************************************************/
 
@@ -38,14 +41,20 @@
 	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
 
+	// ADMIN
+	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
+	if(!checkAdmin($admin)){echo json_encode($response);die();}
+
+
  	// Data check START
 	if(!@issetandnotempty($_POST["id_user_note"])){
-	 	$response["result"]=false;
-		debug_log("[server/ajax/users/get_user_note] ERROR Data Missing id_user_note");
- 		$response["error"]="ERROR Data Missing id_user_note";
- 		echo json_encode($response);
- 		die();
- 	}
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Missing id_user_note");
+		$response["error_code"]="post_no_user_note";
+		echo json_encode($response);
+		die();
+	}
+
  	$table="user_notes";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);

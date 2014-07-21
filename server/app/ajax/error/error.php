@@ -12,6 +12,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
+	* post_no_error_code
 	*
 	*********************************************************/
 
@@ -29,7 +30,13 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
-
+	if(!@issetandnotempty($_POST["error_code"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing error_code");
+		$response["error_code"]="post_no_error_code";
+		echo json_encode($response);
+		die();
+	}
 
 
 	/*********************************************************

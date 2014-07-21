@@ -2,7 +2,7 @@
   /*********************************************************
   *
   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-  * Last Edit: 18-07-2014
+  * Last Edit: 21-07-2014
   * Version: 0.93
   *
    *********************************************************/
@@ -13,7 +13,11 @@
   * ERROR CODES
   * no_brand
   * brand_not_valid
-  *
+  * no_admin
+  * admin_not_valid
+  * admin_inactive
+  * post_create_no_brand
+  * post_create_no_admin
   *
   *********************************************************/
 
@@ -33,6 +37,21 @@
   /*********************************************************
   * DATA CHECK
   *********************************************************/
+  if(!@issetandnotempty($_POST["id_brand"])){
+    $response["result"]=false;
+    debug_log("[".$page_path."] ERROR Data Post Missing id_brand");
+    $response["error_code"]="post_create_no_brand";
+    echo json_encode($response);
+    die();
+  }
+  if(!@issetandnotempty($_POST["id_admin"])){
+    $response["result"]=false;
+    debug_log("[".$page_path."] ERROR Data Post Missing id_admin");
+    $response["error_code"]="post_create_no_admin";
+    echo json_encode($response);
+    die();
+  }
+
 
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];

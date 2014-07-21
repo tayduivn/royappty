@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 18-07-2014
+	* Last Edit: 21-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -13,7 +13,9 @@
 	* ERROR CODES
 	* no_brand
 	* brand_not_valid
-	*
+	*	no_admin
+	* admin_not_valid
+	* admin_inactive
 	*
 	*********************************************************/
 
@@ -38,6 +40,10 @@
 	// BRAND
 	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
+
+	// ADMIN
+	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
+	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
 
 
