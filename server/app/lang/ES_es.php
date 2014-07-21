@@ -394,8 +394,10 @@ $s["requests_status_help"]["ended"]["app_update"]="La aplicación ya ha sido act
 $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
 $s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="La transferencia ha sido confirmada";
 
-$s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Nuestro equipo está validando tu número de cuenta para empezar con la Domiciliación Bancaria, en uno o dos días laborables estará validada.";
-$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Ya se ha validado tu cuenta para la realización de Domiciliación Bancara.";
+$s["requests_status_help"]["in_process"]["standing_order_payment_confirmation"]="Nuestro equipo está validando tu número de cuenta para empezar con la Domiciliación Bancaria, en uno o dos días laborables estará validada.";
+$s["requests_status_help"]["ended"]["standing_order_payment_confirmation"]="Ya se ha validado tu cuenta para la realización de Domiciliación Bancara.";
+
+
 
 $s["delete_request"]= "Eliminar solicitud";
 $s["delete_request_alert"]= "Atención se va a eliminar esta solicitud";
