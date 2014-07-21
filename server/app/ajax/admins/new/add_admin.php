@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 21-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -26,8 +26,6 @@
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/new/add_admin";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
-
 
 	$response=array();
 
@@ -35,6 +33,8 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
+	include(PATH."functions/check_session.php");
 
 
 

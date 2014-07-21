@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 18-07-2014
+	* Last Edit: 21-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -133,7 +133,7 @@
 				</div>";
 	$response["data"]["form-step-end"]="
 			<input type='hidden' id='name' value='".htmlentities($brand["name"], ENT_QUOTES, "UTF-8")."' />
-			<input type='hidden' id='cif' value='".htmlentities($brand["description"], ENT_QUOTES, "UTF-8")."'/>
+			<input type='hidden' id='cif' value='".htmlentities($brand["cif"], ENT_QUOTES, "UTF-8")."'/>
 			<input type='hidden' id='contact_name' value='".htmlentities($brand["contact_name"], ENT_QUOTES, "UTF-8")."'/>
 			<input type='hidden' id='contact_email' value='".htmlentities($brand["contact_email"], ENT_QUOTES, "UTF-8")."' />
 			<input type='hidden' id='contact_phone' value='".htmlentities($brand["contact_phone"], ENT_QUOTES, "UTF-8")."' />

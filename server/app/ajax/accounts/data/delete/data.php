@@ -70,7 +70,7 @@
 				<p class='text-danger'>".htmlentities($s["app_delete_account_warning"], ENT_QUOTES, "UTF-8")."</h5>
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($s["select_delete_option"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($brand_s["select_delete_option_help"], ENT_QUOTES, "UTF-8")."</span>
+					<span class='help'>".htmlentities($s["select_delete_option_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
 						<select id='delete_option' name='delete_option'>
 							<option value='0'>".htmlentities($s["select_an_option"], ENT_QUOTES, "UTF-8")."</option>

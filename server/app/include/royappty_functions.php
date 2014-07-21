@@ -214,7 +214,7 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$table="user_groups";
 			$filter=array();
 			$filter["id_group"]=array("operation"=>"=","value"=>$data1);
-			$block_data=countInBD($table,$filter,$sumfield);
+			$block_data=countInBD($table,$filter);
 			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 

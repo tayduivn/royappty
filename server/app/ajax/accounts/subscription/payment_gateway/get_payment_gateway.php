@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 18-07-2014
+	* Last Edit: 21-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -27,7 +27,6 @@
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/subscription/payment_gateway/get_payment_gateway";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
 
  	$response=array();
 
