@@ -43,7 +43,8 @@ $(document).ready(function() {
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
 			"sSearch": $s["search"],
-			"sInfo": $s["showing_from_entry"]+"<b>_START_"+$s["to_entry"]+"_END_</b>"+$s["_of"] +"_TOTAL_"+ $s["entries"],
+			"sInfo": $s["showing_from_entry"]+"<b> _START_ "+$s["to_entry"]+" _END_ </b>"+$s["_of"] +" _TOTAL_ "+ $s["entries"],
+			"sInfoEmpty": $s["no_entries"],
 			"sZeroRecords": $s["search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/campaigns/table.php?status="+$GET["status"]+"&PATH="+$PATH,

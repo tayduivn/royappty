@@ -42,6 +42,7 @@ $(document).ready(function(){
 			"sLengthMenu": "_MENU_ ",
 			"sSearch": $s["group_search"],
 			"sInfo": $s["group_showing_from_entry"]+"<b>_START_"+$s["group_to_entry"]+"_END_</b>"+$s["group_of"] +"_TOTAL_"+ $s["group_entries"],
+			"sInfoEmpty": $s["group_no_entries"],
 			"sZeroRecords": $s["group_search_no_entry"]
 			},
 		 bAutoWidth     : false,

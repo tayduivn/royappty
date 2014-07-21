@@ -3,16 +3,16 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/new/admin";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
-	
+
+
 	// Data check START
- 	
+
  	$table="admins";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -24,27 +24,27 @@
  		echo json_encode($response);
  		die();
 	}
- 	
+
  	// Data check END
-	
+
 	$response["result"]=true;
-	
-	
+
+
  	$table="admins";
 	$filter=array();
 	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
 	$fields=array();
 	$admin=getInBD($table,$filter,$fields);
-		
-	
+
+
  	$response=array();
  	$response["result"]=true;
-	
-	
-	
+
+
+
 	$response["data"]["page-title"]="<a href='../../admins'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8");
 	$response["data"]["page-options"]="";
-	
+
 	$response["data"]["new-admin-step-1"]="
 			<h4 class='m-t-0'>".htmlentities($s["add_admin_title"], ENT_QUOTES, "UTF-8")."</h4>
 			<form id='form-step1'>
@@ -65,7 +65,7 @@
 	if($admin["can_validate_codes"]==1){
 		$response["data"]["new-admin-step-1"].="checked";
 	}
-	
+
 	$response["data"]["new-admin-step-1"].=" >
 							<label for='can_validate_codes' class='p-l-30'>".htmlentities($s["admin_can_validate_codes"], ENT_QUOTES, "UTF-8")."</label>
 						</div>
@@ -87,19 +87,19 @@
 	if($admin["can_login"]==1){
 		$response["data"]["new-admin-step-1"].="checked";
 	}
-	
+
 	$response["data"]["new-admin-step-1"].=" >
 							<label for='can_login' class='p-l-30'>".htmlentities($s["admin_can_login"], ENT_QUOTES, "UTF-8")."</label>
 						</div>
 					</div>
-					
+
 					<div class='row-fluid m-l-20'>
 						<div class='checkbox check-default'>
 							<input id='can_manage_campaigns' class='user_checkbox' type='checkbox' ";
 	if($admin["can_manage_campaigns"]==1){
 		$response["data"]["new-admin-step-1"].="checked";
 	}
-	
+
 	$response["data"]["new-admin-step-1"].=" >
 							<label for='can_manage_campaigns' class='p-l-30'>".htmlentities($s["admin_can_manage_campaigns"], ENT_QUOTES, "UTF-8")."</label>
 						</div>
@@ -110,7 +110,7 @@
 	if($admin["can_manage_admins"]==1){
 		$response["data"]["new-admin-step-1"].="checked";
 	}
-	
+
 	$response["data"]["new-admin-step-1"].=" >
 							<label for='can_manage_admins' class='p-l-30'>".htmlentities($s["admin_can_manage_admins"], ENT_QUOTES, "UTF-8")."</label>
 						</div>
@@ -121,7 +121,7 @@
 	if($admin["can_manage_users"]==1){
 		$response["data"]["new-admin-step-1"].="checked";
 	}
-	
+
 	$response["data"]["new-admin-step-1"].=" >
 							<label for='can_manage_users' class='p-l-30'>".htmlentities($s["admin_can_manage_users"], ENT_QUOTES, "UTF-8")."</label>
 						</div>
@@ -132,7 +132,7 @@
 	if($admin["can_manage_app"]==1){
 		$response["data"]["new-admin-step-1"].="checked";
 	}
-	
+
 	$response["data"]["new-admin-step-1"].=" >
 							<label for='can_manage_app' class='p-l-30'>".htmlentities($s["admin_can_manage_app"], ENT_QUOTES, "UTF-8")."</label>
 						</div>
@@ -143,7 +143,7 @@
 	if($admin["can_manage_brand"]==1){
 		$response["data"]["new-admin-step-1"].="checked";
 	}
-	
+
 	$response["data"]["new-admin-step-1"].=" >
 							<label for='can_manage_brand' class='p-l-30'>".htmlentities($s["admin_can_manage_brand"], ENT_QUOTES, "UTF-8")."</label>
 						</div>
@@ -172,12 +172,12 @@
 	if($admin["active"]==0){
 		$response["data"]["new-admin-step-1"].="selected";
 	}
-	$response["data"]["new-admin-step-1"].=" >Inactivo</option>
+	$response["data"]["new-admin-step-1"].=" >".$s["admins_status_active"][0]."</option>
 							<option value='1' ";
 	if($admin["active"]==1){
 		$response["data"]["new-admin-step-1"].="selected";
 	}
-	$response["data"]["new-admin-step-1"].=" >Activo</option>
+	$response["data"]["new-admin-step-1"].=" >".$s["admins_status_active"][1]."</option>
 						</select>
 					</div>
 				</div>
@@ -187,7 +187,7 @@
 					</div>
 				</div>
 			</form>";
-	
+
 	$response["data"]["new-admin-step-end"]="
 		<form id='form-end'>
 			<input type='hidden' id='id_admin' value='".$_POST["id_admin"]."' />
@@ -235,8 +235,8 @@
 			</div>
 		</div>
 	";
-	
-	
+
+
  	echo json_encode($response);
 	debug_log("[server/ajax/admins/get_admin] END");
 

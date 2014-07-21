@@ -23,7 +23,7 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 });
@@ -63,7 +63,7 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
+
 $(document).ready(function() {
 	$('.input-append.date').datepicker({
 		autoclose: true,
@@ -72,16 +72,16 @@ $(document).ready(function() {
 	 $('.timepicker-24').timepicker({
 	 	showMeridian: false
      });
-     
+
 
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
-	
 
-	
+
+
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -104,7 +104,7 @@ $(document).ready(function() {
 		rules:{
 		},
 		submitHandler:function(form){
-		 	nextstep();	
+		 	nextstep();
 		}
 	});
 	$("#form-step3").validate({
@@ -116,7 +116,7 @@ $(document).ready(function() {
 			$('#form-end #title').val($('#form-step3 #title').val());
 			$('#form-end #content').val($('#form-step3 #content').val());
 			$('#form-end #button_title').val($('#form-step3 #button_title').val());
-		 	nextstep();	
+		 	nextstep();
 		}
 	});
 	$("#form-step4").validate({
@@ -170,34 +170,33 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
-	
+
 	$('.droparea').each(function(){
 		$(this).droparea({
-			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>Piche o arraste aqu&iacute; la imagen <br/>a subir',
+			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>'+$s["edit_coupon_click_or_drag_image_here"]+'<br/>'+$s["edit_coupon_to upload"],
 			'init' : function(result){},
 			'start' : function(area){
-				area.find('.error').remove(); 
+				area.find('.error').remove();
 			},
 			'error' : function(result, input, area){
-				$('<div class="error">').html(result.error).prependTo(area); 
+				$('<div class="error">').html(result.error).prependTo(area);
 				return 0;
 			},
 			'complete' : function(result, file, input, area){
 				if(result.error){
-					alert("Ha ocurrido un error al subir el archivo");
+					alert($s["edit_coupon_an_error_ocurred_when_downloading_the_file"]);
 				}else{
 					$('#'+result.preview).attr("src",result.filename);
 					$('#form-end #'+result.label).val(result.path);
 				}
 			}
-		});	
+		});
 	});
-	
-	
-});
 
+
+});

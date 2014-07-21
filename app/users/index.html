@@ -38,6 +38,7 @@
 </script>
 <script src="../assets/js/settings.js" type="text/javascript"></script>
 <script src="../assets/js/session.js" type="text/javascript"></script>
+<script src="../assets/js/lang/ES_es.js" type="text/javascript"></script>
 
 </head>
 <!-- END HEAD -->
@@ -59,12 +60,12 @@
                 <h4 id="myModalLabel" class="semi-bold"><i class='fa fa-times'></i> Error</h4>
             </div>
 			<div class="modal-body">
-				<p class="no-margin">Ha ocurrido un error al realizar la operación y no se a podido llevar acabo, el código del error es:</p>
+				<p class="no-margin" id="s-modal-error-undone"></p>
 				<p class='no-margin text-muted m-l-10 modal-msg'></p>
-				<p class="no-margin">Por favor vuelva a intentarlo más tarde, si el error persiste contacte con nuestro servicio técnico.</p>
+				<p class="no-margin" id="s-modal-error-contact"></p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="s-modal-close"></button>
 			</div>
 		</div>
 	</div>
@@ -72,20 +73,20 @@
 
 
 
-<div class="header navbar navbar-inverse ajax-loader-header-menu"> 
-  
+<div class="header navbar navbar-inverse ajax-loader-header-menu">
+
 </div>
 
-<!-- END HEADER --> 
+<!-- END HEADER -->
 <!-- BEGIN CONTAINER -->
 <div class="page-container row">
 	<div class="page-sidebar ajax-loader-left-menu" id="main-menu">
-		
+
 	</div>
 	<div class="page-content">
-		<div class="content">  
-			<div class="page-title ajax-loader-page-title">	
-			
+		<div class="content">
+			<div class="page-title ajax-loader-page-title">
+
 			</div>
 			<div id="row">
                	<div class="grid simple">
@@ -94,11 +95,11 @@
 	               		</ul>
 	               		<div class='tab-content'>
 		               		<div class="tab-pane active">
-	
+
 								<table class="table table-hover table-condensed dataTable" id="users-list" aria-describedby="example_info">
 		                        	<thead>
 		                        		<tr class='ajax-loader-table-header'>
-		                        			                        			
+
 		                        		</tr>
 		                        	</thead>
 		                        	<tbody>
@@ -110,8 +111,8 @@
 				</div>
 			</div>
 		</div>
-	</div> 
-</div>  
+	</div>
+</div>
 <!-- BEGIN CORE JS FRAMEWORK-->
 <script src="../assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -119,7 +120,7 @@
 <script src="../assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
 <!-- END CORE JS FRAMEWORK -->
 <!-- BEGIN PAGE LEVEL JS -->
-<script src="../assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script> 
+<script src="../assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
 <script src="../assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
 <script src="../assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
 <script src="../assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
@@ -130,8 +131,8 @@
 <script type="text/javascript" src="../assets/plugins/datatables-responsive/js/lodash.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <script src="../assets/js/users/list.js" type="text/javascript"></script>
-<!-- PAGE JS --> 	
-<!-- BEGIN CORE TEMPLATE JS --> 
+<!-- PAGE JS -->
+<!-- BEGIN CORE TEMPLATE JS -->
 <script src="../assets/js/datatables.js" type="text/javascript"></script>
 <script src="../assets/js/core.js" type="text/javascript"></script>
 

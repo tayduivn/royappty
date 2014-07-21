@@ -68,13 +68,13 @@ $(document).ready(function() {
 	$("#form-step1").validate({
 		messages:{
 			password:{
-				required:"Este campo es obligatorio",
-				maxlength: "No puede exceder de 25 caracteres",
-				minlength: "Este campo necesita un m&iacute;nimo de 8 caracteres"
+				required:$s["set_password_this_field_is_compulsory"],
+				maxlength: $s["set_password_it_canot_be_longer_than_25_characters"],
+				minlength: $s["set_password_this_field_needs_8_character_minimum"]
 			},
 			password_repeat:{
-				required:"Este campo es obligatorio",
-				equalTo:"Las claves no coinciden"
+				required:$s["set_repeat_password_this_field_is_compulsory"],
+				equalTo:$s["set_repeat_password_both_passwords_do_not_coincide"]
 			}
 		},
 		rules:{

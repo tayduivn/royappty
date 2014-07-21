@@ -41,10 +41,10 @@ function db_choose($manejador) {
 	if($conf['bdtype'] == "mysql") {
 		$db_selected = mysqli_select_db($manejador,$conf['bd']);
 		if (!$db_selected) {
-			throw new Exception("bd.php - db_choose(): Error al seleccionar tabla.");
+			throw new Exception("bd.php - db_choose(): Error when choosing table.");
 		}
 	} else {
-		$error = "bd.php - db_choose(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_choose(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }

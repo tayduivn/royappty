@@ -24,7 +24,7 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 });
@@ -64,17 +64,17 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
+
 $(document).ready(function() {
 
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
-	
 
-	
+
+
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -88,7 +88,7 @@ $(document).ready(function() {
 		submitHandler:function(form){
 			$('#form-end #name').val($('#form-step1 #name').val());
 		 	$('#form-end #can_validate_codes').val(0);if($('#form-step1 #can_validate_codes').is(":checked")){$('#form-end #can_validate_codes').val(1);}
-		 	$('#form-end #promo_password').val($('#form-step1 #promo_password').val());	
+		 	$('#form-end #promo_password').val($('#form-step1 #promo_password').val());
 		 	$('#form-end #can_login').val(0);if($('#form-step1 #can_login').is(":checked")){$('#form-end #can_login').val(1);}
 		 	$('#form-end #can_manage_campaigns').val(0);if($('#form-step1 #can_manage_campaigns').is(":checked")){$('#form-end #can_manage_campaigns').val(1);}
 		 	$('#form-end #can_manage_admins').val(0);if($('#form-step1 #can_manage_admins').is(":checked")){$('#form-end #can_manage_admins').val(1);}
@@ -135,33 +135,32 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
-	
+
 	$('.droparea').each(function(){
 		$(this).droparea({
-			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>Piche o arraste aqu&iacute; la imagen <br/>a subir',
+			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>'+$s["edit_admin_click_or_drag_image_here"]+'<br/>'+$s["edit_admin_to upload"] ,
 			'init' : function(result){},
 			'start' : function(area){
-				area.find('.error').remove(); 
+				area.find('.error').remove();
 			},
 			'error' : function(result, input, area){
-				$('<div class="error">').html(result.error).prependTo(area); 
+				$('<div class="error">').html(result.error).prependTo(area);
 				return 0;
 			},
 			'complete' : function(result, file, input, area){
 				if(result.error){
-					alert("Ha ocurrido un error al subir el archivo");
+					alert($s["edit_admin_an_error_ocurred_when_downloading_the_file"]);
 				}else{
 					$('#'+result.preview).attr("src",result.filename);
 				}
 			}
-		});	
+		});
 	});
-	
-	
-});
 
+
+});

@@ -44,6 +44,7 @@ $(document).ready(function() {
 			"sLengthMenu": "_MENU_ ",
 			"sSearch": $s["receipt_search"],
 			"sInfo": $s["receipt_showing_from_entry"]+"<b>_START_"+$s["receipt_to_entry"]+"_END_</b>"+$s["receipt_of"] +"_TOTAL_"+ $s["receipt_entries"],
+			"sInfoEmpty": $s["receipt_no_entries"],
 			"sZeroRecords": $s["receipt_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/accounts/receipts/table.php?status="+$GET["status"]+"&PATH="+$PATH,

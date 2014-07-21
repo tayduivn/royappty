@@ -176,7 +176,7 @@ $s["title"]="Title";
 $s["title_note_help"]="This title will be shown in the list.";
 $s["content"]="Content";
 $s["content_note_help"]="Write here your note content.";
-$s["close"]="Cerrar";
+$s["close"]="Close";
 $s["the_promo_cost_is"]="This promotion has a cost of ";
 $s["and_profit_of"]=" and a profit of ";
 $s["euros_icon"] = "€";
@@ -193,7 +193,7 @@ $s["view_all_notes"] = "View all notes";
 $s["there_is_no_notes_to_show"] = "There are no notes to show";
 
 //Campaign / new
-$s["select_campaign_type"] = "Select campaign type.";
+$s["select_campaign_type"] = "Select campaign type";
 $s["add_discount_promo"] = "Create Discount Promotion";
 $s["add_coupon_promo"] = "Create Coupon Card";
 $s["loading..."] = "Loading...";
@@ -258,6 +258,9 @@ $s["admin_can_manage_brand"] = "Let access to Royappty account management.";
 $s["admin_status"] = "Administrator status.";
 $s["admin_status_help"] = "An inactive administrator cannot carry out any operation.";
 
+$s["admins_status_active"][0]="Inactive";
+$s["admins_status_active"][1]="Active";
+
 $s["admin_email"] = "Email";
 $s["admin_email_help"] = "Email to management access";
 $s["admin_password"] = "Password";
@@ -277,7 +280,7 @@ $s["admins_active_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_active_icon"][1]="<i class='fa fa-check'></i>";
 $s["permissions"] = "Permissions";
 
-$s["admins_can_validate_codes"] = "Validate promotions";
+$s["admins_can_validate_codes"] = "Validate promotions.";
 $s["admins_can_validate_codes_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_validate_codes_icon"][1]="<i class='fa fa-check'></i>";
 $s["admins_can_login"] = "Consult campaigns.";
@@ -343,7 +346,7 @@ $s["app_icon_help_2"] = "to check your request status.";
 $s["app_bg"] = "Welcome image";
 $s["app_bg_help_1"] = "This is the app welcome image when user accesses to your app and data is loading. Remember, as well as app icon, if you decide to change it, this process may last several days and force users to update the app impeding them to view changes until they carry out this update.  If you have already asked for a welcome image change, check your ";
 $s["app_bg_help_2"] = "to check your request status.";
-$s["user_fields"] = "Information requested to users";
+$s["user_fields"] = "Requested information to users";
 $s["no_user_fields"] = "No information has been requested";
 $s["edit_user_fields"] = "Edit collected data";
 
@@ -356,9 +359,11 @@ $app_s["description_help"] = "All apps include a description explaining their us
 $app_s["step_2_title"] = "App icon";
 $app_s["icon"] = "App icon";
 $app_s["icon_help"] = "This icon should have a minimun size of 545px x 545px";
+$app_s["app_choose_predefined_icon"] = "Or select a predefined one";
 $app_s["icon_preview"] = "Preview display";
 $app_s["step_3_title"] = "App background";
 $app_s["app_bg"] = "Background";
+$app_s["app_choose_predefined_background"] = "Or select a predefined one";
 $app_s["app_bg_help"] = "This background will be shown while the app is loading.";
 $app_s["step_4_title"] = "Publishing options";
 $app_s["publish_in_app_store"] = "Publish to iPhone";
@@ -369,7 +374,7 @@ $app_s["success_title"] = "Update sent";
 $app_s["success_subtitle_1"] = "The app update has been received correctly, Remember this process may last several days and force users to update the app. To check the status of this update process, visit your";
 $app_s["success_subtitle_2"] = "to check your request status.";
 $app_s["user_fields"] = "User gathering data";
-$app_s["user_fields_help"] = "Select infomation requested to users when they sign up for the app.";
+$app_s["user_fields_help"] = "Select requested infomation to users when they sign up for the app.";
 
 
 //Request / List
@@ -394,8 +399,8 @@ $s["requests_status_help"]["ended"]["app_update"]="The app has already been upda
 $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Your transfer request has been created. Remember,having done the transfer, you must send us payment justification to payments@royappty.com.";
 $s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="The transfer has been confirmed";
 
-$s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Our team is validating your account number to set up the Direct Debit, being validated in one or two working days.";
-$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Your account has already been validated to fulfill the Direct Debit.";
+$s["requests_status_help"]["in_process"]["standing_order_payment_confirmation"]="Our team is validating your account number to set up the Direct Debit, being validated in one or two working days.";
+$s["requests_status_help"]["ended"]["standing_order_payment_confirmation"]="Your account has already been validated to fulfill the Direct Debit.";
 
 $s["delete_request"]="Delete request";
 $s["delete_request_alert"]="Warning, this request is going to be deleted";
@@ -407,7 +412,7 @@ $s["personal_info"] = "Personal information";
 $s["cif"] = "VAT/ID number";
 $s["email"] = "Email";
 $s["phone"] = "Phone number";
-$s["contact_name"] = "Constact name";
+$s["contact_name"] = "Contact name";
 $s["address"] = "Address";
 $s["postal_code"] = "Post code";
 $s["city"] = "City";
@@ -445,8 +450,8 @@ $s["expiration_date_warning"] = "Warning, this product will expire in less than 
 $s["expired_plan"] = "Your account has expired, renew your service or modify to our free services to continue enjoying the app.";
 $s["renew_subscription"] = "Renew subscription";
 $s["payment_gateway"] = "Payment gateway";
-$s["redirecting_to_paypal"] = "Paypal adressing";
-$s["redirecting_to_gateway"] = "Gateway adressing";
+$s["redirecting_to_paypal"] = "Paypal addressing";
+$s["redirecting_to_gateway"] = "Gateway addressing";
 $s["bank_transfer_title"] = "Data to carry out bank transfer";
 $s["bank_transfer_subtitle"] = "Remember it is necessary to send the transfer payment justification by email to payments@royappty.com";
 $s["bank_name"] = "Bank";
@@ -579,6 +584,7 @@ $new_discount_s["description_help"] = "Explain the campaign here";
 $new_discount_s["step_2_title"] = "Campaign icon";
 $new_discount_s["icon"] = "Icon";
 $new_discount_s["icon_help"] = "Size 500x500";
+$new_discount_s["choose_predefined_icon"] = "Or select a predefined one";
 $new_discount_s["our_promos"] = "Our Promotions";
 $new_discount_s["step_3_title"] = "Campaign design";
 $new_discount_s["button_title"] = "Button text";
@@ -625,6 +631,7 @@ $new_coupon_s["description_help"] = "Explain the campaign here";
 $new_coupon_s["step_2_title"] = "Campaign icon";
 $new_coupon_s["icon"] = "Icon";
 $new_coupon_s["icon_help"] = "Size 500x500";
+$new_coupon_s["choose_predefined_icon"] = "Or select a predefined one";
 $new_coupon_s["our_promos"] = "Our Promotions";
 $new_coupon_s["step_3_title"] = "Campaign design";
 $new_coupon_s["promo_title"] = "Promotion title";
@@ -735,7 +742,7 @@ $payment_plans["semiannual"]["subtitle"] = "Pay 6 month service in just one paym
 $payment_plans["semiannual"]["price_professional"] = "59.94 € / 6 months";
 $payment_plans["semiannual"]["price_unlimited"] = "599.94 € / 6 months";
 
-$payment_plans["annual"]["title"] = "Annual poayment";
+$payment_plans["annual"]["title"] = "Annual payment";
 $payment_plans["annual"]["subtitle"] = "Hire our 1 year service and get two months free.";
 $payment_plans["annual"]["price_professional"] = "99.90 € / year";
 $payment_plans["annual"]["price_unlimited"] = "999.90 € / year";

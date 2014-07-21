@@ -43,6 +43,7 @@ $(document).ready(function(){
 			"sLengthMenu": "_MENU_ ",
 		"sSearch": $s["group_edit_search"],
 		"sInfo": $s["group_edit_showing_from_entry"]+"<b>_START_"+$s["group_edit_to_entry"]+"_END_</b>"+$s["group_edit_of"] +"_TOTAL_"+ $s["group_edit_entries"],
+		"sInfoEmpty": $s["group_edit_no_entries"],
 		"sZeroRecords": $s["group_edit_search_no_entry"]
 			},
 		 bAutoWidth     : false,

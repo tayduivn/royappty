@@ -151,7 +151,7 @@ $(document).ready(function() {
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#example');
 
     tableElement.dataTable( {
@@ -172,7 +172,8 @@ $(document).ready(function() {
 		"aaSorting": [[ 1, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+			"sInfo": $s["_showing"]+"<b>_START_"+$s["_to"]+"_END_</b>"+$s["_of"]+"_TOTAL_"+$s["_entries"],
+			"sInfoEmpty" :$s["database_no_entries"]
 		},
 		 bAutoWidth     : false,
         fnPreDrawCallback: function () {
@@ -188,17 +189,17 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
+
 	$('#example_wrapper .dataTables_filter input').addClass("input-medium "); // modify table search input
     $('#example_wrapper .dataTables_length select').addClass("select2-wrapper span12"); // modify table per page dropdown
 
-	
-	
+
+
 	$('#example input').click( function() {
         $(this).parent().parent().parent().toggleClass('row_selected');
     });
-	
-	
+
+
 	$('#quick-access .btn-cancel').click( function() {
 		$("#quick-access").css("bottom","-115px");
     });
@@ -206,7 +207,7 @@ $(document).ready(function() {
 		fnClickAddRow();
 		$("#quick-access").css("bottom","-115px");
     });
-	
+
     /*
      * Insert a 'details' column to the table
      */
@@ -214,15 +215,15 @@ $(document).ready(function() {
     var nCloneTd = document.createElement( 'td' );
     nCloneTd.innerHTML = '<i class="fa fa-plus-circle"></i>';
     nCloneTd.className = "center";
-     
+
     $('#example2 thead tr').each( function () {
         this.insertBefore( nCloneTh, this.childNodes[0] );
     } );
-     
+
     $('#example2 tbody tr').each( function () {
         this.insertBefore(  nCloneTd.cloneNode( true ), this.childNodes[0] );
     } );
-     
+
     /*
      * Initialse DataTables, with no sorting on the 'details' column
      */
@@ -231,7 +232,8 @@ $(document).ready(function() {
        "aaSorting": [],
 				"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+			"sInfo": $s["_showing"]+"<b>_START_"+$s["_to"]+"_END_</b>"+$s["_of"]+"_TOTAL_"+$s["_entries"],
+			"sInfoEmpty" :$s["database_no_entries"]
 		},
     });
 	 var oTable3 = $('#example3').dataTable( {
@@ -251,22 +253,23 @@ $(document).ready(function() {
         "aaSorting": [[ 3, "desc" ]],
 				"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+			"sInfo": $s["_showing"]+"<b>_START_"+$s["_to"]+"_END_</b>"+$s["_of"]+"_TOTAL_"+$s["_entries"],
+			"sInfoEmpty" :$s["database_no_entries"]
 		},
     });
 	$("div.toolbar").html('<div class="table-tools-actions"><button class="btn btn-primary" style="margin-left:12px" id="test2">Add</button></div>');
-	
+
 	$('#test2').on( "click",function() {
 		$("#quick-access").css("bottom","0px");
     });
-	
+
 	$('#example2_wrapper .dataTables_filter input').addClass("input-medium ");
-    $('#example2_wrapper .dataTables_length select').addClass("select2-wrapper span12"); 
-	
+    $('#example2_wrapper .dataTables_length select').addClass("select2-wrapper span12");
+
 	$('#example3_wrapper .dataTables_filter input').addClass("input-medium ");
-    $('#example3_wrapper .dataTables_length select').addClass("select2-wrapper span12"); 
-	
-	
+    $('#example3_wrapper .dataTables_length select').addClass("select2-wrapper span12");
+
+
     /* Add event listener for opening and closing details
      * Note that the indicator for showing which row is open is not controlled by DataTables,
      * rather it is done here
@@ -277,18 +280,18 @@ $(document).ready(function() {
         {
             /* This row is already open - close it */
 			this.removeClass = "fa fa-plus-circle";
-            this.addClass = "fa fa-minus-circle";     
+            this.addClass = "fa fa-minus-circle";
             oTable.fnClose( nTr );
         }
         else
         {
             /* Open this row */
             this.removeClass = "fa fa-minus-circle";
-            this.addClass = "fa fa-plus-circle";  
+            this.addClass = "fa fa-plus-circle";
             oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
         }
     });
-	
+
 		$(".select2-wrapper").select2({minimumResultsForSearch: -1});
 
 	function fnClickAddRow() {
@@ -296,8 +299,8 @@ $(document).ready(function() {
         $("#val1 option:selected").text(),
         $("#val2 option:selected").text(),
         "Windows",
-        "789.","A" ] );     
-	}	
+        "789.","A" ] );
+	}
 });
 
 
@@ -310,6 +313,6 @@ function fnFormatDetails ( oTable, nTr )
     sOut += '<tr><td>Link to source:</td><td>Could provide a link here</td></tr>';
     sOut += '<tr><td>Extra info:</td><td>And any further details here (images etc)</td></tr>';
     sOut += '</table>';
-     
+
     return sOut;
 }

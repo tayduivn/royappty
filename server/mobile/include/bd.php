@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
  * Funcion de conexión al servidor de base de datos.
@@ -34,10 +34,10 @@ function db_choose($manejador) {
 	if($conf['bdtype'] == "mysql") {
 		$db_selected = @mysql_select_db($conf['bd'],$manejador);
 		if (!$db_selected) {
-			throw new Exception("bd.php - db_choose(): Error al seleccionar tabla.");
+			throw new Exception("bd.php - db_choose(): Error when choosing table.");
 		}
 	} else {
-		$error = "bd.php - db_choose(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_choose(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -48,7 +48,7 @@ function db_choose($manejador) {
  *		$query: cadena con la operacion a realizar sobre la base de datos.
  *		$manejador: identificador de conexión con la base de datos.
  * Salidas:
- *		$result: identificador de consulta o resultset. 
+ *		$result: identificador de consulta o resultset.
  */
 function db_exec($query,$manejador) {
 	global $conf;
@@ -71,7 +71,7 @@ function db_exec($query,$manejador) {
  *		$query: cadena con la consulta a realizar sobre la base de datos.
  *		$manejador: identificador de conexión con la base de datos.
  * Salidas:
- *		$result: identificador de consulta o resultset. 
+ *		$result: identificador de consulta o resultset.
  */
 function db_query($query,$manejador) {
 	global $conf;

@@ -44,6 +44,7 @@ $(document).ready(function() {
 			"sLengthMenu": "_MENU_ ",
 			"sSearch": $s["admin_search"],
 			"sInfo": $s["admin_showing_from_entry"]+"<b>_START_"+$s["admin_to_entry"]+"_END_</b>"+$s["admin_of"] +"_TOTAL_"+ $s["admin_entries"],
+			"sInfoEmpty": $s["admin_no_entries"],
 			"sZeroRecords": $s["admin_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/admins/table.php?active="+$GET["active"]+"&PATH="+$PATH,

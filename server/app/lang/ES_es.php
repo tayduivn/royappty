@@ -258,6 +258,9 @@ $s["admin_can_manage_brand"] = "Permitir acceso a la administración de la cuent
 $s["admin_status"] = "Estado del administrador";
 $s["admin_status_help"] = "Un administrador inactivo no podrá realizar ninguna operación";
 
+$s["admins_status_active"][0]="Inactivo";
+$s["admins_status_active"][1]="Activo";
+
 $s["admin_email"] = "Correo Electrónico";
 $s["admin_email_help"] = "Este correo para el acceso a la administración";
 $s["admin_password"] = "Contraseña";
@@ -356,9 +359,11 @@ $app_s["description_help"] = "Todas las aplicaciones incluyen una descripción p
 $app_s["step_2_title"] = "Icono de la aplicación";
 $app_s["icon"] = "Icono de la aplicación";
 $app_s["icon_help"] = "Este icono deberá tener un tamaño mínimo de 545px x 545px";
+$app_s["app_choose_predefined_icon"] = "O  selecciona uno predefinido";
 $app_s["icon_preview"] = "Previsualización";
 $app_s["step_3_title"] = "Fondo de la aplicación";
 $app_s["app_bg"] = "Fondo";
+$app_s["app_choose_predefined_background"] = "O selecciona uno predefinido";
 $app_s["app_bg_help"] = "Este fondo aparecerá mientras la aplicación se está cargado";
 $app_s["step_4_title"] = "Opciones de publicación";
 $app_s["publish_in_app_store"] = "Publicar para iPhone";
@@ -394,9 +399,8 @@ $s["requests_status_help"]["ended"]["app_update"]="La aplicación ya ha sido act
 $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
 $s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="La transferencia ha sido confirmada";
 
-$s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Nuestro equipo está validando tu número de cuenta para empezar con la Domiciliación Bancaria, en uno o dos días laborables estará validada.";
-$s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="Ya se ha validado tu cuenta para la realización de la Domiciliación Bancara.";
-
+$s["requests_status_help"]["in_process"]["standing_order_payment_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
+$s["requests_status_help"]["ended"]["standing_order_payment_confirmation"]="La transferencia ha sido confirmada";
 
 $s["delete_request"]="Eliminar solicitud";
 $s["delete_request_alert"]="Atención, se va a eliminar esta solicitud";
@@ -580,6 +584,7 @@ $new_discount_s["description_help"] = "Explica aquí la campaña";
 $new_discount_s["step_2_title"] = "Icono de la campaña";
 $new_discount_s["icon"] = "Icono";
 $new_discount_s["icon_help"] = "Tamaño 500x500";
+$new_discount_s["choose_predefined_icon"] = "O seleccione uno predefinido";
 $new_discount_s["our_promos"] = "Nuestras Promociones";
 $new_discount_s["step_3_title"] = "Diseño de la campaña";
 $new_discount_s["button_title"] = "Texto del Botón";
@@ -626,6 +631,7 @@ $new_coupon_s["description_help"] = "Explica aquí la campaña";
 $new_coupon_s["step_2_title"] = "Icono de la campaña";
 $new_coupon_s["icon"] = "Icono";
 $new_coupon_s["icon_help"] = "Tamaño 500x500";
+$new_coupon_s["choose_predefined_icon"] = "O seleccione uno predefinido";
 $new_coupon_s["our_promos"] = "Nuestras Promociones";
 $new_coupon_s["step_3_title"] = "Diseño de la campaña";
 $new_coupon_s["promo_title"] = "Título de la promoción";

@@ -45,6 +45,7 @@ $(document).ready(function() {
 			"sLengthMenu": "_MENU_ ",
 		"sSearch": $s["users_search"],
 		"sInfo": $s["users_showing_from_entry"]+"<b>_START_"+$s["users_to_entry"]+"_END_</b>"+$s["users_of"] +"_TOTAL_"+ $s["users_entries"],
+		"sInfoEmpty": $s["users_no_entries"],
 		"sZeroRecords": $s["users_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/users/table.php?status="+$GET["status"]+"&PATH="+$PATH,

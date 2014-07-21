@@ -3,25 +3,25 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 
-	
-	
+
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/get_campaign";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
-	
+
  	$response=array();
- 	
+
  	$response["result"]=true;
-	
+
 	$table="campaigns";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
 	$campaign=getInBD($table,$filter);
-	
+
 	$response["data"]["page-title"]="<a href='../../../campaigns/'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</a> / <a href='#'>".htmlentities($s["edit_campaign"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8");
 	$response["data"]["page-options"]="";
-	
+
 	$response["data"]["new-discount-step-1"]="
 			<h4 class='m-t-0'>".htmlentities($new_discount_s["step_1_title"], ENT_QUOTES, "UTF-8")." <span class='pull-right text-muted'>".htmlentities($s["step_"], ENT_QUOTES, "UTF-8")." 1 ".htmlentities($s["_of"], ENT_QUOTES, "UTF-8")." 4</span></h4>
 			<form id='form-step1'>
@@ -43,7 +43,7 @@
 				<div style='overflow:auto'>
 					<div class='form-group'>
 						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
-						<a id='prev_step' href='../' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
+						<a id='prev_step' href='../../../campaigns' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
 					</div>
 				</div>
 			</form>
@@ -60,7 +60,7 @@
 						<div class='controls'>
 							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/campaigns/upload-image.php?type=icon&width=500&height=500&crop=1&label=campaign_icon_path' />
 						</div>
-						<!--<label class='form-label'>O selecciona uno predefinido</label>
+						<!--<label class='form-label'>".$new_discount_s["choose_predefined_icon"].";</label>
 						<div class='m-t-10'>
 							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-01.jpg')\">
 								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-01.jpg'/>
@@ -103,7 +103,7 @@
 									<span class='text-black'>".htmlentities($new_discount_s["our_promos"], ENT_QUOTES, "UTF-8")."</span>
 								</div>
 								<div style='display:block;vertical-align:middle;height:247px;width:100%;overflow:hidden' class='p-l-10 p-r-10 text-center'>
-									<img id='campaign_icon_path-preview' class='full-width m-t-10' src='".$url_server."resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>				                
+									<img id='campaign_icon_path-preview' class='full-width m-t-10' src='".$url_server."resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>
 								<div style='height:136px;overflow:hidden' class='full-width m-t-10'>
 									<img class='full-width' src='".$url_server."server/app/assets/img/default-icon.jpg'/>
 								</div>
@@ -206,7 +206,7 @@
 										<span class='text-black' id='title-preview'>".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."</span>
 									</div>
 									<div style='display:block;vertical-align:middle;height:247px;width:100%;overflow:hidden' class='text-center'>
-										<img id='campaign_image_path-preview' class='full-width' src='".$url_server."resources/campaign-image/".$campaign["campaign_image_path"]."'/>		
+										<img id='campaign_image_path-preview' class='full-width' src='".$url_server."resources/campaign-image/".$campaign["campaign_image_path"]."'/>
 										<div class='m-t-10 p-l-10 p-r-10 text-muted text-small' style='overflow-wrap:break-word;font-size:9px;' id='content-preview'>
 											".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."
 										</div>
@@ -226,7 +226,7 @@
 					</div>
 				</div>
 			</form>
-	
+
 	";
 	$response["data"]["new-discount-step-4"]="
 		<h4 class='m-t-0'>".htmlentities($new_discount_s["step_4_title"], ENT_QUOTES, "UTF-8")."<span class='pull-right text-muted'>".htmlentities($s["step_"], ENT_QUOTES, "UTF-8")." 4 ".htmlentities($s["_of"], ENT_QUOTES, "UTF-8")." 4</span></h4>
@@ -282,7 +282,7 @@
 				</div>
 			</div>
 			<div class='row'>
-				<div class='col-md-12'>			
+				<div class='col-md-12'>
 					<div style='overflow:auto'>
 						<div class='form-group'>
 							<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
@@ -291,9 +291,9 @@
 					</div>
 				</div>
 			</div>
-				
+
 		</form>
-	
+
 	";
 	$response["data"]["new-discount-step-end"]="
 		<form id='form-end'>
@@ -338,8 +338,8 @@
 			</div>
 		</div>
 	";
-	
-	
+
+
  	echo json_encode($response);
 	debug_log("[server/ajax/campaigns/get_campaign] END");
 

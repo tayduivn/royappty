@@ -66,8 +66,8 @@ $(document).ready(function() {
 	$("#form-step1").validate({
 		messages:{
 			email:{
-				required:"Este campo es obligatorio",
-			  	email: "El formato de correo electr&oacute;nico no es correcto"
+				required:$s["recovery_email_this_field_is_compulsory"],
+			  	email: $s["recovery_email_format_is_not_correct"]
 		  	}
 		},
 		rules:{

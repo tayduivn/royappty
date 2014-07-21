@@ -117,7 +117,8 @@ $(document).ready(function() {
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
 			"sSearch": $s["request_search"],
-			"sInfo": $["request_showing"]+"<b>_START_ "+$s["request_to"]+" _END_</b>"+$s["request_of"]+" _TOTAL_"+["request_entries"]
+			"sInfo": $["request_showing"]+"<b>_START_ "+$s["request_to"]+" _END_</b>"+$s["request_of"]+" _TOTAL_"+["request_entries"],
+			"sInfoEmpty": $s["request_no_entries"]
 		},
 		"sAjaxSource":"../server/app/ajax/requests/list.php",
 		 bAutoWidth     : false,
