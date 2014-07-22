@@ -758,6 +758,7 @@ $error_s["set_password_code_not_valid"]["content"]="Ha ocurrido un error al trat
 $error_s["ajax_error"]["title"]="Error en el Servidor";
 $error_s["ajax_error"]["content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
-
+$error_s["base"]["title"] = "Error desconocido";
+$error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
 ?>

@@ -6,7 +6,7 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/groups/list.php",
 		data: {
-			status:$GET["status"]
+		
 		},
 		error: function(data, textStatus, jqXHR) {
 			if(jqXHR!=""){

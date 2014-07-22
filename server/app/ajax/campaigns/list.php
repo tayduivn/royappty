@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
+	* Last Edit: 22-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -57,7 +57,7 @@
         <th style='width:10%;' class='text-right'>".htmlentities($s["total"], ENT_QUOTES, "UTF-8")."</th>
         <th style='width:10%;' class='text-right'>".htmlentities($s["last_month"], ENT_QUOTES, "UTF-8")."</th>";
 
-	if(!@issetandnotempty($_POST["status"]))
+	if(!@issetandnotempty($_POST["status"])){
 	 	$_POST["status"]=0;
  	}
 

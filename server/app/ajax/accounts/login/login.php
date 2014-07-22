@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
+	* Last Edit: 22-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -51,7 +51,7 @@
 
 	//Form error handeler
 	$error_alert="";
-	error_handler();
+	@error_handeler($_POST["error"]);
 
 
 	$response["data"]["login-step-1"]="

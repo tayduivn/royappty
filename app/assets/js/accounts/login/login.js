@@ -8,14 +8,14 @@ $(document).ready(function(){
 			"error":$GET["error"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			
+
 		},
 		success: function(response) {
 			if(response.result){
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
-			} 
+			}
 		}
 	});
 });
@@ -52,20 +52,20 @@ function errorstep(){
 	$("#form-wizard #form-success").css("display","none");
 	$("#form-wizard #form-error").css("display","block");
 }
-	
+
 $(document).ready(function() {
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-		
+
 	$("#form-step1").validate({
 		messages:{
 			email:{
-				required:"Este campo es obligatorio",	
+				required:"Este campo es obligatorio",
 			  	email: "El formato de correo electr&oacute;nico no es correcto"
 		  	},
 		  	password:{
-				required:"Este campo es obligatorio",	
+				required:"Este campo es obligatorio",
 			  	maxlength: "No puede exceder de 25 caracteres",
 			  	minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
 			}
@@ -76,7 +76,7 @@ $(document).ready(function() {
 			  	email: true
 		  	},
 		  	password:{
-				required:true,	
+				required:true,
 			  	maxlength: 25,
 			  	minlength: 4
 			}
@@ -102,12 +102,12 @@ $(document).ready(function() {
 						localStorage.setItem('id_admin',response.data.id_admin);
 						window.location.href = "../";
 					} else {
-						error_handler("login_error");
+						error_handeler("login_error");
 					}
-						
+
 				}
 			});
 		}
 	});
-	
+
 });

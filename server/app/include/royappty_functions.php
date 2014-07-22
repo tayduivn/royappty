@@ -293,13 +293,12 @@ function checkAdmin($admin){
  	die();
 }
 
-function error_handler(){
+function error_handeler($error_code){
 	global $error_alert;
-	global $_POST;
 	global $error_s;
 
-	if((isset($_POST["error"]))&&(!empty($_POST["error"]))&&($_POST["error"]!="undefined")){
-		$error_alert=$error_s[$_POST["error"]];
+	if((isset($error_code))&&(!empty($error_code))&&($error_code!="undefined")){
+		$error_alert=$error_s[$error_code];
 	}
 }
 

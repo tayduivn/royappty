@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
+	* Last Edit: 22-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -16,6 +16,7 @@
 	*	no_admin
 	* admin_not_valid
 	* admin_inactive
+	* post_no_campaign
 	*
 	*********************************************************/
 
@@ -44,6 +45,14 @@
 
 
  	// Data check START
+	if(!@issetandnotempty($_POST["id_campaign"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing id_campaign");
+		$response["error_code"]="post_no_campaign";
+		echo json_encode($response);
+		die();
+	}
+	
  	$table="campaigns";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);

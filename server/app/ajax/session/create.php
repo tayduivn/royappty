@@ -37,6 +37,7 @@
   /*********************************************************
   * DATA CHECK
   *********************************************************/
+
   if(!@issetandnotempty($_POST["id_brand"])){
     $response["result"]=false;
     debug_log("[".$page_path."] ERROR Data Post Missing id_brand");
@@ -51,7 +52,6 @@
     echo json_encode($response);
     die();
   }
-
 
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
