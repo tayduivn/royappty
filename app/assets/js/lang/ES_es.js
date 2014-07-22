@@ -130,47 +130,47 @@ $s["users_search_no_entry"] = "La b&uacute;squeda no ha devuelto ninguna entrada
 $s["users_no_entries"] = "No hay entradas";
 
 //asset - app-config.js
-$s["an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["to upload"] = " a subir";
 
 //account - singup.js
-$s["singup_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["singup_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["signup_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["signup_to upload"] = " a subir";
 
 //campaigns - new -discount.js
-$s["discount_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["discount_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["discount_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["discount_to upload"] = " a subir";
 
 //campaigns - new - coupon.js
-$s["coupon_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["coupon_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["coupon_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["coupon_to upload"] = " a subir";
 
 // campaign - edit - discount.js
-$s["edit_discount_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["edit_discount_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["edit_discount_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["edit_discount_to upload"] = " a subir";
 
 //campaign - edit- coupon.js
-$s["edit_coupon_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["edit_coupon_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["edit_coupon_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["edit_coupon_to upload"] = " a subir";
 
 //app - edit - app.js
-$s["edit_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["edit_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["edit_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["edit_to upload"] = " a subir";
 
 //admins - new - admin.js
-$s["admin_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["admin_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["admin_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["admin_to upload"] = " a subir";
 
 //admins - edit - admin.js
-$s["edit_admin_an_error_ocurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["edit_admin_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["edit_admin_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["edit_admin_to upload"] = " a subir";
 
@@ -181,21 +181,15 @@ $s["_of"] = " de ";
 $s["_entries"]= " entradas";
 $s["database_no_entries"] = "No hay entradas";
 
-//html
-$s["an_error_ocurred_when_carrying_out_operation"] = "Ha ocurrido un error al realizar la operación y no se a podido llevar acabo, el código del error es: ";
+//html errors
+$s["an_error_occurred_when_carrying_out_operation"] = "Ha ocurrido un error al realizar la operación y no se a podido llevar acabo, el código del error es: ";
 $s["unknown"] = "Desconocido";
 $s["please_contact_if_error persists"] = "Por favor vuelva a intentarlo más tarde, si el error persiste contacte con nuestro servicio técnico.";
 $s["close"] = "Cerrar";
 
-
-
-
-
-
-
 $(document).ready(function() {
-  $("#s-modal-error-undone").html($s["an_error_ocurred_when_carrying_out_operation"]);
+  $("#s-modal-error-undone").html($s["an_error_occurred_when_carrying_out_operation"]);
   $("#s-modal-error-unknown").html($s["unknown"]);
   $("#s-modal-error-contact").html($s["please_contact_if_error persists"]);
-  $("#s-modal-close").html($s["close"]);
+  $("#s-modal-error-close").html($s["close"]);
 });

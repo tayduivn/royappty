@@ -10,7 +10,7 @@ $('.droparea').droparea({
 	},
 	'complete' : function(result, file, input, area){
 		if(result.error){
-			alert($s["an_error_ocurred_when_downloading_the_file"]);
+			alert($s["an_error_occurred_when_downloading_the_file"]);
 		}else{
 			alert(result.filename);
 			if((/image/i).test(file.type)){

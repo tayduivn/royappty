@@ -762,6 +762,6 @@ $error_s["set_password_code_not_valid"]["content"]="An error occurred when tryin
 $error_s["ajax_error"]["title"]="Error in the Server";
 $error_s["ajax_error"]["content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 
-
-
+$error_s["base"]["title"] = "Unknown error";
+$error_s["base"]["content"] = "An error occurred while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 ?>

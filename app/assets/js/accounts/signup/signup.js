@@ -405,7 +405,7 @@ $(document).ready(function(){
 			},
 			'complete' : function(result, file, input, area){
 				if(result.error){
-					alert($s["singup_an_error_ocurred_when_dowloading_the_file"]);
+					alert($s["singup_an_error_occurred_when_dowloading_the_file"]);
 				}else{
 					$('#'+result.preview).attr("src",result.filename);
 					$('#form-end #'+result.label).val(result.path);

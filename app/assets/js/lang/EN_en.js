@@ -130,47 +130,47 @@ $s["users_search_no_entry"] = "The search has not found any entry";
 $s["users_no_entries"] = "There are no entries";
 
 //asset - app-config.js
-$s["an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["click_or_drag_image_here"] = "Click or drag the image here";
 $s["to upload"] = " to upload";
 
 //account - singup.js
-$s["singup_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["singup_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["signup_click_or_drag_image_here"] = "Click or drag the image here";
 $s["signup_to upload"] = " to upload";
 
 //campaigns - new -discount.js
-$s["discount_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["discount_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["discount_click_or_drag_image_here"] = "Click or drag the image here";
 $s["discount_to upload"] = " to upload";
 
 //campaigns - new - coupon.js
-$s["coupon_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["coupon_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["coupon_click_or_drag_image_here"] = "Click or drag the image here";
 $s["coupon_to upload"] = " to upload";
 
 // campaign - edit - discount.js
-$s["edit_discount_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["edit_discount_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["edit_discount_click_or_drag_image_here"] = "Click or drag the image here";
 $s["edit_discount_to upload"] = " to upload";
 
 //campaign - edit- coupon.js
-$s["edit_coupon_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["edit_coupon_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["edit_coupon_click_or_drag_image_here"] = "Click or drag the image here";
 $s["edit_coupon_to upload"] = " to upload";
 
 //app - edit - app.js
-$s["edit_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["edit_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["edit_click_or_drag_image_here"] = "Click or drag the image here";
 $s["edit_to upload"] = " to upload";
 
 //admins - new - admin.js
-$s["admin_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["admin_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["admin_click_or_drag_image_here"] = "Click or drag the image here";
 $s["admin_to upload"] = " to upload";
 
 //admins - edit - admin.js
-$s["edit_admin_an_error_ocurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["edit_admin_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["edit_admin_click_or_drag_image_here"] = "Click or drag the image here";
 $s["edit_admin_to upload"] = " to upload";
 
@@ -180,3 +180,16 @@ $s["_to"] = " to ";
 $s["_of"] = " of ";
 $s["_entries"] = " entries";
 $s["database_no_entries"] = "There are no entries"
+
+//html errors
+$s["an_error_occurred_when_carrying_out_operation"] = "An error occurred when carrying out operation and it did not run, error code is: ";
+$s["unknown"] = "Unknown";
+$s["please_contact_if_error persists"] = "Please, try it again later; if error persists, contact with our technical service.";
+$s["close"] = "Close";
+
+$(document).ready(function() {
+  $("#s-modal-error-undone").html($s["an_error_occurred_when_carrying_out_operation"]);
+  $("#s-modal-error-unknown").html($s["unknown"]);
+  $("#s-modal-error-contact").html($s["please_contact_if_error persists"]);
+  $("#s-modal-error-close").html($s["close"]);
+});
