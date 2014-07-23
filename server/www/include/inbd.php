@@ -223,5 +223,4 @@ $table="config";
 $filter=array();
 $filter["used"]=array("operation"=>"=","value"=>"1");
 $CONFIG=getInBD($table,$filter);
-
 ?>

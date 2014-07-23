@@ -3,7 +3,7 @@ $(document).ready(function(){
     async: false,
     type: "POST",
     dataType: 'json',
-    url: $SERVER_PATH+"server/www/ajax/main/get_main.php",
+    url: $SERVER_PATH+"server/www/ajax/pricing/get_pricing.php",
     data: {
     },
     error: function(data, textStatus, jqXHR) {

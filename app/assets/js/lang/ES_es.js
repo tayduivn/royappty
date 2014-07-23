@@ -187,9 +187,16 @@ $s["unknown"] = "Desconocido";
 $s["please_contact_if_error persists"] = "Por favor vuelva a intentarlo más tarde, si el error persiste contacte con nuestro servicio técnico.";
 $s["close"] = "Cerrar";
 
+//error app index.html
+$s["error"]["title"] = "Error";
+$s["error"]["content"] ="Ha ocurrido un error al cargar la página. Por favor vuelva a intentarlo más tarde, si el error persiste contacte con nuestro servicio técnico."
+
+
 $(document).ready(function() {
   $("#s-modal-error-undone").html($s["an_error_occurred_when_carrying_out_operation"]);
   $("#s-modal-error-unknown").html($s["unknown"]);
   $("#s-modal-error-contact").html($s["please_contact_if_error persists"]);
   $("#s-modal-error-close").html($s["close"]);
+  $("#s-error-title").html($s["error"]["title"]);
+  $("#s-error-content").html($s["error"]["content"]);
 });
