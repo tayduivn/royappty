@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
+	* Last Edit: 23-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -16,6 +16,7 @@
 	*	no_admin
 	* admin_not_valid
 	* admin_inactive
+	* post_no_group
 	*
 	*********************************************************/
 
@@ -47,6 +48,13 @@
 
 
  	// Data check START
+	if(!@issetandnotempty($_POST["id_group"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing id_group");
+		$response["error_code"]="post_no_group";
+		echo json_encode($response);
+		die();
+	}
 
  	$table="groups";
  	$filter=array();

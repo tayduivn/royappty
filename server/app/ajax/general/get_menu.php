@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
+	* Last Edit: 23-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -16,6 +16,7 @@
 	*	no_admin
 	* admin_not_valid
 	* admin_inactive
+	* post_no_path
 	*
 	*********************************************************/
 
@@ -43,7 +44,14 @@
 	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
-
+	// POST
+	if(!@issetandnotempty($_POST["path"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing path");
+		$response["error_code"]="post_no_path";
+		echo json_encode($response);
+		die();
+	}
 
 
  	$table="brands";

@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 23-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -11,7 +11,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	*	post_no_signup_subscription_type
 	*
 	*
 	*********************************************************/
@@ -33,6 +33,13 @@
 	* DATA CHECK
 	*********************************************************/
 
+	if(!@issetandnotempty($_POST["subscription_type"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing signup_subscription_type");
+		$response["error_code"]="post_no_signup_subscription_type";
+		echo json_encode($response);
+		die();
+	}
 
 
 	/*********************************************************

@@ -8,11 +8,7 @@ $(document).ready(function(){
 			id_admin:$GET["id_admin"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			$(".modal").modal("hide");
-			$("#ajax_error").modal("show");
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-			}
+		error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -125,15 +121,13 @@ function delete_admin(id_admin){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide');
-			$('#ajax_error').modal('show');
-			$('#ajax_error .msg-modal').html(jqXHR);
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
 				show_modal("deleted_admin_success_alert","javascript:window.location=\"../admins/\"");
             }else{
-
+							error_handeler(response.error_code);
 			}
 
 		}

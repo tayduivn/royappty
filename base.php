@@ -5,7 +5,6 @@
   * ERROR CODES
   * no_brand
   * brand_not_valid
-
   * no_admin
   * admin_not_valid
   * admin_inactive
@@ -15,7 +14,6 @@
   // BRAND
   $brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
   if(!checkBrand($brand)){echo json_encode($response);die();}
-
 
   // ADMIN
   $admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];

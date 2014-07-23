@@ -6,13 +6,10 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/groups/list.php",
 		data: {
-		
+
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -77,9 +74,7 @@ function delete_group(id_group){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide');
-			$('#ajax_error').modal('show');
-			$('#ajax_error .ajax_err_msg').html(jqXHR);
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -93,9 +88,7 @@ function delete_group(id_group){
 						filter_str:filter_str
 					},
 					error: function(data, textStatus, jqXHR) {
-						$('.modal').modal('hide');
-						$('#ajax_error').modal('show');
-						$('#ajax_error .ajax_err_msg').html(jqXHR);
+						error_handeler("ajax_error");
 					},
 					success: function(response) {
 						if(response.status){
@@ -110,9 +103,7 @@ function delete_group(id_group){
 										filter_str:filter_str
 									},
 									error: function(data, textStatus, jqXHR) {
-										$('.modal').modal('hide');
-										$('#ajax_error').modal('show');
-										$('#ajax_error .ajax_err_msg').html(jqXHR);
+										error_handeler("ajax_error");
 									},
 									success: function(response) {
 										if(response.status){
@@ -139,7 +130,7 @@ function delete_group(id_group){
 								    		}
 
 							            }else{
-
+														error_handeler(response.error_code);
 										}
 
 									}
@@ -147,14 +138,14 @@ function delete_group(id_group){
 				    		}
 
 			            }else{
-
+										error_handeler(response.error_code);
 						}
 
 					}
 				});
 
             }else{
-
+							error_handeler(response.error_code);
 			}
 
 		}

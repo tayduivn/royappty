@@ -16,6 +16,7 @@
 	*	no_admin
 	* admin_not_valid
 	* admin_inactive
+	* post_no_user
 	*
 	*********************************************************/
 
@@ -44,9 +45,14 @@
 	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
-
-
  	// Data check START
+	if(!@issetandnotempty($_POST["id_user"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing id_user");
+		$response["error_code"]="post_no_user";
+		echo json_encode($response);
+		die();
+	}
 
  	$table="users";
  	$filter=array();

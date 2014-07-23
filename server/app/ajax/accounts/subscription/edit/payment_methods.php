@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
+	* Last Edit: 23-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -16,6 +16,8 @@
 	*	no_admin
 	* admin_not_valid
 	* admin_inactive
+	*	payment_methods_subscription_type
+	*	payment_methods_payment_plan
 	*
 	*********************************************************/
 
@@ -45,8 +47,22 @@
 	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
+	// POST
+	if(!@issetandnotempty($_POST["subscription_type"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing payment_methods_subscription_type");
+		$response["error_code"]="payment_methods_subscription_type";
+		echo json_encode($response);
+		die();
+	}
 
-
+	if(!@issetandnotempty($_POST["payment_plan"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing payment_methods_payment_plan");
+		$response["error_code"]="payment_methods_payment_plan";
+		echo json_encode($response);
+		die();
+	}
 
 	/*********************************************************
 	* AJAX OPERATIONS
