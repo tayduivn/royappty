@@ -768,6 +768,48 @@ $error_s["ajax_error"]["content"]="An error occurred in the server while carryin
 $error_s["post_no_path"]["title"]="Error when loading the page";
 $error_s["post_no_path"]["content"]="At the moment, the page cannot be shown. Please, try it again later. If the error persists, contact our technical service.";
 
+$error_s["post_no_policy_type"]["title"]="Error when loading the page";
+$error_s["post_no_policy_type"]["content"]="Policies page could not be loaded. Please, try it again later. If the error persists, contact our technical service.";
+
 $error_s["base"]["title"] = "Unknown error";
 $error_s["base"]["content"] = "An error occurred while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
+
+//Error accounts/signup/add_account
+$error_step_s["post_no_account_name"] = "The Name field has not been sent correctly";
+$error_step_s["post_no_account_cif"] = "The VATIN field has not been sent correctly";
+$error_step_s["post_no_account_contact_address"] = "The Address field has not been sent correctly";
+$error_step_s["post_no_account_contact_postal_code"] = "The Post Code field has not been sent correctly";
+$error_step_s["post_no_account_contact_city"] = "The City field has not been sent correctly";
+$error_step_s["post_no_account_contact_country"] = "The Country field has not been sent correctly";
+$error_step_s["post_no_account_admin_name"] = "The Company Name field has not been sent correctly";
+$error_step_s["post_no_account_admin_email"] = "The Email field has not been sent correctly";
+$error_step_s["post_no_account_admin_promo_password"] = "The Validation Code field has not been sent correctly";
+$error_step_s["post_no_account_admin_password"] = "The Administrator Code field has not been sent correctly";
+$error_step_s["post_no_account_subscription_type"] = "The Price Plan field has not been sent correctly";
+$error_step_s["post_no_account_payment_plan"] = "The Payment Plan field has not been sent correctly";
+$error_step_s["post_no_account_payment_method"] = "The Payment Method field has not been sent correctly";
+$error_step_s["post_no_account_app_name"] = "The App Name field has not been sent correctly";
+$error_step_s["post_no_account_app_title"] = "The App Menu Tile field has not been sent correctly";
+
+//Error accounts/signup/get_payment_plans
+$error_step_s["post_no_signup_subscription_type"] = "The Price Plan field has not been sent correctly";
+
+//Error admins/edit/update_admin admins/new/add_admin
+$error_step_s["post_no_id_admin"] = "The Administrator Identifier field has not been sent correctly";
+$error_step_s["post_no_name"] = "The Name field has not been sent correctly";
+
+//Error campaigns/edit/update_coupon campaigns/new/add_coupon
+$error_step_s["post_no_coupon_id_campaign"] =  "The Coupan Card Identifier field has not been sent correctly";
+$error_step_s["post_no_coupon_name"]= "The Name field has not been sent correctly";
+
+//Error campaigns/edit/update_discount campaigns/new/add_discount
+$error_step_s["post_no_coupon_id_campaign"] = "The Discount Promotion Identifier field has not been sent correctly";
+$error_step_s["post_no_coupon_name"] = "The Name field has not been sent correctly";
+
+//Error apps/edit/update_app
+$error_step_s["post_no_app_name"] = "The Name field has not been sent correctly";
+
+//Error groups/edit/update_group groups/new/add_group
+$error_step_s["post_no_group_id_group"] = "The Group Identifier field has not been sent correctly";
+$error_step_s["post_no_group_name"] = "The Name field has not been sent correctly";
 ?>

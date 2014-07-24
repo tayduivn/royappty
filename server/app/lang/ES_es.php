@@ -768,6 +768,48 @@ $error_s["ajax_error"]["content"]="Ha ocurrido un error en el servidor mientras 
 $error_s["post_no_path"]["title"]="Error al cargar la página";
 $error_s["post_no_path"]["content"]="En estos momentos no se puede mostrar la página. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
+$error_s["post_no_policy_type"]["title"]="Error al cargar la página";
+$error_s["post_no_policy_type"]["content"]="No se ha podido cargar la página de políticas. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+
 $error_s["base"]["title"] = "Error desconocido";
 $error_s["base"]["content"] = "Ha ocurrido un error desconocido mientras se realizaba la operación.Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+
+//Error accounts/signup/add_account
+$error_step_s["post_no_account_name"] = "No se ha enviado correctamente el campo Nombre";
+$error_step_s["post_no_account_cif"] = "No se ha enviado correctamente el campo CIF";
+$error_step_s["post_no_account_contact_address"] = "No se ha enviado correctamente el campo Dirección";
+$error_step_s["post_no_account_contact_postal_code"] = "No se ha enviado correctamente el campo Código postal";
+$error_step_s["post_no_account_contact_city"] = "No se ha enviado correctamente el campo Ciudad";
+$error_step_s["post_no_account_contact_country"] = "No se ha enviado correctamente el campo País";
+$error_step_s["post_no_account_admin_name"] = "No se ha enviado correctamente el campo Nombre de la empresa";
+$error_step_s["post_no_account_admin_email"] = "No se ha enviado correctamente el campo Correo electrónico";
+$error_step_s["post_no_account_admin_promo_password"] = "No se ha enviado correctamente el campo Código de validación";
+$error_step_s["post_no_account_admin_password"] = "No se ha enviado correctamente el campo contraseña del Administrador";
+$error_step_s["post_no_account_subscription_type"] = "No se ha enviado correctamente el campo Plan de precios";
+$error_step_s["post_no_account_payment_plan"] = "No se ha enviado correctamente el campo Plan de pago";
+$error_step_s["post_no_account_payment_method"] = "No se ha enviado correctamente el campo Método de pago";
+$error_step_s["post_no_account_app_name"] = "No se ha enviado correctamente el campo Nombre de la aplicación";
+$error_step_s["post_no_account_app_title"] = "No se ha enviado correctamente el campo Título menú aplicación";
+
+//Error accounts/signup/get_payment_plans
+$error_step_s["post_no_signup_subscription_type"] = "No se ha enviado correctamente el Plan de precios";
+
+//Error admins/edit/update_admin admins/new/add_admin
+$error_step_s["post_no_id_admin"] = "No se ha enviado correctamente el Identificador del administrador";
+$error_step_s["post_no_name"] = "No se ha enviado correctamente el campo Nombre";
+
+//Error campaigns/edit/update_coupon campaigns/new/add_coupon
+$error_step_s["post_no_coupon_id_campaign"] =  "No se ha enviado correctamente el Identificador de la Tarjeta de cupones";
+$error_step_s["post_no_coupon_name"] = "No se ha enviado correctamente el campo Nombre";
+
+//Error campaigns/edit/update_discount campaigns/new/add_discount
+$error_step_s["post_no_coupon_id_campaign"] =  "No se ha enviado correctamente el Identificador de la Promoción directa";
+$error_step_s["post_no_coupon_name"] = "No se ha enviado correctamente el campo Nombre";
+
+//Error apps/edit/update_app
+$error_step_s["post_no_app_name"] = "No se ha enviado correctamente el campo Nombre";
+
+//Error groups/edit/update_group groups/new/add_group
+$error_step_s["post_no_group_id_group"] = "No se ha enviado correctamente el Identificador del grupo";
+$error_step_s["post_no_group_name"] = "No se ha enviado correctamente el campo Nombre";
 ?>
