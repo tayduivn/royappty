@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-07-2014
+	* Last Edit: 24-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -17,7 +17,6 @@
 	* admin_not_valid
 	* admin_inactive
 	*	post_no_group_name
-	*	post_no_group_users_groups
 	*
 	*********************************************************/
 
@@ -51,16 +50,11 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing group_name");
 		$response["error_code"]="post_no_group_name";
+		$response["error_code_str"]= $error_step_s["post_no_group_name"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["users_groups"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing group_users_groups");
-		$response["error_code"]="post_no_group_users_groups";
-		echo json_encode($response);
-		die();
-	}
+
 
 
 	/*********************************************************

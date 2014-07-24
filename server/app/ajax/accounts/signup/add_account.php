@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-07-2014
+	* Last Edit: 24-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -26,10 +26,6 @@
 	*	post_no_account_payment_method
 	*	post_no_account_app_name
 	*	post_no_account_app_title
-	*	post_no_account_app_description
-	*	post_no_account_app_icon_path
-	*	post_no_account_app_bg_path
-	*	post_no_account_brand_user_fields
 	*
 	*********************************************************/
 
@@ -53,6 +49,8 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_name");
 		$response["error_code"]="post_no_account_name";
+		$response["error_code_str"]= $error_step_s["post_no_account_name"];
+		// poner el codigo del lang
 		echo json_encode($response);
 		die();
 	}
@@ -60,6 +58,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_cif");
 		$response["error_code"]="post_no_account_cif";
+		$response["error_code_str"]= $error_step_s["post_no_account_cif"];
 		echo json_encode($response);
 		die();
 	}
@@ -67,6 +66,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_address");
 		$response["error_code"]="post_no_account_contact_address";
+		$response["error_code_str"]= $error_step_s["post_no_account_contact_address"];
 		echo json_encode($response);
 		die();
 	}
@@ -74,6 +74,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_postal_code");
 		$response["error_code"]="post_no_account_contact_postal_code";
+		$response["error_code_str"]= $error_step_s["post_no_account_contact_postal_code"];
 		echo json_encode($response);
 		die();
 	}
@@ -81,6 +82,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_city");
 		$response["error_code"]="post_no_account_contact_city";
+		$response["error_code_str"]= $error_step_s[""];
 		echo json_encode($response);
 		die();
 	}
@@ -88,6 +90,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_country");
 		$response["error_code"]="post_no_account_contact_country";
+		$response["error_code_str"]= $error_step_s["post_no_account_contact_country"];
 		echo json_encode($response);
 		die();
 	}
@@ -95,6 +98,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_name");
 		$response["error_code"]="post_no_account_admin_name";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_name"];
 		echo json_encode($response);
 		die();
 	}
@@ -102,12 +106,14 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_email");
 		$response["error_code"]="post_no_account_admin_email";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_email"];
 		echo json_encode($response);
 		die();
 	}if(!@issetandnotempty($_POST["admin_promo_password"])){
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_promo_password");
 		$response["error_code"]="post_no_account_admin_promo_password";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_promo_password"];
 		echo json_encode($response);
 		die();
 	}
@@ -115,6 +121,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_password");
 		$response["error_code"]="post_no_account_admin_password";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_password"];
 		echo json_encode($response);
 		die();
 	}
@@ -123,6 +130,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_subscription_type");
 		$response["error_code"]="post_no_account_subscription_type";
+		$response["error_code_str"]= $error_step_s["post_no_account_subscription_type"];
 		echo json_encode($response);
 		die();
 	}
@@ -130,6 +138,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_payment_plan");
 		$response["error_code"]="post_no_account_payment_plan";
+		$response["error_code_str"]= $error_step_s["post_no_account_payment_plan"];
 		echo json_encode($response);
 		die();
 	}
@@ -137,6 +146,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_payment_method");
 		$response["error_code"]="post_no_account_payment_method";
+		$response["error_code_str"]= $error_step_s["post_no_account_payment_method"];
 		echo json_encode($response);
 		die();
 	}
@@ -144,6 +154,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_app_name");
 		$response["error_code"]="post_no_account_app_name";
+		$response["error_code_str"]= $error_step_s["post_no_account_app_name"];
 		echo json_encode($response);
 		die();
 	}
@@ -151,39 +162,10 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing account_app_title");
 		$response["error_code"]="post_no_account_app_title";
+		$response["error_code_str"]= $error_step_s["post_no_account_app_title"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["app_description"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_app_description");
-		$response["error_code"]="post_no_account_app_description";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["app_icon_path"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_app_icon_path");
-		$response["error_code"]="post_no_account_app_icon_path";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["app_bg_path"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_app_bg_path");
-		$response["error_code"]="post_no_account_app_bg_path";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["brand_user_fields"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_brand_user_fields");
-		$response["error_code"]="post_no_account_brand_user_fields";
-		echo json_encode($response);
-		die();
-	}
-
 
 
 	/*********************************************************

@@ -7,11 +7,7 @@ $(document).ready(function(){
 		data: {
 		},
 		error: function(data, textStatus, jqXHR) {
-			$(".modal").modal("hide");
-			$("#ajax_error").modal("show");
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-			}
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -55,11 +51,12 @@ function nextstep(){
 		$("#form-wizard #form-error").css("display","none");
 		$("#form-wizard #form-success").css("display","block");
 	}
-	function errorstep(){
+	function errorstep(error_code_str){
 		$("#form-wizard #step-"+current_step).css("display","none");
 		$("#form-wizard #form-loading").css("display","none");
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
+		$("#form-wizard #form-error .msg").html(error_code_str);
 	}
 
 
@@ -89,18 +86,13 @@ $(document).ready(function() {
 					"payment_data":$('#form-end #payment_data').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					$(".modal").modal("hide");
-					$("#ajax_error").modal("show");
-					if(jqXHR!=""){
-						$("#ajax_error .modal-msg").html(jqXHR);
-					}
-					errorstep();
+					errorstep("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){
 						successstep();
 					} else {
-						errorstep();
+						errorstep(response.error_code_str);
 					}
 
 				}

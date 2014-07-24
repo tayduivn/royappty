@@ -41,13 +41,16 @@ function error_handeler(error_code){
 		//Get payment_methods_subscription_type
 		if(error_code=="payment_methods_subscription_type"){window.location.href = $PATH+"subscription/";break error_block;}
 		//Get payment_methods_payment_plan
-		if(error_code=="payment_methods_subscription_type"){window.location.href = $PATH+"subscription/";break error_block;}
+		if(error_code=="payment_methods_payment_plan"){window.location.href = $PATH+"subscription/";break error_block;}
 		//Get post_no_payment_plans_subscription_type
 		if(error_code=="post_no_payment_plans_subscription_type"){window.location.href = $PATH+"subscription/";break error_block;}
 		//Get indb no_func
 		if(error_code=="post_no_func"){window.location.href = $PATH+"dashboard/";break error_block;}
 		//Get indb no_table
 		if(error_code=="post_no_table"){window.location.href = $PATH+"dashboard/";break error_block;}
+
+		//Get Policy_type
+		if(error_code=="post_no_policy_type"){window.location.href = $PATH+"error/?error_code=post_no_policy_type";break error_block;}
 		//Ajax Errors
 		if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
 		//Error Unknow

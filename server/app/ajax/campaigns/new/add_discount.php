@@ -17,17 +17,6 @@
 	* admin_not_valid
 	* admin_inactive
 	*	post_no_discount_name
-	*	post_no_discount_description
-	*	post_no_discount_type
-	*	post_no_discount_status
-	*	post_no_discount_campaign_icon_path
-	*	post_no_discount_title
-	*	post_no_discount_campaign_image_path
-	*	post_no_discount_content
-	*	post_no_discount_button_title
-	*	post_no_discount_usage_limit
-	*	post_no_discount_cost
-	*	post_no_discount_profit
 	*
 	*
 	*********************************************************/
@@ -65,91 +54,11 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing discount_name");
 		$response["error_code"]="post_no_discount_name";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["description"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_description");
-		$response["error_code"]="post_no_discount_description";
+		$response["error_code_str"]= $error_step_s["post_no_discount_name"];
 		echo json_encode($response);
 		die();
 	}
 
-	if(!@issetandnotempty($_POST["type"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_type");
-		$response["error_code"]="post_no_discount_type";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["status"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_status");
-		$response["error_code"]="post_no_discount_status";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["campaign_icon_path"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_campaign_icon_path");
-		$response["error_code"]="post_no_discount_campaign_icon_path";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["title"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_title");
-		$response["error_code"]="post_no_discount_title";
-		echo json_encode($response);
-		die();
-	}
-
-		if(!@issetandnotempty($_POST["campaign_image_path"])){
-			$response["result"]=false;
-			debug_log("[".$page_path."] ERROR Data Post Missing discount_campaign_image_path");
-			$response["error_code"]="post_no_discount_campaign_image_path";
-			echo json_encode($response);
-			die();
-		}
-
-	if(!@issetandnotempty($_POST["content"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_content");
-		$response["error_code"]="post_no_discount_content";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["button_title"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_button_title");
-		$response["error_code"]="post_no_discount_button_title";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["usage_limit"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_usage_limit");
-		$response["error_code"]="post_no_discount_usage_limit";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["cost"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_cost");
-		$response["error_code"]="post_no_discount_cost";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["profit"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing discount_profit");
-		$response["error_code"]="post_no_discount_profit";
-		echo json_encode($response);
-		die();
-	}
 
 	/*********************************************************
 	* AJAX OPERATIONS

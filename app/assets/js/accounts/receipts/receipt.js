@@ -8,11 +8,7 @@ $(document).ready(function(){
 			id_receipt:$GET["id_receipt"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			$(".modal").modal("hide");
-			$("#ajax_error").modal("show");
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-			}
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){

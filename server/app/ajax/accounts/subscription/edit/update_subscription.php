@@ -17,8 +17,6 @@
 	* admin_not_valid
 	* admin_inactive
 	*	post_no_update_subscription_type
-	*	post_no_update_subscription_payment_plan
-	*	post_no_update_subscription_payment_method
 	*
 	*
 	*********************************************************/
@@ -55,25 +53,11 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing update_subscription_type");
 		$response["error_code"]="post_no_update_subscription_type";
+		$response["error_code_str"]= $error_step_s["post_no_update_subscription_type"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["payment_plan"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing update_subscription_payment_plan");
-		$response["error_code"]="post_no_update_subscription_payment_plan";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["payment_method"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing update_subscription_payment_method");
-		$response["error_code"]="post_no_update_subscription_payment_method";
-		echo json_encode($response);
-		die();
-	}
-
-
+	
 
 
 	/*********************************************************

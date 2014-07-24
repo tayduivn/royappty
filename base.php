@@ -1,4 +1,15 @@
 <?php
+
+errorstep("ajax_error");
+errorstep(response.error_code_str);
+$("#form-wizard #form-error .msg").html(error_code_str);
+
+error_handeler("ajax_error");
+
+error_handeler(response.error_code);
+
+$response["error_code_str"]= $error_step_s[""];
+
   /*********************************************************
   * AJAX RETURNS
   *

@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-07-2014
+	* Last Edit: 24-07-2014
 	* Version: 0.93
 	*
  	*********************************************************/
@@ -17,12 +17,6 @@
 	* admin_not_valid
 	* admin_inactive
 	*	post_no_app_name
-	*	post_no_app_description
-	*	post_no_app_icon_path
-	*	post_no_app_bg_path
-	*	post_no_app_published_apple_store
-	*	post_no_app_published_google_play
-	*	post_no_app_brand_user_fields
 	*
 	*
 	*********************************************************/
@@ -57,54 +51,10 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing app_name");
 		$response["error_code"]="post_no_app_name";
+		$response["error_code_str"]= $error_step_s["post_no_app_name"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["description"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing app_description");
-		$response["error_code"]="post_no_app_description";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["app_icon_path"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing app_icon_path");
-		$response["error_code"]="post_no_app_icon_path";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["app_bg_path"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing app_bg_path");
-		$response["error_code"]="post_no_app_bg_path";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["published_apple_store"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing app_published_apple_store");
-		$response["error_code"]="post_no_app_published_apple_store";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["published_google_play"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing app_published_google_play");
-		$response["error_code"]="post_no_app_published_google_play";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["brand_user_fields"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing app_brand_user_fields");
-		$response["error_code"]="post_no_app_brand_user_fields";
-		echo json_encode($response);
-		die();
-	}
-
 
 
  	/*********************************************************

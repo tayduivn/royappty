@@ -53,6 +53,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing delete_option");
 		$response["error_code"]="post_no_delete_option";
+		$response["error_code_str"]= $error_step_s["post_no_delete_option"];
 		echo json_encode($response);
 		die();
 	}

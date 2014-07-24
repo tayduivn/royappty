@@ -52,6 +52,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing payment_gateway_payment_data");
 		$response["error_code"]="post_no_payment_gateway_payment_data";
+		$response["error_code_str"]= $error_step_s["post_no_payment_gateway_payment_data"];
 		echo json_encode($response);
 		die();
 	}

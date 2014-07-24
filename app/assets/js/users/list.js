@@ -8,11 +8,7 @@ $(document).ready(function() {
 		data: {
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
-					alert(jqXHR);
+			error_handeler("ajax_error");
 
 		},
 		success: function(response) {

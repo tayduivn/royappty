@@ -18,16 +18,6 @@
 	* admin_inactive
 	*	post_no_id_admin
 	* post_no_name
-	* post_no_can_validate_codes
-	* post_no_promo_password
-	* post_no_can_login
-	* post_no_can_manage_campaigns
-	* post_no_can_manage_users
-	* post_no_can_manage_app
-	* post_no_can_manage_brand
-	* post_no_email
-	* post_no_password
-	* post_no_active
 	*
 	*
 	*********************************************************/
@@ -62,6 +52,7 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing id_admin");
 		$response["error_code"]="post_no_id_admin";
+		$response["error_code_str"]= $error_step_s["post_no_id_admin"];
 		echo json_encode($response);
 		die();
 	}
@@ -69,90 +60,11 @@
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing name");
 		$response["error_code"]="post_no_name";
+		$response["error_code_str"]= $error_step_s["post_no_name"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["can_validate_codes"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing can_validate_codes");
-		$response["error_code"]="post_no_can_validate_codes";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["promo_password"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing promo_password");
-		$response["error_code"]="post_no_promo_password";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["can_login"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing can_login");
-		$response["error_code"]="post_no_can_login";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["can_manage_campaigns"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing can_manage_campaigns");
-		$response["error_code"]="post_no_can_manage_campaigns";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["can_manage_admins"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing can_manage_admins");
-		$response["error_code"]="post_no_can_manage_admins";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["can_manage_users"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing can_manage_users");
-		$response["error_code"]="post_no_can_manage_users";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["can_manage_app"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing can_manage_app");
-		$response["error_code"]="post_no_can_manage_app";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["can_manage_brand"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing can_manage_brand");
-		$response["error_code"]="post_no_can_manage_brand";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["email"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing email");
-		$response["error_code"]="post_no_email";
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["password"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing password");
-		$response["error_code"]="post_no_password";
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["active"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing active");
-		$response["error_code"]="post_no_active";
-		echo json_encode($response);
-		die();
-	}
+	
 
 
 
