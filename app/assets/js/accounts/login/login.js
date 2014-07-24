@@ -5,16 +5,17 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/login/login.php",
 		data: {
-			"error":$GET["error"]
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
-
 		},
 		success: function(response) {
 			if(response.result){
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
+			}else{
+				alert("error");
 			}
 		}
 	});
@@ -61,7 +62,7 @@ $(document).ready(function() {
 	$("#form-step1").validate({
 		messages:{
 			email:{
-				required:$s["email_this_field_is_compulsory"],	
+				required:$s["email_this_field_is_compulsory"],
 			  	email: $s["email_format_is_not_correct"]
 		  	},
 		  	password:{

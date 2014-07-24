@@ -7,11 +7,11 @@ function logout(){
 
 
 
-if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getItem('id_brand') == 'null')){
+if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getItem('id_brand') == null)){
 	error_handeler("no_brand");
 }else{
 	$BRAND=localStorage.getItem('id_brand');
-	if ((typeof localStorage.getItem('id_admin') == 'undefined')||(localStorage.getItem('id_admin') == 'null')) {
+	if ((typeof localStorage.getItem('id_admin') == 'undefined')||(localStorage.getItem('id_admin') == null)) {
 		error_handeler("no_admin");
 	}else{
 		$SESSION=localStorage.getItem('id_admin');

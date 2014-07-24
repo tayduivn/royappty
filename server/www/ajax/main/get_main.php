@@ -233,7 +233,9 @@
           </div>
           <div class='col-md-4'>
           <div class='bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
-          ".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."
+          ".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."<br>
+          <a href='#' onclick='changelang(\"es\");'>".htmlentities($s["lang_spanish"], ENT_QUOTES, "UTF-8")."</a><br>
+          <a href='#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>
           </div>
         </div>
       </div>

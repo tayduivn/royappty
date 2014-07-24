@@ -26,6 +26,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/policy/policy.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			policy_type:$GET["policy_type"]
 		},
 		error: function(data, textStatus, jqXHR) {

@@ -5,6 +5,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/recovery/recovery.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			"error":$GET["error"]
 		},
 		error: function(data, textStatus, jqXHR) {

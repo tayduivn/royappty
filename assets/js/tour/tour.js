@@ -5,6 +5,7 @@ $(document).ready(function(){
     dataType: 'json',
     url: $SERVER_PATH+"server/www/ajax/tour/get_tour.php",
     data: {
+      lang: localStorage.getItem("lang")
     },
     error: function(data, textStatus, jqXHR) {
       alert("error ajax");

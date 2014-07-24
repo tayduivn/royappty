@@ -5,6 +5,7 @@ $(document).ready(function(){
     dataType: 'json',
     url: $SERVER_PATH+"server/www/ajax/pricing/get_pricing.php",
     data: {
+      lang: localStorage.getItem("lang")
     },
     error: function(data, textStatus, jqXHR) {
       alert("error ajax");

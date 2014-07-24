@@ -6,6 +6,7 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/receipts/list.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			status:$GET["status"]
 		},
 		error: function(data, textStatus, jqXHR) {

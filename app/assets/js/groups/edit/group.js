@@ -5,6 +5,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/groups/edit/group.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_group:$GET["id_group"]
 		},
 		error: function(data, textStatus, jqXHR) {

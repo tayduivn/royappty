@@ -5,12 +5,13 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/data/get_data.php",
 		data: {
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 			$(".modal").modal("hide");
 			$("#ajax_error").modal("show");
 			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);			
+				$("#ajax_error .modal-msg").html(jqXHR);
 			}
 		},
 		success: function(response) {
@@ -22,7 +23,7 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 });

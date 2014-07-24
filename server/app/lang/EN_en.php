@@ -61,7 +61,7 @@ $signup_s["contact_province"] = "County";
 $signup_s["contact_province_help"] = "";
 $signup_s["contact_country"] = "Country";
 $signup_s["contact_country_help"] = "";
-$signup_s["admin_data"] = "Access data";
+$signup_s["admin_data"] = "Access information";
 $signup_s["admin_data_info"] = "";
 $signup_s["admin_name"] = "Name";
 $signup_s["admin_name_help"] = "";
@@ -96,13 +96,14 @@ $signup_s["accept_policy"] = "I accept privacy policy terms.";
 //Policy
 
 $policy_s["security"]["title"] = "Safety Policy";
-$policy_s["security"]["content"][0] = "According to what is set forth in the Fundamental Law \"Ley Orgánica 15/1999\", of the 13 December of Personal Data Protection and the Order \" R.D. 1720/2007\", which regulates previous law application, both included in the Spanish legislation, VIVA LA CLOUD, S.L. informs you your personal data, gathered here now or in a future, will be included in a mixed-typed file called \"ROYAPPTY CLIENTES\" owned by VIVA LA CLOUD, S.L. and whose purpose is \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACIÓN\".";
+$policy_s["security"]["content"][0] = "According to what is set forth in the Fundamental Law \"Ley Orgánica 15/1999\", of the 13 December of Personal Data Protection and the Order \" R.D. 1720/2007\", which regulates previous law application, both included in the Spanish legislation, VIVA LA CLOUD, S.L. informs you your personal data, gathered here now or in future, will be included in a mixed-typed file called \"ROYAPPTY CLIENTES\" owned by VIVA LA CLOUD, S.L. and whose purpose is \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACIÓN\".";
 $policy_s["security"]["content"][1] = "We would like to highlight those data will be handled only and exclusively to the service provision and we will keep them under total confidentiality. When you sign up for ROYAPPTY, you are in accordance with alowing we can handle them and send you information about improvements and our app last news.";
 $policy_s["security"]["content"][2] = "To exercise your rights of access, rectification, cancellation or disagreement, you can email us to hola@royappty.com attaching an ID copy of the account owner (in order to verify)";
 $policy_s["security"]["content"][3] = "You can consult our complete privacy policy on this link and ROYAPPTY terms of use on this one.";
+$s["policy_exit"] = "Close";
 
 //Recovery Password
-$s["recovery_password"] = "Password recovery";
+$recovery_s["recovery_password"] = "Password recovery";
 $recovery_s["success_title"] = "Completed operation";
 $recovery_s["success_subtitle"] = "Check your email account, we have sent an email with a link you must open to verify the account is yours and it allows you to modify the access password.";
 $revocery_s["mail_subject"] = "Password recovery";
@@ -418,6 +419,9 @@ $s["postal_code"] = "Post code";
 $s["city"] = "City";
 $s["country"] = "Country";
 $s["edit_personal_info"] = "Edit personal information";
+$s["language_title"] = "Choose language";
+$s["language_spanish"] = "Spanish";
+$s["language_english"] = "English";
 $s["subscription_type"] = "Subscription type";
 $s["change_subscription_type"] = "Change subscription type";
 $s["manage_subscription_and_payments"] = "Manage subcriptions and payments";

@@ -6,7 +6,6 @@
 	* Version: 0.91
 	*
 	*********************************************************/
-
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));

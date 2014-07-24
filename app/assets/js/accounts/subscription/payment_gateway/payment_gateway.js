@@ -5,12 +5,13 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/subscription/payment_gateway/get_payment_gateway.php",
 		data: {
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 			$(".modal").modal("hide");
 			$("#ajax_error").modal("show");
 			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);			
+				$("#ajax_error .modal-msg").html(jqXHR);
 			}
 		},
 		success: function(response) {
@@ -22,7 +23,7 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 });
@@ -62,14 +63,14 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
-	
+
+
 $(document).ready(function() {
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -103,13 +104,12 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
 
 
-	
-});
 
+});

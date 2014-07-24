@@ -26,8 +26,12 @@ $s["email"] = "info@royappty.com";
 
 $s["work_with us"] = "TRABAJA CON NOSOTROS";
 $s["looking_for_talent"] = "Siempre estamos buscando talento para unirse a nuestro equipo, escríbenos un mail a rrhh@royappty.com incluyendo tu currículo y una carta de presentación.";
+
 $s["follow_us"]= "¡SÍGUENOS!";
 $s["follow_us_in_social_networks"] = "Síguenos en las redes sociales e infórmate de las últimas novedades.";
+
+$s["lang_spanish"] = "Español";
+$s["lang_english"] = "Inglés";
 
 $s["VivaLaCloud_SL_2014"] = "VivaLaCloud,S.L. © 2014";
 
@@ -47,7 +51,7 @@ $s["main_importance_of_distinction"] = "Sabemos lo importante que es diferenciar
 $s["main_promote_loyalty"] = "FIDELIZA A TUS CLIENTES";
 $s["main_simple_campaign_creation"] = "Podrás crear campañas para fidelizar a tus clientes de forma sencilla. ¿Qué te parece ofrecer un descuento con la décima compra? Con nuestra App es fácil. ¿Y un par de días con descuentos en tus precios? Eso está hecho. Con nuestro panel de control podrás crear cualquier tipo de campaña y enviarla a todos tus clientes. El único límite es tu imaginación.";
 $s["main_on_the same_level"] = "DE TÚ A TÚ";
-$s.["main_direct_contact_with_clients"] = "Utiliza Royappty como herramienta para comunicarte directamente con tus clientes. ¿No sería genial poder avisarles cuando esté disponible el producto que han pedido? Gracias a nuestro panel de control podrás enviarles una alerta cuando sea necesario.";
+$s["main_direct_contact_with_clients"] = "Utiliza Royappty como herramienta para comunicarte directamente con tus clientes. ¿No sería genial poder avisarles cuando esté disponible el producto que han pedido? Gracias a nuestro panel de control podrás enviarles una alerta cuando sea necesario.";
 
 $s["main_start_now"] = "Empieza ahora mismo a crear tu aplicación";
 $s["main_boost_your_business"] = " y haz realidad todas las ideas que tienes para dinamizar tu negocio";

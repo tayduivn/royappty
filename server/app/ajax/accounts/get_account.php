@@ -66,6 +66,9 @@
 		<p><a href='./data/edit/' class='btn btn-white'>".htmlentities($s["edit_personal_info"], ENT_QUOTES, "UTF-8")."</a></p>
 		<p>".htmlentities($s["delete_your_account_help"], ENT_QUOTES, "UTF-8")." <a href='./data/delete/'>".htmlentities($s["here"], ENT_QUOTES, "UTF-8")."</a></p>
 
+		<h4 class='m-t-20'>".htmlentities($s["language_title"], ENT_QUOTES, "UTF-8")."</h4>
+		<p><a href='#' onclick='changelang(\"es\");'>".htmlentities($s["language_spanish"], ENT_QUOTES, "UTF-8")."</a></p>
+		<p><a href='#' onclick='changelang(\"en\");'>".htmlentities($s["language_english"], ENT_QUOTES, "UTF-8")."</a></p>
 
 		<h4 class='m-t-20'>".htmlentities($s["subscription_type"], ENT_QUOTES, "UTF-8")."</h4>
 		<p>".htmlentities($subscription_type_helper[$brand["subscription_type"]], ENT_QUOTES, "UTF-8")."</p>";

@@ -5,6 +5,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/admins/edit/admin.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_admin:$GET["id_admin"]
 		},
 		error: function(data, textStatus, jqXHR) {

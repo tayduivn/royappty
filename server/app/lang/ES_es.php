@@ -100,9 +100,10 @@ $policy_s["security"]["content"][0] = "VIVA LA CLOUD, S.L. te informa que según
 $policy_s["security"]["content"][1] = "Nos gustaría destacar que estos datos serán tratados única y exclusivamente para la prestación del servicio y que guardaremos una confidencialidad total sobre los mismos. Al darte de alta en ROYAPPTY prestas tu consentimiento para que podamos tratar estos datos y permites que podamos enviarte información sobre las mejoras y novedades de nuestra aplicación.";
 $policy_s["security"]["content"][2] = "Para ejercer tus derechos de acceso, rectificación, cancelación y oposición puedes escribirnos a hola@royappty.com adjuntando una copia del DNI del titular de la cuenta (para poder verificarlo).";
 $policy_s["security"]["content"][3] = "Puedes consultar nuestra política de privacidad al completo a través de este enlace y las condiciones de uso de ROYAPPTY a través de este otro.";
+$s["policy_exit"] = "Salir";
 
 //Recovery Password
-$s["recovery_password"] = "Recuperar contraseña";
+$recovery_s["recovery_password"] = "Recuperar contraseña";
 $recovery_s["success_title"] = "Operación Completada";
 $recovery_s["success_subtitle"] = "Revisa tu correo electrónico, hemos enviado un email con un link que tendrás que abrir para verificar que la cuenta es tuya y te permitirá modificar la contraseña de acceso.";
 $revocery_s["mail_subject"] = "Recuperar contraseña";
@@ -418,6 +419,9 @@ $s["postal_code"] = "Código Postal";
 $s["city"] = "Ciudad";
 $s["country"] = "País";
 $s["edit_personal_info"] = "Editar información personal";
+$s["language_title"] = "Escoge idioma";
+$s["language_spanish"] = "Español";
+$s["language_english"] = "Inglés";
 $s["subscription_type"] = "Tipo de Subscripción";
 $s["change_subscription_type"] = "Cambiar tipo de subscripción";
 $s["manage_subscription_and_payments"] = "Gestionar subscripciones y pagos";

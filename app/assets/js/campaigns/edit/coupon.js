@@ -5,6 +5,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/campaigns/edit/coupon.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_campaign:$GET["id_campaign"]
 		},
 		error: function(data, textStatus, jqXHR) {

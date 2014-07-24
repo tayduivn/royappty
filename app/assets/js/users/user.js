@@ -5,6 +5,7 @@ function view_note(id_user_note){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/users/get_user_note.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_user_note:id_user_note
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -21,10 +22,10 @@ function view_note(id_user_note){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
-	
+
 }
 function delete_user_note(id_user_note){
 	filter_str="id_user_note||=||"+id_user_note;
@@ -68,12 +69,12 @@ function delete_user_note(id_user_note){
 					   	}
 					}
 	    		}
-				
+
             }else{
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 }
@@ -121,12 +122,12 @@ function add_user_note(){
 					   	}
 					}
 	    		}
-				
+
             }else{
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 }
@@ -143,7 +144,7 @@ $(document).ready(function(){
 			$(".modal").modal("hide");
 			$("#ajax_error").modal("show");
 			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);			
+				$("#ajax_error .modal-msg").html(jqXHR);
 			}
 		},
 		success: function(response) {
@@ -155,7 +156,7 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 	var d1_1 = [
@@ -175,7 +176,7 @@ $(document).ready(function(){
         [13, parseInt($(".ajax-loader-graph-value-13").html())],
         [14, parseInt($(".ajax-loader-graph-value-14").html())]
     ];
-    
+
 	var data1 = [
         {
             data: d1_1,
@@ -191,7 +192,7 @@ $(document).ready(function(){
         }
 
     ];
-	
+
 	$.plot($("#placeholder-bar-chart"), data1, {
 		tooltip: true,
 		tooltipOpts: {
@@ -203,19 +204,19 @@ $(document).ready(function(){
 		},
         xaxis: {
 			ticks: [
-				[0,$(".ajax-loader-graph-label-0").html()], 
-				[1,$(".ajax-loader-graph-label-1").html()], 
-				[2,$(".ajax-loader-graph-label-2").html()], 
-				[3,$(".ajax-loader-graph-label-3").html()], 
-				[4,$(".ajax-loader-graph-label-4").html()], 
-				[5,$(".ajax-loader-graph-label-5").html()], 
-				[6,$(".ajax-loader-graph-label-6").html()], 
-				[7,$(".ajax-loader-graph-label-7").html()], 
-				[8,$(".ajax-loader-graph-label-8").html()], 
-				[9,$(".ajax-loader-graph-label-9").html()], 
-				[10,$(".ajax-loader-graph-label-10").html()], 
-				[11,$(".ajax-loader-graph-label-11").html()], 
-				[12,$(".ajax-loader-graph-label-12").html()], 
+				[0,$(".ajax-loader-graph-label-0").html()],
+				[1,$(".ajax-loader-graph-label-1").html()],
+				[2,$(".ajax-loader-graph-label-2").html()],
+				[3,$(".ajax-loader-graph-label-3").html()],
+				[4,$(".ajax-loader-graph-label-4").html()],
+				[5,$(".ajax-loader-graph-label-5").html()],
+				[6,$(".ajax-loader-graph-label-6").html()],
+				[7,$(".ajax-loader-graph-label-7").html()],
+				[8,$(".ajax-loader-graph-label-8").html()],
+				[9,$(".ajax-loader-graph-label-9").html()],
+				[10,$(".ajax-loader-graph-label-10").html()],
+				[11,$(".ajax-loader-graph-label-11").html()],
+				[12,$(".ajax-loader-graph-label-12").html()],
 				[13,$(".ajax-loader-graph-label-13").html()],
 				[14,$(".ajax-loader-graph-label-14").html()]
 			],
@@ -241,7 +242,7 @@ $(document).ready(function(){
         series: {
             shadowSize: 1
         }
-        
+
     });
 });
 
@@ -258,7 +259,7 @@ function delete_user(id_user){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide'); 
+			$('.modal').modal('hide');
 			$('#ajax_error').modal('show');
 			$('#ajax_error .msg-modal').html(jqXHR);
 		},
@@ -266,9 +267,9 @@ function delete_user(id_user){
 			if(response.status){
 				show_modal("deleted_user_success_alert","javascript:window.location=\"../users/\"");
             }else{
-            	
+
 			}
-				
+
 		}
 	});
 }
