@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 18-07-2014
+	* Last Edit: 17-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -19,42 +19,31 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/table";
 	debug_log("[".$page_path."] START");
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> FETCH_HEAD
-
-=======
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	$response=array();
  	$response["aaData"]=array();
-
-<<<<<<< HEAD
-=======
 
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
 
+	include(PATH."functions/check_session.php");
 
 
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
 
->>>>>>> FETCH_HEAD
 	$table="admins";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	if(@issetandnotempty($_GET["active"])){
+	if(issetandnotempty($_GET["active"])){
 	 	$filter["active"]=array("operation"=>"=","value"=>$_GET["active"]);
  	}
 	if(isInBD($table,$filter)){
@@ -131,7 +120,7 @@
  			$filter=array();
  			$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
  			$validated_codes_amount=getInBD($table,$filter);
- 			if(!@issetandnotempty($validated_codes_amount)){
+ 			if(!issetandnotempty($validated_codes_amount)){
 	 			$validated_codes_amount["validated_codes_amount"]=0;
  			}
 
@@ -145,16 +134,7 @@
  		}
 
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-	debug_log("[".$page_path."] END");
 
- 	echo json_encode($response);
-=======
-
-=======
-
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	/*********************************************************
 	* DATABASE REGISTRATION
 	*********************************************************/
@@ -168,7 +148,5 @@
 	debug_log("[".$page_path."] END");
 	echo json_encode($response);
 	die();
-
->>>>>>> FETCH_HEAD
-
+	
 ?>
