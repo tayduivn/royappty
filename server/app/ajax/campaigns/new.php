@@ -2,24 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-
-	define('PATH', str_replace('\\', '/','../../'));
-	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-
-
-
-=======
-	* Last Edit: 14-07-2014
-=======
 	* Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -43,7 +26,6 @@
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
->>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/new";
 	debug_log("[".$page_path."] START");
@@ -62,14 +44,10 @@
 	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
-<<<<<<< HEAD
- 	$response=array();
-=======
 
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
->>>>>>> FETCH_HEAD
 
  	$response["result"]=true;
 
@@ -98,13 +76,6 @@
 				</div>
 			</div>
 		</div>";
-<<<<<<< HEAD
-
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
-
-=======
-
 
  	/*********************************************************
 	* DATABASE REGISTRATION
@@ -120,5 +91,4 @@
 	echo json_encode($response);
 	die();
 
->>>>>>> FETCH_HEAD
 ?>

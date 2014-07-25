@@ -2,19 +2,6 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-
-	define('PATH', str_replace('\\', '/','../../'));
-	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:i:s"));
-
-
-
-=======
 	* Last Edit: 14-07-2014
 	* Version: 0.93
 	*
@@ -36,7 +23,6 @@
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
->>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/upload_image";
 	debug_log("[".$page_path."] START");
@@ -186,9 +172,5 @@
         @imagedestroy($new);
         @imagedestroy($crop);
     }
-<<<<<<< HEAD
-}
-=======
 	}
->>>>>>> FETCH_HEAD
 ?>

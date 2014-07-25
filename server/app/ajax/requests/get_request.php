@@ -2,18 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-	
-=======
-	* Last Edit: 17-07-2014
-=======
 	* Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -34,22 +23,9 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
->>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
-
-<<<<<<< HEAD
-
-
-	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/requests/get_request";
-	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
-
- 	$response=array();
-
-=======
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/requests/get_request";
 	debug_log("[".$page_path."] START");
@@ -59,10 +35,6 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
-<<<<<<< HEAD
-	include(PATH."functions/check_session.php");
->>>>>>> FETCH_HEAD
-=======
 	// BRAND
 	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
@@ -70,8 +42,6 @@
 	// ADMIN
 	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
-
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 
  	// Data check START
 	if(!@issetandnotempty($_POST["id_request"])){
@@ -96,30 +66,18 @@
 
  	// Data check END
 
-<<<<<<< HEAD
-	$response["result"]=true;
-
-
-=======
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
 
 	$response["result"]=true;
 
->>>>>>> FETCH_HEAD
  	$table="requests";
 	$filter=array();
 	$filter["id_request"]=array("operation"=>"=","value"=>$_POST["id_request"]);
 	$request=getInBD($table,$filter);
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> FETCH_HEAD
 	$response["data"]["page-title"]="<a href='../requests/'>".htmlentities($s["requests"], ENT_QUOTES, "UTF-8")."</a> / #".$request["code"]." - ".htmlentities($s["requests_types"][$request["type"]], ENT_QUOTES, "UTF-8");
-
 
 	$response["data"]["request-data"]="
 		<h3 class='m-t-0'>#".$request["code"]." - ".htmlentities($s["requests_types"][$request["type"]], ENT_QUOTES, "UTF-8")."</h3>
@@ -225,7 +183,6 @@
 		";
 	}
 
-<<<<<<< HEAD
 	if ($request["usage_limit"]=="0"){
 		$response["data"]["request-data"].=htmlentities($s["without_limit"], ENT_QUOTES, "UTF-8");
 	}else{
@@ -233,22 +190,6 @@
 	}
 	$response["data"]["request-data"].="</span></p>";
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
-
-
-<<<<<<< HEAD
-=======
 	/*********************************************************
 	* DATABASE REGISTRATION
 	*********************************************************/
@@ -263,5 +204,4 @@
 	echo json_encode($response);
 	die();
 
->>>>>>> FETCH_HEAD
 ?>

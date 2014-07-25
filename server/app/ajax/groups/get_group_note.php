@@ -2,21 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-	
-	define('PATH', str_replace('\\', '/','../../'));
-	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-=======
-	* Last Edit: 17-07-2014
-=======
 	* Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -37,30 +23,19 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
+
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
->>>>>>> FETCH_HEAD
-
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/groups/get_group_note";
 	debug_log("[".$page_path."] START");
-<<<<<<< HEAD
-	include(PATH."functions/check_session.php");
- 	$response=array();
-
-=======
-
  	$response=array();
 
  	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
 
-<<<<<<< HEAD
-	include(PATH."functions/check_session.php");
->>>>>>> FETCH_HEAD
-=======
 	// BRAND
 	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
@@ -69,9 +44,7 @@
 	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 
- 	// Data check START
 	if(!@issetandnotempty($_POST["id_group_note"])){
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing id_group_note");
@@ -91,14 +64,10 @@
  		echo json_encode($response);
  		die();
 	}
- 	// Data check END
 
-<<<<<<< HEAD
-=======
  	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
->>>>>>> FETCH_HEAD
 
 	$response["result"]=true;
  	$table="group_notes";

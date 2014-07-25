@@ -2,12 +2,6 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-=======
 	* Last Edit: 17-07-2014
 	* Version: 0.93
 	*
@@ -25,29 +19,15 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
->>>>>>> FETCH_HEAD
 	@session_start();
 	define('PATH', str_replace('\\', '/','../../'));
 	include(PATH."include/inbd.php");
 
-<<<<<<< HEAD
-=======
 
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
 
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-	if((isset($_POST))&&(!empty($_POST))){
-		$ajaxdata=$_POST;
-	}else if((isset($_GET))&&(!empty($_GET))){
-		$ajaxdata=$_GET;
-	}
-
-<<<<<<< HEAD
-=======
-=======
 	if(!@issetandnotempty($_POST["func"]) && !@issetandnotempty($_GET["func"])){
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing func");
@@ -63,9 +43,6 @@
 		die();
 	}
 
-
-
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
@@ -75,7 +52,6 @@
 		$ajaxdata=$_GET;
 	}
 
->>>>>>> FETCH_HEAD
 	$callback_path="./";
 	if(isset($ajaxdata["path"])){
 		$callback_path=$ajaxdata["path"];

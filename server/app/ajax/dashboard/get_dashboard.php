@@ -2,18 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-	
-=======
-	* Last Edit: 17-07-2014
-=======
 	* Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -34,7 +23,6 @@
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
 
->>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
@@ -47,6 +35,7 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
 	// BRAND
 	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
@@ -54,15 +43,6 @@
 	// ADMIN
 	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
-
-
- 	$table="admins";
- 	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	$filter["id_admin"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_admin"]);
-
-
-	if(isInBD($table,$filter)){
 
 	/*********************************************************
 	* AJAX OPERATIONS
@@ -191,13 +171,7 @@
  		}
 
 
-	}else{
- 		$response["result"]=false;
-		error_log("[server/app/ajax/dashboard/get_dashboard] ERROR There is no Admin (".$_SESSION["admin"]["id_admin"].") for this Brand (".$_SESSION["admin"]["id_brand"].")");
- 		$response["error"]="ERROR Your admin account is not allowed for manage this Brand";
- 		echo json_encode($response);
- 		die();
-	}
+
 
 	/*********************************************************
 	* DATABASE REGISTRATION
