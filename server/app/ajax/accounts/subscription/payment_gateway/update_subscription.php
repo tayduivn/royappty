@@ -2,10 +2,17 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
 	*********************************************************/
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+ 	*********************************************************/
+>>>>>>> FETCH_HEAD
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -26,7 +33,7 @@
 
 	define('PATH', str_replace('\\', '/','../../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:m:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."include/inbd.php");
 	$page_path = "server/app/ajax/accounts/subscription/payment_gateway/update_subscription";
  	debug_log("[".$page_path."] START");
@@ -75,7 +82,12 @@
 
  	echo json_encode($response);
 	debug_log("[".$page_path."] END");
+	die();
 
 
+<<<<<<< HEAD
 
+
+=======
+>>>>>>> FETCH_HEAD
 ?>

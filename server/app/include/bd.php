@@ -2,8 +2,13 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 * Last Edit: 23-06-2014
 * Version: 0.91
+=======
+* Last Edit: 17-07-2014
+* Version: 1.02
+>>>>>>> FETCH_HEAD
 *
 *********************************************************/
 
@@ -160,6 +165,7 @@ function db_result($result,$field) {
  */
 function db_last_id($manejador) {
 	global $conf;
+	global $manejador;
 
 	if($conf['bdtype'] == "mysql") {
 		if($id = mysqli_insert_id($manejador)) {

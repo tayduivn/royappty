@@ -2,17 +2,40 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
 	*********************************************************/
 	
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:m:i"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+
+<<<<<<< HEAD
 
 
-
+=======
+>>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/edit/update_admin";
 	debug_log("[".$page_path."] START");
@@ -21,6 +44,17 @@
 
 	$response=array();
 
+<<<<<<< HEAD
+=======
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 
  	$table="admins";
  	$filter=array();
@@ -45,7 +79,22 @@
 
 	$response["result"]=true;
 
- 	echo json_encode($response);
 
+<<<<<<< HEAD
  	debug_log("[".$page_path."] END");
+=======
+ /*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+>>>>>>> FETCH_HEAD
 ?>

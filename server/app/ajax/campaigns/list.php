@@ -2,26 +2,51 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
 	*********************************************************/
 
+=======
+	* Last Edit: 14-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+
+>>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-
-
-
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/list";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
 
  	$response=array();
 
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+	include(PATH."functions/check_session.php");
 
 
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
 
 	$response["result"]=true;
  	$response["data"]["page-title"] = "<a href='./'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["all_campaigns"], ENT_QUOTES, "UTF-8")."<a href='../campaign/new/' class='pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["new_campaign"], ENT_QUOTES, "UTF-8")."</a>";
@@ -90,9 +115,19 @@
  	";
 
 
+/*********************************************************
+* DATABASE REGISTRATION
+*********************************************************/
 
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+
+/*********************************************************
+* AJAX CALL RETURN
+*********************************************************/
+
+debug_log("[".$page_path."] END");
+echo json_encode($response);
+die();
+
 
 ?>

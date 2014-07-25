@@ -2,6 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
@@ -10,13 +11,46 @@
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+	define('PATH', str_replace('\\', '/','../../'));
+	@session_start();
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+>>>>>>> FETCH_HEAD
 
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/groups/get_group_note";
 	debug_log("[".$page_path."] START");
+<<<<<<< HEAD
 	include(PATH."functions/check_session.php");
  	$response=array();
 
+=======
+
+ 	$response=array();
+
+ 	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+	include(PATH."functions/check_session.php");
+>>>>>>> FETCH_HEAD
 
  	// Data check START
 	if(!issetandnotempty($_POST["id_group_note"])){
@@ -39,6 +73,12 @@
 	}
  	// Data check END
 
+<<<<<<< HEAD
+=======
+ 	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 
 	$response["result"]=true;
  	$table="group_notes";
@@ -56,7 +96,19 @@
 	</div>
 	";
 
- 	echo json_encode($response);
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
 	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
 
 ?>

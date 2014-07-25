@@ -2,41 +2,72 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
 	*********************************************************/
 
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:i:s"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+
+<<<<<<< HEAD
 
 
-
+=======
+>>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/campaigns/upload_image";
+	$page_path="server/app/ajax/general/upload_image";
 	debug_log("[".$page_path."] START");
+
+
+	$res = new stdClass();
+	// Result content type
+	header('content-type: application/json');
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
 	include(PATH."functions/check_session.php");
 
 
-$res = new stdClass();
-// Result content type
-header('content-type: application/json');
-
-// Maximum file size
-$maxsize = 10; //Mb
-// File size control
-if ($_FILES['xfile']['size'] > ($maxsize * 1048576)) {
+	// Maximum file size
+	$maxsize = 10; //Mb
+	// File size control
+	if ($_FILES['xfile']['size'] > ($maxsize * 1048576)) {
 	$res->error=true;
 	echo json_encode($res);
     die();
-}
-if ($_FILES['xfile']['type'] != "image/jpeg") {
+	}
+	if ($_FILES['xfile']['type'] != "image/jpeg") {
    $res->error=true;
 	echo json_encode($res);
     die();
-}
+	}
 
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
 
 $types = Array('image/png', 'image/gif', 'image/jpeg');
 
@@ -74,14 +105,23 @@ $res->path = "./";
 $res->img = '<img src="'.$url_server.'resources/tmp/'.'temp'.'.jpg" alt="image" />';
 $res->error =false;
 
-// Return to JSON
-echo json_encode($res);
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
 
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+	// Return to JSON
+	echo json_encode($res);
 	debug_log("[".$page_path."] END");
+	die();
 
 
-// Image resize function with php + gd2 lib
-function imageresize($source, $destination, $width = 0, $height = 0, $crop = false, $quality = 100) {
+	// Image resize function with php + gd2 lib
+	function imageresize($source, $destination, $width = 0, $height = 0, $crop = false, $quality = 100) {
     $quality = $quality ? $quality : 80;
     $image = imagecreatefromstring($source);
     if ($image) {

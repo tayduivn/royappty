@@ -22,7 +22,12 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 	if ((typeof localStorage.getItem('id_admin') == 'undefined')||(localStorage.getItem('id_admin') == 'null')) {
 		error_handeler("no_admin");
 	}else{
+<<<<<<< HEAD
 		$SESSION=localStorage.getItem('id_admin');
+=======
+	$SESSION=localStorage.getItem('id_admin');
+
+>>>>>>> FETCH_HEAD
 		$.ajax({
 			async:false,
 			type: "POST",

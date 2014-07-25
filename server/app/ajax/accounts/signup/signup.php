@@ -2,6 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
@@ -10,8 +11,28 @@
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:m:00"));
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
 
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+	define('PATH', str_replace('\\', '/','../../../'));
+	@session_start();
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/signup/signup";
@@ -19,6 +40,16 @@
 
  	$response=array();
 
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
 
 	$response["result"]=true;
 
@@ -200,10 +231,6 @@
 					<div class='m-t-10'>";
 	$table="user_fields";
 	$user_fields=listInBD($table);
-	$table="brand_user_fields";
-	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	$brand_user_fields=listInBD($table,$filter);
 	$coma="";
 	foreach($user_fields as $key=>$user_field){
 		$response["data"]["signup-step-3"].="
@@ -380,8 +407,18 @@ $response["data"]["signup-step-success"]="
 	</div>
 ";
 
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
 
 ?>

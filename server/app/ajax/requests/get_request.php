@@ -2,15 +2,36 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
 	*********************************************************/
 	
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
+<<<<<<< HEAD
 
 
 	include(PATH."include/inbd.php");
@@ -20,6 +41,18 @@
 
  	$response=array();
 
+=======
+	include(PATH."include/inbd.php");
+	$page_path="server/app/ajax/requests/get_request";
+	debug_log("[".$page_path."] START");
+
+ 	$response=array();
+
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+	include(PATH."functions/check_session.php");
+>>>>>>> FETCH_HEAD
 
  	// Data check START
 
@@ -37,16 +70,28 @@
 
  	// Data check END
 
+<<<<<<< HEAD
 	$response["result"]=true;
 
 
+=======
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
+	$response["result"]=true;
+
+>>>>>>> FETCH_HEAD
  	$table="requests";
 	$filter=array();
 	$filter["id_request"]=array("operation"=>"=","value"=>$_POST["id_request"]);
 	$request=getInBD($table,$filter);
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 	$response["data"]["page-title"]="<a href='../requests/'>".htmlentities($s["requests"], ENT_QUOTES, "UTF-8")."</a> / #".$request["code"]." - ".htmlentities($s["requests_types"][$request["type"]], ENT_QUOTES, "UTF-8");
 
 
@@ -161,6 +206,7 @@
 	}
 	$response["data"]["request-data"].="</span></p>";
 
+<<<<<<< HEAD
 
 
 
@@ -168,8 +214,25 @@
 
 
 
+=======
+>>>>>>> FETCH_HEAD
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/requests/get_request] END");
 
+<<<<<<< HEAD
+=======
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
+>>>>>>> FETCH_HEAD
 ?>

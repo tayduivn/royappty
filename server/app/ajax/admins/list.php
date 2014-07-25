@@ -2,23 +2,56 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
 	*********************************************************/
 
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+
+>>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+
+<<<<<<< HEAD
 
 
-
+=======
+>>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/list";
 	debug_log("[".$page_path."] START");
 	include(PATH."functions/check_session.php");
 
  	$response=array();
+<<<<<<< HEAD
+=======
+	
+ 	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+
+
+>>>>>>> FETCH_HEAD
 
 
  	if(!issetandnotempty($_POST["active"])){
@@ -39,6 +72,12 @@
 
     ";
 
+<<<<<<< HEAD
+=======
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 
 	$response["result"]=true;
  	$response["data"]["page-title"] = "<a href='./'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["all_admins"], ENT_QUOTES, "UTF-8")."<a href='../admin/new/' class='m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8")."</a>";
@@ -70,7 +109,23 @@
 		</div>
  	";
 
+<<<<<<< HEAD
  	echo json_encode($response);
+=======
+ /*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
+>>>>>>> FETCH_HEAD
 	debug_log("[".$page_path."] END");
+	echo json_encode($response);
+	die();
+
 
 ?>

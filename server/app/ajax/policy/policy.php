@@ -3,8 +3,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 09-07-2014
-	* Version: 0.92
+	* Last Edit: 17-07-2014
+	* Version: 0.93
 	*
 	*********************************************************/
 
@@ -69,5 +69,6 @@
 
  	echo json_encode($response);
 	debug_log("[".$page_path."] END");
+	die();
 
 ?>

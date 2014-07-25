@@ -2,29 +2,68 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
 	*********************************************************/
 	
+=======
+	* Last Edit: 17-07-2014
+	* Version: 0.93
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* AJAX RETURNS
+	*
+	* ERROR CODES
+	*
+	*
+	*
+	*********************************************************/
+
+	/*********************************************************
+	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
+	*********************************************************/
+>>>>>>> FETCH_HEAD
 	@session_start();
 	define('PATH', str_replace('\\', '/','../../'));
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
+<<<<<<< HEAD
 
-
+=======
+>>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/requests/table";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
+
+<<<<<<< HEAD
 
 
-
+=======
+>>>>>>> FETCH_HEAD
  	error_log($_GET["status"]);
 
 	$response=array();
  	$response["aaData"]=array();
 
+<<<<<<< HEAD
+=======
+	/*********************************************************
+	* DATA CHECK
+	*********************************************************/
+	include(PATH."functions/check_session.php");
+
+
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
+>>>>>>> FETCH_HEAD
 	$table="requests";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -49,8 +88,25 @@
 	 	}
 
 	}
+
+
+	/*********************************************************
+	* DATABASE REGISTRATION
+	*********************************************************/
+
+
+
+	/*********************************************************
+	* AJAX CALL RETURN
+	*********************************************************/
+
 	debug_log("[".$page_path."] END");
+<<<<<<< HEAD
 
  	echo json_encode($response);
+=======
+	echo json_encode($response);
+	die();
+>>>>>>> FETCH_HEAD
 
 ?>
