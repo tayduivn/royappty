@@ -14,6 +14,7 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/dashboard/get_dashboard.php",
 		data: {
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 			if(jqXHR!=""){

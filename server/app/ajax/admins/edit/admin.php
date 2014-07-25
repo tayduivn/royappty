@@ -14,6 +14,7 @@
 
 
 
+<<<<<<< HEAD
 =======
 	* Last Edit: 17-07-2014
 	* Version: 0.93
@@ -36,6 +37,8 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/edit/admin";
 	debug_log("[".$page_path."] START");
@@ -43,12 +46,15 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	// Data check START
 
  	$table="admins";
@@ -66,6 +72,7 @@
  	// Data check END
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	/*********************************************************
@@ -73,6 +80,8 @@
 	*********************************************************/
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	$response["result"]=true;
 
 
@@ -218,12 +227,12 @@
 	if($admin["active"]==0){
 		$response["data"]["new-admin-step-1"].="selected";
 	}
-	$response["data"]["new-admin-step-1"].=" >Inactivo</option>
+	$response["data"]["new-admin-step-1"].=" >".$s["admins_status_active"][0]."</option>
 							<option value='1' ";
 	if($admin["active"]==1){
 		$response["data"]["new-admin-step-1"].="selected";
 	}
-	$response["data"]["new-admin-step-1"].=" >Activo</option>
+	$response["data"]["new-admin-step-1"].=" >".$s["admins_status_active"][1]."</option>
 						</select>
 					</div>
 				</div>
@@ -282,11 +291,15 @@
 		</div>
 	";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 
  	echo json_encode($response);
 	debug_log("[server/ajax/admins/get_admin] END");
 
+<<<<<<< HEAD
 =======
 
 /*********************************************************
@@ -305,4 +318,6 @@ die();
 
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

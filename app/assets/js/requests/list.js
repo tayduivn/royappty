@@ -13,6 +13,7 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/requests/list.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			status:$GET["status"]
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -49,9 +50,10 @@ $(document).ready(function() {
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+			"sSearch": $s["request_list_search"],
+			"sInfo": $s["request_list_showing_from_entry"]+"<b>_START_"+$s["request_list_to_entry"]+"_END_</b>"+$s["request_list_of"] +"_TOTAL_"+ $s["request_list_entries"],
+			"sInfoEmpty": $s["request_list_no_entries"],
+			"sZeroRecords": $s["request_list_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/requests/table.php?status="+$GET["status"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,

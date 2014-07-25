@@ -53,7 +53,7 @@
 
 
 	$response["data"]["policy-data"].="
-			<a href='../' class='btn btn-white'>Salir</a>
+			<a href='../' class='btn btn-white'>".htmlentities($s["policy_exit"], ENT_QUOTES, "UTF-8")."</a>
 		</div>
 
 	";

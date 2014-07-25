@@ -35,8 +35,12 @@
 <<<<<<< HEAD
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> FETCH_HEAD
+=======
+
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/edit/discount";
 	debug_log("[".$page_path."] START");
@@ -45,6 +49,7 @@
 
  	$response=array();
 
+<<<<<<< HEAD
 =======
 
  	$response=array();
@@ -62,6 +67,8 @@
 	*********************************************************/
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$response["result"]=true;
 
 	$table="campaigns";
@@ -93,7 +100,7 @@
 				<div style='overflow:auto'>
 					<div class='form-group'>
 						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
-						<a id='prev_step' href='../' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
+						<a id='prev_step' href='../../../campaigns' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
 					</div>
 				</div>
 			</form>
@@ -110,7 +117,7 @@
 						<div class='controls'>
 							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/campaigns/upload-image.php?type=icon&width=500&height=500&crop=1&label=campaign_icon_path' />
 						</div>
-						<!--<label class='form-label'>O selecciona uno predefinido</label>
+						<!--<label class='form-label'>".$new_discount_s["choose_predefined_icon"].";</label>
 						<div class='m-t-10'>
 							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-01.jpg')\">
 								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-01.jpg'/>
@@ -389,11 +396,15 @@
 		</div>
 	";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 
  	echo json_encode($response);
 	debug_log("[server/ajax/campaigns/get_campaign] END");
 
+<<<<<<< HEAD
 =======
 
 
@@ -412,4 +423,6 @@
 	die();
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

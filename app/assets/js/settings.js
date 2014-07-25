@@ -7,6 +7,30 @@
 *********************************************************/
 
 var $SERVER_PATH = $PATH+"../";
+
+//Check localStorage(lang)
+//Check navigator(lang)
+//Set localStorage depending on navigator(lang)
+//Set localStorage depending on user's choice
+
+if ((typeof localStorage.getItem('lang') == 'undefined')||(localStorage.getItem('lang') == null)){
+  var navigatorLang = navigator.language || navigator.userLanguage;
+  if(navigatorLang == 'es'){
+    localStorage.setItem('lang','es');
+  }
+  else{
+    localStorage.setItem('lang','en');
+  }
+}
+else if(localStorage.getItem('lang') != 'es'){
+  localStorage.setItem('lang','en');
+}
+
+function changelang(lang){
+  localStorage.setItem('lang',lang);
+  location.reload();
+}
+
 function loadjscssfile(filename, filetype){
  if (filetype=="js"){ //if filename is a external JavaScript file
   var fileref=document.createElement('script')

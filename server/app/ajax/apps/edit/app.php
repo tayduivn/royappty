@@ -35,8 +35,12 @@
 <<<<<<< HEAD
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> FETCH_HEAD
+=======
+
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/apps/edit/app";
 	debug_log("[".$page_path."] START");
@@ -45,6 +49,7 @@
 
  	$response=array();
 
+<<<<<<< HEAD
 =======
 
 
@@ -61,6 +66,8 @@
 	*********************************************************/
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$response["result"]=true;
 
 	$table="apps";
@@ -110,7 +117,7 @@
 						<div class='controls'>
 							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/general/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_icon_path' />
 						</div>
-						<label class='form-label'>O selecciona uno predefinido</label>
+						<label class='form-label'>".$app_s["app_choose_predefined_icon"]."</label>
 						<div class='m-t-10'>
 							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-01.jpg')\">
 								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-01.jpg'/>
@@ -178,7 +185,7 @@
 						<div class='controls'>
 							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/general/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_bg_path' />
 						</div>
-						<label class='form-label'>O selecciona uno predefinido</label>
+						<label class='form-label'>".$app_s["app_choose_predefined_background"]."</label>
 						<div class='m-t-10'>
 							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-01.jpg')\">
 								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-01.jpg'/>
@@ -359,11 +366,15 @@
 		</div>
 	";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 
  	echo json_encode($response);
 	debug_log("[server/ajax/apps/get_app] END");
 
+<<<<<<< HEAD
 =======
 
 	/*********************************************************
@@ -381,4 +392,6 @@
 	die();
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

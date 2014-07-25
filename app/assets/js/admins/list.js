@@ -13,6 +13,7 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/admins/list.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			active:$GET["active"]
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -49,9 +50,10 @@ $(document).ready(function() {
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+			"sSearch": $s["admin_search"],
+			"sInfo": $s["admin_showing_from_entry"]+"<b>_START_"+$s["admin_to_entry"]+"_END_</b>"+$s["admin_of"] +"_TOTAL_"+ $s["admin_entries"],
+			"sInfoEmpty": $s["admin_no_entries"],
+			"sZeroRecords": $s["admin_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/admins/table.php?active="+$GET["active"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,

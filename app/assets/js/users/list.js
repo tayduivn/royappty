@@ -13,6 +13,7 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/users/list.php",
 		data: {
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 			if(jqXHR!=""){
@@ -50,9 +51,10 @@ $(document).ready(function() {
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+		"sSearch": $s["users_search"],
+		"sInfo": $s["users_showing_from_entry"]+"<b>_START_"+$s["users_to_entry"]+"_END_</b>"+$s["users_of"] +"_TOTAL_"+ $s["users_entries"],
+		"sInfoEmpty": $s["users_no_entries"],
+		"sZeroRecords": $s["users_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/users/table.php?status="+$GET["status"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,

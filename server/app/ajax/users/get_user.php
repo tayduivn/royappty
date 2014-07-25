@@ -190,7 +190,7 @@
 		<div class='text-center'>
 			<i class='fa fa-file-text-o fa-4x m-b-10'></i>
 			<p>
-				".htmlentities("No hay notas que mostrar", ENT_QUOTES, "UTF-8")."
+				".htmlentities($s["user_there_are_no_notes_to_show"], ENT_QUOTES, "UTF-8")."
 			</p>
 			<a class='btn btn-white' href='javascript:show_modal(\"user_notes_add\",\"\")'>".htmlentities($s["add_first_note"], ENT_QUOTES, "UTF-8")."</a>
 		</div>";

@@ -32,10 +32,13 @@
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/get_account";
 	debug_log("[".$page_path."] START");
@@ -48,6 +51,7 @@
 	$response["result"]=true;
 
 
+<<<<<<< HEAD
 =======
 
  	$response=array();
@@ -66,13 +70,21 @@
 	$response["result"]=true;
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$brand=getInBD($table,$filter);
+<<<<<<< HEAD
 
 
 	$response["data"]["page-title"]="<a href='#'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["details"], ENT_QUOTES, "UTF-8");
+=======
+
+
+		$response["data"]["page-title"]="<a href='#'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["details"], ENT_QUOTES, "UTF-8");
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 
 	$response["data"]["account-data"]="
@@ -118,6 +130,12 @@
 		<p><a href='./data/edit/' class='btn btn-white'>".htmlentities($s["edit_personal_info"], ENT_QUOTES, "UTF-8")."</a></p>
 		<p>".htmlentities($s["delete_your_account_help"], ENT_QUOTES, "UTF-8")." <a href='./data/delete/'>".htmlentities($s["here"], ENT_QUOTES, "UTF-8")."</a></p>
 
+<<<<<<< HEAD
+=======
+		<h4 class='m-t-20'>".htmlentities($s["language_title"], ENT_QUOTES, "UTF-8")."</h4>
+		<p><a href='#' onclick='changelang(\"es\");'>".htmlentities($s["language_spanish"], ENT_QUOTES, "UTF-8")."</a></p>
+		<p><a href='#' onclick='changelang(\"en\");'>".htmlentities($s["language_english"], ENT_QUOTES, "UTF-8")."</a></p>
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 		<h4 class='m-t-20'>".htmlentities($s["subscription_type"], ENT_QUOTES, "UTF-8")."</h4>
 		<p>".htmlentities($subscription_type_helper[$brand["subscription_type"]], ENT_QUOTES, "UTF-8")."</p>";
@@ -151,12 +169,16 @@
 		</p>
 		";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 
 
 
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> FETCH_HEAD
 
@@ -173,10 +195,15 @@
 	/*********************************************************
 	* AJAX CALL RETURN
 	*********************************************************/
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 	debug_log("[".$page_path."] END");
 	echo json_encode($response);
 	die();
 
+<<<<<<< HEAD
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

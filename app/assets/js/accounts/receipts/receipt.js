@@ -13,6 +13,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/receipts/get_receipt.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_receipt:$GET["id_receipt"]
 		},
 		error: function(data, textStatus, jqXHR) {

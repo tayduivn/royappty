@@ -13,6 +13,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/groups/new/group.php",
 		data: {
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 			$(".modal").modal("hide");
@@ -48,9 +49,10 @@ $(document).ready(function(){
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+			"sSearch": $s["group_search"],
+			"sInfo": $s["group_showing_from_entry"]+"<b>_START_"+$s["group_to_entry"]+"_END_</b>"+$s["group_of"] +"_TOTAL_"+ $s["group_entries"],
+			"sInfoEmpty": $s["group_no_entries"],
+			"sZeroRecords": $s["group_search_no_entry"]
 			},
 		 bAutoWidth     : false,
         fnPreDrawCallback: function () {

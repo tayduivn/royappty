@@ -12,6 +12,7 @@ include_once(PATH."include/settings.php");
 include_once(PATH."include/bd.php");
 include_once(PATH."include/general.php");
 include_once(PATH."include/royappty_functions.php");
+include_once(PATH."include/lang.php");
 
 error_log("includes");
 

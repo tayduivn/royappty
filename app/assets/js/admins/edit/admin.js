@@ -13,6 +13,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/admins/edit/admin.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_admin:$GET["id_admin"]
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -151,7 +152,7 @@ $(document).ready(function() {
 
 	$('.droparea').each(function(){
 		$(this).droparea({
-			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>Piche o arraste aqu&iacute; la imagen <br/>a subir',
+			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>'+$s["edit_admin_click_or_drag_image_here"]+'<br/>'+$s["edit_admin_to upload"] ,
 			'init' : function(result){},
 			'start' : function(area){
 				area.find('.error').remove();
@@ -162,7 +163,7 @@ $(document).ready(function() {
 			},
 			'complete' : function(result, file, input, area){
 				if(result.error){
-					alert("Ha ocurrido un error al subir el archivo");
+					alert($s["edit_admin_an_error_occurred_when_downloading_the_file"]);
 				}else{
 					$('#'+result.preview).attr("src",result.filename);
 				}

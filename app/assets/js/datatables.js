@@ -180,7 +180,8 @@ $(document).ready(function() {
 		"aaSorting": [[ 1, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+			"sInfo": $s["_showing"]+"<b>_START_"+$s["_to"]+"_END_</b>"+$s["_of"]+"_TOTAL_"+$s["_entries"],
+			"sInfoEmpty" :$s["database_no_entries"]
 		},
 		 bAutoWidth     : false,
         fnPreDrawCallback: function () {
@@ -239,7 +240,8 @@ $(document).ready(function() {
        "aaSorting": [],
 				"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+			"sInfo": $s["_showing"]+"<b>_START_"+$s["_to"]+"_END_</b>"+$s["_of"]+"_TOTAL_"+$s["_entries"],
+			"sInfoEmpty" :$s["database_no_entries"]
 		},
     });
 	 var oTable3 = $('#example3').dataTable( {
@@ -259,7 +261,8 @@ $(document).ready(function() {
         "aaSorting": [[ 3, "desc" ]],
 				"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+			"sInfo": $s["_showing"]+"<b>_START_"+$s["_to"]+"_END_</b>"+$s["_of"]+"_TOTAL_"+$s["_entries"],
+			"sInfoEmpty" :$s["database_no_entries"]
 		},
     });
 	$("div.toolbar").html('<div class="table-tools-actions"><button class="btn btn-primary" style="margin-left:12px" id="test2">Add</button></div>');

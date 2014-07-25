@@ -13,6 +13,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/groups/edit/group.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_group:$GET["id_group"]
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -49,9 +50,10 @@ $(document).ready(function(){
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": "Buscar ",
-			"sInfo": "Mostrando desde la entrada <b>_START_ hasta la entrada _END_</b> de _TOTAL_ entradas",
-			"sZeroRecords": "La b&uacute;squeda no ha devuelto ninguna entrada"
+		"sSearch": $s["group_edit_search"],
+		"sInfo": $s["group_edit_showing_from_entry"]+"<b>_START_"+$s["group_edit_to_entry"]+"_END_</b>"+$s["group_edit_of"] +"_TOTAL_"+ $s["group_edit_entries"],
+		"sInfoEmpty": $s["group_edit_no_entries"],
+		"sZeroRecords": $s["group_edit_search_no_entry"]
 			},
 		 bAutoWidth     : false,
         fnPreDrawCallback: function () {

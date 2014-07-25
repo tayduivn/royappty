@@ -32,10 +32,15 @@
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> FETCH_HEAD
+=======
+
+
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/admins/new/admin";
 	debug_log("[".$page_path."] START");
@@ -43,6 +48,7 @@
 
  	$response=array();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	/*********************************************************
@@ -56,6 +62,8 @@
 	*********************************************************/
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$response["result"]=true;
 
 	$response["data"]["page-title"]="<a href='../../admins'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8");
@@ -148,8 +156,8 @@
 					<span class='help'>".htmlentities($s["admin_status_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
 						<select id='active' name='active'>
-							<option value='0'>Inactivo</option>
-							<option value='1' selected>Activo</option>
+							<option value='0'>".$s["admins_status_active"][0]."</option>
+							<option value='1' selected>".$s["admins_status_active"][1]."</option>
 						</select>
 					</div>
 				</div>
@@ -209,11 +217,15 @@
 		</div>
 	";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 
  	echo json_encode($response);
 	debug_log("[server/ajax/admins/get_admin] END");
 
+<<<<<<< HEAD
 =======
 
 	/*********************************************************
@@ -232,4 +244,6 @@
 	die();
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

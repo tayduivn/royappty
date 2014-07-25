@@ -55,10 +55,8 @@
 	$response["data"]["recovery-title"]="
 		<div class='text-center' style='height:100%'>
 			<img style='width:320px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
-			<h3>".htmlentities($s["recovery_password"], ENT_QUOTES, "UTF-8")."</h3>
+			<h3>".htmlentities($recovery_s["recovery_password"], ENT_QUOTES, "UTF-8")."</h3>
 		</div>
-
-
 	";
 
 	//Form error handeler

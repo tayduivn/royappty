@@ -13,6 +13,7 @@ function view_note(id_campaign_note){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/campaigns/get_campaign_note.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_campaign_note:id_campaign_note
 		},
 		error: function(data, textStatus, jqXHR) {

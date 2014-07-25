@@ -13,6 +13,7 @@ function view_note(id_user_note){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/users/get_user_note.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_user_note:id_user_note
 		},
 		error: function(data, textStatus, jqXHR) {

@@ -15,10 +15,11 @@ function logout(){
 
 
 
-if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getItem('id_brand') == 'null')){
+if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getItem('id_brand') == null)){
 	error_handeler("no_brand");
 }else{
 	$BRAND=localStorage.getItem('id_brand');
+<<<<<<< HEAD
 	if ((typeof localStorage.getItem('id_admin') == 'undefined')||(localStorage.getItem('id_admin') == 'null')) {
 		error_handeler("no_admin");
 	}else{
@@ -28,6 +29,12 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 	$SESSION=localStorage.getItem('id_admin');
 
 >>>>>>> FETCH_HEAD
+=======
+	if ((typeof localStorage.getItem('id_admin') == 'undefined')||(localStorage.getItem('id_admin') == null)) {
+		error_handeler("no_admin");
+	}else{
+		$SESSION=localStorage.getItem('id_admin');
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 		$.ajax({
 			async:false,
 			type: "POST",

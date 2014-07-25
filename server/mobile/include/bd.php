@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
@@ -6,6 +7,8 @@
 * Version: 0.91
 *
 *********************************************************/
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 /*
  * Funcion de conexión al servidor de base de datos.
@@ -19,12 +22,12 @@ function db_connect() {
 	if($conf['bdtype'] == "mysql") {
 		$manejador = @mysql_connect($conf['bdserver'].":".$conf['bdport'],$conf['bduser'],$conf['bdpass']);
 		if(!$manejador) {
-			throw new Exception("bd.php - db_connect(): Error en la conexion de la BD.");
+			throw new Exception("bd.php - db_connect(): Error in DB conection.");
 		}
 		db_choose($manejador);
 		return $manejador;
 	} else {
-		$error = "bd.php - db_connect(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_connect(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -41,10 +44,10 @@ function db_choose($manejador) {
 	if($conf['bdtype'] == "mysql") {
 		$db_selected = @mysql_select_db($conf['bd'],$manejador);
 		if (!$db_selected) {
-			throw new Exception("bd.php - db_choose(): Error al seleccionar tabla.");
+			throw new Exception("bd.php - db_choose(): Error when choosing table.");
 		}
 	} else {
-		$error = "bd.php - db_choose(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_choose(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -63,11 +66,11 @@ function db_exec($query,$manejador) {
 	if($conf['bdtype'] == "mysql") {
 		$result = mysql_query($query,$manejador);
 		if(!$result) {
-			throw new Exception("bd.php - db_exec(): No se ha podido ejecutar la consulta. ".$query);
+			throw new Exception("bd.php - db_exec(): The consult was not run. ".$query);
 		}
 		return $result;
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -86,11 +89,11 @@ function db_query($query,$manejador) {
 	if($conf['bdtype'] == "mysql") {
 		$result = mysql_query($query,$manejador);
 		if(!$result) {
-			throw new Exception("bd.php - db_query(): No se ha podido realizar la consulta. ".$query);
+			throw new Exception("bd.php - db_query(): The consult was not run. ".$query);
 		}
 		return $result;
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -109,7 +112,7 @@ function db_fetch($result, $type=MYSQL_ASSOC) {
 		$array = mysql_fetch_array($result,$type);
 		return $array;
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -128,7 +131,7 @@ function db_count($result) {
 		$num = mysql_num_rows($result);
 		return $num;
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -148,7 +151,7 @@ function db_result($result,$field) {
 		$res = mysql_result($result,0,$field);
 		return $res;
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -165,10 +168,10 @@ function db_last_id() {
 		if($id = mysql_insert_id()) {
 			return $id;
 		} else {
-			throw new Exception("bd.php - db_last_id(): Error recuperando el id del ultimo elemento insertado.");
+			throw new Exception("bd.php - db_last_id(): Error recovering last inserted id.");
 		}
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -186,7 +189,7 @@ function db_secure_field($field,$manejador) {
 	if($conf['bdtype'] == "mysql") {
 		return mysql_real_escape_string(addslashes($field),$manejador);
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }
@@ -202,10 +205,10 @@ function db_close($manejador) {
 
 	if($conf['bdtype'] == "mysql") {
 		if(!mysql_close($manejador)) {
-			throw new Exception("bd.php - db_close(): Error al cerrar la conexion con la BD.");
+			throw new Exception("bd.php - db_close(): Error when closing DB conection.");
 		}
 	} else {
-		$error = "bd.php - db_secure_field(): Tipo de Base de Datos no encontrado. ".mysql_error();
+		$error = "bd.php - db_secure_field(): Data base type was not found. ".mysql_error();
 		throw new Exception($error);
 	}
 }

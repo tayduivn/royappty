@@ -24,6 +24,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/signup/signup.php",
 		data: {
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 
@@ -44,14 +45,14 @@ $(document).ready(function(){
 	$("#form-step1").validate({
 		messages:{
 			admin_name:{
-					required:"Este campo es obligatorio",
-					maxlength: "No puede exceder de 50 caracteres",
-					minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+					required: $s["signup_name_this_field_is_compulsory"],
+					maxlength: $s["signup_name_it_canot_be_longer_than_50_characters"],
+					minlength: $s["signup_name_this_field_needs_4_character_minimum"]
 			},
 			admin_email:{
-				remote:"Este correo electrónico ya está registrado",
-				required:"Este campo es obligatorio",
-				email: "El formato de correo electr&oacute;nico no es correcto"
+				remote: $s["signup_email_this_email_is_already_registered"],
+				required: $s["signup_email_this_field_is_compulsory"],
+				email: $s["signup_email_format_is_not_correct"]
 			},
 			admin_promo_password:{
 				required:"Este campo es obligatorio",
@@ -59,16 +60,16 @@ $(document).ready(function(){
 				minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
 			},
 			admin_password:{
-				required:"Este campo es obligatorio",
-				maxlength: "No puede exceder de 25 caracteres",
-				minlength: "Este campo necesita un m&iacute;nimo de 8 caracteres"
+				required: $s["signup_password_this_field_is_compulsory"],
+				maxlength: $s["signup_password_it_canot_be_longer_than_25_characters"],
+				minlength: $s["signup_password_this_field_needs_8_character_minimum"]
 			},
 			admin_password_repeat:{
-				required:"Este campo es obligatorio",
-				equalTo:"Las claves no coinciden"
+				required:$s["signup_repeat_password_this_field_is_compulsory"],
+				equalTo: $s["signup_repeat_password_both_passwords_do_not_coincide"]
 			},
 			accept_policy:{
-				required:"Es necesario aceptar la política de privacidad",
+				required: $s["signup_it_is_necessary_to accept_privacy_policy"],
 			}
 		},
 		rules:{
@@ -111,29 +112,29 @@ $(document).ready(function(){
 	$("#form-step2").validate({
 		messages:{
 			name:{
-				required:"Este campo es obligatorio",
-					maxlength: "No puede exceder de 75 caracteres",
-					minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+				required:$s["signup_name_step2_this_field_is_compulsory"],
+					maxlength: $s["signup_name_step2_it_canot_be_longer_than_75_characters"],
+					minlength: $s["signup_name_step2_this_field_needs_4_character_minimum"]
 			},
 			cif:{
-				required:"Este campo es obligatorio",
-					maxlength: "No puede exceder de 20 caracteres",
-					minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+				required: $s["signup_cif_this_field_is_compulsory"],
+					maxlength: $s["signup_cif_it_canot_be_longer_than_20_characters"],
+					minlength: $s["signup_cif_this_field_needs_4_character_minimum"]
 			},
 			contact_address:{
-				required:"Este campo es obligatorio"
+				required: $s["signup_address_this_field_is_compulsory"]
 			},
 			contact_postal_code:{
-				required:"Este campo es obligatorio"
+				required: $s["signup_post_code_this_field_is_compulsory"]
 			},
 			contact_city:{
-				required:"Este campo es obligatorio"
+				required: $s["signup_city_this_field_is_compulsory"]
 			},
 			contact_province:{
-				required:"Este campo es obligatorio"
+				required: $s["signup_province_this_field_is_compulsory"]
 			},
 			contact_country:{
-				required:"Este campo es obligatorio"
+				required:$s["signup_country_this_field_is_compulsory"]
 			}
 		},
 		rules:{
@@ -179,14 +180,14 @@ $(document).ready(function(){
 	$("#form-step3").validate({
 		messages:{
 			app_name:{
-					required:"Este campo es obligatorio",
-					maxlength: "No puede exceder de 75 caracteres",
-					minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+					required: $s["signup_app_name_this_field_is_compulsory"],
+					maxlength: $s["signup_app_name_it_canot_be_longer_than_75_characters"],
+					minlength: $s["signup_app_name_this_field_needs_4_character_minimum"]
 				},
 			app_title:{
-				required:"Este campo es obligatorio",
-				maxlength: "No puede exceder de 20 caracteres",
-				minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+				required: $s["signup_app_title_this_field_is_compulsory"],
+				maxlength: $s["signup_app_title_it_canot_be_longer_than_20_characters"],
+				minlength: $s["signup_app_title_this_field_needs_4_character_minimum"]
 			}
 		},
 		rules:{
@@ -394,7 +395,7 @@ $(document).ready(function(){
 
 	$('.droparea').each(function(){
 		$(this).droparea({
-			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>Piche o arraste aqu&iacute; la imagen <br/>a subir',
+			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>'+$s["signup_click_or_drag_image_here"]+'<br/>'+$s["signup_to upload"],
 			'init' : function(result){},
 			'start' : function(area){
 				area.find('.error').remove();
@@ -405,7 +406,7 @@ $(document).ready(function(){
 			},
 			'complete' : function(result, file, input, area){
 				if(result.error){
-					alert("Ha ocurrido un error al subir el archivo");
+					alert($s["singup_an_error_occurred_when_dowloading_the_file"]);
 				}else{
 					$('#'+result.preview).attr("src",result.filename);
 					$('#form-end #'+result.label).val(result.path);

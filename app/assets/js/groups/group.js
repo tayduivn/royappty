@@ -13,6 +13,7 @@ function view_note(id_group_note){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/groups/get_group_note.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_group_note:id_group_note
 		},
 		error: function(data, textStatus, jqXHR) {
