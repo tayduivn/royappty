@@ -16,38 +16,15 @@ $(document).ready(function(){
 			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
 			error_handeler("ajax_error");
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 		},
 		success: function(response) {
 			if(response.result){
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 			}else{
-				alert("error");
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
-			}else{
-				alert("error");
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
-			} else {
 				// No error Handeler
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 			}
 		}
 	});
@@ -94,36 +71,13 @@ $(document).ready(function() {
 	$("#form-step1").validate({
 		messages:{
 			email:{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
-				required:"Este campo es obligatorio",
-			  	email: "El formato de correo electr&oacute;nico no es correcto"
-		  	},
-		  	password:{
-				required:"Este campo es obligatorio",
-			  	maxlength: "No puede exceder de 25 caracteres",
-			  	minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
-=======
 				required:$s["email_this_field_is_compulsory"],
-			  	email: $s["email_format_is_not_correct"]
-		  	},
-		  	password:{
+		  	email: $s["email_format_is_not_correct"]
+	  	},
+	  	password:{
 				required:$s["password_this_field_is_compulsory"],
-			  	maxlength: $s["password_it_canot_be_longer_than_25_characters"],
-			  	minlength: $s["password_this_field_needs_4_character_minimum"]
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
-				required:$s["email_this_field_is_compulsory"],
-			  	email: $s["email_format_is_not_correct"]
-		  	},
-		  	password:{
-				required:$s["password_this_field_is_compulsory"],
-			  	maxlength: $s["password_it_canot_be_longer_than_25_characters"],
-			  	minlength: $s["password_this_field_needs_4_character_minimum"]
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+		  	maxlength: $s["password_it_canot_be_longer_than_25_characters"],
+		  	minlength: $s["password_this_field_needs_4_character_minimum"]
 			}
 		},
 		rules:{

@@ -2,13 +2,6 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-
-=======
 	* Last Edit: 17-07-2014
 	* Version: 0.93
 	*
@@ -27,21 +20,12 @@
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	********************************************************/
 
->>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/signup/upload_image";
 	debug_log("[".$page_path."] START");
-
-	debug_log("UPDALOAD IMAGE");
 
 	$res = new stdClass();
 	// Result content type
@@ -67,15 +51,10 @@
 	}
 
 
-<<<<<<< HEAD
-=======
-
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
 
-
->>>>>>> FETCH_HEAD
 	$types = Array('image/png', 'image/gif', 'image/jpeg');
 
 	$source = file_get_contents($_FILES["xfile"]["tmp_name"]);
@@ -109,12 +88,6 @@
 	$res->img = '<img src="'.$url_server.'resources/tmp/'.'temp'.'.jpg" alt="image" />';
 	$res->error =false;
 
-<<<<<<< HEAD
-	// Return to JSON
-	echo json_encode($res);
-
-=======
-
 	/*********************************************************
 	* DATABASE REGISTRATION
 	*********************************************************/
@@ -125,13 +98,11 @@
 	* AJAX CALL RETURN
 	*********************************************************/
 
-	// Return to JSON
 	echo json_encode($res);
->>>>>>> FETCH_HEAD
 	debug_log("[".$page_path."] END");
 	die();
 
-	
+
 
 
 // Image resize function with php + gd2 lib

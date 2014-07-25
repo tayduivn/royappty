@@ -13,12 +13,8 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/receipts/list.php",
 		data: {
-<<<<<<< HEAD
 			lang: localStorage.getItem("lang"),
 			status:$GET["status"]
-=======
-
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 		},
 		error: function(data, textStatus, jqXHR) {
 			error_handeler("ajax_error");

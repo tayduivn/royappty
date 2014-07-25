@@ -6,8 +6,6 @@
 	* Version: 0.93
 	*
 	*********************************************************/
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -21,21 +19,13 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
-<<<<<<< HEAD
-	error_log("1");
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
+
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/login/login";
 	debug_log("[".$page_path."] START");
-
  	$response=array();
 
 

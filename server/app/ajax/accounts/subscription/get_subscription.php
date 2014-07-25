@@ -2,18 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-
-=======
-	* Last Edit: 17-07-2014
-=======
 	* Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -33,31 +22,12 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
->>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/accounts/subscription/get_subscription";
 	debug_log("[".$page_path."] START");
-<<<<<<< HEAD
-	include(PATH."functions/check_session.php");
-
- 	$response=array();
-
-
-	$response["result"]=true;
-
-
-=======
-
-
  	$response=array();
 
 	/*********************************************************
@@ -79,7 +49,6 @@
 
 	$response["result"]=true;
 
->>>>>>> FETCH_HEAD
  	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -93,8 +62,7 @@
 		<h3 class='m-t-0'>".htmlentities($s["your_subscription_type_is"], ENT_QUOTES, "UTF-8")." <span class='text-success'>".htmlentities($subscription_type_name[$brand["subscription_type"]], ENT_QUOTES, "UTF-8")."</span></h3>
 		<p>".htmlentities($subscription_type_name_helper[$brand["subscription_type"]], ENT_QUOTES, "UTF-8")."</p>
 		<p>".htmlentities($payment_plan_helper[$brand["payment_plan"]], ENT_QUOTES, "UTF-8")." ".htmlentities($payment_method_helper[$brand["payment_method"]], ENT_QUOTES, "UTF-8")." </p>
-		<p><a href='./edit/' class='btn btn-white'>".htmlentities($s["change_subscription_type"], ENT_QUOTES, "UTF-8")."</a></p>
-";
+		<p><a href='./edit/' class='btn btn-white'>".htmlentities($s["change_subscription_type"], ENT_QUOTES, "UTF-8")."</a></p>";
 	if($brand["expiration_date"]>-1){
 		if($brand["expiration_date"]-$timestamp<0){
 			$response["data"]["subscription-data"].="
@@ -129,17 +97,6 @@
 		<p>".htmlentities($s["payments_helper"], ENT_QUOTES, "UTF-8")."</p>
 		<a href='./receipts/' class='btn btn-white'>".htmlentities($s["view_payments_list"], ENT_QUOTES, "UTF-8")."</a>
 	";
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> FETCH_HEAD
-
-
-<<<<<<< HEAD
-=======
-
 
  	/*********************************************************
 	* DATABASE REGISTRATION
@@ -156,5 +113,4 @@
 	die();
 
 
->>>>>>> FETCH_HEAD
 ?>
