@@ -1,12 +1,12 @@
 <?php
 	/*********************************************************
-	*	
-	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-06-2014
-	* Version: 1.01
 	*
- 	*********************************************************/
-	
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 23-06-2014
+	* Version: 0.91
+	*
+	*********************************************************/
+
 	/*********************************************************
 	* AJAX RETURNS
 	*
@@ -16,7 +16,7 @@
 	*
 	*********************************************************/
 
-	
+
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
@@ -27,26 +27,26 @@
 	$page_path = "server/mobile/ajax/session/signup";
  	debug_log("[".$page_path."] START");
  	$response=array();
- 	
- 	
- 	
+
+
+
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
- 	
- 	// BRAND 
+
+ 	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}	
- 	
+	if(!checkBrand($brand)){echo json_encode($response);die();}
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
+
  	$response["result"]=true;
- 	
+
  	$response["data"]["page"]="
 	 	<div class='page-container row bg-white'>
-			<div class='content'>  
+			<div class='content'>
 				<div class='m-t-40'>
 					<div class='text-center'>
 						<h1 class=''>".$s["signup_title"]."</h1>
@@ -64,7 +64,7 @@
 		$filter=array();
 		$filter["id_user_field"]=array("operation"=>"=","value"=>$brand_user_field["id_user_field"]);
 		$user_field=getInBD($table,$filter);
-		
+
 		$response["data"]["page"].="
 							<div class='form-group'>
 								<label class='form-label'>".$user_field_title_s[$user_field["title"]]."</label>
@@ -74,11 +74,11 @@
 								<div class='controls'>
 									<input type='text' id='".$user_field["title"]."' name='".$user_field["title"]."' class='form-control'>
 								</div>";
-		}		
+		}
 		$response["data"]["page"].="
-							</div>";	
+							</div>";
 	}
- 	
+
  	$response["data"]["page"].="
 							<div style='overflow:auto'>
 								<div class='form-group text-center'>
@@ -88,22 +88,22 @@
 						</form>
 					</div>
 				</div>
-			</div> 
-		</div> 
- 	
+			</div>
+		</div>
+
  	";
- 
+
 
  	/*********************************************************
  	* DATABASE REGISTRATION
  	*********************************************************/
- 	
-  	
- 	
+
+
+
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
- 	
+
  	debug_log("[".$page_path."] END");
  	echo json_encode($response);
  	die();

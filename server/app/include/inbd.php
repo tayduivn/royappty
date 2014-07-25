@@ -1,4 +1,11 @@
 <?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 include_once(PATH."include/settings.php");
 include_once(PATH."include/bd.php");
@@ -197,7 +204,7 @@ function addInBD($table,$data){
 	$query .= ") VALUES (".$values.")";
 	debug_log($query);
 	$r = db_query($query,$manejador);
-	return db_last_id();
+	return db_last_id($manejador);
 }
 
 function deleteInBD($table,$filter=array()) {

@@ -1,3 +1,10 @@
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 $(document).ready(function() {
 	$.ajax({
@@ -24,14 +31,14 @@ $(document).ready(function() {
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#users-list');
 
     tableElement.dataTable( {
@@ -62,6 +69,5 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
-});
 
+});

@@ -1,4 +1,11 @@
-<?php 
+<?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 /*
  * Funcion de conexión al servidor de base de datos.
@@ -48,7 +55,7 @@ function db_choose($manejador) {
  *		$query: cadena con la operacion a realizar sobre la base de datos.
  *		$manejador: identificador de conexión con la base de datos.
  * Salidas:
- *		$result: identificador de consulta o resultset. 
+ *		$result: identificador de consulta o resultset.
  */
 function db_exec($query,$manejador) {
 	global $conf;
@@ -71,7 +78,7 @@ function db_exec($query,$manejador) {
  *		$query: cadena con la consulta a realizar sobre la base de datos.
  *		$manejador: identificador de conexión con la base de datos.
  * Salidas:
- *		$result: identificador de consulta o resultset. 
+ *		$result: identificador de consulta o resultset.
  */
 function db_query($query,$manejador) {
 	global $conf;

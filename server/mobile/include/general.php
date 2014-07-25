@@ -1,4 +1,11 @@
-<?php 
+<?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 function debug_log($str){
 	global $CONFIG;
@@ -6,7 +13,7 @@ function debug_log($str){
 	if($CONFIG["debug_mode"]==1){
 		error_log("[DEBUG]".$str);
 	}
-	
+
 }
 function issetandnotempty($var){
 	if((isset($var))&&(!empty($var))&&($var!="undefined")){

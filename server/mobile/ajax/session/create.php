@@ -1,12 +1,12 @@
 <?php
 	/*********************************************************
-	*	
-	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-06-2014
-	* Version: 1.01
 	*
- 	*********************************************************/
-	
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 23-06-2014
+	* Version: 0.91
+	*
+	*********************************************************/
+
 	/*********************************************************
 	* AJAX RETURNS
 	*
@@ -19,7 +19,7 @@
 	*
 	*********************************************************/
 
-	
+
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
@@ -30,26 +30,26 @@
 	$page_path = "server/mobile/ajax/session/create";
  	debug_log("[".$page_path."] START");
  	$response=array();
- 	
- 	
- 	
+
+
+
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
- 	
- 	// BRAND 
+
+ 	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}	
+	if(!checkBrand($brand)){echo json_encode($response);die();}
  	// USER
   	$user=array();$user["id_user"]=($_POST["id_user"]-1);
-	if(!checkUser($user)){echo json_encode($response);die();}	
- 	
- 	
- 	
+	if(!checkUser($user)){echo json_encode($response);die();}
+
+
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
+
  	$response["result"]=true;
   	$_SESSION['user']=array();
     $_SESSION['user']["id_user"] = $_POST["id_user"];
@@ -61,7 +61,7 @@
  	/*********************************************************
  	* DATABASE REGISTRATION
  	*********************************************************/
- 	
+
  	$table="users";
  	$filter=array();
  	$filter["id_user"]=array("operation"=>"=","value"=>$_POST["id_user"]);
@@ -69,15 +69,15 @@
  	$data["last_connection"] = strtotime(date("Y-m-d H:i:00"));
  	updateInBD($table,$filter,$data);
 	debug_log("[".$page_path."] User (".$_SESSION['user']["id_user"].") Update last_connection:".$data["last_connection"]);
- 	
- 	
- 	
+
+
+
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
- 	
+
  	debug_log("[".$page_path."] END");
  	echo json_encode($response);
- 	
- 	
+
+
 ?>

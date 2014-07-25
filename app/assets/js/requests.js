@@ -1,4 +1,10 @@
-
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 /* Default class modification */
 $.extend( $.fn.dataTableExt.oStdClasses, {
@@ -106,7 +112,7 @@ $(document).ready(function() {
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#requests-table');
 
     tableElement.dataTable( {
@@ -134,6 +140,5 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
-});
 
+});

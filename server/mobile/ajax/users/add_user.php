@@ -1,12 +1,12 @@
 <?php
 	/*********************************************************
-	*	
+	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 	* Last Edit: 23-06-2014
-	* Version: 1.01
+	* Version: 0.91
 	*
- 	*********************************************************/
-	
+	*********************************************************/
+
 	/*********************************************************
 	* AJAX RETURNS
 	*
@@ -16,7 +16,7 @@
 	*
 	*********************************************************/
 
-	
+
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
@@ -27,25 +27,25 @@
 	$page_path = "server/mobile/ajax/users/add_user";
  	debug_log("[".$page_path."] START");
  	$response=array();
- 	
- 	
- 	
+
+
+
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
- 	
- 	// BRAND 
+
+ 	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}	
- 	
- 
- 	
+	if(!checkBrand($brand)){echo json_encode($response);die();}
+
+
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
+
  	$response["result"]=true;
- 	
+
  	$table="users";
  	$data=array();
  	$data["id_brand"]=$_POST["id_brand"];
@@ -74,7 +74,7 @@
  	$data["resume_block_4_link"]=0;
  	$user=array();
  	$user["id_user"]=addInBD($table,$data);
- 	
+
  	$signup_datas=explode("&",$_POST["signup_data"]);
 	foreach ($signup_datas as $key=>$signup_data){
 		$signup_field=explode("=",$signup_data);
@@ -83,7 +83,7 @@
 		error_log("--------".$signup_field[0]);
 		$filter["title"]=array("operation"=>"=","value"=>htmlentities($signup_field[0], ENT_QUOTES,'UTF-8'));
 		$user_field=getInBD($table,$filter);
-		
+
 		$table="user_field_data";
 		$data=array();
 		$data["id_user"]=$user["id_user"];
@@ -97,13 +97,13 @@
  	/*********************************************************
  	* DATABASE REGISTRATION
  	*********************************************************/
- 	
-  	
- 	
+
+
+
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
- 	
+
  	debug_log("[".$page_path."] END");
  	echo json_encode($response);
  	die();

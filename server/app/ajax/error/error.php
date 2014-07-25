@@ -1,5 +1,4 @@
 <?php
-
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>

@@ -1,4 +1,12 @@
 <?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 $conf = array(
 	'bdtype' => 'mysql',
 	'bdserver' => 'localhost',

@@ -1,15 +1,23 @@
 <?php
+	/*********************************************************
+	*
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 23-06-2014
+	* Version: 0.91
+	*
+	*********************************************************/
+	
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-	
+
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/users/get_user_note";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");	
+	include(PATH."functions/check_session.php");
  	$response=array();
- 	
- 	
+
+
  	// Data check START
 	if(!issetandnotempty($_POST["id_user_note"])){
 	 	$response["result"]=false;
@@ -30,8 +38,8 @@
  		die();
 	}
  	// Data check END
- 	
- 	
+
+
 	$response["result"]=true;
  	$table="user_notes";
 	$filter=array();
@@ -44,7 +52,7 @@
         <h4 class='semi-bold'><i class='fa fa-file-text-o'></i> ".$user_note["title"]."</h4>
 	</div>
 	<div class='modal-body'>
-		".$user_note["content"]."			
+		".$user_note["content"]."
 	</div>
 	";
 

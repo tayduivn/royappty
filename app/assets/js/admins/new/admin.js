@@ -1,3 +1,11 @@
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 $(document).ready(function(){
 	$.ajax({
 		async: false,
@@ -22,7 +30,7 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 });
@@ -62,17 +70,17 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
+
 $(document).ready(function() {
 
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
-	
 
-	
+
+
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -84,7 +92,7 @@ $(document).ready(function() {
 		  	}
 		},
 		submitHandler:function(form){
-			
+
 			$('#form-end #name').val($('#form-step1 #name').val());
 		 	$('#form-end #can_validate_codes').val(0);if($('#form-step1 #can_validate_codes').is(":checked")){$('#form-end #can_validate_codes').val(1);}
 		 	$('#form-end #promo_password').val($('#form-step1 #promo_password').val());
@@ -132,21 +140,21 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
-	
+
 	$('.droparea').each(function(){
 		$(this).droparea({
 			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>Piche o arraste aqu&iacute; la imagen <br/>a subir',
 			'init' : function(result){},
 			'start' : function(area){
-				area.find('.error').remove(); 
+				area.find('.error').remove();
 			},
 			'error' : function(result, input, area){
-				$('<div class="error">').html(result.error).prependTo(area); 
+				$('<div class="error">').html(result.error).prependTo(area);
 				return 0;
 			},
 			'complete' : function(result, file, input, area){
@@ -156,9 +164,8 @@ $(document).ready(function() {
 					$('#'+result.preview).attr("src",result.filename);
 				}
 			}
-		});	
+		});
 	});
-	
-	
-});
 
+
+});

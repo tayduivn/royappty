@@ -1,3 +1,11 @@
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
+
 $(document).ready(function(){
 	$.ajax({
 		async: false,
@@ -22,14 +30,14 @@ $(document).ready(function(){
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
 	var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#groups-list');
 
     tableElement.dataTable( {
@@ -95,17 +103,17 @@ function nextstep(){
 		$("#form-wizard #form-success").css("display","none");
 		$("#form-wizard #form-error").css("display","block");
 	}
-	
+
 $(document).ready(function() {
 
 
 	$("#form-wizard form").submit(function(e){
         e.preventDefault();
 	});
-	
-	
 
-	
+
+
+
 	$("#form-step1").validate({
 		messages:{
 		},
@@ -117,7 +125,7 @@ $(document).ready(function() {
 		  	}
 		},
 		submitHandler:function(form){
-			
+
 			$('#form-end #name').val($('#form-step1 #name').val());
 			var users_groups= "";
 			var separator= "";
@@ -127,10 +135,10 @@ $(document).ready(function() {
 					separator="::";
 				}
 			});
-			
+
 		 	$('#form-end #users_groups').val("");
-		 
-		 	
+
+
 			loadingstep();
 		 	$.ajax({
 				type: "POST",
@@ -155,13 +163,12 @@ $(document).ready(function() {
 					} else {
 						errorstep();
 					}
-						
+
 				}
 			});
 		}
 	});
-	
-	
-	
-});
 
+
+
+});

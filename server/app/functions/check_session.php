@@ -1,4 +1,12 @@
 <?php
+  /*********************************************************
+  *
+  * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+  * Last Edit: 23-06-2014
+  * Version: 0.91
+  *
+  *********************************************************/
+  
  	// Data check START
  	if(!issetandnotempty($_SESSION["admin"]["id_brand"])){
 	 	error_log("ERROR");
@@ -26,7 +34,7 @@
  		echo json_encode($response);
  		die();
  	}
- 	
+
  	$table="admins";
  	$filter=array();
 	$filter["id_admin"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_admin"]);

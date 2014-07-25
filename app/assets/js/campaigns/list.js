@@ -1,3 +1,10 @@
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 23-06-2014
+* Version: 0.91
+*
+*********************************************************/
 
 $(document).ready(function() {
 	$.ajax({
@@ -23,14 +30,14 @@ $(document).ready(function() {
 				$("#ajax_error .modal-msg").html(response.error);
 				show_modal("ajax_error","");
 			}
-				
+
 		}
 	});
     var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
         phone : 480
-    };    
+    };
 	var tableElement = $('#campaigns-list');
 
     tableElement.dataTable( {
@@ -61,7 +68,7 @@ $(document).ready(function() {
             responsiveHelper.respond();
         }
 	});
-	
+
 });
 
 
@@ -78,7 +85,7 @@ function delete_campaign(id_campaign){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide'); 
+			$('.modal').modal('hide');
 			$('#ajax_error').modal('show');
 			$('#ajax_error .ajax_err_msg').html(jqXHR);
 		},
@@ -105,12 +112,11 @@ function delete_campaign(id_campaign){
 					   	}
 					}
 	    		}
-				
+
             }else{
-            	
+
 			}
-				
+
 		}
 	});
 }
-

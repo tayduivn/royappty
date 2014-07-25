@@ -1,12 +1,12 @@
 <?php
 	/*********************************************************
-	*	
-	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-06-2014
-	* Version: 1.01
 	*
- 	*********************************************************/
-	
+	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+	* Last Edit: 23-06-2014
+	* Version: 0.91
+	*
+	*********************************************************/
+
 	/*********************************************************
 	* AJAX RETURNS
 	*
@@ -15,7 +15,7 @@
 	*
 	*********************************************************/
 
-	
+
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
@@ -26,26 +26,26 @@
 	$page_path = "server/mobile/ajax/campaigns/all_data";
  	debug_log("[".$page_path."] START");
  	$response=array();
- 	
- 	
+
+
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
- 	 	
- 	
- 	
+
+
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
+
  	$response["result"]=true;
-	
+
  	switch ($_POST["error_code"]){
  		case "no_brand":
  			$response["data"]["page"]="
  			<div class='page'>
 				<div class='page-container row'>
-					<div class='page-content bg-white page-mobile'>  
+					<div class='page-content bg-white page-mobile'>
 						<div class='content'>
 							<div class='col-md-12'>
 								<div class='text-center m-t-20 m-l-20 m-r-20'>
@@ -58,7 +58,7 @@
 								</div>
 							</div>
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
  			";
@@ -67,7 +67,7 @@
  			$response["data"]["page"]="
  			<div class='page'>
 				<div class='page-container row'>
-					<div class='page-content bg-white page-mobile'>  
+					<div class='page-content bg-white page-mobile'>
 						<div class='content'>
 							<div class='col-md-12'>
 								<div class='text-center m-t-20 m-l-20 m-r-20'>
@@ -80,7 +80,7 @@
 								</div>
 							</div>
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
  			";
@@ -89,7 +89,7 @@
  			$response["data"]["page"]="
  			<div class='page'>
 				<div class='page-container row'>
-					<div class='page-content bg-white page-mobile'>  
+					<div class='page-content bg-white page-mobile'>
 						<div class='content'>
 							<div class='col-md-12'>
 								<div class='text-center m-t-20 m-l-20 m-r-20'>
@@ -102,7 +102,7 @@
 								</div>
 							</div>
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
  			";
@@ -111,7 +111,7 @@
  			$response["data"]["page"]="
  			<div class='page'>
 				<div class='page-container row'>
-					<div class='page-content bg-white page-mobile'>  
+					<div class='page-content bg-white page-mobile'>
 						<div class='content'>
 							<div class='col-md-12'>
 								<div class='text-center m-t-20 m-l-20 m-r-20'>
@@ -124,30 +124,30 @@
 								</div>
 							</div>
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
  			";
  			break;
 	 	default:
  	}
-	
- 	
- 	
- 	
+
+
+
+
  	/*********************************************************
  	* DATABASE REGISTRATION
  	*********************************************************/
- 	
- 	
- 	
- 	
+
+
+
+
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
- 	
- 	
- 	
+
+
+
  	echo json_encode($response);
 	debug_log("[".$page_path."] END");
 
