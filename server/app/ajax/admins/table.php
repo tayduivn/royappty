@@ -148,5 +148,5 @@
 	debug_log("[".$page_path."] END");
 	echo json_encode($response);
 	die();
-	
+
 ?>
