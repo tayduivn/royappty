@@ -33,7 +33,7 @@
 	* DATA CHECK
 	*********************************************************/
 
-	if(!issetandnotempty($_POST["code"])){
+	if(!@issetandnotempty($_POST["code"])){
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data missing code");
 		$response["error_code"]="set_password_no_code";

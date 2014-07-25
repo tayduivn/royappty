@@ -40,11 +40,12 @@ function successstep(){
 	$("#form-wizard #form-loading").css("display","none");
 	$("#form-wizard #form-success").css("display","block");
 }
-function errorstep(){
+function errorstep(error_code_str){
 	$("#form-wizard #form-step"+current_step).css("display","none");
 	$("#form-wizard #form-loading").css("display","none");
 	$("#form-wizard #form-success").css("display","none");
 	$("#form-wizard #form-error").css("display","block");
+	$("#form-wizard #form-error .msg").html(error_code_str);
 }
 
 $(document).ready(function() {

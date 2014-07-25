@@ -3,6 +3,7 @@
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
@@ -10,6 +11,9 @@
 	
 =======
 	* Last Edit: 17-07-2014
+=======
+	* Last Edit: 21-07-2014
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -18,8 +22,12 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
-	*
+	* no_brand
+	* brand_not_valid
+	*	no_admin
+	* admin_not_valid
+	* admin_inactive
+	*	post_no_request
 	*
 	*********************************************************/
 
@@ -51,10 +59,28 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+<<<<<<< HEAD
 	include(PATH."functions/check_session.php");
 >>>>>>> FETCH_HEAD
+=======
+	// BRAND
+	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
+
+	// ADMIN
+	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
+	if(!checkAdmin($admin)){echo json_encode($response);die();}
+
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 
  	// Data check START
+	if(!@issetandnotempty($_POST["id_request"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing id_request");
+		$response["error_code"]="post_no_request";
+		echo json_encode($response);
+		die();
+	}
 
  	$table="requests";
  	$filter=array();
@@ -97,7 +123,7 @@
 
 	$response["data"]["request-data"]="
 		<h3 class='m-t-0'>#".$request["code"]." - ".htmlentities($s["requests_types"][$request["type"]], ENT_QUOTES, "UTF-8")."</h3>
-		<h5>".$s["requests_status_icon"][$request["status"]]." ".htmlentities($s["requests_status"][$request["status"]], ENT_QUOTES, "UTF-8")."</h5>
+		<h5>".htmlentities($s["requests_status"][$request["status"]], ENT_QUOTES, "UTF-8")."</h5>
 		<p>".htmlentities($s["requests_status_help"][$request["status"]][$request["type"]], ENT_QUOTES, "UTF-8")."</p>
 		<h5>".htmlentities($s["requests_types"][$request["type"]], ENT_QUOTES, "UTF-8")."</h5>
 		<h5>".htmlentities($s["created"], ENT_QUOTES, "UTF-8")." ".date("d-m-Y",$request["created"])."</h5>";
@@ -199,6 +225,7 @@
 		";
 	}
 
+<<<<<<< HEAD
 	if ($request["usage_limit"]=="0"){
 		$response["data"]["request-data"].=htmlentities($s["without_limit"], ENT_QUOTES, "UTF-8");
 	}else{
@@ -216,6 +243,8 @@
 
 =======
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 
 
 <<<<<<< HEAD

@@ -3,6 +3,7 @@
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
@@ -10,6 +11,9 @@
 	
 =======
 	* Last Edit: 17-07-2014
+=======
+	* Last Edit: 18-07-2014
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -26,8 +30,12 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
+<<<<<<< HEAD
 	define('PATH', str_replace('\\', '/','../../../'));
 >>>>>>> FETCH_HEAD
+=======
+
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	@session_start();
 	define('PATH', str_replace('\\', '/','../../'));
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
@@ -39,7 +47,6 @@
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/users/table";
 	debug_log("[".$page_path."] START");
-	include(PATH."functions/check_session.php");
 
 <<<<<<< HEAD
 
@@ -75,7 +82,7 @@
 	 		$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
 	 		$sum_field="used_codes_amount";
 	 		$used_codes_user_summary=sumInBD($table,$filter,$sum_field);
-	 		if(!issetandnotempty($used_codes_user_summary)){
+	 		if(!@issetandnotempty($used_codes_user_summary)){
 		 		$used_codes_user_summary=0;
 	 		}
 

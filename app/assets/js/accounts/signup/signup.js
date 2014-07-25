@@ -27,13 +27,15 @@ $(document).ready(function(){
 			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
-
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
+			} else {
+				// No error Handeler
 			}
 		}
 	});
@@ -258,13 +260,13 @@ $(document).ready(function(){
 						brand_user_fields:$('#form-end #brand_user_fields').val()
 					},
 					error: function(data, textStatus, jqXHR) {
-						errorstep();
+						errorstep("ajax_error");
 					},
 					success: function(response) {
 						if(response.result){
 							successstep();
 						} else {
-							errorstep();
+							errorstep(response.error_code_str);
 						}
 
 					}
@@ -301,13 +303,13 @@ $(document).ready(function(){
 						brand_user_fields:$('#form-end #brand_user_fields').val()
 					},
 					error: function(data, textStatus, jqXHR) {
-						errorstep();
+						errorstep("ajax_error");
 					},
 					success: function(response) {
 						if(response.result){
 							successstep();
 						} else {
-							errorstep();
+							errorstep(response.error_code_str);
 						}
 
 					}
@@ -325,7 +327,7 @@ $(document).ready(function(){
 							subscription_type:$('#form-end #subscription_type').val()
 						},
 						error: function(data, textStatus, jqXHR) {
-							errorstep();
+							errorstep("ajax_error");
 						},
 						success: function(response) {
 							if(response.result){
@@ -333,7 +335,7 @@ $(document).ready(function(){
 									$(".ajax-loader-"+key).html(value);
 								});
 							}else{
-								errorstep();
+								errorstep(response.error_code_str);
 							}
 						}
 					});
@@ -379,13 +381,13 @@ $(document).ready(function(){
 					brand_user_fields:$('#form-end #brand_user_fields').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					errorstep();
+					errorstep("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){
 						successstep();
 					} else {
-						errorstep();
+						errorstep(response.error_code_str);
 					}
 
 				}

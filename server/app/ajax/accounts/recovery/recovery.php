@@ -3,6 +3,7 @@
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
@@ -13,6 +14,9 @@
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
 =======
 	* Last Edit: 17-07-2014
+=======
+	* Last Edit: 22-07-2014
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -60,7 +64,7 @@
 	";
 
 	//Form error handeler
-	error_handler();
+	@error_handeler($_POST["error"]);
 
 
 	$response["data"]["recovery-step-1"]="

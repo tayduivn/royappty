@@ -1,6 +1,4 @@
 <?php
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
@@ -8,10 +6,6 @@
 * Version: 0.91
 *
 *********************************************************/
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 /*
  * Funcion de conexión al servidor de base de datos.

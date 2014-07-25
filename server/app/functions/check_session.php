@@ -8,7 +8,7 @@
   *********************************************************/
   
  	// Data check START
- 	if(!issetandnotempty($_SESSION["admin"]["id_brand"])){
+ 	if(!@issetandnotempty($_SESSION["admin"]["id_brand"])){
 	 	error_log("ERROR");
 	 	$response["result"]=false;
 		error_log("[".$page_path."] ERROR Data Missing Session Brand ID");
@@ -16,7 +16,7 @@
  		echo json_encode($response);
  		die();
  	}
- 	if(!issetandnotempty($_SESSION["admin"]["id_admin"])){
+ 	if(!@issetandnotempty($_SESSION["admin"]["id_admin"])){
 	 	$response["result"]=false;
 		error_log("[".$page_path."] ERROR Data Missing Session Admin ID");
  		$response["error"]="ERROR Data Missing Session Admin ID";

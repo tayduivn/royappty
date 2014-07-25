@@ -13,14 +13,15 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/receipts/list.php",
 		data: {
+<<<<<<< HEAD
 			lang: localStorage.getItem("lang"),
 			status:$GET["status"]
+=======
+
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -28,8 +29,7 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+					error_handeler(response.error_code);
 			}
 
 		}

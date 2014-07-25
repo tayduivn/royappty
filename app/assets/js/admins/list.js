@@ -17,11 +17,7 @@ $(document).ready(function() {
 			active:$GET["active"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
-
+				error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -29,8 +25,7 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+			error_handeler(response.error_code);
 			}
 
 		}
@@ -87,38 +82,34 @@ function delete_admin(id_admin){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide');
-			$('#ajax_error').modal('show');
-			$('#ajax_error .ajax_err_msg').html(jqXHR);
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
-	    		for (i in response.action){
-		    		if(response.action[i]=="header"){
+	    	for (i in response.action){
+		   		if(response.action[i]=="header"){
 						window.location=response.actions[i].header;
-		    		}else if(response.action[i]=="reload"){
-			        	for (j in response.actions[i].reload){
-				        	$("."+response.actions[i].reload[j].obj_class).html(response.actions[i].reload[j].obj_value);
-			            }
+		   		}else if(response.action[i]=="reload"){
+			    	for (j in response.actions[i].reload){
+			      	$("."+response.actions[i].reload[j].obj_class).html(response.actions[i].reload[j].obj_value);
+			    	}
 					}else if(response.action[i]=="prepend"){
-			           	for (j in response.actions[i].prepend){
-				           	$("."+response.actions[i].prepend[j].obj_class).prepend(response.actions[i].prepend[j].obj_value);
-			           	}
+			      for (j in response.actions[i].prepend){
+				     	$("."+response.actions[i].prepend[j].obj_class).prepend(response.actions[i].prepend[j].obj_value);
+			      }
 					}else if(response.action[i]=="fadeout"){
-			           	for (j in response.actions[i].fadeout){
-				           	$("."+response.actions[i].fadeout[j].obj_class).slideUp('fast',function(){$(this).remove()});
-			           	}
+			      for (j in response.actions[i].fadeout){
+				    	$("."+response.actions[i].fadeout[j].obj_class).slideUp('fast',function(){$(this).remove()});
+			      }
 					}else if(response.action[i]=="fadein"){
-					   	for (j in response.actions[i].fadein){
-					       	$("."+response.actions[i].fadein[j].obj_class).slideDown('fast');
-					   	}
+						for (j in response.actions[i].fadein){
+					  	$("."+response.actions[i].fadein[j].obj_class).slideDown('fast');
+					  }
 					}
-	    		}
-
-            }else{
-
+	    	}
+			}else{
+				error_handeler(response.error_code);
 			}
-
 		}
 	});
 }

@@ -27,8 +27,9 @@
 	var $SESSION=0;
 
 </script>
+<script src="../assets/js/royappty_functions.js" type="text/javascript"></script>
 <script src="../assets/js/settings.js" type="text/javascript"></script>
-
+<script src="../assets/js/lang/ES_es.js"></script>
 </head>
 <!-- END HEAD -->
 
@@ -43,7 +44,12 @@
 			<div class='grid simple'>
 				<div class='grid-body'>
 					<div class='ajax-loader-error-data'>
-
+						<div class='text-center' style='height:100%'>
+							<img class='m-t-40 m-b-0' style='width:320px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
+							<h3 id="s-error-title"></h3>
+							<p class='text-justify' id="s-error-content"></p>
+							<a href='../' class='btn btn-white' id="s-back"></a>
+						</div>
 					</div>
 				</div>
 			</div>

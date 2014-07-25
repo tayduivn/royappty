@@ -3,6 +3,7 @@
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
@@ -10,6 +11,9 @@
 	
 =======
 	* Last Edit: 17-07-2014
+=======
+	* Last Edit: 24-07-2014
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -18,7 +22,13 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* no_brand
+	* brand_not_valid
+	* no_admin
+	* admin_not_valid
+	* admin_inactive
+	*	post_no_group_id_group
+	*	post_no_group_name
 	*
 	*
 	*********************************************************/
@@ -40,8 +50,31 @@
 	* DATA CHECK
 	*********************************************************/
 
-	include(PATH."functions/check_session.php");
+	// BRAND
+	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
 
+	// ADMIN
+	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
+	if(!checkAdmin($admin)){echo json_encode($response);die();}
+
+	// POST
+	if(!@issetandnotempty($_POST["id_group"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing group_id_group");
+		$response["error_code"]="post_no_group_id_group";
+		$response["error_code_str"]= $error_step_s["post_no_group_id_group"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["name"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing group_name");
+		$response["error_code"]="post_no_group_name";
+		$response["error_code_str"]= $error_step_s["post_no_group_name"];
+		echo json_encode($response);
+		die();
+	}
 
 
 	/*********************************************************

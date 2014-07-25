@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 24-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -11,6 +11,21 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
+	*	post_no_account_name
+	*	post_no_account_cif
+	*	post_no_account_contact_address
+	* post_no_account_contact_postal_code
+	*	post_no_account_contact_city
+	*	post_no_account_contact_country
+	*	post_no_account_admin_name
+	*	post_no_account_admin_email
+	*	post_no_account_admin_promo_password
+	*	post_no_account_admin_password
+	*	post_no_account_subscription_type
+	*	post_no_account_payment_plan
+	*	post_no_account_payment_method
+	*	post_no_account_app_name
+	*	post_no_account_app_title
 	*
 	*********************************************************/
 
@@ -21,7 +36,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path = "server/app/ajax/accounts/signup/add_acount";
+	$page_path = "server/app/ajax/accounts/signup/add_account";
 	debug_log("[".$page_path."] START");
 	$response=array();
 
@@ -29,6 +44,128 @@
 	* DATA CHECK
 	*********************************************************/
 
+	//POST
+	if(!@issetandnotempty($_POST["name"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_name");
+		$response["error_code"]="post_no_account_name";
+		$response["error_code_str"]= $error_step_s["post_no_account_name"];
+		// poner el codigo del lang
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["cif"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_cif");
+		$response["error_code"]="post_no_account_cif";
+		$response["error_code_str"]= $error_step_s["post_no_account_cif"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_address"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_address");
+		$response["error_code"]="post_no_account_contact_address";
+		$response["error_code_str"]= $error_step_s["post_no_account_contact_address"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_postal_code"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_postal_code");
+		$response["error_code"]="post_no_account_contact_postal_code";
+		$response["error_code_str"]= $error_step_s["post_no_account_contact_postal_code"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_city"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_city");
+		$response["error_code"]="post_no_account_contact_city";
+		$response["error_code_str"]= $error_step_s[""];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_country"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_contact_country");
+		$response["error_code"]="post_no_account_contact_country";
+		$response["error_code_str"]= $error_step_s["post_no_account_contact_country"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["admin_name"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_name");
+		$response["error_code"]="post_no_account_admin_name";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_name"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["admin_email"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_email");
+		$response["error_code"]="post_no_account_admin_email";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_email"];
+		echo json_encode($response);
+		die();
+	}if(!@issetandnotempty($_POST["admin_promo_password"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_promo_password");
+		$response["error_code"]="post_no_account_admin_promo_password";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_promo_password"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["admin_password"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_password");
+		$response["error_code"]="post_no_account_admin_password";
+		$response["error_code_str"]= $error_step_s["post_no_account_admin_password"];
+		echo json_encode($response);
+		die();
+	}
+
+	if(!@issetandnotempty($_POST["subscription_type"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_subscription_type");
+		$response["error_code"]="post_no_account_subscription_type";
+		$response["error_code_str"]= $error_step_s["post_no_account_subscription_type"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["payment_plan"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_payment_plan");
+		$response["error_code"]="post_no_account_payment_plan";
+		$response["error_code_str"]= $error_step_s["post_no_account_payment_plan"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["payment_method"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_payment_method");
+		$response["error_code"]="post_no_account_payment_method";
+		$response["error_code_str"]= $error_step_s["post_no_account_payment_method"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["app_name"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_app_name");
+		$response["error_code"]="post_no_account_app_name";
+		$response["error_code_str"]= $error_step_s["post_no_account_app_name"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["app_title"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_app_title");
+		$response["error_code"]="post_no_account_app_title";
+		$response["error_code_str"]= $error_step_s["post_no_account_app_title"];
+		echo json_encode($response);
+		die();
+	}
 
 
 	/*********************************************************
@@ -134,14 +271,14 @@
 
 	$app=array();
 
-	if(issetandnotempty($_POST["app_icon_path"])){
+	if(@issetandnotempty($_POST["app_icon_path"])){
 		copy(PATH."../../".$_POST["app_icon_path"],PATH."../../resources/app-icon/".$timestamp.".jpg");
 		$app["app_icon_path"] = $timestamp.".jpg";
 	}else{
 		copy(PATH."../../server/app/assets/img/default-app-icon.jpg",PATH."resources/app-icon/".$timestamp.".jpg");
 		$app["app_icon_path"] = $timestamp.".jpg";
 	}
-	if(issetandnotempty($_POST["app_bg_path"])){
+	if(@issetandnotempty($_POST["app_bg_path"])){
 		copy(PATH."../../".$_POST["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
 		$app["app_bg_path"] = $timestamp.".jpg";
 	}else{

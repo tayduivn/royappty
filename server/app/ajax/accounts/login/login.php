@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 22-07-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -21,26 +21,21 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
+<<<<<<< HEAD
 	error_log("1");
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	define('PATH', str_replace('\\', '/','../../../'));
-	error_log("2");
 	@session_start();
-	error_log("3");
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
-	error_log("4");
-
-
 	include(PATH."include/inbd.php");
-
-	error_log("4.0");
 	$page_path="server/app/ajax/accounts/login/login";
 	debug_log("[".$page_path."] START");
 
-	error_log("4.1");
  	$response=array();
 
 
@@ -56,21 +51,17 @@
 
 	$response["result"]=true;
 
-	error_log("4.2");
-
 	$response["data"]["login-title"]="
 		<div class='text-center' style='height:100%'>
 			<img style='width:320px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
 			<h3>".htmlentities($s["login"], ENT_QUOTES, "UTF-8")."</h3>
 		</div>
 
-
 	";
 
-	error_log("5");
 	//Form error handeler
 	$error_alert="";
-	error_handler();
+	@error_handeler($_POST["error"]);
 
 
 	$response["data"]["login-step-1"]="
@@ -125,7 +116,6 @@
 			</div>
 		</div>
 	";
-error_log("6");
 
 
 	/*********************************************************

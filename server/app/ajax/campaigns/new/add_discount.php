@@ -3,6 +3,7 @@
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	* Last Edit: 23-06-2014
 	* Version: 0.91
 	*
@@ -10,6 +11,9 @@
 	
 =======
 	* Last Edit: 17-07-2014
+=======
+	* Last Edit: 23-07-2014
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -18,7 +22,12 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* no_brand
+	* brand_not_valid
+	* no_admin
+	* admin_not_valid
+	* admin_inactive
+	*	post_no_discount_name
 	*
 	*
 	*********************************************************/
@@ -44,7 +53,24 @@
 	* DATA CHECK
 	*********************************************************/
 
-	include(PATH."functions/check_session.php");
+	// BRAND
+	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
+	if(!checkBrand($brand)){echo json_encode($response);die();}
+
+	// ADMIN
+	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
+	if(!checkAdmin($admin)){echo json_encode($response);die();}
+
+	// POST
+	if(!@issetandnotempty($_POST["name"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing discount_name");
+		$response["error_code"]="post_no_discount_name";
+		$response["error_code_str"]= $error_step_s["post_no_discount_name"];
+		echo json_encode($response);
+		die();
+	}
+
 
 	/*********************************************************
 	* AJAX OPERATIONS
@@ -61,14 +87,14 @@
 
 
 
-	if(issetandnotempty($data["campaign_icon_path"])){
+	if(@issetandnotempty($data["campaign_icon_path"])){
 		copy(PATH."../../".$data["campaign_icon_path"],PATH."../../resources/campaign-icon/".$timestamp.".jpg");
 		$data["campaign_icon_path"] = $timestamp.".jpg";
 	}else{
 		copy(PATH."../../server/app/assets/img/default-icon.jpg",PATH."../../resources/campaign-icon/".$timestamp.".jpg");
 		$data["campaign_icon_path"] = $timestamp.".jpg";
 	}
-	if(issetandnotempty($data["campaign_image_path"])){
+	if(@issetandnotempty($data["campaign_image_path"])){
 		copy(PATH."../../".$data["campaign_image_path"],PATH."../../resources/campaign-image/".$timestamp.".jpg");
 		$data["campaign_image_path"] = $timestamp.".jpg";
 	}else{

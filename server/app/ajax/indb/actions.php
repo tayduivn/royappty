@@ -17,8 +17,8 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
-	*
+	*	post_no_func
+	*	post_no_table
 	*
 	*********************************************************/
 
@@ -37,6 +37,7 @@
 	* DATA CHECK
 	*********************************************************/
 
+<<<<<<< HEAD
 >>>>>>> FETCH_HEAD
 	if((isset($_POST))&&(!empty($_POST))){
 		$ajaxdata=$_POST;
@@ -46,9 +47,33 @@
 
 <<<<<<< HEAD
 =======
+=======
+	if(!@issetandnotempty($_POST["func"]) && !@issetandnotempty($_GET["func"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing func");
+		$response["error_code"]="post_no_func";
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["table"]) && !@issetandnotempty($_GET["table"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing table");
+		$response["error_code"]="post_no_table";
+		echo json_encode($response);
+		die();
+	}
+
+
+
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
+	if((isset($_POST))&&(!empty($_POST))){
+		$ajaxdata=$_POST;
+	}else if((isset($_GET))&&(!empty($_GET))){
+		$ajaxdata=$_GET;
+	}
 
 >>>>>>> FETCH_HEAD
 	$callback_path="./";

@@ -2,7 +2,7 @@
  	/*********************************************************
   *
   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-  * Last Edit: 017-07-2014
+  * Last Edit: 23-07-2014
   * Version: 0.93
   *
   *********************************************************/
@@ -11,6 +11,7 @@
   * AJAX RETURNS
   *
   * ERROR CODES
+  * reload
   *
   *********************************************************/
 
@@ -30,7 +31,8 @@
   * DATA CHECK
   *********************************************************/
 
-  if(!issetandnotempty($_POST["email"])){
+  //POST
+  if(!@issetandnotempty($_POST["email"])){
     $response["result"]=false;
    debug_log("[".$page_path."] ERROR Data Missing email");
      $response["error_code"]="reload";

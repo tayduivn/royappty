@@ -3,6 +3,7 @@
   *
   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 <<<<<<< HEAD
+<<<<<<< HEAD
   * Last Edit: 23-06-2014
   * Version: 0.91
   *
@@ -10,6 +11,9 @@
 
 =======
   * Last Edit: 17-07-2014
+=======
+  * Last Edit: 21-07-2014
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
   * Version: 0.93
   *
    *********************************************************/
@@ -18,8 +22,13 @@
   * AJAX RETURNS
   *
   * ERROR CODES
-  *
-  *
+  * no_brand
+  * brand_not_valid
+  * no_admin
+  * admin_not_valid
+  * admin_inactive
+  * post_create_no_brand
+  * post_create_no_admin
   *
   *********************************************************/
 
@@ -49,10 +58,29 @@
   * DATA CHECK
   *********************************************************/
 
+<<<<<<< HEAD
 >>>>>>> FETCH_HEAD
+=======
+  if(!@issetandnotempty($_POST["id_brand"])){
+    $response["result"]=false;
+    debug_log("[".$page_path."] ERROR Data Post Missing id_brand");
+    $response["error_code"]="post_create_no_brand";
+    echo json_encode($response);
+    die();
+  }
+  if(!@issetandnotempty($_POST["id_admin"])){
+    $response["result"]=false;
+    debug_log("[".$page_path."] ERROR Data Post Missing id_admin");
+    $response["error_code"]="post_create_no_admin";
+    echo json_encode($response);
+    die();
+  }
+
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
+
  	// ADMIN
 <<<<<<< HEAD
   error_log("----->".$_POST["id_admin"]);

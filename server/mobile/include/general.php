@@ -15,7 +15,7 @@ function debug_log($str){
 	}
 
 }
-function issetandnotempty($var){
+function @issetandnotempty($var){
 	if((isset($var))&&(!empty($var))&&($var!="undefined")){
 		return true;
 	}

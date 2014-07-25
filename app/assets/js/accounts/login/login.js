@@ -18,11 +18,15 @@ $(document).ready(function(){
 		error: function(data, textStatus, jqXHR) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
+			error_handeler("ajax_error");
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 		},
 		success: function(response) {
 			if(response.result){
@@ -31,6 +35,7 @@ $(document).ready(function(){
 				});
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			}else{
 				alert("error");
@@ -39,6 +44,10 @@ $(document).ready(function(){
 			}else{
 				alert("error");
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
+			} else {
+				// No error Handeler
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 			}
 		}
 	});
@@ -87,6 +96,9 @@ $(document).ready(function() {
 			email:{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 				required:"Este campo es obligatorio",
 			  	email: "El formato de correo electr&oacute;nico no es correcto"
 		  	},
@@ -138,7 +150,7 @@ $(document).ready(function() {
 					"password":$('#form-end #password').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					errorstep();
+					error_handeler("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){
@@ -146,7 +158,7 @@ $(document).ready(function() {
 						localStorage.setItem('id_admin',response.data.id_admin);
 						window.location.href = "../";
 					} else {
-						error_handler("login_error");
+						error_handeler("login_error");
 					}
 
 				}

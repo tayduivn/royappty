@@ -17,18 +17,14 @@ function view_note(id_user_note){
 			id_user_note:id_user_note
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
 				$("#user_notes_viewer .modal-msg").html(response.data);
 				show_modal("user_notes_viewer","javascript:delete_user_note("+id_user_note+")");
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
 
 		}
@@ -49,10 +45,7 @@ function delete_user_note(id_user_note){
 			callback_options_str:callback_options_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
+		error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -79,8 +72,7 @@ function delete_user_note(id_user_note){
 	    		}
 
             }else{
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
 
 		}
@@ -102,10 +94,7 @@ function add_user_note(){
 			callback_options_str:callback_options_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
+		error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -132,8 +121,7 @@ function add_user_note(){
 	    		}
 
             }else{
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
 
 		}
@@ -149,11 +137,7 @@ $(document).ready(function(){
 			id_user:$GET["id_user"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			$(".modal").modal("hide");
-			$("#ajax_error").modal("show");
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-			}
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -161,8 +145,7 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+				error_handeler(response.error_code);
 			}
 
 		}
@@ -267,15 +250,13 @@ function delete_user(id_user){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide');
-			$('#ajax_error').modal('show');
-			$('#ajax_error .msg-modal').html(jqXHR);
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
 				show_modal("deleted_user_success_alert","javascript:window.location=\"../users/\"");
             }else{
-
+							error_handeler(response.error_code);
 			}
 
 		}

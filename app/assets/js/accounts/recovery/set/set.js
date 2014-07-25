@@ -17,7 +17,7 @@ $(document).ready(function(){
 			"code":$GET["code"]
 		},
 		error: function(data, textStatus, jqXHR) {
-
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -109,7 +109,7 @@ $(document).ready(function() {
 					"code":$('#form-end #code').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					errorstep();
+					errorstep("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){

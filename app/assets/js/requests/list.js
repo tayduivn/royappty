@@ -17,10 +17,7 @@ $(document).ready(function() {
 			status:$GET["status"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-				show_modal("ajax_error","");
-			}
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -28,8 +25,7 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				$("#ajax_error .modal-msg").html(response.error);
-				show_modal("ajax_error","");
+			error_handeler(response.error_code);
 			}
 
 		}
@@ -87,9 +83,7 @@ function delete_request(id_request){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			$('.modal').modal('hide');
-			$('#ajax_error').modal('show');
-			$('#ajax_error .ajax_err_msg').html(jqXHR);
+			error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -116,7 +110,7 @@ function delete_request(id_request){
 	    		}
 
             }else{
-
+							error_handeler(response.error_code);
 			}
 
 		}
