@@ -16,7 +16,6 @@ function session_destroy(){
 }
 
 function error_handeler(error_code){
-
 	error_block:{
 		//Genral
 		if(error_code=="login_error"){window.location.href = $PATH+"login/?error=login_error";break error_block;}
@@ -64,6 +63,7 @@ function error_handeler(error_code){
 		if(error_code=="post_no_func"){window.location.href = $PATH+"dashboard/";break error_block;}
 		//Get indb no_table
 		if(error_code=="post_no_table"){window.location.href = $PATH+"dashboard/";break error_block;}
+	}
 }
 
 

@@ -1,16 +1,41 @@
 <?php
+  /*********************************************************
+  *
+  * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+  * Last Edit: 25-07-2014
+  * Version: 0.93.1
+  *
+  *********************************************************/
+
+  /*********************************************************
+  * AJAX RETURNS
+  *
+  * ERROR CODES
+  *
+  *
+  *********************************************************/
+
+  /*********************************************************
+  * COMMON AJAX CALL DECLARATIONS AND INCLUDES
+  *********************************************************/
+
   define('PATH', str_replace('\\','/','../../'));
   @session_start();
   $timestamp=strtotime(date("Y-m-d H:i:00"));
-
-
-
   include(PATH."include/inbd.php");
   $page_path="server/www/ajax/main/get_main";
   debug_log("[".$page_path."] START");
+  $response=array();
 
-   $response=array();
+  /*********************************************************
+  * DATA CHECK
+  *********************************************************/
 
+
+
+  /*********************************************************
+  * AJAX OPERATIONS
+  *********************************************************/
 
   $response["result"]=true;
 
@@ -28,15 +53,15 @@
               <span class='icon-bar'></span>
               <span class='icon-bar'></span>
               </button>
-              <a href='".PATH."./index.html' class='navbar-brand compressed'><img src='".PATH."assets/img/royappty-logo.png' alt='' data-src='".PATH."assets/img/royappty-logo.png' data-src-retina='".PATH."assets/img/royappty-logo.png' height='44'/></a>
+              <a href='".$url_path."./index.html' class='navbar-brand compressed'><img src='".$url_path."assets/img/royappty-logo.png' alt='' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44'/></a>
             </div>
             <div class='navbar-collapse collapse'>
               <ul class='nav navbar-nav navbar-right'>
-              <li><a href='".PATH."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".PATH."tour.html'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".PATH."pricing.html'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".PATH."contact.html'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".PATH."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_path."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_path."tour.html'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_path."pricing.html'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_path."contact.html'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_path."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
               </ul>
             </div><!--/.nav-collapse -->
             </div>
@@ -56,15 +81,15 @@
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
           </button>
-          <a href='".PATH."./index.html' class='navbar-brand'><img src='".PATH."assets/img/royappty-logo-white.png' data-src='".PATH."assets/img/royappty-logo-white.png' data-src-retina='".PATH."assets/img/royappty-logo-white.png' height='44' alt=''/></a>
+          <a href='".$url_path."./index.html' class='navbar-brand'><img src='".$url_path."assets/img/royappty-logo-white.png' data-src='".$url_path."assets/img/royappty-logo-white.png' data-src-retina='".$url_path."assets/img/royappty-logo-white.png' height='44' alt=''/></a>
         </div>
         <div class='navbar-collapse collapse'>
           <ul class='nav navbar-nav navbar-right'>
-          <li><a href='".PATH."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".PATH."tour.html'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".PATH."pricing.html'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".PATH."contact.html'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".PATH."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_path."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_path."tour.html'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_path."pricing.html'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_path."contact.html'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_path."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -81,7 +106,7 @@
       <!-- SLIDE  -->
       <li data-transition='fade' data-slotamount='5' data-masterspeed='700'>
         <!-- MAIN IMAGE -->
-        <img src='".PATH."assets/img/bg/bg_1.jpg' alt='slidebg1' data-bgfit='cover' data-bgposition='center center' data-bgrepeat='no-repeat'>
+        <img src='".$url_path."assets/img/bg/bg_1.jpg' alt='slidebg1' data-bgfit='cover' data-bgposition='center center' data-bgrepeat='no-repeat'>
 
 
         <!-- LAYERS -->
@@ -107,7 +132,7 @@
           data-endspeed='300'
           data-endeasing='Power1.easeIn'
           data-captionhidden='off'
-          style='z-index: 6'>	<a href='".PATH."./pricing.html' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
+          style='z-index: 6'>	<a href='".$url_path."./pricing.html' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
         </div>
 
       </li>
@@ -149,7 +174,7 @@
         <div class='section relative'>
           <div class='row text-center'>
 
-          <img src='".PATH."assets/img/citious-screenshot.jpg' alt='' class='resize p-t-60 hidden-xs full-width' style='' data-ride='animated' data-animation='fadeInUp' data-delay='300' data-bgfit='cover' data-bgposition='center center'>
+          <img src='".$url_path."assets/img/citious-screenshot.jpg' alt='' class='resize p-t-60 hidden-xs full-width' style='' data-ride='animated' data-animation='fadeInUp' data-delay='300' data-bgfit='cover' data-bgposition='center center'>
 
         </div>
         </div>
@@ -165,7 +190,7 @@
       <div class='row'>
         <div class='col-md-12 text-center'>
           <h2 class='p-b-10'><span class='normal'>".htmlentities($s["main_start_now"], ENT_QUOTES, "UTF-8")."</span><br>".htmlentities($s["main_boost_your_business"], ENT_QUOTES, "UTF-8")."</h2>
-          <a href='".PATH."./pricing.html' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
+          <a href='".$url_path."./pricing.html' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
         </div>
       </div>
     </div>
@@ -216,7 +241,7 @@
       <div class='p-t-30 p-b-50'>
         <div class='row'>
           <div class='col-md-4'>
-          <img src='".PATH."assets/img/royappty-logo.png' alt='' data-src='".PATH."assets/img/royappty-logo.png' data-src-retina='".PATH."assets/img/royappty-logo.png' height='44'/>
+          <img src='".$url_path."assets/img/royappty-logo.png' alt='' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44'/>
           <address class='p-t-20'>
               ".htmlentities($s["product_VivaLaCLoud_SL"], ENT_QUOTES, "UTF-8")."<br>
               ".htmlentities($s["address"], ENT_QUOTES, "UTF-8")."<br>
@@ -253,7 +278,19 @@
 
   ";
 
-   echo json_encode($response);
-  debug_log("[server/ajax/campaigns/get_campaign] END");
+  /*********************************************************
+  * DATABASE REGISTRATION
+  *********************************************************/
+
+
+
+  /*********************************************************
+  * AJAX CALL RETURN
+  *********************************************************/
+
+  debug_log("[".$page_path."] END");
+  echo json_encode($response);
+  die();
+
 
 ?>
