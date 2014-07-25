@@ -22,7 +22,7 @@
  	*********************************************************/
  	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."mobile/include/inbd.php");
 	$page_path = "server/mobile/ajax/session/signup";
  	debug_log("[".$page_path."] START");

@@ -55,9 +55,11 @@
 
 	$response["result"]=true;
 
-  	$_SESSION['admin']=array();
-    $_SESSION['admin']["id_admin"] = $admin["id_admin"];
-    $_SESSION['admin']["id_brand"] = $admin["id_brand"];
+  $_SESSION['admin']=array();
+  $_SESSION['admin']["id_admin"] = $admin["id_admin"];
+  $_SESSION['admin']["id_brand"] = $admin["id_brand"];
+
+  error_log("------>>>>".$admin["id_admin"]);
 
 	$response["data"]["id_admin"]=$admin["id_admin"];
 	$response["data"]["id_brand"]=$admin["id_brand"];
@@ -65,7 +67,7 @@
 
  	$table="admins";
  	$filter=array();
- 	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
+ 	$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
  	$data=array();
  	$data["last_connection"]=strtotime(date("Y-m-d H:i:00"));
  	updateInBD($table,$filter,$data);

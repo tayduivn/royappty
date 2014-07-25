@@ -6,7 +6,7 @@
   * Version: 0.91
   *
   *********************************************************/
-  
+
  	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d 00:00:00"));
@@ -21,7 +21,8 @@
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
  	// ADMIN
-  	$admin=array();$admin["id_admin"]=$_POST["id_admin"];
+  error_log("----->".$_POST["id_admin"]);
+  $admin=array();$admin["id_admin"]=$_POST["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
 

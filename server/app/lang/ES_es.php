@@ -175,7 +175,6 @@ $s["draft_campaigns"] = "Borradores";
 $s["inactive_campaigns"] = "Campañas inactivas";
 
 //Campaign / get
-
 $s["add_note"]="Añadir Nota";
 $s["delete_note"] = "Borrar Nota";
 $s["title"]="Título";

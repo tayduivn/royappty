@@ -6,6 +6,16 @@
 *
 *********************************************************/
 
+function logout(){
+	session_destroy();
+	window.location.href = $PATH;
+}
+function session_destroy(){
+	localStorage.removeItem('id_brand');
+	localStorage.removeItem('id_admin');
+}
+
+
 function error_handeler(error_code){
 
 	error_block:{

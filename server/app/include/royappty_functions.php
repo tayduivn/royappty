@@ -291,7 +291,7 @@ function checkAdmin($admin){
  	$filter["active"]=array("operation"=>"=","value"=>1);
  	if(!isInBD($table,$filter)){
 	 	$response["result"]=false;
-		debug_log("[".$page_path."] ERROR User not exists (id_admin=".$admin["id_admin"].")");
+		debug_log("[".$page_path."] ERROR Admin inactive (id_admin=".$admin["id_admin"].")");
  		$response["error"]="ERROR User not in the system";
   		$response["error_code"]="admin_inactive";
 		echo json_encode($response);

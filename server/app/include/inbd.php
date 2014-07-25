@@ -204,7 +204,7 @@ function addInBD($table,$data){
 	$query .= ") VALUES (".$values.")";
 	debug_log($query);
 	$r = db_query($query,$manejador);
-	return db_last_id();
+	return db_last_id($manejador);
 }
 
 function deleteInBD($table,$filter=array()) {
