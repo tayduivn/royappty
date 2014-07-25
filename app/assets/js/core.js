@@ -2,7 +2,7 @@
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
 * Last Edit: 08-07-2014
-* Version: 0.91
+* Version: 0.93
 *
 *********************************************************/
 
