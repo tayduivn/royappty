@@ -16,15 +16,7 @@ $(document).ready(function(){
 			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
-<<<<<<< HEAD
-			$(".modal").modal("hide");
-			$("#ajax_error").modal("show");
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-			}
-=======
 			error_handeler("ajax_error");
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 		},
 		success: function(response) {
 			if(response.result){
@@ -120,27 +112,14 @@ $(document).ready(function() {
 
 				},
 				error: function(data, textStatus, jqXHR) {
-<<<<<<< HEAD
-					$(".modal").modal("hide");
-					$("#ajax_error").modal("show");
-					if(jqXHR!=""){
-						$("#ajax_error .modal-msg").html(jqXHR);
-					}
-=======
-				errorstep("ajax_error");
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
+					errorstep("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){
 
 						successstep();
 					} else {
-<<<<<<< HEAD
-
-						errorstep();
-=======
 						errorstep(response.error_code_str);
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 					}
 
 				}

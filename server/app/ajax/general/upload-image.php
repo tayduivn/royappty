@@ -2,13 +2,6 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-
-=======
 	* Last Edit: 17-07-2014
 	* Version: 0.93
 	*
@@ -26,16 +19,10 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
->>>>>>> FETCH_HEAD
+
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> FETCH_HEAD
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/general/upload_image";
 	debug_log("[".$page_path."] START");

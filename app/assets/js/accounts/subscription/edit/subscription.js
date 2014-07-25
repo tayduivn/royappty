@@ -16,15 +16,7 @@ $(document).ready(function(){
 			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
-<<<<<<< HEAD
-			$(".modal").modal("hide");
-			$("#ajax_error").modal("show");
-			if(jqXHR!=""){
-				$("#ajax_error .modal-msg").html(jqXHR);
-			}
-=======
 			error_handeler("ajax_error");
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 		},
 		success: function(response) {
 			if(response.result){
@@ -103,15 +95,7 @@ $(document).ready(function() {
 						subscription_type:$('#form-step1 input[name="subscription_type"]:checked').val()
 					},
 					error: function(data, textStatus, jqXHR) {
-<<<<<<< HEAD
-						$(".modal").modal("hide");
-						$("#ajax_error").modal("show");
-						if(jqXHR!=""){
-							$("#ajax_error .modal-msg").html(jqXHR);
-						}
-=======
-					error_handeler("ajax_error");
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
+						error_handeler("ajax_error");
 					},
 					success: function(response) {
 						if(response.result){
@@ -168,15 +152,7 @@ $(document).ready(function() {
 					payment_plan:$('#form-step2 input[name="payment_plan"]:checked').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-<<<<<<< HEAD
-					$(".modal").modal("hide");
-					$("#ajax_error").modal("show");
-					if(jqXHR!=""){
-						$("#ajax_error .modal-msg").html(jqXHR);
-					}
-=======
 					error_handeler("ajax_error");
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 				},
 				success: function(response) {
 					if(response.result){

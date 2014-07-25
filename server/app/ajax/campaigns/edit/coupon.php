@@ -2,26 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-
-	define('PATH', str_replace('\\', '/','../../../'));
-	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
-
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	* Last Edit: 14-07-2014
-=======
 	* Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -46,23 +27,9 @@
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
->>>>>>> FETCH_HEAD
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/edit/coupon";
 	debug_log("[".$page_path."] START");
-<<<<<<< HEAD
-	include(PATH."functions/check_session.php");
-
- 	$response=array();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
  	$response=array();
 
 	/*********************************************************
@@ -91,11 +58,6 @@
 	* AJAX OPERATIONS
 	*********************************************************/
 
->>>>>>> FETCH_HEAD
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$response["result"]=true;
 
 	$table="campaigns";
@@ -434,22 +396,6 @@
 			</div>
 		</div>
 	";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-
-
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
 
 	/*********************************************************
 	* DATABASE REGISTRATION
@@ -464,14 +410,5 @@
 	debug_log("[".$page_path."] END");
 	echo json_encode($response);
 	die();
-<<<<<<< HEAD
-	
->>>>>>> FETCH_HEAD
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
 
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 ?>

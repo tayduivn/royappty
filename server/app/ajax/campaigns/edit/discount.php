@@ -2,18 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	* Last Edit: 23-06-2014
-	* Version: 0.91
-	*
-	*********************************************************/
-
-=======
-	* Last Edit: 14-07-2014
-=======
 	* Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -35,36 +24,12 @@
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
 
->>>>>>> FETCH_HEAD
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
-
-<<<<<<< HEAD
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> FETCH_HEAD
-=======
-
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
-
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/edit/discount";
 	debug_log("[".$page_path."] START");
-<<<<<<< HEAD
-	include(PATH."functions/check_session.php");
-
- 	$response=array();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
  	$response=array();
 
 	/*********************************************************
@@ -93,11 +58,6 @@
 	* AJAX OPERATIONS
 	*********************************************************/
 
->>>>>>> FETCH_HEAD
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$response["result"]=true;
 
 	$table="campaigns";
@@ -424,21 +384,7 @@
 			</div>
 		</div>
 	";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
-
- 	echo json_encode($response);
-	debug_log("[server/ajax/campaigns/get_campaign] END");
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 
 	/*********************************************************
@@ -455,9 +401,4 @@
 	echo json_encode($response);
 	die();
 
->>>>>>> FETCH_HEAD
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
-=======
->>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>
