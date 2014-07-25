@@ -15,6 +15,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	* Last Edit: 14-07-2014
 	* Version: 0.93
@@ -40,6 +41,8 @@
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/edit/coupon";
 	debug_log("[".$page_path."] START");
@@ -48,6 +51,7 @@
 
  	$response=array();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -66,6 +70,8 @@
 	*********************************************************/
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$response["result"]=true;
@@ -408,6 +414,9 @@
 	";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
@@ -415,6 +424,7 @@
  	echo json_encode($response);
 	debug_log("[server/ajax/campaigns/get_campaign] END");
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -434,6 +444,8 @@
 	die();
 	
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

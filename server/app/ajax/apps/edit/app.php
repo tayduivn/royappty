@@ -36,8 +36,12 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> FETCH_HEAD
+=======
+
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
@@ -47,6 +51,7 @@
 <<<<<<< HEAD
 	include(PATH."functions/check_session.php");
 
+<<<<<<< HEAD
  	$response=array();
 
 <<<<<<< HEAD
@@ -67,6 +72,10 @@
 
 >>>>>>> FETCH_HEAD
 =======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
+ 	$response=array();
+
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$response["result"]=true;
 
@@ -367,6 +376,9 @@
 	";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
@@ -374,6 +386,7 @@
  	echo json_encode($response);
 	debug_log("[server/ajax/apps/get_app] END");
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -392,6 +405,8 @@
 	die();
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

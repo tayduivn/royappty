@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
@@ -40,6 +41,8 @@
 	$error["user_inactive"]="Tu usuario se encuentra bloqueado, contacta con el establecimiento, ellos podrán ayudarte.";
 	$error["ajax_error"]="No se ha podido contactar con el servidor. Por favor, vuelve a intentarlo más tarde";
 =======
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 
 $s["back"] = "Volver";
@@ -73,5 +76,8 @@ $error["no_brand"]="No nos es posible encontrar los datos de campañas. Vuelve a
 $error["brand_not_valid"]="Es una pena, pero la aplicación ha sido cerrada.";
 $error["user_inactive"]="Tu usuario se encuentra bloqueado, contacta con el establecimiento, ellos podrán ayudarte.";
 $error["ajax_error"]="No se ha podido contactar con el servidor. Por favor, vuelve a intentarlo más tarde";
+<<<<<<< HEAD
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

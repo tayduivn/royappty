@@ -13,8 +13,11 @@ include_once(PATH."include/bd.php");
 include_once(PATH."include/general.php");
 include_once(PATH."include/royappty_functions.php");
 include_once(PATH."include/lang.php");
+<<<<<<< HEAD
 
 error_log("includes");
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 if(!isset($manejador)) {
 error_log("man");

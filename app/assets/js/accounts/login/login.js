@@ -17,7 +17,10 @@ $(document).ready(function(){
 		},
 		error: function(data, textStatus, jqXHR) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 		},
@@ -27,6 +30,11 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+			}else{
+				alert("error");
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 			}else{
 				alert("error");
@@ -78,6 +86,7 @@ $(document).ready(function() {
 		messages:{
 			email:{
 <<<<<<< HEAD
+<<<<<<< HEAD
 				required:"Este campo es obligatorio",
 			  	email: "El formato de correo electr&oacute;nico no es correcto"
 		  	},
@@ -85,6 +94,15 @@ $(document).ready(function() {
 				required:"Este campo es obligatorio",
 			  	maxlength: "No puede exceder de 25 caracteres",
 			  	minlength: "Este campo necesita un m&iacute;nimo de 4 caracteres"
+=======
+				required:$s["email_this_field_is_compulsory"],
+			  	email: $s["email_format_is_not_correct"]
+		  	},
+		  	password:{
+				required:$s["password_this_field_is_compulsory"],
+			  	maxlength: $s["password_it_canot_be_longer_than_25_characters"],
+			  	minlength: $s["password_this_field_needs_4_character_minimum"]
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 				required:$s["email_this_field_is_compulsory"],
 			  	email: $s["email_format_is_not_correct"]

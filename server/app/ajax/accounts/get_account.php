@@ -33,10 +33,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	include(PATH."include/inbd.php");
@@ -45,6 +48,7 @@
 <<<<<<< HEAD
 	include(PATH."functions/check_session.php");
 
+<<<<<<< HEAD
  	$response=array();
 
 
@@ -72,14 +76,28 @@
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
+ 	$response=array();
+
+
+	$response["result"]=true;
+
+
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
  	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$brand=getInBD($table,$filter);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 	$response["data"]["page-title"]="<a href='#'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["details"], ENT_QUOTES, "UTF-8");
+=======
+
+
+		$response["data"]["page-title"]="<a href='#'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["details"], ENT_QUOTES, "UTF-8");
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 
 
@@ -131,6 +149,12 @@
 		<p>".htmlentities($s["delete_your_account_help"], ENT_QUOTES, "UTF-8")." <a href='./data/delete/'>".htmlentities($s["here"], ENT_QUOTES, "UTF-8")."</a></p>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		<h4 class='m-t-20'>".htmlentities($s["language_title"], ENT_QUOTES, "UTF-8")."</h4>
+		<p><a href='#' onclick='changelang(\"es\");'>".htmlentities($s["language_spanish"], ENT_QUOTES, "UTF-8")."</a></p>
+		<p><a href='#' onclick='changelang(\"en\");'>".htmlentities($s["language_english"], ENT_QUOTES, "UTF-8")."</a></p>
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 		<h4 class='m-t-20'>".htmlentities($s["language_title"], ENT_QUOTES, "UTF-8")."</h4>
 		<p><a href='#' onclick='changelang(\"es\");'>".htmlentities($s["language_spanish"], ENT_QUOTES, "UTF-8")."</a></p>
@@ -170,6 +194,9 @@
 		";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
@@ -178,6 +205,7 @@
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> FETCH_HEAD
@@ -197,13 +225,18 @@
 	*********************************************************/
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 
 	debug_log("[".$page_path."] END");
 	echo json_encode($response);
 	die();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 ?>

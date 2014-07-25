@@ -20,11 +20,15 @@ $conf = array(
 =======
 	'bdport' => '',
 	'bd' => 'royappty3',
+<<<<<<< HEAD
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
+=======
 >>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 	'bduser' => 'royappty3',
 	'bdpass' => 'royappty3',
 	'bdprefix' => ''
 );
+<<<<<<< HEAD
 <<<<<<< HEAD
 $url_server = "http://royappty2/";
 
@@ -35,6 +39,12 @@ $lang = "ES_es";
 $lang_email = "es";
 include_once(PATH."lang/".$lang.".php");
 error_log("settings end");
+=======
+$url_server = "http://royappty3/";
+
+$campaign_bd_type[2]="discount";
+$campaign_bd_type[1]="coupon";
+>>>>>>> c9d28823938990b64f3b97cb39807fa5b60f4800
 =======
 $url_server = "http://royappty3/";
 
