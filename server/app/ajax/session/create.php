@@ -2,18 +2,7 @@
   /*********************************************************
   *
   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  * Last Edit: 23-06-2014
-  * Version: 0.91
-  *
-  *********************************************************/
-
-=======
-  * Last Edit: 17-07-2014
-=======
   * Last Edit: 21-07-2014
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
   * Version: 0.93
   *
    *********************************************************/
@@ -36,19 +25,10 @@
   /*********************************************************
    * COMMON AJAX CALL DECLARATIONS AND INCLUDES
    *********************************************************/
->>>>>>> FETCH_HEAD
  	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."include/inbd.php");
-<<<<<<< HEAD
-
- 	debug_log("[server/app/ajax/session/create] START");
-
- 	$response=array();
-
-
-=======
   $page_path = "server/app/ajax/session/create";
  	debug_log("[".$page_path."] START");
  	$response=array();
@@ -58,54 +38,22 @@
   * DATA CHECK
   *********************************************************/
 
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
-  if(!@issetandnotempty($_POST["id_brand"])){
-    $response["result"]=false;
-    debug_log("[".$page_path."] ERROR Data Post Missing id_brand");
-    $response["error_code"]="post_create_no_brand";
-    echo json_encode($response);
-    die();
-  }
-  if(!@issetandnotempty($_POST["id_admin"])){
-    $response["result"]=false;
-    debug_log("[".$page_path."] ERROR Data Post Missing id_admin");
-    $response["error_code"]="post_create_no_admin";
-    echo json_encode($response);
-    die();
-  }
-
->>>>>>> 709238bf3bbd33e8717121209baf54ef0fbe0e24
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
 
  	// ADMIN
-<<<<<<< HEAD
-  error_log("----->".$_POST["id_admin"]);
-  $admin=array();$admin["id_admin"]=$_POST["id_admin"];
-	if(!checkAdmin($admin)){echo json_encode($response);die();}
-
-=======
   $admin=array();$admin["id_admin"]=$_POST["id_admin"];
 	if(!checkAdmin($admin)){echo json_encode($response);die();}
 
  /*********************************************************
  * AJAX OPERATIONS
  *********************************************************/
->>>>>>> FETCH_HEAD
 
-  	$response["result"]=true;
-  	$_SESSION['admin']=array();
-    $_SESSION['admin']["id_admin"] = $_POST["id_admin"];
-    $_SESSION['admin']["id_brand"] = $_POST["id_brand"];
-
-<<<<<<< HEAD
-	debug_log("[server/app/ajax/session/create] Session Created user:{id_admin:".$_SESSION['admin']["id_admin"].",id_brand:".$_SESSION['admin']["id_brand"]."}");
- 	debug_log("[server/app/ajax/session/create] END");
-=======
->>>>>>> FETCH_HEAD
+  $response["result"]=true;
+  $_SESSION['admin']=array();
+  $_SESSION['admin']["id_admin"] = $_POST["id_admin"];
+  $_SESSION['admin']["id_brand"] = $_POST["id_brand"];
 
  	$table="admins";
  	$filter=array();
@@ -127,8 +75,5 @@
   debug_log("[".$page_path."] Session Created user:{id_admin:".$_SESSION['admin']["id_admin"].",id_brand:".$_SESSION['admin']["id_brand"]."}");
   debug_log("[".$page_path."] END");
  	echo json_encode($response);
-<<<<<<< HEAD
-=======
   die();
->>>>>>> FETCH_HEAD
 ?>
