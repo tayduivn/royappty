@@ -95,7 +95,6 @@ function add_group_note(){
 		},
 		error: function(data, textStatus, jqXHR) {
 			error_handeler("ajax_error");
-			}
 		},
 		success: function(response) {
 			if(response.status){
