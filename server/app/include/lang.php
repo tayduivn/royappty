@@ -1,4 +1,7 @@
 <?php
+$lang="ES_es";
+$lang_email = "es";
+
 if(@!issetandnotempty($_POST['lang'])){
   if(@!issetandnotempty($_SESSION['lang'])){
     $lang="EN_en";
@@ -21,5 +24,6 @@ else{
   $_SESSION["lang"]="EN_en";
   $_SESSION["lang_email"]="en";
 }
+unset($_POST["lang"]);
 include_once(PATH."lang/".$lang.".php");
 ?>

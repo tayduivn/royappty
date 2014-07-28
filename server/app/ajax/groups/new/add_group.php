@@ -31,7 +31,7 @@
 	$page_path="server/app/ajax/groups/new/add_group";
 	debug_log("[".$page_path."] START");
 	$response=array();
-	if(@issetandnotempty($_POST["lang"])){$lang=$_POST["lang"];unset($_POST["lang"]);}
+
 
 	/*********************************************************
 	* DATA CHECK
