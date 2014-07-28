@@ -344,12 +344,6 @@
 		</div>
 	";
 
-<<<<<<< HEAD
- 	echo json_encode($response);
-	debug_log("[server/ajax/apps/get_app] END");
-=======
-
->>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 
 	/*********************************************************
 	* DATABASE REGISTRATION
