@@ -13,7 +13,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/apps/edit/app.php",
 		data: {
-			lang: localStorage.getItem("lang")
+		lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 			error_handeler("ajax_error");

@@ -344,8 +344,7 @@
 		</div>
 	";
 
- 	echo json_encode($response);
-	debug_log("[server/ajax/apps/get_app] END");
+
 
 	/*********************************************************
 	* DATABASE REGISTRATION
