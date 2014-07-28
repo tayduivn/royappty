@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Royappty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+
+<!-- BEGIN PLUGIN CSS -->
+<link href="../../../assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="../../../assets/plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="../../../assets/plugins/jquery-datatable/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/plugins/boostrap-checkbox/css/bootstrap-checkbox.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="../../../assets/plugins/datatables-responsive/css/datatables.responsive.css" rel="stylesheet" type="text/css" media="screen"/>
+<!-- END PLUGIN CSS -->
+
+<!-- BEGIN CORE CSS FRAMEWsORK -->
+
+<link href="../../../assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+<!-- END CORE CSS FRAMEWORK -->
+
+<!-- BEGIN CSS TEMPLATE -->
+<link href="../../../assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
+<!-- END CSS TEMPLATE -->
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse "> 
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+	<div class="header-seperation"> 
+		<ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">	
+		 <li class="dropdown"> <a id="main-menu-toggle" href="../../../#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
+		</ul>
+      <!-- BEGIN LOGO -->	
+      <a href="../../../index/"><img src="assets/img/royappty-logo-white.png" class="logo" alt=""  data-src="assets/img/royappty-logo-white.png" data-src-retina="assets/img/royappty-logo-white.png" height="30"/></a>
+      <!-- END LOGO --> 
+      
+      </div>
+      <!-- END RESPONSIVE MENU TOGGLER --> 
+      <div class="header-quick-nav" > 
+
+	 <!-- BEGIN CHAT TOGGLER -->
+	 <div class="pull-right">
+	
+		 <ul class="nav quick-section ">
+			<li class="quicklinks"> 
+				<a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="../../../#" id="notifications-messages">
+					<i class='fa fa-globe fa-2x'></i>
+				</a>
+				<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="notifications-messages">
+					<li>
+						<a href='#'>
+							<div class="notification-messages">
+								<div class="message-wrapper">
+									<div class="heading">
+										David Nester - Commented on your wall
+									</div>
+									<div class="description">
+										Meeting postponed to tomorrow
+									</div>
+									<div class="date pull-left">
+										A min ago
+									</div>										
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href='#'>
+							<div class="notification-messages">
+								<div class="message-wrapper">
+									<div class="heading">
+										David Nester - Commented on your wall
+									</div>
+									<div class="description">
+										Meeting postponed to tomorrow
+									</div>
+									<div class="date pull-left">
+										A min ago
+									</div>										
+								</div>
+							</div>
+						</a>
+					</li>
+               </ul>
+			</li>
+			<li class="quicklinks"> 
+				<a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="../../../#" id="user-options">
+					<i class="fa fa-cog "></i> 	
+				</a>
+				<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+                  <li><a href="../../../user-profile/"> My Account</a>
+                  </li>
+                  <li class="divider"></li>                
+                  <li><a href="../../../login/">Log Out</a></li>
+               </ul>
+			</li> 
+			
+		</ul>
+      </div>
+	   <!-- END CHAT TOGGLER -->
+      </div> 
+      <!-- END TOP NAVIGATION MENU --> 
+   
+  </div>
+  <!-- END TOP NAVIGATION BAR --> 
+</div>
+
+<!-- END HEADER --> 
+<!-- BEGIN CONTAINER -->
+<div class="page-container row">
+	<div class="page-sidebar" id="main-menu">
+		<ul>
+			<li class="start "> <a href="../../../index/"> <i class="icon-custom-home"></i> <span class="title">Panel de Actividad</span> <span class="selected"></span></a> </li>
+			<li> <a href="../../../javascript:;"> <i class="fa fa-bullhorn"></i> <span class="title">Campañas</span> <span class="arrow "></span> </a>
+				<ul class="sub-menu">
+					<li> <a href="../../../campaigns/"> Todas las campañas </a> </li>
+					<li > <a href="../../../campaign-new/"> Crear nueva campaña </a> </li>
+				</ul>
+			</li>
+			<li> <a href='javascript:;'> <i class='fa fa-users'></i> <span class='title'>Usuarios</span> <span class='arrow '></span> </a>
+				<ul class="sub-menu">
+					<li > <a href="../../../users/">Todos los usuarios </a> </li>	
+					<li > <a href="../../../groups/">Todos los grupos </a> </li>	
+					<li > <a href="../../../group-new/">Crear nuevo grupo </a> </li>	
+				</ul>
+			</li>
+			<li class="active"> <a href="../../../javascript:;"> <i class="fa fa-cogs"></i> <span class="title">Configuración</span> <span class="arrow "></span> </a>
+				<ul class="sub-menu">
+					<li > <a href="../../../app-config/">Mi aplicación </a> </li>	
+					<li class="active"> <a href="../../../my-account/">Mi cuenta </a> </li>	
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="content">  
+			<div class="page-title">
+				<h3 class='text-muted'><a href='app-config/' class='text-muted'>Mi Aplicación</a> / <a href='requests/' class='text-muted'>Mis Solicitudes</a> / <span class='text-black'>Ver Solicitud</span></h3>		
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+                	<div class="grid simple">
+                		<div class="grid-body">
+                		
+                			<div class='row'>
+								<div class="col-md-12">
+									<div class='m-b-20'>
+										<h4 class='m-t-0'>Solicitud #00114455887755 - Cambio de nombre</h4>
+										<div class='m-b-20'>
+											<table class='m-b-10'>
+												<tr>
+													<td><span class='text-sucess m-r-10'>Fecha</span></td>
+													<td>2013-13-11</td>
+												</tr>
+											</table>
+											<div class="bg-grey padding-10">
+												<span class='text-black'>2013-13-11 00:23</span><br/>
+												Se ha comenzado el proceso de solicitud
+											</div>
+											<div class="bg-grey padding-10">
+												<span class='text-black'>2013-13-11 01:23</span><br/>
+												Su solicitud se ha puesto en marcha, en unos días recibirá un correo con la información del resultado de su solicitud
+											</div>
+											<div class="bg-grey padding-10">
+												<span class='text-black'>2013-13-22 12:23</span><br/>
+												Completado el proceso, el cambio de nombre se ha producido.
+											</div>
+										</div>
+									</div>
+									<div class='m-b-20'>
+										<a href='./requests/' class='btn btn-white'>Volver al listado de solicitudes</a>
+									</div>
+								</div>
+                			</div>
+                		</div>
+                	</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>  
+<!-- BEGIN CORE JS FRAMEWORK-->
+<script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/breakpoints.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+<!-- END CORE JS FRAMEWORK -->
+<!-- BEGIN PAGE LEVEL JS -->
+<script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-datatable/js/jquery.dataTables.min.js" type="text/javascript" ></script>
+<script src="assets/plugins/jquery-datatable/extra/js/TableTools.min.js" type="text/javascript" ></script>
+<script type="text/javascript" src="assets/plugins/datatables-responsive/js/datatables.responsive.js"></script>
+<script type="text/javascript" src="assets/plugins/datatables-responsive/js/lodash.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<script src="assets/js/campaign.js" type="text/javascript"></script>
+<!-- PAGE JS --> 	
+<!-- BEGIN CORE TEMPLATE JS --> 
+<script src="assets/js/core.js" type="text/javascript"></script>
+
+<!-- END CORE TEMPLATE JS -->
+</body>
+</html>

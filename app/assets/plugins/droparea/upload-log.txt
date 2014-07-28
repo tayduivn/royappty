@@ -1,0 +1,132 @@
+=== 2012-10-10 11:55:56 ===============================
+FILES:Array
+(
+    [xfile] => Array
+        (
+            [name] => Captura de pantalla 2012-10-10 a la(s) 03.12.37.png
+            [type] => image/png
+            [tmp_name] => /tmp/php1OfaMM
+            [error] => 0
+            [size] => 14892
+        )
+
+)
+
+POST:Array
+(
+    [post] => upload.php
+    [width] => 220
+    [height] => 345
+    [crop] => true
+)
+
+=== 2012-10-10 11:58:49 ===============================
+FILES:Array
+(
+    [xfile] => Array
+        (
+            [name] => Captura de pantalla 2012-10-10 a la(s) 03.10.59.png
+            [type] => image/png
+            [tmp_name] => /tmp/php1evQJU
+            [error] => 0
+            [size] => 14229
+        )
+
+)
+
+POST:Array
+(
+    [post] => upload.php
+    [width] => 220
+    [height] => 345
+    [crop] => true
+)
+
+=== 2012-10-10 12:12:35 ===============================
+FILES:Array
+(
+    [xfile] => Array
+        (
+            [name] => Captura de pantalla 2012-09-26 a la(s) 20.34.43.png
+            [type] => image/png
+            [tmp_name] => /tmp/phpExAq64
+            [error] => 0
+            [size] => 48807
+        )
+
+)
+
+POST:Array
+(
+    [post] => upload.php
+    [width] => 220
+    [height] => 345
+    [crop] => true
+)
+
+=== 2012-10-10 12:14:37 ===============================
+FILES:Array
+(
+    [xfile] => Array
+        (
+            [name] => build-deck-deck-blocks-800x800-1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /tmp/php9qbauR
+            [error] => 0
+            [size] => 56427
+        )
+
+)
+
+POST:Array
+(
+    [post] => ./js/droparea/upload.php
+    [width] => 220
+    [height] => 345
+    [crop] => true
+)
+
+=== 2012-10-10 12:18:44 ===============================
+FILES:Array
+(
+    [xfile] => Array
+        (
+            [name] => build-deck-deck-blocks-800x800.jpg
+            [type] => image/jpeg
+            [tmp_name] => /tmp/phpNIiejN
+            [error] => 0
+            [size] => 56427
+        )
+
+)
+
+POST:Array
+(
+    [post] => ./js/droparea/upload.php
+    [width] => 220
+    [height] => 345
+    [crop] => true
+)
+
+=== 2012-10-10 12:21:04 ===============================
+FILES:Array
+(
+    [xfile] => Array
+        (
+            [name] => build-deck-deck-blocks-800x800-1.jpg
+            [type] => image/jpeg
+            [tmp_name] => /tmp/phpARXTDk
+            [error] => 0
+            [size] => 56427
+        )
+
+)
+
+POST:Array
+(
+    [post] => ./js/droparea/upload.php
+    [width] => 220
+    [height] => 345
+    [crop] => true
+)
+
