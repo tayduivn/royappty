@@ -5,6 +5,7 @@
 * Version: 0.93
 *
 *********************************************************/
+<<<<<<< HEAD
 function require(script) {
     $.ajax({
         url: script,
@@ -18,6 +19,9 @@ function require(script) {
         }
     });
 }
+=======
+
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 function logout(){
 	session_destroy();
 	window.location.href = $PATH;
@@ -75,6 +79,14 @@ function error_handeler(error_code){
 		if(error_code=="post_no_func"){window.location.href = $PATH+"dashboard/";break error_block;}
 		//Get indb no_table
 		if(error_code=="post_no_table"){window.location.href = $PATH+"dashboard/";break error_block;}
+<<<<<<< HEAD
+=======
+		//Ajax Errors
+		if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
+		//Error Unknow
+		window.location.href =  $PATH+"error/?error_code=base";break error_block;
+
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 	}
 }
 

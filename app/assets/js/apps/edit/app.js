@@ -13,7 +13,11 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/apps/edit/app.php",
 		data: {
+<<<<<<< HEAD
 			lang: localStorage.getItem("lang")
+=======
+		lang: localStorage.getItem("lang")
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 		},
 		error: function(data, textStatus, jqXHR) {
 			error_handeler("ajax_error");

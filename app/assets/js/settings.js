@@ -22,6 +22,7 @@ if ((typeof localStorage.getItem('lang') == 'undefined')||(localStorage.getItem(
     localStorage.setItem('lang','en');
   }
 }
+<<<<<<< HEAD
 else if(localStorage.getItem('lang') == 'es'){
   localStorage.setItem('lang','es');
 
@@ -37,12 +38,21 @@ else{
   require("../assets/js/lang/EN_en.js");
 }
 
+=======
+else if(localStorage.getItem('lang') != 'es'){
+  localStorage.setItem('lang','en');
+}
+
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 function changelang(lang){
   localStorage.setItem('lang',lang);
   location.reload();
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 function loadjscssfile(filename, filetype){
  if (filetype=="js"){ //if filename is a external JavaScript file
   var fileref=document.createElement('script')
@@ -59,7 +69,11 @@ function loadjscssfile(filename, filetype){
   document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 
+<<<<<<< HEAD
 loadjscssfile("server/app/assets/css/server_style.css", "css");
+=======
+loadjscssfile($SERVER_PATH+"server/app/assets/css/server_style.css", "css");
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 
 (function (){
   window.$GET = [];

@@ -196,8 +196,13 @@ $s["no_used_codes"] = "No se ha usado esta promoción";
 $s["edit_campaign"] = "Editar campaña";
 $s["campaign_deleted"] = "Campaña Borrada";
 $s["view_all_notes"] = "Ver todas las notas";
+<<<<<<< HEAD
 $s["there_is_no_notes_to_show"] = "No hay notas que mostrar";
 
+=======
+$s["there_is_no_notes_to_show"] = "No hay notas que mostrar";
+
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 //Campaign / new
 $s["select_campaign_type"] = "Seleccione tipo de Campaña";
 $s["add_discount_promo"] = "Crear Promoción Directa";
@@ -309,8 +314,13 @@ $s["user_didnt_used_codes"] = "No ha validado ningún código";
 //Users / get
 $s["without_created_date"] = "Sin fecha de creación";
 $s["created_date_the"] = "Creado el ";
+<<<<<<< HEAD
 $s["user_there_is_no_notes_to_show"]= "No hay notas que mostrar";
 
+=======
+$s["user_there_are_no_notes_to_show"]= "No hay notas que mostrar";
+
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 //Groups / List
 $s["users_amount"] = "Número de Usuarios";
 $s["delete_group"] = "Borrar Grupo";
@@ -320,6 +330,7 @@ $s["group_deleted"] = "Grupo Borrado";
 
 // Group / Get
 $s["edit_group"] = "Editar Grupo";
+<<<<<<< HEAD
 $s["group_there_is_no_notes_to_show"] = "No hay notas que mostrar";
 
 // Group / add
@@ -328,6 +339,16 @@ $s["add_group_title"] = "Añadir grupo";
 // Group / add
 $s["add_group_title"]= "Añadir grupo";
 $s["group_name"] = "Nombre del grupo";
+=======
+$s["group_there_is_no_notes_to_show"] = "No hay notas que mostrar";
+
+// Group / add
+$s["add_group_title"] = "Añadir grupo";
+
+// Group / add
+$s["add_group_title"]= "Añadir grupo";
+$s["group_name"] = "Nombre del grupo";
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 $s["group_name_help"] = "Seleccione un nombre para el grupo";
 $s["select_users"] = "Usuarios del grupo";
 $s["select_users_help"] = "Seleccione los miembros del grupo";
@@ -400,7 +421,11 @@ $s["requests_types"]["standing_order_payment_confirmation"]="Confirmación Domic
 $s["requests_status"]["in_process"]="En Proceso";
 $s["requests_status"]["ended"]="Finalizado";
 
+<<<<<<< HEAD
 $s["requests_status_help"]["in_process"]["app_creation"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando en la creación de la aplicación. Recuerde que el proceso de creación de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
+=======
+$s["requests_status_help"]["in_process"]["app_creation"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando en la creación de la aplicación. Recuerde que el proceso de creación de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 $s["requests_status_help"]["ended"]["app_creation"]="La aplicación ya ha sido actualizada";
 
 $s["requests_status_help"]["in_process"]["app_update"]="Su solicitud ha sido enviada correctamente, nuestro equipo ya está trabajando para poder solucionarla y realizar los cambios solicitados. Recuerde que los procesos de actualización de aplicaciones puede tardar varios días. Te enviaremos una alerta al correo electrónico una vez resuelta.";
@@ -409,13 +434,21 @@ $s["requests_status_help"]["ended"]["app_update"]="La aplicación ya ha sido act
 $s["requests_status_help"]["in_process"]["bank_transfer_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
 $s["requests_status_help"]["ended"]["bank_transfer_confirmation"]="La transferencia ha sido confirmada";
 
+<<<<<<< HEAD
 $s["requests_status_help"]["in_process"]["standing_order_payment_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
+=======
+$s["requests_status_help"]["in_process"]["standing_order_payment_confirmation"]="Tu solicitud de transferencia ha sido creada, recuerda que una vez hayas realizado la transferencia, debes envíanos el justificante de pago a payments@royappty.com.";
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 $s["requests_status_help"]["ended"]["standing_order_payment_confirmation"]="La transferencia ha sido confirmada";
 
 $s["delete_request"]="Eliminar solicitud";
 $s["delete_request_alert"]="Atención, se va a eliminar esta solicitud";
 $s["request_deleted"]="Solicitud borrada";
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 
 // My Account
 $s["details"] = "Detalles";
@@ -777,7 +810,11 @@ $error_s["ajax_error"]["title"]="Error en el Servidor";
 $error_s["ajax_error"]["content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 $error_s["post_no_path"]["title"]="Error al cargar la página";
 $error_s["post_no_path"]["content"]="En estos momentos no se puede mostrar la página. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> d820461616d9d9fb14bb2cc8058f29efcca78299
 $error_s["post_no_policy_type"]["title"]="Error al cargar la página";
 $error_s["post_no_policy_type"]["content"]="No se ha podido cargar la página de politicas. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
