@@ -309,7 +309,7 @@ $s["user_didnt_used_codes"] = "No ha validado ningún código";
 //Users / get
 $s["without_created_date"] = "Sin fecha de creación";
 $s["created_date_the"] = "Creado el ";
-$s["user_there_is_no_notes_to_show"]= "No hay notas que mostrar";
+$s["user_there_are_no_notes_to_show"]= "No hay notas que mostrar";
 
 //Groups / List
 $s["users_amount"] = "Número de Usuarios";
