@@ -183,12 +183,7 @@
 		";
 	}
 
-	if ($request["usage_limit"]=="0"){
-		$response["data"]["request-data"].=htmlentities($s["without_limit"], ENT_QUOTES, "UTF-8");
-	}else{
-		$response["data"]["request-data"].=$request["usage_limit"];
-	}
-	$response["data"]["request-data"].="</span></p>";
+
 
 	/*********************************************************
 	* DATABASE REGISTRATION
