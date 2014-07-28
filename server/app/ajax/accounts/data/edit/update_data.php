@@ -32,7 +32,7 @@
 	$page_path = "server/app/ajax/accounts/data/edit/update_data";
  	debug_log("[".$page_path."] START");
  	$response=array();
-
+	if(@issetandnotempty($_POST["lang"])){$lang=$_POST["lang"];unset($_POST["lang"]);}
 
 
  	/*********************************************************

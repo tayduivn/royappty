@@ -27,12 +27,11 @@
 	define('PATH', str_replace('\\', '/','../../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
-
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/groups/new/add_group";
 	debug_log("[".$page_path."] START");
-
 	$response=array();
+	if(@issetandnotempty($_POST["lang"])){$lang=$_POST["lang"];unset($_POST["lang"]);}
 
 	/*********************************************************
 	* DATA CHECK

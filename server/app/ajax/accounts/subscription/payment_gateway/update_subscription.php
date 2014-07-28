@@ -32,6 +32,7 @@
 	$page_path = "server/app/ajax/accounts/subscription/payment_gateway/update_subscription";
  	debug_log("[".$page_path."] START");
  	$response=array();
+	if(@issetandnotempty($_POST["lang"])){$lang=$_POST["lang"];unset($_POST["lang"]);}
 
 
 
