@@ -67,36 +67,36 @@ $s["signup_app_title_this_field_needs_4_character_minimum"] = "This field needs 
 //Campaigns - list.js
 $s["search"] = "Search";
 $s["showing_from_entry"] = "Showing from ";
-$s["to_entry"] = "to ";
-$s["_of"] = "of";
-$s["entries"] = "entries";
+$s["to_entry"] = " to ";
+$s["_of"] = " of ";
+$s["entries"] = " entries";
 $s["search_no_entry"] = "The search has not found any entry";
 $s["no_entries"] = "There are no entries"
 
 //Admin -list.js
 $s["admin_search"] = "Search";
 $s["admin_showing_from_entry"] = "Showing from ";
-$s["admin_sto_entry"] = "to ";
-$s["admin_of"] = "of";
-$s["admin_entries"] = "entries";
+$s["admin_to_entry"] = " to ";
+$s["admin_of"] = " of ";
+$s["admin_entries"] =  " entries";
 $s["admin_search_no_entry"] = "The search has not found any entry";
 $s["admin_no_entries"] = "There are no entries";
 
 //Group - list.js
 $s["group_list_search"] = "Search";
 $s["group_list_showing_from_entry"] = "Showing from ";
-$s["group_list_to_entry"] = "to ";
-$s["group_list_of"] = "of";
-$s["group_list_entries"] = "entries";
+$s["group_list_to_entry"] = " to ";
+$s["group_list_of"] = " of ";
+$s["group_list_entries"] = " entries";
 $s["group_list_search_no_entry"] = "The search has not found any entry";
 $s["group_list_no_entries"] = "There are no entries";
 
 //Group-new- group.js
 $s["group_search"] = "Search";
 $s["group_showing_from_entry"] = "Showing from ";
-$s["group_to_entry"] = "to ";
-$s["group_of"] = "of";
-$s["group_entries"] = "entries";
+$s["group_to_entry"] = " to ";
+$s["group_of"] = " of ";
+$s["group_entries"] = " entries";
 $s["group_search_no_entry"] = "The search has not found any entry";
 $s["group_no_entries"] = "There are no entries";
 $s["group_name_this_field_is_compulsory"] = "This field is compulsory";
@@ -106,9 +106,9 @@ $s["group_name_this_field_needs_4_character_minimum"] = "This field needs 4 char
 //Group -edit - group.js
 $s["group_edit_search"] = "Search";
 $s["group_edit_showing_from_entry"] = "Showing from ";
-$s["group_edit_to_entry"] = "to ";
-$s["group_edit_of"] = "of";
-$s["group_edit_entries"] = "entries";
+$s["group_edit_to_entry"] = " to ";
+$s["group_edit_of"] = " of ";
+$s["group_edit_entries"] = " entries";
 $s["group_edit_search_no_entry"] = "The search has not found any entry";
 $s["group_edit_no_entries"] = "There are no entries";
 $s["group_edit_name_this_field_is_compulsory"] = "This field is compulsory";
@@ -125,28 +125,27 @@ $s["request_no_entries"] = "There are no entries";
 
 //Request list.js
 $s["request_list_search"] = "Search";
-$s["request_list_showing_from_entry"] = "Showing from" ;
-$s["request_list_to_entry"] = " to ";
+$s["request_list_showing"] = "Showing ";
+$s["request_list_to"] = " to ";
 $s["request_list_of"] = " of ";
 $s["request_list_entries"] = " entries";
 $s["request_list_no_entries"] = "There are no entries";
-$s["request_list_search_no_entry"]= "No data available in table"
 
 //Receipt - list.js
 $s["receipt_search"] = "Search";
 $s["receipt_showing_from_entry"] = "Showing from ";
-$s["receipt_to_entry"] = "to ";
-$s["receipt_of"] = "of";
-$s["receipt_entries"] = "entries";
+$s["receipt_to_entry"] = " to ";
+$s["receipt_of"] = " of ";
+$s["receipt_entries"] = " entries";
 $s["receipt_search_no_entry"] = "The search has not found any entry";
 $s["receipt_no_entries"] = "There are no entries";
 
 //Users - list.js
 $s["users_search"] = "Search";
 $s["users_showing_from_entry"] = "Showing from ";
-$s["users_to_entry"] = "to ";
-$s["users_of"] = "of";
-$s["users_entries"] = "entries";
+$s["users_to_entry"] = " to ";
+$s["users_of"] = " of ";
+$s["users_entries"] = " entries";
 $s["users_search_no_entry"] = "The search has not found any entry";
 $s["users_no_entries"] = "There are no entries";
 
