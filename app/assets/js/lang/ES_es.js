@@ -4,12 +4,12 @@ var $s = new Array();
 $s["email_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["email_format_is_not_correct"] = "El formato de correo electr&oacute;nico no es correcto";
 $s["password_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["password_it_canot_be_longer_than_25_characters"] = "No puede exceder de 25 caracteres";
+$s["password_it_canot_be_longer_than_25_characters"] = "No puede exceder los 25 caracteres";
 $s["password_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //Account - set.js
 $s["set_password_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["set_password_it_canot_be_longer_than_25_characters"] = "No puede exceder de 25 caracteres";
+$s["set_password_it_canot_be_longer_than_25_characters"] = "No puede exceder los 25 caracteres";
 $s["set_password_this_field_needs_8_character_minimum"] = "Este campo necesita un m&iacute;nimo de 8 caracteres";
 $s["set_repeat_password_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["set_repeat_password_both_passwords_do_not_coincide"] = "Las claves no coinciden";
@@ -20,23 +20,23 @@ $s["recovery_email_format_is_not_correct"] = "El formato de correo electr&oacute
 
 //Account - signup.js
 $s["signup_name_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["signup_name_it_canot_be_longer_than_50_characters"] = "No puede exceder de 50 caracteres";
+$s["signup_name_it_canot_be_longer_than_50_characters"] = "No puede exceder los 50 caracteres";
 $s["signup_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["signup_email_this_email_is_already_registered"] = "Este correo electrónico ya está registrado";
 $s["signup_email_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_email_format_is_not_correct"] = "El formato de correo electr&oacute;nico no es correcto";
 $s["signup_password_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["signup_password_it_canot_be_longer_than_25_characters"] = "No puede exceder de 25 caracteres";
+$s["signup_password_it_canot_be_longer_than_25_characters"] = "No puede exceder los 25 caracteres";
 $s["signup_password_this_field_needs_8_character_minimum"] = "Este campo necesita un m&iacute;nimo de 8 caracteres";
 $s["signup_repeat_password_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_repeat_password_both_passwords_do_not_coincide"] = "Las claves no coinciden";
 $s["signup_it_is_necessary_to accept_privacy_policy"] = "Es necesario aceptar la política de privacidad";
 
 $s["signup_name_step2_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["signup_name_step2_it_canot_be_longer_than_75_characters"] = "No puede exceder de 75 caracteres";
+$s["signup_name_step2_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["signup_name_step2_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["signup_cif_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["signup_cif_it_canot_be_longer_than_20_characters"] = "No puede exceder de 20 caracteres";
+$s["signup_cif_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
 $s["signup_cif_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["signup_address_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_city_this_field_is_compulsory"] = "Este campo es obligatorio";
@@ -44,10 +44,10 @@ $s["signup_province_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_country_this_field_is_compulsory"]  = "Este campo es obligatorio";
 
 $s["signup_app_name_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["signup_app_name_it_canot_be_longer_than_75_characters"] = "No puede exceder de 75 caracteres";
+$s["signup_app_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["signup_app_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["signup_app_title_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["signup_app_title_it_canot_be_longer_than_20_characters"] = "No puede exceder de 20 caracteres";
+$s["signup_app_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //Campaigns - list.js
@@ -173,6 +173,11 @@ $s["admin_to upload"] = " a subir";
 $s["edit_admin_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["edit_admin_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["edit_admin_to upload"] = " a subir";
+$s["edit_admin_name_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_admin_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
+$s["edit_admin_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+
+
 
 //datatables.js
 $s["_showing"] = "Mostrando ";
