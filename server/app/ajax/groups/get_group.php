@@ -210,7 +210,7 @@
 		<div class='text-center'>
 			<i class='fa fa-file-text-o fa-4x m-b-10'></i>
 			<p>
-				".htmlentities($s["group_there_are_no_notes_to_show"], ENT_QUOTES, "UTF-8")."
+				".htmlentities($s["group_there_is_no_notes_to_show"], ENT_QUOTES, "UTF-8")."
 			</p>
 			<a class='btn btn-white' href='javascript:show_modal(\"group_notes_add\",\"\")'>".htmlentities($s["add_first_note"], ENT_QUOTES, "UTF-8")."</a>
 		</div>";
