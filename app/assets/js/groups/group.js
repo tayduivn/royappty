@@ -39,6 +39,7 @@ function delete_group_note(id_group_note){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/indb/actions.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			func:"delete",
 			table:"group_notes",
 			filter_str:filter_str,
@@ -88,6 +89,7 @@ function add_group_note(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/indb/actions.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			func:"add",
 			table:"group_notes",
 			data_str:data_str,
@@ -134,10 +136,11 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/groups/get_group.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			id_group:$GET["id_group"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+		error_handeler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -244,6 +247,7 @@ function delete_group(id_group){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/indb/actions.php",
 		data: {
+			lang: localStorage.getItem("lang"),
 			func:"delete",
 			table:"groups",
 			filter_str:filter_str
@@ -258,6 +262,7 @@ function delete_group(id_group){
 					dataType: 'json',
 					url: $SERVER_PATH+"server/app/ajax/indb/actions.php",
 					data: {
+						lang: localStorage.getItem("lang"),
 						func:"delete",
 						table:"user_groups",
 						filter_str:filter_str
@@ -272,6 +277,7 @@ function delete_group(id_group){
 								dataType: 'json',
 								url: $SERVER_PATH+"server/app/ajax/indb/actions.php",
 								data: {
+									lang: localStorage.getItem("lang"),
 									func:"delete",
 									table:"group_notes",
 									filter_str:filter_str

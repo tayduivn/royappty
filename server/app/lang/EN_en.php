@@ -314,7 +314,7 @@ $s["group_deleted"] = "Group deleted";
 
 // Group / Get
 $s["edit_group"] = "Edit group";
-$s["group_there_is_no_notes_to_show"] = "There are no notes to show";
+$s["group_there_are_no_notes_to_show"] = "There are no notes to show";
 
 // Group / add
 $s["add_group_title"] = "Add group";
