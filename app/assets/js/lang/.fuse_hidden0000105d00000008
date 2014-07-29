@@ -23,11 +23,6 @@ $s["data_delete_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["data_delete_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["data_delete_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
-//Account - edit - data.js
-$s["data_edit_name_this_field_is_compulsory"] = "Este campo es obligatorio";
-$s["data_edit_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
-$s["data_edit_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
-
 //Account - signup.js
 $s["signup_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_name_it_canot_be_longer_than_50_characters"] = "No puede exceder los 50 caracteres";
