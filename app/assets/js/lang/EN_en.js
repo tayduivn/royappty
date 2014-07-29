@@ -65,6 +65,11 @@ $s["edit_subscription_name_this_field_is_compulsory"] = "This field is compulsor
 $s["edit_subscription_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["edit_subscription_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
+//Account - payment_gateway.js
+$s["payment_gateway_name_this_field_is_compulsory"] = "This field is compulsory";
+$s["payment_gateway_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
+$s["payment_gateway_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+
 //Campaigns - list.js
 $s["search"] = "Search";
 $s["showing_from_entry"] = "Showing from ";
