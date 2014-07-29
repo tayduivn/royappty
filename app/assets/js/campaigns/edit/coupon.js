@@ -160,20 +160,11 @@ $(document).ready(function() {
 	});
 	$("#form-step4").validate({
 		messages:{
-			name:{
-				required: $s["edit_coupon_name_this_field_is_compulsory"],
-				maxlength: $s["edit_coupon_name_it_canot_be_longer_than_75_characters"],
-				minlength: $s["edit_coupon_name_this_field_needs_4_character_minimum"]
-			}
 		},
 		rules:{
-			name:{
-		  		required:true,
-			  	maxlength: 75,
-			  	minlength: 4
-		  	}
 		},
 		submitHandler:function(form){
+			$('#form-end #coupons_number').val($('#form-step4 #coupons_number').val());
 			$('#form-end #usage_limit').val($('#form-step4 #usage_limit').val());
 			$('#form-end #cost').val($('#form-step4 #cost').val());
 			$('#form-end #profit').val($('#form-step4 #profit').val());
@@ -194,6 +185,7 @@ $(document).ready(function() {
 					"campaign_image_path":$('#form-end #campaign_image_path').val(),
 					"content":$('#form-end #content').val(),
 					"button_title":$('#form-end #button_title').val(),
+					"coupons_number":$('#form-end #coupons_number').val(),
 					"usage_limit":$('#form-end #usage_limit').val(),
 					"cost":$('#form-end #cost').val(),
 					"profit":$('#form-end #profit').val(),

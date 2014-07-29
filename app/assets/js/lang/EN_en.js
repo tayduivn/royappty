@@ -18,11 +18,6 @@ $s["set_repeat_password_both_passwords_do_not_coincide"] = "Both passwords do no
 $s["recovery_email_this_field_is_compulsory"] = "This field is compulsory";
 $s["recovery_email_format_is_not_correct"] = "Email format is not correct";
 
-//Account - delete - data.js
-$s["data_delete_name_this_field_is_compulsory"] = "This field is compulsory";
-$s["data_delete_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
-$s["data_delete_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
-
 //Account - edit - data.js
 $s["data_edit_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["data_edit_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
@@ -59,16 +54,6 @@ $s["signup_app_name_this_field_needs_4_character_minimum"] = "This field needs 4
 $s["signup_app_title_this_field_is_compulsory"] = "This field is compulsory";
 $s["signup_app_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
-
-//Account - edit - subscription.js
-$s["edit_subscription_name_this_field_is_compulsory"] = "This field is compulsory";
-$s["edit_subscription_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
-$s["edit_subscription_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
-
-//Account - payment_gateway.js
-$s["payment_gateway_name_this_field_is_compulsory"] = "This field is compulsory";
-$s["payment_gateway_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
-$s["payment_gateway_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
 //Campaigns - list.js
 $s["search"] = "Search";

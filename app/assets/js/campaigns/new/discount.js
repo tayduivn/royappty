@@ -130,18 +130,8 @@ $(document).ready(function() {
 	});
 	$("#form-step4").validate({
 		messages:{
-			name:{
-			required: $s["discount_name_this_field_is_compulsory"],
-			maxlength: $s["discount_name_it_canot_be_longer_than_75_characters"],
-			minlength: $s["discount_name_this_field_needs_4_character_minimum"]
-		}
 		},
 		rules:{
-			name:{
-		  		required:true,
-			  	maxlength: 75,
-			  	minlength: 4
-		  	}
 		},
 		submitHandler:function(form){
 			$('#form-end #usage_limit').val($('#form-step4 #usage_limit').val());
