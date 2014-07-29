@@ -196,6 +196,14 @@ $s["edit_coupon_to upload"] = " to upload";
 $s["edit_coupon_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_coupon_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["edit_coupon_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_coupon_description_this_field_is_compulsory"] = "This field is compulsory";
+$s["edit_coupon_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_coupon_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["edit_coupon_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["edit_coupon_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_coupon_button_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["edit_coupon_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["edit_coupon_button_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
 //app - edit - app.js
 $s["edit_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";

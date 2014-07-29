@@ -196,6 +196,14 @@ $s["edit_coupon_to upload"] = " a subir";
 $s["edit_coupon_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["edit_coupon_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["edit_coupon_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_coupon_description_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_coupon_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_coupon_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_coupon_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["edit_coupon_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_coupon_button_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_coupon_button_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["edit_coupon_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //app - edit - app.js
 $s["edit_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
