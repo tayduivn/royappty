@@ -92,14 +92,22 @@ $(document).ready(function() {
 			required: $s["coupon_name_this_field_is_compulsory"],
 			maxlength: $s["coupon_name_it_canot_be_longer_than_75_characters"],
 			minlength: $s["coupon_name_this_field_needs_4_character_minimum"]
-		}
+		},
+			description:{
+				required: $s["coupon_description_this_field_is_compulsory"],
+				minlength: $s["coupon_description_this_field_needs_4_character_minimum"]
+			}
 		},
 		rules:{
 			name:{
 		  		required:true,
 			  	maxlength: 75,
 			  	minlength: 4
-		  	}
+		  	},
+				description:{
+						required:true,
+						minlength: 4
+					}
 		},
 		submitHandler:function(form){
 			$('#form-end #name').val($('#form-step1 #name').val());
@@ -118,8 +126,28 @@ $(document).ready(function() {
 	});
 	$("#form-step3").validate({
 		messages:{
+			title:{
+				required: $s["coupon_title_this_field_is_compulsory"],
+				maxlength: $s["coupon_title_it_canot_be_longer_than_20_characters"],
+				minlength: $s["coupon_title_this_field_needs_4_character_minimum"]
+			},
+			button_title:{
+				required: $s["coupon_button_title_this_field_is_compulsory"],
+				maxlength: $s["coupon_button_title_it_canot_be_longer_than_20_characters"],
+				minlength: $s["coupon_button_title_this_field_needs_4_character_minimum"]
+			}
 		},
 		rules:{
+			title:{
+					required:true,
+					maxlength: 20,
+					minlength: 4
+				},
+				button_title:{
+					required:true,
+					maxlength: 20,
+					minlength: 4
+				}
 		},
 		submitHandler:function(form){
 			$('#form-end #title').val($('#form-step3 #title').val());
@@ -130,8 +158,14 @@ $(document).ready(function() {
 	});
 	$("#form-step4").validate({
 		messages:{
+			coupons_number:{
+				required: $s["coupon_number_this_field_is_compulsory"]
+			}
 		},
 		rules:{
+			coupons_number:{
+				required:true
+			}
 		},
 		submitHandler:function(form){
 			$('#form-end #coupons_number').val($('#form-step4 #coupons_number').val());
