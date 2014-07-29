@@ -18,6 +18,11 @@ $s["set_repeat_password_both_passwords_do_not_coincide"] = "Las claves no coinci
 $s["recovery_email_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["recovery_email_format_is_not_correct"] = "El formato de correo electr&oacute;nico no es correcto";
 
+//Account - delete - data.js
+$s["data_delete_name_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["data_delete_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
+$s["data_delete_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+
 //Account - signup.js
 $s["signup_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_name_it_canot_be_longer_than_50_characters"] = "No puede exceder los 50 caracteres";
