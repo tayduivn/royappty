@@ -131,11 +131,12 @@ $s["request_no_entries"] = "There are no entries";
 
 //Request list.js
 $s["request_list_search"] = "Search";
-$s["request_list_showing"] = "Showing ";
-$s["request_list_to"] = " to ";
+$s["request_list_showing_from_entry"] = "Showing from" ;
+$s["request_list_to_entry"] = " to ";
 $s["request_list_of"] = " of ";
 $s["request_list_entries"] = " entries";
 $s["request_list_no_entries"] = "There are no entries";
+$s["request_list_search_no_entry"]= "No data available in table"
 
 //Receipt - list.js
 $s["receipt_search"] = "Search";

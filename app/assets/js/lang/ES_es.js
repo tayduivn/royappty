@@ -123,19 +123,20 @@ $s["group_edit_name_this_field_needs_4_character_minimum"] = "Este campo necesit
 
 //Request - request.js
 $s["request_search"] = "Buscar";
-$s["request_showing"] = "Mostrando";
-$s["request_to"] = "hasta";
+$s["request_showing"] = "Mostrando ";
+$s["request_to"] = " hasta ";
 $s["request_of"] = " de ";
 $s["request_entries"] = " entradas";
 $s["request_no_entries"] = "No hay entradas";
 
 //Request - list.js
 $s["request_list_search"] = "Buscar";
-$s["request_list_showing"] = "Mostrando";
-$s["request_list_to"] = "hasta";
+$s["request_list_showing_from_entry"] = "Mostrando desde ";
+$s["request_list_to_entry"] = " hasta ";
 $s["request_list_of"] = " de ";
 $s["request_list_entries"] = " entradas";
 $s["request_list_no_entries"] = "No hay entradas";
+$s["request_list_search_no_entry"]= "No hay datos disponibles en la tabla";
 
 //Receipt list.js
 $s["receipt_search"] = "Buscar";
