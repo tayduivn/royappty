@@ -49,7 +49,8 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 				dataType: 'json',
 				url: $SERVER_PATH+"server/app/ajax/general/get_menu.php",
 				data: {
-					path:$PATH
+					path:$PATH,
+					lang: localStorage.getItem("lang")
 				},
 				error: function(data, textStatus, jqXHR) {
 					error_handeler("ajax_error");
