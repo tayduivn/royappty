@@ -153,6 +153,9 @@ $s["coupon_to upload"] = " a subir";
 $s["edit_discount_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["edit_discount_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["edit_discount_to upload"] = " a subir";
+$s["edit_discount_name_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_discount_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
+$s["edit_discount_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //campaign - edit- coupon.js
 $s["edit_coupon_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
