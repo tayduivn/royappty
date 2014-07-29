@@ -80,6 +80,27 @@ $(document).ready(function() {
 				required: $s["data_edit_name_this_field_is_compulsory"],
 				maxlength: $s["data_edit_name_it_canot_be_longer_than_75_characters"],
 				minlength: $s["data_edit_name_this_field_needs_4_character_minimum"]
+			},
+			cif:{
+					required: $s["data_edit_cif_this_field_is_compulsory"],
+					maxlength: $s["data_edit_cif_it_canot_be_longer_than_20_characters"],
+					minlength: $s["data_edit_this_field_needs_4_character_minimum"]
+			},
+			contact_email:{
+				required:$s["data_edit_email_this_field_is_compulsory"],
+				email: $s["data_edit_email_format_is_not_correct"]
+			},
+			contact_address:{
+				required: $s["data_edit_address_this_field_is_compulsory"]
+			},
+			contact_postal_code:{
+				required: $s["data_edit_post_code_this_field_is_compulsory"]
+			},
+			contact_city:{
+				required: $s["data_edit_city_this_field_is_compulsory"]
+			},
+			contact_country:{
+				required:$s["data_edit_country_this_field_is_compulsory"]
 			}
 		},
 		rules:{
@@ -87,7 +108,28 @@ $(document).ready(function() {
 		  		required:true,
 			  	maxlength: 75,
 			  	minlength: 4
-		  	}
+		  	},
+			contact_email:{
+					required:true,
+					email: true
+				},
+			cif:{
+				required:true,
+				maxlength: 20,
+					minlength: 4
+			},
+			contact_address:{
+				required:true
+			},
+			contact_postal_code:{
+				required:true
+			},
+			contact_city:{
+				required:true
+			},
+			contact_country:{
+				required:true
+			}
 		},
 		submitHandler:function(form){
 			$('#form-end #name').val($('#form-step1 #name').val());

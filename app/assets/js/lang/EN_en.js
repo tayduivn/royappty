@@ -22,6 +22,15 @@ $s["recovery_email_format_is_not_correct"] = "Email format is not correct";
 $s["data_edit_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["data_edit_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["data_edit_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["data_edit_cif_this_field_is_compulsory"] = "This field is compulsory";
+$s["data_edit_cif_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["data_edit_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["data_edit_email_this_field_is_compulsory"] = "This field is compulsory";
+$s["data_edit_email_format_is_not_correct"] = "This field is compulsory";
+$s["data_edit_address_this_field_is_compulsory"] = "This field is compulsory";
+$s["data_edit_post_code_this_field_is_compulsory"] = "This field is compulsory";
+$s["data_edit_city_this_field_is_compulsory"] = "This field is compulsory";
+$s["data_edit_country_this_field_is_compulsory"] = "This field is compulsory";
 
 //Account - signup.js
 $s["signup_name_this_field_is_compulsory"] = "This field is compulsory";
@@ -158,6 +167,14 @@ $s["discount_to upload"] = " to upload";
 $s["discount_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["discount_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["discount_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["discount_description_this_field_is_compulsory"] = "This field is compulsory";
+$s["discount_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["discount_title_this_field_is_compulsory"] = "This field is compulsory";;
+$s["discount_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["discount_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["discount_button_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["discount_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["discount_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //campaigns - new - coupon.js
 $s["coupon_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
@@ -166,6 +183,15 @@ $s["coupon_to upload"] = " to upload";
 $s["coupon_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["coupon_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["coupon_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["coupon_description_this_field_is_compulsory"] = "This field is compulsory";
+$s["coupon_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["coupon_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["coupon_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["coupon_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["coupon_button_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["coupon_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["coupon_button_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["coupon_number_this_field_is_compulsory"] = "This field is compulsory";
 
 // campaign - edit - discount.js
 $s["edit_discount_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
@@ -174,6 +200,14 @@ $s["edit_discount_to upload"] = " to upload";
 $s["edit_discount_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_discount_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["edit_discount_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_discount_description_this_field_is_compulsory"] = "This field is compulsory";
+$s["edit_discount_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_discount_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["edit_discount_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["edit_discount_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_discount_button_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["edit_discount_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["edit_discount_button_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
 //campaign - edit- coupon.js
 $s["edit_coupon_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
@@ -190,6 +224,7 @@ $s["edit_coupon_title_this_field_needs_4_character_minimum"] = "This field needs
 $s["edit_coupon_button_title_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_coupon_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
 $s["edit_coupon_button_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_coupon_number_this_field_is_compulsory"] = "This field is compulsory";
 
 //app - edit - app.js
 $s["edit_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
@@ -198,6 +233,8 @@ $s["edit_to upload"] = " to upload";
 $s["edit_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["edit_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_description_this_field_is_compulsory"] = "This field is compulsory";
+$s["edit_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
 //admins - new - admin.js
 $s["admin_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";

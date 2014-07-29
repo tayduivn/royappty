@@ -92,14 +92,22 @@ $(document).ready(function() {
 				required: $s["edit_name_this_field_is_compulsory"],
 				maxlength: $s["edit_name_it_canot_be_longer_than_75_characters"],
 				minlength: $s["edit_name_this_field_needs_4_character_minimum"]
-			}
+			},
+			description:{
+				required: $s["edit_description_this_field_is_compulsory"],
+				minlength: $s["edit_description_this_field_needs_4_character_minimum"]
+			},
 		},
 		rules:{
 			name:{
 		  		required:true,
 			  	maxlength: 75,
 			  	minlength: 4
-		  	}
+		  },
+			description:{
+						required:true,
+						minlength: 4
+			}
 		},
 		submitHandler:function(form){
 			$('#form-end #name').val($('#form-step1 #name').val());

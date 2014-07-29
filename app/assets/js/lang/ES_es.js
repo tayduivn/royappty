@@ -22,6 +22,15 @@ $s["recovery_email_format_is_not_correct"] = "El formato de correo electr&oacute
 $s["data_edit_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["data_edit_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["data_edit_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["data_edit_cif_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["data_edit_cif_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["data_edit_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["data_edit_email_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["data_edit_email_format_is_not_correct"] = "Este campo es obligatorio";
+$s["data_edit_address_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["data_edit_post_code_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["data_edit_city_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["data_edit_country_this_field_is_compulsory"] = "Este campo es obligatorio";
 
 //Account - signup.js
 $s["signup_name_this_field_is_compulsory"] = "Este campo es obligatorio";
@@ -158,6 +167,14 @@ $s["discount_to upload"] = " a subir";
 $s["discount_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["discount_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["discount_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["discount_description_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["discount_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["discount_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["discount_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["discount_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["discount_button_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["discount_button_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["discount_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //campaigns - new - coupon.js
 $s["coupon_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
@@ -166,6 +183,15 @@ $s["coupon_to upload"] = " a subir";
 $s["coupon_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["coupon_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["coupon_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["coupon_description_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["coupon_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["coupon_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["coupon_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["coupon_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["coupon_button_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["coupon_button_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["coupon_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["coupon_number_this_field_is_compulsory"] = "Este campo es obligatorio";
 
 // campaign - edit - discount.js
 $s["edit_discount_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
@@ -174,6 +200,14 @@ $s["edit_discount_to upload"] = " a subir";
 $s["edit_discount_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["edit_discount_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["edit_discount_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_discount_description_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_discount_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_discount_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_discount_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["edit_discount_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_discount_button_title_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_discount_button_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
+$s["edit_discount_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //campaign - edit- coupon.js
 $s["edit_coupon_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
@@ -190,6 +224,7 @@ $s["edit_coupon_title_this_field_needs_4_character_minimum"] = "Este campo neces
 $s["edit_coupon_button_title_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["edit_coupon_button_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
 $s["edit_coupon_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_coupon_number_this_field_is_compulsory"] = "Este campo es obligatorio";
 
 //app - edit - app.js
 $s["edit_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
@@ -206,6 +241,8 @@ $s["admin_to upload"] = " a subir";
 $s["admin_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["admin_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["admin_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_description_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //admins - edit - admin.js
 $s["edit_admin_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";

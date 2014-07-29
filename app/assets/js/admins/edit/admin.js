@@ -83,10 +83,10 @@ $(document).ready(function() {
 	$("#form-step1").validate({
 		messages:{
 			name:{
-			required: $s["edit_admin_name_this_field_is_compulsory"],
-			maxlength: $s["edit_admin_name_it_canot_be_longer_than_75_characters"],
-			minlength: $s["edit_admin_name_this_field_needs_4_character_minimum"]
-		}
+				required: $s["edit_admin_name_this_field_is_compulsory"],
+				maxlength: $s["edit_admin_name_it_canot_be_longer_than_75_characters"],
+				minlength: $s["edit_admin_name_this_field_needs_4_character_minimum"]
+			}
 		},
 		rules:{
 			name:{
