@@ -88,6 +88,11 @@ $(document).ready(function() {
 
 	$("#form-step1").validate({
 		messages:{
+			name:{
+			required: $s["coupon_name_this_field_is_compulsory"],
+			maxlength: $s["coupon_name_it_canot_be_longer_than_75_characters"],
+			minlength: $s["coupon_name_this_field_needs_4_character_minimum"]
+		}
 		},
 		rules:{
 			name:{
@@ -125,6 +130,11 @@ $(document).ready(function() {
 	});
 	$("#form-step4").validate({
 		messages:{
+			name:{
+			required: $s["coupon_name_this_field_is_compulsory"],
+			maxlength: $s["coupon_name_it_canot_be_longer_than_75_characters"],
+			minlength: $s["coupon_name_this_field_needs_4_character_minimum"]
+		}
 		},
 		rules:{
 			name:{

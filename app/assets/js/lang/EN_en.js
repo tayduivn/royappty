@@ -148,6 +148,9 @@ $s["discount_to upload"] = " to upload";
 $s["coupon_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
 $s["coupon_click_or_drag_image_here"] = "Click or drag the image here";
 $s["coupon_to upload"] = " to upload";
+$s["coupon_name_this_field_is_compulsory"] = "This field is compulsory";
+$s["coupon_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
+$s["coupon_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
 // campaign - edit - discount.js
 $s["edit_discount_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
