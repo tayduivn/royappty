@@ -166,6 +166,14 @@ $s["discount_to upload"] = " to upload";
 $s["discount_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["discount_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["discount_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["discount_description_this_field_is_compulsory"] = "This field is compulsory";
+$s["discount_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["discount_title_this_field_is_compulsory"] = "This field is compulsory";;
+$s["discount_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["discount_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["discount_button_title_this_field_is_compulsory"] = "This field is compulsory";
+$s["discount_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
+$s["discount_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //campaigns - new - coupon.js
 $s["coupon_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
