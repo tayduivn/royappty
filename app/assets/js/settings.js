@@ -31,10 +31,10 @@ else{
 }
 
 if(localStorage.getItem('lang')=='es'){
-  require("../assets/js/lang/ES_es.js");
+  require($PATH+"assets/js/lang/ES_es.js");
 }
 else{
-  require("../assets/js/lang/EN_en.js");
+  require($PATH+"assets/js/lang/EN_en.js");
 }
 
 function changelang(lang){
