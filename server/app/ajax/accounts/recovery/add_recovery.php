@@ -46,7 +46,7 @@
   if(!isInBD($table,$filter)){
     $response["result"]=false;
    debug_log("[".$page_path."] ERROR Recovery error {email:'".$_POST["email"]."'}");
-   $response["error_str"]=$error["recovery_not_email"];
+   $response["error_str"]=$error_s["recovery_not_email"];
    echo json_encode($response);
     die();
   }
