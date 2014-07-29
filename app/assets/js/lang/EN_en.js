@@ -85,6 +85,9 @@ $s["group_of"] = "of";
 $s["group_entries"] = "entries";
 $s["group_search_no_entry"] = "The search has not found any entry";
 $s["group_no_entries"] = "There are no entries";
+$s["group_name_this_field_is_compulsory"] = "This field is compulsory";
+$s["group_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
+$s["group_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
 //Group -edit - group.js
 $s["group_edit_search"] = "Search";

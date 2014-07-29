@@ -85,6 +85,9 @@ $s["group_of"] = " de ";
 $s["group_entries"] = " entradas";
 $s["group_search_no_entry"] = "La b&uacute;squeda no ha devuelto ninguna entrada";
 $s["group_no_entries"] = "No hay entradas";
+$s["group_name_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["group_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
+$s["group_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //Group -edit - group.js
 $s["group_edit_search"] = "Buscar";

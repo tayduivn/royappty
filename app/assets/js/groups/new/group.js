@@ -114,6 +114,11 @@ $(document).ready(function() {
 
 	$("#form-step1").validate({
 		messages:{
+			name:{
+			required: $s["group_name_this_field_is_compulsory"],
+			maxlength: $s["group_name_it_canot_be_longer_than_75_characters"],
+			minlength: $s["group_name_this_field_needs_4_character_minimum"]
+		}
 		},
 		rules:{
 			name:{

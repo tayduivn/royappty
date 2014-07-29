@@ -118,7 +118,7 @@ $(document).ready(function() {
 			name:{
 			required: $s["group_edit_name_this_field_is_compulsory"],
 			maxlength: $s["group_edit_name_it_canot_be_longer_than_75_characters"],
-			minlength: $s["group_edit__name_this_field_needs_4_character_minimum"]
+			minlength: $s["group_edit_name_this_field_needs_4_character_minimum"]
 		}
 		},
 		rules:{
