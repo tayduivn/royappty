@@ -208,11 +208,11 @@
 					<span class='help'>".htmlentities($s["admin_status_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
 						<select id='active' name='active'>
-							<option value='0'";
-	if($admin["active"]==0){
+							<option value='2'";
+	if($admin["active"]==2){
 		$response["data"]["new-admin-step-1"].="selected";
 	}
-	$response["data"]["new-admin-step-1"].=" >".$s["admins_status_active"][0]."</option>
+	$response["data"]["new-admin-step-1"].=" >".$s["admins_status_active"][2]."</option>
 							<option value='1' ";
 	if($admin["active"]==1){
 		$response["data"]["new-admin-step-1"].="selected";

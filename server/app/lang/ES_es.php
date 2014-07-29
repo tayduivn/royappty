@@ -266,7 +266,7 @@ $s["admin_can_manage_brand"] = "Permitir acceso a la administración de la cuent
 $s["admin_status"] = "Estado del administrador";
 $s["admin_status_help"] = "Un administrador inactivo no podrá realizar ninguna operación";
 
-$s["admins_status_active"][0]="Inactivo";
+$s["admins_status_active"][2]="Inactivo";
 $s["admins_status_active"][1]="Activo";
 
 $s["admin_email"] = "Correo Electrónico";

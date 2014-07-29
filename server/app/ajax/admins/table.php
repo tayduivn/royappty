@@ -99,14 +99,14 @@
  			}
 
  			$table_field="<div class='m-b-5'><a href='".$_GET["PATH"]."admin/?id_admin=".$admin["id_admin"]."' class='";
- 			if($admin["active"]==0){
+ 			if($admin["active"]==2){
 	 			$table_field.="text-muted";
 	 		}
  			$table_field.="'>".$admin["name"]."</a> ";
  			if($admin["brand_admin"]==1){
  				$table_field.="<span class='text-muted'>( ".htmlentities($s["brand_admin"], ENT_QUOTES, "UTF-8")." )</span>";
  			}
- 			if($admin["active"]==0){
+ 			if($admin["active"]==2){
  				$table_field.="<span class='text-muted'>( ".htmlentities($s["inactive_admin"], ENT_QUOTES, "UTF-8")." )</span>";
  			}
 

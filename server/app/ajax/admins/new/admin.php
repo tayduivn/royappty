@@ -139,7 +139,7 @@
 					<span class='help'>".htmlentities($s["admin_status_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
 						<select id='active' name='active'>
-							<option value='0'>".$s["admins_status_active"][0]."</option>
+							<option value='2'>".$s["admins_status_active"][2]."</option>
 							<option value='1' selected>".$s["admins_status_active"][1]."</option>
 						</select>
 					</div>

@@ -148,7 +148,7 @@ $(document).ready(function() {
 					"id_campaign":$GET["id_campaign"],
 					"name":$('#form-end #name').val(),
 					"description":$('#form-end #description').val(),
-					"type":2,
+					"type":1,
 					"status":1,
 					"campaign_icon_path":$('#form-end #campaign_icon_path').val(),
 					"title":$('#form-end #title').val(),

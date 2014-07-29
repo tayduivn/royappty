@@ -259,7 +259,7 @@ $s["admin_can_manage_brand"] = "Let access to Royappty account management.";
 $s["admin_status"] = "Administrator status.";
 $s["admin_status_help"] = "An inactive administrator cannot carry out any operation.";
 
-$s["admins_status_active"][0]="Inactive";
+$s["admins_status_active"][2]="Inactive";
 $s["admins_status_active"][1]="Active";
 
 $s["admin_email"] = "Email";
