@@ -49,7 +49,8 @@ $(document).ready(function() {
 			"sSearch": $s["request_list_search"],
 			"sInfo": $s["request_list_showing_from_entry"]+"<b>_START_"+$s["request_list_to_entry"]+"_END_</b>"+$s["request_list_of"] +"_TOTAL_"+ $s["request_list_entries"],
 			"sInfoEmpty": $s["request_list_no_entries"],
-			"sZeroRecords": $s["request_list_search_no_entry"]
+			"sZeroRecords": $s["request_list_search_no_entry"],
+			"sEmptyTable": $s["request_list_search_no_entry"]
 			},
 		"sAjaxSource":$SERVER_PATH+"server/app/ajax/requests/table.php?status="+$GET["status"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,
