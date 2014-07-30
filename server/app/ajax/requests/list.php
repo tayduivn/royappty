@@ -61,10 +61,14 @@
 
  	for($i=0;$i<=3;$i++){
 	 	$tab_active[$i]="";
-	 	if($_POST["status"]==$i){
-		 	$tab_active[$i]="class='active'";
-	 	}
  	}
+	if($_POST["status"]=='0' ){
+		$tab_active[0]="class='active'";
+	}elseif($_POST["status"]=='in_process' ){
+		$tab_active[1]="class='active'";
+	}elseif ($_POST["status"]=='ended' ){
+		$tab_active[2]="class='active'";
+	}
 
  	$response["data"]["tabs"]="
         	<li ".$tab_active[0]."><a href='?status=0'>".htmlentities($s["all_requests"], ENT_QUOTES, "UTF-8")."</a></li>
