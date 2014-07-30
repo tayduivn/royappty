@@ -817,10 +817,19 @@ $error_step_s["post_no_name"]= "No se ha enviado correctamente el campo Nombre";
 //Error campaigns/edit/update_coupon campaigns/new/add_coupon
 $error_step_s["post_no_coupon_id_campaign"]=  "No se ha enviado correctamente el Identificador de la Tarjeta de cupones";
 $error_step_s["post_no_coupon_name"]= "No se ha enviado correctamente el campo Nombre";
+$error_step_s["post_no_coupon_description"]= "No se ha enviado correctamente el campo Descripcion";
+$error_step_s["post_no_coupon_title"]= "No se ha enviado correctamente el campo Título";
+$error_step_s["post_no_coupon_button_title"]= "No se ha enviado correctamente el campo Texto del botón";
+$error_step_s["post_no_coupon_coupons_number"]= "No se ha enviado correctamente el campo Número de cupones que tiene la campaña";
 
 //Error campaigns/edit/update_discount campaigns/new/add_discount
-$error_step_s["post_no_coupon_id_campaign"]=  "No se ha enviado correctamente el Identificador de la Promoción directa";
-$error_step_s["post_no_coupon_name"]= "No se ha enviado correctamente el campo Nombre";
+$error_step_s["post_no_discount_id_campaign"]=  "No se ha enviado correctamente el Identificador de la Promoción directa";
+$error_step_s["post_no_discount_name"]= "No se ha enviado correctamente el campo Nombre";
+$error_step_s["post_no_discount_description"]= "No se ha enviado correctamente el campo Descripcion";
+$error_step_s["post_no_discount_title"]= "No se ha enviado correctamente el campo Título";
+$error_step_s["post_no_discount_button_title"]= "No se ha enviado correctamente el campo Texto del botón";
+
+
 
 //Error apps/edit/update_app
 $error_step_s["post_no_app_name"]= "No se ha enviado correctamente el campo Nombre";

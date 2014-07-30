@@ -17,6 +17,9 @@
 	* admin_not_valid
 	* admin_inactive
 	*	post_no_discount_name
+	*	post_no_discount_description
+	*	post_no_discount_title
+	*	post_no_discount_button_title
 	*
 	*
 	*********************************************************/
@@ -55,7 +58,30 @@
 		echo json_encode($response);
 		die();
 	}
-
+	if(!@issetandnotempty($_POST["description"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing discount_description");
+		$response["error_code"]="post_no_discount_description";
+		$response["error_code_str"]= $error_step_s["post_no_discount_description"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["title"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing discount_title");
+		$response["error_code"]="post_no_discount_title";
+		$response["error_code_str"]= $error_step_s["post_no_discount_title"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["button_title"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing discount_button_title");
+		$response["error_code"]="post_no_discount_button_title";
+		$response["error_code_str"]= $error_step_s["post_no_discount_button_title"];
+		echo json_encode($response);
+		die();
+	}
 
 	/*********************************************************
 	* AJAX OPERATIONS

@@ -801,10 +801,18 @@ $error_step_s["post_no_name"] = "The Name field has not been sent correctly";
 //Error campaigns/edit/update_coupon campaigns/new/add_coupon
 $error_step_s["post_no_coupon_id_campaign"] =  "The Coupan Card Identifier field has not been sent correctly";
 $error_step_s["post_no_coupon_name"]= "The Name field has not been sent correctly";
+$error_step_s["post_no_coupon_description"]= "";
+$error_step_s["post_no_coupon_title"]= "";
+$error_step_s["post_no_coupon_button_title"]= "";
+$error_step_s["post_no_coupon_coupons_number"]= "";
+
 
 //Error campaigns/edit/update_discount campaigns/new/add_discount
-$error_step_s["post_no_coupon_id_campaign"] = "The Discount Promotion Identifier field has not been sent correctly";
-$error_step_s["post_no_coupon_name"] = "The Name field has not been sent correctly";
+$error_step_s["post_no_discount_id_campaign"] = "The Discount Promotion Identifier field has not been sent correctly";
+$error_step_s["post_no_discount_name"] = "The Name field has not been sent correctly";
+$error_step_s["post_no_discount_description"]= "";
+$error_step_s["post_no_discount_title"]= "";
+$error_step_s["post_no_discount_button_title"]= "";
 
 //Error apps/edit/update_app
 $error_step_s["post_no_app_name"] = "The Name field has not been sent correctly";
