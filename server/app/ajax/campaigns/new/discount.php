@@ -130,7 +130,7 @@
 							<label class='form-label'>".htmlentities($new_discount_s["promo_title"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_discount_s["promo_title_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<input type='text' class='form-control ' id='title' placeholder='".htmlentities($new_discount_s["promo_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onkeyup=\"$('#title-preview').html($('#title').val());\"/>
+								<input type='text' class='form-control' id='title' name='title' placeholder='".htmlentities($new_discount_s["promo_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onkeyup=\"$('#title-preview').html($('#title').val());\"/>
 							</div>
 						</div>
 						<div class='row'>
@@ -148,14 +148,14 @@
 							<label class='form-label'>".htmlentities($new_discount_s["promo_content"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_discount_s["promo_content_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<textarea class='form-control' rows='6' id='content' onkeyup=\"$('#content-preview').html($('#content').val());\" onkeyup=\"$('#content-preview').html($('#content').val());\"></textarea>
+								<textarea class='form-control' rows='6' id='content' name='content' onkeyup=\"$('#content-preview').html($('#content').val());\" onkeyup=\"$('#content-preview').html($('#content').val());\"></textarea>
 							</div>
 						</div>
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($new_discount_s["button_title"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_discount_s["button_title_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<input type='text' class='form-control ' id='button_title' placeholder='".htmlentities($new_discount_s["button_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onkeyup=\"$('#button-preview').html($('#button_title').val());\"/>
+								<input type='text' class='form-control ' id='button_title' name='button_title' placeholder='".htmlentities($new_discount_s["button_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onkeyup=\"$('#button-preview').html($('#button_title').val());\"/>
 							</div>
 						</div>
 					</div>
@@ -198,7 +198,7 @@
 						<label class='form-label'>".htmlentities($new_discount_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($new_discount_s["promo_usage_limit_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='text' class='form-control ' id='usage_limit' placeholder='".htmlentities($new_discount_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."'/>
+							<input type='text' class='form-control ' id='usage_limit' name='usage_limit' placeholder='".htmlentities($new_discount_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."'/>
 						</div>
 					</div>
 				</div>

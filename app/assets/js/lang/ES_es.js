@@ -126,7 +126,7 @@ $s["request_no_entries"] = "No hay entradas";
 //Request - list.js
 $s["request_list_search"] = "Buscar";
 $s["request_list_showing_from_entry"] = "Mostrando desde ";
-$s["request_list_to_entry"] = " hasta ";
+$s["request_list_to"] = " hasta ";
 $s["request_list_of"] = " de ";
 $s["request_list_entries"] = " entradas";
 $s["request_list_no_entries"] = "No hay entradas";
