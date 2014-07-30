@@ -281,10 +281,10 @@ $s["admin_success_title"] = "Administrador añadido";
 $s["admin_success_subtitle"] = "Has creado una nuevo administrador";
 
 //Admin / Get
-$s["admins_active"][0]="Inactivo";
+$s["admins_active"][2]="Inactivo";
 $s["admins_active"][1]="Activo";
 
-$s["admins_active_icon"][0]="<i class='fa fa-times'></i>";
+$s["admins_active_icon"][2]="<i class='fa fa-times'></i>";
 $s["admins_active_icon"][1]="<i class='fa fa-check'></i>";
 $s["permissions"] = "Permisos";
 

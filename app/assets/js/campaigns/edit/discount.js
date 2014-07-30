@@ -93,7 +93,7 @@ $(document).ready(function() {
 				required: $s["edit_discount_name_this_field_is_compulsory"],
 				maxlength: $s["edit_discount_name_it_canot_be_longer_than_75_characters"],
 				minlength: $s["edit_discount_name_this_field_needs_4_character_minimum"]
-			}
+			},
 			description:{
 				required: $s["edit_discount_description_this_field_is_compulsory"],
 				minlength: $s["edit_discount_description_this_field_needs_4_character_minimum"]
@@ -104,7 +104,7 @@ $(document).ready(function() {
 		  		required:true,
 			  	maxlength: 75,
 			  	minlength: 4
-		  	}
+		  	},
 				description:{
 					required:true,
 					minlength: 4

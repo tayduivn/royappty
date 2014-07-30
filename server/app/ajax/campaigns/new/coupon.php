@@ -130,7 +130,7 @@
 							<label class='form-label'>".htmlentities($new_coupon_s["promo_title"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_coupon_s["promo_title_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<input type='text' class='form-control ' id='title' placeholder='".htmlentities($new_coupon_s["promo_title_placeholder"], ENT_QUOTES, "UTF-8")."' onkeyup=\"$('#title-preview').html($('#title').val());\"/>
+								<input type='text' class='form-control' id='title' placeholder='".htmlentities($new_coupon_s["promo_title_placeholder"], ENT_QUOTES, "UTF-8")."' onkeyup=\"$('#title-preview').html($('#title').val());\"/>
 							</div>
 						</div>
 						<div class='row'>
@@ -155,7 +155,7 @@
 							<label class='form-label'>".htmlentities($new_coupon_s["button_title"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_coupon_s["button_title_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<input type='text' class='form-control ' id='button_title' placeholder='".htmlentities($new_coupon_s["button_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onkeyup=\"$('#button-preview').html($('#button_title').val());\"/>
+								<input type='text' class='form-control' id='button_title' placeholder='".htmlentities($new_coupon_s["button_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onkeyup=\"$('#button-preview').html($('#button_title').val());\"/>
 							</div>
 						</div>
 					</div>
