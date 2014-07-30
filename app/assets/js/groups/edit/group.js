@@ -38,19 +38,20 @@ $(document).ready(function(){
 	var tableElement = $('#groups-list');
 
     tableElement.dataTable( {
-		"sDom": "<'row'<'col-md-6'><'col-md-6'f>>t<'row'<'col-md-12'p i>>",
-		 "aoColumnDefs": [
-          { 'bSortable': false, 'aTargets': [] }
-		],
-		"aaSorting": [[ 0, "asc" ]],
-		"oLanguage": {
-			"sLengthMenu": "_MENU_ ",
-		"sSearch": $s["group_edit_search"],
-		"sInfo": $s["group_edit_showing_from_entry"]+"<b>_START_"+$s["group_edit_to_entry"]+"_END_</b>"+$s["group_edit_of"] +"_TOTAL_"+ $s["group_edit_entries"],
-		"sInfoEmpty": $s["group_edit_no_entries"],
-		"sZeroRecords": $s["group_edit_search_no_entry"]
-			},
-		 bAutoWidth     : false,
+		 "sDom": "<'row'<'col-md-6'><'col-md-6'f>>t<'row'<'col-md-12'p i>>",
+			"sPaginationType": "bootstrap",
+			"aoColumnDefs": [
+						{ 'bSortable': false, 'aTargets': [] }
+			],
+			"aaSorting": [[ 0, "asc" ]],
+			"oLanguage": {
+				"sLengthMenu": "_MENU_ ",
+			"sSearch": $s["users_search"],
+			"sInfo": $s["users_showing_from_entry"]+"<b>_START_"+$s["users_to_entry"]+"_END_</b>"+$s["users_of"] +"_TOTAL_"+ $s["users_entries"],
+			"sInfoEmpty": $s["users_no_entries"],
+			"sZeroRecords": $s["users_search_no_entry"]
+				},
+		bAutoWidth     : false,
         fnPreDrawCallback: function () {
             // Initialize the responsive datatables helper once.
             if (!responsiveHelper) {

@@ -100,7 +100,7 @@
 
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($s["select_users"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["manager_options_help"], ENT_QUOTES, "UTF-8")."</span>
+					<span class='help'>".htmlentities($s["select_users_help"], ENT_QUOTES, "UTF-8")."</span>
 					<table class='table table-hover table-condensed dataTable' id='groups-list' aria-describedby='example_info'>
 	                	<thead>
 	                    	<tr class='ajax-loader-table-header'>
