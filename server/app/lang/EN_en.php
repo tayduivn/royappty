@@ -265,7 +265,7 @@ $s["admin_can_validate_codes"] = "Let this Administrator to exchange promotion c
 $s["admin_promo_password"] = "Coupon validation codes.";
 $s["admin_promo_password_help"] = "This 4 digit code will be used to validate promotions";
 $s["view_admin"] = "View Administrator";
-$s["admin_success_title"] = "Administrator added.";
+$s["admin_success_title"] = "Administrator added";
 $s["admin_success_subtitle"] = "You has created a new administrator";
 
 //Admin / Get
@@ -276,27 +276,27 @@ $s["admins_active_icon"][2]="<i class='fa fa-times'></i>";
 $s["admins_active_icon"][1]="<i class='fa fa-check'></i>";
 $s["permissions"] = "Permissions";
 
-$s["admins_can_validate_codes"] = "Validate promotions.";
+$s["admins_can_validate_codes"] = "Validate promotions";
 $s["admins_can_validate_codes_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_validate_codes_icon"][1]="<i class='fa fa-check'></i>";
 $s["admins_can_login"] = "Consult campaigns.";
 $s["admins_can_login_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_login_icon"][1]="<i class='fa fa-check'></i>";
-$s["admins_can_manage_campaigns"] = "Create, edit and delete campaigns.";
+$s["admins_can_manage_campaigns"] = "Create, edit and delete campaigns";
 $s["admins_can_manage_campaigns_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_manage_campaigns_icon"][1]="<i class='fa fa-check'></i>";
-$s["without_last_connection"] = "No operation has been carried out yet.";
+$s["without_last_connection"] = "No operation has been carried out yet";
 $s["last_connection_the"] = "Last activity on";
-$s["no_codes_validated"] = "No code has been validated.";
+$s["no_codes_validated"] = "No code has been validated";
 $s["last_validated_codes"] = "Last validated codes";
-$s["edit_admin"] = "Edit Administrator.";
-$s["admin_deleted"] = "Deleted Administrator.";
+$s["edit_admin"] = "Edit Administrator";
+$s["admin_deleted"] = "Deleted Administrator";
 
 //Users / List
-$s["user_didnt_used_codes"] = "No code has been validated.";
+$s["user_didnt_used_codes"] = "No code has been validated";
 
 //Users / get
-$s["without_created_date"] = "Without creation date.";
+$s["without_created_date"] = "Without creation date";
 $s["created_date_the"] = "Created on ";
 $s["user_there_are_no_notes_to_show"] = "There are no notes to show";
 

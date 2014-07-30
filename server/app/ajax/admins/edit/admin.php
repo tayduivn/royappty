@@ -76,13 +76,10 @@
 	$fields=array();
 	$admin=getInBD($table,$filter,$fields);
 
-
  	$response=array();
  	$response["result"]=true;
 
-
-
-	$response["data"]["page-title"]="<a href='../../admins'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8");
+	$response["data"]["page-title"]="<a href='../../admins'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</a> / <a href='#'>".htmlentities($s["edit_admin"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($admin["name"], ENT_QUOTES, "UTF-8");
 	$response["data"]["page-options"]="";
 
 	$response["data"]["new-admin-step-1"]="
