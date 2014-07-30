@@ -13,6 +13,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/login/login.php",
 		data: {
+			"error":$GET["error"],
 			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -85,8 +86,8 @@ $(document).ready(function() {
 		  		required:true,
 			  	email: true
 		  	},
-		  	password:{
-				required:true,
+		  password:{
+					required:true,
 			  	maxlength: 25,
 			  	minlength: 4
 			}
