@@ -1,5 +1,11 @@
 <?php
-
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 30-07-2014
+* Version: 0.93
+*
+*********************************************************/
 
 //General
 $s["cancel"] = "Cancel";
@@ -94,7 +100,6 @@ $signup_s["mail_content_footer"] = "If you cannot open the link, copy and paste 
 $signup_s["accept_policy"] = "I accept privacy policy terms.";
 
 //Policy
-
 $policy_s["security"]["title"] = "Safety Policy";
 $policy_s["security"]["content"][0] = "According to what is set forth in the Fundamental Law \"Ley Orgánica 15/1999\", of the 13 December of Personal Data Protection and the Order \" R.D. 1720/2007\", which regulates previous law application, both included in the Spanish legislation, VIVA LA CLOUD, S.L. informs you your personal data, gathered here now or in future, will be included in a mixed-typed file called \"ROYAPPTY CLIENTES\" owned by VIVA LA CLOUD, S.L. and whose purpose is \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACIÓN\".";
 $policy_s["security"]["content"][1] = "We would like to highlight those data will be handled only and exclusively to the service provision and we will keep them under total confidentiality. When you sign up for ROYAPPTY, you are in accordance with alowing we can handle them and send you information about improvements and our app last news.";
@@ -124,7 +129,6 @@ $s["verification_title"] = "Activate account";
 $s["verification_subtitle_success"] = "Your account has been activated.";
 $s["verification_subtitle_error"] = "Your account has not been activated, unvalid code.";
 
-
 // Menu
 $s["home"] = "Home";
 $s["dashboard"] = "Dashboard";
@@ -146,7 +150,6 @@ $s["all_requests"] = "Request list";
 $s["my_account"] = "My account";
 $s["logout"] = "Log out";
 $s["print"] = "Print";
-
 
 // Modal Ajax Error
 $s["error"] = "Error";
@@ -170,7 +173,6 @@ $s["draft_campaigns"] = "Drafts";
 $s["inactive_campaigns"] = "Inactive campaigns.";
 
 //Campaign / get
-
 $s["add_note"]="Add note";
 $s["delete_note"] = "Delete note";
 $s["title"]="Title";
@@ -200,11 +202,7 @@ $s["add_coupon_promo"] = "Create Coupon Card";
 $s["loading..."] = "Loading...";
 $s["this_may_take_several_seconds"] = "This operation may take several seconds.";
 $s["view_campaign"] = "View Campaign";
-
 $s["add_coupon_promo"] = "Create Coupon Card";
-
-
-
 
 //Admins / List
 $s["can_login"] = "Manager";
@@ -222,7 +220,6 @@ $s["inactive_admin"] = "Inactive";
 $s["brand_admin"] = "Main";
 $s["validated_codes"] = "Validations";
 
-
 $s["can_login_tooltip"] = "You can access to the administrator";
 $s["can_manage_campaigns_tooltip"] = "You can manage campaigns";
 $s["can_manage_admins_tooltip"] = "You can manage administrators";
@@ -236,9 +233,6 @@ $s["cant_manage_admins_tooltip"] = "You cannot manage administrators";
 $s["cant_manage_users_tooltip"] = "You cannot manage users";
 $s["cant_manage_app_tooltip"] = "You cannot manage the app";
 $s["cant_validate_codes_tooltip"] = "You can validate codes";
-
-
-
 
 //Admins / Add
 $s["add_admin_title"] = "Administrator information";
@@ -311,7 +305,6 @@ $s["delete_group"] = "Delete group";
 $s["delete_group_alert"] = "This operation will delete all group data and cannot be undone. Do you really want to continue with this operation?";
 $s["group_deleted"] = "Group deleted";
 
-
 // Group / Get
 $s["edit_group"] = "Edit group";
 $s["group_there_are_no_notes_to_show"] = "There are no notes to show";
@@ -326,9 +319,7 @@ $s["group_success_title"] = "Group created";
 $s["group_success_subtitle"] = "The group has been successfully created.";
 $s["view_group"] = "View group";
 
-
 //App / get
-
 $s["app_name_description_and_sreenshots"] = "Name, Description and Screen shot";
 $s["name_and_description"] = "Name and description";
 $s["screenshots"] = "Screen shot";
@@ -376,7 +367,6 @@ $app_s["success_subtitle_1"] = "The app update has been received correctly, Reme
 $app_s["success_subtitle_2"] = "to check your request status.";
 $app_s["user_fields"] = "User gathering data";
 $app_s["user_fields_help"] = "Select requested infomation to users when they sign up for the app.";
-
 
 //Request / List
 $s["requests"] = "Requests";
@@ -483,8 +473,6 @@ $s["delete_now"] = "Delete now";
 $s["lock_account_title"] = "This account is inactive";
 $s["lock_account_subtitle"] = "";
 
-
-
 $s["bank_account_number_bank"] = "Bank";
 $s["bank_account_number_office"] = "Office";
 $s["bank_account_number_control_digit"] = "Check digits";
@@ -493,13 +481,11 @@ $s["bank_account_number_account_number"] = "Account number";
 $payment_gateway_s["success_title"] = "Updated subscription";
 $payment_gateway_s["success_subtitle"] = "Your subscription has been successfully updated.";
 
-
 $payment_method["free"]="Free";
 $payment_method["paypal"]="Paypal";
 $payment_method["credit_card"]=" Credit Card";
 $payment_method["bank_transfer"]="Bank Transfer";
 $payment_method["standing_order_payment"]="Direct Debit";
-
 
 $subscription_type_name["welcome"]= "Royappty Professional Welcome Pack";
 $subscription_type_name["starter"]= "Royappty Starter";
@@ -520,7 +506,6 @@ $payment_method_helper["paypal"]="by Paypal";
 $payment_method_helper["credit_card"]="by Credit Card";
 $payment_method_helper["bank_transfer"]="by Bank Transfer";
 $payment_method_helper["standing_order_payment"]="by Direct Debit ";
-
 
 //Account data
 $s["account_data"] = "Account information";
@@ -555,7 +540,6 @@ $brand_s["contact_country"] = "Country";
 $brand_s["contact_country_help"] = "";
 $s["account_data_success_title"] = "Updated information";
 $s["account_data_success_subtitle"] = "Your information has been succesfully updated ";
-
 
 $s["campaigns_status"][3]="Draft";
 $s["campaigns_status"][2]="Inactive";
@@ -625,7 +609,6 @@ $new_discount_s["promo_cost_help"] = "Put the promotion cost in Euros e.g. 1.00"
 $new_discount_s["status"] = "Campaign status";
 $new_discount_s["status_help"] = "Select campaign status";
 
-
 // Create Coupon
 $new_coupon_s["step_1_title"]="Campaign information";
 $new_coupon_s["campaign_title"] = "Campaign title";
@@ -679,7 +662,6 @@ $new_coupon_s["promo_cost_help"] = "Put the promotion cost in Euros e.g. 1.00";
 $new_coupon_s["status"] = "Campaign status";
 $new_coupon_s["status_help"] = "Select campaign status";
 
-
 $resume_block_s[""]="";
 $resume_block_s["usage_this_mounth"]="This month usage";
 $resume_block_s["view_more"]="View more";
@@ -700,12 +682,8 @@ $resume_block_s["group_usage_this_month"]="This month usage";
 $resume_block_s["group_usage_today"]="Today usage";
 $resume_block_s["group_users"]="Users";
 
-
-
 $user_field_title_s[""]="";
 $user_field_title_s["name"]="Name";
-
-
 
 $royappty_plans["welcome"]["title"]="Royappty Profesional Welcome Pack";
 $royappty_plans["welcome"]["subtitle"]="Enjoy our Professional service for 3 Months totally Free.";
@@ -756,7 +734,6 @@ $subscription_type_helper["professional"] = "You are currently using a  Royappty
 $subscription_type_helper["welcome"] = "You are currently using a  Royappty Welcome account. Our professional answer to any type of establishment with a limitation to 10 active campaigns.";
 $subscription_type_helper["unlimited"] = "You are currently using a Royappty Professional account. Our answer to big companies with several establishments and focused campaigns.";
 
-
 //Error Alerts
 $error_s["login_error"] = "Email or password are not valid";
 $error_s["recovery_not_email"] = "This email cannot be found in our database.";
@@ -801,18 +778,17 @@ $error_step_s["post_no_name"] = "The Name field has not been sent correctly";
 //Error campaigns/edit/update_coupon campaigns/new/add_coupon
 $error_step_s["post_no_coupon_id_campaign"] =  "The Coupan Card Identifier field has not been sent correctly";
 $error_step_s["post_no_coupon_name"]= "The Name field has not been sent correctly";
-$error_step_s["post_no_coupon_description"]= "";
-$error_step_s["post_no_coupon_title"]= "";
-$error_step_s["post_no_coupon_button_title"]= "";
-$error_step_s["post_no_coupon_coupons_number"]= "";
-
+$error_step_s["post_no_coupon_description"]= "The Description field has not been sent correctly";
+$error_step_s["post_no_coupon_title"]= "The Title field has not been sent correctly";
+$error_step_s["post_no_coupon_button_title"]= "The Button Title field has not been sent correctly";
+$error_step_s["post_no_coupon_coupons_number"]= "The Coupon Number field has not been sent correctly";
 
 //Error campaigns/edit/update_discount campaigns/new/add_discount
 $error_step_s["post_no_discount_id_campaign"] = "The Discount Promotion Identifier field has not been sent correctly";
 $error_step_s["post_no_discount_name"] = "The Name field has not been sent correctly";
-$error_step_s["post_no_discount_description"]= "";
-$error_step_s["post_no_discount_title"]= "";
-$error_step_s["post_no_discount_button_title"]= "";
+$error_step_s["post_no_discount_description"]= "The Description field has not been sent correctly";
+$error_step_s["post_no_discount_title"]= "The Title field has not been sent correctly";
+$error_step_s["post_no_discount_button_title"]= "The Button Title field has not been sent correctly";
 
 //Error apps/edit/update_app
 $error_step_s["post_no_app_name"] = "The Name field has not been sent correctly";
@@ -820,4 +796,22 @@ $error_step_s["post_no_app_name"] = "The Name field has not been sent correctly"
 //Error groups/edit/update_group groups/new/add_group
 $error_step_s["post_no_group_id_group"] = "The Group Identifier field has not been sent correctly";
 $error_step_s["post_no_group_name"] = "The Name field has not been sent correctly";
+
+//Error accounts/data/delete/delete_account
+$error_step_s["post_no_delete_option"]= "The Delete Option has not been sent correctly";
+
+//Error accounts/data/edit/update_data
+$error_step_s["post_no_update_data_name"]= "The Name field has not been sent correctly";
+$error_step_s["post_no_update_data_cif"]= "The VATIN field has not been sent correctly";
+$error_step_s["post_no_update_data_contact_email"]= "The Email field has not been sent correctly";
+$error_step_s["post_no_update_data_contact_address"]= "The Address field has not been sent correctly";
+$error_step_s["post_no_update_data_contact_postal_code"]= "The Post Code field has not been sent correctly";
+$error_step_s["post_no_update_data_contact_city"]= "The City field has not been sent correctly";
+$error_step_s["post_no_update_data_contact_country"]= "The Country field has not been sent correctly";
+
+//Error accounts/subscription/edit/update_subscription
+$error_step_s["post_no_update_subscription_type"]= "The Subscription Type has not been sent correctly";
+
+//Error accounts/subscription/payment_gateway/update_subscription
+$error_step_s["post_no_payment_gateway_payment_data"]= "The Payment Data has not been sent correctly";
 ?>

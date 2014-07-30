@@ -17,6 +17,12 @@
 	* admin_not_valid
 	* admin_inactive
 	*	post_no_update_data_name
+	*	post_no_update_data_cif
+	*	post_no_update_data_contact_email
+	*	post_no_update_data_contact_address
+	*	post_no_update_data_contact_postal_code
+	*	post_no_update_data_contact_city
+	*	post_no_update_data_contact_country
 	*
 	*********************************************************/
 
@@ -32,7 +38,7 @@
 	$page_path = "server/app/ajax/accounts/data/edit/update_data";
  	debug_log("[".$page_path."] START");
  	$response=array();
-	
+
 
 
  	/*********************************************************
@@ -53,6 +59,54 @@
 		debug_log("[".$page_path."] ERROR Data Post Missing update_data_name");
 		$response["error_code"]="post_no_update_data_name";
 		$response["error_code_str"]= $error_step_s["post_no_update_data_name"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["cif"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing update_data_cif");
+		$response["error_code"]="post_no_update_data_cif";
+		$response["error_code_str"]= $error_step_s["post_no_update_data_cif"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_email"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing update_data_contact_email");
+		$response["error_code"]="post_no_update_data_contact_email";
+		$response["error_code_str"]= $error_step_s["post_no_update_data_contact_email"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_address"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing update_data_contact_address");
+		$response["error_code"]="post_no_update_data_contact_address";
+		$response["error_code_str"]= $error_step_s["post_no_update_data_contact_address"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_postal_code"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing update_data_contact_postal_code");
+		$response["error_code"]="post_no_update_data_contact_postal_code";
+		$response["error_code_str"]= $error_step_s["post_no_update_data_contact_postal_code"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_city"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing update_data_contact_city");
+		$response["error_code"]="post_no_update_data_contact_city";
+		$response["error_code_str"]= $error_step_s["post_no_update_data_contact_city"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["contact_country"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing update_data_contact_country");
+		$response["error_code"]="post_no_update_data_contact_country";
+		$response["error_code_str"]= $error_step_s["post_no_update_data_contact_country"];
 		echo json_encode($response);
 		die();
 	}
