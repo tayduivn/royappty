@@ -130,6 +130,7 @@ $s["request_list_to"] = " to ";
 $s["request_list_of"] = " of ";
 $s["request_list_entries"] = " entries";
 $s["request_list_no_entries"] = "There are no entries";
+$s["request_list_search_no_entry"] = "The search has not found any entry";
 
 //Receipt - list.js
 $s["receipt_search"] = "Search";

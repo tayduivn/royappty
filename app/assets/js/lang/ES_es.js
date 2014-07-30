@@ -130,7 +130,7 @@ $s["request_list_to"] = " hasta ";
 $s["request_list_of"] = " de ";
 $s["request_list_entries"] = " entradas";
 $s["request_list_no_entries"] = "No hay entradas";
-$s["request_list_search_no_entry"]= "No hay datos disponibles en la tabla";
+$s["request_list_search_no_entry"]= "La b&uacute;squeda no ha devuelto ninguna entrada";
 
 //Receipt list.js
 $s["receipt_search"] = "Buscar";
