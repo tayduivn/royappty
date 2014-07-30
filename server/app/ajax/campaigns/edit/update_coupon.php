@@ -18,7 +18,10 @@
 	* admin_inactive
 	*	post_no_coupon_id_campaign
 	*	post_no_coupon_name
-	*
+	*	post_no_coupon_description
+	*	post_no_coupon_title
+	*	post_no_coupon_button_title
+	*	post_no_coupon_coupons_number
 	*
 	*********************************************************/
 
@@ -61,6 +64,38 @@
 		debug_log("[".$page_path."] ERROR Data Post Missing coupon_name");
 		$response["error_code"]="post_no_coupon_name";
 		$response["error_code_str"]= $error_step_s["post_no_coupon_name"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["description"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing coupon_description");
+		$response["error_code"]="post_no_coupon_description";
+		$response["error_code_str"]= $error_step_s["post_no_coupon_description"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["title"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing coupon_title");
+		$response["error_code"]="post_no_coupon_title";
+		$response["error_code_str"]= $error_step_s["post_no_coupon_title"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["button_title"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing coupon_button_title");
+		$response["error_code"]="post_no_coupon_button_title";
+		$response["error_code_str"]= $error_step_s["post_no_coupon_button_title"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["coupons_number"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing coupon_coupons_number");
+		$response["error_code"]="post_no_coupon_coupons_number";
+		$response["error_code_str"]= $error_step_s["post_no_coupon_coupons_number"];
 		echo json_encode($response);
 		die();
 	}
