@@ -38,7 +38,8 @@ $(document).ready(function(){
 
     tableElement.dataTable( {
 		"sDom": "<'row'<'col-md-6'><'col-md-6'f>>t<'row'<'col-md-12'p i>>",
-		 "aoColumnDefs": [
+		"sPaginationType": "bootstrap",
+		"aoColumnDefs": [
           { 'bSortable': false, 'aTargets': [] }
 		],
 		"aaSorting": [[ 0, "asc" ]],
