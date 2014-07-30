@@ -26,6 +26,7 @@
 	*	post_no_account_payment_method
 	*	post_no_account_app_name
 	*	post_no_account_app_title
+	*	post_no_account_app_description
 	*
 	*********************************************************/
 
@@ -163,6 +164,14 @@
 		debug_log("[".$page_path."] ERROR Data Post Missing account_app_title");
 		$response["error_code"]="post_no_account_app_title";
 		$response["error_code_str"]= $error_step_s["post_no_account_app_title"];
+		echo json_encode($response);
+		die();
+	}
+	if(!@issetandnotempty($_POST["app_description"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Post Missing account_app_description");
+		$response["error_code"]="post_no_account_app_description";
+		$response["error_code_str"]= $error_step_s["post_no_account_app_description"];
 		echo json_encode($response);
 		die();
 	}

@@ -768,6 +768,7 @@ $error_step_s["post_no_account_payment_plan"] = "The Payment Plan field has not 
 $error_step_s["post_no_account_payment_method"] = "The Payment Method field has not been sent correctly";
 $error_step_s["post_no_account_app_name"] = "The App Name field has not been sent correctly";
 $error_step_s["post_no_account_app_title"] = "The App Menu Tile field has not been sent correctly";
+$error_step_s["post_no_account_app_description"] = "The App Description field has not been sent correctly";
 
 //Error accounts/signup/get_payment_plans
 $error_step_s["post_no_signup_subscription_type"] = "The Price Plan field has not been sent correctly";

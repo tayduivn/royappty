@@ -176,7 +176,7 @@
 							</div>
 						</div>
 						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["app_description"], ENT_QUOTES, "UTF-8")."</label>
+							<label class='form-label'>".htmlentities($signup_s["app_description"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 							<span class='help'>".htmlentities($signup_s["app_description_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
 								<textarea style='height:430px;' id='app_description' name='app_description' class='form-control'></textarea>

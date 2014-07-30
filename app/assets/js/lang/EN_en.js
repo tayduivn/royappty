@@ -63,6 +63,8 @@ $s["signup_app_name_this_field_needs_4_character_minimum"] = "This field needs 4
 $s["signup_app_title_this_field_is_compulsory"] = "This field is compulsory";
 $s["signup_app_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["signup_app_description_this_field_is_compulsory"] = "This field is compulsory";
+$s["signup_app_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 
 //Campaigns - list.js
 $s["search"] = "Search";

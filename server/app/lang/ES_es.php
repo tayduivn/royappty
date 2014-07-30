@@ -768,6 +768,7 @@ $error_step_s["post_no_account_payment_plan"]= "No se ha enviado correctamente e
 $error_step_s["post_no_account_payment_method"]= "No se ha enviado correctamente el campo Método de pago";
 $error_step_s["post_no_account_app_name"]= "No se ha enviado correctamente el campo Nombre de la aplicación";
 $error_step_s["post_no_account_app_title"]= "No se ha enviado correctamente el campo Título menú aplicación";
+$error_step_s["post_no_account_app_description"] = "No se ha enviado correctamente el campo Descripción de la aplicación";
 
 //Error accounts/signup/get_payment_plans
 $error_step_s["post_no_signup_subscription_type"]= "No se ha enviado correctamente el Plan de precios";

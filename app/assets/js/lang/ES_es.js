@@ -63,6 +63,8 @@ $s["signup_app_name_this_field_needs_4_character_minimum"] = "Este campo necesit
 $s["signup_app_title_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_app_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["signup_app_description_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["signup_app_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
 //Campaigns - list.js
 $s["search"] = "Buscar";

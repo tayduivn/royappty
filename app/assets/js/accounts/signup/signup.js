@@ -190,6 +190,10 @@ $(document).ready(function(){
 				required: $s["signup_app_title_this_field_is_compulsory"],
 				maxlength: $s["signup_app_title_it_canot_be_longer_than_20_characters"],
 				minlength: $s["signup_app_title_this_field_needs_4_character_minimum"]
+			},
+			app_description: {
+				required: $s["signup_app_description_this_field_is_compulsory"],
+				minlength: $s["signup_app_description_this_field_needs_4_character_minimum"]
 			}
 		},
 		rules:{
@@ -201,6 +205,10 @@ $(document).ready(function(){
 			app_title:{
 				required:true,
 				maxlength: 20,
+				minlength: 4
+			},
+			app_description: {
+				required:true,
 				minlength: 4
 			}
 		},
