@@ -83,7 +83,7 @@
 					<label class='form-label'>".htmlentities($new_coupon_s["description"], ENT_QUOTES, "UTF-8")."</label>
 					<span class='help'>".htmlentities($new_coupon_s["description_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
-						<textarea class='form-control' rows=4 id='description' name='description' value='".$campaign["description"]."'>".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."</textarea>
+						<textarea class='form-control' rows=4 id='description' name='description' value='".htmlentities($campaign["description"], ENT_QUOTES, "UTF-8")."'>".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."</textarea>
 					</div>
 				</div>
 				<div style='overflow:auto'>
@@ -177,7 +177,7 @@
 							<label class='form-label'>".htmlentities($new_coupon_s["promo_title"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_coupon_s["promo_title_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<input type='text' class='form-control ' id='title' placeholder='".htmlentities($new_coupon_s["promo_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onchange=\"$('#title-preview').html($('#title').val());\" value='".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."'/>
+								<input type='text' class='form-control ' id='title' name='title' placeholder='".htmlentities($new_coupon_s["promo_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onchange=\"$('#title-preview').html($('#title').val());\" value='".htmlentities($campaign["title"], ENT_QUOTES, "UTF-8")."'/>
 							</div>
 						</div>
 						<div class='row'>
@@ -233,14 +233,14 @@
 							<label class='form-label'>".htmlentities($new_coupon_s["promo_content"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_coupon_s["promo_content_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<textarea class='form-control' rows='6' id='content' onkeypress=\"$('#content-preview').html($('#content').val());\" onchange=\"$('#content-preview').html($('#content').val());\">".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."</textarea>
+								<textarea class='form-control' rows='6' id='content' name='content' onkeypress=\"$('#content-preview').html($('#content').val());\" onchange=\"$('#content-preview').html($('#content').val());\">".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."</textarea>
 							</div>
 						</div>
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($new_coupon_s["button_title"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'>".htmlentities($new_coupon_s["button_title_help"], ENT_QUOTES, "UTF-8")."</span>
 							<div class='controls'>
-								<input type='text' class='form-control ' id='button_title' placeholder='".htmlentities($new_coupon_s["button_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onchange=\"$('#button-preview').html($('#button_title').val());\" value='".htmlentities($campaign["button_title"], ENT_QUOTES, "UTF-8")."'/>
+								<input type='text' class='form-control' id='button_title' name='button_title' placeholder='".htmlentities($new_coupon_s["button_title_placeholder"], ENT_QUOTES, "UTF-8")."'  onchange=\"$('#button-preview').html($('#button_title').val());\" value='".htmlentities($campaign["button_title"], ENT_QUOTES, "UTF-8")."'/>
 							</div>
 						</div>
 					</div>
@@ -284,7 +284,7 @@
 						<label class='form-label'>".htmlentities($new_coupon_s["coupons_number"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($new_coupon_s["coupons_number_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='text' class='form-control ' id='coupons_number' placeholder='".htmlentities($new_coupon_s["coupons_number_placeholder"], ENT_QUOTES, "UTF-8")."' value='".$campaign["coupons_number"]."'/>
+							<input type='text' class='form-control' id='coupons_number' name='coupons_number' placeholder='".htmlentities($new_coupon_s["coupons_number_placeholder"], ENT_QUOTES, "UTF-8")."' value='".htmlentities($campaign["coupons_number"], ENT_QUOTES, "UTF-8")."'/>
 						</div>
 					</div>
 				</div>
@@ -295,7 +295,7 @@
 						<label class='form-label'>".htmlentities($new_coupon_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($new_coupon_s["promo_usage_limit_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='text' class='form-control ' id='usage_limit' placeholder='".htmlentities($new_coupon_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."' value='".$campaign["usage_limit"]."'/>
+							<input type='text' class='form-control ' id='usage_limit' name='usage_limit' placeholder='".htmlentities($new_coupon_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."' value='".htmlentities($campaign["usage_limit"], ENT_QUOTES, "UTF-8")."'/>
 						</div>
 					</div>
 				</div>
@@ -306,7 +306,7 @@
 						<label class='form-label'>".htmlentities($new_coupon_s["promo_cost"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($new_coupon_s["promo_cost_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='text' id='cost' name='cost' class='form-control' value='".$campaign["cost"]."'>
+							<input type='text' id='cost' name='cost' class='form-control' value='".htmlentities($campaign["cost"], ENT_QUOTES, "UTF-8")."'>
 						</div>
 					</div>
 				</div>
