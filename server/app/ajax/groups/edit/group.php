@@ -82,8 +82,7 @@
 	}
 
 
-
-	$response["data"]["page-title"]="<a href='../../groups'>".htmlentities($s["groups"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["new_group"], ENT_QUOTES, "UTF-8");
+	$response["data"]["page-title"]="<a href='../../groups'>".htmlentities($s["groups"], ENT_QUOTES, "UTF-8")."</a> / <a href='#'>".htmlentities($s["edit_group"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($group["name"], ENT_QUOTES, "UTF-8");
 	$response["data"]["page-options"]="";
 
 	$response["data"]["new-group-step-1"]="
