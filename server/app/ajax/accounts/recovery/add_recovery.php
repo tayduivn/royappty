@@ -11,7 +11,7 @@
   * AJAX RETURNS
   *
   * ERROR CODES
-  * reload
+  * reload -> If there is not email
   *
   *********************************************************/
 

@@ -35,6 +35,7 @@
   * DATA CHECK
   *********************************************************/
 
+  //POST
   if(!@issetandnotempty($_POST["password"])){
     $response["result"]=false;
     debug_log("[".$page_path."] ERROR Data Missing password");
@@ -42,7 +43,13 @@
      echo json_encode($response);
     die();
   }
-
+  if(!@issetandnotempty($_POST["password_repeat"])){
+    $response["result"]=false;
+    debug_log("[".$page_path."] ERROR Data Missing password_repeat");
+     $response["error_code"]="reload";
+     echo json_encode($response);
+    die();
+  }
   if(!@issetandnotempty($_POST["code"])){
     $response["result"]=false;
     debug_log("[".$page_path."] ERROR Data Missing code");

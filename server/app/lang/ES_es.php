@@ -207,8 +207,8 @@ $s["add_coupon_promo"] = "Crear Tarjeta de Cupones";
 //Admins / List
 $s["can_login"] = "Manager";
 $s["can_manage_campaigns"] = "Campañas";
-$s["can_validate_codes"] = "Códigos";
-$s["cant_validate_codes"] = "No códigos";
+$s["can_validate_codes"] = "Valida códigos";
+$s["cant_validate_codes"] = "No valida códigos";
 $s["last_action"] = "Últ. Actividad";
 $s["delete_admin"]= "Desactivar Administrador";
 $s["delete_admin_alert"]="Este proceso desactivará a este administrador y no podrá realizar ninguna operación hasta que vuelva a activarse ¿De verdad quiere realizar esta operación?";
@@ -311,12 +311,8 @@ $s["edit_group"] = "Editar Grupo";
 $s["group_there_are_no_notes_to_show"] = "No hay notas que mostrar";
 
 // Group / add
-$s["add_group_title"] = "Añadir grupo";
-
-// Group / add
 $s["add_group_title"]= "Añadir grupo";
 $s["group_name"] = "Nombre del grupo";
-
 $s["group_name_help"] = "Seleccione un nombre para el grupo";
 $s["select_users"] = "Usuarios del grupo";
 $s["select_users_help"] = "Seleccione los miembros del grupo";
@@ -819,5 +815,4 @@ $error_step_s["post_no_update_subscription_type"]= "No se ha enviado correctamen
 
 //Error accounts/subscription/payment_gateway/update_subscription
 $error_step_s["post_no_payment_gateway_payment_data"]= "No se han enviado correctamente los Datos de pago";
-
 ?>

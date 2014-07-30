@@ -207,7 +207,8 @@ $s["add_coupon_promo"] = "Create Coupon Card";
 //Admins / List
 $s["can_login"] = "Manager";
 $s["can_manage_campaigns"] = "Campaigns";
-$s["can_validate_codes"] = "Codes";
+$s["can_validate_codes"] = "Code validation";
+$s["cant_validate_codes"] = "No code validation";
 $s["last_action"] = "Last activity";
 $s["delete_admin"]= "Deactivate administrator";
 $s["delete_admin_alert"]="This process will deactivate this administrator and it won't be able to carry out any operation until it will be reactivated again. Do you really want to continue with this operation?";
