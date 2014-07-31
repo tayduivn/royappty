@@ -494,7 +494,7 @@ $subscription_type_name["unlimited"]= "Royappty Unlimited";
 
 $subscription_type_name_helper["welcome"]="Enjoy our Professional service for 3 months totally free.";
 $subscription_type_name_helper["starter"]="Our free plan, as first contact, with a limitation to just one active campaign.";
-$subscription_type_name_helper["professional"]="Our professional answer to any type of establishment with a limitation to 10 active campaigns.";
+$subscription_type_name_helper["professional"]="Our professional answer to any type of establishments with a limitation to 10 active campaigns.";
 $subscription_type_name_helper["unlimited"]="Our answer to big companies with several establishments and focused campaigns.";
 
 $payment_plan_helper["monthly"]="Monthly payment";
@@ -695,7 +695,7 @@ $royappty_plans["starter"]["subtitle"]="Our free plan, as first contact, with a 
 $royappty_plans["starter"]["price"]="Free";
 
 $royappty_plans["professional"]["title"]="Royappty Professional";
-$royappty_plans["professional"]["subtitle"]="Our professional answer to any type of establishment with a limitation to 10 active campaigns.";
+$royappty_plans["professional"]["subtitle"]="Our professional answer to any type of establishments with a limitation to 10 active campaigns.";
 $royappty_plans["professional"]["price"]="9.99 € / month";
 
 $royappty_plans["unlimited"]["title"]="Royappty Unlimited";
@@ -706,13 +706,13 @@ $payment_methods["paypal"]["title"]="Paypal";
 $payment_methods["paypal"]["subtitle"]="Popular safe payment method on internet. In few seconds you will have your account activated.";
 
 $payment_methods["credit_card"]["title"]="Credit Card";
-$payment_methods["credit_card"]["subtitle"]="Thanks to our gateway, you will be able to pay safely and in few seconds.";
+$payment_methods["credit_card"]["subtitle"]="Thanks to our gateway, you will be able to pay safely in few seconds.";
 
 $payment_methods["bank_transfer"]["title"]="Bank Transfer";
 $payment_methods["bank_transfer"]["subtitle"]="We will provide you the bank account in which you can do the deposit, this payment process usually last several days.";
 
 $payment_methods["standing_order_payment"]["title"]="Direct Debit";
-$payment_methods["standing_order_payment"]["subtitle"]="We offer the direct debit of our receipt to your account in order to speed up procedures.";
+$payment_methods["standing_order_payment"]["subtitle"]="We offer the possibility of our receipt direct debit to speed up procedures.";
 
 $payment_plans["monthly"]["title"] = "Monthly payment";
 $payment_plans["monthly"]["subtitle"] = "We send you a payment alert each month.";
@@ -730,8 +730,8 @@ $payment_plans["annual"]["price_professional"] = "99.90 € / year";
 $payment_plans["annual"]["price_unlimited"] = "999.90 € / year";
 
 $subscription_type_helper["starter"] = "You are currently using a Royappty Starter account. Our free plan, as first contact, with a limitation to just one active campaign.";
-$subscription_type_helper["professional"] = "You are currently using a  Royappty Professional account. Our professional answer to any type of establishment with a limitation to 10 active campaigns.";
-$subscription_type_helper["welcome"] = "You are currently using a  Royappty Welcome account. Our professional answer to any type of establishment with a limitation to 10 active campaigns.";
+$subscription_type_helper["professional"] = "You are currently using a  Royappty Professional account. Our professional answer to any type of establishments with a limitation to 10 active campaigns.";
+$subscription_type_helper["welcome"] = "You are currently using a  Royappty Welcome account. Our professional answer to any type of establishments with a limitation to 10 active campaigns.";
 $subscription_type_helper["unlimited"] = "You are currently using a Royappty Professional account. Our answer to big companies with several establishments and focused campaigns.";
 
 //Error Alerts
