@@ -224,10 +224,14 @@ $(document).ready(function(){
 					separator="::";
 				}
 			});
+			if(brand_user_fields!=""){
 			$('#form-end #brand_user_fields').val(brand_user_fields);
 
 			nextstep();
+		}else {
+			$("#user_fields_alert").html("<label class='error'>"+$s["signup_app_checkbox_select_at_least_one_elemet"]+"</label>");
 		}
+	}
 	});
 
 	$("#form-step4").validate({
@@ -280,8 +284,6 @@ $(document).ready(function(){
 					}
 				});
 
-
-
 			}else if($('#form-end #subscription_type').val()=="starter"){
 				$('#form-end #payment_plan').val("monthly");
 				$('#form-end #payment_method').val("free");
@@ -300,11 +302,13 @@ $(document).ready(function(){
 						contact_country:$('#form-end #contact_country').val(),
 						admin_name:$('#form-end #admin_name').val(),
 						admin_email:$('#form-end #admin_email').val(),
+						admin_promo_password:$('#form-end #admin_promo_password').val(),
 						admin_password:$('#form-end #admin_password').val(),
 						subscription_type:$('#form-end #subscription_type').val(),
 						payment_plan:$('#form-end #payment_plan').val(),
 						payment_method:$('#form-end #payment_method').val(),
 						app_name:$('#form-end #app_name').val(),
+						app_title:$('#form-end #app_title').val(),
 						app_description:$('#form-end #app_description').val(),
 						app_icon_path:$('#form-end #app_icon_path').val(),
 						app_bg_path:$('#form-end #app_bg_path').val(),
@@ -378,11 +382,13 @@ $(document).ready(function(){
 					contact_country:$('#form-end #contact_country').val(),
 					admin_name:$('#form-end #admin_name').val(),
 					admin_email:$('#form-end #admin_email').val(),
+					admin_promo_password:$('#form-end #admin_promo_password').val(),
 					admin_password:$('#form-end #admin_password').val(),
 					subscription_type:$('#form-end #subscription_type').val(),
 					payment_plan:$('#form-end #payment_plan').val(),
 					payment_method:$('#form-end #payment_method').val(),
 					app_name:$('#form-end #app_name').val(),
+					app_title:$('#form-end #app_title').val(),
 					app_description:$('#form-end #app_description').val(),
 					app_icon_path:$('#form-end #app_icon_path').val(),
 					app_bg_path:$('#form-end #app_bg_path').val(),

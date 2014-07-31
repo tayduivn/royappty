@@ -11,9 +11,9 @@ $conf = array(
 	'bdtype' => 'mysql',
 	'bdserver' => 'localhost',
 	'bdport' => '3306',
-	'bd' => 'royappty3',
-	'bduser' => 'royappty3',
-	'bdpass' => 'royappty3',
+	'bd' => 'royappty2',
+	'bduser' => 'royappty2',
+	'bdpass' => 'royappty2',
 	'bdprefix' => ''
 );
 
