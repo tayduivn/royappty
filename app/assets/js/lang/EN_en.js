@@ -196,6 +196,7 @@ $s["coupon_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be 
 $s["coupon_button_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 $s["coupon_number_this_field_is_compulsory"] = "This field is compulsory";
 $s["coupon_number_this_field_needs_1_coupon_minimum"] = "This field needs 1 coupon minimum";
+$s["coupon_this_field_requires_numbers_only"] = "This field requires numbers only";
 
 // campaign - edit - discount.js
 $s["edit_discount_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
@@ -212,6 +213,7 @@ $s["edit_discount_title_this_field_needs_4_character_minimum"] = "This field nee
 $s["edit_discount_button_title_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_discount_button_title_it_canot_be_longer_than_20_characters"] = "It cannot be longer than 20 characters";
 $s["edit_discount_button_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_discount_this_field_requires_numbers_only"] = "This field requires numbers only";
 
 //campaign - edit- coupon.js
 $s["edit_coupon_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
@@ -230,6 +232,7 @@ $s["edit_coupon_button_title_it_canot_be_longer_than_20_characters"] = "It canno
 $s["edit_coupon_button_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 $s["edit_coupon_number_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_coupon_number_this_field_needs_1_coupon_minimum"] = "This field needs 1 coupon minimum";
+$s["edit_coupon_this_field_requires_numbers_only"] = "This field requires numbers only";
 
 //app - edit - app.js
 $s["edit_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";

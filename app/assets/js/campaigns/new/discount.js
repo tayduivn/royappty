@@ -158,8 +158,26 @@ $(document).ready(function() {
 	});
 	$("#form-step4").validate({
 		messages:{
+			usage_limit:{
+				digits: $s["discount_this_field_requires_numbers_only"]
+			},
+			cost:{
+				number: $s["discount_this_field_requires_numbers_only"]
+			},
+			profit:{
+				number: $s["discount_this_field_requires_numbers_only"]
+			}
 		},
 		rules:{
+			usage_limit:{
+				digits: true
+			},
+			cost:{
+				number: true
+			},
+			profit:{
+				number: true
+			}
 		},
 		submitHandler:function(form){
 			$('#form-end #usage_limit').val($('#form-step4 #usage_limit').val());

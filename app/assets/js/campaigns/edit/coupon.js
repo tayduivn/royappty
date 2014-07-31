@@ -161,13 +161,33 @@ $(document).ready(function() {
 		messages:{
 			coupons_number:{
 				required: $s["edit_coupon_number_this_field_is_compulsory"],
-				min: $s["edit_coupon_number_this_field_needs_1_coupon_minimum"]
+				min: $s["edit_coupon_number_this_field_needs_1_coupon_minimum"],
+				digits: $s["edit_coupon_this_field_requires_numbers_only"]
+			},
+			usage_limit:{
+				digits: $s["edit_coupon_this_field_requires_numbers_only"]
+			},
+			cost:{
+				number: $s["edit_coupon_this_field_requires_numbers_only"]
+			},
+			profit:{
+				number: $s["edit_coupon_this_field_requires_numbers_only"]
 			}
 		},
 		rules:{
 			coupons_number:{
 				required:true,
-				min: 1
+				min: 1,
+				digits: true
+			},
+			usage_limit:{
+				digits: true
+			},
+			cost:{
+				number: true
+			},
+			profit:{
+				number: true
 			}
 		},
 		submitHandler:function(form){
