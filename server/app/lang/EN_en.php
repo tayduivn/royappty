@@ -109,7 +109,7 @@ $s["policy_exit"] = "Close";
 //Recovery Password
 $recovery_s["recovery_password"] = "Password recovery";
 $recovery_s["success_title"] = "Completed operation";
-$recovery_s["success_subtitle"] = "Check your email account, we have sent an email with a link you must open to verify if the account is yours and it allows you to modify the access password.";
+$recovery_s["success_subtitle"] = "Check your email account, we have sent an email with a link you must open to verify if the account is yours and to allow you the access password modification.";
 $revocery_s["mail_subject"] = "Password recovery";
 $revocery_s["revocery_content_header"] = "Password recovery process has been started. To change your password, access into the following link and follow the instructions.";
 $revocery_s["revocery_content_footer"] = "If you cannot open the link, copy and paste it into the address bar.";
