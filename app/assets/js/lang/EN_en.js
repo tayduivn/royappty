@@ -252,6 +252,7 @@ $s["admin_to upload"] = " to upload";
 $s["admin_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["admin_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["admin_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["admin_email_format_is_not_correct"] = "Email format is not correct";
 
 //admins - edit - admin.js
 $s["edit_admin_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
@@ -260,6 +261,7 @@ $s["edit_admin_to upload"] = " to upload";
 $s["edit_admin_name_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_admin_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
 $s["edit_admin_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_admin_email_format_is_not_correct"] = "Email format is not correct";
 
 //datatables.js
 $s["_showing"] = "Showing ";

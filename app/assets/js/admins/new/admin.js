@@ -84,6 +84,9 @@ $(document).ready(function() {
 				required: $s["admin_name_this_field_is_compulsory"],
 				maxlength: $s["admin_name_it_canot_be_longer_than_75_characters"],
 				minlength: $s["admin_name_this_field_needs_4_character_minimum"]
+			},
+			email:{
+				email: $s["admin_email_format_is_not_correct"]
 			}
 		},
 		rules:{
@@ -91,7 +94,10 @@ $(document).ready(function() {
 		  		required:true,
 			  	maxlength: 75,
 			  	minlength: 4
-		  	}
+		  	},
+				email:{
+					email: true
+				}
 		},
 		submitHandler:function(form){
 
