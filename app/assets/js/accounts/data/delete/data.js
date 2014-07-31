@@ -80,29 +80,33 @@ $(document).ready(function() {
 		rules:{
 		},
 		submitHandler:function(form){
-			loadingstep();
-			$('#form-end #delete_option').val($('#form-step1 #delete_option').val());
-			$.ajax({
-				async: false,
-				type: "POST",
-				dataType: 'json',
-				url: $SERVER_PATH+"server/app/ajax/accounts/data/delete/delete_account.php",
-				data: {
-					delete_option:$('#form-end #delete_option').val()
+			if($(delete_option).val()!=0){
+				loadingstep();
+				$('#form-end #delete_option').val($('#form-step1 #delete_option').val());
+				$.ajax({
+					async: false,
+					type: "POST",
+					dataType: 'json',
+					url: $SERVER_PATH+"server/app/ajax/accounts/data/delete/delete_account.php",
+					data: {
+						delete_option:$('#form-end #delete_option').val()
+					},
+					error: function(data, textStatus, jqXHR) {
+						errorstep("ajax_error");
+					},
+					success: function(response) {
+						if(response.result){
+							window.location.href = $PATH+"lock/";
+						} else {
+							errorstep(response.error_code_str);
+						}
 
-				},
-				error: function(data, textStatus, jqXHR) {
-					errorstep("ajax_error");
-				},
-				success: function(response) {
-					if(response.result){
-						window.location.href = $PATH+"lock/";
-					} else {
-						errorstep(response.error_code_str);
 					}
-
-				}
-			});
+				});
+			}
+			else{
+				$("#delete_fields_alert").html("<label class='error'>"+$s["delete_app_select_one_option"]+"</label>");
+			}
 		}
 	});
 
