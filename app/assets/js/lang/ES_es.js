@@ -195,6 +195,7 @@ $s["coupon_button_title_this_field_is_compulsory"] = "Este campo es obligatorio"
 $s["coupon_button_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
 $s["coupon_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["coupon_number_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["coupon_number_this_field_needs_1_coupon_minimum"] = "Se necesita un cupón como mínimo";
 
 // campaign - edit - discount.js
 $s["edit_discount_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
@@ -228,6 +229,7 @@ $s["edit_coupon_button_title_this_field_is_compulsory"] = "Este campo es obligat
 $s["edit_coupon_button_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
 $s["edit_coupon_button_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["edit_coupon_number_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["edit_coupon_number_this_field_needs_1_coupon_minimum"] = "Se necesita un cupón como mínimo";
 
 //app - edit - app.js
 $s["edit_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";

@@ -44,7 +44,7 @@
 			<img class='m-t-40 m-b-0' style='width:320px' src='".$url_server."server/app/assets/img/lock-logo.png' />
 			<h3>".htmlentities($s["lock_account_title"], ENT_QUOTES, "UTF-8")."</h3>
 			<h5 class='p-b-20'>".htmlentities($s["lock_account_subtitle"], ENT_QUOTES, "UTF-8")."</h5>
-			<a href='../../' class='btn btn-white'>Salir</a> <a href='../active/' class='btn btn-white'>Activar</a>
+			<a href='../../' class='btn btn-white'>Salir</a>
 		</div>
 
 	";

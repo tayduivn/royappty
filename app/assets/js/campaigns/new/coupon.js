@@ -159,12 +159,14 @@ $(document).ready(function() {
 	$("#form-step4").validate({
 		messages:{
 			coupons_number:{
-				required: $s["coupon_number_this_field_is_compulsory"]
+				required: $s["coupon_number_this_field_is_compulsory"],
+				min: $s["coupon_number_this_field_needs_1_coupon_minimum"]
 			}
 		},
 		rules:{
 			coupons_number:{
-				required:true
+				required:true,
+				min: 1
 			}
 		},
 		submitHandler:function(form){
