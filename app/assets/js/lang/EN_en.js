@@ -65,6 +65,7 @@ $s["signup_app_title_it_canot_be_longer_than_20_characters"] = "It cannot be lon
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 $s["signup_app_description_this_field_is_compulsory"] = "This field is compulsory";
 $s["signup_app_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["signup_app_checkbox_select_at_least_one_element"] =  "Select one element minimum";
 
 //Campaigns - list.js
 $s["search"] = "Search";
@@ -237,6 +238,7 @@ $s["edit_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer tha
 $s["edit_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
 $s["edit_description_this_field_is_compulsory"] = "This field is compulsory";
 $s["edit_description_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["edit_checkbox_select_at_least_one_element"] =  "Select one element minimum";
 
 //admins - new - admin.js
 $s["admin_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";

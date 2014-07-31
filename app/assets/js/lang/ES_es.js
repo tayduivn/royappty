@@ -65,6 +65,7 @@ $s["signup_app_title_it_canot_be_longer_than_20_characters"] = "No puede exceder
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["signup_app_description_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_app_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["signup_app_checkbox_select_at_least_one_element"] = "Selecciona uno de los elementos como mínimo";
 
 //Campaigns - list.js
 $s["search"] = "Buscar";
@@ -235,6 +236,7 @@ $s["edit_to upload"] = " a subir";
 $s["edit_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["edit_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["edit_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["edit_checkbox_select_at_least_one_element"] = "Selecciona uno de los elementos como mínimo";
 
 //admins - new - admin.js
 $s["admin_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";

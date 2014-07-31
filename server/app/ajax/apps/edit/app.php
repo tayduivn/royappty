@@ -65,7 +65,7 @@
 					<label class='form-label'>".htmlentities($app_s["app_name"], ENT_QUOTES, "UTF-8")."</label>
 					<span class='help'>".htmlentities($app_s["app_name_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
-						<input type='text' id='name' name='name' class='form-control' value='".$app["name"]."'>
+						<input type='text' id='name' name='name' class='form-control' value='".htmlentities($app["name"], ENT_QUOTES, "UTF-8")."'>
 					</div>
 				</div>
 				<div class='form-group'>
@@ -260,6 +260,7 @@
 					<div class='form-group'>
 						<label class='form-label'>".htmlentities($app_s["user_fields"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($app_s["user_fields_help"], ENT_QUOTES, "UTF-8")."</span>
+						<div id='user_fields_alert'></div>
 						<div class='m-t-10'>";
 	$table="user_fields";
 	$user_fields=listInBD($table);
@@ -282,7 +283,7 @@
 		$response["data"]["new-discount-step-4"].="
 							<div class='row-fluid'>
 								<div class='checkbox check-default'>
-									<input id='".$user_field["id_user_field"]."' class='user_field_checkbox' type='checkbox' ";
+									<input id='".$user_field["id_user_field"]."' class='user_field_checkbox' name='user_field_checkbox_".$user_field["id_user_field"]."' type='checkbox' ";
 		if($is_in_list){
 			$response["data"]["new-discount-step-4"].="checked";
 		}
