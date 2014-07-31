@@ -13,8 +13,8 @@ $(document).ready(function(){
 		dataType: 'json',
 		url: $SERVER_PATH+"server/app/ajax/accounts/recovery/recovery.php",
 		data: {
-			lang: localStorage.getItem("lang"),
-			"error":$GET["error"]
+			"error":$GET["error"],
+			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
 			error_handeler("ajax_error");
