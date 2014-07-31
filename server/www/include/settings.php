@@ -2,13 +2,13 @@
 $conf = array(
 	'bdtype' => 'mysql',
 	'bdserver' => 'localhost',
-	'bdport' => '',
-	'bd' => 'royappty',
-	'bduser' => 'root',
-	'bdpass' => 'root',
+	'bdport' => '3306',
+	'bd' => 'royappty3',
+	'bduser' => 'royappty3',
+	'bdpass' => 'royappty3',
 	'bdprefix' => ''
 );
-$url_server = "http://localhost:8888/royappty/";
+$url_server = "http://royappty3/";
 
 $campaign_bd_type[2]="discount";
 $campaign_bd_type[1]="coupon";

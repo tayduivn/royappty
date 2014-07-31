@@ -36,7 +36,7 @@ $s["data_edit_country_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_name_it_canot_be_longer_than_50_characters"] = "No puede exceder los 50 caracteres";
 $s["signup_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
-$s["signup_email_this_email_is_already_registered"] = "Este correo electrónico ya está registrado";
+$s["signup_email_this_email_is_already_registered"] = "Este correo electr&oacute;nico ya est&aacute; registrado";
 $s["signup_email_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_email_format_is_not_correct"] = "El formato de correo electr&oacute;nico no es correcto";
 $s["signup_password_this_field_is_compulsory"] = "Este campo es obligatorio";
@@ -44,7 +44,7 @@ $s["signup_password_it_canot_be_longer_than_25_characters"] = "No puede exceder 
 $s["signup_password_this_field_needs_8_character_minimum"] = "Este campo necesita un m&iacute;nimo de 8 caracteres";
 $s["signup_repeat_password_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_repeat_password_both_passwords_do_not_coincide"] = "Las claves no coinciden";
-$s["signup_it_is_necessary_to accept_privacy_policy"] = "Es necesario aceptar la política de privacidad";
+$s["signup_it_is_necessary_to accept_privacy_policy"] = "Es necesario aceptar la pol&iacute;tica de privacidad";
 
 $s["signup_name_step2_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_name_step2_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
@@ -65,7 +65,7 @@ $s["signup_app_title_it_canot_be_longer_than_20_characters"] = "No puede exceder
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["signup_app_description_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_app_description_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
-$s["signup_app_checkbox_select_at_least_one_element"] = "Selecciona uno de los elementos como mínimo";
+$s["signup_app_checkbox_select_at_least_one_element"] = "Selecciona uno de los elementos como m&iacute;nimo";
 
 //Campaigns - list.js
 $s["search"] = "Buscar";
@@ -79,7 +79,7 @@ $s["no_entries"] = "No hay entradas";
 //Admin -list.js
 $s["admin_search"] = "Buscar";
 $s["admin_showing_from_entry"] = "Mostrando desde ";
-$s["admin_to_entry"] = " hasta la ";
+$s["admin_to_entry"] = " hasta ";
 $s["admin_of"] = " de ";
 $s["admin_entries"] = " entradas";
 $s["admin_search_no_entry"] = "La b&uacute;squeda no ha devuelto ninguna entrada";
@@ -88,7 +88,7 @@ $s["admin_no_entries"] = "No hay entradas";
 //Groups-list.js
 $s["group_list_search"] = "Buscar";
 $s["group_list_showing_from_entry"] = "Mostrando desde ";
-$s["group_list_to_entry"] = " hasta la ";
+$s["group_list_to_entry"] = " hasta ";
 $s["group_list_of"] = " de ";
 $s["group_list_entries"] = " entradas";
 $s["group_list_search_no_entry"] = "La b&uacute;squeda no ha devuelto ninguna entrada";
@@ -236,7 +236,7 @@ $s["edit_to upload"] = " a subir";
 $s["edit_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["edit_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["edit_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
-$s["edit_checkbox_select_at_least_one_element"] = "Selecciona uno de los elementos como mínimo";
+$s["edit_checkbox_select_at_least_one_element"] = "Selecciona uno de los elementos como m&iacute;nimo";
 
 //admins - new - admin.js
 $s["admin_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
@@ -256,8 +256,6 @@ $s["edit_admin_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["edit_admin_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["edit_admin_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 
-
-
 //datatables.js
 $s["_showing"] = "Mostrando ";
 $s["_to"] = " a ";
@@ -266,15 +264,14 @@ $s["_entries"]= " entradas";
 $s["database_no_entries"] = "No hay entradas";
 
 //html errors
-$s["an_error_occurred_when_carrying_out_operation"] = "Ha ocurrido un error al realizar la operación y no se a podido llevar acabo, el código del error es: ";
+$s["an_error_occurred_when_carrying_out_operation"] = "Ha ocurrido un error al realizar la operaci&oacute;n y no se a podido llevar acabo, el c&oacute;digo del error es: ";
 $s["unknown"] = "Desconocido";
-$s["please_contact_if_error persists"] = "Por favor vuelva a intentarlo más tarde, si el error persiste contacte con nuestro servicio técnico.";
+$s["please_contact_if_error persists"] = "Por favor vuelva a intentarlo m&aacute;s tarde, si el error persiste contacte con nuestro servicio t&eacute;cnico.";
 $s["close"] = "Cerrar";
 
 //error app index.html
 //$s["error"]["title"] = "Error";
-//$s["error"]["content"] ="Ha ocurrido un error al cargar la página. Por favor vuelva a intentarlo más tarde, si el error persiste contacte con nuestro servicio técnico."
-
+//$s["error"]["content"] ="Ha ocurrido un error al cargar la p&aacute;gina. Por favor vuelva a intentarlo m&aacute;s tarde, si el error persiste contacte con nuestro servicio t&eacute;cnico."
 
 $(document).ready(function() {
   $("#s-modal-error-undone").html($s["an_error_occurred_when_carrying_out_operation"]);
