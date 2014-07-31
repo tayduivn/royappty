@@ -215,8 +215,9 @@
 					</div>
 				</div>
 				<div class='form-group'>
-					<label class='form-label'>".htmlentities($app_s["user_fields"], ENT_QUOTES, "UTF-8")."</label>
+					<label class='form-label'>".htmlentities($app_s["user_fields"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($app_s["user_fields_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div id='user_fields_alert'></div>
 					<div class='m-t-10'>";
 	$table="user_fields";
 	$user_fields=listInBD($table);
