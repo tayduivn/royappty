@@ -102,7 +102,7 @@ $signup_s["accept_policy"] = "I accept privacy policy terms.";
 $policy_s["security"]["title"] = "Safety Policy";
 $policy_s["security"]["content"][0] = "According to what is set forth in the Fundamental Law \"Ley Orgánica 15/1999\", of the 13 December of Personal Data Protection and the Order \" R.D. 1720/2007\", which regulates previous law application, both included in the Spanish legislation, VIVA LA CLOUD, S.L. informs you your personal data, gathered here now or in future, will be included in a mixed-typed file called \"ROYAPPTY CLIENTES\" owned by VIVA LA CLOUD, S.L. and whose purpose is \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACIÓN\".";
 $policy_s["security"]["content"][1] = "We would like to highlight those data will be handled only and exclusively to the service provision and we will keep them under total confidentiality. When you sign up for ROYAPPTY, you are in accordance with alowing we can handle them and send you information about improvements and our app last news.";
-$policy_s["security"]["content"][2] = "To exercise your rights of access, rectification, cancellation or disagreement, you can email us to hola@royappty.com attaching an ID copy of the account owner (in order to verify)";
+$policy_s["security"]["content"][2] = "To exercise your rights of access, rectification, cancellation or disagreement, you can email us to hola@royappty.com attaching an ID copy of the account owner (in order to verify).";
 $policy_s["security"]["content"][3] = "You can consult our complete privacy policy on this link and ROYAPPTY terms of use on this one.";
 $s["policy_exit"] = "Close";
 
