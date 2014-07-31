@@ -229,7 +229,7 @@ $(document).ready(function(){
 
 			nextstep();
 		}else {
-			$("#user_fields_alert").html("<label class='error'>"+$s["signup_app_checkbox_select_at_least_one_elemet"]+"</label>");
+			$("#user_fields_alert").html("<label class='error'>"+$s["signup_app_checkbox_select_at_least_one_element"]+"</label>");
 		}
 	}
 	});

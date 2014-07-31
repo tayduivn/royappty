@@ -77,6 +77,7 @@
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($s["select_delete_option"], ENT_QUOTES, "UTF-8")."</label>
 					<span class='help'>".htmlentities($s["select_delete_option_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div id='delete_fields_alert'></div>
 					<div class='controls'>
 						<select id='delete_option' name='delete_option'>
 							<option value='0'>".htmlentities($s["select_an_option"], ENT_QUOTES, "UTF-8")."</option>

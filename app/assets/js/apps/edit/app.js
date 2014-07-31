@@ -160,7 +160,6 @@ $(document).ready(function() {
 			});
 			if(brand_user_fields!=""){
 				$('#form-end #brand_user_fields').val(brand_user_fields);
-
 				loadingstep();
 			 	$.ajax({
 					type: "POST",

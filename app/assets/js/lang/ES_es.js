@@ -32,6 +32,9 @@ $s["data_edit_post_code_this_field_is_compulsory"] = "Este campo es obligatorio"
 $s["data_edit_city_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["data_edit_country_this_field_is_compulsory"] = "Este campo es obligatorio";
 
+//Account - delete -data
+$s["delete_app_select_one_option"] = "Selecciona la opción Block o Delete Now "
+
 //Account - signup.js
 $s["signup_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_name_it_canot_be_longer_than_50_characters"] = "No puede exceder los 50 caracteres";
