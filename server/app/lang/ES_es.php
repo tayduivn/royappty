@@ -18,7 +18,6 @@ $s["yes"] = "Sí";
 $s["no"] = "No";
 $s["date"] = "Fecha";
 $s["accept"] = "Aceptar";
-$s["help"] = "Ayuda";
 $s["used_codes"] = "Códigos usados";
 $s["last_connection"] = "Última conexión";
 $s["created"] = "Creación";

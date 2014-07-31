@@ -324,7 +324,7 @@
 				<div class='col-md-12'>
 					<div class='form-group'>
 						<label class='form-label'>".htmlentities($new_coupon_s["status"], ENT_QUOTES, "UTF-8")."</label>
-						<span class='help'>".htmlentities($new_coupon_s["status_help"], ENT_QUOTES, "UTF-8")." <a href='javascript:alert(\"ayuda\")'>".htmlentities($s["help"], ENT_QUOTES, "UTF-8")." </a></span>
+						<span class='help'>".htmlentities($new_coupon_s["status_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
 							<select name='status' id='status'>
 								<option value='1' ";
