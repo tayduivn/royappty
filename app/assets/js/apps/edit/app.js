@@ -158,35 +158,39 @@ $(document).ready(function() {
 					separator="::";
 				}
 			});
+			if(brand_user_fields!=""){
+				$('#form-end #brand_user_fields').val(brand_user_fields);
 
-		 	$('#form-end #brand_user_fields').val(brand_user_fields);
+				loadingstep();
+			 	$.ajax({
+					type: "POST",
+					dataType: 'json',
+					url: $SERVER_PATH+"server/app/ajax/apps/edit/update_app.php",
+					data: {
+						"name":$('#form-end #name').val(),
+						"description":$('#form-end #description').val(),
+						"app_icon_path":$('#form-end #app_icon_path').val(),
+						"app_bg_path":$('#form-end #app_bg_path').val(),
+						"published_apple_store":$('#form-end #published_apple_store').val(),
+						"published_google_play":$('#form-end #published_google_play').val(),
+						"brand_user_fields":$('#form-end #brand_user_fields').val()
+					},
+					error: function(data, textStatus, jqXHR) {
+						errorstep("ajax_error");
+					},
+					success: function(response) {
+						if(response.result){
+							successstep();
+						} else {
+							errorstep(response.error_code_str);
+						}
 
-			loadingstep();
-		 	$.ajax({
-				type: "POST",
-				dataType: 'json',
-				url: $SERVER_PATH+"server/app/ajax/apps/edit/update_app.php",
-				data: {
-					"name":$('#form-end #name').val(),
-					"description":$('#form-end #description').val(),
-					"app_icon_path":$('#form-end #app_icon_path').val(),
-					"app_bg_path":$('#form-end #app_bg_path').val(),
-					"published_apple_store":$('#form-end #published_apple_store').val(),
-					"published_google_play":$('#form-end #published_google_play').val(),
-					"brand_user_fields":$('#form-end #brand_user_fields').val()
-				},
-				error: function(data, textStatus, jqXHR) {
-					errorstep("ajax_error");
-				},
-				success: function(response) {
-					if(response.result){
-						successstep();
-					} else {
-						errorstep(response.error_code_str);
 					}
-
-				}
-			});
+				});
+			}
+		else{
+			$("#user_fields_alert").html("<label class='error'>"+$s["edit_checkbox_select_at_least_one_element"]+"</label>");
+		}
 		}
 	});
 
