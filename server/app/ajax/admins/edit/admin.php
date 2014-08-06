@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
-	* Version: 0.93
+	* Last Edit: 06-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -11,6 +11,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
+	* db_connection_error
 	* no_brand
 	* brand_not_valid
 	*	no_admin
@@ -33,6 +34,9 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
+	// BD CONNECTION
+	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	// BRAND
 	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];

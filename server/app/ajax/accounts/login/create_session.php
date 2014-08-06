@@ -11,6 +11,7 @@
   * AJAX RETURNS
   *
   * ERROR CODES
+  * db_connection_error
   * reload
   *
   *
@@ -32,6 +33,9 @@
   /*********************************************************
   * DATA CHECK
   *********************************************************/
+
+  // BD CONNECTION
+  if(!checkBDConnection()){echo json_encode($response);die();}
 
  	if(!@issetandnotempty($_POST["email"])){
 	 	$response["result"]=false;

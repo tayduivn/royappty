@@ -11,7 +11,7 @@
   * AJAX RETURNS
   *
   * ERROR CODES
-  *
+  * db_connection_error
   *
   *********************************************************/
 
@@ -22,7 +22,9 @@
   define('PATH', str_replace('\\','/','../../'));
   @session_start();
   $timestamp=strtotime(date("Y-m-d H:i:00"));
+error_log("111111");
   include(PATH."include/inbd.php");
+  error_log("222222");
   $page_path="server/www/ajax/main/get_main";
   debug_log("[".$page_path."] START");
   $response=array();
@@ -31,6 +33,8 @@
   * DATA CHECK
   *********************************************************/
 
+  // BD CONNECTION
+  if(!checkBDConnection()){echo json_encode($response);die();}
 
 
   /*********************************************************

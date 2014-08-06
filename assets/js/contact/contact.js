@@ -15,6 +15,8 @@ $(document).ready(function(){
         jQuery.each(response.data,function(key,value){
            $(".ajax-loader-"+key).html(value);
         });
+      }else{
+        error_handler(response.error_code);
       }
     }
   });

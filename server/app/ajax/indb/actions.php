@@ -11,6 +11,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
+	* db_connection_error
 	*	post_no_func
 	*	post_no_table
 	*
@@ -27,6 +28,9 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
+	// BD CONNECTION
+	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	if(!@issetandnotempty($_POST["func"]) && !@issetandnotempty($_GET["func"])){
 		$response["result"]=false;

@@ -218,8 +218,11 @@ function deleteInBD($table,$filter=array()) {
 	$r = db_query($query,$manejador);
 }
 
-$table="config";
-$filter=array();
-$filter["used"]=array("operation"=>"=","value"=>"1");
-$CONFIG=getInBD($table,$filter);
+if($db_connection["status"]){
+		$table="config";
+		$filter=array();
+		$filter["used"]=array("operation"=>"=","value"=>"1");
+		$CONFIG=getInBD($table,$filter);
+}
+
 ?>

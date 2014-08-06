@@ -78,8 +78,11 @@ function error_handler(error_code){
 		//Get indb no_table
 		if(error_code=="post_no_table"){window.location.href = $PATH+"dashboard/";break error_block;}
 		//Ajax Errors
-		if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
-		//Error Unknow
+    if(error_code=="db_connection_error"){window.location.href = $PATH+"error/?error_code=db_connection_error";break error_block;}
+    //Ajax Errors
+    if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
+
+    //Error Unknow
 		window.location.href =  $PATH+"error/?error_code=base";break error_block;
 
 	}

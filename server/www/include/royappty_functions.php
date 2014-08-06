@@ -223,6 +223,26 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 	return $block_data;
 }
 
+function checkBDConnection(){
+	global $response;
+	global $db_connection;
+
+	error_log("check_connection ".$db_connection["status"]);
+	if(!$db_connection["status"]){
+		error_log("FALSE");
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Can't connect with DataBase");
+		$response["error"]="ERROR Can't connect with DataBase";
+		$response["error_code"]="db_connection_error";
+		return false;
+		die();
+	}
+
+	return true;
+	die();
+}
+
+
 function checkBrand($brand){
 	global $page_path;
 	global $response;

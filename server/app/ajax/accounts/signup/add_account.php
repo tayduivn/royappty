@@ -11,6 +11,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
+	* db_connection_error
 	*	post_no_account_name
 	*	post_no_account_cif
 	*	post_no_account_contact_address
@@ -44,6 +45,9 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
+	// BD CONNECTION
+	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	//POST
 	if(!@issetandnotempty($_POST["name"])){

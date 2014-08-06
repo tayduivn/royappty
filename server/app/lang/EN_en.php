@@ -742,6 +742,8 @@ $error_s["set_password_code_not_valid"]["title"]="Unvalid Code";
 $error_s["set_password_code_not_valid"]["content"]="An error occurred when trying to change your password account, validation code is not valid.";
 $error_s["ajax_error"]["title"]="Error in the Server";
 $error_s["ajax_error"]["content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
+$error_s["db_connection_error"]["title"]="Error in the Database Server";
+$error_s["db_connection_error"]["content"]="An error occurred in the database server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 $error_s["post_no_path"]["title"]="Error when loading the page";
 $error_s["post_no_path"]["content"]="At the moment, the page cannot be shown. Please, try it again later. If the error persists, contact our technical service.";
 

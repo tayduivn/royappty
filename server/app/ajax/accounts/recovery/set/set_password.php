@@ -11,7 +11,7 @@
   * AJAX RETURNS
   *
   * ERROR CODES
-  *
+  * db_connection_error
   * reload -> If there is not password to set
   * set_password_no_code -> If there is not code
   * set_password_code_not_valid -> If the code is not valid
@@ -34,6 +34,9 @@
   /*********************************************************
   * DATA CHECK
   *********************************************************/
+
+  // BD CONNECTION
+  if(!checkBDConnection()){echo json_encode($response);die();}
 
   //POST
   if(!@issetandnotempty($_POST["password"])){

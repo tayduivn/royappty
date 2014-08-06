@@ -11,7 +11,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* db_connection_error
 	*
 	*
 	*********************************************************/
@@ -30,6 +30,9 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
+	// BD CONNECTION
+	if(!checkBDConnection()){echo json_encode($response);die();}
 
 
 

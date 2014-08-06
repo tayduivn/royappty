@@ -11,7 +11,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
-	*
+	* db_connection_error
 	* set_password_no_code
 	* set_password_code_not_valid
 	*
@@ -32,6 +32,9 @@
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
+
+	// BD CONNECTION
+	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	if(!@issetandnotempty($_POST["code"])){
 		$response["result"]=false;

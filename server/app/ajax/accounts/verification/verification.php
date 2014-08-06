@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
-	* Version: 0.93
+	* Last Edit: 06-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -11,6 +11,7 @@
 	* AJAX RETURNS
 	*
 	* ERROR CODES
+	* db_connection_error
 	*		Empty code -> Handeled here
 	*		No matching code -> Handeled here
 	*
@@ -38,6 +39,9 @@
 	* block.
 	*
 	*********************************************************/
+
+	// BD CONNECTION
+	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	$codeverification=false;
 	if(!@issetandnotempty($_POST["verification_code"])){

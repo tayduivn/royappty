@@ -152,5 +152,8 @@ $error_s["base"]["content"] = "An error occurred while carrying out the operatio
 $error_s["ajax_error"]["title"]="Error in the Server";
 $error_s["ajax_error"]["content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 
+$error_s["db_connection_error"]["title"]="Error in the Database Server";
+$error_s["db_connection_error"]["content"]="An error occurred in the database server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
+
 
 ?>

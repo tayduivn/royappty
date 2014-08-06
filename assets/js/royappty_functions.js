@@ -1,7 +1,7 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 06-08-2014
+* Last Edit: 06-07-2014
 * Version: 0.94
 *
 *********************************************************/
@@ -30,7 +30,8 @@ function session_destroy(){
 function error_handler(error_code){
 	error_block:{
 		if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
-		//Error Unknow
+		if(error_code=="db_connection_error"){window.location.href = $PATH+"error/?error_code=db_connection_error";break error_block;}
+    //Error Unknow
 		window.location.href =  $PATH+"error/?error_code=base";break error_block;
 
 	}
