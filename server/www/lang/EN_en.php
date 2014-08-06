@@ -21,7 +21,7 @@ $s["send"] = "Send";
 
 
 //Footer
-$s["product_VivaLaCLoud_SL"] = "- A product by VivaLaCloud, S.L.-";
+$s["product_VivaLaCLoud_SL"] = "- A product by Royappty Team -";
 $s["address"] = "Menendez Pelayo 3";
 $s["city_country"] = "Vigo, Spain";
 $s["phone"] = "+34 886 131 361";
@@ -33,10 +33,11 @@ $s["looking_for_talent"] = "We are always looking for talent to join our team, e
 $s["follow_us"]= "FOLLOW US!";
 $s["follow_us_in_social_networks"] = "Follow us in social networks and keep you informed about last news.";
 
-$s["lang_spanish"] = "Spanish";
+$s["language"] = "LANGUAGE";
+$s["lang_spanish"] = "Castellano";
 $s["lang_english"] = "English";
 
-$s["VivaLaCloud_SL_2014"] = "VivaLaCloud,S.L. © 2014";
+$s["VivaLaCloud_SL_2014"] = "Royappty © 2014";
 
 
 

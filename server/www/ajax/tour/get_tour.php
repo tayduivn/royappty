@@ -56,15 +56,15 @@
                   <span class='icon-bar'></span>
                   <span class='icon-bar'></span>
           </button>
-          <a href='".$url_path."./index.html' class='navbar-brand compressed'><img src='".$url_path."assets/img/royappty-logo.png' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44' alt=''/></a>
+          <a href='".$url_server."index.html' class='navbar-brand compressed'><img src='".$url_server."assets/img/royappty-logo.png' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='".$url_server."assets/img/royappty-logo.png' height='44' alt=''/></a>
         </div>
         <div class='navbar-collapse collapse'>
               <ul class='nav navbar-nav navbar-right'>
-            <li><a href='".$url_path."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."tour.html'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."pricing.html'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."contact.html'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."app/login'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."app/login'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -84,7 +84,7 @@
           <!-- SLIDE  -->
           <li data-transition='fade' data-slotamount='5' data-masterspeed='700' >
             <!-- MAIN IMAGE -->
-            <img src='".$url_path."assets/img/bg/bg_1.jpg'   alt='slidebg1'  data-bgfit='cover' data-bgposition='center center' data-bgrepeat='no-repeat'>
+            <img src='".$url_server."assets/img/bg/bg_1.jpg'   alt='slidebg1'  data-bgfit='cover' data-bgposition='center center' data-bgrepeat='no-repeat'>
 
 
             <!-- LAYERS -->
@@ -96,7 +96,7 @@
                 data-easing='Power4.easeOut'
                 data-endspeed='600'
                 data-endeasing='Power0.easeIn'
-                style='z-index: 3'><img src='".$url_path."assets/img/imac.png' alt=''>
+                style='z-index: 3'><img src='".$url_server."assets/img/imac.png' alt=''>
 
             </div>
             <div class='tp-caption sfb slider'
@@ -109,7 +109,7 @@
               data-endspeed='300'
               data-endeasing='Power1.easeIn'
               data-captionhidden='off'
-              style='z-index: 6'><img src='".$url_path."assets/img/ipad.png' alt=''>
+              style='z-index: 6'><img src='".$url_server."assets/img/ipad.png' alt=''>
             </div>
             <div class='tp-caption sfr slider'
               data-x='615'
@@ -121,7 +121,7 @@
               data-endspeed='300'
               data-endeasing='Power1.easeIn'
               data-captionhidden='off'
-              style='z-index: 6'><img src='".$url_path."assets/img/iphone.png' alt=''>
+              style='z-index: 6'><img src='".$url_server."assets/img/iphone.png' alt=''>
             </div>
           </li>
         </ul>
@@ -137,12 +137,12 @@
 
           <section class='cbp-so-section'>
             <figure class='cbp-so-side cbp-so-side-left'>
-              <img src='".$url_path."assets/img/Retina.png' alt='img01'>
+              <img src='".$url_server."assets/img/Retina.png' alt='img01'>
             </figure>
             <article class='cbp-so-side cbp-so-side-right text-center middle'>
               <div class='row'>
                 <div class='col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2'>
-                  <img src='".$url_path."assets/img/retina_icon.png' alt='' class='normal'>
+                  <img src='".$url_server."assets/img/retina_icon.png' alt='' class='normal'>
                   <h1 class='m-b-20'>".htmlentities($s["tour_creating_your_own"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_APP"], ENT_QUOTES, "UTF-8")."</span></h1>
                   <p>".htmlentities($s["tour_singup_create_your_app"], ENT_QUOTES, "UTF-8")."</p>
                   <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more"], ENT_QUOTES, "UTF-8")."</button>
@@ -155,7 +155,7 @@
             <article class='cbp-so-side cbp-so-side-left text-center middle'>
               <div class='row'>
                 <div class='col-md-12 p-t-40 col-vlg-8 col-vlg-offset-2'>
-                <img src='".$url_path."assets/img/Stressfree_icon.png' alt='' class='norma'>
+                <img src='".$url_server."assets/img/Stressfree_icon.png' alt='' class='norma'>
                 <h1 class='m-b-20'>".htmlentities($s["tour_managing"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_your_users"], ENT_QUOTES, "UTF-8")."</span></h1>
                 <p>".htmlentities($s["tour_simple_app_for_users"], ENT_QUOTES, "UTF-8")."</p>
                 <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more2"], ENT_QUOTES, "UTF-8")."</button>
@@ -163,18 +163,18 @@
               </div>
             </article>
             <figure class='cbp-so-side cbp-so-side-right'>
-              <img src='".$url_path."assets/img/Stressfree.png' alt='img01'>
+              <img src='".$url_server."assets/img/Stressfree.png' alt='img01'>
             </figure>
           </section>
 
           <section class='cbp-so-section'>
             <figure class='cbp-so-side cbp-so-side-left'>
-              <img src='".$url_path."assets/img/Front.png' alt='img01'>
+              <img src='".$url_server."assets/img/Front.png' alt='img01'>
             </figure>
             <article class='cbp-so-side cbp-so-side-right text-center middle'>
               <div class='row'>
                 <div class='col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2'>
-                <img src='".$url_path."assets/img/frontend_icon.png' alt='' class='normal'>
+                <img src='".$url_server."assets/img/frontend_icon.png' alt='' class='normal'>
                 <h1 class='m-b-20'>".htmlentities($s["tour_use_of"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_app"], ENT_QUOTES, "UTF-8")."</span></h1>
                 <p>".htmlentities($s["tour_what_users_should_do"], ENT_QUOTES, "UTF-8")."</p>
                 <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more3"], ENT_QUOTES, "UTF-8")."</button>
@@ -187,7 +187,7 @@
             <article class='cbp-so-side cbp-so-side-left text-center middle'>
               <div class='row'>
                 <div class='col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2'>
-                <img src='".$url_path."assets/img/condensed_icon.png' alt='' class='normal'>
+                <img src='".$url_server."assets/img/condensed_icon.png' alt='' class='normal'>
                 <h1 class='m-b-20'>".htmlentities($s["tour_find_out"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_your_customers"], ENT_QUOTES, "UTF-8")."</span></h1>
                 <p>".htmlentities($s["tour_get_your_customer_information"], ENT_QUOTES, "UTF-8")."</p>
                 <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more4"], ENT_QUOTES, "UTF-8")."</button>
@@ -195,7 +195,7 @@
               </div>
             </article>
             <figure class='cbp-so-side cbp-so-side-right'>
-              <img src='".$url_path."assets/img/condensed.png' alt='img01'>
+              <img src='".$url_server."assets/img/condensed.png' alt='img01'>
             </figure>
           </section>
   </div>
@@ -225,7 +225,7 @@
         <div class='p-t-30 p-b-50'>
           <div class='row'>
             <div class='col-md-4'>
-            <img src='".$url_path."assets/img/royappty-logo.png' alt='' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44'/>
+            <img src='".$url_server."assets/img/royappty-logo.png' alt='' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='".$url_server."assets/img/royappty-logo.png' height='44'/>
             <address class='p-t-20'>
                 ".htmlentities($s["product_VivaLaCLoud_SL"], ENT_QUOTES, "UTF-8")."<br>
                 ".htmlentities($s["address"], ENT_QUOTES, "UTF-8")."<br>
@@ -243,6 +243,7 @@
             <div class='col-md-4'>
             <div class='bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
             ".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."<br>
+            <div class='bold m-t-10'>".htmlentities($s["language"], ENT_QUOTES, "UTF-8")."</div>
             <a href='#' onclick='changelang(\"es\");'>".htmlentities($s["lang_spanish"], ENT_QUOTES, "UTF-8")."</a><br>
             <a href='#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>
             </div>

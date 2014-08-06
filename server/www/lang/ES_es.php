@@ -21,7 +21,7 @@ $s["send"] = "Enviar";
 
 
 //Footer
-$s["product_VivaLaCLoud_SL"] = "- Un producto de VivaLaCloud, S.L.-";
+$s["product_VivaLaCLoud_SL"] = "- Un producto de Royappty Team -";
 $s["address"] = "Menéndez Pelayo 3";
 $s["city_country"] = "Vigo, España";
 $s["phone"] = "+34 886 131 361";
@@ -33,10 +33,11 @@ $s["looking_for_talent"] = "Siempre estamos buscando talento para unirse a nuest
 $s["follow_us"]= "¡SÍGUENOS!";
 $s["follow_us_in_social_networks"] = "Síguenos en las redes sociales e infórmate de las últimas novedades.";
 
-$s["lang_spanish"] = "Español";
-$s["lang_english"] = "Inglés";
+$s["language"] = "IDIOMA";
+$s["lang_spanish"] = "Castellano";
+$s["lang_english"] = "English";
 
-$s["VivaLaCloud_SL_2014"] = "VivaLaCloud,S.L. © 2014";
+$s["VivaLaCloud_SL_2014"] = "Royappty © 2014";
 
 
 
@@ -129,22 +130,22 @@ $s["tour_we_teach_you"] = "Nuestro sistema es sencillo para ellos y sencillo par
 $s["tour_creating_your_own"] = "Creando tu propia ";
 $s["tour_APP"] = "APP";
 $s["tour_singup_create_your_app"] = "Regístrate en Royappty y crea tu aplicación en tres sencillos pasos. Ponle un nombre, píntala como quieras y diseña su logo. En pocos días será publicada en los stores de Iphone y Android y recibirás nuestro pack de Marketing para que puedas anunciarla en tu local.";
-$s["tour_learn_more"] = "Learn More";
+$s["tour_learn_more"] = "Saber Más";
 
 $s["tour_managing"] = "Gestionando ";
 $s["tour_your_users"] = "tus usuarios";
 $s["tour_simple_app_for_users"] = "Una vez se descarguen la aplicación tus clientes podrán beneficiarse de todas tus promociones. Bastará con que elijan un nombre de usuarios, una contraseña e indiquen una serie de datos personales que nos ayudarán a realizar un mejor seguimiento del éxito de tus campañas.";
-$s["tour_learn_more2"] = "Learn More";
+$s["tour_learn_more2"] = "Saber Más";
 
 $s["tour_use_of"] = "Uso de la ";
 $s["tour_app"] = "Aplicación";
 $s["tour_what_users_should_do"] = "Una vez se descarguen la aplicación tus clientes podrán beneficiarse de todas tus promociones. Bastará con que elijan un nombre de usuario, una contraseña e indiquen sus de datos personales. Esto nos ayudará a realizar un mejor seguimiento del éxito de tus campañas. Cada vez que realice una compra o consumición el cliente sumará puntos en su aplicación. Para ello el vendedor tendrá que introducir un codigo en la aplicación del cliente.";
-$s["tour_learn_more3"] = "Learn More";
+$s["tour_learn_more3"] = "Saber Más";
 
 $s["tour_find_out"] = "Descubre a ";
 $s["tour_your_customers"] = "tus clientes";
 $s["tour_get_your_customer_information"] = "Con Royappty dispondrás siempre de información en tiempo real sobre el comportamiento de tus consumidores y el funcionamiento de tus programas de fidelización. Esto te permitirá saber qué les interesa y cómo puedes mejorar tus ofertas y campañas.";
-$s["tour_learn_more4"] = "Learn More";
+$s["tour_learn_more4"] = "Saber Más";
 
 $error_s["base"]["title"] = "Error desconocido";
 $error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";

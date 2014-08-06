@@ -56,15 +56,15 @@
                   <span class='icon-bar'></span>
                   <span class='icon-bar'></span>
           </button>
-          <a href='".$url_path."./index.html' class='navbar-brand compressed'><img src='".$url_path."assets/img/royappty-logo.png' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='assets/img/royappty-logo.png' height='44' alt=''/></a>
+          <a href='".$url_server."./index.html' class='navbar-brand compressed'><img src='".$url_server."assets/img/royappty-logo.png' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='assets/img/royappty-logo.png' height='44' alt=''/></a>
         </div>
         <div class='navbar-collapse collapse'>
               <ul class='nav navbar-nav navbar-right'>
-            <li><a href='".$url_path."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."tour.html'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."pricing.html'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."contact.html'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_path."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -85,7 +85,7 @@
         <div class='pricing-holder'>
             <div class='inner'>
               <div class='title text-center'>
-                <img src='".$url_path."assets/img/royappty-logo.png' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44' alt=''/>
+                <img src='".$url_server."assets/img/royappty-logo.png' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='".$url_server."assets/img/royappty-logo.png' height='44' alt=''/>
                 <p class='text-success no-margin text-center text-medium'>".htmlentities($s["pricing_starter"], ENT_QUOTES, "UTF-8")."</p>
               </div>
               <ul class='items'>
@@ -140,7 +140,7 @@
               </ul>
               <p class='text-muted text-small m-l-10'>".htmlentities($s["pricing_starter_app_takes_10_days"], ENT_QUOTES, "UTF-8")."</p>
               <h3 class='text-success text-center m-b-20'>".htmlentities($s["pricing_starter_price"], ENT_QUOTES, "UTF-8")."</h3>
-              <a href='".$url_path."./app/signup/' class='btn btn-block btn-success'>".htmlentities($s["pricing_starter_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
+              <a href='".$url_server."./app/signup/' class='btn btn-block btn-success'>".htmlentities($s["pricing_starter_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
 
             </div>
           </div>
@@ -150,7 +150,7 @@
           <div class='pricing-holder'>
             <div class='inner'>
               <div class='title text-center'>
-                <img src='".$url_path."assets/img/royappty-logo.png' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44' alt=''/>
+                <img src='".$url_server."assets/img/royappty-logo.png' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='".$url_server."assets/img/royappty-logo.png' height='44' alt=''/>
                 <p class='text-success no-margin text-center text-medium'>".htmlentities($s["pricing_professional"], ENT_QUOTES, "UTF-8")."</p>
               </div>
               <ul class='items'>
@@ -214,7 +214,7 @@
           <div class='pricing-holder'>
             <div class='inner'>
               <div class='title text-center'>
-                <img src='".$url_path."assets/img/royappty-logo.png' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44' alt=''/>
+                <img src='".$url_server."assets/img/royappty-logo.png' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='".$url_server."assets/img/royappty-logo.png' height='44' alt=''/>
                 <p class='text-success no-margin text-center text-medium'>".htmlentities($s["pricing_unlimited"], ENT_QUOTES, "UTF-8")."</p>
               </div>
               <ul class='items'>
@@ -269,7 +269,7 @@
               </ul>
               <p class='text-muted text-small m-l-10'>".htmlentities($s["pricing_unlimited_app_takes_10_days"], ENT_QUOTES, "UTF-8")."</p>
               <h3 class='text-success text-center m-b-20'>".htmlentities($s["pricing_unlimited_price"], ENT_QUOTES, "UTF-8")."</h3>
-              <a href='".$url_path."./app/signup/' class='btn btn-block btn-success' >".htmlentities($s["pricing_unlimited_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
+              <a href='".$url_server."./app/signup/' class='btn btn-block btn-success' >".htmlentities($s["pricing_unlimited_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
 
             </div>
           </div>
@@ -305,7 +305,7 @@
         <div class='p-t-30 p-b-5'>
           <div class='row'>
             <div class='col-md-4'>
-            <img src='".$url_path."assets/img/royappty-logo.png' alt='' data-src='".$url_path."assets/img/royappty-logo.png' data-src-retina='".$url_path."assets/img/royappty-logo.png' height='44'/>
+            <img src='".$url_server."assets/img/royappty-logo.png' alt='' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='".$url_server."assets/img/royappty-logo.png' height='44'/>
             <address class='p-t-20'>
                 ".htmlentities($s["product_VivaLaCLoud_SL"], ENT_QUOTES, "UTF-8")."<br>
                 ".htmlentities($s["address"], ENT_QUOTES, "UTF-8")."<br>
@@ -323,6 +323,7 @@
             <div class='col-md-4'>
             <div class='bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
             ".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."<br>
+            <div class='bold m-t-10'>".htmlentities($s["language"], ENT_QUOTES, "UTF-8")."</div>
             <a href='#' onclick='changelang(\"es\");'>".htmlentities($s["lang_spanish"], ENT_QUOTES, "UTF-8")."</a><br>
             <a href='#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>
             </div>

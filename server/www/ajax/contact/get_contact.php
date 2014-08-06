@@ -59,9 +59,9 @@
         <div class='navbar-collapse collapse'>
               <ul class='nav navbar-nav navbar-right' >
             <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_server."tour.html'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_server."pricing.html'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-            <li><a href='".$url_server."contact.html'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+            <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
             <li><a href='".$url_server."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -81,7 +81,7 @@
       </div>
       <div class='row p-t-30'>
         <div class='col-md-6 col-sm-6'>
-        <h2 class=''>".htmlentities($s["contact_with"], ENT_QUOTES, "UTF-8")."<span class='text-success semi-bold'>".htmlentities($s["contact_us"], ENT_QUOTES, "UTF-8")."</span></h2>
+        <h2 class=''>".htmlentities($s["contact_with"], ENT_QUOTES, "UTF-8")." <span class='text-success semi-bold'>".htmlentities($s["contact_us"], ENT_QUOTES, "UTF-8")."</span></h2>
         <p class='p-b-20'>".htmlentities($s["contact_complete_form"], ENT_QUOTES, "UTF-8")."</p>
         <div class='row form-row'>
                         <div class='col-md-10'>
@@ -153,6 +153,7 @@
             <div class='col-md-4'>
             <div class='bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
             ".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."<br>
+            <div class='bold m-t-10'>".htmlentities($s["language"], ENT_QUOTES, "UTF-8")."</div>
             <a href='#' onclick='changelang(\"es\");'>".htmlentities($s["lang_spanish"], ENT_QUOTES, "UTF-8")."</a><br>
             <a href='#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>
             </div>

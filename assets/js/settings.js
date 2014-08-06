@@ -27,7 +27,6 @@ else{
 
 if(localStorage.getItem('lang')=='es'){
   require($PATH+"assets/js/lang/ES_es.js");
-  alert("require");
 }
 else{
   require($PATH+"assets/js/lang/EN_en.js");

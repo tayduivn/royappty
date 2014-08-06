@@ -57,15 +57,15 @@ error_log("111111");
               <span class='icon-bar'></span>
               <span class='icon-bar'></span>
               </button>
-              <a href='./index.html' class='navbar-brand compressed'><img src='assets/img/royappty-logo.png' alt='' data-src='assets/img/royappty-logo.png' data-src-retina='assets/img/royappty-logo.png' height='44'/></a>
+              <a href='".$url_server."".$url_server."index.html' class='navbar-brand compressed'><img src='assets/img/royappty-logo.png' alt='' data-src='assets/img/royappty-logo.png' data-src-retina='assets/img/royappty-logo.png' height='44'/></a>
             </div>
             <div class='navbar-collapse collapse'>
               <ul class='nav navbar-nav navbar-right'>
-              <li><a href='index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+              <li><a href='".$url_server."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
               </ul>
             </div><!--/.nav-collapse -->
             </div>
@@ -85,15 +85,15 @@ error_log("111111");
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
           </button>
-          <a href='index.html' class='navbar-brand'><img src='assets/img/royappty-logo-white.png' data-src='assets/img/royappty-logo-white.png' data-src-retina='assets/img/royappty-logo-white.png' height='44' alt=''/></a>
+          <a href='".$url_server."index.html' class='navbar-brand'><img src='assets/img/royappty-logo-white.png' data-src='assets/img/royappty-logo-white.png' data-src-retina='assets/img/royappty-logo-white.png' height='44' alt=''/></a>
         </div>
         <div class='navbar-collapse collapse'>
           <ul class='nav navbar-nav navbar-right'>
-          <li><a href='index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+          <li><a href='".$url_server."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -136,7 +136,7 @@ error_log("111111");
           data-endspeed='300'
           data-endeasing='Power1.easeIn'
           data-captionhidden='off'
-          style='z-index: 6'>	<a href='pricing/' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
+          style='z-index: 6'>	<a href='".$url_server."pricing/' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
         </div>
 
       </li>
@@ -194,7 +194,7 @@ error_log("111111");
       <div class='row'>
         <div class='col-md-12 text-center'>
           <h2 class='p-b-10'><span class='normal'>".htmlentities($s["main_start_now"], ENT_QUOTES, "UTF-8")."</span><br>".htmlentities($s["main_boost_your_business"], ENT_QUOTES, "UTF-8")."</h2>
-          <a href='pricing/' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
+          <a href='".$url_server."pricing/' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
         </div>
       </div>
     </div>
@@ -263,8 +263,9 @@ error_log("111111");
           <div class='col-md-4'>
           <div class='bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
           ".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."<br>
-          <a href='#' onclick='changelang(\"es\");'>".htmlentities($s["lang_spanish"], ENT_QUOTES, "UTF-8")."</a><br>
-          <a href='#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>
+          <div class='bold m-t-10'>".htmlentities($s["language"], ENT_QUOTES, "UTF-8")."</div>
+          <a href='".$url_server."#' onclick='changelang(\"es\");'>".htmlentities($s["lang_spanish"], ENT_QUOTES, "UTF-8")."</a><br>
+          <a href='".$url_server."#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>
           </div>
         </div>
       </div>
