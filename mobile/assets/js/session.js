@@ -5,14 +5,14 @@ $.ajax({
 	data: {
 	},
 	error: function(data, textStatus, jqXHR) {
-		error_handeler("no_brand");
+		error_handler("no_brand");
 	},
 	success: function(response) {
 		if(response.result){
 			localStorage.setItem('brand',response.data.id_brand);
 			$BRAND=response.data.id_brand;
 			if (typeof localStorage.getItem('id_user') == 'undefined') {
-				error_handeler("no_user");
+				error_handler("no_user");
 			}else{
 				$SESSION=localStorage.getItem('id_user');
 				$.ajax({
@@ -26,20 +26,20 @@ $.ajax({
 						id_brand:$BRAND
 					},
 					error: function(data, textStatus, jqXHR) {
-						error_handeler("ajax_error");
+						error_handler("ajax_error");
 					},
 					success: function(response) {
 						if(response.result){
 
 						} else {
-							error_handeler(response.error_code);
+							error_handler(response.error_code);
 						}
 
 					}
 				});
 			}
 		} else {
-			error_handeler("no_brand");
+			error_handler("no_brand");
 		}
 
 	}

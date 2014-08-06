@@ -17,14 +17,14 @@ function view_note(id_campaign_note){
 			id_campaign_note:id_campaign_note
 		},
 		error: function(data, textStatus, jqXHR) {
-				error_handeler("ajax_error");
+				error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
 				$("#campaign_notes_viewer .modal-msg").html(response.data);
 				show_modal("campaign_notes_viewer","javascript:delete_campaign_note("+id_campaign_note+")");
 			} else {
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 		}
 	});
@@ -44,7 +44,7 @@ function delete_campaign_note(id_campaign_note){
 			callback_options_str:callback_options_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -71,7 +71,7 @@ function delete_campaign_note(id_campaign_note){
 	    		}
 
             }else{
-			error_handeler(response.error_code);
+			error_handler(response.error_code);
 			}
 
 		}
@@ -93,7 +93,7 @@ function add_campaign_note(){
 			callback_options_str:callback_options_str
 		},
 		error: function(data, textStatus, jqXHR) {
-				error_handeler("ajax_error");
+				error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -120,7 +120,7 @@ function add_campaign_note(){
 	    		}
 
             }else{
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}
@@ -136,7 +136,7 @@ $(document).ready(function(){
 			id_campaign:$GET["id_campaign"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -144,7 +144,7 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}
@@ -249,13 +249,13 @@ function delete_campaign(id_campaign){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
 				show_modal("deleted_campaign_success_alert","javascript:window.location=\"../campaigns/\"");
       }else{
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 		}
 	});

@@ -29,7 +29,7 @@ function session_destroy(){
 	localStorage.removeItem('id_admin');
 }
 
-function error_handeler(error_code){
+function error_handler(error_code){
 	error_block:{
 		//Genral
 		if(error_code=="login_error"){window.location.href = $PATH+"login/?error=login_error";break error_block;}

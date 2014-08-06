@@ -11,7 +11,7 @@ $(document).ready(function() {
 					data: {
 					},
 					error: function(data, textStatus, jqXHR) {
-						error_handeler("ajax_error");
+						error_handler("ajax_error");
 					},
 					success: function(response) {
 						if(response.result){
@@ -19,7 +19,7 @@ $(document).ready(function() {
 								localStorage.setItem(key, value);
 							});
 						} else {
-							error_handeler(response.error_code);
+							error_handler(response.error_code);
 						}
 
 					}
@@ -49,7 +49,7 @@ function validate_promo(campaign){
 			"code":$('#'+campaign+"-code").val()
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax-error");
+			error_handler("ajax-error");
 		},
 		success: function(response) {
 			if(response.result){

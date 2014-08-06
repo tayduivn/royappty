@@ -16,11 +16,11 @@ function logout(){
 
 
 if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getItem('id_brand') == null)){
-	error_handeler("no_brand");
+	error_handler("no_brand");
 }else{
 	$BRAND=localStorage.getItem('id_brand');
 	if ((typeof localStorage.getItem('id_admin') == 'undefined')||(localStorage.getItem('id_admin') == 'null')) {
-		error_handeler("no_admin");
+		error_handler("no_admin");
 	}else{
 		$SESSION=localStorage.getItem('id_admin');
 		$.ajax({
@@ -33,12 +33,12 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 				id_brand:$BRAND
 			},
 			error: function(data, textStatus, jqXHR) {
-				error_handeler("ajax_error");
+				error_handler("ajax_error");
 			},
 			success: function(response) {
 				if(response.result){
 				} else {
-					error_handeler(response.error_code);
+					error_handler(response.error_code);
 				}
 			}
 		});
@@ -53,7 +53,7 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 					lang: localStorage.getItem("lang")
 				},
 				error: function(data, textStatus, jqXHR) {
-					error_handeler("ajax_error");
+					error_handler("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){
@@ -61,7 +61,7 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined')||(localStorage.getI
 							$(".ajax-loader-"+key).html(value);
 						});
 					} else {
-						error_handeler(response.error_code);
+						error_handler(response.error_code);
 					}
 				}
 			});

@@ -17,14 +17,14 @@ function view_note(id_group_note){
 			id_group_note:id_group_note
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
 				$("#group_notes_viewer .modal-msg").html(response.data);
 				show_modal("group_notes_viewer","javascript:delete_group_note("+id_group_note+")");
 			} else {
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}
@@ -46,7 +46,7 @@ function delete_group_note(id_group_note){
 			callback_options_str:callback_options_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -73,7 +73,7 @@ function delete_group_note(id_group_note){
 	    		}
 
             }else{
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}
@@ -96,7 +96,7 @@ function add_group_note(){
 			callback_options_str:callback_options_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -123,7 +123,7 @@ function add_group_note(){
 	    		}
 
             }else{
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}
@@ -140,7 +140,7 @@ $(document).ready(function(){
 			id_group:$GET["id_group"]
 		},
 		error: function(data, textStatus, jqXHR) {
-		error_handeler("ajax_error");
+		error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -148,7 +148,7 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}
@@ -253,7 +253,7 @@ function delete_group(id_group){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -268,7 +268,7 @@ function delete_group(id_group){
 						filter_str:filter_str
 					},
 					error: function(data, textStatus, jqXHR) {
-						error_handeler("ajax_error");
+						error_handler("ajax_error");
 					},
 					success: function(response) {
 						if(response.status){
@@ -283,23 +283,23 @@ function delete_group(id_group){
 									filter_str:filter_str
 								},
 								error: function(data, textStatus, jqXHR) {
-									error_handeler("ajax_error");
+									error_handler("ajax_error");
 								},
 								success: function(response) {
 									if(response.status){
 										show_modal("deleted_group_success_alert","javascript:window.location=\"../groups/\"");
 									}else{
-										error_handeler(response.error_code);
+										error_handler(response.error_code);
 									}
 								}
 							});
 						}else{
-							error_handeler(response.error_code);
+							error_handler(response.error_code);
 						}
 					}
 				});
 			}else{
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 		}
 	});

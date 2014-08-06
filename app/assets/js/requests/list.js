@@ -17,7 +17,7 @@ $(document).ready(function() {
 			status:$GET["status"]
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -25,7 +25,7 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-			error_handeler(response.error_code);
+			error_handler(response.error_code);
 			}
 
 		}
@@ -84,7 +84,7 @@ function delete_request(id_request){
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.status){
@@ -111,7 +111,7 @@ function delete_request(id_request){
 	    		}
 
             }else{
-							error_handeler(response.error_code);
+							error_handler(response.error_code);
 			}
 
 		}

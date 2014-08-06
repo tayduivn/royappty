@@ -45,14 +45,14 @@ $(document).ready(function(){
 		data: {
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("no_brand");
+			error_handler("no_brand");
 		},
 		success: function(response) {
 			if(response.result){
 				localStorage.setItem('brand',response.data.id_brand);
 				$BRAND=response.data.id_brand;
 			} else {
-				error_handeler("no_brand");
+				error_handler("no_brand");
 			}
 
 		}

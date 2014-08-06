@@ -9,7 +9,7 @@ $(document).ready(function() {
 			id_brand:$BRAND
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -17,7 +17,7 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}
@@ -41,7 +41,7 @@ function signup(){
 			id_brand:$BRAND
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -58,14 +58,14 @@ function signup(){
 						signup_data:input_str
 					},
 					error: function(data, textStatus, jqXHR) {
-						error_handeler("sign_up_error");
+						error_handler("sign_up_error");
 					},
 					success: function(response) {
 						if(response.result){
 							localStorage.setItem('id_user', response.data.id_user);
 							window.location.href = "../";
 						} else {
-							error_handeler(response.error_code);
+							error_handler(response.error_code);
 						}
 
 					}
@@ -74,7 +74,7 @@ function signup(){
 
 
 			} else {
-				error_handeler(response.error_code);
+				error_handler(response.error_code);
 			}
 
 		}

@@ -17,7 +17,7 @@ $(document).ready(function(){
 			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -105,7 +105,7 @@ $(document).ready(function() {
 					"password":$('#form-end #password').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					error_handeler("ajax_error");
+					error_handler("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){
@@ -113,7 +113,7 @@ $(document).ready(function() {
 						localStorage.setItem('id_admin',response.data.id_admin);
 						window.location.href = "../";
 					} else {
-						error_handeler("login_error");
+						error_handler("login_error");
 					}
 
 				}

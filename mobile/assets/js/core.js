@@ -45,7 +45,7 @@ function show_modal(modal_id,accept_function){
 	}
 }
 
-function error_handeler(error_code){
+function error_handler(error_code){
 	error_block:{
 		//Brand check errors
 		if(error_code=="no_brand"){window.location.href = $PATH+"./error/?error_code=no_brand";break error_block;}

@@ -50,7 +50,7 @@
 	";
 
 	//Form error handeler
-	@error_handeler($_POST["error"]);
+	@error_handler($_POST["error"]);
 
 
 	$response["data"]["recovery-step-1"]="

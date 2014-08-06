@@ -16,7 +16,7 @@ $(document).ready(function(){
 			lang: localStorage.getItem("lang")
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handeler("ajax_error");
+			error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -24,7 +24,7 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-					error_handeler(response.error_code);
+					error_handler(response.error_code);
 			}
 
 		}
@@ -90,7 +90,7 @@ $(document).ready(function() {
 						subscription_type:$('#form-step1 input[name="subscription_type"]:checked').val()
 					},
 					error: function(data, textStatus, jqXHR) {
-						error_handeler("ajax_error");
+						error_handler("ajax_error");
 					},
 					success: function(response) {
 						if(response.result){
@@ -99,7 +99,7 @@ $(document).ready(function() {
 							});
 							nextstep();
 						} else {
-							error_handeler(response.error_code);
+							error_handler(response.error_code);
 						}
 
 					}
@@ -147,7 +147,7 @@ $(document).ready(function() {
 					payment_plan:$('#form-step2 input[name="payment_plan"]:checked').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					error_handeler("ajax_error");
+					error_handler("ajax_error");
 				},
 				success: function(response) {
 					if(response.result){
@@ -156,7 +156,7 @@ $(document).ready(function() {
 						});
 						nextstep();
 					} else {
-						error_handeler(response.error_code);
+						error_handler(response.error_code);
 					}
 
 				}

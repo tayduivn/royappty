@@ -10,7 +10,7 @@ $.ajax({
 	data: {
 	},
 	error: function(data, textStatus, jqXHR) {
-		error_handeler("ajax_error");
+		error_handler("ajax_error");
 	},
 	success: function(response) {
 		if(response.result){
@@ -18,7 +18,7 @@ $.ajax({
 				pages[key]=value;
 			});
 		} else {
-			error_handeler(response.error_code);
+			error_handler(response.error_code);
 		}
 
 	}

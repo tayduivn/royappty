@@ -51,7 +51,7 @@
 
 	//Form error handeler
 	$error_alert="";
-	@error_handeler($_POST["error"]);
+	@error_handler($_POST["error"]);
 
 
 	$response["data"]["login-step-1"]="

@@ -301,7 +301,7 @@ function checkAdmin($admin){
  	die();
 }
 
-function error_handeler($error_code){
+function error_handler($error_code){
 	global $error_alert;
 	global $error_s;
 
