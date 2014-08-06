@@ -1,9 +1,12 @@
-var $SERVER_PATH = $PATH;
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 06-08-2014
+* Version: 0.94
+*
+*********************************************************/
 
-//Check localStorage(lang)
-//Check navigator(lang)
-//Set localStorage depending on navigator(lang)
-//Set localStorage depending on user's choice
+var $SERVER_PATH = $PATH;
 
 if ((typeof localStorage.getItem('lang') == 'undefined')||(localStorage.getItem('lang') == null)){
   var navigatorLang = navigator.language || navigator.userLanguage;
@@ -14,8 +17,20 @@ if ((typeof localStorage.getItem('lang') == 'undefined')||(localStorage.getItem(
     localStorage.setItem('lang','en');
   }
 }
-else if(localStorage.getItem('lang') != 'es'){
+else if(localStorage.getItem('lang') == 'es'){
+  localStorage.setItem('lang','es');
+
+}
+else{
   localStorage.setItem('lang','en');
+}
+
+if(localStorage.getItem('lang')=='es'){
+  require($PATH+"assets/js/lang/ES_es.js");
+  alert("require");
+}
+else{
+  require($PATH+"assets/js/lang/EN_en.js");
 }
 
 function changelang(lang){

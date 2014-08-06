@@ -1,5 +1,8 @@
 <?php
 
+//General
+$s["back"] = "Back";
+
 //Menu
 $s["home"] = "Home";
 $s["how_it_works"] = "How it works";
@@ -142,4 +145,12 @@ $s["tour_find_out"] = "Find out ";
 $s["tour_your_customers"] = "your customers";
 $s["tour_get_your_customer_information"] = "With Royappty you will always have information available in real time about consumer behaviour and how your customer loyalty program is working. This fact will allow you to know what they are interested in and how you can improve your offers and campaigns.";
 $s["tour_learn_more4"] = "Learn More";
+
+$error_s["base"]["title"] = "Unknown error";
+$error_s["base"]["content"] = "An error occurred while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
+
+$error_s["ajax_error"]["title"]="Error in the Server";
+$error_s["ajax_error"]["content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
+
+
 ?>

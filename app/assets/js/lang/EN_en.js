@@ -280,14 +280,14 @@ $s["please_contact_if_error persists"] = "Please, try it again later; if error p
 $s["close"] = "Close";
 
 //error app index.html
-//$s["error"]["title"] = "Error";
-//$s["error"]["content"] ="An error occurred when loading the page. Please, try it again later; if error persists, contact with our technical service."
+//$s["error_title"] = "Error";
+//$s["error_content"] ="An error occurred when loading the page. Please, try it again later; if error persists, contact with our technical service."
 
 $(document).ready(function() {
   $("#s-modal-error-undone").html($s["an_error_occurred_when_carrying_out_operation"]);
   $("#s-modal-error-unknown").html($s["unknown"]);
   $("#s-modal-error-contact").html($s["please_contact_if_error persists"]);
   $("#s-modal-error-close").html($s["close"]);
-  //$("#s-error-title").html($s["error"]["title"]);
-  //$("#s-error-content").html($s["error"]["content"]);
+  //$("#s-error-title").html($s["error_title"]);
+  //$("#s-error-content").html($s["error_content"]);
 });

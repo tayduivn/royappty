@@ -1,17 +1,12 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 23-06-2014
-* Version: 0.93
+* Last Edit: 06-08-2014
+* Version: 0.94
 *
 *********************************************************/
 
 var $SERVER_PATH = $PATH+"../";
-
-//Check localStorage(lang)
-//Check navigator(lang)
-//Set localStorage depending on navigator(lang)
-//Set localStorage depending on user's choice
 
 if ((typeof localStorage.getItem('lang') == 'undefined')||(localStorage.getItem('lang') == null)){
   var navigatorLang = navigator.language || navigator.userLanguage;

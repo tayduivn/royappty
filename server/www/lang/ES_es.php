@@ -1,5 +1,8 @@
 <?php
 
+//General
+$s["back"] = "Volver";
+
 //Menu
 $s["home"] = "Inicio";
 $s["how_it_works"] = "Cómo funciona";
@@ -142,4 +145,11 @@ $s["tour_find_out"] = "Descubre a ";
 $s["tour_your_customers"] = "tus clientes";
 $s["tour_get_your_customer_information"] = "Con Royappty dispondrás siempre de información en tiempo real sobre el comportamiento de tus consumidores y el funcionamiento de tus programas de fidelización. Esto te permitirá saber qué les interesa y cómo puedes mejorar tus ofertas y campañas.";
 $s["tour_learn_more4"] = "Learn More";
+
+$error_s["base"]["title"] = "Error desconocido";
+$error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+
+$error_s["ajax_error"]["title"]="Error en el Servidor";
+$error_s["ajax_error"]["content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+
 ?>
