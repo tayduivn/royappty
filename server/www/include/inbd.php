@@ -1,5 +1,4 @@
 <?php
-error_log("-->inBDstart");
 include_once(PATH."include/settings.php");
 include_once(PATH."include/bd.php");
 include_once(PATH."include/general.php");

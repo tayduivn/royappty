@@ -8,7 +8,7 @@ $(document).ready(function(){
       lang: localStorage.getItem("lang")
     },
     error: function(data, textStatus, jqXHR) {
-      alert("error ajax");
+      error_handler("ajax_error");
     },
     success: function(response) {
       if(response.result){

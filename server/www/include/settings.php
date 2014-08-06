@@ -3,9 +3,9 @@ $conf = array(
 	'bdtype' => 'mysql',
 	'bdserver' => 'localhost',
 	'bdport' => '',
-	'bd' => 'royappty3',
-	'bduser' => 'royappty3',
-	'bdpass' => 'royappty3',
+	'bd' => 'royappty',
+	'bduser' => 'root',
+	'bdpass' => 'root',
 	'bdprefix' => ''
 );
 $url_server = "http://royappty3/";

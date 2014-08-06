@@ -208,7 +208,7 @@
               <h3 class='text-center text-muted m-b-30'>".htmlentities($s["contact_to_answer_doubts"], ENT_QUOTES, "UTF-8")."</h3>
             <div class='row form-row'>
                         <div class='col-md-6 col-md-offset-2 no-padding  col-sm-6 col-sm-offset-2 col-xs-10 col-xs-offset-1'>
-                          <input name='form3Occupation' id='form3Occupation' type='text' class='form-control' placeholder='".htmlentities($s["insert_email_or phone"], ENT_QUOTES, "UTF-8")."'>
+                          <input name='contact_info' id='contact_info' type='text' class='form-control' placeholder='".htmlentities($s["insert_email_or_phone"], ENT_QUOTES, "UTF-8")."'>
                         </div>
               <div class='col-md-4 col-sm-4 col-xs-4 xs-p-l-10'>
               <button type='button' class='btn btn-primary btn-cons'>".htmlentities($s["send"], ENT_QUOTES, "UTF-8")."</button>

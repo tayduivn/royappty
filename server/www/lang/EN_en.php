@@ -12,7 +12,7 @@ $s["access"] = "Access";
 //Contact us
 $s["need_more_info"] = "Do you need more information about Royappty?";
 $s["contact_to_answer_doubts"] = "Give us your email or your phone number to answer all your doubts";
-$s["insert_email_or phone"] = "Insert your email or contact phone number here";
+$s["insert_email_or_phone"] = "Insert your email or contact phone number here";
 $s["send"] = "Send";
 
 
