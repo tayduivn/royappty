@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
-	* Version: 0.93
+	* Last Edit: 06-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -85,7 +85,7 @@
 			}
 		}
 
-  		$table="campaigns";
+  	$table="campaigns";
  		$filter=array();
  		$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
  		$filter["status"]=array("operation"=>"=","value"=>1);
