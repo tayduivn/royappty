@@ -92,15 +92,15 @@ $s["contact_open_from_to"] = "Monday to Friday from 8.00 to 18.00";
 
 //Pricing page
 $s["pricing_starter"] = "STARTER";
-$s["pricing_starter_monthly_campaings"] = "1 Monthly campaign";
+$s["pricing_starter_monthly_campaings"] = "5 Monthly campaign";
 $s["pricing_starter_iPhone_Android_available"] = "App available for iPhone & Android";
 $s["pricing_starter_message_customer"] = "Customer Sevice Message";
 $s["pricing_starter_statistics"] = "User statistics and campaign reports";
 $s["pricing_starter_marketing_pack"] = "Marketing pack";
-$s["pricing_starter_customized_campaigns"] = "Customized campaigns";
+$s["pricing_starter_customized_campaigns"] = "Groups & focused campaigns";
 $s["pricing_starter_app_takes_10_days"] = "* App may take 10 days to be available";
-$s["pricing_starter_price"] = "Free";
-$s["pricing_starter_btn_hire"] = "HIRE";
+$s["pricing_starter_price"] = "9,99 € / Month";
+$s["pricing_starter_btn_hire"] = "TRY ROYAPPTY FOR FREE";
 
 $s["pricing_professional"] = "PROFESSIONAL";
 $s["pricing_professional_monthly_campaigns"] = "10 Monthly campaigns";
@@ -108,21 +108,21 @@ $s["pricing_professional_iPhone_Android_available"] = "App available for iPhone 
 $s["pricing_professional_message_customer"] = "Customer Sevice Message";
 $s["pricing_professional_statistics"] = "User statistics and campaign reports";
 $s["pricing_professional_marketing_pack"] = "Marketing pack";
-$s["pricing_professional_customized_campaigns"] = "Customized campaigns";
+$s["pricing_professional_customized_campaigns"] = "Groups & focused campaigns";
 $s["pricing_professional_app_takes_10_days"] = "* App may take 10 days to be available";
-$s["pricing_professional_price"] = "9.99 € / Month";
+$s["pricing_professional_price"] = "14.99 € / Month";
 $s["pricing_professional_btn_hire"] = "HIRE";
 
-$s["pricing_unlimited"] = "UNLIMITED";
+$s["pricing_unlimited"] = "ENTERPRISE";
 $s["pricing_unlimited_campaigns"] = "Unlimited campaigns";
 $s["pricing_unlimited_iPhone_Android_available"] = "App available for iPhone & Android";
 $s["pricing_unlimited_iPhone_message_customer"] = "Customer Sevice Message";
 $s["pricing_unlimited_statistics"] = "User statistics and campaign reports";
 $s["pricing_unlimited_marketing_pack"] = "Marketing pack";
-$s["pricing_unlimited_focused_campaigns"] = "Focused campaigns";
+$s["pricing_unlimited_focused_campaigns"] = "Groups & focused campaigns";
 $s["pricing_unlimited_app_takes_10_days"] = "* App may take 10 days to be available";
-$s["pricing_unlimited_price"] = "99.99 € / Month";
-$s["pricing_unlimited_btn_hire"] = "HIRE";
+$s["pricing_unlimited_price"] = "Custom princing";
+$s["pricing_unlimited_btn_hire"] = "CONTACT US";
 
 
 

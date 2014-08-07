@@ -107,26 +107,26 @@
                 </li>
                 <li class='available'>
                   <div class='icon-holder'>
-                    <i class='fa fa-times text-muted'></i>
+                    <i class='fa fa-check text-success'></i>
                   </div>
                   <div class='desc'>
-                    <span class='text-muted'>".htmlentities($s["pricing_starter_message_customer"], ENT_QUOTES, "UTF-8")."</span>
+                    <span class='text-black'>".htmlentities($s["pricing_starter_message_customer"], ENT_QUOTES, "UTF-8")."</span>
                   </div>
                 </li>
                 <li class='available'>
                   <div class='icon-holder'>
-                    <i class='fa fa-times text-muted'></i>
+                    <i class='fa fa-check text-success'></i>
                   </div>
                   <div class='desc'>
-                    <span class='text-muted'>".htmlentities($s["pricing_starter_statistics"], ENT_QUOTES, "UTF-8")."</span>
+                    <span class='text-black'>".htmlentities($s["pricing_starter_statistics"], ENT_QUOTES, "UTF-8")."</span>
                   </div>
                 </li>
                 <li class='available'>
                   <div class='icon-holder'>
-                    <i class='fa fa-times text-muted'></i>
+                    <i class='fa fa-check text-success'></i>
                   </div>
                   <div class='desc'>
-                    <span class='text-muted'>".htmlentities($s["pricing_starter_marketing_pack"], ENT_QUOTES, "UTF-8")."</span>
+                    <span class='text-black'>".htmlentities($s["pricing_starter_marketing_pack"], ENT_QUOTES, "UTF-8")."</span>
                   </div>
                 </li>
                 <li class='available'>
