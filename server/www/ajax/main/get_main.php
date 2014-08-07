@@ -22,9 +22,7 @@
   define('PATH', str_replace('\\','/','../../'));
   @session_start();
   $timestamp=strtotime(date("Y-m-d H:i:00"));
-error_log("111111");
   include(PATH."include/inbd.php");
-  error_log("222222");
   $page_path="server/www/ajax/main/get_main";
   debug_log("[".$page_path."] START");
   $response=array();
@@ -40,6 +38,25 @@ error_log("111111");
   /*********************************************************
   * AJAX OPERATIONS
   *********************************************************/
+
+  $stats=array();
+
+  $table="brands";
+  $filter=array();
+  $filter["active"]=array("operation"=>"=","value"=>1);
+  $stats["count_brands"]=countInBD($table,$filter);
+
+  $table="campaigns";
+  $filter=array();
+  $filter["status"]=array("operation"=>"=","value"=>1);
+  $stats["count_campaigns"]=countInBD($table,$filter);
+
+  $table="users";
+  $filter=array();
+  $filter["active"]=array("operation"=>"=","value"=>1);
+  $stats["count_users"]=countInBD($table,$filter);
+
+
 
   $response["result"]=true;
 
@@ -206,15 +223,15 @@ error_log("111111");
         <div class='row feature-list'>
           <div class='col-md-4 text-center'>
             <h4 class='custom-font title'>".htmlentities($s["main_businesses"], ENT_QUOTES, "UTF-8")."</h4>
-            <h1 class='custom-font'><span class='number-animator' data-value='250' data-animation-duration='100'>0</span></h1>
+            <h1 class='custom-font'><span class='number-animator' data-value='".$stats["count_brands"]."' data-animation-duration='100'>0</span></h1>
           </div>
           <div class='col-md-4 text-center'>
             <h4 class='custom-font title'>".htmlentities($s["main_campaigns"], ENT_QUOTES, "UTF-8")."</h4>
-            <h1 class='custom-font'><span class='number-animator' data-value='1500' data-animation-duration='100'>0</span></h1>
+            <h1 class='custom-font'><span class='number-animator' data-value='".$stats["count_campaigns"]."' data-animation-duration='100'>0</span></h1>
           </div>
           <div class='col-md-4 text-center'>
             <h4 class='custom-font title'>".htmlentities($s["main_loyal_customer"], ENT_QUOTES, "UTF-8")."</h4>
-            <h1 class='custom-font'><span class='number-animator' data-value='15478' data-animation-duration='100'>0</span></h1>
+            <h1 class='custom-font'><span class='number-animator' data-value='".$stats["count_users"]."' data-animation-duration='100'>0</span></h1>
           </div>
         </div>
       </div>
