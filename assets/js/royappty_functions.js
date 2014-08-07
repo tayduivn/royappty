@@ -18,6 +18,7 @@ function require(script) {
     });
 }
 
+
 function logout(){
 	session_destroy();
 	window.location.href = $PATH;
@@ -28,15 +29,34 @@ function session_destroy(){
 }
 
 function error_handler(error_code){
-	error_block:{
-		if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
-		if(error_code=="db_connection_error"){window.location.href = $PATH+"error/?error_code=db_connection_error";break error_block;}
+  error_block:{
+    if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
+    if(error_code=="db_connection_error"){window.location.href = $PATH+"error/?error_code=db_connection_error";break error_block;}
     //Error Unknow
-		window.location.href =  $PATH+"error/?error_code=base";break error_block;
+    window.location.href =  $PATH+"error/?error_code=base";break error_block;
 
-	}
+  }
 }
 
+function modal_error_handler(error_code){
+  error_block:{
+    if(error_code=="ajax_error"){set_modal("error-modal",$error_s["ajax_error_title"],$error_s["ajax_error_content"],$s["close"],"#");break error_block;}
+    if(error_code=="db_connection_error"){set_modal("error-modal",$error_s["db_connection_error_title"],$error_s["db_connection_error_content"],$s["close"],"#");break error_block;}
+    //Error Unknow
+    window.location.href =  $PATH+"error/?error_code=base";break error_block;
+
+  }
+}
+
+function set_modal(id_modal,title,content,button,accept_action){
+  $("#"+id_modal+" #modal-title").html(title);
+  $("#"+id_modal+" #modal-content").html(content);
+  $("#"+id_modal+" #modal-button").html(button);
+  $('.modal').modal('hide');
+  $("#"+id_modal).modal();
+  $("#"+id_modal+" .accept_button").attr("href",accept_action);
+
+}
 
 function print_area(){
 	$(".only_printable").css("display","block");

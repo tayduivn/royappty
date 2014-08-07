@@ -2,6 +2,7 @@
 
 //General
 $s["back"] = "Back";
+$s["close"] = "Close";
 
 //Menu
 $s["home"] = "Home";
@@ -10,7 +11,9 @@ $s["prices"] = "Prices";
 $s["contact"] = "Contact";
 $s["access"] = "Access";
 
-
+//Contact Info
+$s_modal["your_contact-info_was_sent"]["title"] = "Contact Information";
+$s_modal["your_contact-info_was_sent"]["content"] = "Your contact information was sent correctly. Our team will contact you as soon as possible.";
 
 //Contact us
 $s["need_more_info"] = "Do you need more information about Royappty?";

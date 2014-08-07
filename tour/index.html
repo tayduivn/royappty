@@ -31,16 +31,55 @@
 <link href="../assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
 <!-- END CSS TEMPLATE -->
 
+<script type="text/javascript" src="../assets/plugins/jquery-1.8.3.min.js"></script>
+
 <script>
 	$PATH="../";
 	var $SESSION=0;
 
 </script>
+<script src="../assets/js/royappty_functions.js" type="text/javascript"></script>
 <script type="text/javascript" src="../assets/js/settings.js"></script>
 
 </head>
 <!-- END HEAD -->
 <body>
+
+<div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<br>
+				<h4 class="semi-bold" id="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+				<p class="no-margin" id="modal-content"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success btn-small" data-dismiss="modal" id="modal-button"></button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="base-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<br>
+				<h4 class="semi-bold" id="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+				<p class="no-margin" id="modal-content"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success btn-small" data-dismiss="modal" id="modal-button"></button>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <div class="ajax-loader-menu-data"></div>
 <div class="ajax-loader-page-data"></div>
@@ -48,7 +87,6 @@
 
 
 <!-- BEGIN CORE JS FRAMEWORK -->
-<script type="text/javascript" src="../assets/plugins/jquery-1.8.3.min.js"></script>
 <script src="../assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- END CORE JS FRAMEWORK -->
 
@@ -65,10 +103,9 @@
 <script src="../assets/plugins/onescroll/js/cbpScroller.js"></script>
 <script type="text/javascript" src="../assets/plugins/jquery-nicescroll/jquery.nicescroll.min.js"></script>
 <!-- END JS PLUGIN -->
-<script>
-	new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
-</script>
 <script src="../assets/js/tour/tour.js" type="text/javascript"></script>
+<script type="text/javascript" src="../assets/plugins/validate/jquery.validate.js"></script>
+<script src="../assets/js/contactinfo/contactinfo.js" type="text/javascript"></script>
 <script type="text/javascript" src="../assets/js/core.js"></script>
 
 </body>

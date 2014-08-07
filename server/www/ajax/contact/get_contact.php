@@ -12,7 +12,6 @@
   *
   * ERROR CODES
   * db_connection_error
-  * db_connection_error
   *
   *********************************************************/
 

@@ -2,6 +2,7 @@
 
 //General
 $s["back"] = "Volver";
+$s["close"] = "Cerrar";
 
 //Menu
 $s["home"] = "Inicio";
@@ -10,6 +11,9 @@ $s["prices"] = "Precios";
 $s["contact"] = "Contacto";
 $s["access"] = "Acceso";
 
+//Contact Info
+$s_modal["your_contact-info_was_sent"]["title"] = "Información de Contacto";
+$s_modal["your_contact-info_was_sent"]["content"] = "Tu información de contacto ha sido enviada. Nuestro equipo se pondrá en contacto contigo lo antes posible.";
 
 
 //Contact us

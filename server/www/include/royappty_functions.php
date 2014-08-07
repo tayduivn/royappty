@@ -4,6 +4,7 @@ function corporate_email($mail_for,$mail_subject,$content){
 	global $CONFIG;
 	global $lang_email;
 	global $s;
+	global $page_path;
 
 	$mail_content ="
 		<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
@@ -46,10 +47,10 @@ function corporate_email($mail_for,$mail_subject,$content){
 					".$CONFIG["company_phone"]."<br/>
 					".$CONFIG["company_info_mail"]."<br/>
 				</div>
-				<div style='float:right;padding-right:20px;text-align:left;width:300px;font-size:11px;padding-bottom:10px;'>
+				<div style='float:right;padding-right:20px;text-align:right;width:300px;font-size:11px;padding-bottom:10px;'>
 					<div style='font-weight:bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
-					<div style='text-align:left;margin-top:5px;'>
-						".htmlentities($s["follow_us_content"], ENT_QUOTES, "UTF-8")."
+					<div style='text-align:right;margin-top:5px;'>
+						".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."
 					</div>
 				</div>
 			</div>
@@ -60,7 +61,9 @@ function corporate_email($mail_for,$mail_subject,$content){
 		</body>
 		</html>";
 		$mail_header="Content-type: text/html\r\nFrom: ".$CONFIG["mail_header_email"];
+		debug_log("[".$page_path."] Send corportate email (for:".$mail_for.",subject:".$mail_subject.") START");
 		mail($mail_for,$mail_subject,$mail_content,$mail_header);
+		debug_log("[".$page_path."] Send corportate email END");
 		return true;
 }
 
@@ -227,7 +230,6 @@ function checkBDConnection(){
 	global $response;
 	global $db_connection;
 
-	error_log("check_connection ".$db_connection["status"]);
 	if(!$db_connection["status"]){
 		error_log("FALSE");
 		$response["result"]=false;

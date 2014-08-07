@@ -54,10 +54,10 @@ function corporate_email($mail_for,$mail_subject,$content){
 					".$CONFIG["company_phone"]."<br/>
 					".$CONFIG["company_info_mail"]."<br/>
 				</div>
-				<div style='float:right;padding-right:20px;text-align:left;width:300px;font-size:11px;padding-bottom:10px;'>
+				<div style='float:right;padding-right:20px;text-align:right;width:300px;font-size:11px;padding-bottom:10px;'>
 					<div style='font-weight:bold'>".htmlentities($s["follow_us"], ENT_QUOTES, "UTF-8")."</div>
-					<div style='text-align:left;margin-top:5px;'>
-						".htmlentities($s["follow_us_content"], ENT_QUOTES, "UTF-8")."
+					<div style='text-align:right;margin-top:5px;'>
+						".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."
 					</div>
 				</div>
 			</div>
