@@ -121,7 +121,6 @@ $(document).ready(function() {
 		rules:{
 		},
 		submitHandler:function(form){
-			$('#form-end #app_icon_path').val($('#app_icon_path-preview').attr("src"));
 		 	nextstep();
 		}
 	});
@@ -131,7 +130,6 @@ $(document).ready(function() {
 		rules:{
 		},
 		submitHandler:function(form){
-			$('#form-end #app_bg_path').val($('#app_bg_path-preview').attr("src"));
 		 	nextstep();
 		}
 	});
@@ -192,7 +190,6 @@ $(document).ready(function() {
 		}
 		}
 	});
-
 	$('.droparea').each(function(){
 		$(this).droparea({
 			'instructions': '<br/><br/><h2><i class="fa fa-picture-o"></h2></i>'+$s["edit_click_or_drag_image_here"]+'<br/>'+$s["edit_to upload"],
@@ -209,6 +206,7 @@ $(document).ready(function() {
 					alert($s["edit_an_error_occurred_when_downloading_the_file"]);
 				}else{
 					$('#'+result.preview).attr("src",result.filename);
+					$('#form-end #'+result.label).val(result.path);
 				}
 			}
 		});

@@ -92,13 +92,18 @@
 	}
 	unset($data["id_app"]);
 
-	copy($data["app_icon_path"],PATH."../resources/app-icon/".$timestamp.".jpg");
-	$data["app_icon_path"] = $timestamp.".jpg";
-	unlink($data["app_icon_path"]);
-
-	copy($data["app_bg_path"],PATH."../resources/app-bg/".$timestamp.".jpg");
-	$data["app_bg_path"] = $timestamp.".jpg";
-	unlink($data["app_icon_path"]);
+	if(@issetandnotempty($data["app_icon_path"])){
+		copy(PATH."../../".$data["app_icon_path"],PATH."../../resources/app-icon/".$timestamp.".jpg");
+		$data["app_icon_path"] = $timestamp.".jpg";
+	}else{
+		unset($data["app_icon_path"]);
+	}
+	if(@issetandnotempty($data["app_bg_path"])){
+		copy(PATH."../../".$data["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
+		$data["app_bg_path"] = $timestamp.".jpg";
+	}else{
+		unset($data["app_bg_path"]);
+	}
 
 	updateInBD($table,$filter,$data);
 

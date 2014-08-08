@@ -97,40 +97,7 @@
 						<label class='form-label'>".htmlentities($app_s["icon"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($app_s["icon_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/general/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_icon_path' />
-						</div>
-						<label class='form-label'>".$app_s["app_choose_predefined_icon"]."</label>
-						<div class='m-t-10'>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-01.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-01.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-02.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-02.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-03.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-03.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-04.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-04.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-05.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-05.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-06.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-06.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-07.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-07.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-08.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-08.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-09.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-09.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_icon_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-10.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-icon/app-pre-icon-10.jpg'/>
-							</a>
+							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_icon_path' />
 						</div>
 					</div>
 				</div>
@@ -165,40 +132,7 @@
 						<label class='form-label'>".htmlentities($app_s["app_bg"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($app_s["app_bg_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/general/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_bg_path' />
-						</div>
-						<label class='form-label'>".$app_s["app_choose_predefined_background"]."</label>
-						<div class='m-t-10'>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-01.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-01.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-02.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-02.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-03.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-03.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-04.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-04.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-05.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-05.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-06.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-06.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-07.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-07.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-08.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-08.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-09.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-09.jpg'/>
-							</a>
-							<a href=\"javascript:$('#app_bg_path-preview').attr('src','".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-10.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/app-pre-bg/app-pre-bg-10.jpg'/>
-							</a>
+							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_bg_path' />
 						</div>
 					</div>
 				</div>
@@ -314,8 +248,8 @@
 		<form id='form-end'>
 			<input type='hidden' id='name' value='".$app["name"]."'/>
 			<input type='hidden' id='description' value='".$app["description"]."'/>
-			<input type='hidden' id='app_icon_path' value='".$url_server."resources/app-icon/".$app["app_icon_path"]."'/>
-			<input type='hidden' id='app_bg_path' value='".$url_server."resources/app-bg/".$app["app_bg_path"]."'/>
+			<input type='hidden' id='app_icon_path' value=''/>
+			<input type='hidden' id='app_bg_path' value=''/>
 			<input type='hidden' id='published_apple_store' value='".$app["published_apple_store"]."'/>
 			<input type='hidden' id='published_google_play' value='".$app["published_google_play"]."'/>
 			<input type='hidden' id='brand_user_fields' value='".$app["brand_user_fields"]."'/>

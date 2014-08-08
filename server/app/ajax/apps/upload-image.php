@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
-	* Version: 0.93
+	* Last Edit: 08-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -18,23 +18,32 @@
 
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
-	********************************************************/
+	*********************************************************/
 
-	define('PATH', str_replace('\\', '/','../../../'));
+	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/accounts/signup/upload_image";
+	$page_path="server/app/ajax/campaigns/upload_image";
 	debug_log("[".$page_path."] START");
 
-	$res = new stdClass();
-	// Result content type
-	header('content-type: application/json');
 
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
 
+	include(PATH."functions/check_session.php");
+
+
+	/*********************************************************
+	* AJAX OPERATIONS
+	*********************************************************/
+
+	debug_log("UPDALOAD IMAGE");
+
+	$res = new stdClass();
+	// Result content type
+	header('content-type: application/json');
 
 	// Maximum file size
 	$maxsize = 10; //Mb
@@ -42,23 +51,19 @@
 	if ($_FILES['xfile']['size'] > ($maxsize * 1048576)) {
 		$res->error=true;
 		echo json_encode($res);
-	    die();
+			die();
 	}
 	if ($_FILES['xfile']['type'] != "image/jpeg") {
-	   $res->error=true;
+		$res->error=true;
 		echo json_encode($res);
-	    die();
+			die();
 	}
 
-
-	/*********************************************************
-	* AJAX OPERATIONS
-	*********************************************************/
 
 	$types = Array('image/png', 'image/gif', 'image/jpeg');
 
 	$source = file_get_contents($_FILES["xfile"]["tmp_name"]);
-	$folder="../../../../../resources/tmp/";
+	$folder="../../../../resources/tmp/";
 	$filename = $folder . $timestamp . '.jpg';
 
 	$width=0;
@@ -88,6 +93,8 @@
 	$res->img = '<img src="'.$url_server.'resources/tmp/'.'temp'.'.jpg" alt="image" />';
 	$res->error =false;
 
+
+
 	/*********************************************************
 	* DATABASE REGISTRATION
 	*********************************************************/
@@ -97,10 +104,9 @@
 	/*********************************************************
 	* AJAX CALL RETURN
 	*********************************************************/
-
+	// Return to JSON
 	echo json_encode($res);
 	debug_log("[".$page_path."] END");
 	die();
-
 
 ?>
