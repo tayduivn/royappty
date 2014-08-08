@@ -2,8 +2,8 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 23-06-2014
-* Version: 0.93
+* Last Edit: 08-08-2014
+* Version: 0.94
 *
 *********************************************************/
 
@@ -12,6 +12,7 @@ function corporate_email($mail_for,$mail_subject,$content){
 	global $CONFIG;
 	global $lang_email;
 	global $s;
+	global $page_path;
 
 	$mail_content ="
 		<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
@@ -68,7 +69,9 @@ function corporate_email($mail_for,$mail_subject,$content){
 		</body>
 		</html>";
 		$mail_header="Content-type: text/html\r\nFrom: ".$CONFIG["mail_header_email"];
+		debug_log("[".$page_path."] Send corportate email (for:".$mail_for.",subject:".$mail_subject.") START");
 		mail($mail_for,$mail_subject,$mail_content,$mail_header);
+		debug_log("[".$page_path."] Send corportate email END");
 		return true;
 }
 
@@ -258,6 +261,24 @@ function checkBrand($brand){
  	return true;
  	die();
 
+}
+
+function checkBDConnection(){
+	global $response;
+	global $db_connection;
+
+	if(!$db_connection["status"]){
+		error_log("FALSE");
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Can't connect with DataBase");
+		$response["error"]="ERROR Can't connect with DataBase";
+		$response["error_code"]="db_connection_error";
+		return false;
+		die();
+	}
+
+	return true;
+	die();
 }
 
 function checkAdmin($admin){

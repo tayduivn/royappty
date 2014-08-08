@@ -2,10 +2,13 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 17-07-2014
-* Version: 0.93
+* Last Edit: 08-08-2014
+* Version: 0.94
 *
 *********************************************************/
+
+$db_connection=array();
+$db_connection["status"]=true;
 
 /*
  * Funcion de conexión al servidor de base de datos.
@@ -13,8 +16,6 @@
  * Salidas:
  *		$manejador: identificador de conexión con la base de datos.
  */
-$db_connection=array();
-$db_connection["status"]=true;
 
 function db_connect() {
 global $conf;
