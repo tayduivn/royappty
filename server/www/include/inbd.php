@@ -1,10 +1,22 @@
 <?php
+/*********************************************************
+*
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Edit: 08-08-2014
+* Version: 0.94
+*
+*********************************************************/
+
+
 include_once(PATH."include/settings.php");
 include_once(PATH."include/bd.php");
 include_once(PATH."include/general.php");
 include_once(PATH."include/royappty_functions.php");
+include_once(PATH."include/lang.php");
 
 if(!isset($manejador)) {
+	global $page_path;
+
 	$manejador = db_connect();
 }
 
@@ -12,6 +24,7 @@ if(!isset($manejador)) {
 function isInBD($table,$filter=array()){
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "select * from ".$conf["bdprefix"].$table." where ";
 	$and="";
@@ -24,7 +37,7 @@ function isInBD($table,$filter=array()){
 		$and="and";
 	}
 	$query.=$and." 1";
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
 	if(db_count($r) > 0) {
 		return true;
@@ -35,6 +48,7 @@ function isInBD($table,$filter=array()){
 function getInBD($table,$filter=array(),$fields = array()){
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "select ";
 	$selected_fields = "*";
@@ -58,7 +72,7 @@ function getInBD($table,$filter=array(),$fields = array()){
 		$and="and";
 	}
 	$query.=$and." 1";
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
 	if(db_count($r) > 0) {
 		return db_fetch($r);
@@ -69,6 +83,7 @@ function getInBD($table,$filter=array(),$fields = array()){
 function listInBD($table,$filter=array(),$fields = array(),$order="",$limit=0){
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "select ";
 	$selected_fields = "*";
@@ -98,7 +113,7 @@ function listInBD($table,$filter=array(),$fields = array(),$order="",$limit=0){
 	if($limit!=0){
 		$query.=" limit ".$limit;
 	}
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
 	$i=0;
 	$data_array=array();
@@ -112,6 +127,7 @@ function listInBD($table,$filter=array(),$fields = array(),$order="",$limit=0){
 function countInBD($table,$filter=array()){
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "select count(*) as c from ".$conf["bdprefix"].$table." where ";
 	$and="";
@@ -124,16 +140,16 @@ function countInBD($table,$filter=array()){
 		$and="and";
 	}
 	$query.=$and." 1";
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
 	$r = db_fetch($r);
 	return $r["c"];
 }
 
 function sumInBD($table,$filter=array(),$sum_field){
-
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "select sum(".$sum_field.") as s from ".$conf["bdprefix"].$table." where ";
 	$and="";
@@ -146,7 +162,7 @@ function sumInBD($table,$filter=array(),$sum_field){
 		$and="and";
 	}
 	$query.=$and." 1";
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
 	$r = db_fetch($r);
 	return $r["s"];
@@ -157,6 +173,7 @@ function sumInBD($table,$filter=array(),$sum_field){
 function updateInBD($table,$filter=array(),$update_data = array()){
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "update ".$conf["bdprefix"].$table." set ";
 	$coma = "";
@@ -176,7 +193,7 @@ function updateInBD($table,$filter=array(),$update_data = array()){
 		$and="and";
 	}
 	$query.=$and." 1";
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
 	return true;
 }
@@ -184,6 +201,7 @@ function updateInBD($table,$filter=array(),$update_data = array()){
 function addInBD($table,$data){
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "insert into ".$conf["bdprefix"].$table."  (";
 	$coma = "";
@@ -194,14 +212,15 @@ function addInBD($table,$data){
 		$coma = ",";
 	}
 	$query .= ") VALUES (".$values.")";
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
-	return db_last_id();
+	return db_last_id($manejador);
 }
 
 function deleteInBD($table,$filter=array()) {
 	global $manejador;
 	global $conf;
+	global $page_path;
 
 	$query = "delete from ".$conf["bdprefix"].$table." where";
 	$and="";
@@ -214,15 +233,14 @@ function deleteInBD($table,$filter=array()) {
 		$and="and";
 	}
 	$query.=$and." 1";
-	debug_log($query);
+	debug_log("[".$page_path."] ".$query);
 	$r = db_query($query,$manejador);
 }
 
-if($db_connection["status"]){
-		$table="config";
-		$filter=array();
-		$filter["used"]=array("operation"=>"=","value"=>"1");
-		$CONFIG=getInBD($table,$filter);
-}
+
+$table="config";
+$filter=array();
+$filter["used"]=array("operation"=>"=","value"=>"1");
+$CONFIG=getInBD($table,$filter);
 
 ?>
