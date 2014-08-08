@@ -151,6 +151,17 @@ $s["tour_your_customers"] = "tus clientes";
 $s["tour_get_your_customer_information"] = "Con Royappty dispondrás siempre de información en tiempo real sobre el comportamiento de tus consumidores y el funcionamiento de tus programas de fidelización. Esto te permitirá saber qué les interesa y cómo puedes mejorar tus ofertas y campañas.";
 $s["tour_learn_more4"] = "Saber Más";
 
+//Tour Build page
+$s["build_1_title"] = "Lorem ipsum dolor sit amet";
+$s["build_1_content"] = "Proin viverra lectus vitae orci luctus venenatis. Duis et sem tincidunt, commodo felis ac, rutrum nulla. Maecenas ornare interdum sollicitudin. Vivamus ipsum mauris, facilisis at iaculis id, lobortis sed risus. Aliquam metus lectus, porttitor quis massa vel, euismod blandit dolor. Pellentesque ullamcorper quam id pharetra porttitor. Vivamus elementum felis nec leo ultricies facilisis id eu est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris pretium ullamcorper semper. Phasellus ac pulvinar diam. Quisque consectetur quam id mauris faucibus faucibus. Aenean vehicula tincidunt quam vitae volutpat.";
+
+$s["build_2_title"] = "Proin viverra lectus";
+$s["build_2_content"] = "Donec accumsan eu nibh at ultricies. Suspendisse at feugiat elit. Suspendisse vulputate dignissim aliquet. Nam pellentesque varius pulvinar. Nullam ac blandit felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum varius ante, ut suscipit lorem ultricies ac. Proin accumsan interdum enim ut commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada iaculis venenatis. Mauris porttitor vestibulum faucibus. Vivamus quis velit in orci scelerisque aliquet at venenatis ligula. Vestibulum sed mi at augue aliquet faucibus id et quam.";
+
+$s["build_3_title"] = "Donec accumsan eu nibh at ultricies";
+$s["build_3_content"] = "Mauris porttitor odio sed fringilla luctus. Proin sed orci ut turpis hendrerit mattis. Praesent vestibulum elementum lectus, vitae placerat ante. Vestibulum ut tempus magna. Fusce iaculis dolor felis, quis convallis nisl malesuada quis. Sed et mattis est, ac commodo leo. Suspendisse elementum felis vel dui fermentum, adipiscing sodales eros mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+
 $error_s["base"]["title"] = "Error desconocido";
 $error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 

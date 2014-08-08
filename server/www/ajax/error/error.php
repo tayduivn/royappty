@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-07-2014
-	* Version: 0.93
+	* Last Edit: 08-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -22,7 +22,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path = "server/app/ajax/error/error";
+	$page_path = "server/www/ajax/error/error";
 	debug_log("[".$page_path."] START");
 	$response=array();
 

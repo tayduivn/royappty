@@ -2,8 +2,8 @@
   /*********************************************************
   *
   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-  * Last Edit: 25-07-2014
-  * Version: 0.93.1
+  * Last Edit: 08-08-2014
+  * Version: 0.94
   *
   *********************************************************/
 
@@ -23,7 +23,7 @@
   @session_start();
   $timestamp=strtotime(date("Y-m-d H:i:00"));
   include(PATH."include/inbd.php");
-  $page_path="server/www/ajax/contact/get_tour";
+  $page_path="server/www/ajax/tour/get_tour";
   debug_log("[".$page_path."] START");
   $response=array();
 
@@ -145,7 +145,7 @@
                   <img src='".$url_server."assets/img/retina_icon.png' alt='' class='normal'>
                   <h1 class='m-b-20'>".htmlentities($s["tour_creating_your_own"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_APP"], ENT_QUOTES, "UTF-8")."</span></h1>
                   <p>".htmlentities($s["tour_singup_create_your_app"], ENT_QUOTES, "UTF-8")."</p>
-                  <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more"], ENT_QUOTES, "UTF-8")."</button>
+                  <a href='".$url_server."tour/build/' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more"], ENT_QUOTES, "UTF-8")."</a>
                 </div>
               </div>
             </article>
@@ -158,7 +158,7 @@
                 <img src='".$url_server."assets/img/Stressfree_icon.png' alt='' class='norma'>
                 <h1 class='m-b-20'>".htmlentities($s["tour_managing"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_your_users"], ENT_QUOTES, "UTF-8")."</span></h1>
                 <p>".htmlentities($s["tour_simple_app_for_users"], ENT_QUOTES, "UTF-8")."</p>
-                <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more2"], ENT_QUOTES, "UTF-8")."</button>
+                <a href='".$url_server."tour/promos/' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more"], ENT_QUOTES, "UTF-8")."</a>
                 </div>
               </div>
             </article>
@@ -177,7 +177,7 @@
                 <img src='".$url_server."assets/img/frontend_icon.png' alt='' class='normal'>
                 <h1 class='m-b-20'>".htmlentities($s["tour_use_of"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_app"], ENT_QUOTES, "UTF-8")."</span></h1>
                 <p>".htmlentities($s["tour_what_users_should_do"], ENT_QUOTES, "UTF-8")."</p>
-                <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more3"], ENT_QUOTES, "UTF-8")."</button>
+                <a href='".$url_server."tour/opportunities/' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more"], ENT_QUOTES, "UTF-8")."</a>
                 </div>
               </div>
             </article>
@@ -190,7 +190,7 @@
                 <img src='".$url_server."assets/img/condensed_icon.png' alt='' class='normal'>
                 <h1 class='m-b-20'>".htmlentities($s["tour_find_out"], ENT_QUOTES, "UTF-8")."<span class='semi-bold'>".htmlentities($s["tour_your_customers"], ENT_QUOTES, "UTF-8")."</span></h1>
                 <p>".htmlentities($s["tour_get_your_customer_information"], ENT_QUOTES, "UTF-8")."</p>
-                <button type='button' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more4"], ENT_QUOTES, "UTF-8")."</button>
+                <a href='".$url_server."tour/validation/' class='btn btn-primary btn-cons m-t-20'>".htmlentities($s["tour_learn_more"], ENT_QUOTES, "UTF-8")."</a>
                 </div>
               </div>
             </article>
