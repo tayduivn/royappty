@@ -12,14 +12,17 @@ $s["contact"] = "Contact";
 $s["access"] = "Access";
 
 //Contact Info
-$s_modal["your_contact-info_was_sent"]["title"] = "Contact Information";
-$s_modal["your_contact-info_was_sent"]["content"] = "Your contact information was sent correctly. Our team will contact you as soon as possible.";
+$s_modal["your_contact_info_was_sent"]["title"] = "Contact Information";
+$s_modal["your_contact_info_was_sent"]["content"] = "Your contact information was sent correctly. Our team will contact you as soon as possible.";
 
 //Contact us
 $s["need_more_info"] = "Do you need more information about Royappty?";
 $s["contact_to_answer_doubts"] = "Give us your email or your phone number to answer all your doubts";
 $s["insert_email_or_phone"] = "Insert your email or contact phone number here";
 $s["send"] = "Send";
+
+$s_modal["your_contact_was_sent"]["title"] = "Contact Us";
+$s_modal["your_contact_was_sent"]["content"] = "Your message was sent correctly. Our team will contact you as soon as possible.";
 
 
 

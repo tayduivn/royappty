@@ -80,28 +80,30 @@
       </div>
       <div class='row p-t-30'>
         <div class='col-md-6 col-sm-6'>
-        <h2 class=''>".htmlentities($s["contact_with"], ENT_QUOTES, "UTF-8")." <span class='text-success semi-bold'>".htmlentities($s["contact_us"], ENT_QUOTES, "UTF-8")."</span></h2>
-        <p class='p-b-20'>".htmlentities($s["contact_complete_form"], ENT_QUOTES, "UTF-8")."</p>
-        <div class='row form-row'>
-                        <div class='col-md-10'>
-                          <input name='textFirstName' id='textFirstName' type='text' class='form-control' placeholder='".htmlentities($s["contact_name"], ENT_QUOTES, "UTF-8")."'>
-                        </div>
+          <h2 class=''>".htmlentities($s["contact_with"], ENT_QUOTES, "UTF-8")." <span class='text-success semi-bold'>".htmlentities($s["contact_us"], ENT_QUOTES, "UTF-8")."</span></h2>
+          <p class='p-b-20'>".htmlentities($s["contact_complete_form"], ENT_QUOTES, "UTF-8")."</p>
+          <form id='form-contact'>
+            <div class='row form-row'>
+              <div class='col-md-10'>
+                <input name='name' id='name' type='text' class='form-control' placeholder='".htmlentities($s["contact_name"], ENT_QUOTES, "UTF-8")."'>
               </div>
-        <div class='row form-row'>
-                        <div class='col-md-10'>
-                          <input name='txtEmailAddress' id='txtEmailAddress' type='text' class='form-control' placeholder='".htmlentities($s["contact_email_or_phone"], ENT_QUOTES, "UTF-8")."'>
-                        </div>
+            </div>
+            <div class='row form-row'>
+              <div class='col-md-10'>
+                <input name='email' id='email' type='text' class='form-control' placeholder='".htmlentities($s["contact_email_or_phone"], ENT_QUOTES, "UTF-8")."'>
               </div>
-        <div class='row form-row'>
-                        <div class='col-md-10'>
-              <textarea id='txtDesc' type='text' class='form-control' placeholder='".htmlentities($s["contact_write_here_questions"], ENT_QUOTES, "UTF-8")."' rows='8'></textarea>
-                        </div>
+            </div>
+            <div class='row form-row'>
+              <div class='col-md-10'>
+                <textarea name='content' id='content' type='text' class='form-control' placeholder='".htmlentities($s["contact_write_here_questions"], ENT_QUOTES, "UTF-8")."' rows='8'></textarea>
               </div>
-        <div class='row form-row'>
-           <div class='col-md-10'>
-          <button type='button' class='btn btn-primary'>".htmlentities($s["contact_send"], ENT_QUOTES, "UTF-8")."</button>
-          </div>
-        </div>
+            </div>
+            <div class='row form-row'>
+              <div class='col-md-10'>
+                <input type='submit' class='btn btn-primary' value='".htmlentities($s["contact_send"], ENT_QUOTES, "UTF-8")."'/>
+              </div>
+            </div>
+          </form>
         </div>
         <div class='col-md-6 feature-list p-t-20'>
           <h4 class='title custom-font text-black no-margin p-b-10 all-caps'>".htmlentities($s["contact_phone_title"], ENT_QUOTES, "UTF-8")."</h4>

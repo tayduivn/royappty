@@ -2,7 +2,15 @@ var $s = new Array();
 var $error_s = new Array();
 
 //Contact Infor
-$s["contact-info_this_field_is_compulsory"] = "This field is compulsory";
+$s["contact_info_this_field_is_compulsory"] = "This field is compulsory";
+
+//Contact Form
+$s["contact_form_name_this_field_is_compulsory"] = "This field is compulsory";
+$s["contact_form_name_it_canot_be_longer_than_75_characters"] = "It cannot be longer than 75 characters";
+$s["contact_form_name_this_field_needs_4_character_minimum"] = "This field needs 4 character minimum";
+$s["contact_form_email_this_field_is_compulsory"] = "This field is compulsory";
+$s["contact_form_email_format_is_not_correct"] = "Email format is not correct";
+$s["contact_form_content_this_field_is_compulsory"] = "This field is compulsory";
 
 //General
 $s["back"] = "Back";

@@ -5,7 +5,7 @@ $(document).ready(function(){
   $("#form-contact-info").validate({
     messages:{
       contact_info:{
-        required: $s["contact-info_this_field_is_compulsory"]
+        required: $s["contact_info_this_field_is_compulsory"]
       }
     },
     rules:{

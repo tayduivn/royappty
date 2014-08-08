@@ -2,7 +2,15 @@ var $s = new Array();
 var $error_s = new Array();
 
 //Contact Infor
-$s["contact-info_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["contact_info_this_field_is_compulsory"] = "Este campo es obligatorio";
+
+//Contact Form
+$s["contact_form_name_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["contact_form_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
+$s["contact_form_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["contact_form_email_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["contact_form_email_format_is_not_correct"] = "El formato del email no es v&aacute;lido";
+$s["contact_form_content_this_field_is_compulsory"] = "Este campo es obligatorio";
 
 //General
 $s["back"] = "Volver";
