@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 08-07-2014 a las 10:14:58
+-- Tiempo de generación: 11-08-2014 a las 12:08:23
 -- Versión del servidor: 5.5.34
 -- Versión de PHP: 5.5.10
 
@@ -61,7 +61,7 @@ CREATE TABLE `admins` (
   `can_manage_app` int(1) NOT NULL,
   `can_manage_brand` int(1) NOT NULL,
   PRIMARY KEY (`id_admin`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -76,6 +76,7 @@ CREATE TABLE `apps` (
   `description` text NOT NULL,
   `published_apple_store` int(1) NOT NULL,
   `published_google_play` int(1) NOT NULL,
+  `app_title` varchar(255) NOT NULL,
   `app_icon_path` varchar(155) NOT NULL,
   `app_bg_path` varchar(155) NOT NULL,
   `automatic_screenshots` int(1) NOT NULL,
@@ -84,7 +85,7 @@ CREATE TABLE `apps` (
   `app_screenshot_3_path` varchar(155) NOT NULL,
   `app_screenshot_4_path` varchar(155) NOT NULL,
   PRIMARY KEY (`id_app`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -134,7 +135,7 @@ CREATE TABLE `brands` (
   `payment_data` varchar(255) NOT NULL,
   `expiration_date` int(11) NOT NULL,
   PRIMARY KEY (`id_brand`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,7 @@ CREATE TABLE `brand_user_fields` (
   `id_user_field` int(11) NOT NULL,
   `main_field` int(1) NOT NULL,
   PRIMARY KEY (`id_brand_user_field`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -211,7 +212,7 @@ CREATE TABLE `campaign_notes` (
   `content` text NOT NULL,
   `created` int(11) NOT NULL,
   PRIMARY KEY (`id_campaign_note`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -300,6 +301,21 @@ CREATE TABLE `group_notes` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id_notificacion` int(11) NOT NULL AUTO_INCREMENT,
+  `id_brand` int(11) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `num_users` int(11) NOT NULL,
+  `created` int(11) NOT NULL,
+  PRIMARY KEY (`id_notificacion`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `orders`
 --
 
@@ -365,7 +381,7 @@ CREATE TABLE `recovery_codes` (
   `email` varchar(255) DEFAULT NULL,
   `code` varchar(255) NOT NULL,
   PRIMARY KEY (`id_recovery_code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -382,7 +398,7 @@ CREATE TABLE `requests` (
   `created` int(11) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id_request`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -514,8 +530,6 @@ CREATE TABLE `users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `id_brand` int(11) NOT NULL,
   `active` int(1) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `phone` varchar(20) NOT NULL,
   `created` int(11) NOT NULL,
   `last_connection` int(11) NOT NULL,
   `resume_block_1_display` int(1) NOT NULL,

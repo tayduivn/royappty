@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-07-2014
-	* Version: 0.93
+	* Last Edit: 11-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -59,34 +59,16 @@
 		die();
 	}
 
-
- 	$table="brands";
- 	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	$fields = array("app_name");
-	$brand = getInBD($table,$filter,$fields);
-
-
- 	$response=array();
-
- 	$table="admins";
- 	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	$filter["id_admin"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_admin"]);
-
-	if(!isInBD($table,$filter)){
-		$response["result"]=false;
-		error_log("[server/app/ajax/general/get_menu] ERROR There is no Admin (".$_SESSION["admin"]["id_admin"].") for this Brand (".$_SESSION["admin"]["id_brand"].")");
-		$response["error"]="ERROR Your admin account is not allowed for manage this Brand";
-		echo json_encode($response);
-		die();
-	}
-
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
 
  	$response["result"]=true;
+	$table="apps";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+	$app=getInBD($table,$filter);
+
  	$response["data"]["header-menu"]="
  		<div class='navbar-inner'>
  			<div class='header-seperation'>
@@ -94,7 +76,7 @@
 			</div>
 			<div class='header-quick-nav' >
 				<div class='pull-left'>
-					<h3 class='m-t-10 m-l-10'>".$brand["app_name"]."</h3>
+					<h3 class='m-t-10 m-l-10'>".$app["name"]."</h3>
 				</div>
 				<div class='pull-right'>
  					<ul class='nav quick-section '>
@@ -119,6 +101,12 @@
 			<ul class='sub-menu'>
 				<li > <a href='".$_POST["path"]."campaigns/'> ".htmlentities($s["all_campaigns"], ENT_QUOTES, "UTF-8")." </a> </li>
 				<li > <a href='".$_POST["path"]."campaign/new/'>".htmlentities($s["new_campaign"], ENT_QUOTES, "UTF-8")."</a> </li>
+			</ul>
+		</li>
+		<li class=''> <a href='javascript:;'> <i class='fa fa-bell-o'></i> <span class='title'>".htmlentities($s["notifications"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
+			<ul class='sub-menu'>
+				<li > <a href='".$_POST["path"]."notifications/'> ".htmlentities($s["sended_notifications"], ENT_QUOTES, "UTF-8")." </a> </li>
+				<li > <a href='".$_POST["path"]."notification/new/'>".htmlentities($s["new_notification"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
 		<li> <a href='javascript:;'> <i class='fa fa-sitemap'></i> <span class='title'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>

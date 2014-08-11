@@ -134,6 +134,9 @@ $s["dashboard"] = "Dashboard";
 $s["campaigns"] = "Campaigns";
 $s["all_campaigns"] = "All campaigns";
 $s["new_campaign"]= "Create new campaign";
+$s["notifications"] = "Notifications";
+$s["sended_notifications"] = "Sended Notifications";
+$s["new_notification"] = "New Notification";
 $s["admins"] = "Administrator";
 $s["all_admins"] = "All Administrators";
 $s["new_admin"] = "Add new Administrator";
@@ -203,6 +206,21 @@ $s["loading..."] = "Loading...";
 $s["this_may_take_several_seconds"] = "This operation may take several seconds.";
 $s["view_campaign"] = "View Campaign";
 $s["add_coupon_promo"] = "Create Coupon Card";
+
+//Notifications / List
+$s["delete_notification"]= "Delete notificacion";
+$s["delete_notification_alert"]="This operation will delete the notificacion data and cannot be undone. Do you really want to continue with this operation?";
+$s["resend_notification"] = "Resend";
+
+//Notifications / Add
+$s["send_notification_title"] = "Send notification";
+$s["notification_content"] = "Notification content";
+$s["notification_content_help"] = "Write here the text you want to send to your clients";
+$s["user_group"] = "User group";
+$s["user_group_help"] = "Select the group of your that will receibe the notification";
+$s["notification_success_title"] = "Notification sended";
+$s["notification_success_subtitle"] = "The notification had been sended, in a few minutes the users will receibe it.";
+$s["send_notification"] = "Send notification";
 
 //Admins / List
 $s["can_login"] = "Manager";
@@ -793,6 +811,10 @@ $error_step_s["post_no_discount_name"] = "The Name field has not been sent corre
 $error_step_s["post_no_discount_description"]= "The Description field has not been sent correctly";
 $error_step_s["post_no_discount_title"]= "The Title field has not been sent correctly";
 $error_step_s["post_no_discount_button_title"]= "The Button Title field has not been sent correctly";
+
+//Error notifications/new/add_notification
+$error_step_s["post_no_content"] = "The content field has not been sent correctly";
+$error_step_s["post_notification_no_group"] = "The group selected is not valid";
 
 //Error apps/edit/update_app
 $error_step_s["post_no_app_name"] = "The Name field has not been sent correctly";

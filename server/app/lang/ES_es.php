@@ -134,6 +134,9 @@ $s["dashboard"] = "Panel de Actividad";
 $s["campaigns"] = "Campañas";
 $s["all_campaigns"] = "Todas las Campañas";
 $s["new_campaign"]= "Crear nueva Campaña";
+$s["notifications"] = "Notificaciones";
+$s["sended_notifications"] = "Notificationes Enviadas";
+$s["new_notification"] = "Nueva Notificatión";
 $s["admins"] = "Administradores";
 $s["all_admins"] = "Todos los Administradores";
 $s["new_admin"] = "Añadir nuevo Administrador";
@@ -203,6 +206,21 @@ $s["loading..."] = "Cargando...";
 $s["this_may_take_several_seconds"] = "Esta operación puede llevar varios segundos";
 $s["view_campaign"] = "Ver Campaña";
 $s["add_coupon_promo"] = "Crear Tarjeta de Cupones";
+
+//Notifications / List
+$s["delete_notification"]= "Eliminar Notificación";
+$s["delete_notification_alert"]="Esta operación eliminará todos los datos de la notificación y no podrá deshacerse ¿De verdad quiere realizar esta operación?";
+$s["resend_notification"] = "Reenviar";
+
+//Notifications / Add
+$s["send_notification_title"] = "Enviar notificación";
+$s["notification_content"] = "Contenido de la notificación";
+$s["notification_content_help"] = "Escribe el texto quieres enviar a los usuarios";
+$s["user_group"] = "Grupo de usuarios";
+$s["user_group_help"] = "Selecciona el grupo de usuarios que quieres que reciban la notificación";
+$s["notification_success_title"] = "Notificación enviada";
+$s["notification_success_subtitle"] = "Se ha enviado a los usuarios una nueva notifiación, en unos minutos todos los usuarios la recibirán.";
+$s["send_notification"] = "Enviar notificación";
 
 //Admins / List
 $s["can_login"] = "Manager";
@@ -793,6 +811,10 @@ $error_step_s["post_no_discount_name"]= "No se ha enviado correctamente el campo
 $error_step_s["post_no_discount_description"]= "No se ha enviado correctamente el campo Descripcion";
 $error_step_s["post_no_discount_title"]= "No se ha enviado correctamente el campo Título";
 $error_step_s["post_no_discount_button_title"]= "No se ha enviado correctamente el campo Texto del botón";
+
+//Error notifications/new/add_notification
+$error_step_s["post_no_content"] = "No se ha enviado correctamente el campo contenido";
+$error_step_s["post_notification_no_group"] = "El grupo seleccionado no es válido";
 
 //Error apps/edit/update_app
 $error_step_s["post_no_app_name"]= "No se ha enviado correctamente el campo Nombre";

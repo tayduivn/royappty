@@ -79,6 +79,20 @@ $s["entries"] = " entradas";
 $s["search_no_entry"] = "La b&uacute;squeda no ha devuelto ninguna entrada";
 $s["no_entries"] = "No hay entradas";
 
+//Notification -list.js
+$s["notification_search"] = "Buscar";
+$s["notification_showing_from_entry"] = "Mostrando desde ";
+$s["notification_to_entry"] = " hasta ";
+$s["notification_of"] = " de ";
+$s["notification_entries"] = " entradas";
+$s["notification_search_no_entry"] = "La b&uacute;squeda no ha devuelto ninguna entrada";
+$s["notification_no_entries"] = "No hay entradas";
+
+//Notification - new/notification.js
+$s["notification_content_this_field_is_compulsory"] = "Este campo es obligatorio";
+$s["notification_content_it_canot_be_longer_than_255_characters"] = "No puede exceder los 255 caracteres";
+$s["notification_content_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+
 //Admin -list.js
 $s["admin_search"] = "Buscar";
 $s["admin_showing_from_entry"] = "Mostrando desde ";
