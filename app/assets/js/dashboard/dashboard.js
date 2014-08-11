@@ -1,8 +1,8 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 23-06-2014
-* Version: 0.93
+* Last Edit: 11-08-2014
+* Version: 0.94
 *
 *********************************************************/
 
@@ -24,6 +24,14 @@ $(document).ready(function() {
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
+				jQuery.each(response.cssdisplay,function(key,value){
+					if(value==0){
+							$(".ajax-loader-"+key).css("display","none");
+					}else{
+							$(".ajax-loader-"+key).css("display","block");
+					}
+				});
+
 			} else {
 				error_handler(response.error_code);
 			}

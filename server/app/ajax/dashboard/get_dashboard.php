@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
-	* Version: 0.93
+	* Last Edit: 11-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -89,14 +89,14 @@
 			}
 		}
 
-  		$table="campaigns";
+  	$table="campaigns";
  		$filter=array();
  		$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
  		$filter["status"]=array("operation"=>"=","value"=>1);
  		$response["data"]["campaigns-list"]="
 	 			<h4 class='m-t-0'>".htmlentities($s["active_campaigns"], ENT_QUOTES, "UTF-8")."</h4>
 	 			<div class='text-center text-muted'>
-	 				<p class='m-t-20'><i class='fa fa-bullhorn fa-4x'></i></p>
+	 				<p class='m-t-40'><i class='fa fa-bullhorn fa-4x'></i></p>
 	 				<h6>".htmlentities($s["there_is_not_campaigns"], ENT_QUOTES, "UTF-8")."</h6>
 	 				<p><a href='campaign/new/' class='btn btn-white'>".htmlentities($s["create_your_first_campaign"], ENT_QUOTES, "UTF-8")."</a></p>
 	 			</div>
@@ -146,6 +146,7 @@
 		$table="used_codes_day_summaries";
 		$filter=array();
 		$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+		$usage_count=0;
 		for($i=0;$i<=14;$i++){
 			$filter["start"]=array("operation"=>"=","value"=>$timestamp-((14-$i)*86400));
 			$response["data"]["graph-label-".$i]=date("d/m",$timestamp-((14-$i)*86400));
@@ -153,10 +154,24 @@
 			if(isInBD($table,$filter)){
 				$sum_field="used_codes_amount";
 				$sum_used_codes_day_summary=sumInBD($table,$filter,$sum_field);
+				$usage_count+=$sum_used_codes_day_summary;
 				$response["data"]["graph-value-".$i]=$sum_used_codes_day_summary;
 			}
-
 		}
+		if($usage_count==0){
+			$response["data"]["graph-empty"]="
+				<div class='ajax-loader-graph-title'>
+					<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>
+				</div>
+				<div class='text-center text-muted'>
+					<p class='m-t-40'><i class='fa fa-bar-chart-o fa-4x'></i></p>
+					<h6>".htmlentities($s["there_is_not_graph_data"], ENT_QUOTES, "UTF-8")."</h6>
+				</div>
+			";
+			$response["cssdisplay"]["graph-empty"] = 1;
+			$response["cssdisplay"]["graph"] = 0;
+		}
+
 
  		$table="software_news";
  		$filter=array();

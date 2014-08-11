@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-07-2014
-	* Version: 0.93
+	* Last Edit: 11-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -317,7 +317,10 @@
 	$table="used_codes";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
-	$response["data"]["used-codes-list"]="<h4 class='m-t-0'>".htmlentities($s["last_validated_codes"], ENT_QUOTES, "UTF-8")."</h4><p class='text-center'><i class='fa fa-times fa-4x'></i></p><p class='text-center'>".htmlentities($s["no_used_codes"], ENT_QUOTES, "UTF-8")."</p>";
+	$response["data"]["used-codes-list"]="
+		<h4 class='m-t-0'>".htmlentities($s["last_validated_codes"], ENT_QUOTES, "UTF-8")."</h4>
+		<p class='m-t-40 text-center'><i class='fa fa-times fa-4x'></i></p>
+		<p class='text-center'>".htmlentities($s["no_used_codes"], ENT_QUOTES, "UTF-8")."</p>";
 	if (isInBD($table,$filter)){
 		$response["data"]["used-codes-list"]="
 		    <h4 class='m-t-0'>".htmlentities($s["last_promo_used"], ENT_QUOTES, "UTF-8")."</h4>
@@ -369,15 +372,30 @@
 	$table="used_codes_day_summaries";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
+	$usage_count=0;
 	for($i=0;$i<=14;$i++){
 		$filter["start"]=array("operation"=>"=","value"=>$timestamp-((14-$i)*86400));
 		$response["data"]["graph-label-".$i]=date("d/m",$timestamp-((14-$i)*86400));
 		$response["data"]["graph-value-".$i]=0;
 		if(isInBD($table,$filter)){
 			$used_codes_day_summary=getInBD($table,$filter,$fields,$order,$limit);
+			$usage_count+=$used_codes_day_summary;
 			$response["data"]["graph-value-".$i]=$used_codes_day_summary["used_codes_amount"];
 		}
 
+	}
+	if($usage_count==0){
+		$response["data"]["graph-empty"]="
+			<div class='ajax-loader-graph-title'>
+				<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>
+			</div>
+			<div class='text-center text-muted'>
+				<p class='m-t-40'><i class='fa fa-bar-chart-o fa-4x'></i></p>
+				<h6>".htmlentities($s["there_is_not_graph_data"], ENT_QUOTES, "UTF-8")."</h6>
+			</div>
+		";
+		$response["cssdisplay"]["graph-empty"] = 1;
+		$response["cssdisplay"]["graph"] = 0;
 	}
 
 	/*********************************************************

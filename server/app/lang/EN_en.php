@@ -158,6 +158,7 @@ $s["ajax_error_2"] = "Please, try it again later. If the error persists, contact
 //Dashboard
 $s["there_is_not_campaigns"] = "There are no activated campaigns";
 $s["create_your_first_campaign"] = "Create your first campaign";
+$s["there_is_not_graph_data"] = "There is no data";
 
 //Campaigns / List
 $s["name"] = "Name";
