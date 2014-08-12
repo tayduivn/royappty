@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-07-2014
-	* Version: 0.93
+	* Last Edit: 12-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -102,7 +102,6 @@
 
 
 
- 	$table="campaigns";
  	$data=array();
 	foreach($_POST as $key => $value){
 		$data[$key]=$value;
@@ -110,7 +109,19 @@
 	}
 	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
 
+	$table="groups";
+	$filter=array();
+	$filter["id_group"]=array("operation"=>"=","value"=>$data["id_group"]);
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+	if(isInBD($table,$filter)){
+		$group=getInBD($table,$filter);
+		$data["group_name"]=$group["name"];
+	}else{
+		$data["id_group"]=0;
+		$data["group_name"]="all_users";
+	}
 
+	$table="campaigns";
 
 
 	if(@issetandnotempty($data["campaign_icon_path"])){

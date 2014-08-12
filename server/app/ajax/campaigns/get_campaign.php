@@ -81,7 +81,6 @@
  	$table="campaigns";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
-	$fields=array("id_campaign","name","description","type","status","campaign_icon_path","cost","profit","usage_limit","resume_block_1_display","resume_block_2_display","resume_block_3_display","resume_block_4_display");
 	$campaign=getInBD($table,$filter,$fields);
 
 	$response["data"]["modals"]="
@@ -181,11 +180,16 @@
 
 	$response["data"]["promo-icon"]="<img class='full-width' src='".$url_server."/resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>";
 
+	if($campaign["id_group"]==0){
+		$campaign["group_name"]=$s["all_users"];
+	}
+
 	$response["data"]["campaign-data"]="
 		<h3 class='m-t-0'>".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."</h3>
 		<h5>".$s["campaigns_status_icon"][$campaign["status"]]." ".htmlentities($s["campaigns_status"][$campaign["status"]], ENT_QUOTES, "UTF-8")."</h5>
 		<h6>".htmlentities($s["campaigns_types"][$campaign["type"]], ENT_QUOTES, "UTF-8")."</h6>
-		<p>".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."</p>
+		<h6>".htmlentities($s["user_group"], ENT_QUOTES, "UTF-8")." ".htmlentities($campaign["group_name"], ENT_QUOTES, "UTF-8")."</h6>
+		<p>".htmlentities($campaign["description"], ENT_QUOTES, "UTF-8")."</p>
 		<p class='text-black'>".htmlentities($s["the_promo_cost_is"].$campaign["cost"]." ".$s["euros_icon"]." ".$s["and_profit_of"].$campaign["profit"]." ".$s["euros_icon"], ENT_QUOTES, "UTF-8")."</p>
 		<p>".htmlentities($s["this_campaign_has_a_limit_of"], ENT_QUOTES, "UTF-8")." <span class='text-black'>";
 

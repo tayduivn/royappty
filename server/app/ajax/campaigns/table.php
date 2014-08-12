@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 18-07-2014
-	* Version: 0.93
+	* Last Edit: 12-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -79,6 +79,9 @@
 	 		}
 	 		$data_table[0].="</a></div><div class='hidden-options'><a href='".$_GET["PATH"]."campaign/?id_campaign=".$campaign["id_campaign"]."' class='btn btn-mini btn-white'>".htmlentities($s["view_report"], ENT_QUOTES, "UTF-8")."</a> <a href='".$_GET["PATH"]."campaign/edit/".$campaign_bd_type[$campaign["type"]]."/?id_campaign=".$campaign["id_campaign"]."' class='btn btn-mini btn-white'>".htmlentities($s["edit"], ENT_QUOTES, "UTF-8")."</a> <a href='javascript:show_modal(\"delete_campaign_alert\",\"javascript:delete_campaign(".$campaign["id_campaign"].")\")' class=' btn btn-mini btn-danger'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a></div>";
 
+			if($campaign["id_group"]==0){
+				$campaign["group_name"]=$s["all_users"];
+			}
 	 		$month=strtotime(date("Y-m-1 00:00:00"));
 	 		$table="used_codes_month_summaries";
 	 		$filter=array();
@@ -100,7 +103,8 @@
 
 	 			$data_table[0],
 	 			htmlentities($s["campaigns_types"][$campaign["type"]], ENT_QUOTES, "UTF-8"),
-	 			htmlentities($s["campaigns_status"][$campaign["status"]], ENT_QUOTES, "UTF-8"),
+				$campaign["group_name"],
+				htmlentities($s["campaigns_status"][$campaign["status"]], ENT_QUOTES, "UTF-8"),
 	 			"<span class='pull-right'>".$used_codes_month_summary["used_codes_amount"]."</span>",
 	 			"<span class='pull-right'>".$used_codes_summary["used_codes_amount"]."</span>");
  		}

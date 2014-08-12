@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-07-2014
-	* Version: 0.93
+	* Last Edit: 12-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -55,11 +55,12 @@
 	$response["result"]=true;
  	$response["data"]["page-title"] = "<a href='./'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["all_campaigns"], ENT_QUOTES, "UTF-8")."<a href='../campaign/new/' class='pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["new_campaign"], ENT_QUOTES, "UTF-8")."</a>";
  	$response["data"]["table-header"] = "
- 		<th style='width:43%'>".htmlentities($s["name"], ENT_QUOTES, "UTF-8")."</th>
-        <th style='width:20%'>".htmlentities($s["type"], ENT_QUOTES, "UTF-8")."</th>
-        <th style='width:10%'>".htmlentities($s["status"], ENT_QUOTES, "UTF-8")."</th>
-        <th style='width:10%;' class='text-right'>".htmlentities($s["total"], ENT_QUOTES, "UTF-8")."</th>
-        <th style='width:10%;' class='text-right'>".htmlentities($s["last_month"], ENT_QUOTES, "UTF-8")."</th>";
+ 		<th style='width:40%'>".htmlentities($s["name"], ENT_QUOTES, "UTF-8")."</th>
+    <th style='width:15%'>".htmlentities($s["type"], ENT_QUOTES, "UTF-8")."</th>
+		<th style='width:15%'>".htmlentities($s["users"], ENT_QUOTES, "UTF-8")."</th>
+    <th style='width:10%'>".htmlentities($s["status"], ENT_QUOTES, "UTF-8")."</th>
+    <th style='width:10%;' class='text-right'>".htmlentities($s["total"], ENT_QUOTES, "UTF-8")."</th>
+    <th style='width:10%;' class='text-right'>".htmlentities($s["last_month"], ENT_QUOTES, "UTF-8")."</th>";
 
 	if(!@issetandnotempty($_POST["status"])){
 	 	$_POST["status"]=0;

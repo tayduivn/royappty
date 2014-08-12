@@ -657,6 +657,8 @@ $new_coupon_s["button_title_placeholder"] = "Texto del botón";
 
 $new_coupon_s["use_promo"] = "Usar promoción";
 $new_coupon_s["step_4_title"] = "Reglas de la campaña";
+$new_coupon_s["group"] = "Grupo de Usuarios";
+$new_coupon_s["group_help"] = "Selecciona el grupo de usuarios al que está dirigida la campaña";
 $new_coupon_s["promo_ini_date"] = "Inicio de la promoción";
 $new_coupon_s["promo_ini_date_help"] = "Selecciona la fecha de inicio de la promoción";
 $new_coupon_s["promo_ini_placeholder"] = "Día de inicio";
