@@ -706,22 +706,18 @@ $resume_block_s["group_users"]="Usuarios";
 $user_field_title_s[""]="";
 $user_field_title_s["name"]="Nombre";
 
-$royappty_plans["welcome"]["title"]="Royappty Profesional Welcome Pack";
-$royappty_plans["welcome"]["subtitle"]="Disfruta de nuestro servicio Professional durante 3 Meses totalmente Gratis.";
+$royappty_plans["welcome"]["title"]="Royappty Starter Welcome Pack";
+$royappty_plans["welcome"]["subtitle"]="Disfruta de nuestro servicio durante 3 Meses totalmente Gratis.";
 $royappty_plans["welcome"]["price"]="3 Meses gratis";
 $royappty_plans["welcome"]["help"]="ATENCIÓN. Esta promoción solo estará disponible hasta el 31 de Octubre.";
 
 $royappty_plans["starter"]["title"]="Royappty Starter";
-$royappty_plans["starter"]["subtitle"]="Nuestro plan gratuito, para que sirva de toma de contacto, con limitación a una única campaña activa.";
-$royappty_plans["starter"]["price"]="Gratis";
+$royappty_plans["starter"]["subtitle"]="Nuestro plan de entrada, para que sirva de toma de contacto, con limitación a 5 campañas activas.";
+$royappty_plans["starter"]["price"]="9,99 € / mes";
 
 $royappty_plans["professional"]["title"]="Royappty Professional";
 $royappty_plans["professional"]["subtitle"]="Nuestra solución profesional para todo tipo de establecimientos, con limitación a 10 campañas activas.";
-$royappty_plans["professional"]["price"]="9.99 € / mes";
-
-$royappty_plans["unlimited"]["title"]="Royappty Unlimited";
-$royappty_plans["unlimited"]["subtitle"]="Nuestra solución para grandes empresas con varios establecimientos y campañas focalizadas";
-$royappty_plans["unlimited"]["price"]="99.99 € / mes";
+$royappty_plans["professional"]["price"]="14.99 € / mes";
 
 $payment_methods["paypal"]["title"]="Paypal";
 $payment_methods["paypal"]["subtitle"]="Popular método de pago seguro por internet. En unos segundos tendrás activada tu cuenta";
