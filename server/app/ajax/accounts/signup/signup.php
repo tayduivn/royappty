@@ -302,12 +302,12 @@ if(!checkClosed()){echo json_encode($response);die();}
 				</div>
 				<div class='form-group m-t-20'>
 					<span class='help'></span>
-					<div class='controls' style='border:1px solid #f4f4f4;padding:10px;opacity:0.5'>
+					<div class='controls' style='border:1px solid #f4f4f4;padding:10px;'>
 						<div class=''>
 							<table>
 								<tr>
 									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='professional' disabled>
+										<input id='subscription_type' type='radio' name='subscription_type' value='professional'>
 									</td>
 									<td  style='width:100%'>
 										<h3>".htmlentities($royappty_plans["professional"]["title"], ENT_QUOTES, "UTF-8")."</h3>
@@ -318,29 +318,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 									</td>
 								</tr>
 							</table>
-
-						</div>
-					</div>
-				</div>
-				<div class='form-group m-t-20'>
-					<span class='help'></span>
-					<div class='controls' style='border:1px solid #f4f4f4;padding:10px;opacity:0.5'>
-						<div class=''>
-							<table>
-								<tr>
-									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='unlimited' disabled>
-									</td>
-									<td  style='width:100%'>
-										<h3>".htmlentities($royappty_plans["unlimited"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p>".htmlentities($royappty_plans["unlimited"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
-									</td>
-									<td>
-										<h4 style='white-space: nowrap;'>".htmlentities($royappty_plans["unlimited"]["price"], ENT_QUOTES, "UTF-8")."</h4>
-									</td>
-								</tr>
-							</table>
-
+						
 						</div>
 					</div>
 				</div>

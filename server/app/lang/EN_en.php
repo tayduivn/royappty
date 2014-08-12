@@ -707,21 +707,17 @@ $user_field_title_s[""]="";
 $user_field_title_s["name"]="Name";
 
 $royappty_plans["welcome"]["title"]="Royappty Profesional Welcome Pack";
-$royappty_plans["welcome"]["subtitle"]="Enjoy our Professional service for 3 Months totally Free.";
+$royappty_plans["welcome"]["subtitle"]="Enjoy our Starter service for 3 Months totally Free.";
 $royappty_plans["welcome"]["price"]="3 Months free";
 $royappty_plans["welcome"]["help"]="ATTENTION. This promotion will be just available to October 31.";
 
 $royappty_plans["starter"]["title"]="Royappty Starter";
-$royappty_plans["starter"]["subtitle"]="Our free plan, as first contact, with a limitation to just one active campaign.";
-$royappty_plans["starter"]["price"]="Free";
+$royappty_plans["starter"]["subtitle"]="Our plan, as first contact, with a limitation to 5 active campaigns.";
+$royappty_plans["starter"]["price"]="9.99 € / month";
 
 $royappty_plans["professional"]["title"]="Royappty Professional";
 $royappty_plans["professional"]["subtitle"]="Our professional answer to any type of establishments with a limitation to 10 active campaigns.";
-$royappty_plans["professional"]["price"]="9.99 € / month";
-
-$royappty_plans["unlimited"]["title"]="Royappty Unlimited";
-$royappty_plans["unlimited"]["subtitle"]="Our answer to big companies with several establishments and focused campaigns.";
-$royappty_plans["unlimited"]["price"]="99.99 € / month";
+$royappty_plans["professional"]["price"]="14.99 € / month";
 
 $payment_methods["paypal"]["title"]="Paypal";
 $payment_methods["paypal"]["subtitle"]="Popular safe payment method on internet. In few seconds you will have your account activated.";
