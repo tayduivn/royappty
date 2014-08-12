@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
-	* Version: 0.93
+	* Last Edit: 12-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -199,6 +199,26 @@
 			<div class='row'>
 				<div class='col-md-12'>
 					<div class='form-group'>
+						<label class='form-label'>".htmlentities($new_coupon_s["group"], ENT_QUOTES, "UTF-8")."</label>
+						<span class='help'>".htmlentities($new_coupon_s["group_help"], ENT_QUOTES, "UTF-8")."</span>
+						<div class='controls'>
+							<select name='id_group' id='id_group'>
+								<option value='0'>".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</option>";
+
+	$table="groups";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+	if(isInBD($table,$filter)){
+		$groups=listInBD($table,$filter);
+		foreach($groups as $key => $group) {
+			$response["data"]["new-discount-step-4"].="<option value='".$group["id_group"]."'>".$group["name"]."</option>";
+		}
+	}
+	$response["data"]["new-discount-step-4"].="
+							</select>
+						</div>
+					</div>
+					<div class='form-group'>
 						<label class='form-label'>".htmlentities($new_discount_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($new_discount_s["promo_usage_limit_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
@@ -262,6 +282,7 @@
 			<input type='hidden' id='description' />
 			<input type='hidden' id='campaign_icon_path'/>
 			<input type='hidden' id='campaign_image_path'/>
+			<input type='hidden' id='id_group' />
 			<input type='hidden' id='usage_limit' />
 			<input type='hidden' id='title' />
 			<input type='hidden' id='content' />

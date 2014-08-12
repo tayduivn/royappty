@@ -1,8 +1,8 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 23-06-2014
-* Version: 0.93
+* Last Edit: 12-08-2014
+* Version: 0.94
 *
 *********************************************************/
 
@@ -191,6 +191,7 @@ $(document).ready(function() {
 			}
 		},
 		submitHandler:function(form){
+			$('#form-end #id_group').val($('#form-step4 #id_group').val());
 			$('#form-end #coupons_number').val($('#form-step4 #coupons_number').val());
 			$('#form-end #usage_limit').val($('#form-step4 #usage_limit').val());
 			$('#form-end #cost').val($('#form-step4 #cost').val());
@@ -212,6 +213,7 @@ $(document).ready(function() {
 					"campaign_image_path":$('#form-end #campaign_image_path').val(),
 					"content":$('#form-end #content').val(),
 					"button_title":$('#form-end #button_title').val(),
+					"id_group":$('#form-end #id_group').val(),
 					"coupons_number":$('#form-end #coupons_number').val(),
 					"usage_limit":$('#form-end #usage_limit').val(),
 					"cost":$('#form-end #cost').val(),

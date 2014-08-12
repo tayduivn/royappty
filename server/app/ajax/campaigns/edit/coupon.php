@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-07-2014
-	* Version: 0.93
+	* Last Edit: 12-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -285,16 +285,40 @@
 			<div class='row'>
 				<div class='col-md-12'>
 					<div class='form-group'>
+						<label class='form-label'>".htmlentities($new_coupon_s["group"], ENT_QUOTES, "UTF-8")."</label>
+						<span class='help'>".htmlentities($new_coupon_s["group_help"], ENT_QUOTES, "UTF-8")."</span>
+						<div class='controls'>
+							<select name='id_group' id='id_group'>
+								<option value='0' ";
+	if($campaign["id_group"]==0){
+		$response["data"]["new-coupon-step-4"].=" selected";
+	}
+	$response["data"]["new-coupon-step-4"].=">".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</option>";
+
+	$table="groups";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+	if(isInBD($table,$filter)){
+		$groups=listInBD($table,$filter);
+		foreach($groups as $key => $group) {
+			$response["data"]["new-coupon-step-4"].="<option value='".$group["id_group"]."' ";
+			if($campaign["id_group"]==$group["id_group"]){
+				$response["data"]["new-coupon-step-4"].="selected";
+			}
+			$response["data"]["new-coupon-step-4"].=">".$group["name"]."</option>";
+		}
+	}
+	$response["data"]["new-coupon-step-4"].="
+							</select>
+						</div>
+					</div>
+					<div class='form-group'>
 						<label class='form-label'>".htmlentities($new_coupon_s["coupons_number"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($new_coupon_s["coupons_number_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
 							<input type='text' class='form-control' id='coupons_number' name='coupons_number' placeholder='".htmlentities($new_coupon_s["coupons_number_placeholder"], ENT_QUOTES, "UTF-8")."' value='".htmlentities($campaign["coupons_number"], ENT_QUOTES, "UTF-8")."'/>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class='row'>
-				<div class='col-md-12'>
 					<div class='form-group'>
 						<label class='form-label'>".htmlentities($new_coupon_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($new_coupon_s["promo_usage_limit_help"], ENT_QUOTES, "UTF-8")."</span>
@@ -362,6 +386,7 @@
 			<input type='hidden' id='description' value='".$campaign["description"]."'/>
 			<input type='hidden' id='campaign_icon_path' />
 			<input type='hidden' id='campaign_image_path' />
+			<input type='hidden' id='id_group' value='".$campaign["id_group"]."'/>
 			<input type='hidden' id='coupons_number' value='".$campaign["coupons_number"]."'/>
 			<input type='hidden' id='usage_limit' value='".$campaign["usage_limit"]."' />
 			<input type='hidden' id='title' value='".$campaign["title"]."' />
