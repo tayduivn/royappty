@@ -20,6 +20,11 @@ $s["close"] = "Cerrar";
 $s["error_title"] = "Error en el Servidor";
 $s["error_content"] ="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
+//error index.html
+$s["close_title"] = "Pronto estaremos de regreso";
+$s["close_content"] = "Estamos octualizando Royappty para ti y pronto volverá a estar disponible.<br/>Si necesitas contactar con nosotros puedes hacerlo mediante tel&eacute;fono o email.";
+$s["close_contact_info"] = "<i class='fa fa-phone'></i> "+$config["company_phone"]+" <i class='fa fa-envelope-o'></i> "+$config["company_info_mail"];
+
 //Modal errors
 $error_s["ajax_error_title"]="Error en el Servidor";
 $error_s["ajax_error_content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
@@ -30,6 +35,9 @@ $error_s["db_connection_error_content"]="Ha ocurrido un error en la base de dato
 $(document).ready(function() {
   $("#s-error-title").html($s["error_title"]);
   $("#s-error-content").html($s["error_content"]);
+  $("#s-close-title").html($s["close_title"]);
+  $("#s-close-content").html($s["close_content"]);
+  $("#s-close-contact-info").html($s["close_contact_info"]);
   $("#s-back").html($s["back"]);
   $("#s-close").html($s["close"]);
 });

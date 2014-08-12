@@ -26,7 +26,7 @@ $(document).ready(function(){
 					$(".ajax-loader-"+key).html(value);
 				});
 			} else {
-				// No error Handeler
+				error_handler(response.error_code);
 			}
 		}
 	});
