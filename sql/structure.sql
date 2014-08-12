@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 11-08-2014 a las 12:08:23
+-- Tiempo de generación: 12-08-2014 a las 10:32:49
 -- Versión del servidor: 5.5.34
 -- Versión de PHP: 5.5.10
 
@@ -160,12 +160,14 @@ CREATE TABLE `brand_user_fields` (
 CREATE TABLE `campaigns` (
   `id_campaign` int(11) NOT NULL AUTO_INCREMENT,
   `id_brand` int(11) NOT NULL,
+  `id_group` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `title` varchar(155) NOT NULL,
   `content` varchar(500) NOT NULL,
   `button_title` varchar(155) NOT NULL,
   `type` int(1) NOT NULL,
+  `group_name` varchar(75) NOT NULL,
   `status` int(1) NOT NULL,
   `coupons_number` int(11) NOT NULL,
   `usage_limit` int(1) NOT NULL,
@@ -223,6 +225,7 @@ CREATE TABLE `campaign_notes` (
 CREATE TABLE `config` (
   `id_config` int(11) NOT NULL AUTO_INCREMENT,
   `used` int(1) NOT NULL,
+  `close` int(1) NOT NULL,
   `company_logo_path` varchar(255) NOT NULL,
   `company_name` varchar(255) NOT NULL,
   `company_street` varchar(255) NOT NULL,
@@ -245,8 +248,8 @@ CREATE TABLE `config` (
 -- Volcado de datos para la tabla `config`
 --
 
-INSERT INTO `config` (`id_config`, `used`, `company_logo_path`, `company_name`, `company_street`, `company_town`, `company_country`, `company_phone`, `company_info_mail`, `mail_header_email`, `footer_mail`, `debug_mode`, `bank_name`, `bank_swift`, `bank_iban`, `bank_account_number`, `bank_transfer_beneficiary`) VALUES
-(1, 1, 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'info@royappty.com', 'Royappty<noreply@royappty.com>', 'La Aplicación de Fidelización para tu Negocio', 1, '0000', '0000', '0000', '0000', '0000');
+INSERT INTO `config` (`id_config`, `used`, `close`, `company_logo_path`, `company_name`, `company_street`, `company_town`, `company_country`, `company_phone`, `company_info_mail`, `mail_header_email`, `footer_mail`, `debug_mode`, `bank_name`, `bank_swift`, `bank_iban`, `bank_account_number`, `bank_transfer_beneficiary`) VALUES
+(1, 1, 0, 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'info@royappty.com', 'Royappty<noreply@royappty.com>', 'La Aplicación de Fidelización para tu Negocio', 1, '0000', '0000', '0000', '0000', '0000');
 
 -- --------------------------------------------------------
 
@@ -305,13 +308,14 @@ CREATE TABLE `group_notes` (
 --
 
 CREATE TABLE `notifications` (
-  `id_notificacion` int(11) NOT NULL AUTO_INCREMENT,
+  `id_notification` int(11) NOT NULL AUTO_INCREMENT,
   `id_brand` int(11) NOT NULL,
   `content` varchar(255) NOT NULL,
-  `num_users` int(11) NOT NULL,
+  `id_group` int(11) NOT NULL,
+  `group_name` varchar(75) NOT NULL,
   `created` int(11) NOT NULL,
-  PRIMARY KEY (`id_notificacion`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id_notification`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -328,7 +332,7 @@ CREATE TABLE `orders` (
   `payment_method` varchar(255) NOT NULL,
   `amount` float NOT NULL,
   PRIMARY KEY (`id_order`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=230 ;
 
 -- --------------------------------------------------------
 
@@ -351,7 +355,7 @@ CREATE TABLE `receipts` (
   `vat` float(11,2) NOT NULL,
   `price_vat` float(11,2) NOT NULL,
   PRIMARY KEY (`id_receipt`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -368,7 +372,7 @@ CREATE TABLE `receipt_lines` (
   `vat` float(4,2) NOT NULL,
   `price_vat` float(4,2) NOT NULL,
   PRIMARY KEY (`id_receipt_line`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -381,7 +385,7 @@ CREATE TABLE `recovery_codes` (
   `email` varchar(255) DEFAULT NULL,
   `code` varchar(255) NOT NULL,
   PRIMARY KEY (`id_recovery_code`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -413,7 +417,7 @@ CREATE TABLE `software_news` (
   `content` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   PRIMARY KEY (`id_software_new`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -427,7 +431,7 @@ CREATE TABLE `subscription_method_plans` (
   `payment_plan` varchar(255) NOT NULL,
   `price` float NOT NULL,
   PRIMARY KEY (`id_subscription_method_plan`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
