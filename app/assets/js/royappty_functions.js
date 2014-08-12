@@ -31,8 +31,9 @@ function session_destroy(){
 
 function error_handler(error_code){
 	error_block:{
-		//Genral
+		//General
 		if(error_code=="login_error"){window.location.href = $PATH+"login/?error=login_error";break error_block;}
+    if(error_code=="system_closed"){window.location.href = $PATH+"../closed/";break error_block;}
 		//Brand check errors
 		if(error_code=="no_brand"){window.location.href = $PATH+"login/";break error_block;}
 		if(error_code=="brand_not_valid"){window.location.href = $PATH+"lock/";break error_block;}

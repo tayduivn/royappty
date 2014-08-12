@@ -235,12 +235,29 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 	return $block_data;
 }
 
+function checkClosed(){
+	global $page_path;
+	global $response;
+	global $CONFIG;
+
+	if($CONFIG["close"]){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR System Closed");
+		$response["error"]="ERROR System Closed";
+		$response["error_code"]="system_closed";
+		return false;
+		die();
+	}
+
+	return true;
+	die();
+}
+
 function checkBDConnection(){
 	global $response;
 	global $db_connection;
 
 	if(!$db_connection["status"]){
-		error_log("FALSE");
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Can't connect with DataBase");
 		$response["error"]="ERROR Can't connect with DataBase";

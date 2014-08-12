@@ -31,6 +31,7 @@ function session_destroy(){
 function error_handler(error_code){
   error_block:{
     if(error_code=="ajax_error"){window.location.href = $PATH+"error/?error_code=ajax_error";break error_block;}
+    if(error_code=="system_closed"){window.location.href = $PATH+"closed/";break error_block;}
     if(error_code=="db_connection_error"){window.location.href = $PATH+"error/?error_code=db_connection_error";break error_block;}
     //Error Unknow
     window.location.href =  $PATH+"error/?error_code=base";break error_block;

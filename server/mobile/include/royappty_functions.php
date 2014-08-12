@@ -7,6 +7,24 @@
 *
 *********************************************************/
 
+function checkClosed(){
+	global $page_path;
+	global $response;
+	global $CONFIG;
+
+	if($CONFIG["close"]){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR System Closed");
+		$response["error"]="ERROR System Closed";
+		$response["error_code"]="system_closed";
+		return false;
+		die();
+	}
+
+	return true;
+	die();
+}
+
 function checkBrand($brand){
 	global $page_path;
 	global $response;

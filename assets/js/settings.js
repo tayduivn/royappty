@@ -7,7 +7,9 @@
 *********************************************************/
 
 var $SERVER_PATH = $PATH;
-
+var $config= new Array();
+$config["company_phone"] = "+34 886 131 361";
+$config["company_info_mail"] = "info@royappty.com";
 if ((typeof localStorage.getItem('lang') == 'undefined')||(localStorage.getItem('lang') == null)){
   var navigatorLang = navigator.language || navigator.userLanguage;
   if(navigatorLang == 'es'){

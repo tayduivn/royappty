@@ -20,6 +20,11 @@ $s["close"] = "Close";
 $s["error_title"] = "Error in the Server";
 $s["error_content"] = "An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 
+//error index.html
+$s["close_title"] = "We'll back soon";
+$s["close_content"] = "We are busy updating royappty for you and will be back.<br/>If you need to contact us phone us or send us an email.";
+$s["close_contact_info"] = "<i class='fa fa-phone></i>'";
+
 //Modal errors
 $error_s["ajax_error_title"]="Error in the Server";
 $error_s["ajax_error_content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
@@ -30,6 +35,9 @@ $error_s["db_connection_error_content"]="An error occurred in the database serve
 $(document).ready(function() {
   $("#s-error-title").html($s["error_title"]);
   $("#s-error-content").html($s["error_content"]);
+  $("#s-close-title").html($s["close_title"]);
+  $("#s-close-content").html($s["close_content"]);
+  $("#s-close-contact-info").html($s["close_contact_info"]);
   $("#s-back").html($s["back"]);
   $("#s-close").html($s["close"]);
 });

@@ -39,7 +39,10 @@
 	* DATA CHECK
 	*********************************************************/
 
-	// BD CONNECTION
+	// SYSTEM CLOSED
+if(!checkClosed()){echo json_encode($response);die();}
+
+// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	// BRAND
