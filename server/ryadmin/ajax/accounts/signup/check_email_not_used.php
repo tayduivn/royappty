@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
+	* Last Edit: 18-08-2014
 	* Version: 0.93
 	*
 	*********************************************************/
@@ -26,21 +26,14 @@
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/accounts/signup/check_email_not_used";
+	$page_path="server/ryadmin/ajax/accounts/signup/check_email_not_used";
 	debug_log("[".$page_path."] START");
 
 	/*********************************************************
 	* DATA CHECK
 	*********************************************************/
 
-	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
-
-// BD CONNECTION
-	if(!checkBDConnection()){echo json_encode($response);die();}
-
-
-	$table="admins";
+	$table="ryadmins";
 	$filter=array();
 	$filter["email"]=array("operation"=>"=","value"=>$_GET["admin_email"]);
 
@@ -61,8 +54,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 	/*********************************************************
 	* AJAX CALL RETURN
 	*********************************************************/
-
-
 
 	debug_log("[".$page_path."] END");
 	die();

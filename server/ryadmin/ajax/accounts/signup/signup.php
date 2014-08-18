@@ -91,164 +91,16 @@ if(!checkClosed()){echo json_encode($response);die();}
 				</div>
 				<div style='overflow:auto'>
 					<div class='form-group'>
-						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
+						<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["accept"], ENT_QUOTES, "UTF-8")."' />
 						<a href='../' class='btn btn-white pull-left'>".htmlentities($s["cancel"], ENT_QUOTES, "UTF-8")."</a>
 					</div>
 				</div>
 	";
-	$response["data"]["signup-step-2"]="
-				<div id='form-warning'></div>
-				<h4 class='m-t-0'>".htmlentities($signup_s["brand_data"], ENT_QUOTES, "UTF-8")."</h4>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["name_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='name' name='name' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["cif"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["cif_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='cif' name='cif' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["contact_address"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["contact_address_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_address' name='contact_address' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["contact_postal_code"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["contact_postal_code_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_postal_code' name='contact_postal_code' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["contact_city"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["contact_city_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_city' name='contact_city' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["contact_province"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["contact_province_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_province' name='contact_province' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["contact_country"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["contact_country_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_country' name='contact_country' class='form-control'>
-					</div>
-				</div>
-				<div style='overflow:auto'>
-					<div class='form-group'>
-							<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
-						<a href='javascript:prevstep()' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
-					</div>
-				</div>
-	";
-	$response["data"]["signup-step-3"]="
-
-			<h4 class='m-t-0'>".htmlentities($s["select_subscription_type"], ENT_QUOTES, "UTF-8")."</h4>
-				<div id='form-warning'></div>
-				<div class='form-group m-t-20'>
-					<span class='help'></span>
-					<div class='controls box'>
-						<div class=''>
-							<table>
-								<tr>
-									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='starter' checked>
-									</td>
-									<td  style='width:100%'>
-										<h3 class='' >".htmlentities($royappty_plans["starter"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p class='m-b-0'>".htmlentities($royappty_plans["starter"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
-										<p class=''>".htmlentities($royappty_plans["starter"]["help"], ENT_QUOTES, "UTF-8")."</p>
-									</td>
-									<td>
-										<h4 class='' style='white-space: nowrap;'>".htmlentities($royappty_plans["starter"]["price"], ENT_QUOTES, "UTF-8")."</h4>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-<div class='form-group m-t-20'>
-					<span class='help'></span>
-					<div class='controls box'>
-						<div class=''>
-							<table>
-								<tr>
-									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='professional'>
-									</td>
-									<td  style='width:100%'>
-										<h3>".htmlentities($royappty_plans["professional"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p class='m-b-0'>".htmlentities($royappty_plans["professional"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
-										<p>".htmlentities($royappty_plans["professional"]["help"], ENT_QUOTES, "UTF-8")."</p>
-									</td>
-									<td>
-										<h4 style='white-space: nowrap;'>".htmlentities($royappty_plans["professional"]["price"], ENT_QUOTES, "UTF-8")."</h4>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class='form-group m-t-20'>
-					<span class='help'></span>
-					<div class='controls box'>
-						<div class=''>
-							<table>
-								<tr>
-									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='unlimited'>
-									</td>
-									<td  style='width:100%'>
-										<h3>".htmlentities($royappty_plans["unlimited"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p class='m-b-0'>".htmlentities($royappty_plans["unlimited"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
-										<p>".htmlentities($royappty_plans["unlimited"]["help"], ENT_QUOTES, "UTF-8")."</p>
-									</td>
-									<td>
-										<h4 style='white-space: nowrap;'>".htmlentities($royappty_plans["unlimited"]["price"], ENT_QUOTES, "UTF-8")."</h4>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div style='overflow:auto'>
-					<div class='form-group'>
-							<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."' />
-						<a href='javascript:prevstep()' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
-					</div>
-				</div>
-	";
-
 
 	$response["data"]["signup-step-end"]="
 			<input type='hidden' id='name' />
-			<input type='hidden' id='cif' />
-			<input type='hidden' id='contact_address' />
-			<input type='hidden' id='contact_postal_code' />
-			<input type='hidden' id='contact_city' />
-			<input type='hidden' id='contact_province' />
-			<input type='hidden' id='contact_country' />
-			<input type='hidden' id='end_date_hour' />
-			<input type='hidden' id='admin_name' />
-			<input type='hidden' id='admin_email' />
-			<input type='hidden' id='admin_password' />
-			<input type='hidden' id='subscription_type' />
-			<input type='hidden' id='payment_plan' />
-			<input type='hidden' id='payment_method' />
+			<input type='hidden' id='email' />
+			<input type='hidden' id='password' />
 	";
 	$response["data"]["signup-step-loading"]="
 		<div class='text-center'>
