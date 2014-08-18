@@ -63,6 +63,7 @@ function signup(){
 					success: function(response) {
 						if(response.result){
 							localStorage.setItem('id_user', response.data.id_user);
+							alert("User stored = "+id_user);
 							window.location.href = "../";
 						} else {
 							error_handler(response.error_code);
