@@ -107,6 +107,18 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$table="notifications";
 	$response["data"]=addInBD($table,$data);
 
+	/*
+
+
+
+$yourKey = "AIzaSyDQcoYEESB8oixQ6Y8y_GVMfbolv2fcK_0";
+$deviceToken = "APA91bFox4rk0970xKg--S609cqudG8sjv_o4vObd6OKD8M2LMYltZFVpmHkaUQPtytOEP_cLEuF0Uo-UMamqZNOwBe3VJ0fSVcsNbxCXOeKaJDRuzlsHwx-fVrbIHKMtiX-_MgN8MpbcJ_qfvZREQ_4qrLYGJVoDg";
+$collapseKey = "739888372020";
+$messageTitle = "Royappty";
+$messageText = "Antes iba ahora no...";
+echo sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey);
+*/
+
 	/*********************************************************
 	* DATABASE REGISTRATION
 	*********************************************************/
