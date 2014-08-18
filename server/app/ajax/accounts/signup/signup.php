@@ -72,13 +72,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 					</div>
 				</div>
 				<div class='form-group'>
-					<label class='form-label'>".htmlentities($signup_s["admin_promo_password"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($signup_s["admin_promo_password_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='admin_promo_password' name='admin_promo_password' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
 					<label class='form-label'>".htmlentities($signup_s["admin_password"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["admin_password_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
@@ -163,184 +156,72 @@ if(!checkClosed()){echo json_encode($response);die();}
 				</div>
 	";
 	$response["data"]["signup-step-3"]="
-		<h4 class='m-t-0'>".htmlentities($signup_s["app_data"], ENT_QUOTES, "UTF-8")."</h4>
-				<div id='form-warning'></div>
-				<div class='row'>
-					<div class='col-md-6'>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["app_name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["app_name_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='app_name' name='app_name' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["app_title"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["app_title_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<input type='text' id='app_title' name='app_title' class='form-control'>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["app_description"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-							<span class='help'>".htmlentities($signup_s["app_description_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='controls'>
-								<textarea style='height:430px;' id='app_description' name='app_description' class='form-control'></textarea>
-							</div>
-						</div>
-					</div>
-					<div class='col-md-6'>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["app_icon"], ENT_QUOTES, "UTF-8")."</label>
-							<span class='help'>".htmlentities($signup_s["app_icon_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='row'>
-								<div class='col-md-6'>
-									<div class='controls'>
-										<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/accounts/signup/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_icon_path' />
-									</div>
-								</div>
-								<div class='col-md-6'>
-									<img style='width:200px;padding-top:8px;' id='app_icon_path-preview' class='full-width' src='".$url_server."server/app/assets/img/default-app-icon.jpg'/>
-								</div>
-							</div>
-						</div>
-						<div class='form-group'>
-							<label class='form-label'>".htmlentities($signup_s["app_background"], ENT_QUOTES, "UTF-8")."</label>
-							<span class='help'>".htmlentities($signup_s["app_background_help"], ENT_QUOTES, "UTF-8")."</span>
-							<div class='row'>
-								<div class='col-md-6'>
-									<div class='controls app_background'>
-										<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/accounts/signup/upload-image.php?type=icon&width=660&height=1200&crop=1&label=app_bg_path' />
-									</div>
-								</div>
-								<div class='col-md-6'>
-									<img style='width:200px;padding-top:8px;' id='app_bg_path-preview' class='full-width' src='".$url_server."server/app/assets/img/default-app-background.jpg'/>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($app_s["user_fields"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
-					<span class='help'>".htmlentities($app_s["user_fields_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div id='user_fields_alert'></div>
-					<div class='m-t-10'>";
-	$table="user_fields";
-	$user_fields=listInBD($table);
-	$coma="";
-	foreach($user_fields as $key=>$user_field){
-		$response["data"]["signup-step-3"].="
-						<div class='row-fluid'>
-							<div class='checkbox check-default'>
-								<input id='".$user_field["id_user_field"]."' class='user_field_checkbox' type='checkbox'>
-								<label for='".$user_field["id_user_field"]."' class='p-l-30'>".htmlentities($user_field_title_s[$user_field["title"]], ENT_QUOTES, "UTF-8")."</label>
-							</div>
-						</div>";
-	}
-	$response["data"]["signup-step-3"].="
-				</div>
-			</div>
-		</div>
-	</div>
-
-				<div style='overflow:auto'>
-					<div class='form-group'>
-							<input type='submit' class='btn btn-white pull-right' value='".htmlentities($s["save"], ENT_QUOTES, "UTF-8")."' />
-						<a href='javascript:prevstep()' class='btn btn-white pull-left'>".htmlentities($s["previous"], ENT_QUOTES, "UTF-8")."</a>
-					</div>
-				</div>
-
-	";
-	$response["data"]["signup-step-4"]="
 
 			<h4 class='m-t-0'>".htmlentities($s["select_subscription_type"], ENT_QUOTES, "UTF-8")."</h4>
 				<div id='form-warning'></div>
 				<div class='form-group m-t-20'>
 					<span class='help'></span>
-					<div class='controls box box-success-muted'>
+					<div class='controls box'>
 						<div class=''>
 							<table>
 								<tr>
 									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='welcome' checked>
+										<input id='subscription_type' type='radio' name='subscription_type' value='starter' checked>
 									</td>
 									<td  style='width:100%'>
-										<h3 class='text-success' >".htmlentities($royappty_plans["welcome"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p class='m-b-0'>".htmlentities($royappty_plans["welcome"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
-										<p class='text-small'>".htmlentities($royappty_plans["welcome"]["help"], ENT_QUOTES, "UTF-8")."</p>
+										<h3 class='' >".htmlentities($royappty_plans["starter"]["title"], ENT_QUOTES, "UTF-8")."</h3>
+										<p class='m-b-0'>".htmlentities($royappty_plans["starter"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
+										<p class=''>".htmlentities($royappty_plans["starter"]["help"], ENT_QUOTES, "UTF-8")."</p>
 									</td>
 									<td>
-										<h4 class='text-success' style='white-space: nowrap;'>".htmlentities($royappty_plans["welcome"]["price"], ENT_QUOTES, "UTF-8")."</h4>
+										<h4 class='' style='white-space: nowrap;'>".htmlentities($royappty_plans["starter"]["price"], ENT_QUOTES, "UTF-8")."</h4>
 									</td>
 								</tr>
 							</table>
-
 						</div>
 					</div>
 				</div>
-				<div class='form-group m-t-20'>
+<div class='form-group m-t-20'>
 					<span class='help'></span>
-					<div class='controls' style='border:1px solid #f4f4f4;padding:10px;'>
+					<div class='controls box'>
 						<div class=''>
 							<table>
 								<tr>
 									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='starter'>
-									</td>
-									<td  style='width:100%'>
-										<h3>".htmlentities($royappty_plans["starter"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p>".htmlentities($royappty_plans["starter"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
-									</td>
-									<td>
-										<h4 style='white-space: nowrap;'>".htmlentities($royappty_plans["starter"]["price"], ENT_QUOTES, "UTF-8")."</h4>
-									</td>
-								</tr>
-							</table>
-
-						</div>
-					</div>
-				</div>
-				<div class='form-group m-t-20'>
-					<span class='help'></span>
-					<div class='controls' style='border:1px solid #f4f4f4;padding:10px;opacity:0.5'>
-						<div class=''>
-							<table>
-								<tr>
-									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='professional' disabled>
+										<input id='subscription_type' type='radio' name='subscription_type' value='professional'>
 									</td>
 									<td  style='width:100%'>
 										<h3>".htmlentities($royappty_plans["professional"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p>".htmlentities($royappty_plans["professional"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
+										<p class='m-b-0'>".htmlentities($royappty_plans["professional"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
+										<p>".htmlentities($royappty_plans["professional"]["help"], ENT_QUOTES, "UTF-8")."</p>
 									</td>
 									<td>
 										<h4 style='white-space: nowrap;'>".htmlentities($royappty_plans["professional"]["price"], ENT_QUOTES, "UTF-8")."</h4>
 									</td>
 								</tr>
 							</table>
-
 						</div>
 					</div>
 				</div>
 				<div class='form-group m-t-20'>
 					<span class='help'></span>
-					<div class='controls' style='border:1px solid #f4f4f4;padding:10px;opacity:0.5'>
+					<div class='controls box'>
 						<div class=''>
 							<table>
 								<tr>
 									<td style='vertical-align:middle;padding:10px;padding-right:30px;'>
-										<input id='subscription_type' type='radio' name='subscription_type' value='unlimited' disabled>
+										<input id='subscription_type' type='radio' name='subscription_type' value='unlimited'>
 									</td>
 									<td  style='width:100%'>
 										<h3>".htmlentities($royappty_plans["unlimited"]["title"], ENT_QUOTES, "UTF-8")."</h3>
-										<p>".htmlentities($royappty_plans["unlimited"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
+										<p class='m-b-0'>".htmlentities($royappty_plans["unlimited"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
+										<p>".htmlentities($royappty_plans["unlimited"]["help"], ENT_QUOTES, "UTF-8")."</p>
 									</td>
 									<td>
 										<h4 style='white-space: nowrap;'>".htmlentities($royappty_plans["unlimited"]["price"], ENT_QUOTES, "UTF-8")."</h4>
 									</td>
 								</tr>
 							</table>
-
 						</div>
 					</div>
 				</div>
@@ -351,6 +232,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 					</div>
 				</div>
 	";
+
 
 	$response["data"]["signup-step-end"]="
 			<input type='hidden' id='name' />
@@ -363,17 +245,10 @@ if(!checkClosed()){echo json_encode($response);die();}
 			<input type='hidden' id='end_date_hour' />
 			<input type='hidden' id='admin_name' />
 			<input type='hidden' id='admin_email' />
-			<input type='hidden' id='admin_promo_password' />
 			<input type='hidden' id='admin_password' />
 			<input type='hidden' id='subscription_type' />
 			<input type='hidden' id='payment_plan' />
 			<input type='hidden' id='payment_method' />
-			<input type='hidden' id='app_name' />
-			<input type='hidden' id='app_title' />
-			<input type='hidden' id='app_description' />
-			<input type='hidden' id='app_icon_path' />
-			<input type='hidden' id='app_bg_path' />
-			<input type='hidden' id='brand_user_fields' />
 	";
 	$response["data"]["signup-step-loading"]="
 		<div class='text-center'>

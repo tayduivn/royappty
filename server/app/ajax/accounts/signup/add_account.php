@@ -20,14 +20,10 @@
 	*	post_no_account_contact_country
 	*	post_no_account_admin_name
 	*	post_no_account_admin_email
-	*	post_no_account_admin_promo_password
 	*	post_no_account_admin_password
 	*	post_no_account_subscription_type
 	*	post_no_account_payment_plan
 	*	post_no_account_payment_method
-	*	post_no_account_app_name
-	*	post_no_account_app_title
-	*	post_no_account_app_description
 	*
 	*********************************************************/
 
@@ -117,13 +113,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 		$response["error_code_str"]= $error_step_s["post_no_account_admin_email"];
 		echo json_encode($response);
 		die();
-	}if(!@issetandnotempty($_POST["admin_promo_password"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_promo_password");
-		$response["error_code"]="post_no_account_admin_promo_password";
-		$response["error_code_str"]= $error_step_s["post_no_account_admin_promo_password"];
-		echo json_encode($response);
-		die();
 	}
 	if(!@issetandnotempty($_POST["admin_password"])){
 		$response["result"]=false;
@@ -158,30 +147,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["app_name"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_app_name");
-		$response["error_code"]="post_no_account_app_name";
-		$response["error_code_str"]= $error_step_s["post_no_account_app_name"];
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["app_title"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_app_title");
-		$response["error_code"]="post_no_account_app_title";
-		$response["error_code_str"]= $error_step_s["post_no_account_app_title"];
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["app_description"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_app_description");
-		$response["error_code"]="post_no_account_app_description";
-		$response["error_code_str"]= $error_step_s["post_no_account_app_description"];
-		echo json_encode($response);
-		die();
-	}
 
 
 	/*********************************************************
@@ -196,7 +161,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$data["name"]=$_POST["name"];
 	$data["cif"]=$_POST["cif"];
 	$data["active"]=1;
-	$data["app_name"]=$_POST["app_name"];
 
 	$data["resume_block_1_display"] = 1;
 	$data["resume_block_1_title"] = "campaigns";
@@ -224,14 +188,16 @@ if(!checkClosed()){echo json_encode($response);die();}
 
 
 	$data["subscription_type"]=$_POST["subscription_type"];
-	if($data["subscription_type"]=="welcome"){
+	$data["expiration_date"]=-1;
+	if($data["subscription_type"]=="starter"){
 		$data["expiration_date"]=strtotime("+3 month", $timestamp);
-	}else if($data["subscription_type"]=="starter"){
-		$data["expiration_date"]=-1;
+	}else if($data["subscription_type"]=="professional"){
+		$data["expiration_date"]=strtotime("+3 month", $timestamp);
 	}
 	$data["contact_address"]=$_POST["contact_address"];
 	$data["contact_postal_code"]=$_POST["contact_postal_code"];
 	$data["contact_city"]=$_POST["contact_city"];
+	$data["contact_province"]=$_POST["contact_province"];
 	$data["contact_country"]=$_POST["contact_country"];
 	$data["payment_method"]=$_POST["payment_method"];
 	$data["payment_plan"]=$_POST["payment_plan"];
@@ -271,7 +237,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$data["resume_block_3_link"] = "";
 
 	$data["can_login"]=1;
-	$data["can_validate_codes"]=1;
+	$data["can_validate_codes"]=0;
 	$data["can_manage_campaigns"]=1;
 	$data["can_manage_admins"]=1;
 	$data["can_manage_users"]=1;
@@ -306,11 +272,6 @@ if(!checkClosed()){echo json_encode($response);die();}
  	$data=array();
 
 	$data["id_brand"]=$brand["id_brand"];
-	$data["name"]=$_POST["app_name"];
-	$data["app_title"]=$_POST["app_title"];
-	$data["description"]=$_POST["app_description"];
-	$data["app_icon_path"]=$app["app_icon_path"];
-	$data["app_bg_path"]=$app["app_bg_path"];
 
 	$app["id_app"]=addInBD($table,$data);
 

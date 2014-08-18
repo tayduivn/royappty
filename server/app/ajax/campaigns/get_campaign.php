@@ -84,8 +84,8 @@ if(!checkClosed()){echo json_encode($response);die();}
  	$table="campaigns";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
-	$campaign=getInBD($table,$filter,$fields);
-
+	$campaign=getInBD($table,$filter);
+	
 	$response["data"]["modals"]="
 	<div class='modal fade' id='campaign_notes_viewer' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 		<div class='modal-dialog'>
