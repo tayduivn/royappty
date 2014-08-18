@@ -143,7 +143,7 @@
               </ul>
               <p class='text-muted text-small m-l-10'>".htmlentities($s["pricing_starter_app_takes_10_days"], ENT_QUOTES, "UTF-8")."</p>
               <h3 class='text-success text-center m-b-20'>".htmlentities($s["pricing_starter_price"], ENT_QUOTES, "UTF-8")."</h3>
-              <a href='".$url_server."./app/signup/' class='btn btn-block btn-success'>".htmlentities($s["pricing_starter_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
+              <a href='".$url_server."app/signup/' class='btn btn-block btn-success'>".htmlentities($s["pricing_starter_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
 
             </div>
           </div>
@@ -208,7 +208,7 @@
               </ul>
               <p class='text-muted text-small m-l-10'>".htmlentities($s["pricing_professional_app_takes_10_days"], ENT_QUOTES, "UTF-8")."</p>
               <h3 class='text-success text-center m-b-20'>".htmlentities($s["pricing_professional_price"], ENT_QUOTES, "UTF-8")."</h3>
-              <a href='./app/signup/' class='btn btn-block btn-success'>".htmlentities($s["pricing_professional_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
+              <a href='".$url_server."app/signup/' class='btn btn-block btn-success'>".htmlentities($s["pricing_professional_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
 
             </div>
           </div>
@@ -272,7 +272,7 @@
               </ul>
               <p class='text-muted text-small m-l-10'>".htmlentities($s["pricing_unlimited_app_takes_10_days"], ENT_QUOTES, "UTF-8")."</p>
               <h3 class='text-success text-center m-b-20'>".htmlentities($s["pricing_unlimited_price"], ENT_QUOTES, "UTF-8")."</h3>
-              <a href='".$url_server."./app/signup/' class='btn btn-block btn-success' >".htmlentities($s["pricing_unlimited_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
+              <a href='".$url_server."app/signup/' class='btn btn-block btn-success' >".htmlentities($s["pricing_unlimited_btn_hire"], ENT_QUOTES, "UTF-8")."</a>
 
             </div>
           </div>
