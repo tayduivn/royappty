@@ -23,7 +23,7 @@
   @session_start();
   $timestamp=strtotime(date("Y-m-d H:i:00"));
   include(PATH."include/inbd.php");
-	$page_path = "server/mobile/ajax/campaigns/all_data";
+	$page_path = "server/mobile/ajax/error/error";
  	debug_log("[".$page_path."] START");
  	$response=array();
 
