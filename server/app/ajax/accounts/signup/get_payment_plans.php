@@ -145,7 +145,8 @@ if(!checkClosed()){echo json_encode($response);die();}
 										<input id='payment_method' type='radio' name='payment_method' value='paypal' checked >
 									</td>
 									<td  style='width:100%'>
-										<h3>".htmlentities($payment_method["paypal"], ENT_QUOTES, "UTF-8")."</h3>
+										<h3>".htmlentities($payment_methods["paypal"]["title"], ENT_QUOTES, "UTF-8")."</h3>
+										<p>".htmlentities($payment_methods["paypal"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
 									</td>
 									<td>
 									</td>
@@ -164,7 +165,8 @@ if(!checkClosed()){echo json_encode($response);die();}
 										<input id='payment_method' type='radio' name='payment_method' value='credit_card'>
 									</td>
 									<td  style='width:100%'>
-										<h3>".htmlentities($payment_method["credit_card"], ENT_QUOTES, "UTF-8")."</h3>
+										<h3>".htmlentities($payment_method["credit_card"]["title"], ENT_QUOTES, "UTF-8")."</h3>
+										<p>".htmlentities($payment_methods["credit_card"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
 									</td>
 									<td>
 									</td>
@@ -184,7 +186,8 @@ if(!checkClosed()){echo json_encode($response);die();}
 										<input id='payment_method' type='radio' name='payment_method' value='bank_transfer'>
 									</td>
 									<td  style='width:100%'>
-										<h3>".htmlentities($payment_method["bank_transfer"], ENT_QUOTES, "UTF-8")."</h3>
+										<h3>".htmlentities($payment_method["bank_transfer"]["title"], ENT_QUOTES, "UTF-8")."</h3>
+										<p>".htmlentities($payment_methods["bank_transfer"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
 									</td>
 									<td>
 									</td>
@@ -204,7 +207,8 @@ if(!checkClosed()){echo json_encode($response);die();}
 										<input id='standing_order_payment' type='radio' name='payment_method' value='standing_order_payment'>
 									</td>
 									<td  style='width:100%'>
-										<h3>".htmlentities($payment_method["standing_order_payment"], ENT_QUOTES, "UTF-8")."</h3>
+										<h3>".htmlentities($payment_method["standing_order_payment"]["title"], ENT_QUOTES, "UTF-8")."</h3>
+										<p>".htmlentities($payment_methods["standing_order_payment"]["subtitle"], ENT_QUOTES, "UTF-8")."</p>
 									</td>
 									<td>
 									</td>
