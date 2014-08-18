@@ -80,6 +80,9 @@
 
 	$campaigns=listInBD($table,$filter,$fields);
 	$response["data"]["page"]="
+  <ul id='app-status-ul'>
+	<li> Status</li>
+</ul>
 	<div class='page center_mobile_page' id='index'>
 		<div class='header navbar navbar-inverse'>
 			<div class='navbar-inner'>
