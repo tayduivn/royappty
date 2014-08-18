@@ -248,6 +248,14 @@ function checkClosed(){
 		return false;
 		die();
 	}
+	if($CONFIG["launch"]){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR System Launch");
+		$response["error"]="ERROR System Launch";
+		$response["error_code"]="system_launch";
+		return false;
+		die();
+	}
 
 	return true;
 	die();

@@ -1,0 +1,336 @@
+/*
+Theme Name: Launchify
+Theme URI: http://themes.kudosthemes.co.uk/launchify/
+Description: A responsive coming soon theme.
+Author: Paul Allen
+Author URI: http://paulallen.me.uk
+Version: 1.0
+*/
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+
+  Table of contents
+
+  1. Global - Lines 49 - 91
+
+  2. Typography - Lines 92 - 119
+
+  3. Header - Lines 120 - 135
+
+  4. About - Lines 136 - 151 & 278 - 290
+
+  5. Countdown - Lines 152 - 168
+
+  6. Meet The Team - Lines 169 - 183 & 291 - 303
+
+  7. Get Notified - Lines 184 - 198
+
+  8. Footer - Lines 199 - 216 & 241 - 253
+
+  9. Background Images - Lines 311 - 331
+
+  ***************************************************************************
+=============================================================================*/
+
+
+
+
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Global
+  ***************************************************************************
+=============================================================================*/
+
+/*========== Loading ==========*/
+#preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 999;}
+#loading-img { position: absolute; top: 50%; left: 50%; width: 128px; height: 43px; margin: -21px 0 0 -64px; }
+
+
+/*========== Inputs ==========*/
+input[type="submit"],
+input[type="email"],
+textarea { -webkit-appearance: none; outline: none; border: none;}
+button:focus { outline: none;}
+::-webkit-input-placeholder { color: #fff;}
+:-moz-placeholder { color: #fff;}
+::-moz-placeholder { color: #fff;}
+:-ms-input-placeholder { color: #fff;}
+
+
+/*========== Buttons ==========*/
+.button { display: inline-block; margin-top: 75px; padding: 15px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s;}
+.btn-flat-white { border: 2px solid #fff; color: #fff; background: rgba(255,255,255, .10);}
+.btn-flat-white:hover { color: #fff;}
+.btn-flat-colour { border: 2px solid #666; color: #666;}
+.btn-flat-colour:hover { color: #666;}
+
+
+/*========== Sections ==========*/
+.page-wrap { overflow: hidden;}
+.section { padding: 100px 0; }
+.section.no-pad { padding: 0;}
+.overlay { padding: 100px 0;}
+#header .overlay { padding: 0;}
+.section-header { margin-bottom: 75px;}
+.background-image { color: #fff;}
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Typography
+  ***************************************************************************
+=============================================================================*/
+
+html,body,input { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: 'Lato', sans-serif; color: #666;}
+
+html,body { overflow-x: hidden;}
+
+h1,h2,h3,h4,h5,h6 { font-weight: 300;}
+
+a { outline: none; color: #fff;}
+a:hover,
+a:active,
+a:focus { text-decoration: none; outline: none;}
+
+input,
+textarea { font-size: 16px;}
+
+.text-centre { text-align: center;}
+.bold { font-weight: 900;}
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Header
+  ***************************************************************************
+=============================================================================*/
+
+.intro { display: table; width: 100%;}
+.intro-inner { height: 100%; display: table-cell; vertical-align: middle;}
+.logo img { max-width: 100%; display: block; margin: 0 auto 30px auto;}
+.text-logo { font-family: 'Pacifico', cursive; font-size: 50px; text-shadow: 2px 2px 0 rgba(0,0,0,.10); margin: 0 auto 75px auto; display: none;}
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  About
+  ***************************************************************************
+=============================================================================*/
+
+.about-module { margin-bottom: 40px;}
+.ie9 .mask { width: 126px; height: 126px; margin: 0 auto 20px auto; overflow: hidden; border-radius: 100%;}
+.about-icon { width: 126px; height: 126px; margin: 0 auto 20px auto; padding: 5px; border-radius: 100%;}
+.about-icon span { width: 100%; height: 100%; border: 2px solid #fff; color: #fff; border-radius: 100%; font-size: 40px; line-height: 112px;}
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Countdown
+  ***************************************************************************
+=============================================================================*/
+
+.ticker { padding: 40px 0;}
+.counter-bg { width: 180px; height: 180px; text-align: center; margin: 0 auto; border: 2px solid #fff; -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg); transform:rotate(45deg); text-align: center; }
+.counter-inner { -webkit-transform:rotate(-45deg); -moz-transform:rotate(-45deg); -ms-transform:rotate(-45deg); -o-transform:rotate(-45deg); transform:rotate(-45deg); position: relative; left: 0px; top: 48px;}
+.count-digit { display: block; font-size: 60px; font-weight: 300; line-height: 60px;}
+.count-text { font-size: 20px; font-weight: 300; }
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Meet the Team
+  ***************************************************************************
+=============================================================================*/
+
+.team-module { width: 240px; margin: 0 auto 40px auto;}
+.team-module img { width: 70%; border-radius: 100%; margin: 0 0 15px 0;}
+.team-module a { color: #666; display: inline-block; padding: 10px; font-size: 20px; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s;}
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Get Notified
+  ***************************************************************************
+=============================================================================*/
+
+input { width: 100%; height: 60px; display: block; border-radius: 50px; padding: 20px; margin-bottom: 20px;}
+input[type="email"] { background: none; border: 2px solid #fff; color: #fff;}
+input[type="submit"] { text-align: center; border-radius: 50px; background: #fff; outline: none !important; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s;}
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Footer
+  ***************************************************************************
+=============================================================================*/
+
+.social-nav { text-align: center;}
+.social-nav a { display: inline-block; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #666; margin: 0 5px; color: #666; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s;}
+.social-nav a:hover { color: #666;}
+.social-nav span { line-height: 36px; font-size: 18px;}
+.footer-nav { margin-top: 75px;}
+.footer-nav a { color: #666; width: 50%; display: inline-block; margin-bottom: 5px; padding: 5px;}
+
+
+
+
+
+
+/*====================================================================================================================
+  ******************************************************************************************************************
+  MEDIA QUERIES
+  ******************************************************************************************************************
+====================================================================================================================*/
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  768px Media Query
+  ***************************************************************************
+=============================================================================*/
+
+@media (min-width: 768px) {
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Footer
+  ***************************************************************************
+=============================================================================*/
+
+.footer-nav a { width: auto; margin: 0 10px;}
+
+
+
+
+
+
+} /*========== 768px MEDIA QUERY END ==========*/
+
+
+
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  992px Media Query
+  ***************************************************************************
+=============================================================================*/
+
+
+@media (min-width: 992px) {
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  About
+  ***************************************************************************
+=============================================================================*/
+
+.about-module { margin-bottom: 0;}
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Meet the Team
+  ***************************************************************************
+=============================================================================*/
+
+.team-module { width: 100%; margin: 0;}
+
+
+
+
+
+
+} /*========== 992px MEDIA QUERY END ==========*/
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  Background Images
+  ***************************************************************************
+=============================================================================*/
+
+#header.background-image { background: url('../images/background-placeholder.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover;}
+
+#countdown.background-image { background: url('../images/background-placeholder.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover;}
+
+#get-notified.background-image { background: url('../images/background-placeholder.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover;}
+
+.overlay { width: 100%; height: 100%;}
+
+
+
+
+
+
+
+
+/*=============================================================================
+  ***************************************************************************
+  COPY COLOUR SCHEME BELOW HERE!!!!
+  ***************************************************************************
+=============================================================================*/
