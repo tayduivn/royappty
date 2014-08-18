@@ -200,7 +200,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 									</td>
 								</tr>
 							</table>
-<<<<<<< HEAD
 						</div>
 					</div>
 				</div>
