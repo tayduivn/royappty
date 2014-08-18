@@ -27,7 +27,7 @@
   @session_start();
   $timestamp=strtotime(date("Y-m-d H:i:00"));
   include(PATH."include/inbd.php");
-	$page_path = "server/mobile/ajax/session/create";
+	$page_path = "server/mobile/ajax/session/add_used_code";
  	debug_log("[".$page_path."] START");
  	$response=array();
 

@@ -24,7 +24,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."include/inbd.php");
-	$page_path = "server/mobile/ajax/session/signup";
+	$page_path = "server/mobile/ajax/session/signin";
  	debug_log("[".$page_path."] START");
  	$response=array();
 
