@@ -20,10 +20,10 @@
 	/*********************************************************
  	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
  	*********************************************************/
- 	define('PATH', str_replace('\\', '/','../../../'));
+ 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d 00:00:00"));
- 	include(PATH."mobile/include/inbd.php");
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+ 	include(PATH."include/inbd.php");
 	$page_path = "server/mobile/ajax/session/signup";
  	debug_log("[".$page_path."] START");
  	$response=array();

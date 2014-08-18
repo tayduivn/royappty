@@ -33,7 +33,7 @@ $url_server = "http://www.royappty.com/";
 $campaign_bd_type[2]="discount";
 
 $lang = "ES_es";
-include_once(PATH."mobile/lang/".$lang.".php");
+include_once(PATH."lang/".$lang.".php");
 
 
 ?>
