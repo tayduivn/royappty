@@ -13,17 +13,8 @@
 	* ERROR CODES
 	* db_connection_error
 	*	post_no_account_name
-	*	post_no_account_cif
-	*	post_no_account_contact_address
-	* post_no_account_contact_postal_code
-	*	post_no_account_contact_city
-	*	post_no_account_contact_country
-	*	post_no_account_admin_name
-	*	post_no_account_admin_email
-	*	post_no_account_admin_password
-	*	post_no_account_subscription_type
-	*	post_no_account_payment_plan
-	*	post_no_account_payment_method
+	*	post_no_account_email
+	*	post_no_account_password
 	*
 	*********************************************************/
 
@@ -98,52 +89,27 @@ if(!checkClosed()){echo json_encode($response);die();}
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["admin_name"])){
+	if(!@issetandnotempty($_POST["name"])){
 		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_name");
-		$response["error_code"]="post_no_account_admin_name";
-		$response["error_code_str"]= $error_step_s["post_no_account_admin_name"];
+		debug_log("[".$page_path."] ERROR Data Post Missing account_name");
+		$response["error_code"]="post_no_account_name";
+		$response["error_code_str"]= $error_step_s["post_no_account_name"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["admin_email"])){
+	if(!@issetandnotempty($_POST["email"])){
 		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_email");
-		$response["error_code"]="post_no_account_admin_email";
-		$response["error_code_str"]= $error_step_s["post_no_account_admin_email"];
+		debug_log("[".$page_path."] ERROR Data Post Missing account_email");
+		$response["error_code"]="post_no_account_email";
+		$response["error_code_str"]= $error_step_s["post_no_account_email"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["admin_password"])){
+	if(!@issetandnotempty($_POST["password"])){
 		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_admin_password");
-		$response["error_code"]="post_no_account_admin_password";
-		$response["error_code_str"]= $error_step_s["post_no_account_admin_password"];
-		echo json_encode($response);
-		die();
-	}
-
-	if(!@issetandnotempty($_POST["subscription_type"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_subscription_type");
-		$response["error_code"]="post_no_account_subscription_type";
-		$response["error_code_str"]= $error_step_s["post_no_account_subscription_type"];
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["payment_plan"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_payment_plan");
-		$response["error_code"]="post_no_account_payment_plan";
-		$response["error_code_str"]= $error_step_s["post_no_account_payment_plan"];
-		echo json_encode($response);
-		die();
-	}
-	if(!@issetandnotempty($_POST["payment_method"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing account_payment_method");
-		$response["error_code"]="post_no_account_payment_method";
-		$response["error_code_str"]= $error_step_s["post_no_account_payment_method"];
+		debug_log("[".$page_path."] ERROR Data Post Missing account_password");
+		$response["error_code"]="post_no_account_password";
+		$response["error_code_str"]= $error_step_s["post_no_account_password"];
 		echo json_encode($response);
 		die();
 	}
