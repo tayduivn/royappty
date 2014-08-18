@@ -393,6 +393,7 @@ $s["id_request"] = "Identificador de Solicitud";
 $s["active_requests"] = "En Proceso";
 $s["end_requests"] = "Finalizadas";
 $s["view_request"] = "Ver solicitud";
+$s["requests_types"]["account_creation"]="Creación de la cuenta";
 $s["requests_types"]["app_creation"]="Creación de la Aplicación";
 $s["requests_types"]["app_update"]="Cambios en la Aplicación";
 $s["requests_types"]["bank_transfer_confirmation"]="Confirmación de Transferencia";

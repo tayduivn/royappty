@@ -303,7 +303,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$data=array();
 	$data["code"]=strtoupper(dechex(strtotime(date("Y-m-d H:i:s")).$brand["id_brand"]));
 	$data["id_brand"]=$brand["id_brand"];
-	$data["type"]="app_creation";
+	$data["type"]="account_creation";
 	$data["status"]="in_process";
 	$data["created"]=$timestamp;
 	addInBD($table,$data);
