@@ -1,0 +1,40 @@
+/*** Desktops & Laptops ***/
+ @media { 
+
+ 	/*** Page sidebar ***/
+ 	.page-sidebar {
+		display: inline-block;
+		float: left;
+		position: relative;
+		width: 200px;
+		padding-top:60px;
+  	}
+	.page-sidebar.fixed{
+		position: fixed;
+	}	
+  	.page-sidebar ul{
+  		width: 200px;
+  	}
+
+  	/*** Page content ***/
+  	.page-content { 
+  		margin-left: 200px; 
+	}
+
+	.page-content.no-min-height {
+		min-height: auto;
+	}
+
+	.full-width-page .page-content {
+		margin-left: 0px !important;
+	}
+	
+	.inner-menu{
+		margin-left:50px;
+		padding-top: 60px;
+	}
+	/** Const size button for medium devices **/
+	.btn-cons-md{
+		  min-width: 120px;
+	}
+}
