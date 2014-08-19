@@ -25,8 +25,7 @@ function logout(){
 	window.location.href = $PATH;
 }
 function session_destroy(){
-	localStorage.removeItem('id_brand');
-	localStorage.removeItem('id_admin');
+	localStorage.removeItem('id_ryadmin');
 }
 
 function error_handler(error_code){
@@ -38,9 +37,9 @@ function error_handler(error_code){
 		if(error_code=="no_brand"){window.location.href = $PATH+"login/";break error_block;}
 		if(error_code=="brand_not_valid"){window.location.href = $PATH+"lock/";break error_block;}
 		//User check errors
-		if(error_code=="no_admin"){window.location.href = $PATH+"login/";break error_block;}
-		if(error_code=="admin_not_valid"){window.location.href = $PATH+"login/";break error_block;}
-		if(error_code=="admin_inactive"){window.location.href = $PATH+"login/";break error_block;}
+		if(error_code=="no_ryadmin"){window.location.href = $PATH+"login/";break error_block;}
+		if(error_code=="ryadmin_not_valid"){window.location.href = $PATH+"login/";break error_block;}
+		if(error_code=="ryadmin_inactive"){window.location.href = $PATH+"login/";break error_block;}
 		//Set password errors
 		if(error_code=="set_password_no_code"){window.location.href = $PATH+"error/?error_code=set_password_no_code";break error_block;}
 		if(error_code=="set_password_code_not_valid"){window.location.href = $PATH+"error/?error_code=set_password_code_not_valid";break error_block;}

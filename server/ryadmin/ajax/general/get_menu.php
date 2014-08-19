@@ -30,7 +30,7 @@
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/general/get_menu";
+	$page_path="server/ryadmin/ajax/general/get_menu";
 	debug_log("[".$page_path."] START");
 
  	$response=array();
@@ -40,18 +40,14 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
-	// BRAND
-	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
-
-	// ADMIN
-	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
-	if(!checkAdmin($admin)){echo json_encode($response);die();}
+	// RYADMIN
+	$ryadmin=array();$ryadmin["id_ryadmin"]=$_SESSION["ryadmin"]["id_ryadmin"];
+	if(!checkRyadmin($ryadmin)){echo json_encode($response);die();}
 
 	// POST
 	if(!@issetandnotempty($_POST["path"])){
@@ -100,35 +96,33 @@ if(!checkClosed()){echo json_encode($response);die();}
  	$response["data"]["left-menu"]="
  		<ul>
 		<li class=''> <a href='".$_POST["path"]."'> <i class='icon-custom-home'></i> <span class='title'>".htmlentities($s["dashboard"], ENT_QUOTES, "UTF-8")."</span> <span class='selected'></span></a> </li>
-		<li class=''> <a href='javascript:;'> <i class='fa fa-bullhorn'></i> <span class='title'>".htmlentities($s["campaigns"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
+		<li class=''> <a href='javascript:;'> <i class='fa fa-bullhorn'></i> <span class='title'>".htmlentities($s["brands"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."campaigns/'> ".htmlentities($s["all_campaigns"], ENT_QUOTES, "UTF-8")." </a> </li>
-				<li > <a href='".$_POST["path"]."campaign/new/'>".htmlentities($s["new_campaign"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."campaigns/'> ".htmlentities($s["all_brands"], ENT_QUOTES, "UTF-8")." </a> </li>
+				<li > <a href='".$_POST["path"]."campaign/new/'>".htmlentities($s["new_brand"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
-		<li class=''> <a href='javascript:;'> <i class='fa fa-bell-o'></i> <span class='title'>".htmlentities($s["notifications"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
+		<li class=''> <a href='javascript:;'> <i class='fa fa-bell-o'></i> <span class='title'>".htmlentities($s["requests"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."notifications/'> ".htmlentities($s["sended_notifications"], ENT_QUOTES, "UTF-8")." </a> </li>
-				<li > <a href='".$_POST["path"]."notification/new/'>".htmlentities($s["new_notification"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."notifications/'> ".htmlentities($s["all_requests"], ENT_QUOTES, "UTF-8")." </a> </li>
+				<li > <a href='".$_POST["path"]."notification/new/'>".htmlentities($s["new_request"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
-		<li> <a href='javascript:;'> <i class='fa fa-sitemap'></i> <span class='title'>".htmlentities($s["admins"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
+		<li> <a href='javascript:;'> <i class='fa fa-sitemap'></i> <span class='title'>".htmlentities($s["receipts"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."admins/'>".htmlentities($s["all_admins"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."admin/new/'>".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."admins/'>".htmlentities($s["all_receipts"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."admin/new/'>".htmlentities($s["new_receipt"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
-		<li> <a href='javascript:;'> <i class='fa fa-users'></i> <span class='title'>".htmlentities($s["users"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
+		<li> <a href='javascript:;'> <i class='fa fa-users'></i> <span class='title'>".htmlentities($s["ryadmins"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."users/'>".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."groups/'>".htmlentities($s["all_groups"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."group/new/'>".htmlentities($s["new_group"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."users/'>".htmlentities($s["all_ryadmins"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."group/new/'>".htmlentities($s["new_ryadmin"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
 		<li class=''> <a href='javascript:;'> <i class='fa fa-cogs'></i> <span class='title'>".htmlentities($s["settings"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."my-app/'>".htmlentities($s["my_app"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."requests/'>".htmlentities($s["all_requests"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."requests/'>".htmlentities($s["server"], ENT_QUOTES, "UTF-8")."</a> </li>
 				<li > <a href='".$_POST["path"]."my-account/'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>

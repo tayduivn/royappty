@@ -35,7 +35,7 @@ function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTi
 		if ($httpCode != 200) {
 				return false;
 		}
-		curl_close($ch);    
+		curl_close($ch);
 		return $response;
 }
 
@@ -171,17 +171,78 @@ function corporate_email($mail_for,$mail_subject,$content){
 		return true;
 }
 
+function create_block_unit($block_data_code){
+	$block_unit="";
+	switch ($block_data_code){
+		case "total_campaigns":
+			$block_unit="";
+			break;
 
+		case "total_brands":
+			$block_unit="";
+			break;
+
+		case "total_users":
+			$block_unit="";
+			break;
+
+		case "total_monthly_revenue":
+			$block_unit="€";
+			break;
+
+
+	}
+
+	return $block_unit;
+}
 function create_block_data($block_data_code,$data1="",$data2=""){
 
 	$block_data="?";
 	switch ($block_data_code){
+		case "total_campaigns":
+			$table="campaigns";
+			$filter=array();
+			$filter["status"]=array("operation"=>"=","value"=>1);
+			$block_data=countInBD($table,$filter);
+			$block_unit="";
+			if(!@issetandnotempty($block_data)){$block_data=0;}
+			break;
+
+		case "total_brands":
+			$table="brands";
+			$filter=array();
+			$filter["active"]=array("operation"=>"=","value"=>1);
+			$block_data=countInBD($table,$filter);
+			$block_unit="";
+			if(!@issetandnotempty($block_data)){$block_data=0;}
+			break;
+
+		case "total_users":
+			$table="users";
+			$filter=array();
+			$filter["active"]=array("operation"=>"=","value"=>1);
+			$block_data=countInBD($table,$filter);
+			$block_unit="";
+			if(!@issetandnotempty($block_data)){$block_data=0;}
+			break;
+
+		case "total_monthly_revenue":
+			$table="receipts";
+			$filter=array();
+			$filter["created"]=array("operation"=>">","value"=>strtotime("-1 month"));
+			$sum_field="price_vat";
+			$block_data=sumInBD($table,$filter,$sum_field);
+			$block_unit="";
+			if(!@issetandnotempty($block_data)){$block_data=0;}
+			break;
+
 		case "campaigns":
 			$table="campaigns";
 			$filter=array();
 			$filter["id_brand"]=array("operation"=>"=","value"=>$data1);
 			$filter["status"]=array("operation"=>"=","value"=>1);
 			$block_data=countInBD($table,$filter);
+			$block_unit="€";
 			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
@@ -353,27 +414,27 @@ function checkBrand($brand){
 	global $response;
 
 	if(!@issetandnotempty($brand["id_brand"])){
-	 	$response["result"]=false;
+		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing id_brand");
- 		$response["error"]="ERROR Data Missing brand identificator";
-  		$response["error_code"]="no_brand";
- 		return false;
- 		die();
- 	}
- 	$table="brands";
- 	$filter=array();
- 	$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
- 	$filter["active"]=array("operation"=>"=","value"=>1);
- 	if(!isInBD($table,$filter)){
-	 	$response["result"]=false;
+		$response["error"]="ERROR Data Missing brand identificator";
+			$response["error_code"]="no_brand";
+		return false;
+		die();
+	}
+	$table="brands";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
+	$filter["active"]=array("operation"=>"=","value"=>1);
+	if(!isInBD($table,$filter)){
+		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Brand not exists or inactive (id_brand=".$brand["id_brand"]." | active=1)");
- 		$response["error"]="ERROR Data Missing not exists or inactive";
- 		$response["error_code"]="brand_not_valid";
- 		return false;
- 		die();
- 	}
- 	return true;
- 	die();
+		$response["error"]="ERROR Data Missing not exists or inactive";
+		$response["error_code"]="brand_not_valid";
+		return false;
+		die();
+	}
+	return true;
+	die();
 
 }
 
@@ -395,45 +456,45 @@ function checkBDConnection(){
 	die();
 }
 
-function checkAdmin($admin){
+function checkRyadmin($ryadmin){
 	global $page_path;
 	global $response;
 
-	if(!@issetandnotempty($admin["id_admin"])){
-	 	$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Missing id_admin");
- 		$response["error"]="ERROR Data Missing admin identificator";
-  		$response["error_code"]="no_admin";
+	if(!@issetandnotempty($ryadmin["id_ryadmin"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Missing id_ryadmin");
+		$response["error"]="ERROR Data Missing ryadmin identificator";
+		$response["error_code"]="no_ryadmin";
 		return false;
- 		die();
- 	}
+		die();
+	}
 
- 	$table="admins";
- 	$filter=array();
- 	$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
- 	if(!isInBD($table,$filter)){
-	 	$response["result"]=false;
-		debug_log("[".$page_path."] ERROR User not exists (id_admin=".$admin["id_admin"].")");
- 		$response["error"]="ERROR User not in the system";
- 		$response["error_code"]="admin_not_valid";
- 		return false;
- 		die();
- 	}
+	$table="ryadmins";
+	$filter=array();
+	$filter["id_ryadmin"]=array("operation"=>"=","value"=>$ryadmin["id_ryadmin"]);
+	if(!isInBD($table,$filter)){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Ryadmin not exists (id_ryadmin=".$ryadmin["id_ryadmin"].")");
+		$response["error"]="ERROR Ryadmin not in the system";
+		$response["error_code"]="ryadmin_not_valid";
+		return false;
+		die();
+	}
 
- 	$table="admins";
- 	$filter=array();
- 	$filter["id_admin"]=array("operation"=>"=","value"=>$admin["id_admin"]);
- 	$filter["active"]=array("operation"=>"=","value"=>1);
- 	if(!isInBD($table,$filter)){
-	 	$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Admin inactive (id_admin=".$admin["id_admin"].")");
- 		$response["error"]="ERROR User not in the system";
-  		$response["error_code"]="admin_inactive";
+	$table="ryadmins";
+	$filter=array();
+	$filter["id_ryadmin"]=array("operation"=>"=","value"=>$ryadmin["id_ryadmin"]);
+	$filter["active"]=array("operation"=>"=","value"=>1);
+	if(!isInBD($table,$filter)){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Ryadmin inactive (id_admin=".$ryadmin["id_admin"].")");
+		$response["error"]="ERROR Ryadmin inactive";
+			$response["error_code"]="ryadmin_inactive";
 		echo json_encode($response);
- 		die();
- 	}
- 	return true;
- 	die();
+		die();
+	}
+	return true;
+	die();
 }
 
 function error_handler($error_code){

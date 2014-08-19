@@ -30,7 +30,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."include/inbd.php");
-  $page_path = "server/app/ajax/session/create";
+  $page_path = "server/ryadmin/ajax/session/create";
  	debug_log("[".$page_path."] START");
  	$response=array();
 
@@ -40,33 +40,30 @@
   *********************************************************/
 
   // SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+  if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+  // BD CONNECTION
   if(!checkBDConnection()){echo json_encode($response);die();}
 
- 	// BRAND
- 	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
-
  	// ADMIN
-  $admin=array();$admin["id_admin"]=$_POST["id_admin"];
-	if(!checkAdmin($admin)){echo json_encode($response);die();}
+  $ryadmin=array();$ryadmin["id_ryadmin"]=$_POST["id_ryadmin"];
+	if(!checkRyadmin($ryadmin)){echo json_encode($response);die();}
 
  /*********************************************************
  * AJAX OPERATIONS
  *********************************************************/
 
   $response["result"]=true;
-  $_SESSION['admin']=array();
-  $_SESSION['admin']["id_admin"] = $_POST["id_admin"];
-  $_SESSION['admin']["id_brand"] = $_POST["id_brand"];
+  $_SESSION['ryadmin']=array();
+  $_SESSION['ryadmin']["id_ryadmin"] = $_POST["id_ryadmin"];
 
- 	$table="admins";
+
+ 	$table="ryadmins";
  	$filter=array();
- 	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
+ 	$filter["id_ryadmin"]=array("operation"=>"=","value"=>$_POST["id_ryadmin"]);
  	$data=array();
- 	$data["last_connection"]=strtotime(date("Y-m-d H:i:00"));
+  $data["last_login"]=$timestamp;
+  $data["last_activity"]=$timestamp;
  	updateInBD($table,$filter,$data);
 
   /*********************************************************

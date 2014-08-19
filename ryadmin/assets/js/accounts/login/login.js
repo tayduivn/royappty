@@ -11,7 +11,7 @@ $(document).ready(function(){
 		async: false,
 		type: "POST",
 		dataType: 'json',
-		url: $SERVER_PATH+"server/app/ajax/accounts/login/login.php",
+		url: $SERVER_PATH+"server/ryadmin/ajax/accounts/login/login.php",
 		data: {
 			"error":$GET["error"],
 			lang: localStorage.getItem("lang")
@@ -99,7 +99,7 @@ $(document).ready(function() {
 		 	$.ajax({
 				type: "POST",
 				dataType: 'json',
-				url: $SERVER_PATH+"server/app/ajax/accounts/login/create_session.php",
+				url: $SERVER_PATH+"server/ryadmin/ajax/accounts/login/create_session.php",
 				data: {
 					"email":$('#form-end #email').val(),
 					"password":$('#form-end #password').val()
@@ -109,8 +109,7 @@ $(document).ready(function() {
 				},
 				success: function(response) {
 					if(response.result){
-						localStorage.setItem('id_brand',response.data.id_brand);
-						localStorage.setItem('id_admin',response.data.id_admin);
+						localStorage.setItem('id_ryadmin',response.data.id_ryadmin);
 						window.location.href = "../";
 					} else {
 						error_handler("login_error");

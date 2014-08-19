@@ -25,7 +25,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/accounts/login/login";
+	$page_path="server/ryadmin/ajax/accounts/login/login";
 	debug_log("[".$page_path."] START");
  	$response=array();
 
@@ -49,8 +49,8 @@ if(!checkClosed()){echo json_encode($response);die();}
 
 	$response["data"]["login-title"]="
 		<div class='text-center' style='height:100%'>
-			<img style='width:320px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
-			<h3>".htmlentities($s["login"], ENT_QUOTES, "UTF-8")."</h3>
+			<img style='width:320px' src='".$url_server."server/ryadmin/assets/img/royappty-logo.png' />
+			<h3>".htmlentities($s["ryadmin_login"], ENT_QUOTES, "UTF-8")."</h3>
 		</div>
 
 	";
@@ -79,7 +79,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 				</div>
 				<p>
 					<a href='../signup/'>".htmlentities($s["create_account"], ENT_QUOTES, "UTF-8")."</a>
-					<a href='../recovery/' class='pull-right'>".htmlentities($s["did_you_lose_your_password"], ENT_QUOTES, "UTF-8")."</a>
 				</p>
 				<div style='overflow:auto'>
 					<div class='form-group text-center'>

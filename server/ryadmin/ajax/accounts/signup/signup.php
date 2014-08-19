@@ -61,28 +61,28 @@ if(!checkClosed()){echo json_encode($response);die();}
 					<label class='form-label'>".htmlentities($signup_s["admin_name"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["admin_name_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
-						<input type='text' id='admin_name' name='admin_name' class='form-control'>
+						<input type='text' id='name' name='name' class='form-control'>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($signup_s["admin_email"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["admin_email_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
-						<input type='text' id='admin_email' name='admin_email' class='form-control'>
+						<input type='text' id='email' name='email' class='form-control'>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($signup_s["admin_password"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["admin_password_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
-						<input type='password' id='admin_password' name='admin_password' class='form-control'>
+						<input type='password' id='password' name='password' class='form-control'>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($signup_s["admin_password_repeat"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["admin_password_repeat_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
-						<input type='password' id='admin_password_repeat' name='admin_password_repeat' class='form-control'>
+						<input type='password' id='password_repeat' name='password_repeat' class='form-control'>
 					</div>
 				</div>
 				<div class='form-group'>
@@ -115,7 +115,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 			<h3 class='text-center'>".htmlentities($s["error"], ENT_QUOTES, "UTF-8")."</h3>
 			<div class='msg'>".htmlentities($s["there_was_an_error_please_try_later"], ENT_QUOTES, "UTF-8")."</div>
 			<div class='m-t-20'>
-				<a href='../../app/' class='btn btn-white'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
+				<a href='../' class='btn btn-white'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
 			</div>
 		</div>
 	";
@@ -125,7 +125,7 @@ $response["data"]["signup-step-success"]="
 		<h3 class='text-center'>".htmlentities($signup_s["success_title"], ENT_QUOTES, "UTF-8")."</h3>
 		<div class='msg'>".htmlentities($signup_s["success_subtitle"], ENT_QUOTES, "UTF-8")."</div>
 		<div class='m-t-20'>
-			<a href='../' class='btn btn-white m-r-10'>".htmlentities($s["login"], ENT_QUOTES, "UTF-8")."</a>
+			<a href='../' class='btn btn-white m-r-10'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
 		</div>
 	</div>
 ";

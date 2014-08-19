@@ -28,7 +28,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/dashboard/get_dashboard";
+	$page_path="server/ryadmin/ajax/dashboard/get_dashboard";
 	debug_log("[".$page_path."] START");
 
 	$response=array();
@@ -38,18 +38,14 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
-	// BRAND
-	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
-
-	// ADMIN
-	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
-	if(!checkAdmin($admin)){echo json_encode($response);die();}
+	// RYADMIN
+	$ryadmin=array();$ryadmin["id_ryadmin"]=$_SESSION["ryadmin"]["id_ryadmin"];
+	if(!checkRyadmin($ryadmin)){echo json_encode($response);die();}
 
 	/*********************************************************
 	* AJAX OPERATIONS
@@ -57,40 +53,59 @@ if(!checkClosed()){echo json_encode($response);die();}
 
  		$response["result"]=true;
 
-		$table="brands";
-		$filter=array();
-		$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-		$fields = array("resume_block_1_display","resume_block_2_display","resume_block_3_display","resume_block_4_display");
- 		$response["data"]["page-title"]="<a href='./index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["dashboard"], ENT_QUOTES, "UTF-8");
- 		$brand=getInBD($table,$filter,$fields);
 
- 		for($i=1;$i<=4;$i++){
+		$table="ryadmins";
+		$filter=array();
+		$filter["id_ryadmin"]=array("operation"=>"=","value"=>$_SESSION["ryadmin"]["id_ryadmin"]);
+		$fields = array("resume_block_1_display","resume_block_2_display","resume_block_3_display","resume_block_4_display");
+		$response["data"]["page-title"]="<a href='./index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["dashboard"], ENT_QUOTES, "UTF-8");
+		$ryadmin=getInBD($table,$filter,$fields);
+
+
+		$blocks_count=0;
+		for($i=1;$i<=4;$i++){
+			if($ryadmin["resume_block_".$i."_display"]==1){
+				$blocks_count++;
+			}
+		}
+		$blocks_width=100;
+		if($blocks_count>0){
+			$blocks_width=12/$blocks_count;
+		}
+		$response["data"]["resume-blocks"]="";
+		for($i=1;$i<=4;$i++){
 			$response["data"]["resume-block-".$i]="";
-			if($brand["resume_block_".$i."_display"]==1){
-				$table="brands";
+			if($ryadmin["resume_block_".$i."_display"]==1){
+				$table="ryadmins";
 				$filter=array();
-				$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-				$fields=array("resume_block_".$i."_title","resume_block_".$i."_data","resume_block_".$i."_link","resume_block_".$i."_link_content");
+				$filter["id_ryadmin"]=array("operation"=>"=","value"=>$_SESSION["ryadmin"]["id_ryadmin"]);
+				$fields=array("resume_block_".$i."_title");
+
 				$resume_block=getInBD($table,$filter,$fields);
 
-				$response["data"]["resume-block-".$i]="
-				<div class='tiles pink'>
-					<div class='tiles-body'>
-						<h6 class='text-white all-caps no-margin'>
-							".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
-						</h6>
-						<div class='heading'>";
-				$block_data=create_block_data($resume_block["resume_block_".$i."_title"],$_SESSION["admin"]["id_brand"]);
-				$response["data"]["resume-block-".$i].="
-							<h1><span class='animate-number text-white' data-value='".$block_data."' data-animation-duration='1200'>0</h1>
-						</div>
-						<div class='description'>
-							<a href='".$resume_block["resume_block_".$i."_link"]."' class='text-white'>".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_link_content"]], ENT_QUOTES, "UTF-8")."</a>
+				$response["data"]["resume-blocks"].="
+				<div class='col-md-".$blocks_width."'>
+					<div class='grid simple'>
+						<div class='tiles pink'>
+							<div class='tiles-body'>
+								<h6 class='text-white all-caps no-margin'>
+									".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
+								</h6>
+								<div class='heading'>";
+							$block_data=create_block_data($resume_block["resume_block_".$i."_title"]);
+							$block_unit=create_block_unit($resume_block["resume_block_".$i."_title"]);
+							$response["data"]["resume-blocks"].="
+
+									<h1><span class='animate-number text-white' data-value='".$block_data."' data-animation-duration='1200'>0</span><span class='text-white'>".$block_unit."</span></h1>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>";
 			}
 		}
+
+
 
   	$table="campaigns";
  		$filter=array();
