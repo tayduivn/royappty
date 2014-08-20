@@ -228,6 +228,7 @@ $(document).ready(function(){
 					contact_address:$('#form-end #contact_address').val(),
 					contact_postal_code:$('#form-end #contact_postal_code').val(),
 					contact_city:$('#form-end #contact_city').val(),
+					contact_province:$('#form-end #contact_province').val(),
 					contact_country:$('#form-end #contact_country').val(),
 					admin_name:$('#form-end #admin_name').val(),
 					admin_email:$('#form-end #admin_email').val(),

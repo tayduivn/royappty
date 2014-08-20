@@ -240,6 +240,20 @@ $s["brand_blocked"] = "Bloqueada";
 $s["block"] = "Bloquear";
 $s["unblock"] = "Desbloquear";
 
+//Brand / Get Brand
+$s["brand_data"] = "Datos de la Marca";
+$s["payment_plan"] = "Método de Pago";
+$s["expiration_date"] = "Fecha de Expiración";
+$s["subscription_data"] = "Datos de Subscripción";
+$s["contact_nombre"] = "Correo electrónico";
+$s["contact_email"] = "Correo electrónico";
+$s["contact_phone"] = "Teléfono";
+$s["contact_address"] = "Dirección";
+$s["contact_postal_code"] = "Código Postal";
+$s["contact_city"] = "Ciudad";
+$s["contact_province"] = "Provincia";
+$s["contact_country"] = "País";
+
 //Admins / Add
 $s["add_admin_title"] = "Datos del Administrador";
 $s["admin_name"] = "Nombre";
