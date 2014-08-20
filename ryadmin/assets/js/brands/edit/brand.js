@@ -82,59 +82,71 @@ $(document).ready(function() {
 
 	$("#form-step1").validate({
 		messages:{
-			name:{
-				required: $s["edit_brand_name_this_field_is_compulsory"],
-				maxlength: $s["edit_brand_name_it_canot_be_longer_than_75_characters"],
-				minlength: $s["edit_brand_name_this_field_needs_4_character_minimum"]
-			},
-			email:{
-				email: $s["edit_brand_email_format_is_not_correct"]
-			}
+
 		},
 		rules:{
-			name:{
-		  		required:true,
-			  	maxlength: 75,
-			  	minlength: 4
-		  	},
-				email:{
-					email: true
-				}
+
 		},
 		submitHandler:function(form){
 			$('#form-end #name').val($('#form-step1 #name').val());
-		 	$('#form-end #can_validate_codes').val(0);if($('#form-step1 #can_validate_codes').is(":checked")){$('#form-end #can_validate_codes').val(1);}
-		 	$('#form-end #promo_password').val($('#form-step1 #promo_password').val());
-		 	$('#form-end #can_login').val(0);if($('#form-step1 #can_login').is(":checked")){$('#form-end #can_login').val(1);}
-		 	$('#form-end #can_manage_campaigns').val(0);if($('#form-step1 #can_manage_campaigns').is(":checked")){$('#form-end #can_manage_campaigns').val(1);}
-		 	$('#form-end #can_manage_brands').val(0);if($('#form-step1 #can_manage_brands').is(":checked")){$('#form-end #can_manage_brands').val(1);}
-		 	$('#form-end #can_manage_users').val(0);if($('#form-step1 #can_manage_users').is(":checked")){$('#form-end #can_manage_users').val(1);}
-		 	$('#form-end #can_manage_app').val(0);if($('#form-step1 #can_manage_app').is(":checked")){$('#form-end #can_manage_app').val(1);}
-		 	$('#form-end #can_manage_brand').val(0);if($('#form-step1 #can_manage_brand').is(":checked")){$('#form-end #can_manage_brand').val(1);}
-
-			$('#form-end #email').val($('#form-step1 #email').val());
-			$('#form-end #password').val($('#form-step1 #password').val());
+			$('#form-end #cif').val($('#form-step1 #cif').val());
 			$('#form-end #active').val($('#form-step1 #active').val());
-
+			$('#form-end #created').val($('#form-step1 #created').val());
+			$('#form-end #android_key').val($('#form-step1 #android_key').val());
+			$('#form-end #resume_block_1_display').val(0);if($('#form-step1 #resume_block_1_display').is(":checked")){$('#form-end #resume_block_1_display').val(1);}
+			$('#form-end #resume_block_1_title').val($('#form-step1 #resume_block_1_title').val());
+			$('#form-end #resume_block_2_display').val(0);if($('#form-step1 #resume_block_2_display').is(":checked")){$('#form-end #resume_block_2_display').val(1);}
+			$('#form-end #resume_block_2_title').val($('#form-step1 #resume_block_2_title').val());
+			$('#form-end #resume_block_3_display').val(0);if($('#form-step1 #resume_block_3_display').is(":checked")){$('#form-end #resume_block_3_display').val(1);}
+			$('#form-end #resume_block_3_title').val($('#form-step1 #resume_block_3_title').val());
+			$('#form-end #resume_block_4_display').val(0);if($('#form-step1 #resume_block_4_display').is(":checked")){$('#form-end #resume_block_4_display').val(1);}
+			$('#form-end #resume_block_4_title').val($('#form-step1 #resume_block_4_title').val());
+			$('#form-end #subscription_type').val($('#form-step1 #subscription_type').val());
+			$('#form-end #contact_name').val($('#form-step1 #contact_name').val());
+			$('#form-end #contact_email').val($('#form-step1 #contact_email').val());
+			$('#form-end #contact_phone').val($('#form-step1 #contact_phone').val());
+			$('#form-end #contact_address').val($('#form-step1 #contact_address').val());
+			$('#form-end #contact_postal_code').val($('#form-step1 #contact_postal_code').val());
+			$('#form-end #contact_city').val($('#form-step1 #contact_city').val());
+			$('#form-end #contact_province').val($('#form-step1 #contact_province').val());
+			$('#form-end #contact_country').val($('#form-step1 #contact_country').val());
+			$('#form-end #payment_plan').val($('#form-step1 #payment_plan').val());
+			$('#form-end #payment_method').val($('#form-step1 #payment_method').val());
+			$('#form-end #payment_data').val($('#form-step1 #payment_data').val());
+			$('#form-end #expiration_date').val($('#form-step1 #expiration_date').val());
 			loadingstep();
 		 	$.ajax({
 				type: "POST",
 				dataType: 'json',
 				url: $SERVER_PATH+"server/ryadmin/ajax/brands/edit/update_brand.php",
 				data: {
-					"id_brand":$('#form-end #id_brand').val(),
-					"name":$('#form-end #name').val(),
-					"can_validate_codes":$('#form-end #can_validate_codes').val(),
-					"promo_password":$('#form-end #promo_password').val(),
-					"can_login":$('#form-end #can_login').val(),
-					"can_manage_campaigns":$('#form-end #can_manage_campaigns').val(),
-					"can_manage_brands":$('#form-end #can_manage_brands').val(),
-					"can_manage_users":$('#form-end #can_manage_users').val(),
-					"can_manage_app":$('#form-end #can_manage_app').val(),
-					"can_manage_brand":$('#form-end #can_manage_brand').val(),
-					"email":$('#form-end #email').val(),
-					"password":$('#form-end #password').val(),
-					"active":$('#form-end #active').val()
+					"id_brand":$("#form-end #id_brand").val(),
+					"name":$("#form-end #name").val(),
+					"cif":$("#form-end #cif").val(),
+					"active":$("#form-end #active").val(),
+					"created":$("#form-end #created").val(),
+					"android_key":$("#form-end #android_key").val(),
+					"resume_block_1_display":$("#form-end #resume_block_1_display").val(),
+					"resume_block_1_title":$("#form-end #resume_block_1_title").val(),
+					"resume_block_2_display":$("#form-end #resume_block_2_display").val(),
+					"resume_block_2_title":$("#form-end #resume_block_2_title").val(),
+					"resume_block_3_display":$("#form-end #resume_block_3_display").val(),
+					"resume_block_3_title":$("#form-end #resume_block_3_title").val(),
+					"resume_block_4_display":$("#form-end #resume_block_4_display").val(),
+					"resume_block_4_title":$("#form-end #resume_block_4_title").val(),
+					"subscription_type":$("#form-end #subscription_type").val(),
+					"contact_name":$("#form-end #contact_name").val(),
+					"contact_email":$("#form-end #contact_email").val(),
+					"contact_phone":$("#form-end #contact_phone").val(),
+					"contact_address":$("#form-end #contact_address").val(),
+					"contact_postal_code":$("#form-end #contact_postal_code").val(),
+					"contact_city":$("#form-end #contact_city").val(),
+					"contact_province":$("#form-end #contact_province").val(),
+					"contact_country":$("#form-end #contact_country").val(),
+					"payment_plan":$("#form-end #payment_plan").val(),
+					"payment_method":$("#form-end #payment_method").val(),
+					"payment_data":$("#form-end #payment_data").val(),
+					"expiration_date":$("#form-end #expiration_date").val()
 				},
 				error: function(data, textStatus, jqXHR) {
 				errorstep("ajax_error");

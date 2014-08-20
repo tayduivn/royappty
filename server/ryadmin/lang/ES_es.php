@@ -274,6 +274,7 @@ $s["brand_created"] = "Fecha de creación";
 $s["brand_created_help"] = "";
 $s["brand_android_key"] = "Llave Android";
 $s["brand_android_key_help"] = "";
+$s["show_resume_block"] = "Mostrar Bloque";
 $s["brand_resume_block_1"] = "Bloque Resumen #1";
 $s["brand_resume_block_1_help"] = "";
 $s["brand_resume_block_2"] = "Bloque Resumen #2";
@@ -308,8 +309,11 @@ $s["brand_payment_data"] = "Datos complementarios de Pago";
 $s["brand_payment_data_help"] = "";
 $s["brand_expiration_date"] = "Fecha de Expiración";
 $s["brand_expiration_date_help"] = "";
-
-
+$s["brand_success_title"] = "Marca actualizada";
+$s["brand_success_subtitle"] = "La Marca ha sido actualizada correctamente";
+$s["view_brand"] = "Ver Marca";
+$s["brand_resume_blocks"] = "Bloques Resumen";
+$s["brand_app_config"] = "Configuración de App";
 
 //Admins / Add
 $s["add_admin_title"] = "Datos del Administrador";

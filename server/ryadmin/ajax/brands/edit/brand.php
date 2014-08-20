@@ -86,34 +86,165 @@
 			<h4 class='m-t-0'>".htmlentities($s["edit_brand"], ENT_QUOTES, "UTF-8")."</h4>
 			<form id='form-step1'>
 				<div id='form-warning'></div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_name"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_name_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='name' name='name' value='".$brand["name"]."' class='form-control'>
+				<div class='row'>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_name"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_name_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='name' name='name' value='".$brand["name"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_cif"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_cif_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='cif' cif='cif' value='".$brand["cif"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_active"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_active_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<select  id='active' name='active'>";
+		for($i=1;$i<=2;$i++){
+			$response["data"]["new-brand-step-1"].="<option value='".$i."'";
+			if($brand["active"]==$i){
+				$response["data"]["new-brand-step-1"].="selected";
+			}
+			$response["data"]["new-brand-step-1"].=">".htmlentities($s["brands_active"][$i], ENT_QUOTES, "UTF-8")."</option>";
+		}
+		$response["data"]["new-brand-step-1"].="
+								</select>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_created"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_created_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='created' created='created' value='".$brand["created"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_payment_plan"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_payment_plan_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='payment_plan' name='payment_plan' value='".$brand["payment_plan"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_payment_method"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_payment_method_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='payment_method' name='payment_method' value='".$brand["payment_method"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_payment_data"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_payment_data_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='payment_data' name='payment_data' value='".$brand["payment_data"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_expiration_date"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_expiration_date_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='expiration_date' name='expiration_date' value='".$brand["expiration_date"]."' class='form-control'>
+							</div>
+						</div>
+					</div>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_name"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_name_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_name' name='contact_name' value='".$brand["contact_name"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_email"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_email_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_email' name='contact_email' value='".$brand["contact_email"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_phone"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_phone_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_phone' name='contact_phone' value='".$brand["contact_phone"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_address"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_address_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_address' name='contact_address' value='".$brand["contact_address"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_postal_code"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_postal_code_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_postal_code' name='contact_postal_code' value='".$brand["contact_postal_code"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_city"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_city_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_city' name='contact_city' value='".$brand["contact_city"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_province"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_province_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_province' name='contact_province' value='".$brand["contact_province"]."' class='form-control'>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_contact_country"], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_contact_country_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='text' id='contact_country' name='contact_country' value='".$brand["contact_country"]."' class='form-control'>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_cif"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_cif_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='cif' cif='cif' value='".$brand["cif"]."' class='form-control'>
-					</div>
+				<h3>".htmlentities($s["brand_resume_blocks"], ENT_QUOTES, "UTF-8")."</h3>
+				<div class='row'>";
+		for($i=1;$i<=4;$i++){
+			$response["data"]["new-brand-step-1"].="<div class='col-md-6'>
+						<div class='form-group'>
+							<label class='form-label'>".htmlentities($s["brand_resume_block_".$i], ENT_QUOTES, "UTF-8")."</label>
+							<span class='help'>".htmlentities($s["brand_resume_block_".$i."_help"], ENT_QUOTES, "UTF-8")."</span>
+							<div class='controls'>
+								<input type='checkbox' id='resume_block_".$i."_display' name='resume_block_".$i."_display' ";
+			if($brand["resume_block_".$i."_display"]==1){
+				$response["data"]["new-brand-step-1"].="checked='checked'";
+			}
+			$response["data"]["new-brand-step-1"].="/> ".htmlentities($s["show_resume_block"], ENT_QUOTES, "UTF-8")."
+								<select id='resume_block_".$i."_title' name='resume_block_".$i."_title'>";
+			for($j=1;$j<=4;$j++){
+				$response["data"]["new-brand-step-1"].="<option value='".$block_types["brand"][$j]."' ";
+				if($brand["resume_block_".$i."_title"]==$block_types["brand"][$j]){
+					$response["data"]["new-brand-step-1"].="selected";
+				}
+				$response["data"]["new-brand-step-1"].=">".htmlentities($block_types["brand"][$j], ENT_QUOTES, "UTF-8")."</option>";
+			}
+			$response["data"]["new-brand-step-1"].="
+								</select>
+							</div>
+						</div>
+					</div>";
+		}
+				$response["data"]["new-brand-step-1"].="
 				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_active"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_active_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='active' active='active' value='".$brand["active"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_created"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_created_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='created' created='created' value='".$brand["created"]."' class='form-control'>
-					</div>
-				</div>
+
+				<h3>".htmlentities($s["brand_app_config"], ENT_QUOTES, "UTF-8")."</h3>
+
 				<div class='form-group'>
 					<label class='form-label'>".htmlentities($s["brand_android_key"], ENT_QUOTES, "UTF-8")."</label>
 					<span class='help'>".htmlentities($s["brand_android_key_help"], ENT_QUOTES, "UTF-8")."</span>
@@ -121,122 +252,9 @@
 						<input type='text' id='android_key' android_key='android_key' value='".$brand["android_key"]."' class='form-control'>
 					</div>
 				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_resume_block_1"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_resume_block_1_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='resume_block_1_display' name='resume_block_1_display' value='".$brand["resume_block_1_display"]."' class='form-control'>
-						<input type='text' id='resume_block_1_title' name='resume_block_1_title' value='".$brand["resume_block_1_title"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_resume_block_2"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_resume_block_2_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='resume_block_2_display' name='resume_block_2_display' value='".$brand["resume_block_2_display"]."' class='form-control'>
-						<input type='text' id='resume_block_2_title' name='resume_block_2_title' value='".$brand["resume_block_2_title"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_resume_block_3"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_resume_block_3_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='resume_block_3_display' name='resume_block_3_display' value='".$brand["resume_block_3_display"]."' class='form-control'>
-						<input type='text' id='resume_block_3_title' name='resume_block_3_title' value='".$brand["resume_block_3_title"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_resume_block_4"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_resume_block_4_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='resume_block_4_display' name='resume_block_4_display' value='".$brand["resume_block_4_display"]."' class='form-control'>
-						<input type='text' id='resume_block_4_title' name='resume_block_4_title' value='".$brand["resume_block_4_title"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_name"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_name_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_name' name='contact_name' value='".$brand["contact_name"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_email"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_email_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_email' name='contact_email' value='".$brand["contact_email"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_phone"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_phone_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_phone' name='contact_phone' value='".$brand["contact_phone"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_address"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_address_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_address' name='contact_address' value='".$brand["contact_address"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_postal_code"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_postal_code_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_postal_code' name='contact_postal_code' value='".$brand["contact_postal_code"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_city"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_city_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_city' name='contact_city' value='".$brand["contact_city"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_province"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_province_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_province' name='contact_province' value='".$brand["contact_province"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_contact_country"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_contact_country_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='contact_country' name='contact_country' value='".$brand["contact_country"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_payment_plan"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_payment_plan_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='payment_plan' name='payment_plan' value='".$brand["payment_plan"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_payment_method"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_payment_method_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='payment_method' name='payment_method' value='".$brand["payment_method"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_payment_data"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_payment_data_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='payment_data' name='payment_data' value='".$brand["payment_data"]."' class='form-control'>
-					</div>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>".htmlentities($s["brand_expiration_date"], ENT_QUOTES, "UTF-8")."</label>
-					<span class='help'>".htmlentities($s["brand_expiration_date_help"], ENT_QUOTES, "UTF-8")."</span>
-					<div class='controls'>
-						<input type='text' id='expiration_date' name='expiration_date' value='".$brand["expiration_date"]."' class='form-control'>
-					</div>
-				</div>
+
+
+
 
 
 
@@ -247,32 +265,44 @@
 				</div>
 			</form>";
 
-	$response["data"]["new-admin-step-end"]="
+	$response["data"]["new-brand-step-end"]="
 		<form id='form-end'>
-			<input type='hidden' id='id_admin' value='".$_POST["id_admin"]."' />
+			<input type='hidden' id='id_brand' value='".$_POST["id_brand"]."' />
 			<input type='hidden' id='name' />
-			<input type='hidden' id='can_validate_codes' />
-			<input type='hidden' id='promo_password' />
-			<input type='hidden' id='can_login' />
-			<input type='hidden' id='can_manage_campaigns' />
-			<input type='hidden' id='can_manage_admins' />
-			<input type='hidden' id='can_manage_users' />
-			<input type='hidden' id='can_manage_app' />
-			<input type='hidden' id='can_manage_brand' />
-			<input type='hidden' id='end_date_hour' />
-			<input type='hidden' id='email' />
-			<input type='hidden' id='password' />
+			<input type='hidden' id='cif' />
 			<input type='hidden' id='active' />
+			<input type='hidden' id='created' />
+			<input type='hidden' id='android_key' />
+			<input type='hidden' id='resume_block_1_display' />
+			<input type='hidden' id='resume_block_1_title' />
+			<input type='hidden' id='resume_block_2_display' />
+			<input type='hidden' id='resume_block_2_title' />
+			<input type='hidden' id='resume_block_3_display' />
+			<input type='hidden' id='resume_block_3_title' />
+			<input type='hidden' id='resume_block_4_display' />
+			<input type='hidden' id='resume_block_4_title' />
+			<input type='hidden' id='subscription_type' />
+			<input type='hidden' id='contact_name' />
+			<input type='hidden' id='contact_email' />
+			<input type='hidden' id='contact_phone' />
+			<input type='hidden' id='contact_address' />
+			<input type='hidden' id='contact_postal_code' />
+			<input type='hidden' id='contact_city' />
+			<input type='hidden' id='contact_province' />
+			<input type='hidden' id='contact_country' />
+			<input type='hidden' id='payment_plan' />
+			<input type='hidden' id='payment_method' />
+			<input type='hidden' id='payment_data' />
 		</form>
 	";
-	$response["data"]["new-admin-step-loading"]="
+	$response["data"]["new-brand-step-loading"]="
 		<div class='text-center'>
 			<div class='loader-activity'></div>
 			<h3>".htmlentities($s["loading..."], ENT_QUOTES, "UTF-8")."</h3>
 			<div class='msg'>".htmlentities($s["this_may_take_several_seconds"], ENT_QUOTES, "UTF-8")."</div>
 		</div>
 	";
-	$response["data"]["new-admin-step-error"]="
+	$response["data"]["new-brand-step-error"]="
 		<div class='text-center'>
 			<h1 class='text-center'><i class='fa fa-times'></i></h1>
 			<h3 class='text-center'>".htmlentities($s["error"], ENT_QUOTES, "UTF-8")."</h3>
@@ -282,15 +312,15 @@
 			</div>
 		</div>
 	";
-	$response["data"]["new-admin-step-success"]="
+	$response["data"]["new-brand-step-success"]="
 		<div class='text-center'>
 			<h1 class='text-center'><i class='fa fa-check'></i></h1>
-			<h3 class='text-center'>".htmlentities($s["admin_success_title"], ENT_QUOTES, "UTF-8")."</h3>
-			<div class='msg'>".htmlentities($s["admin_success_subtitle"], ENT_QUOTES, "UTF-8")."</div>
+			<h3 class='text-center'>".htmlentities($s["brand_success_title"], ENT_QUOTES, "UTF-8")."</h3>
+			<div class='msg'>".htmlentities($s["brand_success_subtitle"], ENT_QUOTES, "UTF-8")."</div>
 			<div class='m-t-20'>
-				<a href='../../admins/' class='btn btn-white'>".htmlentities($s["all_admins"], ENT_QUOTES, "UTF-8")."</a>
-				<a id='admin-link' href='#' class='btn btn-white m-r-10 m-l-10'>".htmlentities($s["view_admin"], ENT_QUOTES, "UTF-8")."</a>
-				<a href='./' class='btn btn-white m-r-10'>".htmlentities($s["new_admin"], ENT_QUOTES, "UTF-8")."</a>
+				<a href='../../brands/' class='btn btn-white'>".htmlentities($s["all_brands"], ENT_QUOTES, "UTF-8")."</a>
+				<a id='brand-link' href='#' class='btn btn-white m-r-10 m-l-10'>".htmlentities($s["view_brand"], ENT_QUOTES, "UTF-8")."</a>
+				<a href='./' class='btn btn-white m-r-10'>".htmlentities($s["new_brand"], ENT_QUOTES, "UTF-8")."</a>
 			</div>
 		</div>
 	";

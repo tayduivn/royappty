@@ -12,13 +12,10 @@
 	*
 	* ERROR CODES
 	* db_connection_error
-	* no_brand
-	* brand_not_valid
-	* no_admin
-	* admin_not_valid
-	* admin_inactive
+	* no_radmin
+	* ryadmin_not_valid
+	* ryadmin_inactive
 	*	post_no_id_admin
-	* post_no_name
 	*
 	*
 	*********************************************************/
@@ -31,7 +28,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/admins/edit/update_admin";
+	$page_path="server/ryadmin/ajax/brands/edit/update_brand";
 	debug_log("[".$page_path."] START");
 	$response=array();
 
@@ -41,37 +38,24 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
-	// BRAND
-	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
-
-	// ADMIN
-	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
-	if(!checkAdmin($admin)){echo json_encode($response);die();}
+	// RYADMIN
+	$ryadmin=array();$ryadmin["id_ryadmin"]=$_SESSION["ryadmin"]["id_ryadmin"];
+	if(!checkRyadmin($ryadmin)){echo json_encode($response);die();}
 
 	// POST
-	if(!@issetandnotempty($_POST["id_admin"])){
+	if(!@issetandnotempty($_POST["id_brand"])){
 		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing id_admin");
-		$response["error_code"]="post_no_id_admin";
-		$response["error_code_str"]= $error_step_s["post_no_id_admin"];
+		debug_log("[".$page_path."] ERROR Data Post Missing id_brand");
+		$response["error_code"]="post_no_id_brand";
+		$response["error_code_str"]= $error_step_s["post_no_id_brand"];
 		echo json_encode($response);
 		die();
 	}
-	if(!@issetandnotempty($_POST["name"])){
-		$response["result"]=false;
-		debug_log("[".$page_path."] ERROR Data Post Missing name");
-		$response["error_code"]="post_no_name";
-		$response["error_code_str"]= $error_step_s["post_no_name"];
-		echo json_encode($response);
-		die();
-	}
-
 
 
 
@@ -79,24 +63,17 @@ if(!checkClosed()){echo json_encode($response);die();}
 	* AJAX OPERATIONS
 	*********************************************************/
 
- 	$table="admins";
+ 	$table="brands";
  	$filter=array();
- 	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
-	debug_log("[".$page_path."] Filter[id_admin]=".$_POST["id_admin"]);
-	$response["data"]=$_POST["id_admin"];
+ 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
+	$response["data"]=$_POST["id_brand"];
 
- 	unset($_POST["id_admin"]);
+ 	unset($_POST["id_brand"]);
  	$data=array();
 
 	foreach($_POST as $key => $value){
-		debug_log("[".$page_path."] DATA[".$key."]=".$value);
 		$data[$key]=$value;
 	}
-	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
-
-	if (@issetandnotempty($data["password"])){$data["password"]=md5($data["password"]);}else{unset($data["password"]);}
-
-
 	updateInBD($table,$filter,$data);
 
 

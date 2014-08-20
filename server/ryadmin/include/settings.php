@@ -32,5 +32,10 @@ $url_server = "http://www.royappty.com/";
 $campaign_bd_type[2]="discount";
 $campaign_bd_type[1]="coupon";
 
+$block_types["brand"][1]="campaigns";
+$block_types["brand"][2]="usage_this_month";
+$block_types["brand"][3]="usage_this_today";
+$block_types["brand"][4]="users";
+
 
 ?>
