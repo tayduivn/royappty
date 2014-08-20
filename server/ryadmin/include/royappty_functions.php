@@ -204,7 +204,6 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter=array();
 			$filter["status"]=array("operation"=>"=","value"=>1);
 			$block_data=countInBD($table,$filter);
-			$block_unit="";
 			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
@@ -213,7 +212,6 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter=array();
 			$filter["active"]=array("operation"=>"=","value"=>1);
 			$block_data=countInBD($table,$filter);
-			$block_unit="";
 			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
@@ -222,7 +220,6 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter=array();
 			$filter["active"]=array("operation"=>"=","value"=>1);
 			$block_data=countInBD($table,$filter);
-			$block_unit="";
 			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
@@ -232,7 +229,6 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["created"]=array("operation"=>">","value"=>strtotime("-1 month"));
 			$sum_field="price_vat";
 			$block_data=sumInBD($table,$filter,$sum_field);
-			$block_unit="";
 			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 
@@ -242,7 +238,6 @@ function create_block_data($block_data_code,$data1="",$data2=""){
 			$filter["id_brand"]=array("operation"=>"=","value"=>$data1);
 			$filter["status"]=array("operation"=>"=","value"=>1);
 			$block_data=countInBD($table,$filter);
-			$block_unit="€";
 			if(!@issetandnotempty($block_data)){$block_data=0;}
 			break;
 

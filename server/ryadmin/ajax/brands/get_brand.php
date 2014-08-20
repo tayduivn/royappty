@@ -201,7 +201,7 @@
 	}else{
 		$response["data"]["page-title"].="<a href='javascript:show_modal(\"unblock_admin_alert\",\"javascript:update_brand(".$brand["id_brand"].",1)\")' class='pull-right m-t--3 m-l-10 btn btn-primary btn-mini pull-right'>".htmlentities($s["unblock"], ENT_QUOTES, "UTF-8")."</a>";
 	}
-	$response["data"]["page-title"].="<a href='javascript:show_modal(\"delete_admin_alert\",\"javascript:delete_admin(".$admin["id_admin"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
+	$response["data"]["page-title"].="<a href='javascript:show_modal(\"delete_admin_alert\",\"javascript:delete_admin(".$brand["id_brand"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
 
 
 
