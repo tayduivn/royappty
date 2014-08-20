@@ -11,7 +11,7 @@ $(document).ready(function(){
 		async: false,
 		type: "POST",
 		dataType: 'json',
-		url: $SERVER_PATH+"server/app/ajax/brands/edit/brand.php",
+		url: $SERVER_PATH+"server/ryadmin/ajax/brands/edit/brand.php",
 		data: {
 			lang: localStorage.getItem("lang"),
 			id_brand:$GET["id_brand"]
@@ -120,7 +120,7 @@ $(document).ready(function() {
 		 	$.ajax({
 				type: "POST",
 				dataType: 'json',
-				url: $SERVER_PATH+"server/app/ajax/brands/edit/update_brand.php",
+				url: $SERVER_PATH+"server/ryadmin/ajax/brands/edit/update_brand.php",
 				data: {
 					"id_brand":$('#form-end #id_brand').val(),
 					"name":$('#form-end #name').val(),

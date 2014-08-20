@@ -226,8 +226,8 @@ $s["users"] = "Usuarios";
 $s["last_action"] = "Últ. Actividad";
 $s["block_brand"]= "Bloquear Marca";
 $s["block_brand_alert"]="Este proceso bloqueará esta marca y no podrá realizar ninguna operación hasta que vuelva a desbloquearse ¿De verdad quiere realizar esta operación?";
-$s["block_brand"]= "Desbloquear Marca";
-$s["block_brand_alert"]="Este proceso desbloqueará esta marca y podrá realizar operaciones hasta que vuelva a bloquearse ¿De verdad quiere realizar esta operación?";
+$s["unblock_brand"]= "Desbloquear Marca";
+$s["unblock_brand_alert"]="Este proceso desbloqueará esta marca y podrá realizar operaciones hasta que vuelva a bloquearse ¿De verdad quiere realizar esta operación?";
 
 $s["view_report"] = "Ver Informe";
 $s["edit"] = "Editar";
@@ -256,10 +256,60 @@ $s["contact_country"] = "País";
 $s["delete_brand"] = "Eliminar Marca";
 $s["delete_brand_alert"] = "Este proceso eliminará esta marca y no podrá realizar ninguna operación ¿De verdad quiere realizar esta operación?";
 $s["brand_deleted"] = "Marca eliminada";
+$s["edit_brand"] = "Editar Marca";
+
 $s["brands_active"][1] = "Activa";
 $s["brands_active"][2] = "Bloqueada";
 $s["brands_active_icon"][1] = "<i class='fa fa-check'></i>";
 $s["brands_active_icon"][2] = "<i class='fa fa-times'></i>";
+
+//Brands / Edit
+$s["brand_name"] = "Nombre";
+$s["brand_name_help"] = "";
+$s["brand_cif"] = "CIF";
+$s["brand_cif_help"] = "";
+$s["brand_active"] = "Estado";
+$s["brand_active_help"] = "";
+$s["brand_created"] = "Fecha de creación";
+$s["brand_created_help"] = "";
+$s["brand_android_key"] = "Llave Android";
+$s["brand_android_key_help"] = "";
+$s["brand_resume_block_1"] = "Bloque Resumen #1";
+$s["brand_resume_block_1_help"] = "";
+$s["brand_resume_block_2"] = "Bloque Resumen #2";
+$s["brand_resume_block_2_help"] = "";
+$s["brand_resume_block_3"] = "Bloque Resumen #3";
+$s["brand_resume_block_3_help"] = "";
+$s["brand_resume_block_4"] = "Bloque Resumen #4";
+$s["brand_resume_block_4_help"] = "";
+$s["brand_subscription_type"] = "Subscripción";
+$s["brand_subscription_type_help"] = "";
+$s["brand_contact_name"] = "Nombre";
+$s["brand_contact_name_help"] = "";
+$s["brand_contact_email"] = "Correo electrónico";
+$s["brand_contact_email_help"] = "";
+$s["brand_contact_phone"] = "Teléfono";
+$s["brand_contact_phone_help"] = "";
+$s["brand_contact_address"] = "Dirección";
+$s["brand_contact_address_help"] = "";
+$s["brand_contact_postal_code"] = "Código Postal";
+$s["brand_contact_postal_code_help"] = "";
+$s["brand_contact_city"] = "Ciudad";
+$s["brand_contact_city_help"] = "";
+$s["brand_contact_province"] = "Provincia";
+$s["brand_contact_province_help"] = "";
+$s["brand_contact_country"] = "País";
+$s["brand_contact_country_help"] = "";
+$s["brand_payment_plan"] = "Plan de pago";
+$s["brand_payment_plan_help"] = "";
+$s["brand_payment_method"] = "Método de Pago";
+$s["brand_payment_method_help"] = "";
+$s["brand_payment_data"] = "Datos complementarios de Pago";
+$s["brand_payment_data_help"] = "";
+$s["brand_expiration_date"] = "Fecha de Expiración";
+$s["brand_expiration_date_help"] = "";
+
+
 
 //Admins / Add
 $s["add_admin_title"] = "Datos del Administrador";
@@ -301,7 +351,8 @@ $s["admins_active"][1]="Activo";
 $s["admins_active_icon"][2]="<i class='fa fa-times'></i>";
 $s["admins_active_icon"][1]="<i class='fa fa-check'></i>";
 $s["permissions"] = "Permisos";
-
+$s["payment_data"] = "Datos de Pago";
+$s["brand_unblocked"] = "Marca desbloqueada";
 $s["admins_can_validate_codes"] = "Validar promociones";
 $s["admins_can_validate_codes_icon"][0]="<i class='fa fa-times'></i>";
 $s["admins_can_validate_codes_icon"][1]="<i class='fa fa-check'></i>";
@@ -315,7 +366,6 @@ $s["without_last_connection"] = "Aún no ha realizado ninguna operación";
 $s["last_connection_the"] = "Última actividad el";
 $s["no_codes_validated"] = "No se ha validado ningún código";
 $s["last_validated_codes"] = "Últimos códigos validados";
-$s["edit_admin"] = "Editar Administrador";
 $s["admin_deleted"] = "Administrador Borrado";
 
 //Users / List

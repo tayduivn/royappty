@@ -62,7 +62,6 @@
  	$filter=array();
  	$filter["id_ryadmin"]=array("operation"=>"=","value"=>$_POST["id_ryadmin"]);
  	$data=array();
-  $data["last_login"]=$timestamp;
   $data["last_activity"]=$timestamp;
  	updateInBD($table,$filter,$data);
 
@@ -76,7 +75,7 @@
   * AJAX CALL RETURN
   *********************************************************/
 
-  debug_log("[".$page_path."] Session Created user:{id_admin:".$_SESSION['admin']["id_admin"].",id_brand:".$_SESSION['admin']["id_brand"]."}");
+  debug_log("[".$page_path."] Session Created user:{id_ryadmin:".$_SESSION['ryadmin']["id_ryadmin"]."}");
   debug_log("[".$page_path."] END");
  	echo json_encode($response);
   die();

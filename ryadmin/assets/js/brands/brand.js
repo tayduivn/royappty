@@ -24,13 +24,7 @@ $(document).ready(function(){
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
-				jQuery.each(response.cssdisplay,function(key,value){
-					if(value==0){
-							$(".ajax-loader-"+key).css("display","none");
-					}else{
-							$(".ajax-loader-"+key).css("display","block");
-					}
-				});
+
 			} else {
 				error_handler(response.error_code);
 			}
@@ -144,6 +138,37 @@ function delete_brand(id_brand){
 				show_modal("deleted_brand_success_alert","javascript:window.location=\"../brands/\"");
             }else{
 							error_handler(response.error_code);
+			}
+
+		}
+	});
+}
+
+function update_brand(id_brand,active_status){
+	filter_str="id_brand||=||"+id_brand;
+	data_str="active||"+active_status;
+	$.ajax({
+		type: "POST",
+		dataType: 'json',
+		url: $SERVER_PATH+"server/ryadmin/ajax/indb/actions.php",
+		data: {
+			func:"update",
+			table:"brands",
+			filter_str:filter_str,
+			data_str:data_str
+		},
+		error: function(data, textStatus, jqXHR) {
+			error_handler("ajax_error");
+		},
+		success: function(response) {
+			if(response.status){
+				if(active_status==1){
+					show_modal("unblock_brand_success_alert","javascript:window.location=\"./?id_brand="+id_brand+"\"");
+				}else{
+					show_modal("block_brand_success_alert","javascript:window.location=\"./?id_brand="+id_brand+"\"");
+				}
+			}else{
+				error_handler(response.error_code);
 			}
 
 		}

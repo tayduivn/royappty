@@ -52,7 +52,7 @@
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	if(!isInBD($table,$filter)){
 		$response["result"]=false;
-		error_log("[".$page_path."] ERROR Brand (id_brand=".$_SESSION["admin"]["id_brand"].") doesn't exist");
+		error_log("[".$page_path."] ERROR Brand (id_brand=".$_POST["id_brand"].") doesn't exist");
 		$response["error"]="ERROR Brand doesn't exist";
 		$response["error_code"]="no_brand";
  		echo json_encode($response);
@@ -183,7 +183,7 @@
 							<h4 id='myModalLabel' class='semi-bold text-center'><i class='fa fa-check fa-4x'></i></h4>
 						</div>
 						<div class='modal-body text-center'>
-							<h6 class='no-margin'>".htmlentities($s["unbrand_blocked"], ENT_QUOTES, "UTF-8")."</p>
+							<h6 class='no-margin'>".htmlentities($s["brand_unblocked"], ENT_QUOTES, "UTF-8")."</p>
 						</div>
 						<div class='modal-footer'>
 							<a href='' class='btn btn-primary accept_button'>".htmlentities($s["accept"], ENT_QUOTES, "UTF-8")."</a>
@@ -197,11 +197,11 @@
 
 	$response["data"]["page-title"]="<a href='../brands/'>".htmlentities($s["brands"], ENT_QUOTES, "UTF-8")."</a> / ".$brand["name"]."<a href='../brand/edit/?id_brand=".$_POST["id_brand"]."' class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit"], ENT_QUOTES, "UTF-8")."</a> ";
 	if($brand["active"]==1){
-		$response["data"]["page-title"].="<a href='javascript:show_modal(\"block_admin_alert\",\"javascript:update_brand(".$brand["id_brand"].",0)\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["block"], ENT_QUOTES, "UTF-8")."</a>";
+		$response["data"]["page-title"].="<a href='javascript:show_modal(\"block_brand_alert\",\"javascript:update_brand(".$brand["id_brand"].",2)\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["block"], ENT_QUOTES, "UTF-8")."</a>";
 	}else{
-		$response["data"]["page-title"].="<a href='javascript:show_modal(\"unblock_admin_alert\",\"javascript:update_brand(".$brand["id_brand"].",1)\")' class='pull-right m-t--3 m-l-10 btn btn-primary btn-mini pull-right'>".htmlentities($s["unblock"], ENT_QUOTES, "UTF-8")."</a>";
+		$response["data"]["page-title"].="<a href='javascript:show_modal(\"unblock_brand_alert\",\"javascript:update_brand(".$brand["id_brand"].",1)\")' class='pull-right m-t--3 m-l-10 btn btn-primary btn-mini pull-right'>".htmlentities($s["unblock"], ENT_QUOTES, "UTF-8")."</a>";
 	}
-	$response["data"]["page-title"].="<a href='javascript:show_modal(\"delete_admin_alert\",\"javascript:delete_admin(".$brand["id_brand"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
+	$response["data"]["page-title"].="<a href='javascript:show_modal(\"delete_brand_alert\",\"javascript:delete_brand(".$brand["id_brand"].")\")' class='pull-right m-t--3 m-l-10 btn btn-danger btn-mini pull-right'>".htmlentities($s["delete"], ENT_QUOTES, "UTF-8")."</a>";
 
 
 
@@ -217,7 +217,7 @@
 				<h5><b>".htmlentities($s["payment_plan"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_plan"], ENT_QUOTES, "UTF-8")."</h5>
 				<h5><b>".htmlentities($s["payment_method"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_method"], ENT_QUOTES, "UTF-8")."</h5>
 				<h5><b>".htmlentities($s["payment_data"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_data"], ENT_QUOTES, "UTF-8")."</h5>
-				<h5><b>".htmlentities($s["expiration_date"], ENT_QUOTES, "UTF-8")."</b> ".date("Y-m-d",$brand["expriration_date"])."</h5>
+				<h5><b>".htmlentities($s["expiration_date"], ENT_QUOTES, "UTF-8")."</b> ".date("Y-m-d",$brand["expiration_date"])."</h5>
 			</div>
 			<div class='col-md-6'>
 				<h4>".htmlentities($s["brand_data"], ENT_QUOTES, "UTF-8")."</h4>
@@ -287,75 +287,6 @@
 
 
 
-	$table="used_codes";
-	$filter=array();
-	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
-	$response["data"]["codes-validated-list"]="
-		<h4 class='m-t-0'>".htmlentities($s["last_validated_codes"], ENT_QUOTES, "UTF-8")."</h4>
-		<p class='m-t-40 text-center'><i class='fa fa-times fa-4x'></i></p>
-		<p class='text-center'>".htmlentities($s["no_codes_validated"], ENT_QUOTES, "UTF-8")."</p>";
-	if (isInBD($table,$filter)){
-		$response["data"]["codes-validated-list"]="
-		    <h4 class='m-t-0'>".htmlentities($s["last_validated_codes"], ENT_QUOTES, "UTF-8")."</h4>
-			<table class='full-width'>
-            	<thead>
-                	<tr>
-	                	<th>".htmlentities($s["campaign"], ENT_QUOTES, "UTF-8")."</th>
-	                	<th class='text-right'>".htmlentities($s["date"], ENT_QUOTES, "UTF-8")."</th>
-                	</tr>
-                </thead>
-				<tbody>";
-		$fields=array();
-		$order="created asc";
-		$limit=10;
-		$validated_codes=listInBD($table,$filter,$fields,$order,$limit);
-		foreach($validated_codes as $key=>$validated_code){
-			$table="campaigns";
-			$filter=array();
-			$filter["id_campaign"]=array("operation"=>"=","value"=>$validated_code["id_campaign"]);
-			$campaign=getInBD($table,$filter);
-			$response["data"]["codes-validated-list"].="
-			<tr>
-            	<td><a href='../campaign/?id_campaign=".$campaign["id_campaign"]."' class='text-success'><i class='fa fa-bullhorn m-r-5'></i>".$campaign["name"]."</a></td>
-                <td class='text-right'>".date("d/m/Y  H:m",$validated_code["created"])."</td>
-            </tr>
-			";
-		}
-		$response["data"]["used-codes-list"].="
-				</tbody>
-			</table>
-		";
-	}
-
-	$response["data"]["graph-title"]="<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>";
-	$table="validated_codes_day_summaries";
-	$filter=array();
-	$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
-	$usage_count=0;
-	for($i=0;$i<=14;$i++){
-		$filter["start"]=array("operation"=>"=","value"=>$timestamp-((14-$i)*86400));
-		$response["data"]["graph-label-".$i]=date("d/m",$timestamp-((14-$i)*86400));
-		$response["data"]["graph-value-".$i]=0;
-		if(isInBD($table,$filter)){
-			$used_codes_day_summary=getInBD($table,$filter,$fields,$order,$limit);
-			$usage_count+=$used_codes_day_summary;
-			$response["data"]["graph-value-".$i]=$used_codes_day_summary["validated_codes_amount"];
-		}
-
-	}
-	if($usage_count==0){
-		$response["data"]["graph-empty"]="
-			<div class='ajax-loader-graph-title'>
-				<h4 class='m-t-0'>".htmlentities($s["last_15_days"], ENT_QUOTES, "UTF-8")."</h4>
-			</div>
-			<div class='text-center text-muted'>
-				<p class='m-t-40'><i class='fa fa-bar-chart-o fa-4x'></i></p>
-				<h6>".htmlentities($s["there_is_not_graph_data"], ENT_QUOTES, "UTF-8")."</h6>
-			</div>
-		";
-		$response["cssdisplay"]["graph-empty"] = 1;
-		$response["cssdisplay"]["graph"] = 0;
-	}
 
 
 	/*********************************************************
