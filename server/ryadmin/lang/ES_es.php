@@ -257,7 +257,8 @@ $s["delete_brand"] = "Eliminar Marca";
 $s["delete_brand_alert"] = "Este proceso eliminará esta marca y no podrá realizar ninguna operación ¿De verdad quiere realizar esta operación?";
 $s["brand_deleted"] = "Marca eliminada";
 $s["edit_brand"] = "Editar Marca";
-
+$s["brand_app_options"] = "Aplicaciones para Móvil";
+$s["generate_android_app"] = "Generar Aplicación Android";
 $s["brands_active"][1] = "Activa";
 $s["brands_active"][2] = "Bloqueada";
 $s["brands_active_icon"][1] = "<i class='fa fa-check'></i>";
