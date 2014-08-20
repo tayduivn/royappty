@@ -112,6 +112,9 @@ $(document).ready(function(){
 					maxlength: $s["signup_cif_it_canot_be_longer_than_20_characters"],
 					minlength: $s["signup_cif_this_field_needs_4_character_minimum"]
 			},
+			contact_phone:{
+				required: $s["signup_phone_this_field_is_compulsory"]
+			}
 			contact_address:{
 				required: $s["signup_address_this_field_is_compulsory"]
 			},
@@ -139,6 +142,9 @@ $(document).ready(function(){
 				maxlength: 20,
 					minlength: 4
 			},
+			contact_phone:{
+				required:true
+			},
 			contact_address:{
 				required:true
 			},
@@ -158,6 +164,7 @@ $(document).ready(function(){
 		submitHandler:function(form){
 			$('#form-end #name').val($('#form-step2 #name').val());
 			$('#form-end #cif').val($('#form-step2 #cif').val());
+			$('#form-end #contact_phone').val($('#form-step2 #contact_phone').val());
 			$('#form-end #contact_address').val($('#form-step2 #contact_address').val());
 			$('#form-end #contact_postal_code').val($('#form-step2 #contact_postal_code').val());
 			$('#form-end #contact_city').val($('#form-step2 #contact_city').val());
@@ -225,6 +232,7 @@ $(document).ready(function(){
 				data: {
 					name:$('#form-end #name').val(),
 					cif:$('#form-end #cif').val(),
+					contact_phone:$('#form-end #contact_phone').val(),
 					contact_address:$('#form-end #contact_address').val(),
 					contact_postal_code:$('#form-end #contact_postal_code').val(),
 					contact_city:$('#form-end #contact_city').val(),

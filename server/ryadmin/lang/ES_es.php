@@ -253,6 +253,10 @@ $s["contact_postal_code"] = "Código Postal";
 $s["contact_city"] = "Ciudad";
 $s["contact_province"] = "Provincia";
 $s["contact_country"] = "País";
+$s["brands_active"][1] = "Activa";
+$s["brands_active"][2] = "Bloqueada";
+$s["brands_active_icon"][1] = "<i class='fa fa-check'></i>";
+$s["brands_active_icon"][2] = "<i class='fa fa-times'></i>";
 
 //Admins / Add
 $s["add_admin_title"] = "Datos del Administrador";

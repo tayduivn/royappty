@@ -207,44 +207,41 @@
 
 
 	$response["data"]["brand-data"]="
+		<h6 class='pull-right'>".htmlentities($s["created"], ENT_QUOTES, "UTF-8")." ".date("Y-m-d",$brand["created"])."</h6>
 		<h3 class='m-t-0'>".htmlentities($brand["name"], ENT_QUOTES, "UTF-8")."</h3>
-		<h5>".$s["brands_active_icon"][$brand["active"]]." ".htmlentities($s["brands_active"][$brand["active"]], ENT_QUOTES, "UTF-8")."</h5>
-		<h6>".htmlentities($s["created"], ENT_QUOTES, "UTF-8")." ".date("Y-m-d",$brand["created"])."</h6>
-		<h4>".htmlentities($s["subscription_data"], ENT_QUOTES, "UTF-8")."</h4>
-		<h5><b>".htmlentities($s["subscription_type"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["subscription_type"], ENT_QUOTES, "UTF-8")."</h5>
-		<h5><b>".htmlentities($s["payment_plan"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_plan"], ENT_QUOTES, "UTF-8")."</h5>
-		<h5><b>".htmlentities($s["payment_method"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_method"], ENT_QUOTES, "UTF-8")."</h5>
-		<h5><b>".htmlentities($s["payment_data"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_data"], ENT_QUOTES, "UTF-8")."</h5>
-		<h5><b>".htmlentities($s["expiration_date"], ENT_QUOTES, "UTF-8")."</b> ".date("Y-m-d",$brand["expriration_date"])."</h5>
-		<h4>".htmlentities($s["brand_data"], ENT_QUOTES, "UTF-8")."</h4>
-		<p>
-			<b>".htmlentities($s["name"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["name"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["cif"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["cif"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_name"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_name"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_email"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_email"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_phone"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_phone"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_address"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_address"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_postal_code"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_postal_code"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_city"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_city"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_province"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_province"], ENT_QUOTES, "UTF-8")."<br/>
-			<b>".htmlentities($s["contact_country"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_country"], ENT_QUOTES, "UTF-8")."<br/>
-		</p>
+		<div class='row'>
+			<div class='col-md-6'>
+				<h4>".htmlentities($s["subscription_data"], ENT_QUOTES, "UTF-8")."</h4>
+				<h5><b>".htmlentities($s["status"], ENT_QUOTES, "UTF-8")."</b> ".$s["brands_active_icon"][$brand["active"]]." ".htmlentities($s["brands_active"][$brand["active"]], ENT_QUOTES, "UTF-8")."</h5>
+				<h5><b>".htmlentities($s["subscription_type"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["subscription_type"], ENT_QUOTES, "UTF-8")."</h5>
+				<h5><b>".htmlentities($s["payment_plan"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_plan"], ENT_QUOTES, "UTF-8")."</h5>
+				<h5><b>".htmlentities($s["payment_method"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_method"], ENT_QUOTES, "UTF-8")."</h5>
+				<h5><b>".htmlentities($s["payment_data"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["payment_data"], ENT_QUOTES, "UTF-8")."</h5>
+				<h5><b>".htmlentities($s["expiration_date"], ENT_QUOTES, "UTF-8")."</b> ".date("Y-m-d",$brand["expriration_date"])."</h5>
+			</div>
+			<div class='col-md-6'>
+				<h4>".htmlentities($s["brand_data"], ENT_QUOTES, "UTF-8")."</h4>
+				<p>
+					<b>".htmlentities($s["name"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["name"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["cif"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["cif"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_name"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_name"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_email"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_email"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_phone"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_phone"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_address"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_address"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_postal_code"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_postal_code"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_city"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_city"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_province"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_province"], ENT_QUOTES, "UTF-8")."<br/>
+					<b>".htmlentities($s["contact_country"], ENT_QUOTES, "UTF-8")."</b> ".htmlentities($brand["contact_country"], ENT_QUOTES, "UTF-8")."<br/>
+				</p>
+			</div>
+		</div>
+
 
 ";
 
-	if($brand["last_connection"]==0){
-		$response["data"]["admin-data"].=htmlentities($s["without_last_connection"], ENT_QUOTES, "UTF-8");
-	}else{
-		$response["data"]["admin-data"].=htmlentities($s["last_connection_the"], ENT_QUOTES, "UTF-8")." ".date("d/m/Y  H:m",$admin["last_connection"]);
-	}
-
-
-	$response["data"]["admin-data"].="
-		</h6>";
-
 	$blocks_count=0;
 	for($i=1;$i<=4;$i++){
-		if($admin["resume_block_".$i."_display"]==1){
+		if($brand["resume_block_".$i."_display"]==1){
 			$blocks_count++;
 		}
 	}
@@ -255,10 +252,10 @@
 	$response["data"]["resume-blocks"]="";
 	for($i=1;$i<=4;$i++){
 		$response["data"]["resume-block-".$i]="";
-		if($admin["resume_block_".$i."_display"]==1){
-			$table="admins";
+		if($brand["resume_block_".$i."_display"]==1){
+			$table="brands";
 			$filter=array();
-			$filter["id_admin"]=array("operation"=>"=","value"=>$_POST["id_admin"]);
+			$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 			$fields=array("resume_block_".$i."_title","resume_block_".$i."_data","resume_block_".$i."_link","resume_block_".$i."_link_content");
 
 			$resume_block=getInBD($table,$filter,$fields);
@@ -272,7 +269,7 @@
 								".htmlentities($resume_block_s[$resume_block["resume_block_".$i."_title"]], ENT_QUOTES, "UTF-8")."
 							</h6>
 							<div class='heading'>";
-						$block_data=create_block_data($resume_block["resume_block_".$i."_title"],$admin["id_admin"]);
+						$block_data=create_block_data($resume_block["resume_block_".$i."_title"],$brand["id_brand"]);
 						$response["data"]["resume-blocks"].="
 
 							<h1><span class='animate-number text-white' data-value='".$block_data."' data-animation-duration='1200'>0</h1>

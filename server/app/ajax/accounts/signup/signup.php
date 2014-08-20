@@ -114,6 +114,13 @@ if(!checkClosed()){echo json_encode($response);die();}
 					</div>
 				</div>
 				<div class='form-group'>
+					<label class='form-label'>".htmlentities($signup_s["contact_phone"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
+					<span class='help'>".htmlentities($signup_s["contact_phone_help"], ENT_QUOTES, "UTF-8")."</span>
+					<div class='controls'>
+						<input type='text' id='contact_phone' name='contact_phone' class='form-control'>
+					</div>
+				</div>
+				<div class='form-group'>
 					<label class='form-label'>".htmlentities($signup_s["contact_address"], ENT_QUOTES, "UTF-8")."<span class='text-success m-l-5'>*</span></label>
 					<span class='help'>".htmlentities($signup_s["contact_address_help"], ENT_QUOTES, "UTF-8")."</span>
 					<div class='controls'>
@@ -237,6 +244,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$response["data"]["signup-step-end"]="
 			<input type='hidden' id='name' />
 			<input type='hidden' id='cif' />
+			<input type='hidden' id='contact_phone' />
 			<input type='hidden' id='contact_address' />
 			<input type='hidden' id='contact_postal_code' />
 			<input type='hidden' id='contact_city' />
