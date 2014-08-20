@@ -114,7 +114,7 @@ $(document).ready(function(){
 			},
 			contact_phone:{
 				required: $s["signup_phone_this_field_is_compulsory"]
-			}
+			},
 			contact_address:{
 				required: $s["signup_address_this_field_is_compulsory"]
 			},

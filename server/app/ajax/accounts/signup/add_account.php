@@ -195,6 +195,9 @@
 	}else if($data["subscription_type"]=="professional"){
 		$data["expiration_date"]=strtotime("+3 month", $timestamp);
 	}
+	$data["contact_name"]=$_POST["name"];
+	$data["contact_email"]=$_POST["email"];
+	$data["contact_phone"]=$_POST["contact_phone"];
 	$data["contact_address"]=$_POST["contact_address"];
 	$data["contact_postal_code"]=$_POST["contact_postal_code"];
 	$data["contact_city"]=$_POST["contact_city"];
