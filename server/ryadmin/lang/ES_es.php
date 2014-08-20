@@ -137,9 +137,9 @@ $s["new_brand"]= "Crear nueva Marca";
 $s["requests"] = "Solicitudes";
 $s["all_requests"] = "Todas las Solicitudes";
 $s["new_request"]= "Crear nueva Solicitud";
-$s["receipts"] = "Facturación";
-$s["all_receipts"] = "Todas las Facturas";
-$s["new_receipt"]= "Crear nueva Factura";
+$s["bills"] = "Facturación";
+$s["all_bills"] = "Todas las Facturas";
+$s["new_bill"]= "Crear nueva Factura";
 $s["ryadmins"] = "Administradores";
 $s["all_ryadmins"] = "Todos los Administradores";
 $s["new_ryadmin"] = "Añadir nuevo Administrador";
@@ -219,36 +219,26 @@ $s["notification_success_title"] = "Notificación enviada";
 $s["notification_success_subtitle"] = "Se ha enviado a los usuarios una nueva notifiación, en unos minutos todos los usuarios la recibirán.";
 $s["send_notification"] = "Enviar notificación";
 
-//Admins / List
-$s["can_login"] = "Manager";
-$s["can_manage_campaigns"] = "Campañas";
-$s["can_validate_codes"] = "Valida códigos";
-$s["cant_validate_codes"] = "No valida códigos";
+//Brands / List
+$s["id"] = "#";
+$s["campaigns"] = "Campañas";
+$s["users"] = "Usuarios";
 $s["last_action"] = "Últ. Actividad";
-$s["delete_admin"]= "Desactivar Administrador";
-$s["delete_admin_alert"]="Este proceso desactivará a este administrador y no podrá realizar ninguna operación hasta que vuelva a activarse ¿De verdad quiere realizar esta operación?";
+$s["block_brand"]= "Bloquear Marca";
+$s["block_brand_alert"]="Este proceso bloqueará esta marca y no podrá realizar ninguna operación hasta que vuelva a desbloquearse ¿De verdad quiere realizar esta operación?";
+$s["block_brand"]= "Desbloquear Marca";
+$s["block_brand_alert"]="Este proceso desbloqueará esta marca y podrá realizar operaciones hasta que vuelva a bloquearse ¿De verdad quiere realizar esta operación?";
+
 $s["view_report"] = "Ver Informe";
 $s["edit"] = "Editar";
 $s["delete"] = "Eliminar";
-$s["active_admins"] = "Activos";
-$s["inactive_admins"] = "Inactivos";
-$s["inactive_admin"] = "Inactivo";
-$s["brand_admin"] = "Principal";
-$s["validated_codes"] = "Validaciones";
-
-$s["can_login_tooltip"] = "Puede acceder al administrador";
-$s["can_manage_campaigns_tooltip"] = "Puede administrar campañas";
-$s["can_manage_admins_tooltip"] = "Puede administrar administradores";
-$s["can_manage_users_tooltip"] = "Puede administrar usuarios";
-$s["can_manage_app_tooltip"] = "Puede administrar la aplicación";
-$s["can_validate_codes_tooltip"] = "Puede validar códigos";
-
-$s["cant_login_tooltip"] = "No puede acceder al administrador";
-$s["cant_manage_campaigns_tooltip"] = "No puede administrar campañas";
-$s["cant_manage_admins_tooltip"] = "No puede administrar administradores";
-$s["cant_manage_users_tooltip"] = "No puede administrar usuarios";
-$s["cant_manage_app_tooltip"] = "No puede administrar la aplicación";
-$s["cant_validate_codes_tooltip"] = "No puede validar códigos";
+$s["active_brands"] = "Activas";
+$s["blocked_brands"] = "Bloqueadas";
+$s["inactive_brand"] = "Inactivo";
+$s["block_brand"] = "Bloquear Marca";
+$s["brand_blocked"] = "Bloqueada";
+$s["block"] = "Bloquear";
+$s["unblock"] = "Desbloquear";
 
 //Admins / Add
 $s["add_admin_title"] = "Datos del Administrador";

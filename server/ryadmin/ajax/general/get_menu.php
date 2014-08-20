@@ -2,7 +2,7 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 11-08-2014
+	* Last Edit: 20-08-2014
 	* Version: 0.94
 	*
 	*********************************************************/
@@ -12,11 +12,9 @@
 	*
 	* ERROR CODES
 	* db_connection_error
-	* no_brand
-	* brand_not_valid
-	*	no_admin
-	* admin_not_valid
-	* admin_inactive
+	* no_ryadmin
+	* ryadmin_not_valid
+	* ryadmin_inactive
 	* post_no_path
 	*
 	*********************************************************/
@@ -63,26 +61,21 @@
 	*********************************************************/
 
  	$response["result"]=true;
-	$table="apps";
-	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	$app=getInBD($table,$filter);
 
  	$response["data"]["header-menu"]="
  		<div class='navbar-inner'>
  			<div class='header-seperation'>
-				<a href='".$_POST["path"]."'><img src='".$url_server."server/app/assets/img/royappty-logo-white.png' class='logo' alt=''  data-src='".$url_server."server/app/assets/img/royappty-logo-white.png' data-src-retina='".$url_server."server/app/assets/img/royappty-logo-white.png' height='30'/></a>
+				<a href='".$_POST["path"]."'><img src='".$url_server."server/ryadmin/assets/img/royappty-logo-white.png' class='logo' alt=''  data-src='".$url_server."server/ryadmin/assets/img/royappty-logo-white.png' data-src-retina='".$url_server."server/ryadmin/assets/img/royappty-logo-white.png' height='30'/></a>
 			</div>
 			<div class='header-quick-nav' >
 				<div class='pull-left'>
-					<h3 class='m-t-10 m-l-10'>".$app["name"]."</h3>
+					<h3 class='m-t-10 m-l-10'>".htmlentities($s["ryadmin_login"], ENT_QUOTES, "UTF-8")."</h3>
 				</div>
 				<div class='pull-right'>
  					<ul class='nav quick-section '>
  						<li class='quicklinks'>
  							<a data-toggle='dropdown' class='dropdown-toggle  pull-right btn btn-white' href='../#' id='user-options'><div class='' style='font-size:12px'><i class='fa fa-bars'></i></div></a>
  							<ul class='dropdown-menu  pull-right' role='menu' aria-labelledby='user-options'>
-								<li><a href='".$_POST["path"]."my-app/'> ".htmlentities($s["my_app"], ENT_QUOTES, "UTF-8")."</a></li>
 								<li><a href='".$_POST["path"]."my-account/'> ".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a></li>
 							 	<li class='divider'></li>
  								<li><a href='javascript:logout()'>".htmlentities($s["logout"], ENT_QUOTES, "UTF-8")."</a></li>
@@ -98,32 +91,32 @@
 		<li class=''> <a href='".$_POST["path"]."'> <i class='icon-custom-home'></i> <span class='title'>".htmlentities($s["dashboard"], ENT_QUOTES, "UTF-8")."</span> <span class='selected'></span></a> </li>
 		<li class=''> <a href='javascript:;'> <i class='fa fa-bullhorn'></i> <span class='title'>".htmlentities($s["brands"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."campaigns/'> ".htmlentities($s["all_brands"], ENT_QUOTES, "UTF-8")." </a> </li>
-				<li > <a href='".$_POST["path"]."campaign/new/'>".htmlentities($s["new_brand"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."brands/'> ".htmlentities($s["all_brands"], ENT_QUOTES, "UTF-8")." </a> </li>
+				<li > <a href='".$_POST["path"]."brand/new/'>".htmlentities($s["new_brand"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
-		<li class=''> <a href='javascript:;'> <i class='fa fa-bell-o'></i> <span class='title'>".htmlentities($s["requests"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
+		<li class=''> <a href='javascript:;'> <i class='fa fa-envelope-o'></i> <span class='title'>".htmlentities($s["requests"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."notifications/'> ".htmlentities($s["all_requests"], ENT_QUOTES, "UTF-8")." </a> </li>
-				<li > <a href='".$_POST["path"]."notification/new/'>".htmlentities($s["new_request"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."requests/'> ".htmlentities($s["all_requests"], ENT_QUOTES, "UTF-8")." </a> </li>
+				<li > <a href='".$_POST["path"]."request/new/'>".htmlentities($s["new_request"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
-		<li> <a href='javascript:;'> <i class='fa fa-sitemap'></i> <span class='title'>".htmlentities($s["receipts"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
+		<li> <a href='javascript:;'> <i class='fa fa-file-text-o'></i> <span class='title'>".htmlentities($s["bills"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."admins/'>".htmlentities($s["all_receipts"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."admin/new/'>".htmlentities($s["new_receipt"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."bills/'>".htmlentities($s["all_bills"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."bills/new/'>".htmlentities($s["new_bill"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
 		<li> <a href='javascript:;'> <i class='fa fa-users'></i> <span class='title'>".htmlentities($s["ryadmins"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
-				<li > <a href='".$_POST["path"]."users/'>".htmlentities($s["all_ryadmins"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."group/new/'>".htmlentities($s["new_ryadmin"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."ryadmins/'>".htmlentities($s["all_ryadmins"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."ryadmin/new/'>".htmlentities($s["new_ryadmin"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
 		<li class=''> <a href='javascript:;'> <i class='fa fa-cogs'></i> <span class='title'>".htmlentities($s["settings"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
 				<li > <a href='".$_POST["path"]."requests/'>".htmlentities($s["server"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."my-account/'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li > <a href='".$_POST["path"]."server/'>".htmlentities($s["my_account"], ENT_QUOTES, "UTF-8")."</a> </li>
 			</ul>
 		</li>
 	</ul>";

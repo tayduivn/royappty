@@ -11,10 +11,10 @@ $(document).ready(function(){
 		async: false,
 		type: "POST",
 		dataType: 'json',
-		url: $SERVER_PATH+"server/app/ajax/admins/get_admin.php",
+		url: $SERVER_PATH+"server/ryadmin/ajax/brands/get_brand.php",
 		data: {
 			lang: localStorage.getItem("lang"),
-			id_admin:$GET["id_admin"]
+			id_brand:$GET["id_brand"]
 		},
 		error: function(data, textStatus, jqXHR) {
 		error_handler("ajax_error");
@@ -125,15 +125,15 @@ $(document).ready(function(){
 });
 
 
-function delete_admin(id_admin){
-	filter_str="id_admin||=||"+id_admin;
+function delete_brand(id_brand){
+	filter_str="id_brand||=||"+id_brand;
 	$.ajax({
 		type: "POST",
 		dataType: 'json',
-		url: $SERVER_PATH+"server/app/ajax/indb/actions.php",
+		url: $SERVER_PATH+"server/ryadmin/ajax/indb/actions.php",
 		data: {
 			func:"delete",
-			table:"admins",
+			table:"brands",
 			filter_str:filter_str
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -141,7 +141,7 @@ function delete_admin(id_admin){
 		},
 		success: function(response) {
 			if(response.status){
-				show_modal("deleted_admin_success_alert","javascript:window.location=\"../admins/\"");
+				show_modal("deleted_brand_success_alert","javascript:window.location=\"../brands/\"");
             }else{
 							error_handler(response.error_code);
 			}

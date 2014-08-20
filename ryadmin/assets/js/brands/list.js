@@ -11,7 +11,7 @@ $(document).ready(function() {
 		async:false,
 		type: "POST",
 		dataType: 'json',
-		url: $SERVER_PATH+"server/app/ajax/admins/list.php",
+		url: $SERVER_PATH+"server/ryadmin/ajax/brands/list.php",
 		data: {
 			lang: localStorage.getItem("lang"),
 			active:$GET["active"]
@@ -35,7 +35,7 @@ $(document).ready(function() {
         tablet: 1024,
         phone : 480
     };
-	var tableElement = $('#admins-list');
+	var tableElement = $('#brands-list');
     tableElement.dataTable( {
 		"sDom": "<'row'<'col-md-6'><'col-md-6'f>>t<'row'<'col-md-12'p i>>",
 		"sPaginationType": "bootstrap",
@@ -45,12 +45,12 @@ $(document).ready(function() {
 		"aaSorting": [[ 0, "asc" ]],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
-			"sSearch": $s["admin_search"],
-			"sInfo": $s["admin_showing_from_entry"]+"<b>_START_"+$s["admin_to_entry"]+"_END_</b>"+$s["admin_of"] +"_TOTAL_"+ $s["admin_entries"],
-			"sInfoEmpty": $s["admin_no_entries"],
-			"sZeroRecords": $s["admin_search_no_entry"]
+			"sSearch": $s["brand_search"],
+			"sInfo": $s["brand_showing_from_entry"]+"<b>_START_"+$s["brand_to_entry"]+"_END_</b>"+$s["brand_of"] +"_TOTAL_"+ $s["brand_entries"],
+			"sInfoEmpty": $s["brand_no_entries"],
+			"sZeroRecords": $s["brand_search_no_entry"]
 			},
-		"sAjaxSource":$SERVER_PATH+"server/app/ajax/admins/table.php?active="+$GET["active"]+"&PATH="+$PATH,
+		"sAjaxSource":$SERVER_PATH+"server/ryadmin/ajax/brands/table.php?active="+$GET["active"]+"&PATH="+$PATH,
 		 bAutoWidth     : false,
         fnPreDrawCallback: function () {
             // Initialize the responsive datatables helper once.
@@ -70,16 +70,18 @@ $(document).ready(function() {
 
 
 
-function delete_admin(id_admin){
-	filter_str="id_admin||=||"+id_admin;
+function block_brand(id_brand,active_status){
+	filter_str="id_brand||=||"+id_brand;
+	data_str="active||"+active_status;
 	$.ajax({
 		type: "POST",
 		dataType: 'json',
-		url: $PATH+"../server/app/ajax/indb/actions.php",
+		url: $PATH+"../server/ryadmin/ajax/indb/actions.php",
 		data: {
-			func:"delete",
-			table:"admins",
-			filter_str:filter_str
+			func:"update",
+			table:"brands",
+			filter_str:filter_str,
+			data_str:data_str
 		},
 		error: function(data, textStatus, jqXHR) {
 			error_handler("ajax_error");

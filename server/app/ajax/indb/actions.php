@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
-	* Version: 0.93
+	* Last Edit: 20-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -30,9 +30,9 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	if(!@issetandnotempty($_POST["func"]) && !@issetandnotempty($_GET["func"])){
@@ -53,6 +53,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	/*********************************************************
 	* AJAX OPERATIONS
 	*********************************************************/
+
 	if((isset($_POST))&&(!empty($_POST))){
 		$ajaxdata=$_POST;
 	}else if((isset($_GET))&&(!empty($_GET))){
@@ -103,10 +104,36 @@ if(!checkClosed()){echo json_encode($response);die();}
 		$response["actions"][0]["header"]="./".$callback_options;
 		echo json_encode($response);
 
-	}else if($func=="edit"){
+	}else if($func=="update"){
 		$response["status"]=false;
 		echo json_encode($response);
 		die();
+		$table=$ajaxdata["table"];
+
+		$filter=array();
+		$ajaxdata["filters"] = explode("::", $ajaxdata["filter_str"]);
+
+		foreach($ajaxdata["filters"] as $key => $filter_tmp){
+			$filter_array=explode("||",$filter_tmp);
+			$filter[$filter_array[0]]=array("operation"=>$filter_array[1],"value"=>$filter_array[2]);
+			error_log($filter_array[0]." = ".$filter_array[2]);
+		}
+
+		$data=array();
+		$ajaxdata["datas"] = explode("::", $ajaxdata["data_str"]);
+
+		foreach($ajaxdata["datas"] as $key => $data_tmp){
+			$data_array=explode("||",$data_tmp);
+			$data[$data_array[0]]=$data_array[1];
+			error_log($data_array[0]."=".$data_array[1]);
+		}
+
+		updateInBD($table,$filter,$data);
+		$response["status"]=true;
+		$response["action"][0]="header";
+		$response["actions"][0]["header"]="./".$callback_options;
+		echo json_encode($response);
+
 	}else if($func=="add"){
 		$table=$ajaxdata["table"];
 	 	$data=array();

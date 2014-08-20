@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 24-07-2014
-	* Version: 0.93
+	* Last Edit: 20-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -43,9 +43,9 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	//POST
@@ -161,6 +161,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$data["name"]=$_POST["name"];
 	$data["cif"]=$_POST["cif"];
 	$data["active"]=1;
+	$data["created"]=$timestamp;
 
 	$data["resume_block_1_display"] = 1;
 	$data["resume_block_1_title"] = "campaigns";

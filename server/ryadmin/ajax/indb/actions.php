@@ -2,8 +2,8 @@
 	/*********************************************************
 	*
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 17-07-2014
-	* Version: 0.93
+	* Last Edit: 20-08-2014
+	* Version: 0.94
 	*
 	*********************************************************/
 
@@ -20,9 +20,16 @@
 	/*********************************************************
 	* COMMON AJAX CALL DECLARATIONS AND INCLUDES
 	*********************************************************/
-	@session_start();
+
 	define('PATH', str_replace('\\', '/','../../'));
+	@session_start();
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
+
 	include(PATH."include/inbd.php");
+	$page_path="server/ryadmin/ajax/inbd/actions";
+	debug_log("[".$page_path."] START");
+
+	$response=array();
 
 
 	/*********************************************************
@@ -30,9 +37,9 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	if(!@issetandnotempty($_POST["func"]) && !@issetandnotempty($_GET["func"])){
@@ -67,13 +74,13 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$callback_options="";
 	if(isset($ajaxdata["callback_options_str"])){
 		$ajaxdata["callback_options"] = explode("::", $ajaxdata["callback_options_str"]);
-	 	$callback_options="?";
-	 	$and="";
-	 	foreach($ajaxdata["callback_options"] as $key => $callback_option_tmp){
-		 	$callback_options_array=explode("||",$callback_option_tmp);
-		 	$callback_options.=$and.$callback_options_array[0].$callback_options_array[1].$callback_options_array[2];
-		 	$and="&";
-	 	}
+		$callback_options="?";
+		$and="";
+		foreach($ajaxdata["callback_options"] as $key => $callback_option_tmp){
+			$callback_options_array=explode("||",$callback_option_tmp);
+			$callback_options.=$and.$callback_options_array[0].$callback_options_array[1].$callback_options_array[2];
+			$and="&";
+		}
 	}
 	if ((isset($ajaxdata["func"]))&&(!empty($ajaxdata["func"]))){
 		$func=$ajaxdata["func"];
@@ -83,19 +90,20 @@ if(!checkClosed()){echo json_encode($response);die();}
 		echo json_encode($response);
 		die();
 	}
+	error_log("----->1");
 
 	if($func=="delete"){
 
 		error_log("delete");
 		$table=$ajaxdata["table"];
-	 	$filter=array();
-	 	$ajaxdata["filters"] = explode("::", $ajaxdata["filter_str"]);
+		$filter=array();
+		$ajaxdata["filters"] = explode("::", $ajaxdata["filter_str"]);
 
-	 	foreach($ajaxdata["filters"] as $key => $filter_tmp){
-		 	$filter_array=explode("||",$filter_tmp);
-		 	$filter[$filter_array[0]]=array("operation"=>$filter_array[1],"value"=>$filter_array[2]);
-		 	error_log($filter_array[0]." = ".$filter_array[2]);
-	 	}
+		foreach($ajaxdata["filters"] as $key => $filter_tmp){
+			$filter_array=explode("||",$filter_tmp);
+			$filter[$filter_array[0]]=array("operation"=>$filter_array[1],"value"=>$filter_array[2]);
+			error_log($filter_array[0]." = ".$filter_array[2]);
+		}
 
 		deleteInBD($table,$filter);
 		$response["status"]=true;
@@ -103,20 +111,45 @@ if(!checkClosed()){echo json_encode($response);die();}
 		$response["actions"][0]["header"]="./".$callback_options;
 		echo json_encode($response);
 
-	}else if($func=="edit"){
-		$response["status"]=false;
+	}else if($func=="update"){
+
+		$table=$ajaxdata["table"];
+
+		$filter=array();
+		$ajaxdata["filters"] = explode("::", $ajaxdata["filter_str"]);
+
+		foreach($ajaxdata["filters"] as $key => $filter_tmp){
+			$filter_array=explode("||",$filter_tmp);
+			$filter[$filter_array[0]]=array("operation"=>$filter_array[1],"value"=>$filter_array[2]);
+			error_log($filter_array[0]." = ".$filter_array[2]);
+		}
+
+		$data=array();
+		$ajaxdata["datas"] = explode("::", $ajaxdata["data_str"]);
+
+		foreach($ajaxdata["datas"] as $key => $data_tmp){
+			$data_array=explode("||",$data_tmp);
+			$data[$data_array[0]]=$data_array[1];
+			error_log($data_array[0]."=".$data_array[1]);
+		}
+
+		updateInBD($table,$filter,$data);
+		error_log("----->Update called");
+		$response["status"]=true;
+		$response["action"][0]="header";
+		$response["actions"][0]["header"]="./".$callback_options;
 		echo json_encode($response);
-		die();
+
 	}else if($func=="add"){
 		$table=$ajaxdata["table"];
-	 	$data=array();
-	 	$ajaxdata["datas"] = explode("::", $ajaxdata["data_str"]);
+		$data=array();
+		$ajaxdata["datas"] = explode("::", $ajaxdata["data_str"]);
 
-	 	foreach($ajaxdata["datas"] as $key => $data_tmp){
-		 	$data_array=explode("||",$data_tmp);
-		 	$data[$data_array[0]]=$data_array[1];
-		 	error_log($data_array[0]."=".$data_array[1]);
-	 	}
+		foreach($ajaxdata["datas"] as $key => $data_tmp){
+			$data_array=explode("||",$data_tmp);
+			$data[$data_array[0]]=$data_array[1];
+			error_log($data_array[0]."=".$data_array[1]);
+		}
 
 		addInBD($table,$data);
 		$response["status"]=true;

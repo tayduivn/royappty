@@ -28,7 +28,7 @@
 	@session_start();
 	$timestamp=strtotime(date("Y-m-d H:i:00"));
 	include(PATH."include/inbd.php");
-	$page_path="server/app/ajax/admins/edit/admin";
+	$page_path="server/ryadmin/ajax/admins/edit/admin";
 	debug_log("[".$page_path."] START");
 
 	/*********************************************************
@@ -36,18 +36,14 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
-	// BRAND
-	$brand=array();$brand["id_brand"]=$_SESSION["admin"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
-
 	// ADMIN
-	$admin=array();$admin["id_admin"]=$_SESSION["admin"]["id_admin"];
-	if(!checkAdmin($admin)){echo json_encode($response);die();}
+	$ryadmin=array();$ryadmin["id_ryadmin"]=$_SESSION["ryadmin"]["id_ryadmin"];
+	if(!checkAdmin($ryadmin)){echo json_encode($response);die();}
 
 	// Data check START
 	if(!@issetandnotempty($_POST["id_admin"])){
