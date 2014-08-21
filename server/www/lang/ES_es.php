@@ -153,17 +153,6 @@ $s["tour_get_your_customer_information"] = "Con Royappty dispondrás siempre de 
 $s["tour_learn_more4"] = "Saber Más";
 
 //Tour Build page
-<<<<<<< HEAD
-$s["build_1_title"] = "Usa Royappty para crear tu propia aplicación y fideliza a tus clientes";
-$s["build_1_content"] = "";
-
-$s["build_2_title"] = "Proin viverra lectus";
-$s["build_2_content"] = "Donec accumsan eu nibh at ultricies. Suspendisse at feugiat elit. Suspendisse vulputate dignissim aliquet. Nam pellentesque varius pulvinar. Nullam ac blandit felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum varius ante, ut suscipit lorem ultricies ac. Proin accumsan interdum enim ut commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada iaculis venenatis. Mauris porttitor vestibulum faucibus. Vivamus quis velit in orci scelerisque aliquet at venenatis ligula. Vestibulum sed mi at augue aliquet faucibus id et quam.";
-
-$s["build_3_title"] = "Donec accumsan eu nibh at ultricies";
-$s["build_3_content"] = "Mauris porttitor odio sed fringilla luctus. Proin sed orci ut turpis hendrerit mattis. Praesent vestibulum elementum lectus, vitae placerat ante. Vestibulum ut tempus magna. Fusce iaculis dolor felis, quis convallis nisl malesuada quis. Sed et mattis est, ac commodo leo. Suspendisse elementum felis vel dui fermentum, adipiscing sodales eros mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
-=======
 $s["build_1_title"] = "Indícanos quién eres";
 $s["build_1_content_1"] = "Necesitamos una serie de datos básicos para poder crear tu aplicación.";
 $s["build_1_content_2"] = "Indícanos cómo podemos ponernos en contacto contigo, tu dirección, teléfono y las contraseñas de acceso que quieres configurar tanto para ti como para tus empleados.";
