@@ -46,7 +46,7 @@
 
 
 	// Data check START
-	if(!@issetandnotempty($_GET["id_brand"])){
+	if(!@issetandnotempty($_POST["id_brand"])){
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Post Missing id_brand");
 		$response["error_code"]="post_no_brand";
@@ -56,10 +56,10 @@
 
  	$table="brands";
  	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_GET["id_brand"]);
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	if(!isInBD($table,$filter)){
 		$response["result"]=false;
-		error_log("[".$page_path."] ERROR Brand (id_brand=".$_GET["id_brand"].") doesn't exist");
+		error_log("[".$page_path."] ERROR Brand (id_brand=".$_POST["id_brand"].") doesn't exist");
 		$response["error_code"]="post_no_brand";
  		echo json_encode($response);
  		die();
@@ -72,7 +72,7 @@
 
 	$table="brands";
 	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_GET["id_brand"]);
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	$brand=getInBD($table,$filter);
 
 	$message=shell_exec("./generator.sh royappty com.royappty.ry royappty");
@@ -101,5 +101,5 @@
 	debug_log("[".$page_path."] END");
 	echo json_encode($response);
 	die();
-	
+
 ?>

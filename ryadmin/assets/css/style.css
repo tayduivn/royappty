@@ -7701,8 +7701,15 @@ td:hover .hidden-options{
 	opacity: 1;
 }
 .box{
-	padding:10px;
-	border:1px solid #F4F4F4;
+  padding:10px;
+  border:1px solid #F4F4F4;
+}
+.terminal-box{
+  padding:10px;
+  border:1px solid #d0d0d0;
+  background-color:#f4f4f4;
+  height:200px;
+  overflow:auto;
 }
 
 .box-success-muted{

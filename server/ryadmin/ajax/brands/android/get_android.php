@@ -120,7 +120,11 @@
 									<p>".$generate_android_app_steps[4]["content"]."</p>
 
 									<div class='box m-b-20'>
-										<a href='#' class='btn btn-white'>".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
+										<div class='terminal-box m-t-20 m-b-20' id='generate_android_app_terminal'>
+
+										</div>
+										<a href='javascript:generate_android_app();' class='btn btn-white'>".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
+
 									</div>
 									<p class='text-center'>
 										<a href='../?id_brand=".$_POST["id_brand"]."' class='btn btn-white'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>

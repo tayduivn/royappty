@@ -59,7 +59,29 @@ $(document).ready(function(){
 		}
 	});
 });
+function generate_android_app(){
+	$.ajax({
+		async: false,
+		type: "POST",
+		dataType: 'json',
+		url: $SERVER_PATH+"server/ryadmin/ajax/brands/android/generator.php",
+		data: {
+			lang: localStorage.getItem("lang"),
+			id_brand:$GET["id_brand"]
+		},
+		error: function(data, textStatus, jqXHR) {
+			error_handler("ajax_error");
+		},
+		success: function(response) {
+			if(response.result){
+				$(".generate_android_app_terminal").html(response.data);
+			} else {
+				error_handler(response.error_code);
+			}
 
+		}
+	});
+}
 function update_brand(id_brand,field_data,data_value){
 	filter_str="id_brand||=||"+id_brand;
 	data_str=field_data+"||"+data_value;
