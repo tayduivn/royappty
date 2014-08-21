@@ -153,6 +153,7 @@ $s["tour_get_your_customer_information"] = "Con Royappty dispondrás siempre de 
 $s["tour_learn_more4"] = "Saber Más";
 
 //Tour Build page
+
 $s["build_1_title"] = "Indícanos quién eres";
 $s["build_1_content_1"] = "Necesitamos una serie de datos básicos para poder crear tu aplicación.";
 $s["build_1_content_2"] = "Indícanos cómo podemos ponernos en contacto contigo, tu dirección, teléfono y las contraseñas de acceso que quieres configurar tanto para ti como para tus empleados.";
@@ -207,7 +208,6 @@ $s["validation_1_content_2"] = "Con nuestro sistema de informes podrás diferenc
 $s["validation_2_title"] = "Envía notificaciones a los usuarios e infórmales de todas tus novedades";
 $s["validation_2_content_1"] = "Puedes enviar notificaciones a todos los usuarios a través del panel de control. Cada notificación que envíes contiene un enlace que les llevará directamente a lo que quieras mostrarles de tu aplicación - una noticia, una nueva promoción o simplemente una imagen mostrándoles un nuevo producto -.";
 $s["validation_2_content_2"] = "Con el sistema de notificaciones de Royappty tus usuarios estarán al día de todas tus novedades.";
->>>>>>> issue142
 
 $error_s["base"]["title"] = "Error desconocido";
 $error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
