@@ -77,28 +77,39 @@
 
   ";
 
-  $response["data"]["page-data"]="
+$response["data"]["page-data"]="
   <div class='section first'>
     <div class='container'>
-      <div class='p-b-60 p-t-20 text-center'>
+      <div class='row p-t-20'>
+        <div class='col-md-1'>
+        </div>
+        <div class='col-md-10 text-center'>
           <h1 class='normal m-b-10'>".htmlentities($s["validation_1_title"], ENT_QUOTES, "UTF-8")."</h1>
-          <p>".htmlentities($s["validation_1_content"], ENT_QUOTES, "UTF-8")."</p>
+          <h4>".htmlentities($s["validation_1_content_1"], ENT_QUOTES, "UTF-8")."</h4>
+          <h4>".htmlentities($s["validation_1_content_2"], ENT_QUOTES, "UTF-8")."</h4>
+        </div>
+        <div class='col-md-1'>
+        </div>
+      </div>
+      <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
             <img src='".$url_server."assets/img/tour/validation/validation_1_image.png' alt='img01'>
           </div>
       </div>
-      <div class='p-b-60 p-t-20 text-center'>
+      <div class='row p-t-20'>
+        <div class='col-md-1'>
+        </div>
+        <div class='col-md-10 text-center'>
           <h1 class='normal m-b-10'>".htmlentities($s["validation_2_title"], ENT_QUOTES, "UTF-8")."</h1>
-          <p>".htmlentities($s["validation_2_content"], ENT_QUOTES, "UTF-8")."</p>
-          <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/validation/validation_1_image.png' alt='img01'>
-          </div>
+          <h4>".htmlentities($s["validation_2_content_1"], ENT_QUOTES, "UTF-8")."</h4>
+          <h4>".htmlentities($s["validation_2_content_2"], ENT_QUOTES, "UTF-8")."</h4>
+        </div>
+        <div class='col-md-1'>
+        </div>
       </div>
-      <div class='p-b-60 p-t-20 text-center'>
-          <h1 class='normal m-b-10'>".htmlentities($s["validation_3_title"], ENT_QUOTES, "UTF-8")."</h1>
-          <p>".htmlentities($s["validation_3_content"], ENT_QUOTES, "UTF-8")."</p>
+      <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/validation/validation_1_image.png' alt='img01'>
+            <img src='".$url_server."assets/img/tour/validation/validation_2_image.png' alt='img01'>
           </div>
       </div>
       <div class='p-b-60 p-t-20 text-center'>
