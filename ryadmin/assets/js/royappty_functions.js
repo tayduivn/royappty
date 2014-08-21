@@ -29,7 +29,8 @@ function session_destroy(){
 }
 
 function error_handler(error_code){
-	error_block:{
+	alert(error_code);
+  error_block:{
 		//General
 		if(error_code=="login_error"){window.location.href = $PATH+"login/?error=login_error";break error_block;}
     if(error_code=="system_closed"){window.location.href = $PATH+"../closed/";break error_block;}
