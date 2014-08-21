@@ -277,6 +277,7 @@ $s["server_ip"] = "IP del Servidor";
 $s["android_server_key"] = "Clave de Servidor Android";
 $generate_android_app_steps[4]["title"] = "Paso 4 | Gerenar Aplicación";
 $generate_android_app_steps[4]["content"] = "<p>".htmlentities("Pulsar en botón generar aplicación para iniciar el proceso de creación de la aplicación.", ENT_QUOTES, "UTF-8")."</p>";
+$s["download_android_app"] = "Descargar APK";
 
 //Brands / Edit
 $s["brand_name"] = "Nombre";

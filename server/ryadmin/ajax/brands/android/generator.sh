@@ -15,7 +15,7 @@ echo "[35m[generator 0.0.1][39m Push Plugin Dowloaded" >> ../out.text
 echo "babilonia" | sudo -S phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git >> ../out.text
 echo "[35m[generator 0.0.1][39m Push Device Dowloaded" >> ../out.text
 echo "babilonia" | sudo -S phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git
-echo "[35m[generator 0.0.1][39m Push Media Dowloaded" >> ../out.textç
+echo "[35m[generator 0.0.1][39m Push Media Dowloaded" >> ../out.text
 echo "babilonia" | sudo -S phonegap local build android >> ../out.text
 echo "[35m[generator 0.0.1][39m Android Rebuild Finished" >> ../out.text
 cd ..

@@ -60,11 +60,13 @@ $(document).ready(function(){
 	});
 });
 function generate_android_app(){
+	$("#generate_android_app_terminal").html("<pre>Loading...</pre>");
+	alert("generate");
 	$.ajax({
 		async: false,
 		type: "POST",
 		dataType: 'json',
-		url: $SERVER_PATH+"server/ryadmin/ajax/brands/android/generator.php",
+		url: $SERVER_PATH+"server/ryadmin/ajax/brands/android/generate.php",
 		data: {
 			lang: localStorage.getItem("lang"),
 			id_brand:$GET["id_brand"]
@@ -73,8 +75,9 @@ function generate_android_app(){
 			error_handler("ajax_error");
 		},
 		success: function(response) {
+			alert("ok...");
 			if(response.result){
-				$(".generate_android_app_terminal").html(response.data);
+				$("#generate_android_app_terminal").html(response.data);
 			} else {
 				error_handler(response.error_code);
 			}

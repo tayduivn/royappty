@@ -1,7 +1,5 @@
 [35m[generator 0.0.1][39m Arguments royappty com.royappty.ry royappty 
 [35m[generator 0.0.1][39m start
-[36m[phonegap][39m missing library com.royappty.ry/www/3.5.0
-[36m[phonegap][39m downloading https://github.com/phonegap/phonegap-app-hello-world/archive/3.5.0.tar.gz...
 [36m[phonegap][39m create called with the options /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty com.royappty.ry "royappty"
 [36m[phonegap][39m Customizing default config.xml file
 [36m[phonegap][39m created project at /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty
@@ -453,7 +451,7 @@ debug:
       [dex] Pre-Dexing /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/libs/android-support-v13.jar -> android-support-v13-98b03ca9427bc38534a1ee255094d43a.jar
       [dex] Found new input file
       [dex] Converting compiled files and external libraries into /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes.dex...
-       [dx] Merged dex A (61 defs/77,9KiB) with dex B (206 defs/314,1KiB). Result is 267 defs/476,4KiB. Took 0,6s
+       [dx] Merged dex A (61 defs/77,9KiB) with dex B (206 defs/314,1KiB). Result is 267 defs/476,4KiB. Took 0,7s
        [dx] Merged dex A (267 defs/476,4KiB) with dex B (4 defs/18,7KiB). Result is 271 defs/629,2KiB. Took 0,1s
        [dx] Merged dex A (271 defs/629,2KiB) with dex B (535 defs/572,2KiB). Result is 806 defs/1568,8KiB. Took 0,1s
 

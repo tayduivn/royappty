@@ -124,6 +124,7 @@
 
 										</div>
 										<a href='javascript:generate_android_app();' class='btn btn-white'>".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
+										<a href='".$url_server."server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/royappty-debug.apk' class='btn btn-white'>".htmlentities($s["download_android_app"], ENT_QUOTES, "UTF-8")."</a>
 
 									</div>
 									<p class='text-center'>

@@ -81,7 +81,7 @@
 	$message=str_replace("[31m","<span style='color:red'>",$message);
 	$message=str_replace("[39m","</span>",$message);
 
-	$response["data"]"<pre style='color:#666'>".$message."</pre>";
+	$response["data"]="<pre style='color:#666'>".$message."</pre>";
 
 
 	//$response["result"]=true;
