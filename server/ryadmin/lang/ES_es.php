@@ -264,6 +264,20 @@ $s["brands_active"][2] = "Bloqueada";
 $s["brands_active_icon"][1] = "<i class='fa fa-check'></i>";
 $s["brands_active_icon"][2] = "<i class='fa fa-times'></i>";
 
+//Brand / Get Brand / Generate Android
+$generate_android_app_steps[1]["title"] = "Paso 1 | Crear proyecto Google";
+$s["android_project_number"] = "Número del Proyecto";
+$s["update"] = "Actualizar";
+$generate_android_app_steps[1]["content"] = "<p>".htmlentities("Visitar Code Google", ENT_QUOTES, "UTF-8")." <a href='http://code.google.com/apis/console' target='_balnk'>code.google.com/apis/console</a>. ".htmlentities("Pulsar el botón crear proyecto, introduce el nombre del proyecto y el identificador especificados arriba. Una vez creado el proyecto acceder a la sección APIs y Autenticación y seleccionar APIs", ENT_QUOTES, "UTF-8").". ".htmlentities("Activar dentro de las APIs es servicio Google Cloud Messaging for Android, pulsado en el botón.", ENT_QUOTES, "UTF-8")."</p>";
+$generate_android_app_steps[2]["title"] = "Paso 2 | Guardar Número del proyecto";
+$generate_android_app_steps[2]["content"] = "<p>".htmlentities("Pulsar en Descipción general y en la parte superior del panel copiar el Número de proyecto en el formulario y actualizar.", ENT_QUOTES, "UTF-8")."</p>";
+$generate_android_app_steps[3]["title"] = "Paso 3 | Gerenar Clave Servidor Android";
+$generate_android_app_steps[3]["content"] = "<p>".htmlentities("Pulsar en Credenciales dentro de APIs y autenticación. Pulsar en el botón Crear clave nueva dentro de Acceso a API pública. En las opciones seleccionar Clave de servidor e introducir la Dirección IP del Servidor. Copiar la clave generada y actualiza la Clave del Servidor Android", ENT_QUOTES, "UTF-8")."</p>";
+$s["server_ip"] = "IP del Servidor";
+$s["android_server_key"] = "Clave de Servidor Android";
+$generate_android_app_steps[4]["title"] = "Paso 4 | Gerenar Aplicación";
+$generate_android_app_steps[4]["content"] = "<p>".htmlentities("Pulsar en botón generar aplicación para iniciar el proceso de creación de la aplicación.", ENT_QUOTES, "UTF-8")."</p>";
+
 //Brands / Edit
 $s["brand_name"] = "Nombre";
 $s["brand_name_help"] = "";

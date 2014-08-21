@@ -90,8 +90,7 @@
 		echo json_encode($response);
 		die();
 	}
-	error_log("----->1");
-
+	
 	if($func=="delete"){
 
 		error_log("delete");
@@ -134,7 +133,6 @@
 		}
 
 		updateInBD($table,$filter,$data);
-		error_log("----->Update called");
 		$response["status"]=true;
 		$response["action"][0]="header";
 		$response["actions"][0]["header"]="./".$callback_options;

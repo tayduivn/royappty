@@ -1,0 +1,494 @@
+[35m[generator 0.0.1][39m Arguments royappty com.royappty.ry royappty 
+[35m[generator 0.0.1][39m start
+[36m[phonegap][39m missing library com.royappty.ry/www/3.5.0
+[36m[phonegap][39m downloading https://github.com/phonegap/phonegap-app-hello-world/archive/3.5.0.tar.gz...
+[36m[phonegap][39m create called with the options /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty com.royappty.ry "royappty"
+[36m[phonegap][39m Customizing default config.xml file
+[36m[phonegap][39m created project at /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty
+[35m[generator 0.0.1][39m In royappty folder
+[36m[phonegap][39m adding the Android platform...
+Creating Cordova project for the Android platform:
+	Path: platforms/android
+	Package: com.royappty.ry
+	Name: "royappty"
+	Android target: android-19
+Copying template files...
+Running: android update project --subprojects --path "platforms/android" --target android-19 --library "CordovaLib"
+Resolved location of library project to: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib
+Updated and renamed default.properties to project.properties
+Updated local.properties
+No project name specified, using Activity name 'royappty'.
+If you wish to change it, edit the first line of build.xml.
+Added file platforms/android/build.xml
+Added file platforms/android/proguard-project.txt
+Updated project.properties
+Updated local.properties
+No project name specified, using project folder name 'CordovaLib'.
+If you wish to change it, edit the first line of build.xml.
+Added file platforms/android/CordovaLib/build.xml
+Added file platforms/android/CordovaLib/proguard-project.txt
+
+Project successfully created.
+cp: no such file or directory: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/icon.png
+
+cp: no such file or directory: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/res/icon/ios/icon-72.png
+
+[36m[phonegap][39m compiling Android...
+cp: no such file or directory: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/icon.png
+
+cp: no such file or directory: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/res/icon/ios/icon-72.png
+
+Buildfile: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/build.xml
+  [taskdef] Could not load definitions from resource emma_ant.properties. It could not be found.
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 23.0.0
+ [checkenv] Installed at /usr/local/Cellar/android-sdk/23
+
+-setup:
+     [echo] Project Name: royappty
+  [gettype] Project Type: Application
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 20.0.0
+     [echo] Resolving Build Target for royappty...
+[gettarget] Project Target:   Android 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/rsObj
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/rsLibs
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-gen
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/dexedLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for royappty...
+[dependency] Library dependencies:
+[dependency] 
+[dependency] ------------------
+[dependency] Ordered libraries:
+[dependency] 
+[dependency] ------------------
+     [echo] ----------
+     [echo] Building Libraries with 'debug'...
+  [taskdef] Could not load definitions from resource emma_ant.properties. It could not be found.
+
+nodeps:
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 23.0.0
+ [checkenv] Installed at /usr/local/Cellar/android-sdk/23
+
+-setup:
+     [echo] Project Name: CordovaLib
+  [gettype] Project Type: Android Library
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 20.0.0
+     [echo] Resolving Build Target for CordovaLib...
+[gettarget] Project Target:   Android 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/res
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/libs
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/res
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/rsObj
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/rsLibs
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-gen
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/dexedLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for CordovaLib...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+
+-code-gen:
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] Generating BuildConfig class.
+
+-pre-compile:
+
+-compile:
+    [javac] Compiling 89 source files to /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes
+    [javac] Note: Some input files use or override a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+     [echo] Creating library output jar file...
+      [jar] Building jar: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes.jar
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+     [echo] Library project: do not convert bytecode...
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/res
+   [crunch] To destination dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/res
+   [crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+     [echo] Library project: do not package resources...
+
+-package:
+     [echo] Library project: do not package apk...
+
+-post-package:
+
+-do-debug:
+     [echo] Library project: do not create apk...
+[propertyfile] Creating new property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+
+-post-build:
+
+debug:
+
+-code-gen:
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] Generating BuildConfig class.
+
+-pre-compile:
+     [echo] Set jars path to: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes.jar
+
+-compile:
+    [javac] Compiling 3 source files to /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+      [dex] input: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes
+      [dex] input: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes.jar
+      [dex] Pre-Dexing /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes.jar -> classes-a0585f558a251255802e9ac0fe41291e.jar
+      [dex] Converting compiled files and external libraries into /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes.dex...
+       [dx] Merged dex A (7 defs/2,1KiB) with dex B (206 defs/314,1KiB). Result is 213 defs/385,4KiB. Took 0,2s
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res
+   [crunch] To destination dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-hdpi/icon.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-hdpi/icon.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-hdpi/icon.png: 67% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-land-hdpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-hdpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-hdpi/screen.png: 97% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-land-ldpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-ldpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-ldpi/screen.png: 96% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-land-mdpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-mdpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-mdpi/screen.png: 97% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-land-xhdpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-xhdpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-land-xhdpi/screen.png: 99% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-ldpi/icon.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-ldpi/icon.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-ldpi/icon.png: 0% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-mdpi/icon.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-mdpi/icon.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-mdpi/icon.png: 0% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-port-hdpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-hdpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-hdpi/screen.png: 97% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-port-ldpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-ldpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-ldpi/screen.png: 97% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-port-mdpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-mdpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-mdpi/screen.png: 99% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-port-xhdpi/screen.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png: 99% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable-xhdpi/icon.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-xhdpi/icon.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable-xhdpi/icon.png: 53% size of source)
+   [crunch] Processing image to cache: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res/drawable/icon.png => /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable/icon.png
+   [crunch]   (processed image to cache entry /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res/drawable/icon.png: 53% size of source)
+   [crunch] Crunched 13 PNG files to update cache
+
+-package-resources:
+     [aapt] Creating full resource package...
+     [aapt]     (skipping file '.pgbomit' due to ANDROID_AAPT_IGNORE pattern '.*')
+
+-package:
+[apkbuilder] Current build type is different than previous build: forced apkbuilder run.
+[apkbuilder] Creating royappty-debug-unaligned.apk and signing it with a debug key...
+
+-post-package:
+
+-do-debug:
+ [zipalign] Running zip align on final apk...
+     [echo] Debug Package: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/royappty-debug.apk
+[propertyfile] Creating new property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+
+-post-build:
+     [move] Moving 1 file to /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build
+     [move] Moving 1 file to /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build
+
+debug:
+
+BUILD SUCCESSFUL
+Total time: 25 seconds
+[36m[phonegap][39m successfully compiled Android app
+[35m[generator 0.0.1][39m Android Build Finished
+[36m[phonegap][39m adding the plugin: https://github.com/phonegap-build/PushPlugin
+[36m[phonegap][39m successfully added the plugin
+[35m[generator 0.0.1][39m Push Plugin Dowloaded
+[36m[phonegap][39m adding the plugin: https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
+[36m[phonegap][39m successfully added the plugin
+[35m[generator 0.0.1][39m Push Device Dowloaded
+[36m[phonegap][39m compiling Android...
+cp: no such file or directory: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/icon.png
+
+cp: no such file or directory: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/res/icon/ios/icon-72.png
+
+Buildfile: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/build.xml
+  [taskdef] Could not load definitions from resource emma_ant.properties. It could not be found.
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 23.0.0
+ [checkenv] Installed at /usr/local/Cellar/android-sdk/23
+
+-setup:
+     [echo] Project Name: royappty
+  [gettype] Project Type: Application
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 20.0.0
+     [echo] Resolving Build Target for royappty...
+[gettarget] Project Target:   Android 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/rsObj
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/rsLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for royappty...
+[dependency] Library dependencies:
+[dependency] 
+[dependency] ------------------
+[dependency] Ordered libraries:
+[dependency] 
+[dependency] ------------------
+     [echo] ----------
+     [echo] Building Libraries with 'debug'...
+  [taskdef] Could not load definitions from resource emma_ant.properties. It could not be found.
+
+nodeps:
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 23.0.0
+ [checkenv] Installed at /usr/local/Cellar/android-sdk/23
+
+-setup:
+     [echo] Project Name: CordovaLib
+  [gettype] Project Type: Android Library
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 20.0.0
+     [echo] Resolving Build Target for CordovaLib...
+[gettarget] Project Target:   Android 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/rsObj
+    [mkdir] Created dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/rsLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for CordovaLib...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+
+-code-gen:
+[mergemanifest] Found Deleted Target File
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Found modified input file
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] No need to generate new BuildConfig.
+
+-pre-compile:
+
+-compile:
+     [echo] Creating library output jar file...
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+     [echo] Library project: do not convert bytecode...
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/res
+   [crunch] To destination dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/res
+   [crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+     [echo] Library project: do not package resources...
+
+-package:
+     [echo] Library project: do not package apk...
+
+-post-package:
+
+-do-debug:
+     [echo] Library project: do not create apk...
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/build.prop
+
+-post-build:
+
+debug:
+
+-code-gen:
+[mergemanifest] Found Deleted Target File
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Found new input file
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] No need to generate new BuildConfig.
+
+-pre-compile:
+     [echo] Set jars path to: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes.jar:/Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/libs/gcm.jar:/Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/libs/android-support-v13.jar
+
+-compile:
+    [javac] Compiling 23 source files to /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes
+    [javac] Note: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/src/org/apache/cordova/file/DirectoryManager.java uses or overrides a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+    [javac] Note: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/src/org/apache/cordova/file/ContentFilesystem.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+      [dex] input: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes
+      [dex] input: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes.jar
+      [dex] input: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/libs/gcm.jar
+      [dex] input: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/libs/android-support-v13.jar
+      [dex] Using Pre-Dexed classes-a0585f558a251255802e9ac0fe41291e.jar <- /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build/classes.jar
+      [dex] Pre-Dexing /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/libs/gcm.jar -> gcm-a772535ca285b8747597ce83bcd8c593.jar
+      [dex] Pre-Dexing /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/libs/android-support-v13.jar -> android-support-v13-98b03ca9427bc38534a1ee255094d43a.jar
+      [dex] Found new input file
+      [dex] Converting compiled files and external libraries into /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/classes.dex...
+       [dx] Merged dex A (61 defs/77,9KiB) with dex B (206 defs/314,1KiB). Result is 267 defs/476,4KiB. Took 0,6s
+       [dx] Merged dex A (267 defs/476,4KiB) with dex B (4 defs/18,7KiB). Result is 271 defs/629,2KiB. Took 0,1s
+       [dx] Merged dex A (271 defs/629,2KiB) with dex B (535 defs/572,2KiB). Result is 806 defs/1568,8KiB. Took 0,1s
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/res
+   [crunch] To destination dir: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/res
+   [crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+     [aapt] Found modified input file
+     [aapt] Creating full resource package...
+     [aapt]     (skipping file '.pgbomit' due to ANDROID_AAPT_IGNORE pattern '.*')
+
+-package:
+[apkbuilder] Found modified input file
+[apkbuilder] Creating royappty-debug-unaligned.apk and signing it with a debug key...
+
+-post-package:
+
+-do-debug:
+ [zipalign] Running zip align on final apk...
+     [echo] Debug Package: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/royappty-debug.apk
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+[propertyfile] Updating property file: /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build/build.prop
+
+-post-build:
+     [move] Moving 1 file to /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/ant-build
+     [move] Moving 1 file to /Users/imac/development/royappty/server/ryadmin/ajax/brands/android/royappty/platforms/android/CordovaLib/ant-build
+
+debug:
+
+BUILD SUCCESSFUL
+Total time: 10 seconds
+[36m[phonegap][39m successfully compiled Android app
+[35m[generator 0.0.1][39m Android Rebuild Finished
+[35m[generator 0.0.1][39m end
