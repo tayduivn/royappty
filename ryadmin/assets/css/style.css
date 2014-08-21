@@ -7749,3 +7749,7 @@ td:hover .hidden-options{
 	color:#F35958;
 	margin-bottom: 10px;
 }
+pre{
+  padding:0;
+  margin:0;
+}

@@ -60,13 +60,16 @@ $(document).ready(function(){
 	});
 });
 function generate_android_app(){
-	$("#generate_android_app_terminal").html("<pre>Loading...</pre>");
-	alert("generate");
+	$("#generate_android_app_terminal").html("<pre style='color:#666'><span style='color:purple'>[Android Generator 0.0.1]</span> Connecting to Server<span class='pull-right'>[<span style='color:black'>START</span>]</span></pre>");
+	call_step(1,4);
+
+}
+function call_step(step,stop_step){
 	$.ajax({
-		async: false,
+		async: true,
 		type: "POST",
 		dataType: 'json',
-		url: $SERVER_PATH+"server/ryadmin/ajax/brands/android/generate.php",
+		url: $SERVER_PATH+"server/ryadmin/ajax/brands/android/generate_step_"+step+".php",
 		data: {
 			lang: localStorage.getItem("lang"),
 			id_brand:$GET["id_brand"]
@@ -75,9 +78,11 @@ function generate_android_app(){
 			error_handler("ajax_error");
 		},
 		success: function(response) {
-			alert("ok...");
 			if(response.result){
-				$("#generate_android_app_terminal").html(response.data);
+				$("#generate_android_app_terminal").append(response.data);
+				if(step<stop_step){
+					call_step(step+1,stop_step);
+				}
 			} else {
 				error_handler(response.error_code);
 			}
