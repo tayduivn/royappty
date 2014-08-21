@@ -140,7 +140,7 @@
 
           <section class='cbp-so-section'>
             <figure class='cbp-so-side cbp-so-side-left'>
-              <img src='".$url_server."assets/img/Retina.png' alt='img01'>
+              <img src='".$url_server."assets/img/tour/royappty-createaccount.png' alt='img01'>
             </figure>
             <article class='cbp-so-side cbp-so-side-right text-center middle'>
               <div class='row'>

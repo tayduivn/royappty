@@ -138,8 +138,8 @@ $s["tour_singup_create_your_app"] = "Regístrate en Royappty y crea tu aplicaci�
 $s["tour_learn_more"] = "Saber Más";
 
 $s["tour_managing"] = "Gestionando ";
-$s["tour_your_users"] = "tus usuarios";
-$s["tour_simple_app_for_users"] = "Una vez se descarguen la aplicación tus clientes podrán beneficiarse de todas tus promociones. Bastará con que elijan un nombre de usuarios, una contraseña e indiquen una serie de datos personales que nos ayudarán a realizar un mejor seguimiento del éxito de tus campañas.";
+$s["tour_your_users"] = "tus promociones";
+$s["tour_simple_app_for_users"] = "Configura tus promociones y descuentos a través del panel de control. Nunca ha sido tan fácil fidelizar a tus clientes.";
 $s["tour_learn_more2"] = "Saber Más";
 
 $s["tour_use_of"] = "Uso de la ";
@@ -153,15 +153,60 @@ $s["tour_get_your_customer_information"] = "Con Royappty dispondrás siempre de 
 $s["tour_learn_more4"] = "Saber Más";
 
 //Tour Build page
-$s["build_1_title"] = "Lorem ipsum dolor sit amet";
-$s["build_1_content"] = "Proin viverra lectus vitae orci luctus venenatis. Duis et sem tincidunt, commodo felis ac, rutrum nulla. Maecenas ornare interdum sollicitudin. Vivamus ipsum mauris, facilisis at iaculis id, lobortis sed risus. Aliquam metus lectus, porttitor quis massa vel, euismod blandit dolor. Pellentesque ullamcorper quam id pharetra porttitor. Vivamus elementum felis nec leo ultricies facilisis id eu est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris pretium ullamcorper semper. Phasellus ac pulvinar diam. Quisque consectetur quam id mauris faucibus faucibus. Aenean vehicula tincidunt quam vitae volutpat.";
+$s["build_1_title"] = "Indícanos quién eres";
+$s["build_1_content_1"] = "Necesitamos una serie de datos básicos para poder crear tu aplicación.";
+$s["build_1_content_2"] = "Indícanos cómo podemos ponernos en contacto contigo, tu dirección, teléfono y las contraseñas de acceso que quieres configurar tanto para ti como para tus empleados.";
 
-$s["build_2_title"] = "Proin viverra lectus";
-$s["build_2_content"] = "Donec accumsan eu nibh at ultricies. Suspendisse at feugiat elit. Suspendisse vulputate dignissim aliquet. Nam pellentesque varius pulvinar. Nullam ac blandit felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum varius ante, ut suscipit lorem ultricies ac. Proin accumsan interdum enim ut commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada iaculis venenatis. Mauris porttitor vestibulum faucibus. Vivamus quis velit in orci scelerisque aliquet at venenatis ligula. Vestibulum sed mi at augue aliquet faucibus id et quam.";
+$s["build_2_title"] = "Diseña tu aplicación";
+$s["build_2_content_1"] = "Introduce tanto el nombre de tu aplicación como una descripción. Expláyate todo lo que quieras y no te preocupes, si no quedas convencido siempre podrás cambiarlo más adelante en tu panel de control.";
+$s["build_2_content_2"] = "Para añadir imágenes puedes usar nuestro cargador de imágenes o arrastrarlas directamente desde una carpeta o el escritorio. Recuerda usar imágenes que representen perfectamente a ti o a tu local. Al fin y al cabo es lo primero que van a ver tus usuarios.";
 
-$s["build_3_title"] = "Donec accumsan eu nibh at ultricies";
-$s["build_3_content"] = "Mauris porttitor odio sed fringilla luctus. Proin sed orci ut turpis hendrerit mattis. Praesent vestibulum elementum lectus, vitae placerat ante. Vestibulum ut tempus magna. Fusce iaculis dolor felis, quis convallis nisl malesuada quis. Sed et mattis est, ac commodo leo. Suspendisse elementum felis vel dui fermentum, adipiscing sodales eros mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+$s["build_3_title"] = "Selecciona tu plan";
+$s["build_3_content_1"] = "Estamos convencidos de que te encantará Royappty y por eso re ofrecemos tres meses de nuestro Starter Welcome Pack para que tú y tus clientes podáis familiarizaros con la aplicación sin que te cueste un solo euro.";
+$s["build_3_content_2"] = "Si ya conoces Royappty y sabes cuántas campañas puedes necesitar tener activas escoge entre nuestro plan Starter o nuestro plan Professional. En caso de que necesites una solución empresarial avanzada tendrás que contarnos qué es exactamente lo que necesitas en empresas@royappty.com";
 
+//Tour Promos page
+$s["promos_1_title"] = "Creando una nueva campaña";
+$s["promos_1_content_1"] = "Poner en marcha una nueva campaña en Royappty es tan simple como darle a un botón. Dentro de tu panel de control encontrarás un acceso directo a la creación de campañas en la sección Campañas";
+$s["promos_1_content_2"] = "Indícanos cómo podemos ponernos en contacto contigo, tu dirección, teléfono y las contraseñas de acceso que quieres configurar tanto para ti como para tus empleados.";
+
+$s["promos_2_title"] = "Diseña tu aplicación";
+$s["promos_2_content_1"] = "Introduce tanto el nombre de tu aplicación como una descripción. Expláyate todo lo que quieras y no te preocupes, si no quedas convencido siempre podrás cambiarlo más adelante en tu panel de control.";
+$s["promos_2_content_2"] = "Para añadir imágenes puedes usar nuestro cargador de imágenes o arrastrarlas directamente desde una carpeta o el escritorio. Recuerda usar imágenes que representen perfectamente a ti o a tu local. Al fin y al cabo es lo primero que van a ver tus usuarios.";
+
+$s["promos_3_title"] = "Configura tu campaña";
+$s["promos_3_content_1"] = "En el panel de control encontraréis campañas predifinadas que os ayudarán a orientaros para crear las vuestras. Contaréis con sugerencias durante todo el proceso que os indicarán ";
+$s["promos_3_content_2"] = "Si ya conoces Royappty y sabes cuántas campañas puedes necesitar tener activas escoge entre nuestro plan Starter o nuestro plan Professional. En caso de que necesites una solución empresarial avanzada tendrás que contarnos qué es exactamente lo que necesitas en empresas@royappty.com";
+
+$s["promos_4_title"] = "Pon las reglas de la campaña";
+$s["promos_4_content_1"] = "Establece el número de veces que un usuario puede beneficiarse de la campaña, el coste en € de la promoción y el beneficio que obtendrás cada vez que se use. De esta forma podemos calcular en todo momento cuánto te está costando fidelizar a cada cliente con cada campaña.";
+$s["promos_4_content_2"] = "Activa la campaña o déjala inactiva para más adelante.";
+
+//Tour Opportunities page
+$s["opportunities_1_title"] = "Gestiona tus campañas";
+$s["opportunities_1_content_1"] = "Poner en marcha una nueva campaña en Royappty es tan simple como darle a un botón. Dentro de tu panel de control encontrarás un acceso directo a la creación de campañas en la sección Campañas";
+$s["opportunities_1_content_2"] = "Indícanos cómo podemos ponernos en contacto contigo, tu dirección, teléfono y las contraseñas de acceso que quieres configurar tanto para ti como para tus empleados.";
+
+$s["opportunities_2_title"] = "Gestiona tus usuarios";
+$s["opportunities_2_content_1"] = "Introduce tanto el nombre de tu aplicación como una descripción. Expláyate todo lo que quieras y no te preocupes, si no quedas convencido siempre podrás cambiarlo más adelante en tu panel de control.";
+$s["opportunities_2_content_2"] = "Para añadir imágenes puedes usar nuestro cargador de imágenes o arrastrarlas directamente desde una carpeta o el escritorio. Recuerda usar imágenes que representen perfectamente a ti o a tu local. Al fin y al cabo es lo primero que van a ver tus usuarios.";
+
+$s["opportunities_3_title"] = "Gestiona los administradores";
+$s["opportunities_3_content_1"] = "En el panel de control encontraréis campañas predifinadas que os ayudarán a orientaros para crear las vuestras. Contaréis con sugerencias durante todo el proceso que os indicarán ";
+$s["opportunities_3_content_2"] = "Si ya conoces Royappty y sabes cuántas campañas puedes necesitar tener activas escoge entre nuestro plan Starter o nuestro plan Professional. En caso de que necesites una solución empresarial avanzada tendrás que contarnos qué es exactamente lo que necesitas en empresas@royappty.com";
+
+$s["opportunities_4_title"] = "Gestiona tu configuración";
+$s["opportunities_4_content_1"] = "Establece el número de veces que un usuario puede beneficiarse de la campaña, el coste en € de la promoción y el beneficio que obtendrás cada vez que se use. De esta forma podemos calcular en todo momento cuánto te está costando fidelizar a cada cliente con cada campaña.";
+$s["opportunities_4_content_2"] = "Activa la campaña o déjala inactiva para más adelante.";
+
+//Tour validation page
+$s["validation_1_title"] = "Consulta informes de tus usuarios y crea grupos para gestionarlos más fácilmente";
+$s["validation_1_content_1"] = "Consulta el historial de consumo de cada uno de los usuarios de tu aplicación y las últimas promociones de las que se ha beneficiado. Con nuestro sistema de informes podrás comprobar además cuánto dinero se ha gastado cada usuario en tu negocio y cuánto beneficio has obtenido con cada una de sus compras.";
+$s["validation_1_content_2"] = "Con nuestro sistema de informes podrás diferenciar las necesidades de cada uno de tus clientes y crear campañas específicas para fidelizarlos mejor.";
+
+$s["validation_2_title"] = "Envía notificaciones a los usuarios e infórmales de todas tus novedades";
+$s["validation_2_content_1"] = "Puedes enviar notificaciones a todos los usuarios a través del panel de control. Cada notificación que envíes contiene un enlace que les llevará directamente a lo que quieras mostrarles de tu aplicación - una noticia, una nueva promoción o simplemente una imagen mostrándoles un nuevo producto -.";
+$s["validation_2_content_2"] = "Con el sistema de notificaciones de Royappty tus usuarios estarán al día de todas tus novedades.";
 
 $error_s["base"]["title"] = "Error desconocido";
 $error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";

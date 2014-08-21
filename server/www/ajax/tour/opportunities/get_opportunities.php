@@ -80,25 +80,68 @@
   $response["data"]["page-data"]="
   <div class='section first'>
     <div class='container'>
-      <div class='p-b-60 p-t-20 text-center'>
+      <div class='row p-t-20'>
+        <div class='col-md-1'>
+        </div>
+        <div class='col-md-10 text-center'>
           <h1 class='normal m-b-10'>".htmlentities($s["opportunities_1_title"], ENT_QUOTES, "UTF-8")."</h1>
-          <p>".htmlentities($s["opportunities_1_content"], ENT_QUOTES, "UTF-8")."</p>
+          <h4>".htmlentities($s["opportunities_1_content_1"], ENT_QUOTES, "UTF-8")."</h4>
+          <h4>".htmlentities($s["opportunities_1_content_2"], ENT_QUOTES, "UTF-8")."</h4>
+        </div>
+        <div class='col-md-1'>
+        </div>
+      </div>
+      <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
             <img src='".$url_server."assets/img/tour/opportunities/opportunities_1_image.png' alt='img01'>
           </div>
       </div>
-      <div class='p-b-60 p-t-20 text-center'>
+      <div class='row p-t-20'>
+        <div class='col-md-1'>
+        </div>
+        <div class='col-md-10 text-center'>
           <h1 class='normal m-b-10'>".htmlentities($s["opportunities_2_title"], ENT_QUOTES, "UTF-8")."</h1>
-          <p>".htmlentities($s["opportunities_2_content"], ENT_QUOTES, "UTF-8")."</p>
+          <h4>".htmlentities($s["opportunities_2_content_1"], ENT_QUOTES, "UTF-8")."</h4>
+          <h4>".htmlentities($s["opportunities_2_content_2"], ENT_QUOTES, "UTF-8")."</h4>
+        </div>
+        <div class='col-md-1'>
+        </div>
+      </div>
+      <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/opportunities/opportunities_1_image.png' alt='img01'>
+            <img src='".$url_server."assets/img/tour/opportunities/opportunities_2_image.png' alt='img01'>
           </div>
       </div>
-      <div class='p-b-60 p-t-20 text-center'>
-          <h1 class='normal m-b-10'>".htmlentities($s["opportunities_3_title"], ENT_QUOTES, "UTF-8")."</h1>
-          <p>".htmlentities($s["opportunities_3_content"], ENT_QUOTES, "UTF-8")."</p>
+      <div class='row p-t-20'>
+        <div class='col-md-1'>
+        </div>
+        <div class='col-md-10 text-center'>
+          <h1 class='normal m-b-10'>".htmlentities($s["promos_3_title"], ENT_QUOTES, "UTF-8")."</h1>
+          <h4>".htmlentities($s["opportunities_3_content_1"], ENT_QUOTES, "UTF-8")."</h4>
+          <h4>".htmlentities($s["opportunities_3_content_2"], ENT_QUOTES, "UTF-8")."</h4>
+        </div>
+        <div class='col-md-1'>
+        </div>
+      </div>
+      <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/opportunities/opportunities_1_image.png' alt='img01'>
+            <img src='".$url_server."assets/img/tour/opportunities/opportunities_3_image.png' alt='img01'>
+          </div>
+      </div>
+      <div class='row p-t-20'>
+        <div class='col-md-1'>
+        </div>
+        <div class='col-md-10 text-center'>
+          <h1 class='normal m-b-10'>".htmlentities($s["opportunities_4_title"], ENT_QUOTES, "UTF-8")."</h1>
+          <h4>".htmlentities($s["opportunities_4_content_1"], ENT_QUOTES, "UTF-8")."</h4>
+          <h4>".htmlentities($s["opportunities_4_content_2"], ENT_QUOTES, "UTF-8")."</h4>
+        </div>
+        <div class='col-md-1'>
+        </div>
+      </div>
+      <div class='p-b-60 text-center'>
+          <div class='m-t-40 m-b-20'>
+            <img src='".$url_server."assets/img/tour/opportunities/opportunities_4_image.png' alt='img01'>
           </div>
       </div>
       <div class='p-b-60 p-t-20 text-center'>
