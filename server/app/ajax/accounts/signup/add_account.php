@@ -163,6 +163,8 @@
 	$data["active"]=1;
 	$data["created"]=$timestamp;
 
+
+
 	$data["resume_block_1_display"] = 1;
 	$data["resume_block_1_title"] = "campaigns";
 	$data["resume_block_1_data"] = "0";
@@ -209,6 +211,20 @@
 	$brand=array();
 	$brand["id_brand"]=addInBD($table,$data);
 
+	$brand["num_code"] = str_pad($brand["id_brand"], 8, '0', STR_PAD_LEFT);
+	$brand["alfa_code"] = substr(strtolower(str_replace(' ', '', $data["name"])),0,5);
+	$brand["name"] = $_POST["name"];
+	
+	$table="brands";
+	$filter=array();
+	$filter["id_brand"] = array("operation"=>"=","value"=>$brand["id_brand"]);
+	$data=array();
+	$data["android_project_name"] = "Royappty ".$data["name"];
+	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$brand["alfa_code"];
+	updateInBD($table,$filter,$data);
+
+
+
 	$table="admins";
 	$data=array();
 	$data["id_brand"]=$brand["id_brand"];
@@ -254,44 +270,6 @@
 	$admin["verification_code"]=$data["verification_code"];
 	$admin["email"]=$data["email"];
 
-
-	$app=array();
-
-	if(@issetandnotempty($_POST["app_icon_path"])){
-		copy(PATH."../../".$_POST["app_icon_path"],PATH."../../resources/app-icon/".$timestamp.".jpg");
-		$app["app_icon_path"] = $timestamp.".jpg";
-	}else{
-		copy(PATH."../../server/app/assets/img/default-app-icon.jpg",PATH."resources/app-icon/".$timestamp.".jpg");
-		$app["app_icon_path"] = $timestamp.".jpg";
-	}
-	if(@issetandnotempty($_POST["app_bg_path"])){
-		copy(PATH."../../".$_POST["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
-		$app["app_bg_path"] = $timestamp.".jpg";
-	}else{
-		copy(PATH."../../server/app/assets/img/default-app-background.jpg",PATH."resources/app-bg/".$timestamp.".jpg");
-		$app["app_bg_path"] = $timestamp.".jpg";
-	}
-
-	$table="apps";
- 	$data=array();
-
-	$data["id_brand"]=$brand["id_brand"];
-
-	$app["id_app"]=addInBD($table,$data);
-
-	$table="brand_user_fields";
-	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
-	deleteInBD($table,$filter);
-	$brand_user_fields=explode("::", $_POST["brand_user_fields"]);
-	$table="brand_user_fields";
-	$data=array();
-	$data["id_brand"]=$brand["id_brand"];
-	foreach($brand_user_fields as $key=>$id_user_field){
-		$data["id_user_field"]=$id_user_field;
-		$data["main_field"]=1;
-		addInBD($table,$data);
-	}
 
 	$mail_for=$admin["email"];
 	$mail_content=htmlentities($signup_s["mail_content_header"], ENT_QUOTES, "UTF-8")."<br/><br/><a href='".$url_server."app/verification/?code=".$admin["verification_code"]."'></a>".$url_server."app/verification/?code=".$admin["verification_code"]."<br/><br/>".htmlentities($signup_s["mail_content_footer"], ENT_QUOTES, "UTF-8");

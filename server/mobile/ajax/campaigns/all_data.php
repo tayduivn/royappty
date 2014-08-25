@@ -86,7 +86,7 @@
 			<div class='navbar-inner'>
 				<table style='width:100%'>
 					<tr>
-						<td class='text-center' style='width:100%'><h4 class='text-center'>".htmlentities($app["app_title"], ENT_QUOTES, "UTF-8")."</h4></td>
+						<td class='text-center' style='width:100%'><h4 class='text-center'>".htmlentities($app["name"], ENT_QUOTES, "UTF-8")."</h4></td>
 					</tr>
 				</table>
 	 		</div>
@@ -94,9 +94,6 @@
 		<div class='page-container row'>
 			<div class='page-content bg-white page-mobile'>
 				<div class='content'>
-        <ul id='app-status-ul'>
-        <li> Status</li>
-      </ul>
 
 
  	";
@@ -126,7 +123,7 @@
 		if(!$is_usage_limit){
 
 
-			$img_file = PATH."../resources/campaign-icon/".$campaign["campaign_icon_path"];
+			$img_file = PATH."../../resources/campaign-icon/".$campaign["campaign_icon_path"];
 			$imgData = base64_encode(file_get_contents($img_file));
 			$src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
@@ -140,7 +137,7 @@
       </div>
 			";
 
-			$img_file = PATH."../resources/campaign-image/".$campaign["campaign_image_path"];
+			$img_file = PATH."../../resources/campaign-image/".$campaign["campaign_image_path"];
 			$imgData = base64_encode(file_get_contents($img_file));
 			$src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
@@ -392,15 +389,8 @@
  	* AJAX CALL RETURN
  	*********************************************************/
 
-
-
-
-
-
-
-
-
- 	echo json_encode($response);
-	debug_log("[server/mobile/ajax/campaigns/list] END");
+ 	echo "jsonCallback(".json_encode($response).")";
+  debug_log("[".$page_path."] END");
+  die();
 
 ?>

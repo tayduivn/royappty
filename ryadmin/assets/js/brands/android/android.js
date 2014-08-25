@@ -61,7 +61,7 @@ $(document).ready(function(){
 });
 function generate_android_app(){
 	$("#generate_android_app_terminal").html("<pre style='color:#666'><span style='color:purple'>[Android Generator 0.0.1]</span> Connecting to Server<span class='pull-right'>[<span style='color:black'>START</span>]</span></pre>");
-	call_step(1,4);
+	call_step(1,8);
 
 }
 function call_step(step,stop_step){
@@ -79,7 +79,7 @@ function call_step(step,stop_step){
 		},
 		success: function(response) {
 			if(response.result){
-				$("#generate_android_app_terminal").append(response.data);
+				$("#generate_android_app_terminal").prepend(response.data);
 				if(step<stop_step){
 					call_step(step+1,stop_step);
 				}

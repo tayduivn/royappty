@@ -38,10 +38,10 @@
  	*********************************************************/
 
  	// BRAND
- 	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
+ 	$brand=array();$brand["id_brand"]=$_GET["id_brand"];
 	if(!checkBrand($brand)){echo json_encode($response);die();}
  	// USER
-  	$user=array();$user["id_user"]=($_POST["id_user"]-1);
+  	$user=array();$user["id_user"]=($_GET["id_user"]-1);
 	if(!checkUser($user)){echo json_encode($response);die();}
 
 
@@ -52,8 +52,8 @@
 
  	$response["result"]=true;
   	$_SESSION['user']=array();
-    $_SESSION['user']["id_user"] = $_POST["id_user"];
-    $_SESSION['user']["id_brand"] = $_POST["id_brand"];
+    $_SESSION['user']["id_user"] = $_GET["id_user"];
+    $_SESSION['user']["id_brand"] = $_GET["id_brand"];
 	debug_log("[".$page_path."] Session Created user:{id_user:".$_SESSION['user']["id_user"].",id_brand:".$_SESSION['user']["id_brand"]."}");
 
 
@@ -64,7 +64,7 @@
 
  	$table="users";
  	$filter=array();
- 	$filter["id_user"]=array("operation"=>"=","value"=>$_POST["id_user"]);
+ 	$filter["id_user"]=array("operation"=>"=","value"=>$_GET["id_user"]);
  	$data=array();
  	$data["last_connection"] = strtotime(date("Y-m-d H:i:00"));
  	updateInBD($table,$filter,$data);
@@ -75,9 +75,8 @@
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
-
+  echo "jsonCallback(".json_encode($response).")";
  	debug_log("[".$page_path."] END");
- 	echo json_encode($response);
-
+  die();
 
 ?>

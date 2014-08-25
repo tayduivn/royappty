@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.royappty.ry_0000002_col.ColoranteAlimentario { <init>(...); }
+

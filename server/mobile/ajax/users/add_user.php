@@ -57,12 +57,12 @@
  	$data["resume_block_1_data"]=0;
  	$data["resume_block_1_link_content"]=0;
  	$data["resume_block_1_link"]=0;
-  	$data["resume_block_2_display"]=0;
+  $data["resume_block_2_display"]=0;
  	$data["resume_block_2_title"]=0;
  	$data["resume_block_2_data"]=0;
  	$data["resume_block_2_link_content"]=0;
  	$data["resume_block_2_link"]=0;
-  	$data["resume_block_3_display"]=0;
+	$data["resume_block_3_display"]=0;
  	$data["resume_block_3_title"]=0;
  	$data["resume_block_3_data"]=0;
  	$data["resume_block_3_link_content"]=0;
