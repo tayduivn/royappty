@@ -40,7 +40,7 @@
 
  	$response["result"]=true;
 
- 	switch ($_POST["error_code"]){
+ 	switch ($_GET["error_code"]){
  		case "no_brand":
  			$response["data"]["page"]="
  			<div class='page'>

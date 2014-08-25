@@ -35,7 +35,7 @@
  	*********************************************************/
 
  	// BRAND
- 	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
+ 	$brand=array();$brand["id_brand"]=$_GET["id_brand"];
 	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
 
 
@@ -48,7 +48,7 @@
 
  	$table="users";
  	$data=array();
- 	$data["id_brand"]=$_POST["id_brand"];
+ 	$data["id_brand"]=$_GET["id_brand"];
  	$data["active"]=1;
  	$data["created"]=$timestamp;
  	$data["last_connection"]=$timestamp;
@@ -75,7 +75,7 @@
  	$user=array();
  	$user["id_user"]=addInBD($table,$data);
 
- 	$signup_datas=explode("&",$_POST["signup_data"]);
+ 	$signup_datas=explode("&",$_GET["signup_data"]);
 	foreach ($signup_datas as $key=>$signup_data){
 		$signup_field=explode("=",$signup_data);
 		$table="user_fields";

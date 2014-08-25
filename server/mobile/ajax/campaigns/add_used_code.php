@@ -44,7 +44,7 @@
   	$user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
 	if(!checkUser($user)){echo "jsonCallback(".json_encode($response).")";die();}
  	// Code
-  $code=array();$code["id_brand"]=$_SESSION["user"]["id_brand"];$code["promo_password"]=$_POST["promo_password"];
+  $code=array();$code["id_brand"]=$_SESSION["user"]["id_brand"];$code["promo_password"]=$_GET["promo_password"];
 	if(!checkCode($code)){echo "jsonCallback(".json_encode($response).")";die();}
 
 
@@ -58,17 +58,17 @@
  	$table="admins";
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
-	$filter["promo_password"]=array("operation"=>"=","value"=>$_POST["promo_password"]);
+	$filter["promo_password"]=array("operation"=>"=","value"=>$_GET["promo_password"]);
  	$admin=getInBD($table,$filter);
 
  	$table="used_codes";
  	$data=array();
  	$data["id_user"] = $_SESSION["user"]["id_user"];
- 	$data["id_campaign"] = $_POST["id_campaign"];
+ 	$data["id_campaign"] = $_GET["id_campaign"];
  	$data["id_brand"] = $_SESSION["user"]["id_brand"];
  	$data["id_admin"] = $admin["id_admin"];
  	$data["created"] = $timestamp;
- 	$data["code"] = $_POST["code"];
+ 	$data["code"] = $_GET["code"];
  	addInBD($table,$data);
 
 
@@ -90,7 +90,7 @@
 
 	$table='used_codes_summaries';
 	$filter=array();
-	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
+	$filter["id_campaign"]=array("operation"=>"=","value"=>$_GET["id_campaign"]);
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
 	if(isInBD($table,$filter)){
 		$used_codes_amount=getInBD($table,$filter);
@@ -99,7 +99,7 @@
 		updateInBD($table,$filter,$data);
 	}else{
 		$data=array();
-		$data["id_campaign"]=$_POST["id_campaign"];
+		$data["id_campaign"]=$_GET["id_campaign"];
 		$data["id_brand"]=$_SESSION["user"]["id_brand"];
 		$data["used_codes_amount"]=1;
 		addInBD($table,$data);
@@ -107,7 +107,7 @@
 
 	$table='used_codes_day_summaries';
 	$filter=array();
-	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
+	$filter["id_campaign"]=array("operation"=>"=","value"=>$_GET["id_campaign"]);
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
 	$filter["start"]=array("operation"=>"=","value"=>$day);
 	if(isInBD($table,$filter)){
@@ -117,7 +117,7 @@
 		updateInBD($table,$filter,$data);
 	}else{
 		$data=array();
-		$data["id_campaign"]=$_POST["id_campaign"];
+		$data["id_campaign"]=$_GET["id_campaign"];
 		$data["id_brand"]=$_SESSION["user"]["id_brand"];
 		$data["start"]=$day;
 		$data["used_codes_amount"]=1;
@@ -127,7 +127,7 @@
 
 	$table='used_codes_month_summaries';
 	$filter=array();
-	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
+	$filter["id_campaign"]=array("operation"=>"=","value"=>$_GET["id_campaign"]);
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
 	$filter["start"]=array("operation"=>"=","value"=>$month);
 	if(isInBD($table,$filter)){
@@ -137,7 +137,7 @@
 		updateInBD($table,$filter,$data);
 	}else{
 		$data=array();
-		$data["id_campaign"]=$_POST["id_campaign"];
+		$data["id_campaign"]=$_GET["id_campaign"];
 		$data["id_brand"]=$_SESSION["user"]["id_brand"];
 		$data["start"]=$month;
 		$data["used_codes_amount"]=1;

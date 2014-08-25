@@ -35,7 +35,7 @@
  	*********************************************************/
 
  	// BRAND
- 	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
+ 	$brand=array();$brand["id_brand"]=$_GET["id_brand"];
 	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
 
  	/*********************************************************
