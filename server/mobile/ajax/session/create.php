@@ -39,10 +39,10 @@
 
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_GET["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
+	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
  	// USER
   	$user=array();$user["id_user"]=($_GET["id_user"]-1);
-	if(!checkUser($user)){echo json_encode($response);die();}
+	if(!checkUser($user)){echo "jsonCallback(".json_encode($response).")";die();}
 
 
 

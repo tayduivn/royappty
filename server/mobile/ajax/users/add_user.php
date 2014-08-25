@@ -36,7 +36,7 @@
 
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
+	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
 
 
 
@@ -105,7 +105,7 @@
  	*********************************************************/
 
  	debug_log("[".$page_path."] END");
- 	echo json_encode($response);
+ 	echo "jsonCallback(".json_encode($response).")";
  	die();
 
 ?>

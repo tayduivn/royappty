@@ -39,13 +39,13 @@
 
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_SESSION["user"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
+	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
  	// USER
   	$user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
-	if(!checkUser($user)){echo json_encode($response);die();}
+	if(!checkUser($user)){echo "jsonCallback(".json_encode($response).")";die();}
  	// Code
   $code=array();$code["id_brand"]=$_SESSION["user"]["id_brand"];$code["promo_password"]=$_POST["promo_password"];
-	if(!checkCode($code)){echo json_encode($response);die();}
+	if(!checkCode($code)){echo "jsonCallback(".json_encode($response).")";die();}
 
 
 
@@ -220,7 +220,7 @@
  	*********************************************************/
 
  	debug_log("[".$page_path."] END");
- 	echo json_encode($response);
+ 	echo "jsonCallback(".json_encode($response).")";
 
 
 

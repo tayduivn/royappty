@@ -38,10 +38,10 @@
 
  	// BRAND
  	$brand=array();$brand["id_brand"]=$_SESSION["user"]["id_brand"];
-	if(!checkBrand($brand)){echo json_encode($response);die();}
+	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
  	// USER
   $user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
-	if(!checkUser($user)){echo json_encode($response);die();}
+	if(!checkUser($user)){echo "jsonCallback(".json_encode($response).")";die();}
 
   $table="apps";
   $filter=array();
@@ -64,7 +64,7 @@
          <img class='full-width full-height' src='".$src."'/>
        </div>
      ";
-     echo json_encode($response);
+     echo "jsonCallback(".json_encode($response).")";
      die();
   }
  	/*********************************************************

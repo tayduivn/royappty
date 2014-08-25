@@ -148,7 +148,7 @@
 
 
 
- 	echo json_encode($response);
+ 	echo "jsonCallback(".json_encode($response).")";
 	debug_log("[".$page_path."] END");
 
 ?>
