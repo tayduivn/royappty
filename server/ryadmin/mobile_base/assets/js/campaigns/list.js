@@ -14,7 +14,7 @@ $(document).ready(function() {
 					data: {
 					},
 					error: function(data, textStatus, jqXHR) {
-						alert("server/mobile/ajax/campaigns/all_data.php");
+						alert(data+" "+textStatus+" "+jqXHR)
 						error_handler("ajax_error");
 					},
 					success: function(response) {
@@ -37,7 +37,6 @@ $(document).ready(function() {
 		}
 		setInterval(update, 60000);
 	}
-	update();
 
 
 });

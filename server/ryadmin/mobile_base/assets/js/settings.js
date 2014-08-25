@@ -37,25 +37,27 @@ loadjscssfile($SERVER_PATH+"server/mobile/assets/css/server_style.css", "css");
   }
 })();
 
-$(document).ready(function(){
-	$.ajax({
-		async:false,
-		dataType: 'json',
-		url: $PATH+"data/brand.json",
-		data: {
-		},
-		error: function(data, textStatus, jqXHR) {
-			error_handler("no_brand");
-		},
-		success: function(response) {
-			if(response.result){
-				localStorage.setItem('brand',response.data.id_brand);
-				$BRAND=response.data.id_brand;
-			} else {
-				error_handler("no_brand");
-			}
+if ((typeof localStorage.getItem('id_brand') == 'undefined') || (localStorage.getItem('id_brand') == null)) {
+  $.ajax({
+    async:false,
+    dataType: 'json',
+    url: $PATH+"data/brand.json",
+    data: {
+    },
+    error: function(data, textStatus, jqXHR) {
+      error_handler("no_brand");
+    },
+    success: function(response) {
+      if(response.result){
+        localStorage.setItem('brand',response.data.id_brand);
+        $BRAND=response.data.id_brand;
+      } else {
+        error_handler("no_brand");
+      }
 
-		}
-	});
-
-});
+    }
+  });
+}else{
+  $BRAND=localStorage.getItem('id_brand');
+}
+alert("BRAND -- "+$BRAND);

@@ -35,7 +35,7 @@
  	*********************************************************/
 
  	// BRAND
- 	$brand=array();$brand["id_brand"]=$_POST["id_brand"];
+ 	$brand=array();$brand["id_brand"]=$_GET["id_brand"];
 	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
 
  	/*********************************************************
@@ -57,7 +57,7 @@
 							<div id='form-warning' class='text-error text-center h5'></div>";
 	$table="brand_user_fields";
 	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_GET["id_brand"]);
 	$brand_user_fields=listInBD($table,$filter);
 	foreach($brand_user_fields as $key=>$brand_user_field){
 		$table="user_fields";

@@ -1,15 +1,19 @@
 $(document).ready(function() {
-
+	alert("calling signup: "+$BRAND);
 	$.ajax({
 		async: false,
-		type: "POST",
-		dataType: 'json',
+		type: "GET",
+		dataType: 'jsonp',
+		jsonp: 'callback',
+		jsonpCallback: 'jsonCallback',
+		contentType: 'application/json',
 		url: $SERVER_PATH+"server/mobile/ajax/session/signup.php",
 		data: {
 			id_brand:$BRAND
 		},
 		error: function(data, textStatus, jqXHR) {
-			error_handler("ajax_error");
+			alert("cant get signup");
+			//error_handler("ajax_error");
 		},
 		success: function(response) {
 			if(response.result){
@@ -34,8 +38,11 @@ function signup(){
 	});
 	$.ajax({
 		async: false,
-		type: "POST",
-		dataType: 'json',
+		type: "GET",
+		dataType: 'jsonp',
+		jsonp: 'callback',
+		jsonpCallback: 'jsonCallback',
+		contentType: 'application/json',
 		url: $SERVER_PATH+"server/mobile/ajax/session/signin.php",
 		data: {
 			id_brand:$BRAND
@@ -50,8 +57,11 @@ function signup(){
 				});
 				$.ajax({
 					async: false,
-					type: "POST",
-					dataType: 'json',
+					type: "GET",
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: 'jsonCallback',
+					contentType: 'application/json',
 					url: $SERVER_PATH+"server/mobile/ajax/users/add_user.php",
 					data: {
 						id_brand:$BRAND,
