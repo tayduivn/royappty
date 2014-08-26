@@ -2,29 +2,42 @@
 /*********************************************************
 *
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 23-06-2014
-* Version: 0.93
+* Last Edit: 26-08-2014
+* Version: 0.94
 *
 *********************************************************/
 
+$server_option='local';
 
-$conf = array(
-	'bdtype' => 'mysql',
-	'bdserver' => 'localhost',
-	'bdport' => '',
-	'bd' => 'royappty',
-	'bduser' => 'root',
-	'bdpass' => '2CuW2St9',
-	'bdprefix' => ''
-);
-$url_server = "http://www.royappty.com/";
+switch ($server_option){
+	case "local":
+		$conf = array(
+			'bdtype' => 'mysql',
+			'bdserver' => 'localhost',
+			'bdport' => '',
+			'bd' => 'royappty',
+			'bduser' => 'root',
+			'bdpass' => 'root',
+			'bdprefix' => ''
+		);
+		$url_server = "http://localhost:8888/royappty/";
+
+		break;
+	case "server":
+		$conf = array(
+			'bdtype' => 'mysql',
+			'bdserver' => 'localhost',
+			'bdport' => '',
+			'bd' => 'royappty',
+			'bduser' => 'root',
+			'bdpass' => '2CuW2St9',
+			'bdprefix' => ''
+		);
+		$url_server = "http://www.royappty.com/";
+		break;
+}
+
 $campaign_bd_type[2]="discount";
 $campaign_bd_type[1]="coupon";
-
-$block_types["brand"][1]="campaigns";
-$block_types["brand"][2]="usage_this_month";
-$block_types["brand"][3]="usage_this_today";
-$block_types["brand"][4]="users";
-
 
 ?>
