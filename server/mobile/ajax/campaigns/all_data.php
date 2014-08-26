@@ -54,7 +54,8 @@
   $filter["status"]=array("operation"=>"=","value"=>1);
   $fields=array();
   if(!isInBD($table,$filter,$fields)){
-     $img_file = PATH."../resources/app-bg/".$app["app_bg_path"];
+ 	debug_log("[".$page_path."] No campaigns to show");
+     $img_file = PATH."../../resources/app-bg/".$app["app_bg_path"];
      $imgData = base64_encode(file_get_contents($img_file));
      $src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
@@ -390,7 +391,7 @@
  	*********************************************************/
 
  	echo "jsonCallback(".json_encode($response).")";
-  debug_log("[".$page_path."] END");
-  die();
+	  debug_log("[".$page_path."] END");
+	  die();
 
 ?>
