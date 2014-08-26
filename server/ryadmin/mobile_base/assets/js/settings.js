@@ -38,6 +38,7 @@ loadjscssfile($SERVER_PATH+"server/mobile/assets/css/server_style.css", "css");
 })();
 
 if ((typeof localStorage.getItem('id_brand') == 'undefined') || (localStorage.getItem('id_brand') == null)) {
+  console.log("[data/brand.json] Call Start");
   $.ajax({
     async:false,
     dataType: 'json',
@@ -45,9 +46,11 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined') || (localStorage.ge
     data: {
     },
     error: function(data, textStatus, jqXHR) {
+      console.log("[data/brand.json] Error");
       error_handler("no_brand");
     },
     success: function(response) {
+      console.log("[data/brand.json] Success");
       if(response.result){
         localStorage.setItem('brand',response.data.id_brand);
         $BRAND=response.data.id_brand;
@@ -59,5 +62,5 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined') || (localStorage.ge
   });
 }else{
   $BRAND=localStorage.getItem('id_brand');
+  console.log("[data/brand.json] Brand stored in local storage");
 }
-alert("BRAND -- "+$BRAND);

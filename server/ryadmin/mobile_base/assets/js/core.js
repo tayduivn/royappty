@@ -13,3 +13,25 @@
 })();
 
 var page_selected="index";
+
+var pushNotification;
+function onDeviceReady() {
+}
+function onNotificationAPN(e) {
+
+}
+function onNotification(e) {
+
+}
+function tokenHandler (result) {
+
+}
+
+function successHandler (result) {
+
+}
+
+function errorHandler (error) {
+
+}
+document.addEventListener('deviceready', onDeviceReady, true);
