@@ -10,7 +10,7 @@
 $server_option='local';
 
 switch ($server_option){
-	case "local"
+	case "local":
 		$conf = array(
 			'bdtype' => 'mysql',
 			'bdserver' => 'localhost',
@@ -23,7 +23,7 @@ switch ($server_option){
 		$url_server = "http://localhost:8888/royappty/";
 
 		break;
-	case "server"
+	case "server":
 		$conf = array(
 			'bdtype' => 'mysql',
 			'bdserver' => 'localhost',
