@@ -60,4 +60,3 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined') || (localStorage.ge
 }else{
   $BRAND=localStorage.getItem('id_brand');
 }
-alert("BRAND -- "+$BRAND);
