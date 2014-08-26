@@ -17,6 +17,10 @@ $(document).ready(function() {
 				jQuery.each(response.data,function(key,value){
 					$(".ajax-loader-"+key).html(value);
 				});
+				$("form").submit(function(e){
+							e.preventDefault();
+							signup();
+				});
 			} else {
 				error_handler(response.error_code);
 			}
@@ -26,6 +30,8 @@ $(document).ready(function() {
 
 
 });
+
+
 function signup(){
 	input_str="";
 	and="";
@@ -46,15 +52,13 @@ function signup(){
 			signup_data:input_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			alert(data+" - "+textStatus+" - "+jqXHR);
+			alert("adduser:"+data+" - "+textStatus+" - "+jqXHR);
 			error_handler("sign_up_error");
-
 		},
 		success: function(response) {
-			alert("server/mobile/ajax/users/add_user.php END");
 			if(response.result){
 				localStorage.setItem('id_user', response.data.id_user);
-				alert("User stored = "+id_user);
+				alert("User stored = "+localStorage.getItem("id_user"));
 				window.location.href = "../";
 			} else {
 				error_handler(response.error_code);
