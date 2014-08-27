@@ -213,13 +213,13 @@
 
 	$brand["num_code"] = str_pad($brand["id_brand"], 8, '0', STR_PAD_LEFT);
 	$brand["alfa_code"] = substr(strtolower(str_replace(' ', '', $data["name"])),0,5);
-	$brand["name"] = $_POST["name"];
+	$brand["android_project_name"] = strtolower(str_replace(' ', '', $data["name"]));
 	
 	$table="brands";
 	$filter=array();
 	$filter["id_brand"] = array("operation"=>"=","value"=>$brand["id_brand"]);
 	$data=array();
-	$data["android_project_name"] = "Royappty ".$data["name"];
+	$data["android_project_name"] = $brand["android_project_name"];
 	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$brand["alfa_code"];
 	updateInBD($table,$filter,$data);
 

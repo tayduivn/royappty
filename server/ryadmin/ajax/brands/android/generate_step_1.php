@@ -76,7 +76,7 @@
 	$brand=getInBD($table,$filter);
 
 
-	$message=shell_exec("./generator_step_1.sh ".$brand["android_project_id"]." com.royappty.".$brand["android_project_name"]." ".$brand["name"]."");
+	$message=shell_exec("./generator_step_1.sh ".$brand["android_project_name"]." com.royappty.".$brand["android_project_name"]." ".$brand["android_project_name"]."");
 	$message=str_replace("[36m","<span style='color:blue'>",$message);
 	$message=str_replace("[35m","<span style='color:purple'>",$message);
 	$message=str_replace("[31m","<span style='color:red'>",$message);

@@ -24,6 +24,8 @@ if ((typeof localStorage.getItem('id_user') == 'undefined') || (localStorage.get
 		success: function(response) {
 			console.log("[server/mobile/ajax/session/create.php] Ajax Success");
 			if(response.result){
+				console.log("[server/mobile/ajax/session/create.php] Calling update");
+
 				update();
 			} else {
 				error_handler(response.error_code);

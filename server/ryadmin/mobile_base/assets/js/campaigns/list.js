@@ -1,45 +1,45 @@
 function update(){
+	console.log("[server/mobile/ajax/campaigns/all_data.php] Update Page");
 	if(page_selected=="index"){
-			$.ajax({
-				async: false,
-				type: "GET",
-				dataType: 'jsonp',
-				jsonp: 'callback',
-				jsonpCallback: 'jsonCallback',
-				contentType: 'application/json',
-				url: $SERVER_PATH+"server/mobile/ajax/campaigns/all_data.php",
-				data: {
-				},
-				error: function(data, textStatus, jqXHR) {
-					console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax error");
-					//error_handler("ajax_error");
-				},
-				success: function(response) {
-					console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax Success");
-					if(response.result){
-						console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result true");
-						jQuery.each(response.data,function(key,value){
-							localStorage.removeItem(key);
-							localStorage.setItem(key, value);
+		$.ajax({
+			async: false,
+			type: "GET",
+			dataType: 'jsonp',
+			jsonp: 'callback',
+			jsonpCallback: 'jsonCallback',
+			contentType: 'application/json',
+			url: $SERVER_PATH+"server/mobile/ajax/campaigns/all_data.php",
+			data: {
+			},
+			error: function(data, textStatus, jqXHR) {
+				console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax error");
+				//error_handler("ajax_error");
+			},
+			success: function(response) {
+				console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax Success");
+				if(response.result){
+					console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result true");
+					jQuery.each(response.data,function(key,value){
+						console.log("[server/mobile/ajax/campaigns/all_data.php] Update data: "+key);
 
-						});
-					} else {
-						console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result true");
-						error_handler(response.error_code);
-					}
-
+						localStorage.removeItem(key);
+						localStorage.setItem(key, value);
+					});
+				} else {
+					console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result false");
+					error_handler(response.error_code);
 				}
-			});
-			for( var key in localStorage){
-				console.log("[server/mobile/ajax/campaigns/all_data.php] Update Page");
-
-				$(".ajax-loader-"+key).html(localStorage.getItem(key));
 			}
-			$("#form-wizard form").submit(function(e){
-					e.preventDefault();
-			});
+		});
+		for( var key in localStorage){
+			console.log("[server/mobile/ajax/campaigns/all_data.php] Update loader: "+key);
+			$(".ajax-loader-"+key).html(localStorage.getItem(key));
+		}
+		$("#form-wizard form").submit(function(e){
+			e.preventDefault();
+		});
 	}
-	setInterval(update, 100000);
+	setInterval(update, 1000);
 
 }
 

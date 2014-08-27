@@ -123,7 +123,7 @@
 										<div class='terminal-box m-t-20 m-b-20' id='generate_android_app_terminal'>
 										</div>
 										<a href='javascript:generate_android_app();' class='btn btn-white'>".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
-										<a href='".$url_server."server/ryadmin/ajax/brands/android/".$brand["android_project_id"]."/platforms/android/ant-build/".$brand["android_project_id"]."-debug.apk' class='btn btn-white'>".htmlentities($s["download_android_app"], ENT_QUOTES, "UTF-8")."</a>
+										<a href='".$url_server."server/ryadmin/mobile_apps/".$brand["android_project_name"]."-debug.apk' class='btn btn-white'>".htmlentities($s["download_android_app"], ENT_QUOTES, "UTF-8")."</a>
 
 									</div>
 									<p class='text-center'>

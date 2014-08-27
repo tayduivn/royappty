@@ -26,7 +26,7 @@ $(document).ready(function(){
 				});
 
 				$("form").submit(function(e){
-							e.preventDefault();
+					e.preventDefault();
 				});
 
 				$("#android_project_number_form").validate({
@@ -78,6 +78,7 @@ function call_step(step,stop_step){
 			error_handler("ajax_error");
 		},
 		success: function(response) {
+
 			if(response.result){
 				$("#generate_android_app_terminal").prepend(response.data);
 				if(step<stop_step){

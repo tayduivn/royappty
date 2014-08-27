@@ -22,3 +22,4 @@ rm -rf node/
 
 chmod 777 ../ryadmin/ajax/brands/android/generator_step_*
 chmod -R 777 ../resources
+chmod -R 777 /usr/share/adt-bundle-linux-x86_64-20140702/sdk/tools/
