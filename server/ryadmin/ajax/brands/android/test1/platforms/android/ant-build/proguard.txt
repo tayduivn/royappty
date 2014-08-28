@@ -1,3 +1,0 @@
-# view AndroidManifest.xml #generated:6
--keep class com.royappty.test1.test1 { <init>(...); }
-
