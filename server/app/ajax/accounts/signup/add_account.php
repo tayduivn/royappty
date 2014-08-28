@@ -213,18 +213,27 @@
 
 	$brand["num_code"] = str_pad($brand["id_brand"], 8, '0', STR_PAD_LEFT);
 	$brand["alfa_code"] = substr(strtolower(str_replace(' ', '', $data["name"])),0,5);
-	$brand["android_project_name"] = strtolower(str_replace(' ', '', $data["name"]));
-	
-	$table="brands";
-	$filter=array();
-	$filter["id_brand"] = array("operation"=>"=","value"=>$brand["id_brand"]);
+	$brand["project_name"] = strtolower(str_replace(' ', '', $data["name"]));
+
+	$table="apps";
 	$data=array();
-	$data["android_project_name"] = $brand["android_project_name"];
+	$data["id_brand"] =	$brand["id_brand"];
+	$data["name"] = $_POST["name"];
+	$data["project_codename"] =	$brand["project_name"];
 	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$brand["alfa_code"];
-	updateInBD($table,$filter,$data);
-
-
-
+	$data["description"] = "";
+	$data["published_apple_store"] = 0;
+	$data["published_google_play"] = 0;
+	$data["app_title"] = $_POST["name"];
+	$data["app_icon_path"] = "";
+	$data["app_bg_path"] = "";
+	$data["automatic_screenshots"] = 0;
+	$data["app_screenshot_1_path"] = "";
+	$data["app_screenshot_2_path"] = "";
+	$data["app_screenshot_3_path"] = "";
+	$data["app_screenshot_4_path"] = "";
+	addInBD($table,$data);
+	
 	$table="admins";
 	$data=array();
 	$data["id_brand"]=$brand["id_brand"];

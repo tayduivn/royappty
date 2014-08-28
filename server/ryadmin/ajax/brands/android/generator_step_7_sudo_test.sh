@@ -1,14 +1,8 @@
 #!/bin/bash
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/share/adt-bundle-linux-x86_64-20140702/sdk/platform-tools:/usr/share/adt-bundle-linux-x86_64-20140702/sdk/tools
-cd $1
-cp -R ../../../../mobile_base/* ./www/
-rm ./www/data/brand.json
-touch ./www/data/brand.json
-echo "{\"result\" : true,\"data\" :{\"id_brand\" : $4}}" >> ./www/data/brand.json
 rm ./www/config.xml
 touch ./www/config.xml
 
-<?xml version=\"1.0\" encoding=\"utf-8\"?>" >> ./www/config.xml
+echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" >> ./www/config.xml
 echo "<widget id=\"$2\" version=\"1.0.0\" xmlns=\"http://www.w3.org/ns/widgets\" xmlns:gap=\"http://phonegap.com/ns/1.0\">" >> ./www/config.xml
 echo "<name>$5</name>" >> ./www/config.xml
 echo "<description>" >> ./www/config.xml
@@ -62,4 +56,3 @@ echo "<gap:splash gap:platform=\"android\" gap:qualifier=\"port-hdpi\" src=\"res
 echo "<gap:splash gap:platform=\"android\" gap:qualifier=\"port-xhdpi\" src=\"res/screen/android/screen-xhdpi-portrait.png\" />" >> ./www/config.xml
 echo "<access origin=\"*\" />" >> ./www/config.xml
 echo "</widget>" >> ./www/config.xml
-echo "
