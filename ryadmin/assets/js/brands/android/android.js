@@ -61,6 +61,8 @@ $(document).ready(function(){
 });
 function generate_android_app(){
 	$("#generate_android_app_terminal").html("<pre style='color:#666'><span style='color:purple'>[Android Generator 0.0.1]</span> Connecting to Server<span class='pull-right'>[<span style='color:black'>START</span>]</span></pre>");
+	$("#generate_android_app_terminal_bar .progress-bar").css("width","0%");
+	$("#generate_android_app_terminal_bar").removeClass("progress-completed");
 	call_step(1,9);
 
 }
@@ -81,8 +83,12 @@ function call_step(step,stop_step){
 
 			if(response.result){
 				$("#generate_android_app_terminal").prepend(response.data);
+				bar_status=((step+1)/stop_step)*100;
+				$("#generate_android_app_terminal_bar .progress-bar").css("width",bar_status+"%");
 				if(step<stop_step){
 					call_step(step+1,stop_step);
+				}else{
+					$("#generate_android_app_terminal_bar").addClass("progress-completed");
 				}
 			} else {
 				error_handler(response.error_code);

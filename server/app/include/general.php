@@ -6,7 +6,16 @@
 * Version: 0.93
 *
 *********************************************************/
-
+function normalize_str ($cadena){
+    $originales = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞ
+ßàáâãäåæçèéêëìíîïğñòóôõöøùúûıışÿ';
+    $modificadas = 'aaaaaaaceeeeiiiidnoooooouuuuy
+bsaaaaaaaceeeeiiiidnoooooouuuyyby';
+    $cadena = utf8_decode($cadena);
+    $cadena = strtr($cadena, utf8_decode($originales), $modificadas);
+    $cadena = strtolower($cadena);
+    return utf8_encode($cadena);
+}
 function debug_log($str){
 	global $CONFIG;
 

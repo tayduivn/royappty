@@ -75,7 +75,12 @@
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	$brand=getInBD($table,$filter);
 
-	$message=shell_exec("./generator_step_6.sh ".$brand["android_project_name"]." com.royappty.".$brand["android_project_name"]." ".$brand["android_project_name"]."");
+	$table="apps";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
+	$app=getInBD($table,$filter);
+
+	$message=shell_exec("./generator_step_6.sh ".$app["project_codename"]." ".$app["package_address"]." ".$app["project_codename"]."");
 	$message=str_replace("[36m","<span style='color:blue'>",$message);
 	$message=str_replace("[35m","<span style='color:purple'>",$message);
 	$message=str_replace("[31m","<span style='color:red'>",$message);

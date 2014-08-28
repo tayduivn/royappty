@@ -3,5 +3,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/share/adt
 cd $1
 cp -R ../../../../mobile_base/* ./www/
 rm ./www/data/brand.json
-touch ./www/data/brand.json
-echo "{\"result\" : true,\"data\" :{\"id_brand\" : $4}}" >> ./www/data/brand.json
+cp ../../../../../resources/mobile-app/$1/brand.json ./www/data/brand.json
+cp ../../../../../resources/mobile-app/$1/android_config.xml ./www/config.xml
+cp ../../../../../resources/mobile-app/$1/app_icon.png ./icon.png
+
