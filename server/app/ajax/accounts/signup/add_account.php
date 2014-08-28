@@ -213,13 +213,14 @@
 
 	$brand["num_code"] = str_pad($brand["id_brand"], 8, '0', STR_PAD_LEFT);
 	$brand["alfa_code"] = substr(strtolower(str_replace(' ', '', $data["name"])),0,5);
-	$brand["project_name"] = strtolower(str_replace(' ', '', $data["name"]));
+	$brand["project_name"] = normalize_str(strtolower(str_replace(' ', '', $data["name"])));
 
 	$table="apps";
 	$data=array();
 	$data["id_brand"] =	$brand["id_brand"];
 	$data["name"] = $_POST["name"];
 	$data["project_codename"] =	$brand["project_name"];
+	$data["package_address"] = $CONFIG["component_url_prefix"].".".$brand["project_name"];
 	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$brand["alfa_code"];
 	$data["description"] = "";
 	$data["published_apple_store"] = 0;

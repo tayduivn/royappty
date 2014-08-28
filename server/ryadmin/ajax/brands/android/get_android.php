@@ -75,6 +75,12 @@
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	$fields=array();
 	$brand=getInBD($table,$filter,$fields);
+	
+	$table="apps";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
+	$fields=array();
+	$app=getInBD($table,$filter,$fields);
 
  	$response=array();
  	$response["result"]=true;
@@ -94,8 +100,8 @@
 									<h4>".htmlentities($generate_android_app_steps[1]["title"], ENT_QUOTES, "UTF-8")."</h4>
 									<p>".$generate_android_app_steps[1]["content"]."</p>
 									<div class='box m-b-20'>
-										<h6><b>Nombre del Proyecto:</b> ".htmlentities($brand["android_project_name"], ENT_QUOTES, "UTF-8")."</h6>
-										<h6><b>ID del Proyecto:</b> ".htmlentities($brand["android_project_id"], ENT_QUOTES, "UTF-8")."</h6>
+										<h6><b>Nombre del Proyecto:</b> ".htmlentities($app["project_codename"], ENT_QUOTES, "UTF-8")."</h6>
+										<h6><b>ID del Proyecto:</b> ".htmlentities($app["android_project_id"], ENT_QUOTES, "UTF-8")."</h6>
 									</div>
 									<h4>".htmlentities($generate_android_app_steps[2]["title"], ENT_QUOTES, "UTF-8")."</h4>
 									<p>".$generate_android_app_steps[2]["content"]."</p>
@@ -123,7 +129,7 @@
 										<div class='terminal-box m-t-20 m-b-20' id='generate_android_app_terminal'>
 										</div>
 										<a href='javascript:generate_android_app();' class='btn btn-white'>".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
-										<a href='".$url_server."server/ryadmin/mobile_apps/".$brand["android_project_name"]."-debug.apk' class='btn btn-white'>".htmlentities($s["download_android_app"], ENT_QUOTES, "UTF-8")."</a>
+										<a href='".$url_server."server/ryadmin/mobile_apps/".$app["project_codename"]."-debug.apk' class='btn btn-white'>".htmlentities($s["download_android_app"], ENT_QUOTES, "UTF-8")."</a>
 
 									</div>
 									<p class='text-center'>
