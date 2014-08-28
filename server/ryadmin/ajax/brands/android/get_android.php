@@ -124,12 +124,19 @@
 									</div>
 									<h4>".htmlentities($generate_android_app_steps[4]["title"], ENT_QUOTES, "UTF-8")."</h4>
 									<p>".$generate_android_app_steps[4]["content"]."</p>
-
+									<div>
+										
+									</div>
 									<div class='box m-b-20'>
+										
 										<div class='terminal-box m-t-20 m-b-20' id='generate_android_app_terminal'>
 										</div>
+										<div id='generate_android_app_terminal_bar' class='progress progress-striped active progress-large'>
+											<div style='width: 0%;'  class='progress-bar progress-bar-success' role='progressbar' aria-valuemin='0' aria-valuemax='100'></div>
+											<p id='text-success' class='text-success'>".htmlentities($s["completed"], ENT_QUOTES, "UTF-8")."</p>
+										</div>
 										<a href='javascript:generate_android_app();' class='btn btn-white'>".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
-										<a href='".$url_server."server/ryadmin/mobile_apps/".$app["project_codename"]."-debug.apk' class='btn btn-white'>".htmlentities($s["download_android_app"], ENT_QUOTES, "UTF-8")."</a>
+										<a href='".$url_server."server/resources/mobile-app/".$app["project_codename"]."/".$app["project_codename"]."-debug.apk' class='btn btn-white'>".htmlentities($s["download_android_app"], ENT_QUOTES, "UTF-8")."</a>
 
 									</div>
 									<p class='text-center'>

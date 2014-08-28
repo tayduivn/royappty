@@ -7,7 +7,38 @@
 *
 *********************************************************/
 
+function create_app_folder($path,$app_project_codename){
+	global $page_path;
+	
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Check Folder");
+	
+	if (!file_exists($path."resources/mobile-app/".$app_project_codename)) {
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Folder not exits");
+	   	mkdir($path."resources/mobile-app/".$app_project_codename, 0777, true);
+	   	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Folder created");
+	}else{
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Folder exits");
+	}
 
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_icon.png] Check File");
+	if (!file_exists($path."resources/mobile-app/".$app_project_codename."/app_icon.png")) {
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_icon.png] File not exits");
+	}else{
+		unlink($path."resources/mobile-app/".$app_project_codename."/app_icon.png");
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_icon.png] File deleted");
+	}
+	copy($path."resources/defaults/app_icon.png",$path."resources/mobile-app/".$app_project_codename."/app_icon.png");
+	
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.jpg] Check File");
+	if (!file_exists($path."resources/mobile-app/".$app_project_codename."/app_bg.jpg")) {
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.jpg] File not exits");
+	}else{
+		unlink($path."resources/mobile-app/".$app_project_codename."/app_bg.jpg");
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.jpg] File deleted");
+	}
+	copy($path."resources/defaults/app_bg.jpg",$path."resources/mobile-app/".$app_project_codename."/app_bg.jpg");
+
+}
 
 	
 function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey) {

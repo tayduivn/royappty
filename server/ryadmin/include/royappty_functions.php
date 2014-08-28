@@ -7,7 +7,7 @@
 *
 *********************************************************/
 
-function create_android_config_file($path,$app_id,$app_project_codename,$app_package_address,$app_name,$app_description,$version,$author,$author_email,$author_web){
+function create_android_config_file($path,$brand_id,$app_project_codename,$app_package_address,$app_name,$app_description,$version,$author,$author_email,$author_web){
 	global $page_path;
 	
 	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Check Folder");
@@ -92,7 +92,7 @@ function create_android_config_file($path,$app_id,$app_project_codename,$app_pac
 	   	touch($path."resources/mobile-app/".$app_project_codename."/brand.json");
 	}
 	$file = fopen($path."resources/mobile-app/".$app_project_codename."/brand.json", "w");
-	$file_content='{"result" : true,"data" :{"id_brand" : '.$app_id.'}';
+	$file_content='{"result" : true,"data" :{"id_brand" : '.$brand_id.'}}';
 	fwrite($file, $file_content);
 	fclose($file);
 }

@@ -81,7 +81,7 @@
 	$app=getInBD($table,$filter);
 
 	
-	create_android_config_file(PATH."../../",$app["id_app"],$app["project_codename"],$app["package_address"],$app["name"],$app["description"],"1.0.1",$CONFIG["company_name"],$CONFIG["company_info_mail"],$CONFIG["company_url"]);
+	create_android_config_file(PATH."../",$brand["id_brand"],$app["project_codename"],$app["package_address"],$app["name"],$app["description"],"1.0.1",$CONFIG["company_name"],$CONFIG["company_info_mail"],$CONFIG["company_url"]);
 	$message=shell_exec("./generator_step_1.sh ".$app["project_codename"]." ".$app["package_address"]." ".$app["project_codename"]."");
 	$message=str_replace("[36m","<span style='color:blue'>",$message);
 	$message=str_replace("[35m","<span style='color:purple'>",$message);

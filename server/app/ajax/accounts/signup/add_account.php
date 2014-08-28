@@ -213,15 +213,17 @@
 
 	$brand["num_code"] = str_pad($brand["id_brand"], 8, '0', STR_PAD_LEFT);
 	$brand["alfa_code"] = substr(strtolower(str_replace(' ', '', $data["name"])),0,5);
-	$brand["project_name"] = normalize_str(strtolower(str_replace(' ', '', $data["name"])));
+	$brand["project_codename"] = normalize_str(strtolower(str_replace(' ', '', $data["name"])));
+	$brand["apk_name"] = normalize_str(str_replace(' ', '', $data["name"]));
 
 	$table="apps";
 	$data=array();
 	$data["id_brand"] =	$brand["id_brand"];
 	$data["name"] = $_POST["name"];
-	$data["project_codename"] =	$brand["project_name"];
-	$data["package_address"] = $CONFIG["component_url_prefix"].".".$brand["project_name"];
+	$data["project_codename"] =	$brand["project_codename"];
+	$data["package_address"] = $CONFIG["component_url_prefix"].".".$brand["project_codename"];
 	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$brand["alfa_code"];
+	$data["apk_name"] =	$brand["apk_name"];
 	$data["description"] = "";
 	$data["published_apple_store"] = 0;
 	$data["published_google_play"] = 0;
@@ -234,6 +236,20 @@
 	$data["app_screenshot_3_path"] = "";
 	$data["app_screenshot_4_path"] = "";
 	addInBD($table,$data);
+	
+	$table="user_fields";
+	$filter=array();
+	$filter["default_field"]=array("operation"=>"=","value"=>1);
+	$default_user_field=getInBD($table,$filter);
+
+	$table="brand_user_fields";
+	$data=array();
+	$data["id_brand"]=$brand["id_brand"];
+	$data["id_user_field"]=$default_user_field["id_user_field"];
+	$data["main_field"]=1;
+	addInBD($table,$data);
+	
+	create_app_folder(PATH."../",$brand["project_codename"]);
 	
 	$table="admins";
 	$data=array();
