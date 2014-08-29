@@ -7,8 +7,22 @@
 *
 *********************************************************/
 
+function create_android_icons($path,$original_image_path,$app_project_codename){
+	global $page_path;
+	
+	debug_log("[".$page_path."] Create Android icons START");
+	$imgdata=(base64_decode(base64_encode(file_get_contents($path."resources/mobile-app/".$app_project_codename."/app_icon.png"))));
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-36-ldpi.png",36,36);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-48-mdpi.png",48,48);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-72-hdpi.png",72,72);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-96-xhdpi.png",96,96);
+	debug_log("[".$page_path."] Create Android icons END");
+
+}
+
 function create_android_config_file($path,$brand_id,$app_project_codename,$app_package_address,$app_name,$app_description,$version,$author,$author_email,$author_web){
 	global $page_path;
+	
 	
 	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Check Folder");
 	if (!file_exists($path."resources/mobile-app/".$app_project_codename)) {
@@ -95,6 +109,8 @@ function create_android_config_file($path,$brand_id,$app_project_codename,$app_p
 	$file_content='{"result" : true,"data" :{"id_brand" : '.$brand_id.'}}';
 	fwrite($file, $file_content);
 	fclose($file);
+	
+	create_android_icons($path,"resources/mobile-app/".$app_project_codename."/app_icon.png",$app_project_codename);
 }
 
 function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey) {
