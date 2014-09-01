@@ -7,8 +7,22 @@
 *
 *********************************************************/
 
+function create_android_icons($path,$original_image_path,$app_project_codename){
+	global $page_path;
+	
+	debug_log("[".$page_path."] Create Android icons START");
+	$imgdata=(base64_decode(base64_encode(file_get_contents($path."resources/mobile-app/".$app_project_codename."/app_icon.png"))));
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-36-ldpi.png",36,36);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-48-mdpi.png",48,48);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-72-hdpi.png",72,72);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-96-xhdpi.png",96,96);
+	debug_log("[".$page_path."] Create Android icons END");
+
+}
+
 function create_android_config_file($path,$brand_id,$app_project_codename,$app_package_address,$app_name,$app_description,$version,$author,$author_email,$author_web){
 	global $page_path;
+	
 	
 	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Check Folder");
 	if (!file_exists($path."resources/mobile-app/".$app_project_codename)) {
@@ -73,15 +87,15 @@ function create_android_config_file($path,$brand_id,$app_project_codename,$app_p
 	$file_content.="<gap:plugin name='org.apache.cordova.network-information' />\n";
 	$file_content.="<gap:plugin name='org.apache.cordova.splashscreen' />\n";
 	$file_content.="<gap:plugin name='org.apache.cordova.vibration' />\n";
-	$file_content.="<icon src='icon.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='ldpi' src='res/icon/android/icon-36-ldpi.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='mdpi' src='res/icon/android/icon-48-mdpi.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='hdpi' src='res/icon/android/icon-72-hdpi.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='xhdpi' src='res/icon/android/icon-96-xhdpi.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-ldpi' src='res/screen/android/screen-ldpi-portrait.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-mdpi' src='res/screen/android/screen-mdpi-portrait.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-hdpi' src='res/screen/android/screen-hdpi-portrait.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-xhdpi' src='res/screen/android/screen-xhdpi-portrait.png' />\n";
+	$file_content.="<icon src='www/icon.png' />\n";
+	$file_content.="<icon gap:platform='android' gap:qualifier='ldpi' src='www/res/icon/android/icon-36-ldpi.png' />\n";
+	$file_content.="<icon gap:platform='android' gap:qualifier='mdpi' src='www/res/icon/android/icon-48-mdpi.png' />\n";
+	$file_content.="<icon gap:platform='android' gap:qualifier='hdpi' src='www/res/icon/android/icon-72-hdpi.png' />\n";
+	$file_content.="<icon gap:platform='android' gap:qualifier='xhdpi' src='www/res/icon/android/icon-96-xhdpi.png' />\n";
+	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-ldpi' src='www/res/screen/android/screen-ldpi-portrait.png' />\n";
+	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-mdpi' src='www/res/screen/android/screen-mdpi-portrait.png' />\n";
+	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-hdpi' src='www/res/screen/android/screen-hdpi-portrait.png' />\n";
+	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-xhdpi' src='www/res/screen/android/screen-xhdpi-portrait.png' />\n";
 	$file_content.="<access origin='*' />\n";
 	$file_content.="</widget>";
 	fwrite($file, $file_content);
@@ -95,6 +109,8 @@ function create_android_config_file($path,$brand_id,$app_project_codename,$app_p
 	$file_content='{"result" : true,"data" :{"id_brand" : '.$brand_id.'}}';
 	fwrite($file, $file_content);
 	fclose($file);
+	
+	create_android_icons($path,"resources/mobile-app/".$app_project_codename."/app_icon.png",$app_project_codename);
 }
 
 function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey) {
