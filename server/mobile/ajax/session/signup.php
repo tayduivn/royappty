@@ -53,7 +53,7 @@
 						<h4>".$s["signup_subtitle"]."</h4>
 					</div>
 					<div class='m-l-20 m-r-20'>
-						<form onsubmit='signup()' method='post'>
+						<form method='post'>
 							<div id='form-warning' class='text-error text-center h5'></div>";
 	$table="brand_user_fields";
 	$filter=array();

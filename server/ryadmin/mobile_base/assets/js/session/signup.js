@@ -18,8 +18,8 @@ $(document).ready(function() {
 					$(".ajax-loader-"+key).html(value);
 				});
 				$("form").submit(function(e){
-							e.preventDefault();
-							signup();
+					e.preventDefault();
+					signup();
 				});
 			} else {
 				error_handler(response.error_code);
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 alert("loade");
 function signup(){
-	alert("calling");
+	alert("calling");ter
 	input_str="";
 	and="";
 	$(".form-control").each(function(){
