@@ -8,7 +8,8 @@ $(document).ready(function() {
 		contentType: 'application/json',
 		url: $SERVER_PATH+"server/mobile/ajax/session/signup.php",
 		data: {
-			id_brand:$BRAND
+			id_brand:$BRAND,
+			lang:"es"
 		},
 		error: function(data, textStatus, jqXHR) {
 		},
@@ -31,9 +32,7 @@ $(document).ready(function() {
 
 });
 
-alert("loade");
 function signup(){
-	alert("calling");ter
 	input_str="";
 	and="";
 	$(".form-control").each(function(){
@@ -53,7 +52,6 @@ function signup(){
 			signup_data:input_str
 		},
 		error: function(data, textStatus, jqXHR) {
-			alert("adduser:"+data+" - "+textStatus+" - "+jqXHR);
 			error_handler("sign_up_error");
 		},
 		success: function(response) {
