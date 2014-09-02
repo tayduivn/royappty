@@ -162,6 +162,9 @@ $s["ajax_error_2"] = "Por favor vuelva a intentarlo más tarde, si el error pers
 $s["there_is_not_campaigns"] = "No tienes ninguna campaña activa";
 $s["create_your_first_campaign"] = "Crea tu primera campaña";
 $s["there_is_not_graph_data"] = "No hay datos que mostrar";
+$s["royappty_news"] = "Noticias Royappty";
+$s["there_is_not_news"] = "No hay noticias que mostrar";
+
 
 //Campaigns / List
 $s["name"] = "Nombre";

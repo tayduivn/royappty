@@ -162,6 +162,8 @@ $s["ajax_error_2"] = "Please, try it again later. If the error persists, contact
 $s["there_is_not_campaigns"] = "There are no activated campaigns";
 $s["create_your_first_campaign"] = "Create your first campaign";
 $s["there_is_not_graph_data"] = "There is no data";
+$s["royappty_news"] = "Royappty News";
+$s["there_is_not_news"] = "There is no news to show";
 
 //Campaigns / List
 $s["name"] = "Name";

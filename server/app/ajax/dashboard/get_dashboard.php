@@ -178,19 +178,31 @@ if(!checkClosed()){echo json_encode($response);die();}
 
  		$table="software_news";
  		$filter=array();
- 		$software_news=listInBD($table,$filter);
- 		$response["data"]["software-news"]="<h4 class='m-t-0'>Royappty News</h4>";
- 		foreach ($software_news as $key=>$software_new){
-	 		$response["data"]["software-news"].="
-	 		<div>
-				<p><a href='".$software_new["link"]."'>Lorem ipsum dolor sit amet</a> <span class='text-muted'>".gmdate("d-m-Y", $software_new["created"])."</span></p>
-				<p>".$software_new["content"];
-				if(strlen($software_new["content"])==255){
-					$response["data"]["software-news"].="[...]";
-				}
-	 		$response["data"]["software-news"].="</p>
-								</div>";
+ 		if(isInBD($table,$filter)){
+	 		$software_news=listInBD($table,$filter);
+	 		$response["data"]["software-news"]="<h4 class='m-t-0'>".$s["royappty_news"]."</h4>";
+	 		
+	 		foreach ($software_news as $key=>$software_new){
+		 		$response["data"]["software-news"].="
+		 		<div>
+					<p><a href='".$software_new["link"]."'>Lorem ipsum dolor sit amet</a> <span class='text-muted'>".gmdate("d-m-Y", $software_new["created"])."</span></p>
+					<p>".$software_new["content"];
+					if(strlen($software_new["content"])==255){
+						$response["data"]["software-news"].="[...]";
+					}
+		 		$response["data"]["software-news"].="</p>
+									</div>";
+	 		}	
+ 		}else{
+	 		$response["data"]["software-news"]="
+	 			<h4 class='m-t-0'>".$s["royappty_news"]."</h4>
+				<div class='text-center text-muted'>
+					<p class='m-t-40'><i class='fa fa-calendar-o fa-4x'></i></p>
+		 			<h6>".htmlentities($s["there_is_not_news"], ENT_QUOTES, "UTF-8")."</h6>
+	 			</div>
+	 		";
  		}
+ 		
 
 
 
