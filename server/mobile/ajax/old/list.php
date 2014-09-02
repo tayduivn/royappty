@@ -73,7 +73,7 @@
 		  
  	";	
 	foreach($campaigns as $key=>$campaign){
-		$img_file = PATH."../resources/campaign-icon/".$campaign["campaign_icon_path"];
+		$img_file = PATH."../server/resources/campaign-icon/".$campaign["campaign_icon_path"];
 		$imgData = base64_encode(file_get_contents($img_file));
 		$src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 

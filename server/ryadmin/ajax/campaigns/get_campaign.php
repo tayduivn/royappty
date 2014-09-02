@@ -181,7 +181,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$response["data"]["page-options"]="";
 
 
-	$response["data"]["promo-icon"]="<img class='full-width' src='".$url_server."/resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>";
+	$response["data"]["promo-icon"]="<img class='full-width' src='".$url_server."/server/resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>";
 
 	if($campaign["id_group"]==0){
 		$campaign["group_name"]=$s["all_users"];
