@@ -180,7 +180,7 @@ if(!checkClosed()){echo json_encode($response);die();}
  		$filter=array();
  		if(isInBD($table,$filter)){
 	 		$software_news=listInBD($table,$filter);
-	 		$response["data"]["software-news"]="<h4 class='m-t-0'>Royappty News</h4>";
+	 		$response["data"]["software-news"]="<h4 class='m-t-0'>".$s["royappty_news"]."</h4>";
 	 		
 	 		foreach ($software_news as $key=>$software_new){
 		 		$response["data"]["software-news"].="
@@ -195,8 +195,10 @@ if(!checkClosed()){echo json_encode($response);die();}
 	 		}	
  		}else{
 	 		$response["data"]["software-news"]="
-	 			<h4 class='m-t-0'>Royappty News</h4>
-	 			<div class='text-center'>
+	 			<h4 class='m-t-0'>".$s["royappty_news"]."</h4>
+				<div class='text-center text-muted'>
+					<p class='m-t-40'><i class='fa fa-calendar-o fa-4x'></i></p>
+		 			<h6>".htmlentities($s["there_is_not_news"], ENT_QUOTES, "UTF-8")."</h6>
 	 			</div>
 	 		";
  		}
