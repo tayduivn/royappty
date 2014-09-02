@@ -67,6 +67,12 @@
 	*********************************************************/
 
  	$response["result"]=true;
+ 	
+ 	$table="brands";
+ 	$filter=array();
+ 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+ 	$brand=getInBD($table,$filter);
+ 	
 	$table="apps";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -122,7 +128,7 @@
 			<ul class='sub-menu'>
 				<li > <a href='".$_POST["path"]."users/'>".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</a> </li>";
 	
-	if(($branch["subscription_type"]=="professional")||($branch["subscription_type"]=="unlimited")){
+	if(($brand["subscription_type"]=="professional")||($brand["subscription_type"]=="unlimited")){
 		$response["data"]["left-menu"].="
 				<li > <a href='".$_POST["path"]."groups/'>".htmlentities($s["all_groups"], ENT_QUOTES, "UTF-8")."</a> </li>
 				<li > <a href='".$_POST["path"]."group/new/'>".htmlentities($s["new_group"], ENT_QUOTES, "UTF-8")."</a> </li>";

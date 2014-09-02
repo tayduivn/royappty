@@ -37,7 +37,7 @@ function update(){
 			e.preventDefault();
 		});
 	}
-	setInterval(update, 1000);
+	setInterval(update, 5000);
 
 }
 
