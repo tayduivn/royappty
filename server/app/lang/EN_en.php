@@ -164,6 +164,7 @@ $s["create_your_first_campaign"] = "Create your first campaign";
 $s["there_is_not_graph_data"] = "There is no data";
 $s["royappty_news"] = "Royappty News";
 $s["there_is_not_news"] = "There is no news to show";
+$s["read_full_content"] = "Read full new";
 
 //Campaigns / List
 $s["name"] = "Name";
