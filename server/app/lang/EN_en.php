@@ -770,6 +770,9 @@ $error_s["post_no_path"]["content"]="At the moment, the page cannot be shown. Pl
 $error_s["post_no_policy_type"]["title"]="Error when loading the page";
 $error_s["post_no_policy_type"]["content"]="Policies page could not be loaded. Please, try it again later. If the error persists, contact our technical service.";
 
+$error_s["need_subscription_professional"]["title"]="Disabled in your subscription plan";
+$error_s["need_subscription_professional"]["content"]="This option is disabled in your subscription, upgrade your account to professional to have access to this option.";
+
 $error_s["base"]["title"] = "Unknown error";
 $error_s["base"]["content"] = "An error occurred while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 
