@@ -1,5 +1,4 @@
 function update(){
-	console.log("[server/mobile/ajax/campaigns/all_data.php] Update Page");
 	if(page_selected=="index"){
 		$.ajax({
 			async: false,
@@ -10,10 +9,11 @@ function update(){
 			contentType: 'application/json',
 			url: $SERVER_PATH+"server/mobile/ajax/campaigns/all_data.php",
 			data: {
+				id_user:$SESSION,
+				lang:"es"
 			},
 			error: function(data, textStatus, jqXHR) {
-				console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax error");
-				//error_handler("ajax_error");
+				error_handler("ajax_error");
 			},
 			success: function(response) {
 				console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax Success");
@@ -21,12 +21,10 @@ function update(){
 					console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result true");
 					jQuery.each(response.data,function(key,value){
 						console.log("[server/mobile/ajax/campaigns/all_data.php] Update data: "+key);
-
 						localStorage.removeItem(key);
 						localStorage.setItem(key, value);
 					});
 				} else {
-					console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result false");
 					error_handler(response.error_code);
 				}
 			}
