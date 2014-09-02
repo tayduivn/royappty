@@ -128,8 +128,8 @@
 				<li > <a href='".$_POST["path"]."group/new/'>".htmlentities($s["new_group"], ENT_QUOTES, "UTF-8")."</a> </li>";
 	}else{
 		$response["data"]["left-menu"].="
-				<li class='disabled'> <a href='".$_POST["path"]."groups/'>".htmlentities($s["all_groups"], ENT_QUOTES, "UTF-8")."</a> </li>
-				<li > <a href='".$_POST["path"]."group/new/'>".htmlentities($s["new_group"], ENT_QUOTES, "UTF-8")."</a> </li>";
+				<li class='disabled'> <a href='javascript:error_handler(\"need_subscription_professional\")'>".htmlentities($s["all_groups"], ENT_QUOTES, "UTF-8")."</a> </li>
+				<li class='disabled'> <a href='javascript:error_handler(\"need_subscription_professional\")'>".htmlentities($s["new_group"], ENT_QUOTES, "UTF-8")."</a> </li>";
 		
 	}
 	

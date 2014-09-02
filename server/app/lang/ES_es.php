@@ -773,6 +773,9 @@ $error_s["post_no_path"]["content"]="En estos momentos no se puede mostrar la p�
 $error_s["post_no_policy_type"]["title"]="Error al cargar la página";
 $error_s["post_no_policy_type"]["content"]="No se ha podido cargar la página de politicas. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
+$error_s["need_subscription_professional"]["title"]="No disponible con tu plan";
+$error_s["need_subscription_professional"]["content"]="Esta operación no está disponible con tu plan de subscripción actual, si quieres usarla actualiza tu subscripción a Profesional.";
+
 $error_s["base"]["title"] = "Error desconocido";
 $error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
