@@ -31,7 +31,6 @@ function show_modal(modal_id,accept_function){
 
 function error_handler(error_code){
   error_block:{
-    alert("error_handler "+error_code);
     //Brand check errors
     if(error_code=="no_brand"){window.location.href = $PATH+"error/?error_code=no_brand";break error_block;}
     if(error_code=="brand_not_valid"){window.location.href = $PATH+"error/?error_code=brand_not_valid";break error_block;}

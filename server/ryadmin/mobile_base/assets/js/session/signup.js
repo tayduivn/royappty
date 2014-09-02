@@ -31,8 +31,9 @@ $(document).ready(function() {
 
 });
 
-
+alert("loade");
 function signup(){
+	alert("calling");
 	input_str="";
 	and="";
 	$(".form-control").each(function(){
