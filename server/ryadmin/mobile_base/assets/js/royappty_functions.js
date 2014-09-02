@@ -44,6 +44,6 @@ function error_handler(error_code){
     if(error_code=="ajax_error"){window.location.href = $PATH+"error/index.html?error_code=ajax_error";break error_block;}
 
     //Error Unknow
-    window.location.href = "error/base.html";break error_block;*/
+    window.location.href = "error/base.html";break error_block;
   }
 }

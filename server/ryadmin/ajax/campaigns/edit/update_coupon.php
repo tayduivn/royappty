@@ -148,13 +148,13 @@ if(!checkClosed()){echo json_encode($response);die();}
 
 
 	if(@issetandnotempty($data["campaign_icon_path"])){
-		copy(PATH."../../".$data["campaign_icon_path"],PATH."../../resources/campaign-icon/".$timestamp.".jpg");
+		copy(PATH."../../".$data["campaign_icon_path"],PATH."../../server/resources/campaign-icon/".$timestamp.".jpg");
 		$data["campaign_icon_path"] = $timestamp.".jpg";
 	}else{
 		unset($data["campaign_icon_path"]);
 	}
 	if(@issetandnotempty($data["campaign_image_path"])){
-		copy(PATH."../../".$data["campaign_image_path"],PATH."../../resources/campaign-image/".$timestamp.".jpg");
+		copy(PATH."../../".$data["campaign_image_path"],PATH."../../server/resources/campaign-image/".$timestamp.".jpg");
 		$data["campaign_image_path"] = $timestamp.".jpg";
 	}else{
 		unset($data["campaign_image_path"]);

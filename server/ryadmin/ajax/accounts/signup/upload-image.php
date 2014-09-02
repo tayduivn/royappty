@@ -58,7 +58,7 @@
 	$types = Array('image/png', 'image/gif', 'image/jpeg');
 
 	$source = file_get_contents($_FILES["xfile"]["tmp_name"]);
-	$folder="../../../../../resources/tmp/";
+	$folder="../../../../../server/resources/tmp/";
 	$filename = $folder . $timestamp . '.jpg';
 
 	$width=0;
