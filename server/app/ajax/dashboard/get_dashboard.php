@@ -188,9 +188,9 @@ if(!checkClosed()){echo json_encode($response);die();}
 		 		$response["data"]["software-news"].="
 		 		<div>
 					<p class='pull-right'><span class='text-muted'>".date("H:i d/m/Y",$software_new["created"])."</span></p>
-		 			<h4><a href='".$software_new["link"]."'>".$software_new["title"]."</a></h4>
+		 			<h4><a target='_blank' href='".$software_new["link"]."'>".$software_new["title"]."</a></h4>
 					<p>".$software_new["content"]."</p>
-		 			<p><a href='".$software_new["link"]."' class='btn btn-white btn-mini'>".$s["read_full_content"]."</a></p>
+		 			<p><a target='_blank' href='".$software_new["link"]."' class='btn btn-white btn-mini'>".$s["read_full_content"]."</a></p>
 									</div>";
 	 		}	
  		}else{
