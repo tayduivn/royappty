@@ -85,7 +85,7 @@
 			</div>
 			<div class='header-quick-nav' >
 				<div class='pull-left'>
-					<h3 class='m-t-10 m-l-10'>".$app["name"]."</h3>
+					<h3 class='m-t-10 m-l-10'>".$brand["name"]."</h3>
 				</div>
 				<div class='pull-right'>
  					<ul class='nav quick-section '>
