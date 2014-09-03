@@ -125,7 +125,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 				<h4 class='m-t-0'>".htmlentities($s["app_icon"], ENT_QUOTES, "UTF-8")."</h4>
 				<div class='row'>
 					<div class='col-md-2'>
-						<img class='full-width' src='".$url_server."resources/app-icon/".$app["app_icon_path"]."'/>
+						<img class='full-width' src='".$url_server."server/resources/mobile-app/".$app["project_codename"]."/app_icon.png'/>
 					</div>
 					<div class='col-md-10'>
 						<p>".htmlentities($s["app_icon_help_1"], ENT_QUOTES, "UTF-8")." <a class='text-success' href='../requests/'>".htmlentities($s["request_list"], ENT_QUOTES, "UTF-8")."</a> ".htmlentities($s["app_icon_help_1"], ENT_QUOTES, "UTF-8")."</p>
@@ -137,7 +137,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 				<h4 class='m-t-0'>".htmlentities($s["app_bg"], ENT_QUOTES, "UTF-8")."</h4>
 				<div class='row'>
 					<div class='col-md-2'>
-						<img class='full-width' src='".$url_server."resources/app-bg/".$app["app_bg_path"]."'/>
+						<img class='full-width' src='".$url_server."server/resources/mobile-app/".$app["project_codename"]."/app_bg.jpg'/>
 					</div>
 					<div class='col-md-10'>
 					<p>".htmlentities($s["app_bg_help_1"], ENT_QUOTES, "UTF-8")." <a class='text-success' href='../requests/'>".htmlentities($s["request_list"], ENT_QUOTES, "UTF-8")."</a> ".htmlentities($s["app_bg_help_2"], ENT_QUOTES, "UTF-8")."</p>
