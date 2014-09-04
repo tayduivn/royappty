@@ -50,6 +50,7 @@
  	$data=array();
  	$data["id_brand"]=$_GET["id_brand"];
  	$data["active"]=1;
+ 	$data["android_key"]=$_GET["android_key"];
  	$data["created"]=$timestamp;
  	$data["last_connection"]=$timestamp;
  	$data["resume_block_1_display"]=0;

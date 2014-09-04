@@ -49,6 +49,7 @@ function signup(){
 		url: $SERVER_PATH+"server/mobile/ajax/users/add_user.php",
 		data: {
 			id_brand:$BRAND,
+			android_key:localStorage.getItem("android_key"),
 			signup_data:input_str
 		},
 		error: function(data, textStatus, jqXHR) {
@@ -57,7 +58,7 @@ function signup(){
 		success: function(response) {
 			if(response.result){
 				localStorage.setItem('id_user', response.data.id_user);
-				window.location.href = "../index.html";
+				window.location.href = "./index.html";
 			} else {
 				error_handler(response.error_code);
 			}
