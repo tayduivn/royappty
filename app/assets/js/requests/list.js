@@ -43,8 +43,8 @@ $(document).ready(function() {
 		 "aoColumnDefs": [
           { 'bSortable': false, 'aTargets': [] }
 		],
-		"aaSorting": [[ 0, "asc" ]],
-		"oLanguage": {
+		"aaSorting": [],
+    		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
 			"sSearch": $s["request_list_search"],
 			"sInfo": $s["request_list_showing_from_entry"]+"<b>_START_"+$s["request_list_to"]+"_END_</b>"+$s["request_list_of"] +"_TOTAL_"+ $s["request_list_entries"],
