@@ -54,6 +54,8 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined') || (localStorage.ge
       if(response.result){
         localStorage.setItem('brand',response.data.id_brand);
         $BRAND=response.data.id_brand;
+        localStorage.setItem('android_senderID',response.data.android_senderID);
+        $android_senderID=response.data.android_senderID;
       } else {
         error_handler("no_brand");
       }
@@ -62,5 +64,6 @@ if ((typeof localStorage.getItem('id_brand') == 'undefined') || (localStorage.ge
   });
 }else{
   $BRAND=localStorage.getItem('id_brand');
+  $android_senderID=localStorage.getItem('android_senderID');
   console.log("[data/brand.json] Brand stored in local storage");
 }

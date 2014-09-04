@@ -20,9 +20,8 @@ function create_android_icons($path,$original_image_path,$app_project_codename){
 
 }
 
-function create_android_config_file($path,$brand_id,$app_project_codename,$app_package_address,$app_name,$app_description,$version,$author,$author_email,$author_web){
+function create_android_config_file($path,$brand_id,$app_project_codename,$app_package_address,$app_name,$app_description,$app_android_project_number,$version,$author,$author_email,$author_web){
 	global $page_path;
-	
 	
 	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Check Folder");
 	if (!file_exists($path."resources/mobile-app/".$app_project_codename)) {
@@ -106,9 +105,11 @@ function create_android_config_file($path,$brand_id,$app_project_codename,$app_p
 	   	touch($path."resources/mobile-app/".$app_project_codename."/brand.json");
 	}
 	$file = fopen($path."resources/mobile-app/".$app_project_codename."/brand.json", "w");
-	$file_content='{"result" : true,"data" :{"id_brand" : '.$brand_id.'}}';
+	$file_content='{"result" : true,"data" :{"id_brand" : '.$brand_id.',"android_senderID": "'.$app_android_project_number.'"}}';
 	fwrite($file, $file_content);
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/brand.json.xml] File wrote");
 	fclose($file);
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/brand.json.xml] File closed");
 	
 	create_android_icons($path,"resources/mobile-app/".$app_project_codename."/app_icon.png",$app_project_codename);
 }

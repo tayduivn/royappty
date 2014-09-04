@@ -69,12 +69,13 @@
      echo "jsonCallback(".json_encode($response).")";
      die();
   }
+  
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
-
- 	$day=date("Ymd");
-
+	
+	debug_log("ANDROID_KEY = ".$_GET["android_key"]);
+ 	
 	$response["result"]=true;
 
 
