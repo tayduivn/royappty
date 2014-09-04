@@ -208,7 +208,7 @@
 				";
 			}else if($campaign["type"]==2){
 				$campaign_pages.="
-									<div class='text-center m-t-20 m-l-20 m-r-20 margin-20'>
+									<div class='text-center m-t-20 m-l-20 m-r-20 m-b-40'>
 										<a href='javascript:transition_left(\"campaign-".$campaign["id_campaign"]."\",\"validate-".$campaign["id_campaign"]."-1\")' class='btn btn-block btn-success'>".htmlentities($campaign["button_title"], ENT_QUOTES, "UTF-8")."11111</a>
 									</div>
 					";
