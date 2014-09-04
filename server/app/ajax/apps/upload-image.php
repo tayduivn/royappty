@@ -22,7 +22,7 @@
 
 	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:i:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:s"));
 	include(PATH."include/inbd.php");
 	$page_path="server/app/ajax/campaigns/upload_image";
 	debug_log("[".$page_path."] START");
@@ -85,12 +85,12 @@
 
 
 	// Result data
-	$res->filename = $url_server.'resources/tmp/'.$timestamp . '.jpg';
-	$res->path = 'resources/tmp/'.$timestamp . '.jpg';
+	$res->filename = $url_server.'server/resources/tmp/'.$timestamp . '.jpg';
+	$res->path = 'server/resources/tmp/'.$timestamp . '.jpg';
 	$res->preview = $_GET["label"]."-preview";
 	$res->label = $_GET["label"];
 	$res->indice = "temp";
-	$res->img = '<img src="'.$url_server.'resources/tmp/'.'temp'.'.jpg" alt="image" />';
+	$res->img = '<img src="'.$url_server.'server/resources/tmp/'.'temp'.'.jpg" alt="image" />';
 	$res->error =false;
 
 
