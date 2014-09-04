@@ -57,7 +57,7 @@ function signup(){
 		success: function(response) {
 			if(response.result){
 				localStorage.setItem('id_user', response.data.id_user);
-				window.location.href = "../";
+				window.location.href = "../index.html";
 			} else {
 				error_handler(response.error_code);
 			}
