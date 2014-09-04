@@ -96,13 +96,13 @@ if(!checkClosed()){echo json_encode($response);die();}
 	unset($data["id_app"]);
 
 	if(@issetandnotempty($data["app_icon_path"])){
-		copy(PATH."../../".$data["app_icon_path"],PATH."../../resources/app-icon/".$timestamp.".jpg");
+		copy(PATH."../../".$data["app_icon_path"],PATH."../../server/resources/app-icon/".$timestamp.".jpg");
 		$data["app_icon_path"] = $timestamp.".jpg";
 	}else{
 		unset($data["app_icon_path"]);
 	}
 	if(@issetandnotempty($data["app_bg_path"])){
-		copy(PATH."../../".$data["app_bg_path"],PATH."../../resources/app-bg/".$timestamp.".jpg");
+		copy(PATH."../../".$data["app_bg_path"],PATH."../../server/resources/app-bg/".$timestamp.".jpg");
 		$data["app_bg_path"] = $timestamp.".jpg";
 	}else{
 		unset($data["app_bg_path"]);

@@ -109,8 +109,17 @@ if(!checkClosed()){echo json_encode($response);die();}
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($app_s["icon_preview"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'></span>
-							<div class='controls'>
-								<img id='app_icon_path-preview' class='full-width' src='".$url_server."resources/app-icon/".$app["app_icon_path"]."'/>
+							<div class='controls'>";
+	if(!issetandnotempty($app["app_icon_path"])){
+		$response["data"]["new-discount-step-2"].="					
+								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/mobile_apps/".$app["project_codename"]."/app_icon.png'/>
+		";
+	}else{
+		$response["data"]["new-discount-step-2"].="					
+								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/resources/app-icon/".$app["app_icon_path"]."'/>
+		";
+	}
+	$response["data"]["new-discount-step-2"].="		
 							</div>
 						</div>
 					</div>
@@ -144,8 +153,17 @@ if(!checkClosed()){echo json_encode($response);die();}
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($app_s["icon_preview"], ENT_QUOTES, "UTF-8")."</label>
 							<span class='help'></span>
-							<div class='controls'>
-								<img id='app_bg_path-preview' class='full-width' src='".$url_server."resources/app-bg/".$app["app_bg_path"]."'/>
+							<div class='controls'>";
+	if(!issetandnotempty($app["app_bg_path"])){
+		$response["data"]["new-discount-step-3"].="					
+								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/mobile_apps/".$app["project_codename"]."/app_bg.jpg'/>
+		";
+	}else{
+		$response["data"]["new-discount-step-3"].="					
+								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/resources/app-bg/".$app["app_bg_path"]."'/>
+		";
+	}
+	$response["data"]["new-discount-step-3"].="
 							</div>
 						</div>
 					</div>
