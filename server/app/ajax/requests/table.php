@@ -63,7 +63,9 @@ if(!checkClosed()){echo json_encode($response);die();}
 		$filter["status"]=array("operation"=>"=","value"=>$_GET["status"]);
  	}
 	if(isInBD($table,$filter)){
- 		$requests=listInBD($table,$filter);
+		$fields=array();
+		$order="code desc";
+ 		$requests=listInBD($table,$filter,$fields,$order);
  		foreach($requests as $key=>$request){
 	 		$data_table[0] = "<div class='m-b-5'><a href='".$_GET["PATH"]."request/?id_request=".$request["id_request"]."' class='";
 	 		if($request["status"]==2){
