@@ -213,6 +213,9 @@
 
 	$brand["num_code"] = str_pad($brand["id_brand"], 5, '0', STR_PAD_LEFT);
 
+	copy(PATH."../resources/defaults/app_icon.png",PATH."../resources/app-icon/".$timestamp.".png");
+	copy(PATH."../resources/defaults/app_bg.jpg",PATH."../resources/app-bg/".$timestamp.".jpg");
+
 	$table="apps";
 	$data=array();
 	$data["id_brand"] =	$brand["id_brand"];
@@ -222,11 +225,12 @@
 	$data["package_address"] = $CONFIG["component_url_prefix"].".".$data["apk_name"];
 	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$data["apk_name"];
 	$data["description"] = "";
-	$data["published_apple_store"] = 0;
-	$data["published_google_play"] = 0;
+	$data["published_apple_store"] = 1;
+	$data["published_google_play"] = 1;
 	$data["app_title"] = $_POST["name"];
-	$data["app_icon_path"] = "";
-	$data["app_bg_path"] = "";
+	
+	$data["app_icon_path"] = $timestamp.".png";
+	$data["app_bg_path"] = $timestamp.".jpg";
 	$data["automatic_screenshots"] = 0;
 	$data["app_screenshot_1_path"] = "";
 	$data["app_screenshot_2_path"] = "";
