@@ -6,15 +6,48 @@
 * Version: 0.93
 *
 *********************************************************/
-function normalize_str ($cadena){
-    $originales = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞ
-ßàáâãäåæçèéêëìíîïğñòóôõöøùúûıışÿ';
-    $modificadas = 'aaaaaaaceeeeiiiidnoooooouuuuy
-bsaaaaaaaceeeeiiiidnoooooouuuyyby';
-    $cadena = utf8_decode($cadena);
-    $cadena = strtr($cadena, utf8_decode($originales), $modificadas);
-    $cadena = strtolower($cadena);
-    return utf8_encode($cadena);
+function normalize_str($string)
+{
+	$string = str_replace("?","",$string);
+	$string = str_replace("À","",$string);
+	$string = str_replace("!","",$string);
+	$string = str_replace("*","",$string);
+	$string = str_replace(",","",$string);
+	$string = str_replace("-","",$string);
+	$string = str_replace("_","",$string);
+	$string = str_replace("‡","a",$string);
+	$string = str_replace("","e",$string);
+	$string = str_replace("’","i",$string);
+	$string = str_replace("—","o",$string);
+	$string = str_replace("œ","u",$string);
+	$string = str_replace("Ÿ","u",$string);
+	$string = str_replace("–","n",$string);
+	$string = str_replace("","c",$string);
+	$string = str_replace("ç","A",$string);
+	$string = str_replace("ƒ","E",$string);
+	$string = str_replace("ê","I",$string);
+	$string = str_replace("î","O",$string);
+	$string = str_replace("ò","U",$string);
+	$string = str_replace("†","U",$string);
+	$string = str_replace("„","N",$string);
+	$string = str_replace("‚","C",$string);
+	$string = str_replace("\xc3\xa1","a",$string);
+	$string = str_replace("\xc3\xa9","e",$string);
+	$string = str_replace("\xc3\xad","i",$string);
+	$string = str_replace("\xc3\xb3","o",$string);
+	$string = str_replace("\xc3\xba","u",$string);
+	$string = str_replace("\xc3\xbc","u",$string);
+	$string = str_replace("\xc3\xb1","n",$string);
+	$string = str_replace("\xc3\xa7","c",$string);
+	$string = str_replace("\xc3\x81","A",$string);
+	$string = str_replace("\xc3\x89","E",$string);
+	$string = str_replace("\xc3\x8d","I",$string);
+	$string = str_replace("\xc3\x93","O",$string);
+	$string = str_replace("\xc3\x9a","U",$string);
+	$string = str_replace("\xc3\x9c","U",$string);
+	$string = str_replace("\xc3\x91","N",$string);
+	$string = str_replace("\xc3\x87","C",$string);
+	return $string;
 }
 function debug_log($str){
 	global $CONFIG;
