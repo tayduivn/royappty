@@ -37,6 +37,7 @@ function create_app_folder($path,$app_project_codename){
 		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.jpg] File deleted");
 	}
 	copy($path."resources/defaults/app_bg.jpg",$path."resources/mobile-app/".$app_project_codename."/app_bg.jpg");
+	
 
 }
 

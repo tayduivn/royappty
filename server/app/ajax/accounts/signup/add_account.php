@@ -213,19 +213,19 @@
 
 	$brand["num_code"] = str_pad($brand["id_brand"], 5, '0', STR_PAD_LEFT);
 
+	$project_codename = strtolower(normalize_str(str_replace(' ', '', $_POST["app_name"])));
+
 	copy(PATH."../resources/defaults/app_icon.png",PATH."../resources/app-icon/".$timestamp.".png");
-	copy(PATH."../resources/defaults/app_bg.jpg",PATH."../resources/app-bg/".$timestamp.".jpg");
+	copy(PATH."../resources/defaults/app_bg.jpg",PATH."../resources/app-bg/".$data["project_codename"]."/".$timestamp.".jpg");
+	create_app_folder(PATH."../",$project_codename);
+
 
 	$table="apps";
 	$data=array();
 	$data["id_brand"] =	$brand["id_brand"];
 	$data["name"] = $_POST["app_name"];
-	error_log("------------>>>>>>> 0".$_POST["app_name"]);
-	error_log("------------>>>>>>> 1".str_replace(' ', '', $_POST["app_name"]));
-	error_log("------------>>>>>>> 2".normalize_str(str_replace(' ', '', $_POST["app_name"])));
-	error_log("------------>>>>>>> 3".strtolower(normalize_str(str_replace(' ', '', $_POST["app_name"]))));
 	
-	$data["project_codename"] = strtolower(normalize_str(str_replace(' ', '', $_POST["app_name"])));
+	$data["project_codename"] = $project_codename;
 	$data["apk_name"] = substr($data["project_codename"],0,10);
 	$data["package_address"] = $CONFIG["component_url_prefix"].".".$data["apk_name"];
 	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$data["apk_name"];
@@ -255,7 +255,6 @@
 	$data["main_field"]=1;
 	addInBD($table,$data);
 	
-	create_app_folder(PATH."../",$brand["project_codename"]);
 	
 	$table="admins";
 	$data=array();
