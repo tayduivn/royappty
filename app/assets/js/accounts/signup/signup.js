@@ -100,12 +100,24 @@ $(document).ready(function(){
 			nextstep();
 		}
 	});
+
+
+	jQuery.validator.addMethod("app_name", function(app_name, element){
+    	app_name = app_name.replace(/\s+/g, ""); 
+		return this.optional(element) || app_name.match(/^[A-Za-z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00FC\u00DC][A-Za-z0-9\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00FC\u00DC]*$/);
+	}, $s["signup_app_name_format_is_not_correct"]);
+	alert("new3");
 	$("#form-step2").validate({
 		messages:{
+			app_name:{
+				required:$s["signup_app_name_this_field_is_compulsory"],
+				maxlength: $s["signup_app_name_it_canot_be_longer_than_75_characters"],
+				minlength: $s["signup_app_name_this_field_needs_4_character_minimum"]
+			},
 			name:{
 				required:$s["signup_name_step2_this_field_is_compulsory"],
-					maxlength: $s["signup_name_step2_it_canot_be_longer_than_75_characters"],
-					minlength: $s["signup_name_step2_this_field_needs_4_character_minimum"]
+				maxlength: $s["signup_name_step2_it_canot_be_longer_than_75_characters"],
+				minlength: $s["signup_name_step2_this_field_needs_4_character_minimum"]
 			},
 			cif:{
 				required: $s["signup_cif_this_field_is_compulsory"],
@@ -132,10 +144,16 @@ $(document).ready(function(){
 			}
 		},
 		rules:{
+			app_name:{
+				required:true,
+				maxlength: 75,
+				minlength: 4,
+				app_name:true
+			},
 			name:{
 				required:true,
-					maxlength: 75,
-					minlength: 4
+				maxlength: 75,
+				minlength: 4
 			},
 			cif:{
 				required:true,
@@ -162,6 +180,7 @@ $(document).ready(function(){
 			}
 		},
 		submitHandler:function(form){
+			$('#form-end #app_name').val($('#form-step2 #app_name').val());
 			$('#form-end #name').val($('#form-step2 #name').val());
 			$('#form-end #cif').val($('#form-step2 #cif').val());
 			$('#form-end #contact_phone').val($('#form-step2 #contact_phone').val());
@@ -230,6 +249,7 @@ $(document).ready(function(){
 				dataType: 'json',
 				url: $SERVER_PATH+"server/app/ajax/accounts/signup/add_account.php",
 				data: {
+					app_name:$('#form-end #app_name').val(),
 					name:$('#form-end #name').val(),
 					cif:$('#form-end #cif').val(),
 					contact_phone:$('#form-end #contact_phone').val(),

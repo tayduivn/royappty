@@ -211,25 +211,26 @@
 	$brand=array();
 	$brand["id_brand"]=addInBD($table,$data);
 
-	$brand["num_code"] = str_pad($brand["id_brand"], 8, '0', STR_PAD_LEFT);
-	$brand["alfa_code"] = substr(strtolower(str_replace(' ', '', $data["name"])),0,5);
-	$brand["project_codename"] = normalize_str(strtolower(str_replace(' ', '', $data["name"])));
-	$brand["apk_name"] = normalize_str(str_replace(' ', '', $data["name"]));
+	$brand["num_code"] = str_pad($brand["id_brand"], 5, '0', STR_PAD_LEFT);
+
+	copy(PATH."../resources/defaults/app_icon.png",PATH."../resources/app-icon/".$timestamp.".png");
+	copy(PATH."../resources/defaults/app_bg.jpg",PATH."../resources/app-bg/".$timestamp.".jpg");
 
 	$table="apps";
 	$data=array();
 	$data["id_brand"] =	$brand["id_brand"];
-	$data["name"] = $_POST["name"];
-	$data["project_codename"] =	$brand["project_codename"];
-	$data["package_address"] = $CONFIG["component_url_prefix"].".".$brand["project_codename"];
-	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$brand["alfa_code"];
-	$data["apk_name"] =	$brand["apk_name"];
-	$data["description"] = "";
-	$data["published_apple_store"] = 0;
-	$data["published_google_play"] = 0;
+	$data["name"] = $_POST["app_name"];
+	$data["project_codename"] = normalize_str(strtolower(str_replace(' ', '', $_POST["app_name"])));
+	$data["apk_name"] = substr($data["project_codename"],0,10);
+	$data["package_address"] = $CONFIG["component_url_prefix"].".".$data["apk_name"];
+	$data["android_project_id"] = "ry-".$brand["num_code"]."-".$data["apk_name"];
+	$data["description"] = $_POST["app_name"];
+	$data["published_apple_store"] = 1;
+	$data["published_google_play"] = 1;
 	$data["app_title"] = $_POST["name"];
-	$data["app_icon_path"] = "";
-	$data["app_bg_path"] = "";
+	
+	$data["app_icon_path"] = $timestamp.".png";
+	$data["app_bg_path"] = $timestamp.".jpg";
 	$data["automatic_screenshots"] = 0;
 	$data["app_screenshot_1_path"] = "";
 	$data["app_screenshot_2_path"] = "";
