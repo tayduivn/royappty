@@ -63,6 +63,7 @@ $s["signup_country_this_field_is_compulsory"]  = "Este campo es obligatorio";
 $s["signup_app_name_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_app_name_it_canot_be_longer_than_75_characters"] = "No puede exceder los 75 caracteres";
 $s["signup_app_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
+$s["signup_app_name_format_is_not_correct"] = "El formato no es correcto, el nombre de la aplicación debe empezar con una letra";
 $s["signup_app_title_this_field_is_compulsory"] = "Este campo es obligatorio";
 $s["signup_app_title_it_canot_be_longer_than_20_characters"] = "No puede exceder los 20 caracteres";
 $s["signup_app_title_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
