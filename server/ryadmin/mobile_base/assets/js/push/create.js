@@ -8,7 +8,6 @@ function onDeviceReady() {
     		pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 		}
 	}catch(err){
-		error_handler("notification_error");
 	}
 }
 function onNotificationAPN(e){
@@ -27,7 +26,7 @@ function onNotification(e){
 			if (e.foreground){
 				navigator.notification.alert(e.payload.message, null,"Royappty");
 			}else{
-				alert(e.payload.message);
+				//alert(e.payload.message);
 			}
 		break;
 		default:
