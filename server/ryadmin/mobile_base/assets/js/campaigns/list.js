@@ -18,6 +18,7 @@ function update(){
 				alert(data+" "+textStatus+" "+jqXHR);
 			},
 			success: function(response) {
+				alert("ok...");
 				console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax Success");
 				if(response.result){
 					console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result true");
@@ -39,7 +40,6 @@ function update(){
 			e.preventDefault();
 		});
 	}
-	setInterval(update, 5000);
 }
 
 
