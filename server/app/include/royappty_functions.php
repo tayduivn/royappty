@@ -43,35 +43,44 @@ function create_app_folder($path,$app_project_codename){
 
 	
 function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey) {
+	global $page_path;
+	global $response;
+	
+	debug_log("[".$page_path."] [Send Message to Android] Start");
+	debug_log("[".$page_path."] [Send Message to Android] ".$messageTitle);
+	$headers = array('Authorization:key=' . $yourKey);
+	$data = array(
+			'registration_id' => $deviceToken,
+			'collapse_key' => $collapseKey,
+			'data.title' => $messageTitle,
+			'data.message' => $messageText);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, "https://android.googleapis.com/gcm/send");
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	$res = curl_exec($ch);
+	$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	if (curl_errno($ch)) {
+		$response["result"]=false;
+		debug_log("[".$page_path."] Send Message Error");
+  		$response["error_code"]="send_message_error";
+		return false;
+ 		die();
+	}
+	if ($httpCode != 200) {
+		$response["result"]=false;
+		debug_log("[".$page_path."] Send Message Error http_code<>200");
+  		$response["error_code"]="send_message_error";
+		return false;
+ 		die();
+	}
+	curl_close($ch);    
+	debug_log("[".$page_path."] [Send Message to Android] END");
+	return $res;
 
-		$headers = array('Authorization:key=' . $yourKey);
-		$data = array(
-				'registration_id' => $deviceToken,
-				'collapse_key' => $collapseKey,
-				'data.msgcnt' => 2,
-				'data.title' => $messageTitle,
-				'data.message' => $messageText);
-		$ch = curl_init();
-
-		curl_setopt($ch, CURLOPT_URL, "https://android.googleapis.com/gcm/send");
-		if ($headers)
-				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-
-		$response = curl_exec($ch);
-		var_dump($response);
-		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		if (curl_errno($ch)) {
-				return false;
-		}
-		if ($httpCode != 200) {
-				return false;
-		}
-		curl_close($ch);    
-		return $response;
 }
 
 // Image resize function with php + gd2 lib
@@ -464,7 +473,7 @@ function checkAdmin($admin){
 		debug_log("[".$page_path."] ERROR Admin inactive (id_admin=".$admin["id_admin"].")");
  		$response["error"]="ERROR User not in the system";
   		$response["error_code"]="admin_inactive";
-		echo json_encode($response);
+		return false;
  		die();
  	}
  	return true;

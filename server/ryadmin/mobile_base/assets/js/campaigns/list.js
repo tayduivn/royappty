@@ -15,7 +15,7 @@ function update(){
 			},
 			error: function(data, textStatus, jqXHR) {
 				//error_handler("ajax_error");
-				alert("Ajax errror");
+				alert(data+" "+textStatus+" "+jqXHR);
 			},
 			success: function(response) {
 				console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax Success");

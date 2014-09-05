@@ -40,9 +40,9 @@
 	*********************************************************/
 
 	// SYSTEM CLOSED
-if(!checkClosed()){echo json_encode($response);die();}
+	if(!checkClosed()){echo json_encode($response);die();}
 
-// BD CONNECTION
+	// BD CONNECTION
 	if(!checkBDConnection()){echo json_encode($response);die();}
 
 	// BRAND
@@ -84,7 +84,16 @@ if(!checkClosed()){echo json_encode($response);die();}
 	*********************************************************/
 
 	$response["result"]=true;
+	
+	$table="brands";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
+	$brand=getInBD($table,$filter);
 
+	$table="apps";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
+	$app=getInBD($table,$filter);
 
 
 	$data=array();
@@ -98,26 +107,37 @@ if(!checkClosed()){echo json_encode($response);die();}
 		$filter["id_group"]=array("operation"=>"=","value"=>$_POST["id_group"]);
 		$group=getInBD($table,$filter);
 		$data["group_name"] = $group["name"];
+		
+		$table="user_groups";
+		$filter=array();
+		$filter["id_group"]=array("operation"=>"=","value"=>$group["id_group"]);
+		$user_groups=listInBD($table,$filter);
+		foreach($user_groups as $key => $user_group){
+			$table="user";
+			$filter=array();
+			$filter["id_user"]=array("operation"=>"=","value"=>$user_group["id_user"]);
+			$user=getInBD($table,$filter);
+			sendMessageToPhone($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+		}
+		
 	}else{
 		$data["group_name"] = $s["all_users"];
+		$table="users";
+		$filter=array();
+		$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
+		$filter["android_key"]=array("operation"=>"<>","value"=>"");
+		$users=listInBD($table,$filter);
+		foreach($users as $key => $user){
+			sendMessageToPhone($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+		}
 	}
 
 	$data["created"] = $timestamp;
-
 	$table="notifications";
-	$response["data"]=addInBD($table,$data);
-
-	/*
-
+	addInBD($table,$data);
+	
 
 
-$yourKey = "AIzaSyDQcoYEESB8oixQ6Y8y_GVMfbolv2fcK_0";
-$deviceToken = "APA91bFox4rk0970xKg--S609cqudG8sjv_o4vObd6OKD8M2LMYltZFVpmHkaUQPtytOEP_cLEuF0Uo-UMamqZNOwBe3VJ0fSVcsNbxCXOeKaJDRuzlsHwx-fVrbIHKMtiX-_MgN8MpbcJ_qfvZREQ_4qrLYGJVoDg";
-$collapseKey = "739888372020";
-$messageTitle = "Royappty";
-$messageText = "Antes iba ahora no...";
-echo sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey);
-*/
 
 	/*********************************************************
 	* DATABASE REGISTRATION
@@ -130,7 +150,7 @@ echo sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle,
 	*********************************************************/
 
 	debug_log("[".$page_path."] END");
+
 	echo json_encode($response);
 	die();
-
 ?>

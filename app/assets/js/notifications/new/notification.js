@@ -105,7 +105,7 @@ $(document).ready(function() {
 				url: $SERVER_PATH+"server/app/ajax/notifications/new/add_notification.php",
 				data: {
 					"content":$('#form-end #content').val(),
-					"id_group":$('#form-end #id_group').val(),
+					"id_group":$('#form-end #id_group').val()
 				},
 				error: function(data, textStatus, jqXHR) {
 					errorstep("ajax_error");
