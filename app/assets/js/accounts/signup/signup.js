@@ -106,7 +106,6 @@ $(document).ready(function(){
     	app_name = app_name.replace(/\s+/g, ""); 
 		return this.optional(element) || app_name.match(/^[A-Za-z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00FC\u00DC][A-Za-z0-9\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00FC\u00DC]*$/);
 	}, $s["signup_app_name_format_is_not_correct"]);
-	alert("new3");
 	$("#form-step2").validate({
 		messages:{
 			app_name:{
