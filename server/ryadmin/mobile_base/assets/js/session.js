@@ -2,7 +2,7 @@
 if ((typeof localStorage.getItem('id_user') == 'undefined') || (localStorage.getItem('id_user') == null)) {
 	error_handler("no_user");
 }else{
-		$SESSION_STATUS=false;
+	$SESSION_STATUS=false;
 	$SESSION=localStorage.getItem('id_user');
 	console.log("[server/mobile/ajax/session/create.php] Call Start");
 	$.ajax({
@@ -25,7 +25,7 @@ if ((typeof localStorage.getItem('id_user') == 'undefined') || (localStorage.get
 			console.log("[server/mobile/ajax/session/create.php] Ajax Success");
 			if(response.result){
 				console.log("[server/mobile/ajax/session/create.php] Calling update");
-
+				//setInterval(update(), 100);
 				update();
 			} else {
 				error_handler(response.error_code);

@@ -62,10 +62,11 @@
      $response["result"]=true;
      $response["data"]["page"]="
        <div class='page center_mobile_page' id='index'>
-         <img class='full-width full-height' src='".$src."'/>
+         <img class='full-width full-height' src=''/>
        </div>
      ";
-     echo "jsonCallback(".json_encode($response).")";
+     error_log("jsonCallback(".json_encode($response).")");
+     echo 'jsonCallback({"result":true,"data":{"page":""}})';
      die();
   }
   
@@ -392,7 +393,7 @@
  	*********************************************************/
 
  	echo "jsonCallback(".json_encode($response).")";
-	  debug_log("[".$page_path."] END");
-	  die();
+	debug_log("[".$page_path."] END");
+	die();
 
 ?>
