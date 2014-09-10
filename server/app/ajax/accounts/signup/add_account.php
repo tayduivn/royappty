@@ -198,7 +198,7 @@
 		$data["expiration_date"]=strtotime("+3 month", $timestamp);
 	}
 	$data["contact_name"]=$_POST["name"];
-	$data["contact_email"]=$_POST["email"];
+	$data["contact_email"]=$_POST["admin_email"];
 	$data["contact_phone"]=$_POST["contact_phone"];
 	$data["contact_address"]=$_POST["contact_address"];
 	$data["contact_postal_code"]=$_POST["contact_postal_code"];
@@ -224,7 +224,7 @@
 	$data=array();
 	$data["id_brand"] =	$brand["id_brand"];
 	$data["name"] = $_POST["app_name"];
-	
+
 	$data["project_codename"] = $project_codename;
 	$data["apk_name"] = substr($data["project_codename"],0,10);
 	$data["package_address"] = $CONFIG["component_url_prefix"].".".$data["apk_name"];
@@ -233,7 +233,7 @@
 	$data["published_apple_store"] = 1;
 	$data["published_google_play"] = 1;
 	$data["app_title"] = $_POST["name"];
-	
+
 	$data["app_icon_path"] = $timestamp.".png";
 	$data["app_bg_path"] = $timestamp.".jpg";
 	$data["automatic_screenshots"] = 0;
@@ -242,7 +242,7 @@
 	$data["app_screenshot_3_path"] = "";
 	$data["app_screenshot_4_path"] = "";
 	addInBD($table,$data);
-	
+
 	$table="user_fields";
 	$filter=array();
 	$filter["default_field"]=array("operation"=>"=","value"=>1);
@@ -254,8 +254,8 @@
 	$data["id_user_field"]=$default_user_field["id_user_field"];
 	$data["main_field"]=1;
 	addInBD($table,$data);
-	
-	
+
+
 	$table="admins";
 	$data=array();
 	$data["id_brand"]=$brand["id_brand"];
