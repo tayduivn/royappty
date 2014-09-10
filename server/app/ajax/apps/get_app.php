@@ -78,6 +78,15 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	$app=getInBD($table,$filter);
 
+	$request_waiting=false;
+	$table="requests";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+	$filter["type"]=array("operation"=>"=","value"=>"app_update");
+	$filter["status"]=array("operation"=>"=","value"=>"in_process");
+	if(isInBD($table,$filter)){
+		$request_waiting=true;
+	}
 	$response["data"]["modals"]="
 
 	";
@@ -85,9 +94,17 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$response["data"]["page-title"]="<a href='#'>".htmlentities($s["my_app"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($app["name"], ENT_QUOTES, "UTF-8")."<a href='./edit/' class='m-l-10 pull-right m-t--3 btn btn-white btn-mini pull-right'>".htmlentities($s["edit_app"], ENT_QUOTES, "UTF-8")."</a>";
 	$response["data"]["page-options"]="";
 
-
 	$response["data"]["app-data"]="
-		<div class='col-md-12'>
+		<div class='col-md-12'>";
+	if($request_waiting){
+		$response["data"]["app-data"].="
+			<div class='box box-warning m-b-10'>
+				<h5 class='text-warning'>".$s["there_is_request_to_update_the_app"]."</h5>
+			</div>
+		";
+
+	}
+	$response["data"]["app-data"].="
 			<div class='m-b-20'>
 				<h4 class='m-t-0'>".htmlentities($s["app_name_description_and_sreenshots"], ENT_QUOTES, "UTF-8")."</h4>
 				<h5 class=''>".htmlentities($s["name_and_description"], ENT_QUOTES, "UTF-8")."</h5>

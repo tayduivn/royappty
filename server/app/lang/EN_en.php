@@ -363,6 +363,7 @@ $s["app_bg_help_2"] = "to check your request status.";
 $s["user_fields"] = "Requested information to users";
 $s["no_user_fields"] = "No information has been requested";
 $s["edit_user_fields"] = "Edit collected data";
+$s["there_is_request_to_update_the_app"] = "There is request in proccess to update your app, remember this process may last several days.";
 
 //App / new / edit
 $app_s["step_1_title"] = "App data";
