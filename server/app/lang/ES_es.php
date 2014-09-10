@@ -707,6 +707,7 @@ $resume_block_s["group_users"]="Usuarios";
 
 $user_field_title_s[""]="";
 $user_field_title_s["name"]="Nombre";
+$user_field_title_s["email"]="Correo Electrónico";
 
 $royappty_plans["starter"]["title"]="Royappty Starter";
 $royappty_plans["starter"]["subtitle"]="Nuestro plan básico, para pequeños comercios que quieran ofrecer promociones increibles.";

@@ -708,6 +708,7 @@ $resume_block_s["group_users"]="Users";
 
 $user_field_title_s[""]="";
 $user_field_title_s["name"]="Name";
+$user_field_title_s["email"]="Email";
 
 $royappty_plans["welcome"]["title"]="Royappty Profesional Welcome Pack";
 $royappty_plans["welcome"]["subtitle"]="Enjoy our Starter service for 3 Months totally Free.";
