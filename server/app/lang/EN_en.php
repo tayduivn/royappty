@@ -177,6 +177,8 @@ $s["delete_campaign_alert"]="This operation will delete all campign data and can
 $s["active_campaigns"] = "campaigns_status active";
 $s["draft_campaigns"] = "Drafts";
 $s["inactive_campaigns"] = "Inactive campaigns.";
+$s["campaign_icon"] = "Campaign icon";
+$s["campaign_image"] = "Campaign image";
 
 //Campaign / get
 $s["add_note"]="Add note";
