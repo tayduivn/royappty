@@ -363,6 +363,7 @@ $s["app_bg_help_2"] = "para comprobar el estado de tu solicitud.";
 $s["user_fields"] = "Datos que se solicitan a los usuarios";
 $s["no_user_fields"] = "No se solicita ningún dato";
 $s["edit_user_fields"] = "Editar datos de recogida";
+$s["there_is_request_to_update_the_app"] = "Existe una petición de actiualización de la aplicación, recuerda que estas actualizaciones pueden llevar varios días hasta que veas los cambios.";
 
 //App / new / edit
 $app_s["step_1_title"] = "Datos de la Aplicación";
