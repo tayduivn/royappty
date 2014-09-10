@@ -253,7 +253,8 @@ $s["edit_coupon_number_this_field_needs_1_coupon_minimum"] = "Se necesita un cup
 $s["edit_coupon_this_field_requires_numbers_only"] = "Este campo solo acepta n&uacute;meros"
 
 //app - edit - app.js
-$s["edit_an_error_occurred_when_downloading_the_file"] = "Ha ocurrido un error al subir el archivo";
+$s["file_format_not_valid"] = "Formato de imagen no valido. Los formatos válidos son jpg, png y gif.";
+$s["edit_an_error_occurred_when_upload_the_file"] = "Ha ocurrido un error al subir el archivo";
 $s["edit_click_or_drag_image_here"] = "Pinche o arraste aqu&iacute; la imagen";
 $s["edit_to upload"] = " a subir";
 $s["edit_name_this_field_is_compulsory"] = "Este campo es obligatorio";

@@ -39,8 +39,6 @@
 	* AJAX OPERATIONS
 	*********************************************************/
 
-	debug_log("UPDALOAD IMAGE");
-
 	$res = new stdClass();
 	// Result content type
 	header('content-type: application/json');
@@ -53,18 +51,16 @@
 		echo json_encode($res);
 			die();
 	}
-	if ($_FILES['xfile']['type'] != "image/jpeg") {
+	if (($_FILES['xfile']['type'] != "image/jpeg") && ($_FILES['xfile']['type'] != "image/gif") && ($_FILES['xfile']['type'] != "image/png")) {
 		$res->error=true;
+		$res->error_code="file_format";
 		echo json_encode($res);
-			die();
+		die();
 	}
-
-
-	$types = Array('image/png', 'image/gif', 'image/jpeg');
 
 	$source = file_get_contents($_FILES["xfile"]["tmp_name"]);
 	$folder="../../../../server/resources/tmp/";
-	$filename = $folder . $timestamp . '.jpg';
+	$filename = $folder . $timestamp . '.' . $_GET["format"];
 
 	$width=0;
 	if(isset($_GET["width"])&&(!empty($_GET["width"]))){
@@ -85,12 +81,12 @@
 
 
 	// Result data
-	$res->filename = $url_server.'server/resources/tmp/'.$timestamp . '.jpg';
-	$res->path = 'server/resources/tmp/'.$timestamp . '.jpg';
+	$res->filename = $url_server.'server/resources/tmp/'.$timestamp . '.' . $_GET["format"];
+	$res->path = 'server/resources/tmp/'.$timestamp . '.'. $_GET["format"];
 	$res->preview = $_GET["label"]."-preview";
 	$res->label = $_GET["label"];
 	$res->indice = "temp";
-	$res->img = '<img src="'.$url_server.'server/resources/tmp/'.'temp'.'.jpg" alt="image" />';
+	$res->img = '<img src="'.$url_server.'server/resources/tmp/'.'temp'.'.'.$_GET["format"].'" alt="image" />';
 	$res->error =false;
 
 

@@ -253,7 +253,8 @@ $s["edit_coupon_number_this_field_needs_1_coupon_minimum"] = "This field needs 1
 $s["edit_coupon_this_field_requires_numbers_only"] = "This field requires numbers only";
 
 //app - edit - app.js
-$s["edit_an_error_occurred_when_downloading_the_file"] = "An error happened when downloading the file";
+$s["file_format_not_valid"] = "Image format not valid. The allowed file formats are jpg, png and gif";
+$s["edit_an_error_occurred_when_uploading_the_file"] = "An error happened when uploading the file";
 $s["edit_click_or_drag_image_here"] = "Click or drag the image here";
 $s["edit_to upload"] = " to upload";
 $s["edit_name_this_field_is_compulsory"] = "This field is compulsory";
