@@ -85,7 +85,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
 	$campaign=getInBD($table,$filter);
-	
+
 	$response["data"]["modals"]="
 	<div class='modal fade' id='campaign_notes_viewer' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 		<div class='modal-dialog'>
@@ -181,7 +181,20 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$response["data"]["page-options"]="";
 
 
-	$response["data"]["promo-icon"]="<img class='full-width' src='".$url_server."/server/resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>";
+	$response["data"]["promo-icon"]="
+	<div>
+		<p class='text-center m-b-10'>
+			<img class='full-width m-b-5' src='".$url_server."/server/resources/campaign-icon/".$campaign["campaign_icon_path"]."'/><br/>
+			".$s["campaign_icon"]."
+		</p>
+	</div>
+	<div>
+	<p class='text-center'>
+			<img class='full-width m-b-5' src='".$url_server."/server/resources/campaign-image/".$campaign["campaign_image_path"]."'/><br/>
+			".$s["campaign_image"]."
+		</p>
+	</div>
+	";
 
 	if($campaign["id_group"]==0){
 		$campaign["group_name"]=$s["all_users"];
