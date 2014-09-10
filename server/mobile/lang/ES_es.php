@@ -33,6 +33,7 @@
 
 
 	$user_field_title_s["name"]="Nombre";
+	$user_field_title_s["email"]="Correo Electrónico";
 
 	$error["no_brand"]="No nos es posible encontrar los datos de campañas. Vuelve a intentarlo o descárgate de nuevo la aplicación";
 	$error["brand_not_valid"]="Es una pena, pero la aplicación ha sido cerrada.";

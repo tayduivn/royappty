@@ -27,6 +27,7 @@ $s["promo_success"] = "Succeeded Promotion";
 
 
 $user_field_title_s["name"]="Name";
+$user_field_title_s["email"]="Email";
 
 $error["no_brand"]="We cannot find this campaign information. Try gain or download the app again";
 $error["brand_not_valid"]="It is a pity, but the app has been closed.";
