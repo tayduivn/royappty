@@ -96,8 +96,8 @@ if(!checkClosed()){echo json_encode($response);die();}
 	unset($data["id_app"]);
 
 	if(@issetandnotempty($data["app_icon_path"])){
-		copy(PATH."../../".$data["app_icon_path"],PATH."../../server/resources/app-icon/".$timestamp.".jpg");
-		$data["app_icon_path"] = $timestamp.".jpg";
+		copy(PATH."../../".$data["app_icon_path"],PATH."../../server/resources/app-icon/".$timestamp.".png");
+		$data["app_icon_path"] = $timestamp.".png";
 	}else{
 		unset($data["app_icon_path"]);
 	}

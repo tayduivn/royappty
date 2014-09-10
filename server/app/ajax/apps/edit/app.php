@@ -100,7 +100,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 						<label class='form-label'>".htmlentities($app_s["icon"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($app_s["icon_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_icon_path' />
+							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?format=png&type=icon&width=550&height=550&crop=1&label=app_icon_path' />
 						</div>
 					</div>
 				</div>
@@ -111,15 +111,15 @@ if(!checkClosed()){echo json_encode($response);die();}
 							<span class='help'></span>
 							<div class='controls'>";
 	if(!issetandnotempty($app["app_icon_path"])){
-		$response["data"]["new-discount-step-2"].="					
-								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/mobile_apps/".$app["project_codename"]."/app_icon.png'/>
+		$response["data"]["new-discount-step-2"].="
+								<img id='app_icon_path-preview' class='full-width' src='".$url_server."server/mobile_apps/".$app["project_codename"]."/app_icon.png'/>
 		";
 	}else{
-		$response["data"]["new-discount-step-2"].="					
-								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/resources/app-icon/".$app["app_icon_path"]."'/>
+		$response["data"]["new-discount-step-2"].="
+								<img id='app_icon_path-preview' class='full-width' src='".$url_server."server/resources/app-icon/".$app["app_icon_path"]."'/>
 		";
 	}
-	$response["data"]["new-discount-step-2"].="		
+	$response["data"]["new-discount-step-2"].="
 							</div>
 						</div>
 					</div>
@@ -144,7 +144,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 						<label class='form-label'>".htmlentities($app_s["app_bg"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($app_s["app_bg_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?type=icon&width=500&height=500&crop=1&label=app_bg_path' />
+							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?format=jpg&type=icon&width=660&height=1200&crop=1&label=app_bg_path' />
 						</div>
 					</div>
 				</div>
@@ -155,11 +155,11 @@ if(!checkClosed()){echo json_encode($response);die();}
 							<span class='help'></span>
 							<div class='controls'>";
 	if(!issetandnotempty($app["app_bg_path"])){
-		$response["data"]["new-discount-step-3"].="					
+		$response["data"]["new-discount-step-3"].="
 								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/mobile_apps/".$app["project_codename"]."/app_bg.jpg'/>
 		";
 	}else{
-		$response["data"]["new-discount-step-3"].="					
+		$response["data"]["new-discount-step-3"].="
 								<img id='app_bg_path-preview' class='full-width' src='".$url_server."server/resources/app-bg/".$app["app_bg_path"]."'/>
 		";
 	}
