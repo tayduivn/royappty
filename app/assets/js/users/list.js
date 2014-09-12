@@ -43,7 +43,7 @@ $(document).ready(function() {
 		 "aoColumnDefs": [
           { 'bSortable': false, 'aTargets': [] }
 		],
-		"aaSorting": [[ 0, "asc" ]],
+		"aaSorting": [],
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ ",
 		"sSearch": $s["users_search"],

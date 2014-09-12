@@ -28,6 +28,7 @@ $s["save"] = "Guardar";
 $s["save_changes"] = "Guardar cambios";
 $s["euros_symbol"] = "€";
 $s["select_an_option"] = "Seleccione una opción";
+$s["never_used"] = "Sin usar";
 
 //Mail
 $s["follow_us"] = "Síguenos";

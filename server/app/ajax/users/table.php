@@ -96,8 +96,8 @@
 	 		$response["aaData"][]=array(
 	 			$data_table[0],
 	 			"<span class='pull-right'>".$used_codes_user_summary."</span>",
-	 			"<span class='pull-right'>".date("d/m/Y  H:m",$user["created"])."</span>",
-	 			"<span class='pull-right'>".date("d/m/Y  H:m",$user["last_connection"])."</span>");
+	 			"<span class='pull-right'><span style='display:none'>".$user["created"]."</span>".date("d/m/Y  H:m",$user["created"])."</span>",
+	 			"<span class='pull-right'><span style='display:none'>".$user["last_connection"]."</span>".date("d/m/Y  H:m",$user["last_connection"])."</span>");
  		}
 
 	}

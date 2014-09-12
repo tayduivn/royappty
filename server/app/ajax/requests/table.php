@@ -77,7 +77,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 
 	 			$data_table[0],
 	 			htmlentities($s["requests_status"][$request["status"]], ENT_QUOTES, "UTF-8"),
-	 			htmlentities(date("d/m/Y",$request["created"]), ENT_QUOTES, "UTF-8")
+	 			"<span class='pull-right'><span style='display:none'>".$request["created"]."</span> ".date("d/m/Y H:i",$request["created"])."</span>"
 	 		);
 	 	}
 

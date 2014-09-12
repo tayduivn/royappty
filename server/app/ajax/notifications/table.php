@@ -61,7 +61,9 @@ if(!checkClosed()){echo json_encode($response);die();}
  	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
 	if(isInBD($table,$filter)){
-		$notifications=listInBD($table,$filter);
+		$fields=array();
+		$order="created asc";
+		$notifications=listInBD($table,$filter,$fields,$order);
 
 
  		foreach($notifications as $key=>$notification){
@@ -78,7 +80,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 			$response["aaData"][]=array(
 	 			$table_field,
 	 			"<div class='text-right'>".$notification["group_name"]."</div>",
-	 			"<div class='text-right'>".date("d/m/Y H:i",$notification["created"])."</div>");
+	 			"<div class='text-right'><span style='display:none'>".$notification["created"]."</span>".date("d/m/Y H:i",$notification["created"])."</div>");
  		}
 
 	}
