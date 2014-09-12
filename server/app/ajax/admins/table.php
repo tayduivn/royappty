@@ -110,9 +110,9 @@ if(!checkClosed()){echo json_encode($response);die();}
  			}
 
 
- 			$admin["last_connection_str"]="Sin uso";
+ 			$admin["last_connection_str"]="<span style='display:none'>0</span> ".htmlentities($s["never_used"], ENT_QUOTES, "UTF-8");
  			if($admin["last_connection"]!=0){
-	 			$admin["last_connection_str"]=date("d/m/Y  H:m",$admin["last_connection"]);
+	 			$admin["last_connection_str"]="<span style='display:none'>".$admin["last_connection"]."</span> ".date("d/m/Y  H:m",$admin["last_connection"]);
  			}
 
  			$table_field="<div class='m-b-5'><a href='".$_GET["PATH"]."admin/?id_admin=".$admin["id_admin"]."' class='";

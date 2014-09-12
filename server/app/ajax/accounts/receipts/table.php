@@ -66,7 +66,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	 		$response["aaData"][]=array(
 
 	 			"<div class='m-b-5'><a href='".$_GET["PATH"]."my-account/subscription/receipt/?id_receipt=".$receipt["id_receipt"]."'>".$s["receipt"]." #".$receipt["id_receipt"]."</a></div><a href='".$_GET["PATH"]."my-account/subscription/receipt/?id_receipt=".$receipt["id_receipt"]."' class='btn btn-mini btn-white'>".htmlentities($s["view_receipt"], ENT_QUOTES, "UTF-8")."</a>",
-	 			"<span class='pull-right'>".date("Y/m/d",$receipt["created"])."</span>",
+	 			"<span class='pull-right'><span style='display:none'>".$receipt["created"]."</span> ".date("Y/m/d",$receipt["created"])."</span>",
 	 			"<span class='pull-right'>".$receipt["amount"]." €</span>");
  		}
 
