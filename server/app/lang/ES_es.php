@@ -689,6 +689,9 @@ $new_coupon_s["promo_cost"] = "Coste ( € )";
 $new_coupon_s["promo_cost_help"] = "Pon en Euros el coste de la promo ej. 1.00";
 $new_coupon_s["status"] = "Estado de la campaña";
 $new_coupon_s["status_help"] = "Seleccione el estado de la campaña";
+$s["check_our_subscription_plans"]="revisa nuestros planes";
+$s["your_account_doesnt_allow_this_option"]="Tu tipo de subscripción no permite esta opción";
+
 
 $resume_block_s[""]="";
 $resume_block_s["usage_this_mounth"]="Uso este mes";
