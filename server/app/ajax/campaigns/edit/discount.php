@@ -67,6 +67,11 @@ if(!checkClosed()){echo json_encode($response);die();}
 
  	$response["result"]=true;
 
+	$table="brands";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+	$brand=getInBD($table,$filter);
+
 	$table="campaigns";
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
@@ -289,31 +294,48 @@ if(!checkClosed()){echo json_encode($response);die();}
 				<div class='col-md-12'>
 					<div class='form-group'>
 						<label class='form-label'>".htmlentities($new_coupon_s["group"], ENT_QUOTES, "UTF-8")."</label>
-						<span class='help'>".htmlentities($new_coupon_s["group_help"], ENT_QUOTES, "UTF-8")."</span>
-						<div class='controls'>
-							<select name='id_group' id='id_group'>
-								<option value='0' ";
-	if($campaign["id_group"]==0){
-		$response["data"]["new-discount-step-4"].=" selected";
-	}
-	$response["data"]["new-discount-step-4"].=">".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</option>";
+						<span class='help'>".htmlentities($new_coupon_s["group_help"], ENT_QUOTES, "UTF-8")."</span>";
 
-	$table="groups";
-	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	if(isInBD($table,$filter)){
-		$groups=listInBD($table,$filter);
-		foreach($groups as $key => $group) {
-			$response["data"]["new-discount-step-4"].="<option value='".$group["id_group"]."' ";
-			if($campaign["id_group"]==$group["id_group"]){
-				$response["data"]["new-discount-step-4"].="selected";
-			}
-			$response["data"]["new-discount-step-4"].=">".$group["name"]."</option>";
+	if(($brand["subscription_type"]=="professional")||($brand["subscription_type"]=="unlimited")){
+		$response["data"]["new-discount-step-4"].="
+					<div class='controls'>
+							<select name='id_group' id='id_group'>
+								<option value='0'";
+		if($group["id_group"]==$campaign["id_group"]){
+			$response["data"]["new-discount-step-4"].="selected";
 		}
-	}
-	$response["data"]["new-discount-step-4"].="
+		$response["data"]["new-discount-step-4"].="
+								>".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</option>";
+		$table="groups";
+		$filter=array();
+		$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
+		if(isInBD($table,$filter)){
+			$groups=listInBD($table,$filter);
+			foreach($groups as $key => $group) {
+				$response["data"]["new-discount-step-4"].="
+								<option value='".$group["id_group"]."'";
+				if($group["id_group"]==$campaign["id_group"]){
+					$response["data"]["new-discount-step-4"].="selected";
+				}
+				$response["data"]["new-discount-step-4"].="
+								>".$group["name"]."</option>";
+			}
+		}
+		$response["data"]["new-discount-step-4"].="
 							</select>
 						</div>
+		";
+	}else{
+		$response["data"]["new-discount-step-4"].="
+						<div class='controls'>
+							<select name='id_group' id='id_group' disabled='disabled'>
+								<option value='0' selected>".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</option>
+							</select> <span class='m-l-10 text-muted'>".htmlentities($s["your_account_doesnt_allow_this_option"], ENT_QUOTES, "UTF-8").", <a href='".$url_server."pricing/' target='_blank'>".htmlentities($s["check_our_subscription_plans"], ENT_QUOTES, "UTF-8")."</a></span>
+						</div>
+
+					";
+	}
+	$response["data"]["new-discount-step-4"].="
 					</div>
 					<div class='form-group'>
 						<label class='form-label'>".htmlentities($new_discount_s["promo_usage_limit"], ENT_QUOTES, "UTF-8")."</label>

@@ -689,6 +689,9 @@ $new_coupon_s["promo_cost"] = "Cost ( € )";
 $new_coupon_s["promo_cost_help"] = "Put the promotion cost in Euros e.g. 1.00";
 $new_coupon_s["status"] = "Campaign status";
 $new_coupon_s["status_help"] = "Select campaign status";
+$s["check_our_subscription_plans"]="check our subscription plans";
+$s["your_account_doesnt_allow_this_option"]="Your subscription doesn\'t allow you this option";
+
 
 $resume_block_s[""]="";
 $resume_block_s["usage_this_mounth"]="This month usage";
