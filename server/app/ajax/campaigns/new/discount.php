@@ -114,9 +114,9 @@ if(!checkClosed()){echo json_encode($response);die();}
 									<span class='text-black'>".htmlentities($new_discount_s["our_promos"], ENT_QUOTES, "UTF-8")."</span>
 								</div>
 								<div style='display:block;vertical-align:middle;height:247px;width:100%;overflow:hidden' class='p-l-10 p-r-10 text-center'>
-									<img id='campaign_icon_path-preview' class='full-width m-t-10' src='".$url_server."server/app/assets/img/default-icon.jpg'/>
+									<img id='campaign_icon_path-preview' class='full-width m-t-10' src='".$url_server."server/resources/defaults/campaign-icon-default.jpg'/>
 								<div style='height:136px;overflow:hidden' class='full-width m-t-10'>
-									<img class='full-width' src='".$url_server."server/app/assets/img/default-icon.jpg'/>
+									<img class='full-width' src='".$url_server."server/resources/defaults/campaign-icon-default.jpg'/>
 								</div>
 							</div>
 						</div>
@@ -179,7 +179,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 										<span class='text-black' id='title-preview'>".htmlentities($new_discount_s["our_promos"], ENT_QUOTES, "UTF-8")."</span>
 									</div>
 									<div style='display:block;vertical-align:middle;height:247px;width:100%;overflow:hidden' class='text-center'>
-										<img id='campaign_image_path-preview' class='full-width' src='".$url_server."server/app/assets/img/default-icon.jpg'/>
+										<img id='campaign_image_path-preview' class='full-width' src='".$url_server."server/resources/defaults/campaign-image-default.jpg'/>
 										<div class='m-t-10 p-l-10 p-r-10 text-muted text-small' style='overflow-wrap:break-word;font-size:9px;' id='content-preview'>
 										</div>
 										<div class='btn btn-white btn-mini m-t-10' id='button-preview'>

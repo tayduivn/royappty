@@ -118,39 +118,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 						<div class='controls'>
 							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/campaigns/upload-image.php?type=icon&width=500&height=500&crop=1&label=campaign_icon_path' />
 						</div>
-						<!--<label class='form-label'>".$new_discount_s["choose_predefined_icon"].";</label>
-						<div class='m-t-10'>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-01.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-01.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-02.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-02.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-03.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-03.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-04.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-04.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-05.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-05.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-06.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-06.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-07.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-07.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-08.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-08.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-09.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-09.jpg'/>
-							</a>
-							<a href=\"javascript:$('#campaign_icon_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-10.jpg')\">
-								<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-icon/pre-icon-10.jpg'/>
-							</a>
-						</div>-->
 					</div>
 				</div>
 				<div class='col-md-4'>
@@ -163,7 +130,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 								<div style='display:block;vertical-align:middle;height:247px;width:100%;overflow:hidden' class='p-l-10 p-r-10 text-center'>
 									<img id='campaign_icon_path-preview' class='full-width m-t-10' src='".$url_server."resources/campaign-icon/".$campaign["campaign_icon_path"]."'/>
 								<div style='height:136px;overflow:hidden' class='full-width m-t-10'>
-									<img class='full-width' src='".$url_server."server/app/assets/img/default-icon.jpg'/>
+									<img class='full-width' src='".$url_server."server/resources/defaults/campaign-icon-default.jpg'/>
 								</div>
 							</div>
 						</div>
@@ -202,44 +169,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 									</div>
 								</div>
 							</div>
-							<!--<div class='col-md-6'>
-								<div class='form-group'>
-									<label class='form-label'>".htmlentities($new_discount_s["or_select_predefined_image"], ENT_QUOTES, "UTF-8")."</label>
-									<span class='help'></span>
-									<div style='overflow:auto;' class='m-t-10'>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-01.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-01.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-02.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-02.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-03.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-03.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-04.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-04.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-05.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-05.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-06.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-06.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-07.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-07.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-08.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-08.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-image/pre-image-09.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-09.jpg'/>
-										</a>
-										<a href=\"javascript:$('#campaign_image_path-preview').attr('src','".$url_server."server/app/assets/img/pre-icon/pre-icon-10.jpg')\">
-											<img class='full-width pull-left m-l-10 m-b-10' style='width:50px' src='".$url_server."server/app/assets/img/pre-image/pre-image-10.jpg'/>
-										</a>
-									</div>
-								</div>
-							</div>-->
 						</div>
 						<div class='form-group'>
 							<label class='form-label'>".htmlentities($new_discount_s["promo_content"], ENT_QUOTES, "UTF-8")."</label>
