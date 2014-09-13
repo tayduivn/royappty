@@ -1,4 +1,5 @@
 var $s = new Array();
+var $error_s = new Array();
 
 //Account - login.js
 $s["email_this_field_is_compulsory"] = "Este campo es obligatorio";
@@ -294,6 +295,13 @@ $s["an_error_occurred_when_carrying_out_operation"] = "Ha ocurrido un error al r
 $s["unknown"] = "Desconocido";
 $s["please_contact_if_error persists"] = "Por favor vuelva a intentarlo m&aacute;s tarde, si el error persiste contacte con nuestro servicio t&eacute;cnico.";
 $s["close"] = "Cerrar";
+$s["back"] = "Volver";
+
+//Error
+$error_s["server_connection_title"]="Error en el Servidor";
+$error_s["server_connection_content"]="No se ha podido conectar con el servidor. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+$error_s["ajax_error_title"]="Error en el Servidor";
+$error_s["ajax_error_content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
 //error app index.html
 //$s["error_title"] = "Error";

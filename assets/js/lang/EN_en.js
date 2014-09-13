@@ -29,6 +29,9 @@ $s["close_contact_info"] = "<i class='fa fa-phone></i>'";
 $error_s["ajax_error_title"]="Error in the Server";
 $error_s["ajax_error_content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 
+$error_s["ajax_error_title"]="Error in the Server";
+$error_s["ajax_error_content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
+
 $error_s["db_connection_error_title"]="Error in the Database Server";
 $error_s["db_connection_error_content"]="An error occurred in the database server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
 

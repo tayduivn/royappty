@@ -18,6 +18,10 @@ $(document).ready(function(){
 	/*********************************************************
 	* AJAX CALL LOAD PAGE
 	*********************************************************/
+	$("#s-error-title").html($error_s["server_connection_title"]);
+	$("#s-error-content").html($error_s["server_connection_content"]);
+	$("#s-back").html($s["back"]);
+
 	$.ajax({
 		async: false,
 		type: "POST",
@@ -28,6 +32,9 @@ $(document).ready(function(){
 				error_code:$GET["error_code"]
 		},
 		error: function(data, textStatus, jqXHR) {
+			$("#s-error-title").html($error_s["ajax_error_title"]);
+			$("#s-error-content").html($error_s["ajax_error_content"]);
+			$("#s-back").html($s["back"]);
 		},
 		success: function(response) {
 			if(response.result){
