@@ -100,7 +100,8 @@ if(!checkClosed()){echo json_encode($response);die();}
 		$data[$key]=$value;
 	}
 	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
-
+	$data["created"]=$timestamp;
+	
 	$table="groups";
 	$filter=array();
 	$filter["id_group"]=array("operation"=>"=","value"=>$data["id_group"]);

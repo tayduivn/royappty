@@ -203,6 +203,7 @@ $s["edit_campaign"] = "Edit campaign";
 $s["campaign_deleted"] = "Deleted campaign";
 $s["view_all_notes"] = "View all notes";
 $s["there_is_no_notes_to_show"] = "There are no notes to show";
+$s["creation_date"] = "Creation date";
 
 //Campaign / new
 $s["select_campaign_type"] = "Select campaign type";
