@@ -285,7 +285,6 @@ if(!checkClosed()){echo json_encode($response);die();}
 							<select name='status' id='status'>
 								<option value='1'>".htmlentities($s["campaigns_status"][1], ENT_QUOTES, "UTF-8")."</option>
 								<option value='2'>".htmlentities($s["campaigns_status"][2], ENT_QUOTES, "UTF-8")."</option>
-								<option value='3'>".htmlentities($s["campaigns_status"][3], ENT_QUOTES, "UTF-8")."</option>
 							</select>
 						</div>
 					</div>
