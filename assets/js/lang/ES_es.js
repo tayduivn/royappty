@@ -26,6 +26,9 @@ $s["close_content"] = "Estamos octualizando Royappty para ti y pronto volverá a
 $s["close_contact_info"] = "<i class='fa fa-phone'></i> "+$config["company_phone"]+" <i class='fa fa-envelope-o'></i> "+$config["company_info_mail"];
 
 //Modal errors
+$error_s["server_connection_title"]="Error en el Servidor";
+$error_s["server_connection_content"]="No se ha podido conectar con el servidor. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+
 $error_s["ajax_error_title"]="Error en el Servidor";
 $error_s["ajax_error_content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 
