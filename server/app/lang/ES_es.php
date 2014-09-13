@@ -181,7 +181,6 @@ $s["inactive_campaigns"] = "Campañas inactivas";
 $s["campaign_icon"] = "Icono de la campaña";
 $s["campaign_image"] = "Imágen de la campaña";
 
-
 //Campaign / get
 $s["add_note"]="Añadir Nota";
 $s["delete_note"] = "Borrar Nota";
@@ -204,6 +203,7 @@ $s["edit_campaign"] = "Editar campaña";
 $s["campaign_deleted"] = "Campaña Borrada";
 $s["view_all_notes"] = "Ver todas las notas";
 $s["there_is_no_notes_to_show"] = "No hay notas que mostrar";
+$s["creation_date"] = "Fecha de Creación";
 
 //Campaign / new
 $s["select_campaign_type"] = "Seleccione tipo de Campaña";

@@ -111,6 +111,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 		error_log("[".$key."]=".$value);
 	}
 	$data["id_brand"]=$_SESSION["admin"]["id_brand"];
+	$data["created"]=$timestamp;
 
 	$table="groups";
 	$filter=array();
