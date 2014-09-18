@@ -103,6 +103,7 @@
           <h1 class='normal m-b-10'>".htmlentities($s["build_2_title"], ENT_QUOTES, "UTF-8")."</h1>
           <h4>".htmlentities($s["build_2_content_1"], ENT_QUOTES, "UTF-8")."</h4>
           <h4>".htmlentities($s["build_2_content_2"], ENT_QUOTES, "UTF-8")."</h4>
+          <h4>".htmlentities($s["build_2_content_3"], ENT_QUOTES, "UTF-8")."</h4>
         </div>
         <div class='col-md-1'>
         </div>
