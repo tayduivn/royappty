@@ -41,13 +41,66 @@ function create_app_folder($path,$app_project_codename){
 
 }
 
+function sendMessageToiOs($deviceToken, $collapseKey, $messageText, $messageTitle, $key_path) {
+	global $page_path;
+
+	debug_log("[".$page_path."] [sendMessageToiOs] START");
+	debug_log("[".$page_path."] [sendMessageToiOs] ios_key: ".$deviceToken);
+	$apnsHost = 'gateway.sandbox.push.apple.com';
+	$apnsPort = 2195;
+	//$apnsCert = $server_path."resources/mobile-app/".$app_project_codename."ios_certificate.pem";
+	$apnsCert = $key_path;
+	if(file_exists($key_path)){
+		debug_log("[".$page_path."] [sendMessageToiOs] File exists");
+	}else{
+		debug_log("[".$page_path."] [sendMessageToiOs] File not exists");
+	}
 	
-function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey) {
+			debug_log("[".$page_path."] [sendMessageToiOs] File not exists");
+
+	// Setup stream:
+	$streamContext = stream_context_create();
+	stream_context_set_option($streamContext, 'ssl', 'local_cert', $apnsCert);
+	 
+	// Open connection:
+	$apns = stream_socket_client(
+	    'ssl://' . $apnsHost . ':' . $apnsPort,
+	    $error,
+	    $errorString,
+	    2,
+	    STREAM_CLIENT_CONNECT,
+	    $streamContext
+	);
+	 
+	if (strlen($messageText) > 125) {
+	    $messageText = substr($messageText, 0, 125) . '...';
+	}
+	 
+	$payload['aps'] = array('alert' => $messageText, 'badge' => 1, 'sound' => 'default');
+	$payload = json_encode($payload);
+	 
+	// Send the message:
+	
+	$apnsMessage
+	    = chr(0) . chr(0) . chr(32) . pack('H*', str_replace(' ', '', $deviceToken)) . chr(0) . chr(strlen($payload))
+	    . $payload;
+	 fwrite($apns, $apnsMessage);
+	 
+	// Close connection:
+	@socket_close($apns);
+	fclose($apns);
+	debug_log("[".$page_path."] [sendMessageToiOs] END");
+	return true;
+}
+
+
+
+function sendMessageToAndroid($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey) {
 	global $page_path;
 	global $response;
 	
-	debug_log("[".$page_path."] [Send Message to Android] Start");
-	debug_log("[".$page_path."] [Send Message to Android] ".$messageTitle);
+	debug_log("[".$page_path."] [sendMessageToAndroid] START");
+	debug_log("[".$page_path."] [sendMessageToAndroid] ".$messageTitle);
 	$headers = array('Authorization:key=' . $yourKey);
 	$data = array(
 			'registration_id' => $deviceToken,
@@ -78,7 +131,7 @@ function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTi
  		die();
 	}
 	curl_close($ch);    
-	debug_log("[".$page_path."] [Send Message to Android] END");
+	debug_log("[".$page_path."] [sendMessageToAndroid] END");
 	return $res;
 
 }

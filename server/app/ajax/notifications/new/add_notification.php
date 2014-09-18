@@ -117,7 +117,12 @@
 			$filter=array();
 			$filter["id_user"]=array("operation"=>"=","value"=>$user_group["id_user"]);
 			$user=getInBD($table,$filter);
-			sendMessageToPhone($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+			if(!empty($user["android_key"])){
+				sendMessageToAndroid($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+			}
+			if(!empty($user["ios_key"])){
+				sendMessageToiOS($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], PATH."../resources/mobile-app/".$app["project_codename"]."/ios_certificate.pem");
+			}
 		}
 		
 	}else{
@@ -125,10 +130,16 @@
 		$table="users";
 		$filter=array();
 		$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
-		$filter["android_key"]=array("operation"=>"<>","value"=>"");
 		$users=listInBD($table,$filter);
 		foreach($users as $key => $user){
-			sendMessageToPhone($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+			debug_log("[".$page_path."] Send Notification (User:".$user["id_user"].") START");
+			if(!empty($user["android_key"])){
+				sendMessageToAndroid($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+			}
+			if(!empty($user["ios_key"])){
+				sendMessageToiOS($user["ios_key"], $brand["android_project_number"], $data["content"], $app["name"], PATH."../resources/mobile-app/".$app["project_codename"]."/ios_certificate.pem");
+			}
+			debug_log("[".$page_path."] Send Notification (User:".$user["id_user"].") END");
 		}
 	}
 

@@ -74,7 +74,7 @@
  	* AJAX OPERATIONS
  	*********************************************************/
 	
-	debug_log("ANDROID_KEY = ".$_GET["android_key"]);
+	debug_log("IOS_KEY = ".$_GET["ios_key"]);
  	
 	$response["result"]=true;
 

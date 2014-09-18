@@ -113,7 +113,6 @@ function create_android_config_file($path,$brand_id,$app_project_codename,$app_p
 	
 	create_android_icons($path,"resources/mobile-app/".$app_project_codename."/app_icon.png",$app_project_codename);
 }
-
 function sendMessageToPhone($deviceToken, $collapseKey, $messageText, $messageTitle, $yourKey) {
 
 		$headers = array('Authorization:key=' . $yourKey);
