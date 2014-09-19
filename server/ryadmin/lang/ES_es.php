@@ -259,6 +259,7 @@ $s["brand_deleted"] = "Marca eliminada";
 $s["edit_brand"] = "Editar Marca";
 $s["brand_app_options"] = "Aplicaciones para Móvil";
 $s["generate_android_app"] = "Generar Aplicación Android";
+$s["generate_iphone_app"] = "Generar Aplicación iPhone";
 $s["brands_active"][1] = "Activa";
 $s["brands_active"][2] = "Bloqueada";
 $s["brands_active_icon"][1] = "<i class='fa fa-check'></i>";
@@ -279,6 +280,22 @@ $generate_android_app_steps[4]["title"] = "Paso 4 | Gerenar Aplicación";
 $generate_android_app_steps[4]["content"] = "<p>".htmlentities("Pulsar en botón generar aplicación para iniciar el proceso de creación de la aplicación.", ENT_QUOTES, "UTF-8")."</p>";
 $s["download_android_app"] = "Descargar APK";
 $s["completed"] = "Completado";
+
+//Brand / Get Brand / Generate iOs
+$s["project_id"] = "ID del proyecto";
+$s["package_address"] = "Dirección del paquete";
+$generate_ios_app_steps[1]["title"] = "Paso 1 | Crear Identificador Proyecto iPhone";
+$generate_ios_app_steps[1]["content"] = "<p>".htmlentities("IMPORTANTE: USAR SAFARY. Visitar Apple Developer Member Center", ENT_QUOTES, "UTF-8")." <a href='http://developer.apple.com/membercenter' target='_balnk'>developer.apple.com/membercenter</a>. ".htmlentities("Loguearse con la cuenta de empresa. Accedemos al manager de Certificados pulsando en Manage your certificates. Dentro del menú de gestión de certificados, generamos un nuevo identificador pulsando en la carpeta Indentifiers.", ENT_QUOTES, "UTF-8")."</p><p>".htmlentities("Cuando se nos muestran todos los identificadores creados hasta el momento, pulsamos en el símbolo más que tenemos en la parte superior para crear un nuevo identificador. Introducimos en APP ID Description el ID del proyecto e introducimos un EXPLICIT App ID, introduciendo la dirección del paquere en el formato com.royappty.nombre_proyecto. En App Services seleccionamos Push Notifications y pulsamos continuar y confirmar.", ENT_QUOTES, "UTF-8")."</p>";
+$generate_ios_app_steps[2]["title"] = "Paso 2 | Crear Cretificado Distribuidor";
+$generate_ios_app_steps[2]["content"] = "<p>".htmlentities("Abrir Keychain Access. En el menú Asistente de llaveros seleccionar Asistente para certificados >> Solicitar un certificado de una entidad de certificación. Seleccionar guardar en el disco y continuar.", ENT_QUOTES, "UTF-8")."</p>";
+$generate_ios_app_steps[3]["title"] = "Paso 3 | Crear Cretificado Desarrollo";
+$generate_ios_app_steps[3]["content"] = "<p>".htmlentities("Volver a la web de desarrollo de Apple y dentro del manager de Certificados, crear un nuevo certificado de desarrollo. Seleccionar Apple Push Notification service SSL y pulsar siguiente. En la selección de App ID que se proporcionó en el paso anterior. Para finalizar este proceso se tendrá que subir el archivo CSR creado en el paso anterior. Descargar el certificado generado.", ENT_QUOTES, "UTF-8")."</p>";
+$generate_ios_app_steps[4]["title"] = "Paso 4 | Crear e Instalar Provision Profile de Desarrollo";
+$generate_ios_app_steps[4]["content"] = "<p>".htmlentities("Seleccionar dentro del submenú Provision Profile Desarrollo y pulsar el botón más. Seleccionar iOS App Develpoment y pulsar siguiente. En el Selectro de App ID seleccionar el App ID de la aplicación. Selecciona el certificado de desarrollador y el de dispositivo. Nombra el perfil con ID del proyecto. Descarga el perfil.", ENT_QUOTES, "UTF-8")."</p><p>".htmlentities("Instala el perfil en el ordenador haciendo doble click.", ENT_QUOTES, "UTF-8")."</p>";
+$generate_ios_app_steps[5]["title"] = "Paso 5 | Generar Proyecto iOS";
+$generate_ios_app_steps[5]["content"] = "<p>".htmlentities("Pulsa el botón generar aplicación iOS y una vez finalizado el proceso descárgate la aplicación comprimida y descargala en el ordenador.", ENT_QUOTES, "UTF-8")."</p>";
+$s["download_ios_app"] = "Descargar Proyecto iOs";
+
 
 //Brands / Edit
 $s["brand_name"] = "Nombre";
