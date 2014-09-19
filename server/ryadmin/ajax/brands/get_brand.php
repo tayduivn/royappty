@@ -248,7 +248,8 @@
 						<div class='grid-body'>
 							<h3>".htmlentities($s["brand_app_options"], ENT_QUOTES, "UTF-8")."</h3>
 							<p>
-								<a href='./android/?id_brand=".$_POST["id_brand"]."' class='btn btn-white'><i class='fa fa-android fa-4x'></i><br/><br/>".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
+								<a href='./android/?id_brand=".$_POST["id_brand"]."' class='btn btn-white'><i class='fa fa-android'></i> ".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."</a>
+								<a href='./ios/?id_brand=".$_POST["id_brand"]."' class='btn btn-white'><i class='fa fa-apple '></i> ".htmlentities($s["generate_iphone_app"], ENT_QUOTES, "UTF-8")."</a>
 							</p>
 						</div>
 					</div>
