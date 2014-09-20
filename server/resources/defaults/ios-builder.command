@@ -1,12 +1,6 @@
 #!/bin/bash
-echo "#############################"
-echo "#                           #"
-echo "#       iOS BUILDER         #"
-echo "#          v 1.0            #"
-echo "#                           #"
-echo "#############################"
-echo ""
-echo "To run this script you need to be a superuser"
-sudo echo "Sudo!"
+DIR=$(cd $(dirname "$0"); pwd)
+cd $DIR
 phonegap build ios
-echo "done!"
+open platforms/ios/*.xcodeproj
+osascript -e "ignoring application responses" -e 'tell application "Terminal" to quit' -e "end ignoring"
