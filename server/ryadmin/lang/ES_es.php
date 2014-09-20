@@ -259,7 +259,7 @@ $s["brand_deleted"] = "Marca eliminada";
 $s["edit_brand"] = "Editar Marca";
 $s["brand_app_options"] = "Aplicaciones para Móvil";
 $s["generate_android_app"] = "Generar Aplicación Android";
-$s["generate_iphone_app"] = "Generar Aplicación iPhone";
+$s["generate_iphone_app"] = "Generar Proyecto iPhone";
 $s["brands_active"][1] = "Activa";
 $s["brands_active"][2] = "Bloqueada";
 $s["brands_active_icon"][1] = "<i class='fa fa-check'></i>";
@@ -295,6 +295,8 @@ $generate_ios_app_steps[4]["content"] = "<p>".htmlentities("Seleccionar dentro d
 $generate_ios_app_steps[5]["title"] = "Paso 5 | Generar Proyecto iOS";
 $generate_ios_app_steps[5]["content"] = "<p>".htmlentities("Pulsa el botón generar aplicación iOS y una vez finalizado el proceso descárgate la aplicación comprimida y descargala en el ordenador.", ENT_QUOTES, "UTF-8")."</p>";
 $s["download_ios_app"] = "Descargar Proyecto iOs";
+$generate_ios_app_steps[6]["title"] = "Paso 6 | Abrir Proyecto y compilar";
+$generate_ios_app_steps[6]["content"] = "<p>".htmlentities("Abrir el proyecto  el botón generar aplicación iOS y una vez finalizado el proceso descárgate la aplicación comprimida y descargala en el ordenador.", ENT_QUOTES, "UTF-8")."</p>";
 
 
 //Brands / Edit

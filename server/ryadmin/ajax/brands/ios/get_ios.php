@@ -111,8 +111,6 @@
 									<p>".$generate_ios_app_steps[4]["content"]."</p>
 									<h4>".htmlentities($generate_ios_app_steps[5]["title"], ENT_QUOTES, "UTF-8")."</h4>
 									<p>".$generate_ios_app_steps[5]["content"]."</p>
-									<h4>".htmlentities($generate_ios_app_steps[6]["title"], ENT_QUOTES, "UTF-8")."</h4>
-									<p>".$generate_ios_app_steps[6]["content"]."</p>
 									<div class='box m-b-20'>
 
 										<div class='terminal-box m-t-20 m-b-20' id='generate_ios_app_terminal'>
@@ -125,8 +123,8 @@
 										<a href='".$url_server."server/resources/mobile-app/".$app["project_codename"]."/".$app["project_codename"]."-ios.tar.gz' class='btn btn-white'>".htmlentities($s["download_ios_app"], ENT_QUOTES, "UTF-8")."</a>
 
 									</div>
-									<h4>".htmlentities($generate_ios_app_steps[4]["title"], ENT_QUOTES, "UTF-8")."</h4>
-									<p>".$generate_ios_app_steps[4]["content"]."</p>
+									<h4>".htmlentities($generate_ios_app_steps[6]["title"], ENT_QUOTES, "UTF-8")."</h4>
+									<p>".$generate_ios_app_steps[6]["content"]."</p>
 									<div>
 
 									</div>
