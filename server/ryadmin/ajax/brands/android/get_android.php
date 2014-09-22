@@ -75,7 +75,7 @@
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	$fields=array();
 	$brand=getInBD($table,$filter,$fields);
-	
+
 	$table="apps";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
@@ -101,7 +101,7 @@
 									<p>".$generate_android_app_steps[1]["content"]."</p>
 									<div class='box m-b-20'>
 										<h6><b>Nombre del Proyecto:</b> ".htmlentities($app["project_codename"], ENT_QUOTES, "UTF-8")."</h6>
-										<h6><b>ID del Proyecto:</b> ".htmlentities($app["android_project_id"], ENT_QUOTES, "UTF-8")."</h6>
+										<h6><b>ID del Proyecto:</b> ".htmlentities($app["project_id"], ENT_QUOTES, "UTF-8")."</h6>
 									</div>
 									<h4>".htmlentities($generate_android_app_steps[2]["title"], ENT_QUOTES, "UTF-8")."</h4>
 									<p>".$generate_android_app_steps[2]["content"]."</p>
@@ -125,10 +125,10 @@
 									<h4>".htmlentities($generate_android_app_steps[4]["title"], ENT_QUOTES, "UTF-8")."</h4>
 									<p>".$generate_android_app_steps[4]["content"]."</p>
 									<div>
-										
+
 									</div>
 									<div class='box m-b-20'>
-										
+
 										<div class='terminal-box m-t-20 m-b-20' id='generate_android_app_terminal'>
 										</div>
 										<div id='generate_android_app_terminal_bar' class='progress progress-striped active progress-large'>
