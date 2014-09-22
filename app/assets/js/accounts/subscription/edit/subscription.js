@@ -115,7 +115,7 @@ $(document).ready(function() {
 						payment_method:"free"
 					},
 					error: function(data, textStatus, jqXHR) {
-						errorstep("ajax_error");
+						errorstep($error_s["ajax_error_content"])
 					},
 					success: function(response) {
 						if(response.result){
@@ -180,7 +180,7 @@ $(document).ready(function() {
 					payment_method:$('#form-step3 input[name="payment_method"]:checked').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					errorstep("ajax_error");
+					errorstep($error_s["ajax_error_content"])
 				},
 				success: function(response) {
 					if(response.result){
