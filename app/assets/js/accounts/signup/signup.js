@@ -208,7 +208,7 @@ $(document).ready(function(){
 					subscription_type:$('#form-end #subscription_type').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					errorstep("ajax_error");
+					errorstep($error_s["ajax_error_content"])
 				},
 				success: function(response) {
 					if(response.result){
@@ -265,7 +265,7 @@ $(document).ready(function(){
 					payment_method:$('#form-end #payment_method').val()
 				},
 				error: function(data, textStatus, jqXHR) {
-					errorstep("ajax_error");
+					errorstep($error_s["ajax_error_content"])
 				},
 				success: function(response) {
 					if(response.result){

@@ -301,7 +301,7 @@ $s["back"] = "Volver";
 $error_s["server_connection_title"]="Error en el Servidor";
 $error_s["server_connection_content"]="No se ha podido conectar con el servidor. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
 $error_s["ajax_error_title"]="Error en el Servidor";
-$error_s["ajax_error_content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
+$error_s["ajax_error_content"]="Ha ocurrido un error en el servidor mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persiste contacte con el servico técnico.";
 
 //error app index.html
 //$s["error_title"] = "Error";

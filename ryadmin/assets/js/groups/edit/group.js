@@ -155,7 +155,7 @@ $(document).ready(function() {
 					"users_groups":users_groups
 				},
 				error: function(data, textStatus, jqXHR) {
-					errorstep("ajax_error");
+					errorstep($error_s["ajax_error_content"])
 				},
 				success: function(response) {
 					if(response.result){
