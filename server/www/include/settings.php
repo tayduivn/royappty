@@ -7,7 +7,7 @@
 *
 *********************************************************/
 
-$server_option='server';
+$server_option='local';
 
 switch ($server_option){
 	case "local":
