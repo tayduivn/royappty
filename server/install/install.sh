@@ -1,3 +1,5 @@
+apt-get install php5-gd
+apt-get install unzip
 apt-get install g++
 apt-get install ia32-libs
 apt-get install default-jre
@@ -21,5 +23,6 @@ rm adt-bundle-linux-x86_64-20140702.zip
 rm -rf node/
 
 chmod 777 ../ryadmin/ajax/brands/android/generator_step_*
+chmod 777 ../ryadmin/ajax/brands/ios/generator_step_*
 chmod -R 777 ../resources
 chmod -R 777 /usr/share/adt-bundle-linux-x86_64-20140702/sdk/tools/
