@@ -88,7 +88,7 @@
 	$response["data"]["page"]="
 		<div class='content'>
 			<div class='page-title'>
-				<a href='../../brands'>".htmlentities($s["brands"], ENT_QUOTES, "UTF-8")."</a> / ".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."
+				<a href='../../brands'>".htmlentities($s["brands"], ENT_QUOTES, "UTF-8")."</a> / <a href='../../brand/?id_brand=".$brand["id_brand"]."'>".htmlentities($brand["name"], ENT_QUOTES, "UTF-8")."</a> /".htmlentities($s["generate_android_app"], ENT_QUOTES, "UTF-8")."
 			</div>
 			<div class='row'>
 				<div class='col-md-12'>

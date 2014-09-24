@@ -30,7 +30,7 @@ switch ($server_option){
 			'bdport' => '',
 			'bd' => 'royappty',
 			'bduser' => 'root',
-			'bdpass' => '2CuW2St9',
+			'bdpass' => '2CuW2St9c',
 			'bdprefix' => ''
 		);
 		$url_server = "http://www.royappty.com/";
