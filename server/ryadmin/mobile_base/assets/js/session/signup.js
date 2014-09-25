@@ -58,6 +58,7 @@ function signup(){
 		success: function(response) {
 			if(response.result){
 				localStorage.setItem('id_user', response.data.id_user);
+				alert("Gracias por darte de alta en nuestro sistema ahora podr&aacute;s acceder a todas nuestras promociones y descuentos");
 				window.location.href = "./index.html";
 			} else {
 				error_handler(response.error_code);
