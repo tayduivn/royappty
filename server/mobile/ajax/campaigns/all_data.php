@@ -54,19 +54,18 @@
   $filter["status"]=array("operation"=>"=","value"=>1);
   $fields=array();
   if(!isInBD($table,$filter,$fields)){
- 	debug_log("[".$page_path."] No campaigns to show");
-			$img_file = PATH."../../server/resources/mobile-app/".$app["project_codename"]."/app_bg.jpg";
-     $imgData = base64_encode(file_get_contents($img_file));
-     $src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
+  	debug_log("[".$page_path."] No campaigns to show");
+	$img_file = PATH."../../server/resources/mobile-app/".$app["project_codename"]."/app_bg.png";
+    $imgData = base64_encode(file_get_contents($img_file));
+    $src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
-     $response["result"]=true;
-     $response["data"]["page"]="
+    $response["result"]=true;
+    $response["data"]["page"]="
        <div class='page center_mobile_page' id='index'>
-         <img class='full-width full-height' src=''/>
+         <img class='full-width full-height' src='".$src."'/>
        </div>
      ";
-     error_log("jsonCallback(".json_encode($response).")");
-     echo 'jsonCallback({"result":true,"data":{"page":""}})';
+     echo "jsonCallback(".json_encode($response).")";
      die();
   }
   
