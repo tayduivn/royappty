@@ -88,7 +88,7 @@ if(!checkClosed()){echo json_encode($response);die();}
  	$table="apps";
   	$filter=array();
  	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-
+ 	$app=getInBD($table,$filter);
  	$data=array();
 	foreach($_POST as $key => $value){
 		$data[$key]=$value;
@@ -96,14 +96,16 @@ if(!checkClosed()){echo json_encode($response);die();}
 	unset($data["id_app"]);
 
 	if(@issetandnotempty($data["app_icon_path"])){
-		copy(PATH."../../".$data["app_icon_path"],PATH."../../server/resources/app-icon/".$timestamp.".png");
-		$data["app_icon_path"] = $timestamp.".png";
+		copy(PATH."../../".$data["app_icon_path"],PATH."../../server/resources/mobile-app/".$app["project_codename"]."/app_icon.png");
+		unlink(PATH."../../".$data["app_icon_path"]);
+		unset($data["app_icon_path"]);
 	}else{
 		unset($data["app_icon_path"]);
 	}
 	if(@issetandnotempty($data["app_bg_path"])){
-		copy(PATH."../../".$data["app_bg_path"],PATH."../../server/resources/app-bg/".$timestamp.".jpg");
-		$data["app_bg_path"] = $timestamp.".jpg";
+		copy(PATH."../../".$data["app_bg_path"],PATH."../../server/resources/mobile-app/".$app["project_codename"]."/app_bg.png");
+		unlink(PATH."../../".$data["app_bg_path"]);
+		unset($data["app_bg_path"]);
 	}else{
 		unset($data["app_bg_path"]);
 	}
