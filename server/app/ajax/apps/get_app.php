@@ -154,7 +154,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 				<h4 class='m-t-0'>".htmlentities($s["app_bg"], ENT_QUOTES, "UTF-8")."</h4>
 				<div class='row'>
 					<div class='col-md-2'>
-						<img class='full-width' src='".$url_server."server/resources/mobile-app/".$app["project_codename"]."/app_bg.jpg'/>
+						<img class='full-width' src='".$url_server."server/resources/mobile-app/".$app["project_codename"]."/app_bg.png'/>
 					</div>
 					<div class='col-md-10'>
 					<p>".htmlentities($s["app_bg_help_1"], ENT_QUOTES, "UTF-8")." <a class='text-success' href='../requests/'>".htmlentities($s["request_list"], ENT_QUOTES, "UTF-8")."</a> ".htmlentities($s["app_bg_help_2"], ENT_QUOTES, "UTF-8")."</p>
