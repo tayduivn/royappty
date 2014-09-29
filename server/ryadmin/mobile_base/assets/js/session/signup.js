@@ -59,7 +59,7 @@ function signup(){
 			if(response.result){
 				localStorage.setItem('id_user', response.data.id_user);
 				alert("TEST");
-    				window.location.href = "./index.html";
+    			window.location.href = "./index.html";
 			} else {
 				error_handler(response.error_code);
 			}
