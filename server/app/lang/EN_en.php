@@ -99,6 +99,9 @@ $signup_s["mail_content_header"] = "Thank you very much for registering in Royap
 $signup_s["mail_content_footer"] = "If you cannot open the link, copy and paste it into the address bar.";
 $signup_s["accept_policy"] = "I accept privacy policy terms.";
 
+//Signup Add Account
+$s["default_app_description"] = "Con nuestra aplicación podrás consultar todas las ofertas y descuentos que tenemos para ti. Tm donde podrás encontrar todas nuestras ofertas, cupones y descuentos que tenemos preparados para ti."; 
+
 //Policy
 $policy_s["security"]["title"] = "Safety Policy";
 $policy_s["security"]["content"][0] = "According to what is set forth in the Fundamental Law \"Ley Orgánica 15/1999\", of the 13 December of Personal Data Protection and the Order \" R.D. 1720/2007\", which regulates previous law application, both included in the Spanish legislation, VIVA LA CLOUD, S.L. informs you your personal data, gathered here now or in future, will be included in a mixed-typed file called \"ROYAPPTY CLIENTES\" owned by VIVA LA CLOUD, S.L. and whose purpose is \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACIÓN\".";

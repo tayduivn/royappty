@@ -99,6 +99,9 @@ $signup_s["mail_content_header"] = "Muchas gracias por resgristrarte en Royappty
 $signup_s["mail_content_footer"] = "En caso de que no puedas abrir el link, cópialo y pégalo en la barra de dirección de tu navegador.";
 $signup_s["accept_policy"] = "Acepto la política de privacidad.";
 
+//Signup Add Account
+$s["default_app_description"] = "Con nuestra aplicación podrás consultar todas las ofertas y descuentos que tenemos para ti. Tm donde podrás encontrar todas nuestras ofertas, cupones y descuentos que tenemos preparados para ti."; 
+
 //Policy
 $policy_s["security"]["title"] = "Política de Seguridad";
 $policy_s["security"]["content"][0] = "VIVA LA CLOUD, S.L. te informa que según lo dispuesto en la Ley Orgánica 15/1999 de 13 de diciembre Ley de Protección de Datos de Carácter Personal y el R.D. 1720/2007 que regula la aplicación de dicha ley, que sus datos de carácter personal aquí recogidos y los recogidos en un futuro serán incluidos, siguiendo las indicaciones de la Ley, en un fichero de carácter mixto llamado \"ROYAPPTY CLIENTES\" cuyo titular es VIVA LA CLOUD, S.L. y cuya finalidad es \"GESTION DE LOS DATOS DE LOS CLIENTES PARA EL DESARROLLO DE LAS ACTIVIDADES DE FIDELIZACION\".";
