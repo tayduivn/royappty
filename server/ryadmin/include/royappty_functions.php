@@ -23,17 +23,6 @@ function create_ios_icons($path,$original_image_path,$app_project_codename){
 	global $page_path;
 
 	debug_log("[".$page_path."] Create iOS icons START");
-	$imgdata=(base64_decode(base64_encode(file_get_contents($path."resources/mobile-app/".$app_project_codename."/app_icon.png"))));
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-57.png",57,57);
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-72.png",75,72);
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-57-2x.png",114,144);
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/icon-72-2x.png",144,144);
-	$imgdata=(base64_decode(base64_encode(file_get_contents($path."resources/mobile-app/".$app_project_codename."/app_bg.jpg"))));
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-iphone-portrait.png",320,480);
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-iphone-portrait-2x.png",640,960);
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-iphone-portrait-568h-2x.png",640,1136);
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-ipad-portrait.png",768,1024);
-	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-ipad-landscape.png",1024,768);
 	debug_log("[".$page_path."] Create iOS icons END");
 
 }
@@ -107,10 +96,6 @@ function create_android_config_file($path,$brand_id,$app_project_codename,$app_p
 	$file_content.="<preference name='SplashScreen' value='screen' />\n";
 	$file_content.="<preference name='SplashScreenDelay' value='10000' />\n";
 	$file_content.="<icon src='www/icon.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='ldpi' src='www/res/icon/android/icon-36-ldpi.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='mdpi' src='www/res/icon/android/icon-48-mdpi.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='hdpi' src='www/res/icon/android/icon-72-hdpi.png' />\n";
-	$file_content.="<icon gap:platform='android' gap:qualifier='xhdpi' src='www/res/icon/android/icon-96-xhdpi.png' />\n";
 	$file_content.="<access origin='*' />\n";
 	$file_content.="</widget>";
 	fwrite($file, $file_content);
