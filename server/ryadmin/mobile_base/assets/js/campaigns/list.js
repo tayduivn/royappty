@@ -18,14 +18,11 @@ function update(){
 				alert(data+" "+textStatus+" "+jqXHR);
 			},
 			success: function(response) {
-				alert("ok...");
-				console.log("[server/mobile/ajax/campaigns/all_data.php] Ajax Success");
 				if(response.result){
-					console.log("[server/mobile/ajax/campaigns/all_data.php] Responde Result true");
 					jQuery.each(response.data,function(key,value){
-						console.log("[server/mobile/ajax/campaigns/all_data.php] Update data: "+key);
 						localStorage.removeItem(key);
 						localStorage.setItem(key, value);
+						alert(value);
 					});
 				} else {
 					error_handler(response.error_code);
