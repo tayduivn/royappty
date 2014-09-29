@@ -32,8 +32,8 @@ function create_ios_icons($path,$original_image_path,$app_project_codename){
 	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-iphone-portrait.png",320,480);
 	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-iphone-portrait-2x.png",640,960);
 	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-iphone-portrait-568h-2x.png",640,1136);
-imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-ipad-portrait.png",768,1024);
-imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-ipad-landscape.png",1024,768);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-ipad-portrait.png",768,1024);
+	imageresize($imgdata,$path."resources/mobile-app/".$app_project_codename."/screen-ipad-landscape.png",1024,768);
 	debug_log("[".$page_path."] Create iOS icons END");
 
 }
@@ -104,15 +104,13 @@ function create_android_config_file($path,$brand_id,$app_project_codename,$app_p
 	$file_content.="<gap:plugin name='org.apache.cordova.network-information' />\n";
 	$file_content.="<gap:plugin name='org.apache.cordova.splashscreen' />\n";
 	$file_content.="<gap:plugin name='org.apache.cordova.vibration' />\n";
+	$file_content.="<preference name='SplashScreen' value='screen' />\n";
+	$file_content.="<preference name='SplashScreenDelay' value='10000' />\n";
 	$file_content.="<icon src='www/icon.png' />\n";
 	$file_content.="<icon gap:platform='android' gap:qualifier='ldpi' src='www/res/icon/android/icon-36-ldpi.png' />\n";
 	$file_content.="<icon gap:platform='android' gap:qualifier='mdpi' src='www/res/icon/android/icon-48-mdpi.png' />\n";
 	$file_content.="<icon gap:platform='android' gap:qualifier='hdpi' src='www/res/icon/android/icon-72-hdpi.png' />\n";
 	$file_content.="<icon gap:platform='android' gap:qualifier='xhdpi' src='www/res/icon/android/icon-96-xhdpi.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-ldpi' src='www/res/screen/android/screen-ldpi-portrait.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-mdpi' src='www/res/screen/android/screen-mdpi-portrait.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-hdpi' src='www/res/screen/android/screen-hdpi-portrait.png' />\n";
-	$file_content.="<gap:splash gap:platform='android' gap:qualifier='port-xhdpi' src='www/res/screen/android/screen-xhdpi-portrait.png' />\n";
 	$file_content.="<access origin='*' />\n";
 	$file_content.="</widget>";
 	fwrite($file, $file_content);
@@ -145,6 +143,38 @@ function create_ios_config_file($path,$brand_id,$app_project_codename,$app_packa
 		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."] Folder exits");
 	}
 
+	
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios-builder.command] Check File");
+	if (!file_exists($path."resources/mobile-app/".$app_project_codename."/ios-builder.command")) {
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios-builder.command] File not exits");
+			touch($path."resources/mobile-app/".$app_project_codename."/ios-builder.command");
+			debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios-builder.command] File created");
+	}else{
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios_config.xml] File exits");
+	}
+	
+	$file = fopen($path."resources/mobile-app/".$app_project_codename."/ios-builder.command", "w");
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios-builder.command] File open");
+	$app_tmp=str_replace(' ', '\ ', $app_name);
+	
+	$file_content="#!/bin/bash\n";
+	$file_content.="\n";
+	$file_content.='DIR=$(cd $(dirname "$0"); pwd)'."\n";
+	$file_content.='cd $DIR'."\n";
+	$file_content.="phonegap build ios\n";
+	$file_content.='cp www/splash.png platforms/ios/'.$app_tmp.'/Resources/splash/Default~iphone.png'."\n";
+	$file_content.='cp www/splash.png platforms/ios/'.$app_tmp.'/Resources/splash/Default-568h\@2x~iphone.png'."\n";
+	$file_content.='cp www/splash.png platforms/ios/'.$app_tmp.'/Resources/splash/Default\@2x~iphone.png'."\n";
+	$file_content.="open platforms/ios/*.xcodeproj\n";
+	$file_content.="osascript -e 'ignoring application responses' -e 'tell application \"Terminal\" to quit' -e \"end ignoring\"\n";
+
+
+	fwrite($file, $file_content);
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios-builder.command] File wrote");
+	fclose($file);
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios-builder.command] File closed");
+
+
 	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios_config.xml] Check File");
 	if (!file_exists($path."resources/mobile-app/".$app_project_codename."/ios_config.xml")) {
 		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios_config.xml] File not exits");
@@ -153,7 +183,7 @@ function create_ios_config_file($path,$brand_id,$app_project_codename,$app_packa
 	}else{
 		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios_config.xml] File exits");
 	}
-
+	
 	$file = fopen($path."resources/mobile-app/".$app_project_codename."/ios_config.xml", "w");
 	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/ios_config.xml] File open");
 	$file_content="<?xml version='1.0' encoding='utf-8'?>\n";
@@ -199,6 +229,8 @@ function create_ios_config_file($path,$brand_id,$app_project_codename,$app_packa
 	$file_content.="<gap:plugin name='org.apache.cordova.network-information' />\n";
 	$file_content.="<gap:plugin name='org.apache.cordova.splashscreen' />\n";
 	$file_content.="<gap:plugin name='org.apache.cordova.vibration' />\n";
+	$file_content.="<preference name='SplashScreen' value='screen' />\n";
+	$file_content.="<preference name='SplashScreenDelay' value='10000' />\n";
 	$file_content.="<icon src='www/icon.png' />\n";
 	$file_content.="<icon gap:platform='ios' height='57' src='www/res/icon/ios/icon-57.png' width='57' />\n";
 	$file_content.="<icon gap:platform='ios' height='72' src='www/res/icon/ios/icon-72.png' width='72' />\n";
