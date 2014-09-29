@@ -22,20 +22,19 @@ function update(){
 					jQuery.each(response.data,function(key,value){
 						localStorage.removeItem(key);
 						localStorage.setItem(key, value);
-						alert(value);
+					});
+					for( var key in localStorage){
+						$(".ajax-loader-"+key).html(localStorage.getItem(key));
+					}
+					$("#form-wizard form").submit(function(e){
+						e.preventDefault();
 					});
 				} else {
 					error_handler(response.error_code);
 				}
 			}
 		});
-		for( var key in localStorage){
-			console.log("[server/mobile/ajax/campaigns/all_data.php] Update loader: "+key);
-			$(".ajax-loader-"+key).html(localStorage.getItem(key));
-		}
-		$("#form-wizard form").submit(function(e){
-			e.preventDefault();
-		});
+		
 	}
 }
 
