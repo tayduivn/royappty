@@ -135,7 +135,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 						<label class='form-label'>".htmlentities($app_s["app_bg"], ENT_QUOTES, "UTF-8")."</label>
 						<span class='help'>".htmlentities($app_s["app_bg_help"], ENT_QUOTES, "UTF-8")."</span>
 						<div class='controls'>
-							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?format=jpg&type=icon&width=660&height=1200&crop=1&label=app_bg_path' />
+							<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/app/ajax/apps/upload-image.php?format=png&type=icon&width=660&height=1200&crop=1&label=app_bg_path' />
 						</div>
 					</div>
 				</div>
