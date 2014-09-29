@@ -158,6 +158,7 @@ function create_ios_config_file($path,$brand_id,$app_project_codename,$app_packa
 	$app_tmp=str_replace(' ', '\ ', $app_name);
 	
 	$file_content="#!/bin/bash\n";
+	$file_content.="\n";
 	$file_content.='DIR=$(cd $(dirname "$0"); pwd)'."\n";
 	$file_content.='cd $DIR'."\n";
 	$file_content.="phonegap build ios\n";
