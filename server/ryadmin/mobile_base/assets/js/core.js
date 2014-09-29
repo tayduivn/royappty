@@ -34,4 +34,11 @@ function successHandler (result) {
 function errorHandler (error) {
 
 }
+function alertDismissed() {
+	// do something
+}
+function signupDismissed() {
+	window.location.href = "./index.html";
+}
+
 document.addEventListener('deviceready', onDeviceReady, true);

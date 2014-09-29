@@ -58,8 +58,12 @@ function signup(){
 		success: function(response) {
 			if(response.result){
 				localStorage.setItem('id_user', response.data.id_user);
-				alert("TEST");
-    			window.location.href = "./index.html";
+				navigator.notification.alert(
+					'Muchas gracias por darte de alta en nuestra app',  // message
+					signupDismissed,         // callback
+					'Registro',            // title
+					'Continuar'                  // buttonName
+				);
 			} else {
 				error_handler(response.error_code);
 			}
