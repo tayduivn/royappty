@@ -3,23 +3,33 @@ function onDeviceReady() {
 	try{
 		pushNotification = window.plugins.pushNotification;
   	  if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ){
+			localStorage.setItem("platform", "android");
    		 	pushNotification.register(successHandler, errorHandler, {"senderID": $android_senderID ,"ecb":"onNotification"});
 		}else{
-    		pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+ 			localStorage.setItem("platform", "ios");
+  			pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 		}
 	}catch(err){
 	}
 }
+function tokenHandler (result) {
+	localStorage.setItem("phone_key", result);
+}
+			
+function successHandler (result) {
+}
+            
+function errorHandler (error) {
+}
+
 function onNotificationAPN(e){
-	if(e.alert){
-    	navigator.notification.alert(e.alert);
-	}
+	
 }
 function onNotification(e){
 	switch( e.event ){
 		case 'registered':
 			if ( e.regid.length > 0 ){
-				localStorage.setItem("android_key", e.regid);
+				localStorage.setItem("phone_key", e.regid);
 			}
 		break;
 		case 'message':

@@ -27,6 +27,8 @@
 	$s["signup_title"] = "Registro";
 	$s["signup_subtitle"] = "Por favor rellena el formulario";
 	$s["signup_button"] = "Enviar";
+	$s["email"] = "Correo electrónico";
+	$s["password"] = "Contraseña";
 
 	$s["promo_success"] = "Promoción Conseguida";
 

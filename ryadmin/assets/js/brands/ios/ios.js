@@ -35,6 +35,28 @@ $(document).ready(function(){
 
 		}
 	});
+	$('.droparea').each(function(){
+		$(this).droparea({
+			'instructions': '<br/><br/><h2><i class="fa fa-upload"></h2></i>'+$s["ios_app_click_or_drag_certificate_here"],
+			'init' : function(result){},
+			'start' : function(area){
+				$('.result_box').css("display","none");
+				area.find('.error').remove();
+			},
+			'error' : function(result, input, area){
+				$('<div class="error">').html(result.error).prependTo(area);
+				return 0;
+			},
+			'complete' : function(result, file, input, area){
+				if(result.error){
+					alert($s["ios_app_an_error_occurred_when_uploading_the_file"]);
+				}else{
+					$('#'+result.id_result_box).html(result.result_box_html);
+					$('#'+result.id_result_box).css("display","block");
+				}
+			}
+		});
+	});
 });
 function generate_ios_app(){
 	$("#generate_ios_app_terminal").html("<pre style='color:#666'><span style='color:purple'>[iOs Generator 1.0.0]</span> Connecting to Server<span class='pull-right'>[<span style='color:black'>START</span>]</span></pre>");

@@ -100,7 +100,7 @@ $signup_s["mail_content_footer"] = "If you cannot open the link, copy and paste 
 $signup_s["accept_policy"] = "I accept privacy policy terms.";
 
 //Signup Add Account
-$s["default_app_description"] = "Con nuestra aplicación podrás consultar todas las ofertas y descuentos que tenemos para ti. Tm donde podrás encontrar todas nuestras ofertas, cupones y descuentos que tenemos preparados para ti."; 
+$s["default_app_description"] = "Con nuestra aplicación podrás consultar todas las ofertas, cupones y descuentos que tenemos preparados para ti."; 
 
 //Policy
 $policy_s["security"]["title"] = "Safety Policy";

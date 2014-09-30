@@ -280,6 +280,10 @@ $s["edit_admin_name_it_canot_be_longer_than_75_characters"] = "No puede exceder 
 $s["edit_admin_name_this_field_needs_4_character_minimum"] = "Este campo necesita un m&iacute;nimo de 4 caracteres";
 $s["edit_admin_email_format_is_not_correct"] = "El formato de correo electr&oacute;nico no es correcto";
 
+//brands - ios
+$s["ios_app_click_or_drag_certificate_here"] = "Pinche o arraste aqu&iacute; el certificado";
+$s["ios_app_an_error_occurred_when_uploading_the_file"] = "Ha ocurrudo un error y no se ha podido subir el certificado";
+
 //datatables.js
 $s["_showing"] = "Mostrando ";
 $s["_to"] = " a ";

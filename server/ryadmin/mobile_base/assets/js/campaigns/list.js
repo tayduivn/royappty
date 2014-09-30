@@ -10,7 +10,8 @@ function update(){
 			url: $SERVER_PATH+"server/mobile/ajax/campaigns/all_data.php",
 			data: {
 				id_user:$SESSION,
-				android_key:localStorage.getItem("android_key"),
+				phone_key:localStorage.getItem("phone_key"),
+				platform:localStorage.getItem("platform"),
 				lang:"es"
 			},
 			error: function(data, textStatus, jqXHR) {

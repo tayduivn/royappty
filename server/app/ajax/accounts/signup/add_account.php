@@ -216,7 +216,7 @@
 	$project_codename = strtolower(normalize_str(str_replace(' ', '', $_POST["app_name"])));
 
 	copy(PATH."../resources/defaults/app_icon.png",PATH."../resources/app-icon/".$timestamp.".png");
-	copy(PATH."../resources/defaults/app_bg.jpg",PATH."../resources/app-bg/".$data["project_codename"]."/".$timestamp.".jpg");
+	copy(PATH."../resources/defaults/app_bg.png",PATH."../resources/app-bg/".$data["project_codename"]."/".$timestamp.".png");
 	create_app_folder(PATH."../",$project_codename);
 
 

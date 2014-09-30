@@ -45,7 +45,11 @@
  	*********************************************************/
 
  	$response["result"]=true;
-
+	 	error_log("!!!!!!!!!");
+	foreach ($_GET as $key=>$value){
+	 	error_log("=>>>> ".$key." ".$value);
+ 	}
+ 	die();
  	$table="users";
  	$data=array();
  	$data["id_brand"]=$_GET["id_brand"];
@@ -58,7 +62,7 @@
  	$data["resume_block_1_data"]=0;
  	$data["resume_block_1_link_content"]=0;
  	$data["resume_block_1_link"]=0;
-  $data["resume_block_2_display"]=0;
+ 	$data["resume_block_2_display"]=0;
  	$data["resume_block_2_title"]=0;
  	$data["resume_block_2_data"]=0;
  	$data["resume_block_2_link_content"]=0;

@@ -125,6 +125,19 @@
 									</div>
 									<h4>".htmlentities($generate_ios_app_steps[6]["title"], ENT_QUOTES, "UTF-8")."</h4>
 									<p>".$generate_ios_app_steps[6]["content"]."</p>
+									<h4>".htmlentities($generate_ios_app_steps[7]["title"], ENT_QUOTES, "UTF-8")."</h4>
+									<p>".$generate_ios_app_steps[7]["content"]."</p>
+									<div class='terminal-box m-t-20 m-b-20' style='height:100px'>
+										".$generate_ios_app_steps[7]["commands"]."
+
+									</div>
+									<h4>".htmlentities($generate_ios_app_steps[8]["title"], ENT_QUOTES, "UTF-8")."</h4>
+									<p>".$generate_ios_app_steps[8]["content"]."</p>
+									<div id='result_box' style='display:none' class='box box-success-muted result_box m-b-10'>
+
+									</div>
+									<input type='file' id='xfile' value='default' class='droparea spot' name='xfile' data-post='".$url_server."server/ryadmin/ajax/brands/ios/upload-certificate.php?project_codename=".$app["project_codename"]."&id_result_box=result_box' />
+
 									<div>
 
 									</div>

@@ -6,4 +6,8 @@ rm ./www/data/brand.json
 cp ../../../../../resources/mobile-app/$1/brand.json ./www/data/brand.json
 cp ../../../../../resources/mobile-app/$1/ios_config.xml ./www/config.xml
 cp ../../../../../resources/mobile-app/$1/app_icon.png ./www/icon.png
+cp ../../../../../resources/mobile-app/$1/app_icon.png ./www/res/icon/ios/icon-57-2x.png
+cp ../../../../../resources/mobile-app/$1/app_icon.png ./www/res/icon/ios/icon-57.png
+cp ../../../../../resources/mobile-app/$1/app_icon.png ./www/res/icon/ios/icon-72-2x.png
+cp ../../../../../resources/mobile-app/$1/app_icon.png ./www/res/icon/ios/icon-72.png
 cp ../../../../../resources/mobile-app/$1/app_bg.png ./www/splash.png
