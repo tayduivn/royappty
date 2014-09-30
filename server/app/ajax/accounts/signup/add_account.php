@@ -228,7 +228,7 @@
 	$data["project_codename"] = $project_codename;
 	$data["apk_name"] = substr($data["project_codename"],0,10);
 	$data["package_address"] = $CONFIG["component_url_prefix"].".".$data["apk_name"];
-	$data["project_id"] = "ry-".$brand["num_code"]."-".$data["apk_name"];
+	$data["project_id"] = "ry".$brand["num_code"].$data["apk_name"];
 	$data["description"] = $s["default_app_description"];
 	$data["published_apple_store"] = 1;
 	$data["published_google_play"] = 1;
