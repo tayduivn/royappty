@@ -39,13 +39,37 @@
 	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
 
 
+	//USER
+	$table="user_fields";
+	$filter=array();
+	$filter["title"]=array("operation"=>"=","value"=>"email");
+	$user_field=getInBD($table,$filter);
+	
+	$table="user_field_data";
+	$filter=array();
+	$filter["id_user_field"]=array("operation"=>"=","value"=>$user_field["id_user_field"]);
+	$filter["field_value"]=array("operation"=>"=","value"=>$_GET["email"]);
+	if(isInBD($table,$filter)){
+ 		debug_log("[".$page_path."] ERROR User Email is in DB");
+		$user_field_data=getInBD($table,$filter);
+ 		$response["result"]=true;
+		$response["data"]=array();
+		$response["data"]["id_user"]=$user_field_data["id_user"];
+		echo "jsonCallback(".json_encode($response).")";
+		die();
+	}
+
 
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
 
  	$response["result"]=true;
+ 	
+ 	
+ 	
  	$table="users";
+ 	
  	$data=array();
  	$data["id_brand"]=$_GET["id_brand"];
  	$data["active"]=1;

@@ -40,7 +40,7 @@
 		debug_log("[".$page_path."] ERROR Data Missing phone_key");
 		$response["error"]="ERROR Data Missing Phone Key";
 		$response["error_code"]="missing_phone_key";
-		return false;
+		echo "jsonCallback(".json_encode($response).")";
 		die();
 	}
 	
@@ -53,7 +53,7 @@
 		debug_log("[".$page_path."] ERROR No Phone key");
 		$response["error"]="ERROR No Phone key";
 		$response["error_code"]="no_phone_key";
-		return false;
+		echo "jsonCallback(".json_encode($response).")";
 		die(); 	
  	}
  	
