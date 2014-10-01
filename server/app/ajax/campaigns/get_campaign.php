@@ -202,11 +202,11 @@ if(!checkClosed()){echo json_encode($response);die();}
 
 	$response["data"]["campaign-data"]="
 		<h3 class='m-t-0'>".htmlentities($campaign["name"], ENT_QUOTES, "UTF-8")."</h3>
+		<p>".htmlentities($campaign["description"], ENT_QUOTES, "UTF-8")."</p>
 		<h5>".$s["campaigns_status_icon"][$campaign["status"]]." ".htmlentities($s["campaigns_status"][$campaign["status"]], ENT_QUOTES, "UTF-8")."</h5>
 		<h6>".htmlentities($s["campaigns_types"][$campaign["type"]], ENT_QUOTES, "UTF-8")."</h6>
 		<h6>".htmlentities($s["user_group"], ENT_QUOTES, "UTF-8").": ".htmlentities($campaign["group_name"], ENT_QUOTES, "UTF-8")."</h6>
-		<h6>".htmlentities($s["creation_date"], ENT_QUOTES, "UTF-8").": ".htmlentities($campaign["group_name"], ENT_QUOTES, "UTF-8")."</h6>
-		<p>".htmlentities($campaign["description"], ENT_QUOTES, "UTF-8")."</p>
+		<h6>".htmlentities($s["creation_date"], ENT_QUOTES, "UTF-8").": ".htmlentities(date("d/m/Y",$campaign["created"]), ENT_QUOTES, "UTF-8")."</h6>
 		<p class='text-black'>".htmlentities($s["the_promo_cost_is"].$campaign["cost"]." ".$s["euros_icon"]." ".$s["and_profit_of"].$campaign["profit"]." ".$s["euros_icon"], ENT_QUOTES, "UTF-8")."</p>
 		<p>".htmlentities($s["this_campaign_has_a_limit_of"], ENT_QUOTES, "UTF-8")." <span class='text-black'>";
 
