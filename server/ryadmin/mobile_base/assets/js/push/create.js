@@ -76,7 +76,6 @@ function check_user(){
 		});
 	
 	}else{
-		alert("The local id_user= "+localStorage.getItem('id_user'));
 		$.ajax({
 			async:false,
 			type: "GET",

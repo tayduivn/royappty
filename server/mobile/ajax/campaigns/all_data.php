@@ -61,8 +61,32 @@
 
     $response["result"]=true;
     
-    $response["data"]["page"]="";
     
+    $response["data"]["page"].="
+       <div class='page center_mobile_page' id='index'>
+         <img class='full-width full-height' src='".$src."'/>
+       </div>
+     ";
+     echo "jsonCallback(".json_encode($response).")";
+     die();
+  }
+  
+ 	/*********************************************************
+ 	* AJAX OPERATIONS
+ 	*********************************************************/
+	
+ 	
+	$response["result"]=true;
+
+
+	
+	$response["data"]["page"]="";
+   
+	$table='users';
+	$filter=array();
+	$filter["id_user"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_user"]);
+	$user=getInBD($table,$filter);
+	
     if($user["platform"]=="ios"){
 	    $response["data"]["page"].="
 	    <style type='text/css'>
@@ -78,28 +102,14 @@
 		</style>
 	    ";
     }
-    $response["data"]["page"].="
-       <div class='page center_mobile_page' id='index'>
-         <img class='full-width full-height' src='".$src."'/>
-       </div>
-     ";
-     echo "jsonCallback(".json_encode($response).")";
-     die();
-  }
-  
- 	/*********************************************************
- 	* AJAX OPERATIONS
- 	*********************************************************/
-	
-	debug_log("ANDROID_KEY = ".$_GET["android_key"]);
- 	
-	$response["result"]=true;
-
-
-
-
+    
+    $table="campaigns";
+	$filter=array();
+	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
+	$filter["status"]=array("operation"=>"=","value"=>1);
+ 
 	$campaigns=listInBD($table,$filter,$fields);
-	$response["data"]["page"]="
+	$response["data"]["page"].="
 
 	<div class='page center_mobile_page' id='index'>
 		<div class='header navbar navbar-inverse'>
