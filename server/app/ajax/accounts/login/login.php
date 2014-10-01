@@ -86,6 +86,9 @@ if(!checkClosed()){echo json_encode($response);die();}
 						<input type='submit' class='btn btn-white' value='".htmlentities($login_s["login_button"], ENT_QUOTES, "UTF-8")."' />
 					</div>
 				</div>
+				<div class='text-center'>
+				<a href='../../' class='muted'>".htmlentities($s["back_to_main"], ENT_QUOTES, "UTF-8")."</a>
+			</div>
 			</form>
 	";
 

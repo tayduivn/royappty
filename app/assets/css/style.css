@@ -412,6 +412,9 @@ blockquote small{
 .muted {
 	color:#b6bfc5;
 }
+a.muted:hover {
+	color:#98a5ad;
+}
 /* Background Colors */
 .bg-blue {
   background-color: #00acec !important;
