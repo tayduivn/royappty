@@ -13,9 +13,6 @@
 	* ERROR CODES
 	*	- no_brand
 	*	- brand_not_valid
-	*	- no_user
-	*	- user_not_valid
-	*	- user_inactive
 	*
 	*********************************************************/
 
@@ -25,9 +22,9 @@
  	*********************************************************/
  	define('PATH', str_replace('\\', '/','../../'));
 	@session_start();
-	$timestamp=strtotime(date("Y-m-d H:m:00"));
+	$timestamp=strtotime(date("Y-m-d H:i:00"));
  	include(PATH."include/inbd.php");
-	$page_path = "server/mobile/ajax/session/create";
+	$page_path = "server/mobile/ajax/session/signup_key";
  	debug_log("[".$page_path."] START");
  	$response=array();
 
@@ -36,47 +33,61 @@
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
-
- 	// BRAND
- 	$brand=array();$brand["id_brand"]=$_GET["id_brand"];
-	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
- 	// USER
-  	$user=array();$user["id_user"]=($_GET["id_user"]);
-	if(!checkUser($user)){echo "jsonCallback(".json_encode($response).")";die();}
-
-
-
+ 	
+ 	
+	if(!@issetandnotempty($_GET["phone_key"])){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR Data Missing phone_key");
+		$response["error"]="ERROR Data Missing Phone Key";
+		$response["error_code"]="missing_phone_key";
+		return false;
+		die();
+	}
+	
+	$table='users';
+ 	$filter=array();
+ 	$filter["phone_key"]=array("operation"=>"=","value"=>$_GET["phone_key"]);
+ 	
+ 	if(!isInBD($table,$filter)){
+		$response["result"]=false;
+		debug_log("[".$page_path."] ERROR No Phone key");
+		$response["error"]="ERROR No Phone key";
+		$response["error_code"]="no_phone_key";
+		return false;
+		die(); 	
+ 	}
+ 	
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
-
+ 	
+ 	
+ 	
  	$response["result"]=true;
+ 	
+	$table='users';
+ 	$filter=array();
+ 	$filter["phone_key"]=array("operation"=>"=","value"=>$_GET["phone_key"]);
+
+ 	$user=getInBD($table,$filter);
+ 	$response["data"]=$user["id_user"];
+  
   	$_SESSION['user']=array();
-    $_SESSION['user']["id_user"] = $_GET["id_user"];
+    $_SESSION['user']["id_user"] = $user["id_user"];
     $_SESSION['user']["id_brand"] = $_GET["id_brand"];
-	debug_log("[".$page_path."] Session Created user:{id_user:".$_SESSION['user']["id_user"].",id_brand:".$_SESSION['user']["id_brand"]."}");
-
-
 
  	/*********************************************************
  	* DATABASE REGISTRATION
  	*********************************************************/
-
- 	$table="users";
- 	$filter=array();
- 	$filter["id_user"]=array("operation"=>"=","value"=>$_GET["id_user"]);
- 	$data=array();
- 	$data["last_connection"] = strtotime(date("Y-m-d H:i:00"));
- 	updateInBD($table,$filter,$data);
-	debug_log("[".$page_path."] User (".$_SESSION['user']["id_user"].") Update last_connection:".$data["last_connection"]);
 
 
 
  	/*********************************************************
  	* AJAX CALL RETURN
  	*********************************************************/
-  echo "jsonCallback(".json_encode($response).")";
+
  	debug_log("[".$page_path."] END");
-  die();
+ 	echo "jsonCallback(".json_encode($response).")";
+ 	die();
 
 ?>
