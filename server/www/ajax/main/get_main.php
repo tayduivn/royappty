@@ -220,7 +220,7 @@
     </div>
   </div>
 </div>
-<div class='section white'>
+<!--<div class='section white'>
     <div class='container'>
       <div class='p-t-40 p-b-40'>
         <div class='row feature-list'>
@@ -239,7 +239,7 @@
         </div>
       </div>
     </div>
-</div>
+</div>-->
 <div class='section black'>
     <div class='container'>
       <div class='p-t-60 p-b-60'>
