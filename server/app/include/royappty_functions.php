@@ -29,14 +29,14 @@ function create_app_folder($path,$app_project_codename){
 	}
 	copy($path."resources/defaults/app_icon.png",$path."resources/mobile-app/".$app_project_codename."/app_icon.png");
 	
-	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.jpg] Check File");
-	if (!file_exists($path."resources/mobile-app/".$app_project_codename."/app_bg.jpg")) {
-		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.jpg] File not exits");
+	debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.png] Check File");
+	if (!file_exists($path."resources/mobile-app/".$app_project_codename."/app_bg.png")) {
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.png] File not exits");
 	}else{
-		unlink($path."resources/mobile-app/".$app_project_codename."/app_bg.jpg");
-		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.jpg] File deleted");
+		unlink($path."resources/mobile-app/".$app_project_codename."/app_bg.png");
+		debug_log("[".$page_path."] [resources/mobile-app/".$app_project_codename."/app_bg.png] File deleted");
 	}
-	copy($path."resources/defaults/app_bg.jpg",$path."resources/mobile-app/".$app_project_codename."/app_bg.jpg");
+	copy($path."resources/defaults/app_bg.png",$path."resources/mobile-app/".$app_project_codename."/app_bg.png");
 	
 
 }
