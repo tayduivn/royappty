@@ -9,7 +9,7 @@ function update(){
 			contentType: 'application/json',
 			url: $SERVER_PATH+"server/mobile/ajax/campaigns/all_data.php",
 			data: {
-				id_user:$SESSION,
+				id_user:localStorage.getItem('id_user'),
 				phone_key:localStorage.getItem("phone_key"),
 				platform:localStorage.getItem("platform"),
 				lang:"es"

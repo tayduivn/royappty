@@ -40,7 +40,7 @@
  	$brand=array();$brand["id_brand"]=$_SESSION["user"]["id_brand"];
 	if(!checkBrand($brand)){echo "jsonCallback(".json_encode($response).")";die();}
  	// USER
-  $user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
+ 	$user=array();$user["id_user"]=$_SESSION["user"]["id_user"];
 	if(!checkUser($user)){echo "jsonCallback(".json_encode($response).")";die();}
 
   $table="apps";
