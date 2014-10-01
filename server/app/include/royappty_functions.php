@@ -52,45 +52,47 @@ function sendMessageToiOs($deviceToken, $collapseKey, $messageText, $messageTitl
 	$apnsCert = $key_path;
 	if(file_exists($key_path)){
 		debug_log("[".$page_path."] [sendMessageToiOs] File exists");
+		// Setup stream:
+		$streamContext = stream_context_create();
+		stream_context_set_option($streamContext, 'ssl', 'local_cert', $apnsCert);
+		 
+		// Open connection:
+		$apns = stream_socket_client(
+		    'ssl://' . $apnsHost . ':' . $apnsPort,
+		    $error,
+		    $errorString,
+		    2,
+		    STREAM_CLIENT_CONNECT,
+		    $streamContext
+		);
+		 
+		if (strlen($messageText) > 125) {
+		    $messageText = substr($messageText, 0, 125) . '...';
+		}
+		 
+		$payload['aps'] = array('alert' => $messageText, 'badge' => 1, 'sound' => 'default');
+		$payload = json_encode($payload);
+		 
+		// Send the message:
+		
+		$apnsMessage
+		    = chr(0) . chr(0) . chr(32) . pack('H*', str_replace(' ', '', $deviceToken)) . chr(0) . chr(strlen($payload))
+		    . $payload;
+		 fwrite($apns, $apnsMessage);
+		 
+		// Close connection:
+		@socket_close($apns);
+		fclose($apns);
+		debug_log("[".$page_path."] [sendMessageToiOs] END");
+		return true;
 	}else{
 		debug_log("[".$page_path."] [sendMessageToiOs] File not exists");
+		debug_log("[".$page_path."] [sendMessageToiOs] END");
+		return false;
 	}
 	
-			debug_log("[".$page_path."] [sendMessageToiOs] File not exists");
 
-	// Setup stream:
-	$streamContext = stream_context_create();
-	stream_context_set_option($streamContext, 'ssl', 'local_cert', $apnsCert);
-	 
-	// Open connection:
-	$apns = stream_socket_client(
-	    'ssl://' . $apnsHost . ':' . $apnsPort,
-	    $error,
-	    $errorString,
-	    2,
-	    STREAM_CLIENT_CONNECT,
-	    $streamContext
-	);
-	 
-	if (strlen($messageText) > 125) {
-	    $messageText = substr($messageText, 0, 125) . '...';
-	}
-	 
-	$payload['aps'] = array('alert' => $messageText, 'badge' => 1, 'sound' => 'default');
-	$payload = json_encode($payload);
-	 
-	// Send the message:
 	
-	$apnsMessage
-	    = chr(0) . chr(0) . chr(32) . pack('H*', str_replace(' ', '', $deviceToken)) . chr(0) . chr(strlen($payload))
-	    . $payload;
-	 fwrite($apns, $apnsMessage);
-	 
-	// Close connection:
-	@socket_close($apns);
-	fclose($apns);
-	debug_log("[".$page_path."] [sendMessageToiOs] END");
-	return true;
 }
 
 
