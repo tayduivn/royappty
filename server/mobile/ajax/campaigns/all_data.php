@@ -266,8 +266,8 @@
 								<div class='col-md-12'>
 									<h2 class='text-center m-t-80'>".htmlentities($s["validate_code_title"], ENT_QUOTES, "UTF-8")."</h2>
 									<h5 class='text-center m-t-40 m-l-30 m-r-30'>".htmlentities($s["validate_code_subtitle"], ENT_QUOTES, "UTF-8")."</h5>
-									<h5 class='text-center'>".htmlentities($s["promo_code"], ENT_QUOTES, "UTF-8")."</h5>
-									<h4 class='text-center'>".strtoupper(dec32($user["id_user"].$campaign["id_campaign"].$timestamp))."</h4>
+									<!--<h5 class='text-center'>".htmlentities($s["promo_code"], ENT_QUOTES, "UTF-8")."</h5>-->
+									<!--<h4 class='text-center'>".strtoupper(dec32($user["id_user"].$campaign["id_campaign"].$timestamp))."</h4>-->
 									<div class='text-center m-t-40 m-l-20 m-r-20'>
 										<a class='btn btn-block' href='javascript:transition_left(\"validate-".$campaign["id_campaign"]."-1\",\"validate-".$campaign["id_campaign"]."-2\")'>".htmlentities($s["next"], ENT_QUOTES, "UTF-8")."</a>
 									</div>
