@@ -195,13 +195,13 @@
           </div>
         </div>
         <br>
-        <div class='section relative'>
+        <!--<div class='section relative'>
           <div class='row text-center'>
 
           <img src='assets/img/citious-screenshot.jpg' alt='' class='resize p-t-60 hidden-xs full-width' style='' data-ride='animated' data-animation='fadeInUp' data-delay='300' data-bgfit='cover' data-bgposition='center center'>
 
         </div>
-        </div>
+        </div>-->
         <div class='clearfix'></div>
       </div>
     </div>

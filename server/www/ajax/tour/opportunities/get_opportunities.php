@@ -93,7 +93,7 @@
       </div>
       <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/opportunities/opportunities_1_image.png' alt='img01'>
+            <!--<img src='".$url_server."assets/img/tour/opportunities/opportunities_1_image.png' alt='img01'>-->
           </div>
       </div>
       <div class='row p-t-20'>
@@ -109,7 +109,7 @@
       </div>
       <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/opportunities/opportunities_2_image.png' alt='img01'>
+            <!--<img src='".$url_server."assets/img/tour/opportunities/opportunities_2_image.png' alt='img01'>-->
           </div>
       </div>
       <div class='row p-t-20'>
@@ -125,7 +125,7 @@
       </div>
       <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/opportunities/opportunities_3_image.png' alt='img01'>
+            <!--<img src='".$url_server."assets/img/tour/opportunities/opportunities_3_image.png' alt='img01'>-->
           </div>
       </div>
       <div class='row p-t-20'>
@@ -141,7 +141,7 @@
       </div>
       <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/opportunities/opportunities_4_image.png' alt='img01'>
+            <!--<img src='".$url_server."assets/img/tour/opportunities/opportunities_4_image.png' alt='img01'>-->
           </div>
       </div>
       <div class='p-b-60 p-t-20 text-center'>

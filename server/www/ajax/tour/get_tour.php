@@ -80,17 +80,14 @@
   $response["data"]["page-data"]="
   <div class='section full-view ha-waypoint' data-animate-down='ha-header-hide' data-animate-up='ha-header-hide'>
 
-    <!--BEGIN SLIDER -->
+    <!--
     <div class='tp-banner-container'>
       <div class='tp-banner' id='tourSlider'>
         <ul>
-          <!-- SLIDE  -->
           <li data-transition='fade' data-slotamount='5' data-masterspeed='700' >
-            <!-- MAIN IMAGE -->
             <img src='".$url_server."assets/img/bg/bg_1.jpg'   alt='slidebg1'  data-bgfit='cover' data-bgposition='center center' data-bgrepeat='no-repeat'>
 
 
-            <!-- LAYERS -->
             <div class='tp-caption mediumlarge_light_white_center sft tp-resizeme slider'
                 data-x='300' data-hoffset='0'
                 data-y='130'
@@ -129,10 +126,10 @@
           </li>
         </ul>
         <div class='tp-bannertimer'></div>
-      </div>
+      </div>-->
     </div>
   </div>
-  <div class='section white text-center p-t-40 p-b-40' id='banner-footer'>
+  <div class='section first white text-center p-t-40 p-b-40' id='banner-footer'>
     <h2 class='normal m-b-10'>".htmlentities($s["tour_how_does_it_work"], ENT_QUOTES, "UTF-8")."</h2>
     <p>".htmlentities($s["tour_we_teach_you"], ENT_QUOTES, "UTF-8")."</p>
   </div>
@@ -166,13 +163,13 @@
               </div>
             </article>
             <figure class='cbp-so-side cbp-so-side-right'>
-              <img src='".$url_server."assets/img/Stressfree.png' alt='img01'>
+              <!--<img src='".$url_server."assets/img/Stressfree.png' alt='img01'>-->
             </figure>
           </section>
 
           <section class='cbp-so-section'>
             <figure class='cbp-so-side cbp-so-side-left'>
-              <img src='".$url_server."assets/img/Front.png' alt='img01'>
+              <!--<img src='".$url_server."assets/img/Front.png' alt='img01'>-->
             </figure>
             <article class='cbp-so-side cbp-so-side-right text-center middle'>
               <div class='row'>
@@ -198,7 +195,7 @@
               </div>
             </article>
             <figure class='cbp-so-side cbp-so-side-right'>
-              <img src='".$url_server."assets/img/condensed.png' alt='img01'>
+              <!--<img src='".$url_server."assets/img/condensed.png' alt='img01'>-->
             </figure>
           </section>
   </div>

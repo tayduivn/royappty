@@ -93,7 +93,7 @@ $response["data"]["page-data"]="
       </div>
       <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/validation/validation_1_image.png' alt='img01'>
+            <!--<img src='".$url_server."assets/img/tour/validation/validation_1_image.png' alt='img01'>-->
           </div>
       </div>
       <div class='row p-t-20'>
@@ -109,7 +109,7 @@ $response["data"]["page-data"]="
       </div>
       <div class='p-b-60 text-center'>
           <div class='m-t-40 m-b-20'>
-            <img src='".$url_server."assets/img/tour/validation/validation_2_image.png' alt='img01'>
+            <!--<img src='".$url_server."assets/img/tour/validation/validation_2_image.png' alt='img01'>-->
           </div>
       </div>
       <div class='p-b-60 p-t-20 text-center'>

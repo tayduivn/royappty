@@ -95,7 +95,7 @@ $s["contact_open_from_to"] = "Lunes a Viernes de 8.00 a 18.00";
 //Pricing page
 $s["pricing_starter"] = "PRINCIPIANTE";
 $s["pricing_starter_monthly_campaings"] = "5 campañas mensual";
-$s["pricing_starter_iPhone_Android_available"] = "App disponible para iPhone & Android";
+$s["pricing_starter_iPhone_Android_available"] = "App iPhone & Android";
 $s["pricing_starter_message_customer"] = "Mensajería con Clientes";
 $s["pricing_starter_statistics"] = "Estadísticas de usuarios e informes de campañas";
 $s["pricing_starter_marketing_pack"] = "Pack de marketing";
@@ -106,7 +106,7 @@ $s["pricing_starter_btn_hire"] = "Empieza ahora";
 
 $s["pricing_professional"] = "PROFESIONAL";
 $s["pricing_professional_monthly_campaigns"] = "10 Campañas mensuales";
-$s["pricing_professional_iPhone_Android_available"] = "App disponible para iPhone & Android";
+$s["pricing_professional_iPhone_Android_available"] = "App iPhone & Android";
 $s["pricing_professional_message_customer"] = "Mensajería con Clientes";
 $s["pricing_professional_statistics"] = "Estadísticas de usuarios e informes de campañas";
 $s["pricing_professional_marketing_pack"] = "Pack de marketing";
@@ -117,7 +117,7 @@ $s["pricing_professional_btn_hire"] = "Empieza ahora";
 
 $s["pricing_unlimited"] = "UNLIMITED";
 $s["pricing_unlimited_campaigns"] = "Campañas ilimitadas";
-$s["pricing_unlimited_iPhone_Android_available"] = "App disponible para iPhone & Android";
+$s["pricing_unlimited_iPhone_Android_available"] = "App iPhone & Android";
 $s["pricing_unlimited_iPhone_message_customer"] = "Mensajería con Clientes";
 $s["pricing_unlimited_statistics"] = "Estadísticas de usuarios e informes de campañas";
 $s["pricing_unlimited_marketing_pack"] = "Pack de marketing";
