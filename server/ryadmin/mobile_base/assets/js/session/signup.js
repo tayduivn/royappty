@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	$.ajax({
 		async: false,
 		type: "GET",
@@ -67,12 +68,18 @@ $(document).ready(function() {
 							success: function(response) {
 								if(response.result){
 									localStorage.setItem('id_user', response.data.id_user);
-									navigator.notification.alert(
-										'Muchas gracias por darte de alta en nuestra app',
-										signupDismissed,        
-										'Registro',
-										'Continuar'
-									);
+									if(localStorage.getItem("platform")=="android"){
+										window.location.href = "./index.html";
+									}else{
+										navigator.notification.alert(
+											'Muchas gracias por darte de alta en nuestra app',
+											signupDismissed,        
+											'Registro',
+											'Continuar'
+										);		
+									}
+									
+								
 								} else {
 									error_handler(response.error_code);
 								}
@@ -90,4 +97,3 @@ $(document).ready(function() {
 
 
 });
-

@@ -62,14 +62,14 @@ function check_user(){
 				id_brand:localStorage.getItem('id_brand')
 			},
 			error: function(data, textStatus, jqXHR) {
-				error_handler("ajax_error");
+				window.location.href = $PATH+"signup.html";
 			},
 			success: function(response) {
 				if(response.result){
 					localStorage.setItem('id_user', response.data);
 					update();
 				} else {
-					error_handler("no_user");
+					window.location.href = $PATH+"signup.html";
 				}
 	
 			}
