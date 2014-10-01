@@ -136,15 +136,14 @@ if(!checkClosed()){echo json_encode($response);die();}
 		</div>
 	</div>
 	";
-	$table='brand_user_fields';
+	$table='user_fields';
 	$filter=array();
-	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	$filter["main_field"]=array("operation"=>"=","value"=>1);
-	$brand_user_fields=getInBD($table,$filter);
+	$filter["title"]=array("operation"=>"=","value"=>"email");
+	$user_field=getInBD($table,$filter);
 
 	$table='user_field_data';
 	$filter=array();
-	$filter["id_user_field"]=array("operation"=>"=","value"=>$brand_user_fields["id_user_field"]);
+	$filter["id_user_field"]=array("operation"=>"=","value"=>$user_field["id_user_field"]);
 	$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
 	$user_field_data=getInBD($table,$filter);
 
@@ -175,18 +174,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$response["data"]["user-data"].="
 		</h5>";
 
-	$table='user_field_data';
-	$filter=array();
-	$filter["id_user_field"]=array("operation"=>"<>","value"=>$brand_user_fields["id_user_field"]);
-	$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
-	$user_field_datas=listInBD($table,$filter);
-	foreach($user_field_datas as $key=>$user_field_data){
-		$table="user_fields";
-		$filter=array();
-		$filter["id_user_field"]=array("operation"=>"=","value"=>$user_field_data["id_user_field"]);
-		$user_field=getInBD($table,$filter);
-		$response["data"]["user-data"].="<p><b>".$user_field_title_s[$user_field["title"]]."</b> ".$user_field_data["field_value"]."</p>";
-	}
+	
 
 
 

@@ -73,22 +73,19 @@
 
 
 	 		$data_table[0] = "<div class='m-b-5'><a href='".$_GET["PATH"]."user/?id_user=".$user["id_user"]."' class=''>";
-	 		$table='brand_user_fields';
+	 		$table='user_fields';
 	 		$filter=array();
-	 		$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
-	 		$filter["main_field"]=array("operation"=>"=","value"=>1);
-	 		if(isInBD($table,$filter)){
-		 		$brand_user_field=getInBD($table,$filter);
-		 		$table='user_field_data';
-			 	$filter=array();
-			 	$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
-			 	$filter["id_user_field"]=array("operation"=>"=","value"=>$brand_user_field["id_user_field"]);
-			 	$user_field=getInBD($table,$filter);
-			 	$data_table[0] .= $user_field["field_value"];
+	 		$filter["title"]=array("operation"=>"=","value"=>"email");
+	 		$user_field=getInBD($table,$filter);
+		 	
+		 	$table='user_field_data';
+	 		$filter=array();
+	 		$filter["id_user_field"]=array("operation"=>"=","value"=>$user_field["id_user_field"]);
+		 	$filter["id_user"]=array("operation"=>"=","value"=>$user["id_user"]);
+		 	$user_field=getInBD($table,$filter);
+		 	$data_table[0] .= $user_field["field_value"];
 
-	 		}else{
-			 	$data_table[0] .= $user["id_user"];
-	 		}
+	 		
 
 	 		$data_table[0] .= "</a></div><div class='hidden-options'><a href='".$_GET["PATH"]."user/?id_user=".$user["id_user"]."' class='btn btn-mini btn-white'>".htmlentities($s["view_report"], ENT_QUOTES, "UTF-8")."</a></div>";
 
