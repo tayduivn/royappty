@@ -60,6 +60,13 @@ Page header
   filter:none !important;
   background-image: none !important;
   background-color: #ffffff !important;
+  padding-top:10px !important;
+}
+.navbar-inner td.text-left{
+	padding-top:14px !important;
+}
+.navbar-inner td.text-right{
+	padding-top:14px !important;
 }
 
 .header .btn-navbar {

@@ -163,7 +163,7 @@
 									<div>
 										<img class='full-width' src='".$src."'/>
 									</div>
-									<h5 class='text-center m-t-40 m-b-40 m-l-30 m-r-30'>".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."</h5>
+									<h6 class='text-center m-t-40 m-b-40 m-l-30 m-r-30'>".htmlentities($campaign["content"], ENT_QUOTES, "UTF-8")."</h6>
 								";
 			if($campaign["type"]==1){
 
