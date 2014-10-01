@@ -102,7 +102,7 @@ $s["pricing_starter_marketing_pack"] = "Pack de marketing";
 $s["pricing_starter_customized_campaigns"] = "Grupos y campañas focalizadas";
 $s["pricing_starter_app_takes_10_days"] = "* La aplicación tarda aproximadamente diez días en estar disponible";
 $s["pricing_starter_price"] = "9.99 € / Mensuales";
-$s["pricing_starter_btn_hire"] = "PRUEBALO GRATIS";
+$s["pricing_starter_btn_hire"] = "Empieza ahora";
 
 $s["pricing_professional"] = "PROFESIONAL";
 $s["pricing_professional_monthly_campaigns"] = "10 Campañas mensuales";
@@ -113,9 +113,9 @@ $s["pricing_professional_marketing_pack"] = "Pack de marketing";
 $s["pricing_professional_customized_campaigns"] = "Grupos y campañas focalizadas";
 $s["pricing_professional_app_takes_10_days"] = "* La aplicación tarda aproximadamente diez días en estar disponible";
 $s["pricing_professional_price"] = "14.99 € / Mensuales";
-$s["pricing_professional_btn_hire"] = "CONTRATAR";
+$s["pricing_professional_btn_hire"] = "Empieza ahora";
 
-$s["pricing_unlimited"] = "EMPRESARIAL";
+$s["pricing_unlimited"] = "UNLIMITED";
 $s["pricing_unlimited_campaigns"] = "Campañas ilimitadas";
 $s["pricing_unlimited_iPhone_Android_available"] = "App disponible para iPhone & Android";
 $s["pricing_unlimited_iPhone_message_customer"] = "Mensajería con Clientes";
@@ -123,8 +123,8 @@ $s["pricing_unlimited_statistics"] = "Estadísticas de usuarios e informes de ca
 $s["pricing_unlimited_marketing_pack"] = "Pack de marketing";
 $s["pricing_unlimited_focused_campaigns"] = "Grupos y campañas focalizadas";
 $s["pricing_unlimited_app_takes_10_days"] = "* La aplicación tarda aproximadamente diez días en estar disponible";
-$s["pricing_unlimited_price"] = "Precio personalizado";
-$s["pricing_unlimited_btn_hire"] = "CONTACTA CON NOSOTROS";
+$s["pricing_unlimited_price"] = "59.99 € / Mensuales";
+$s["pricing_unlimited_btn_hire"] = "Empieza ahora";
 
 
 
