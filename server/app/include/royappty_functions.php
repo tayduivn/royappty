@@ -127,7 +127,7 @@ function sendMessageToAndroid($deviceToken, $collapseKey, $messageText, $message
 	}
 	if ($httpCode != 200) {
 		$response["result"]=false;
-		debug_log("[".$page_path."] Send Message Error http_code<>200");
+		debug_log("[".$page_path."] Send Message Error http_code<>200 (".$httpCode.")");
   		$response["error_code"]="send_message_error";
 		return false;
  		die();

@@ -60,7 +60,25 @@
     $src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
     $response["result"]=true;
-    $response["data"]["page"]="
+    
+    $response["data"]["page"]="";
+    
+    if($user["platform"]=="ios"){
+	    $response["data"]["page"].="
+	    <style type='text/css'>
+	    	.header .navbar-inner {
+			  padding-top:10px !important;
+			}
+			.navbar-inner td.text-left{
+				padding-top:14px !important;
+			}
+			.navbar-inner td.text-right{
+				padding-top:14px !important;
+			}
+		</style>
+	    ";
+    }
+    $response["data"]["page"].="
        <div class='page center_mobile_page' id='index'>
          <img class='full-width full-height' src='".$src."'/>
        </div>
