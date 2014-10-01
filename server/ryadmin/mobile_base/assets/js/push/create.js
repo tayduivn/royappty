@@ -3,10 +3,10 @@ function onDeviceReady() {
 	try{
 		pushNotification = window.plugins.pushNotification;
   	  if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ){
-			localStorage.setItem("platform", "android");
+	  	  	localStorage.setItem("platform", "android");
    		 	pushNotification.register(successHandler, errorHandler, {"senderID": $android_senderID ,"ecb":"onNotification"});
 		}else{
- 			localStorage.setItem("platform", "ios");
+			localStorage.setItem("platform", "ios");
   			pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 		}
 	}catch(err){

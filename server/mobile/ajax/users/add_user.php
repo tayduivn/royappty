@@ -45,16 +45,12 @@
  	*********************************************************/
 
  	$response["result"]=true;
-	 	error_log("!!!!!!!!!");
-	foreach ($_GET as $key=>$value){
-	 	error_log("=>>>> ".$key." ".$value);
- 	}
- 	die();
  	$table="users";
  	$data=array();
  	$data["id_brand"]=$_GET["id_brand"];
  	$data["active"]=1;
- 	$data["android_key"]=$_GET["android_key"];
+ 	$data["platform"]=$_GET["platform"];
+ 	$data["phone_key"]=$_GET["phone_key"];
  	$data["created"]=$timestamp;
  	$data["last_connection"]=$timestamp;
  	$data["resume_block_1_display"]=0;
@@ -80,7 +76,7 @@
  	$user=array();
  	$user["id_user"]=addInBD($table,$data);
 
- 	$signup_datas=explode("&",$_GET["signup_data"]);
+ 	/*$signup_datas=explode("&",$_GET["signup_data"]);
 	foreach ($signup_datas as $key=>$signup_data){
 		$signup_field=explode("=",$signup_data);
 		$table="user_fields";
@@ -95,7 +91,34 @@
 		$data["id_user_field"]=$user_field["id_user_field"];
 		$data["field_value"]=$signup_field[1];
 		addInBD($table,$data);
-	}
+	}*/
+	
+	$table="user_fields";
+	$filter=array();
+	$filter["title"]=array("operation"=>"=","value"=>"email");
+	$user_field=getInBD($table,$filter);
+	
+	$table="user_field_data";
+	$data=array();
+	$data["id_user"]=$user["id_user"];
+	$data["id_user_field"]=$user_field["id_user_field"];
+	$data["field_value"]=$_GET["email"];
+	addInBD($table,$data);
+	
+	$table="user_fields";
+	$filter=array();
+	$filter["title"]=array("operation"=>"=","value"=>"password");
+	$user_field=getInBD($table,$filter);
+	
+	$table="user_field_data";
+	$data=array();
+	$data["id_user"]=$user["id_user"];
+	$data["id_user_field"]=$user_field["id_user_field"];
+	$data["field_value"]=md5($_GET["password"]);
+	addInBD($table,$data);
+	
+	
+	
 	$response["data"]=array();
 	$response["data"]["id_user"]=$user["id_user"];
 

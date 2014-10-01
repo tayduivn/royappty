@@ -117,11 +117,11 @@
 			$filter=array();
 			$filter["id_user"]=array("operation"=>"=","value"=>$user_group["id_user"]);
 			$user=getInBD($table,$filter);
-			if(!empty($user["android_key"])){
-				sendMessageToAndroid($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+			if($user["platform"]=="android"){
+				sendMessageToAndroid($user["phone_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
 			}
-			if(!empty($user["ios_key"])){
-				sendMessageToiOS($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], PATH."../resources/mobile-app/".$app["project_codename"]."/ios_certificate.pem");
+			if($user["platform"]=="ios"){
+				sendMessageToiOS($user["phone_key"], $brand["android_project_number"], $data["content"], $app["name"], PATH."../resources/mobile-app/".$app["project_codename"]."/apns-cert.pem");
 			}
 		}
 		
@@ -133,11 +133,11 @@
 		$users=listInBD($table,$filter);
 		foreach($users as $key => $user){
 			debug_log("[".$page_path."] Send Notification (User:".$user["id_user"].") START");
-			if(!empty($user["android_key"])){
-				sendMessageToAndroid($user["android_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
+			if($user["platform"]=="android"){
+				sendMessageToAndroid($user["phone_key"], $brand["android_project_number"], $data["content"], $app["name"], $brand["android_server_key"]);
 			}
-			if(!empty($user["ios_key"])){
-				sendMessageToiOS($user["ios_key"], $brand["android_project_number"], $data["content"], $app["name"], PATH."../resources/mobile-app/".$app["project_codename"]."/ios_certificate.pem");
+			if($user["platform"]=="ios"){
+				sendMessageToiOS($user["phone_key"], $brand["android_project_number"], $data["content"], $app["name"], PATH."../resources/mobile-app/".$app["project_codename"]."/apns-cert.pem");
 			}
 			debug_log("[".$page_path."] Send Notification (User:".$user["id_user"].") END");
 		}
