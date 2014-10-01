@@ -43,6 +43,7 @@ $login_s["email_help"]="";
 $login_s["password"]="Contraseña";
 $login_s["password_help"]="";
 $login_s["login_button"] = "Acceder";
+$s["back_to_main"] = "Volver a página principal";
 
 //signup
 $signup_s["brand_data"] = "Datos de la compañía";
