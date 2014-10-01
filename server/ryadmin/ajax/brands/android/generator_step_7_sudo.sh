@@ -15,3 +15,13 @@ cp ../../../../../resources/mobile-app/$1/icon-72-hdpi.png ./www/res/icon/androi
 cp ../../../../../resources/mobile-app/$1/icon-72-hdpi.png ./platforms/android/res/drawable-hdpi/icon.png
 cp ../../../../../resources/mobile-app/$1/icon-96-xhdpi.png ./www/res/icon/android/icon-96-xhdpi.png
 cp ../../../../../resources/mobile-app/$1/icon-96-xhdpi.png ./platforms/android/res/drawable-xhdpi/icon.png
+
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-land-hdpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-land-ldpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-land-mdpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-land-xhdpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-port-hdpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-port-ldpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-port-mdpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-port-xhdpi/screen.png
+cp ../../../../../resources/mobile-app/$1/app_bg.png ./platforms/android/res/drawable-xhdpi/screen.png
