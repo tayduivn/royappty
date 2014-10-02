@@ -1,3 +1,11 @@
+/************************************************************
+* Royappty
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Modification: 10-02-2014
+* Version: 1.0
+* licensed through CC BY-NC 4.0
+************************************************************/
+
 $(document).ready(function() {		
 	  //Initialize Map
 	  map = new GMaps({
@@ -18,7 +26,7 @@ $(document).ready(function() {
         streetViewControl : false,
         mapTypeControl: false,
         overviewMapControl: false,
-		
+
       });
 	  // Add a random mark
 	  setTimeout( function(){
@@ -78,16 +86,16 @@ $(document).ready(function() {
               strokeColor: '#131540',
               strokeOpacity: 0.6,
               strokeWeight: 6
-            });  
+            });
           });
         }
       });
 	  $("#map-zoom-out").click(function() {
-		 map.zoomOut(1);		  
+		 map.zoomOut(1);
 	  });
-	  
+
 	  $("#map-zoom-in").click(function() {
-		map.zoomIn(1);	  
+		map.zoomIn(1);
 	  });
-	  
+
 });
