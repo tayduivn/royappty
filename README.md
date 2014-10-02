@@ -1,8 +1,12 @@
 Royappty
 --------------
 
-Version 0.94
+Royappty is a Software that allows every user to create their own loyalty apps for iPhone and Android. Using the cloud manager, they can publish promotions for their costumes as discounts, coupons and sales.
 
-Software to create your loyalty card for mobile devices in seconds, managed in the cloud.
+www.royappty.com
 
-Project developed by the Viva la Cloud Team.
+Current version 1.0
+
+Royappty is licensed through Creative Commons Attribution-NonCommercial 4.0
+
+Project developed by Royappty Team | Viva la Cloud.

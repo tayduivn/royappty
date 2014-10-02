@@ -1,23 +1,14 @@
-/*********************************************************
-*
+/************************************************************
+* Royappty
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 09-07-2014
-* Version: 0.92
-*
-*********************************************************/
+* Last Modification: 10-02-2014
+* Version: 1.0
+* licensed through CC BY-NC 4.0
+************************************************************/
 
-/*********************************************************
-* AJAX RETURNS
-*
-* ERROR CODES
-*
-*********************************************************/
 
 $(document).ready(function(){
 
-	/*********************************************************
-	* AJAX CALL LOAD PAGE
-	*********************************************************/
 	$.ajax({
 		async: false,
 		type: "POST",
@@ -39,10 +30,6 @@ $(document).ready(function(){
 			}
 		}
 	});
-
-	/*********************************************************
-	* FORM MANAGEMENT
-	*********************************************************/
 
 	$("#form-step1").validate({
 		messages:{
@@ -103,7 +90,7 @@ $(document).ready(function(){
 
 
 	jQuery.validator.addMethod("app_name", function(app_name, element){
-    	app_name = app_name.replace(/\s+/g, ""); 
+    	app_name = app_name.replace(/\s+/g, "");
 		return this.optional(element) || app_name.match(/^[A-Za-z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00FC\u00DC][A-Za-z0-9\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00FC\u00DC]*$/);
 	}, $s["signup_app_name_format_is_not_correct"]);
 	$("#form-step2").validate({
