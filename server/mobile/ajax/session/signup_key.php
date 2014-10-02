@@ -1,11 +1,12 @@
 <?php
-	/*********************************************************
-	*
-	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-06-2014
-	* Version: 0.93
-	*
-	*********************************************************/
+	/************************************************************
+  * Royappty
+  * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+  * Last Modification: 10-02-2014
+  * Version: 1.0
+  * licensed through CC BY-NC 4.0
+  ************************************************************/
+
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -33,8 +34,8 @@
  	/*********************************************************
  	* DATA CHECK
  	*********************************************************/
- 	
- 	
+
+
 	if(!@issetandnotempty($_GET["phone_key"])){
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR Data Missing phone_key");
@@ -43,35 +44,35 @@
 		echo "jsonCallback(".json_encode($response).")";
 		die();
 	}
-	
+
 	$table='users';
  	$filter=array();
  	$filter["phone_key"]=array("operation"=>"=","value"=>$_GET["phone_key"]);
- 	
+
  	if(!isInBD($table,$filter)){
 		$response["result"]=false;
 		debug_log("[".$page_path."] ERROR No Phone key");
 		$response["error"]="ERROR No Phone key";
 		$response["error_code"]="no_phone_key";
 		echo "jsonCallback(".json_encode($response).")";
-		die(); 	
+		die();
  	}
- 	
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
- 	
- 	
- 	
+
+
+
  	$response["result"]=true;
- 	
+
 	$table='users';
  	$filter=array();
  	$filter["phone_key"]=array("operation"=>"=","value"=>$_GET["phone_key"]);
 
  	$user=getInBD($table,$filter);
  	$response["data"]=$user["id_user"];
-  
+
   	$_SESSION['user']=array();
     $_SESSION['user']["id_user"] = $user["id_user"];
     $_SESSION['user']["id_brand"] = $_GET["id_brand"];

@@ -1,11 +1,12 @@
 <?php
-	/*********************************************************
-	*
-	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-06-2014
-	* Version: 0.93
-	*
-	*********************************************************/
+	/************************************************************
+  * Royappty
+  * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+  * Last Modification: 10-02-2014
+  * Version: 1.0
+  * licensed through CC BY-NC 4.0
+  ************************************************************/
+
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -44,7 +45,7 @@
 	$filter=array();
 	$filter["title"]=array("operation"=>"=","value"=>"email");
 	$user_field=getInBD($table,$filter);
-	
+
 	$table="user_field_data";
 	$filter=array();
 	$filter["id_user_field"]=array("operation"=>"=","value"=>$user_field["id_user_field"]);
@@ -65,11 +66,11 @@
  	*********************************************************/
 
  	$response["result"]=true;
- 	
- 	
- 	
+
+
+
  	$table="users";
- 	
+
  	$data=array();
  	$data["id_brand"]=$_GET["id_brand"];
  	$data["active"]=1;
@@ -116,33 +117,33 @@
 		$data["field_value"]=$signup_field[1];
 		addInBD($table,$data);
 	}*/
-	
+
 	$table="user_fields";
 	$filter=array();
 	$filter["title"]=array("operation"=>"=","value"=>"email");
 	$user_field=getInBD($table,$filter);
-	
+
 	$table="user_field_data";
 	$data=array();
 	$data["id_user"]=$user["id_user"];
 	$data["id_user_field"]=$user_field["id_user_field"];
 	$data["field_value"]=$_GET["email"];
 	addInBD($table,$data);
-	
+
 	$table="user_fields";
 	$filter=array();
 	$filter["title"]=array("operation"=>"=","value"=>"password");
 	$user_field=getInBD($table,$filter);
-	
+
 	$table="user_field_data";
 	$data=array();
 	$data["id_user"]=$user["id_user"];
 	$data["id_user_field"]=$user_field["id_user_field"];
 	$data["field_value"]=md5($_GET["password"]);
 	addInBD($table,$data);
-	
-	
-	
+
+
+
 	$response["data"]=array();
 	$response["data"]["id_user"]=$user["id_user"];
 

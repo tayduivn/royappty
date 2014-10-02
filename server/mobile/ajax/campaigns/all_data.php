@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
-	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 22-06-2014
-	* Version: 0.93
-	*
- 	*********************************************************/
+	/************************************************************
+   * Royappty
+   * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+   * Last Modification: 10-02-2014
+   * Version: 1.0
+   * licensed through CC BY-NC 4.0
+   ************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -60,8 +60,8 @@
     $src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 
     $response["result"]=true;
-    
-    
+
+
     $response["data"]["page"].="
        <div class='page center_mobile_page' id='index'>
          <img class='full-width full-height' src='".$src."'/>
@@ -70,23 +70,23 @@
      echo "jsonCallback(".json_encode($response).")";
      die();
   }
-  
+
  	/*********************************************************
  	* AJAX OPERATIONS
  	*********************************************************/
-	
- 	
+
+
 	$response["result"]=true;
 
 
-	
+
 	$response["data"]["page"]="";
-   
+
 	$table='users';
 	$filter=array();
 	$filter["id_user"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_user"]);
 	$user=getInBD($table,$filter);
-	
+
     if($user["platform"]=="ios"){
 	    $response["data"]["page"].="
 	    <style type='text/css'>
@@ -102,12 +102,12 @@
 		</style>
 	    ";
     }
-    
+
     $table="campaigns";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["user"]["id_brand"]);
 	$filter["status"]=array("operation"=>"=","value"=>1);
- 
+
 	$campaigns=listInBD($table,$filter,$fields);
 	$response["data"]["page"].="
 
