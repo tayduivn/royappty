@@ -71,7 +71,7 @@
 				<div class='compressed'>
 					<div class='navbar-header'>
 						<button data-target='.navbar-collapse' data-toggle='collapse' class='navbar-toggle' type='button'>
-			            	<span class='sr-only'>Toggle navigation</span> 
+			            	<span class='sr-only'>Toggle navigation</span>
 			           		<span class='icon-bar'></span>
 			           	 	<span class='icon-bar'></span>
 			            	<span class='icon-bar'></span>
@@ -114,7 +114,7 @@
             data-endspeed='300'
             data-endeasing='Power1.easeIn'
             data-captionhidden='off'
-            style='z-index: 6'><h1 class='text-white custom-font title' style='font-size:60px;line-height:60px;'>".htmlentities($s["main_loyalty_app"], ENT_QUOTES, "UTF-8")."<br>".htmlentities($s["main_to_your_business"], ENT_QUOTES, "UTF-8")."</h1><h3 class='text-white'>".htmlentities($s["main_from_9_99_month"], ENT_QUOTES, "UTF-8")."</h3>
+            style='z-index: 6'><h1 class='text-white custom-font title' style='font-size:60px;line-height:60px;'>".htmlentities($s["main_loyalty_app"], ENT_QUOTES, "UTF-8")."<br>".htmlentities($s["main_to_your_business1"], ENT_QUOTES, "UTF-8")."</h1><h1 class='text-white'>".htmlentities($s["main_from_9_99_month1"], ENT_QUOTES, "UTF-8")."</h3>
 
         </div>
         <div class='tp-caption sfb slider tp-resizeme slider'
@@ -127,7 +127,7 @@
           data-endspeed='300'
           data-endeasing='Power1.easeIn'
           data-captionhidden='off'
-          style='z-index: 6'>	<a href='".$url_server."pricing/' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_start_creating_app"], ENT_QUOTES, "UTF-8")."</a>
+          style='z-index: 6'>	<a href='".$url_server."pricing/' class='btn btn-success btn-lg  btn-large m-r-10'>".htmlentities($s["main_free_trial"], ENT_QUOTES, "UTF-8")."</a>
         </div>
 
       </li>
