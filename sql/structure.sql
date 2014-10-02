@@ -1,6 +1,6 @@
 --
--- MySQL 5.5.5
--- Fri, 05 Sep 2014 09:52:51 +0000
+-- Royappty SQL
+-- Royappty 1.0.0
 --
 
 CREATE TABLE `admins` (
@@ -46,15 +46,13 @@ CREATE TABLE `admins` (
    PRIMARY KEY (`id_admin`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `admins` is empty]
-
 CREATE TABLE `apps` (
    `id_app` int(11) not null auto_increment,
    `id_brand` int(11) not null,
    `name` varchar(155) not null,
    `project_codename` varchar(75),
    `package_address` varchar(255),
-   `android_project_id` varchar(75),
+   `project_id` varchar(75),
    `apk_name` varchar(75),
    `description` text not null,
    `published_apple_store` int(1) not null,
@@ -70,7 +68,7 @@ CREATE TABLE `apps` (
    PRIMARY KEY (`id_app`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `apps` is empty]
+INSERT INTO `apps` (`id_app`, `id_brand`, `name`, `project_codename`, `package_address`, `project_id`, `apk_name`, `description`, `published_apple_store`, `published_google_play`, `app_title`, `app_icon_path`, `app_bg_path`, `automatic_screenshots`, `app_screenshot_1_path`, `app_screenshot_2_path`, `app_screenshot_3_path`, `app_screenshot_4_path`) VALUES
 
 CREATE TABLE `brand_user_fields` (
    `id_brand_user_field` int(11) not null auto_increment,
@@ -80,7 +78,7 @@ CREATE TABLE `brand_user_fields` (
    PRIMARY KEY (`id_brand_user_field`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `brand_user_fields` is empty]
+INSERT INTO `brand_user_fields` (`id_brand_user_field`, `id_brand`, `id_user_field`, `main_field`) VALUES
 
 CREATE TABLE `brands` (
    `id_brand` int(11) not null auto_increment,
@@ -129,7 +127,7 @@ CREATE TABLE `brands` (
    PRIMARY KEY (`id_brand`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `brands` is empty]
+INSERT INTO `brands` (`id_brand`, `name`, `cif`, `active`, `created`, `lock_date`, `android_project_name`, `android_project_id`, `android_project_number`, `android_server_key`, `resume_block_1_display`, `resume_block_2_display`, `resume_block_3_display`, `resume_block_4_display`, `resume_block_1_title`, `resume_block_2_title`, `resume_block_3_title`, `resume_block_4_title`, `resume_block_1_data`, `resume_block_2_data`, `resume_block_3_data`, `resume_block_4_data`, `resume_block_1_link_content`, `resume_block_2_link_content`, `resume_block_3_link_content`, `resume_block_4_link_content`, `resume_block_1_link`, `resume_block_2_link`, `resume_block_3_link`, `resume_block_4_link`, `subscription_type`, `contact_name`, `contact_email`, `contact_phone`, `contact_address`, `contact_postal_code`, `contact_city`, `contact_province`, `contact_country`, `payment_plan`, `payment_method`, `payment_data`, `expiration_date`) VALUES
 
 CREATE TABLE `campaign_notes` (
    `id_campaign_note` int(11) not null auto_increment,
@@ -159,6 +157,7 @@ CREATE TABLE `campaigns` (
    `usage_limit` int(1) not null,
    `cost` float not null,
    `profit` float not null,
+   `created` int(11),
    `campaign_icon_path` varchar(255) not null,
    `campaign_image_path` varchar(255) not null,
    `campaign_usage` int(11) not null,
@@ -186,7 +185,7 @@ CREATE TABLE `campaigns` (
    PRIMARY KEY (`id_campaign`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `campaigns` is empty]
+INSERT INTO `campaigns` (`id_campaign`, `id_brand`, `id_group`, `name`, `description`, `title`, `content`, `button_title`, `type`, `group_name`, `status`, `coupons_number`, `usage_limit`, `cost`, `profit`, `created`, `campaign_icon_path`, `campaign_image_path`, `campaign_usage`, `campaign_usage_last_month`, `resume_block_1_display`, `resume_block_2_display`, `resume_block_3_display`, `resume_block_4_display`, `resume_block_1_title`, `resume_block_2_title`, `resume_block_3_title`, `resume_block_4_title`, `resume_block_1_data`, `resume_block_2_data`, `resume_block_3_data`, `resume_block_4_data`, `resume_block_1_link_content`, `resume_block_2_link_content`, `resume_block_3_link_content`, `resume_block_4_link_content`, `resume_block_1_link`, `resume_block_2_link`, `resume_block_3_link`, `resume_block_4_link`) VALUES
 
 CREATE TABLE `config` (
    `id_config` int(11) not null auto_increment,
@@ -211,10 +210,10 @@ CREATE TABLE `config` (
    `bank_account_number` varchar(255) not null,
    `bank_transfer_beneficiary` varchar(255) not null,
    PRIMARY KEY (`id_config`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
 
-INSERT INTO `config` (`id_config`, `used`, `close`, `launch`, `company_logo_path`, `company_name`, `company_street`, `company_town`, `company_country`, `company_phone`, `company_url`, `company_info_mail`, `mail_header_email`, `component_url_prefix`, `footer_mail`, `debug_mode`, `bank_name`, `bank_swift`, `bank_iban`, `bank_account_number`, `bank_transfer_beneficiary`) VALUES 
-('1', '1', '0', '1', 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'www.royappty.com', 'info@royappty.com', 'Royappty<noreply@royappty.com>', 'com.royappty', 'La Aplicación de Fidelización para tu Negocio', '1', '0000', '0000', '0000', '0000', '0000');
+INSERT INTO `config` (`id_config`, `used`, `close`, `launch`, `company_logo_path`, `company_name`, `company_street`, `company_town`, `company_country`, `company_phone`, `company_url`, `company_info_mail`, `mail_header_email`, `component_url_prefix`, `footer_mail`, `debug_mode`, `bank_name`, `bank_swift`, `bank_iban`, `bank_account_number`, `bank_transfer_beneficiary`) VALUES
+('1', '1', '0', '0', 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'www.royappty.com', 'info@royappty.com', 'Royappty<noreply@royappty.com>', 'com.royappty', 'La Aplicación de Fidelización para tu Negocio', '1', '0000', '0000', '0000', '0000', '0000');
 
 CREATE TABLE `group_notes` (
    `id_group_note` int(11) not null auto_increment,
@@ -268,7 +267,7 @@ CREATE TABLE `notifications` (
    PRIMARY KEY (`id_notification`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `notifications` is empty]
+INSERT INTO `notifications` (`id_notification`, `id_brand`, `content`, `id_group`, `group_name`, `created`) VALUES
 
 CREATE TABLE `orders` (
    `id_order` int(11) not null auto_increment,
@@ -279,7 +278,7 @@ CREATE TABLE `orders` (
    `payment_method` varchar(255) not null,
    `amount` float not null,
    PRIMARY KEY (`id_order`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=230;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- [Table `orders` is empty]
 
@@ -292,7 +291,7 @@ CREATE TABLE `receipt_lines` (
    `vat` float(4,2) not null,
    `price_vat` float(4,2) not null,
    PRIMARY KEY (`id_receipt_line`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- [Table `receipt_lines` is empty]
 
@@ -311,7 +310,7 @@ CREATE TABLE `receipts` (
    `vat` float(11,2) not null,
    `price_vat` float(11,2) not null,
    PRIMARY KEY (`id_receipt`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- [Table `receipts` is empty]
 
@@ -320,7 +319,7 @@ CREATE TABLE `recovery_codes` (
    `email` varchar(255),
    `code` varchar(255) not null,
    PRIMARY KEY (`id_recovery_code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=5;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- [Table `recovery_codes` is empty]
 
@@ -335,7 +334,7 @@ CREATE TABLE `requests` (
    PRIMARY KEY (`id_request`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `requests` is empty]
+INSERT INTO `requests` (`id_request`, `code`, `id_brand`, `type`, `status`, `created`, `data`) VALUES
 
 CREATE TABLE `ryadmins` (
    `id_ryadmin` int(11) not null auto_increment,
@@ -355,10 +354,10 @@ CREATE TABLE `ryadmins` (
    `resume_block_4_display` int(1) not null,
    `resume_block_4_title` varchar(255) CHARSET latin1 not null,
    PRIMARY KEY (`id_ryadmin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=5;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
 
-INSERT INTO `ryadmins` (`id_ryadmin`, `name`, `email`, `password`, `active`, `created`, `last_login`, `last_activity`, `resume_block_1_display`, `resume_block_1_title`, `resume_block_2_display`, `resume_block_2_title`, `resume_block_3_display`, `resume_block_3_title`, `resume_block_4_display`, `resume_block_4_title`) VALUES 
-('4', 'Pablo Gutierrez', 'enrealidadeshotmail@gmail.com', 'dd4b21e9ef71e1291183a46b913ae6f2', '1', '1408435200', '1408532580', '1409910420', '1', 'total_campaigns', '1', 'total_brands', '1', 'total_users', '1', 'total_monthly_revenue');
+INSERT INTO `ryadmins` (`id_ryadmin`, `name`, `email`, `password`, `active`, `created`, `last_login`, `last_activity`, `resume_block_1_display`, `resume_block_1_title`, `resume_block_2_display`, `resume_block_2_title`, `resume_block_3_display`, `resume_block_3_title`, `resume_block_4_display`, `resume_block_4_title`) VALUES
+('1', 'Pablo Gutierrez', 'pablo@royappty.com', 'dd4b21e9ef71e1291183a46b913ae6f2', '1', '1408435200', '1408532580', '1412184420', '1', 'total_campaigns', '1', 'total_brands', '1', 'total_users', '1', 'total_monthly_revenue');
 
 CREATE TABLE `software_news` (
    `id_software_new` int(11) not null auto_increment,
@@ -457,7 +456,8 @@ CREATE TABLE `user_field_data` (
    PRIMARY KEY (`id_user_field_data`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `user_field_data` is empty]
+INSERT INTO `user_field_data` (`id_user_field_data`, `id_brand`, `id_user`, `id_user_field`, `field_value`) VALUES
+
 
 CREATE TABLE `user_fields` (
    `id_user_field` int(11) not null auto_increment,
@@ -465,10 +465,11 @@ CREATE TABLE `user_fields` (
    `field_type` varchar(255) not null,
    `default_field` int(1),
    PRIMARY KEY (`id_user_field`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=3;
 
-INSERT INTO `user_fields` (`id_user_field`, `title`, `field_type`, `default_field`) VALUES 
-('1', 'name', 'text', '1');
+INSERT INTO `user_fields` (`id_user_field`, `title`, `field_type`, `default_field`) VALUES
+('1', 'email', 'email', '1'),
+('2', 'password', 'password', '1');
 
 CREATE TABLE `user_groups` (
    `id_user_group` int(11) not null auto_increment,
@@ -496,7 +497,8 @@ CREATE TABLE `users` (
    `id_user` int(11) not null auto_increment,
    `id_brand` int(11) not null,
    `active` int(1) not null,
-   `android_key` varchar(255),
+   `platform` varchar(155),
+   `phone_key` varchar(255),
    `created` int(11) not null,
    `last_connection` int(11) not null,
    `resume_block_1_display` int(1) not null,
@@ -522,7 +524,7 @@ CREATE TABLE `users` (
    PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- [Table `users` is empty]
+INSERT INTO `users` (`id_user`, `id_brand`, `active`, `platform`, `phone_key`, `created`, `last_connection`, `resume_block_1_display`, `resume_block_2_display`, `resume_block_3_display`, `resume_block_4_display`, `resume_block_1_title`, `resume_block_2_title`, `resume_block_3_title`, `resume_block_4_title`, `resume_block_1_data`, `resume_block_2_data`, `resume_block_3_data`, `resume_block_4_data`, `resume_block_1_link_content`, `resume_block_2_link_content`, `resume_block_3_link_content`, `resume_block_4_link_content`, `resume_block_1_link`, `resume_block_2_link`, `resume_block_3_link`, `resume_block_4_link`) VALUES
 
 CREATE TABLE `validated_codes_day_summaries` (
    `id_validated_codes_day_summary` int(11) not null auto_increment,
