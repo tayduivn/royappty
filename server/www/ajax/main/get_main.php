@@ -65,59 +65,30 @@
 
   $response["data"]["menu-data"]="
 <div class='main-wrapper'>
-      <header id='ha-header' class='ha-header ha-header-hide'>
-        <div class='ha-header-perspective'>
-        <div class='ha-header-front navbar navbar-default'>
-
-            <div class='compressed'>
-            <div class='navbar-header'>
-              <button data-target='.navbar-collapse' data-toggle='collapse' class='navbar-toggle' type='button'>
-              <span class='sr-only'>Toggle navigation</span>
-              <span class='icon-bar'></span>
-              <span class='icon-bar'></span>
-              <span class='icon-bar'></span>
-              </button>
-              <a href='".$url_server."".$url_server."index.html' class='navbar-brand compressed'><img src='assets/img/royappty-logo.png' alt='' data-src='assets/img/royappty-logo.png' data-src-retina='assets/img/royappty-logo.png' height='44'/></a>
-            </div>
-            <div class='navbar-collapse collapse'>
-              <ul class='nav navbar-nav navbar-right'>
-              <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-              <li><a href='".$url_server."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
-            </div>
-
-          </div>
-        </div>
-      </header>
-
-<div class='section ha-waypoint' data-animate-down='ha-header-hide' data-animate-up='ha-header-hide'>
-<div role='navigation' class='navbar navbar-transparent navbar-top'>
-     <div class='container'>
-    <div class='compressed'>
-        <div class='navbar-header'>
-       <button data-target='.navbar-collapse' data-toggle='collapse' class='navbar-toggle' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <a href='".$url_server."index.html' class='navbar-brand'><img src='assets/img/royappty-logo-white.png' data-src='assets/img/royappty-logo-white.png' data-src-retina='assets/img/royappty-logo-white.png' height='44' alt=''/></a>
-        </div>
-        <div class='navbar-collapse collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-          <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
-          <li><a href='".$url_server."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+	<div class='section ha-waypoint' data-animate-down='ha-header-hide' data-animate-up='ha-header-hide'>
+		<div role='navigation' class='navbar navbar-transparent navbar-top'>
+			<div class='container'>
+				<div class='compressed'>
+					<div class='navbar-header'>
+						<button data-target='.navbar-collapse' data-toggle='collapse' class='navbar-toggle' type='button'>
+			            	<span class='sr-only'>Toggle navigation</span> 
+			           		<span class='icon-bar'></span>
+			           	 	<span class='icon-bar'></span>
+			            	<span class='icon-bar'></span>
+						</button>
+						<a href='".$url_server."index.html' class='navbar-brand'><img src='assets/img/royappty-logo-white.png' data-src='assets/img/royappty-logo-white.png' data-src-retina='assets/img/royappty-logo-white.png' height='44' alt=''/></a>
+					</div>
+					<div class='navbar-collapse collapse'>
+					<ul class='nav navbar-nav navbar-right'>
+			          <li><a href='".$url_server."index.html'>".htmlentities($s["home"], ENT_QUOTES, "UTF-8")."</a></li>
+			          <li><a href='".$url_server."tour/'>".htmlentities($s["how_it_works"], ENT_QUOTES, "UTF-8")."</a></li>
+			          <li><a href='".$url_server."pricing/'>".htmlentities($s["prices"], ENT_QUOTES, "UTF-8")."</a></li>
+			          <li><a href='".$url_server."contact/'>".htmlentities($s["contact"], ENT_QUOTES, "UTF-8")."</a></li>
+			          <li><a href='".$url_server."app/login/'>".htmlentities($s["access"], ENT_QUOTES, "UTF-8")."</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
     </div>
 </div>
 

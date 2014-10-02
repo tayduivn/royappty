@@ -281,9 +281,9 @@
         </div>
       </div>
   </div>
-  <div class='section white footer'>
+   <div class='section white footer'>
       <div class='container'>
-        <div class='p-t-30 p-b-5'>
+        <div class='p-t-30 p-b-50'>
           <div class='row'>
             <div class='col-md-4'>
             <img src='".$url_server."assets/img/royappty-logo.png' alt='' data-src='".$url_server."assets/img/royappty-logo.png' data-src-retina='".$url_server."assets/img/royappty-logo.png' height='44'/>
@@ -306,7 +306,7 @@
             ".htmlentities($s["follow_us_in_social_networks"], ENT_QUOTES, "UTF-8")."<br>
             <div class='bold m-t-10'>".htmlentities($s["language"], ENT_QUOTES, "UTF-8")."</div>
             <a href='#' onclick='changelang(\"es\");'>".htmlentities($s["lang_spanish"], ENT_QUOTES, "UTF-8")."</a><br>
-			<!--<a href='#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>-->
+            <!--<a href='#' onclick='changelang(\"en\");'>".htmlentities($s["lang_english"], ENT_QUOTES, "UTF-8")."</a>-->
             </div>
           </div>
         </div>
