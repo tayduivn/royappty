@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 11-08-2014
-	* Version: 0.94
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -183,7 +183,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	 		$order="created desc";
 	 		$software_news=listInBD($table,$filter,$fields,$order);
 	 		$response["data"]["software-news"]="<h4 class='m-t-0'>".$s["royappty_news"]."</h4>";
-		 		
+
 	 		foreach ($software_news as $key=>$software_new){
 		 		$response["data"]["software-news"].="
 		 		<div>
@@ -192,7 +192,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 					<p>".$software_new["content"]."</p>
 		 			<p><a target='_blank' href='".$software_new["link"]."' class='btn btn-white btn-mini'>".$s["read_full_content"]."</a></p>
 									</div>";
-	 		}	
+	 		}
  		}else{
 	 		$response["data"]["software-news"]="
 	 			<h4 class='m-t-0'>".$s["royappty_news"]."</h4>
@@ -202,7 +202,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	 			</div>
 	 		";
  		}
- 		
+
 
 
 

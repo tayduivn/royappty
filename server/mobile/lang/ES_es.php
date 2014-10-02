@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-06-2014
-	* Version: 0.93
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	$s["back"] = "Volver";
 	$s["insert_code"] = "Inserte Código";
@@ -41,4 +41,5 @@
 	$error["brand_not_valid"]="Es una pena, pero la aplicación ha sido cerrada.";
 	$error["user_inactive"]="Tu usuario se encuentra bloqueado, contacta con el establecimiento, ellos podrán ayudarte.";
 	$error["ajax_error"]="No se ha podido contactar con el servidor. Por favor, vuelve a intentarlo más tarde";
+	
 ?>

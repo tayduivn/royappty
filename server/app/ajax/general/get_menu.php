@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 11-08-2014
-	* Version: 0.94
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -67,12 +67,12 @@
 	*********************************************************/
 
  	$response["result"]=true;
- 	
+
  	$table="brands";
  	$filter=array();
  	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
  	$brand=getInBD($table,$filter);
- 	
+
 	$table="apps";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_SESSION["admin"]["id_brand"]);
@@ -127,7 +127,7 @@
 		<li> <a href='javascript:;'> <i class='fa fa-users'></i> <span class='title'>".htmlentities($s["users"], ENT_QUOTES, "UTF-8")."</span> <span class='arrow '></span> </a>
 			<ul class='sub-menu'>
 				<li > <a href='".$_POST["path"]."users/'>".htmlentities($s["all_users"], ENT_QUOTES, "UTF-8")."</a> </li>";
-	
+
 	if(($brand["subscription_type"]=="professional")||($brand["subscription_type"]=="unlimited")){
 		$response["data"]["left-menu"].="
 				<li > <a href='".$_POST["path"]."groups/'>".htmlentities($s["all_groups"], ENT_QUOTES, "UTF-8")."</a> </li>
@@ -136,9 +136,9 @@
 		$response["data"]["left-menu"].="
 				<li class='disabled'> <a href='javascript:error_handler(\"need_subscription_professional\")'>".htmlentities($s["all_groups"], ENT_QUOTES, "UTF-8")."</a> </li>
 				<li class='disabled'> <a href='javascript:error_handler(\"need_subscription_professional\")'>".htmlentities($s["new_group"], ENT_QUOTES, "UTF-8")."</a> </li>";
-		
+
 	}
-	
+
 	$response["data"]["left-menu"].="
 
 			</ul>

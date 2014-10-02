@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 21-08-2014
-	* Version: 0.94
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -74,13 +74,13 @@
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	$brand=getInBD($table,$filter);
-	
+
 	$table="apps";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$_POST["id_brand"]);
 	$app=getInBD($table,$filter);
 
-	
+
 	create_android_config_file(PATH."../",$brand["id_brand"],$app["project_codename"],$app["package_address"],$app["name"],$app["description"],$brand["android_project_number"],"1.0.1",$CONFIG["company_name"],$CONFIG["company_info_mail"],$CONFIG["company_url"]);
 	$message=shell_exec("./generator_step_1.sh ".$app["project_codename"]." ".$app["package_address"]." ".$app["project_codename"]."");
 	$message=str_replace("[36m","<span style='color:blue'>",$message);

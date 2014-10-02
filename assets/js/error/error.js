@@ -1,23 +1,13 @@
-/*********************************************************
-*
+/************************************************************
+* Royappty
 * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-* Last Edit: 09-07-2014
-* Version: 0.92
-*
-*********************************************************/
-
-/*********************************************************
-* AJAX RETURNS
-*
-* ERROR CODES
-*
-*********************************************************/
+* Last Modification: 10-02-2014
+* Version: 1.0
+* licensed through CC BY-NC 4.0
+************************************************************/
 
 $(document).ready(function(){
 
-	/*********************************************************
-	* AJAX CALL LOAD PAGE
-	*********************************************************/
 	$("#s-error-title").html($error_s["server_connection_title"]);
 	$("#s-error-content").html($error_s["server_connection_content"]);
 	$("#s-back").html($s["back"]);

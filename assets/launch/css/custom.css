@@ -1,56 +1,11 @@
-/*
-Theme Name: Launchify
-Theme URI: http://themes.kudosthemes.co.uk/launchify/
-Description: A responsive coming soon theme.
-Author: Paul Allen
-Author URI: http://paulallen.me.uk
-Version: 1.0
-*/
+/************************************************************
+* Royappty
+* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+* Last Modification: 10-02-2014
+* Version: 1.0
+* licensed through CC BY-NC 4.0
+************************************************************/
 
-
-
-
-
-/*=============================================================================
-  ***************************************************************************
-
-  Table of contents
-
-  1. Global - Lines 49 - 91
-
-  2. Typography - Lines 92 - 119
-
-  3. Header - Lines 120 - 135
-
-  4. About - Lines 136 - 151 & 278 - 290
-
-  5. Countdown - Lines 152 - 168
-
-  6. Meet The Team - Lines 169 - 183 & 291 - 303
-
-  7. Get Notified - Lines 184 - 198
-
-  8. Footer - Lines 199 - 216 & 241 - 253
-
-  9. Background Images - Lines 311 - 331
-
-  ***************************************************************************
-=============================================================================*/
-
-
-
-
-
-
-
-
-
-
-/*=============================================================================
-  ***************************************************************************
-  Global
-  ***************************************************************************
-=============================================================================*/
 
 /*========== Loading ==========*/
 #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 999;}
@@ -304,16 +259,6 @@ input[type="submit"] { text-align: center; border-radius: 50px; background: #fff
 } /*========== 992px MEDIA QUERY END ==========*/
 
 
-
-
-
-
-/*=============================================================================
-  ***************************************************************************
-  Background Images
-  ***************************************************************************
-=============================================================================*/
-
 #header.background-image { background: url('../images/background-placeholder.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover;}
 
 #countdown.background-image { background: url('../images/background-placeholder.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover;}
@@ -321,16 +266,3 @@ input[type="submit"] { text-align: center; border-radius: 50px; background: #fff
 #get-notified.background-image { background: url('../images/background-placeholder.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover;}
 
 .overlay { width: 100%; height: 100%;}
-
-
-
-
-
-
-
-
-/*=============================================================================
-  ***************************************************************************
-  COPY COLOUR SCHEME BELOW HERE!!!!
-  ***************************************************************************
-=============================================================================*/

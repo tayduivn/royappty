@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 11-08-2014
-	* Version: 0.94
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -85,7 +85,7 @@ if(!checkClosed()){echo json_encode($response);die();}
 	$filter=array();
 	$filter["id_campaign"]=array("operation"=>"=","value"=>$_POST["id_campaign"]);
 	$campaign=getInBD($table,$filter);
-	
+
 	$response["data"]["modals"]="
 	<div class='modal fade' id='campaign_notes_viewer' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
 		<div class='modal-dialog'>
