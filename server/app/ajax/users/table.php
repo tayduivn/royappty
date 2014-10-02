@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 03-09-2014
-	* Version: 0.94
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -77,7 +77,7 @@
 	 		$filter=array();
 	 		$filter["title"]=array("operation"=>"=","value"=>"email");
 	 		$user_field=getInBD($table,$filter);
-		 	
+
 		 	$table='user_field_data';
 	 		$filter=array();
 	 		$filter["id_user_field"]=array("operation"=>"=","value"=>$user_field["id_user_field"]);
@@ -85,7 +85,7 @@
 		 	$user_field=getInBD($table,$filter);
 		 	$data_table[0] .= $user_field["field_value"];
 
-	 		
+
 
 	 		$data_table[0] .= "</a></div><div class='hidden-options'><a href='".$_GET["PATH"]."user/?id_user=".$user["id_user"]."' class='btn btn-mini btn-white'>".htmlentities($s["view_report"], ENT_QUOTES, "UTF-8")."</a></div>";
 

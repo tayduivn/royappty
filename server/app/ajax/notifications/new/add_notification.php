@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 23-07-2014
-	* Version: 0.93
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -84,7 +84,7 @@
 	*********************************************************/
 
 	$response["result"]=true;
-	
+
 	$table="brands";
 	$filter=array();
 	$filter["id_brand"]=array("operation"=>"=","value"=>$brand["id_brand"]);
@@ -107,7 +107,7 @@
 		$filter["id_group"]=array("operation"=>"=","value"=>$_POST["id_group"]);
 		$group=getInBD($table,$filter);
 		$data["group_name"] = $group["name"];
-		
+
 		$table="user_groups";
 		$filter=array();
 		$filter["id_group"]=array("operation"=>"=","value"=>$group["id_group"]);
@@ -124,7 +124,7 @@
 				sendMessageToiOS($user["phone_key"], $brand["android_project_number"], $data["content"], $app["name"], PATH."../resources/mobile-app/".$app["project_codename"]."/apns-cert.pem");
 			}
 		}
-		
+
 	}else{
 		$data["group_name"] = $s["all_users"];
 		$table="users";
@@ -146,7 +146,7 @@
 	$data["created"] = $timestamp;
 	$table="notifications";
 	addInBD($table,$data);
-	
+
 
 
 
