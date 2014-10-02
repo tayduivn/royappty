@@ -1,11 +1,11 @@
 <?php
-	/************************************************************
- * Royappty
- * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
- * Last Modification: 10-02-2014
- * Version: 1.0
- * licensed through CC BY-NC 4.0
- ************************************************************/
+  /************************************************************
+  * Royappty
+  * Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
+  * Last Modification: 10-02-2014
+  * Version: 1.0
+  * licensed through CC BY-NC 4.0
+  ************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS

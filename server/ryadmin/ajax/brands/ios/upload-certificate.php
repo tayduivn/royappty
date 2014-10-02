@@ -1,11 +1,11 @@
 <?php
-	/*********************************************************
-	*
+	/************************************************************
+	* Royappty
 	* Author: Pablo Gutierrez Alfaro <pablo@royappty.com>
-	* Last Edit: 08-08-2014
-	* Version: 0.94
-	*
-	*********************************************************/
+	* Last Modification: 10-02-2014
+	* Version: 1.0
+	* licensed through CC BY-NC 4.0
+	************************************************************/
 
 	/*********************************************************
 	* AJAX RETURNS
@@ -52,16 +52,16 @@
 		echo json_encode($res);
 	    die();
 	}
-	
+
 	if(!@issetandnotempty($_GET["project_codename"])){
 		$res->error=true;
 		echo json_encode($res);
-	    die();		
+	    die();
 	}
 	$source = file_get_contents($_FILES["xfile"]["tmp_name"]);
 	$filename=PATH."../resources/mobile-app/".$_GET["project_codename"]."/apns-cert.pem";
-	
-	
+
+
 	if (!file_exists($filename)) {
 		debug_log("[".$page_path."] Certificate not exits");
 		touch($filename);
