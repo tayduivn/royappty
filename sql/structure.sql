@@ -71,7 +71,6 @@ CREATE TABLE `apps` (
    PRIMARY KEY (`id_app`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `apps` (`id_app`, `id_brand`, `name`, `project_codename`, `package_address`, `project_id`, `apk_name`, `description`, `published_apple_store`, `published_google_play`, `app_title`, `app_icon_path`, `app_bg_path`, `automatic_screenshots`, `app_screenshot_1_path`, `app_screenshot_2_path`, `app_screenshot_3_path`, `app_screenshot_4_path`) VALUES
 
 CREATE TABLE `brand_user_fields` (
    `id_brand_user_field` int(11) not null auto_increment,
@@ -81,7 +80,6 @@ CREATE TABLE `brand_user_fields` (
    PRIMARY KEY (`id_brand_user_field`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `brand_user_fields` (`id_brand_user_field`, `id_brand`, `id_user_field`, `main_field`) VALUES
 
 CREATE TABLE `brands` (
    `id_brand` int(11) not null auto_increment,
@@ -130,7 +128,6 @@ CREATE TABLE `brands` (
    PRIMARY KEY (`id_brand`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `brands` (`id_brand`, `name`, `cif`, `active`, `created`, `lock_date`, `android_project_name`, `android_project_id`, `android_project_number`, `android_server_key`, `resume_block_1_display`, `resume_block_2_display`, `resume_block_3_display`, `resume_block_4_display`, `resume_block_1_title`, `resume_block_2_title`, `resume_block_3_title`, `resume_block_4_title`, `resume_block_1_data`, `resume_block_2_data`, `resume_block_3_data`, `resume_block_4_data`, `resume_block_1_link_content`, `resume_block_2_link_content`, `resume_block_3_link_content`, `resume_block_4_link_content`, `resume_block_1_link`, `resume_block_2_link`, `resume_block_3_link`, `resume_block_4_link`, `subscription_type`, `contact_name`, `contact_email`, `contact_phone`, `contact_address`, `contact_postal_code`, `contact_city`, `contact_province`, `contact_country`, `payment_plan`, `payment_method`, `payment_data`, `expiration_date`) VALUES
 
 CREATE TABLE `campaign_notes` (
    `id_campaign_note` int(11) not null auto_increment,
@@ -188,7 +185,6 @@ CREATE TABLE `campaigns` (
    PRIMARY KEY (`id_campaign`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `campaigns` (`id_campaign`, `id_brand`, `id_group`, `name`, `description`, `title`, `content`, `button_title`, `type`, `group_name`, `status`, `coupons_number`, `usage_limit`, `cost`, `profit`, `created`, `campaign_icon_path`, `campaign_image_path`, `campaign_usage`, `campaign_usage_last_month`, `resume_block_1_display`, `resume_block_2_display`, `resume_block_3_display`, `resume_block_4_display`, `resume_block_1_title`, `resume_block_2_title`, `resume_block_3_title`, `resume_block_4_title`, `resume_block_1_data`, `resume_block_2_data`, `resume_block_3_data`, `resume_block_4_data`, `resume_block_1_link_content`, `resume_block_2_link_content`, `resume_block_3_link_content`, `resume_block_4_link_content`, `resume_block_1_link`, `resume_block_2_link`, `resume_block_3_link`, `resume_block_4_link`) VALUES
 
 CREATE TABLE `config` (
    `id_config` int(11) not null auto_increment,
@@ -216,7 +212,7 @@ CREATE TABLE `config` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
 
 INSERT INTO `config` (`id_config`, `used`, `close`, `launch`, `company_logo_path`, `company_name`, `company_street`, `company_town`, `company_country`, `company_phone`, `company_url`, `company_info_mail`, `mail_header_email`, `component_url_prefix`, `footer_mail`, `debug_mode`, `bank_name`, `bank_swift`, `bank_iban`, `bank_account_number`, `bank_transfer_beneficiary`) VALUES
-('1', '1', '0', '0', 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'www.royappty.com', 'info@royappty.com', 'Royappty<noreply@royappty.com>', 'com.royappty', 'La Aplicación de Fidelización para tu Negocio', '1', '0000', '0000', '0000', '0000', '0000');
+('1', '1', '0', '0', 'server/app/assets/img/royappty-logo.png', 'Royappty', 'Menendez Pelayo 3', 'Vigo', 'Spain', '886131361', 'www.royappty.com', 'hola@royappty.com', 'Royappty<noreply@royappty.com>', 'com.royappty', 'La Aplicación de Fidelización para tu Negocio', '1', '0000', '0000', '0000', '0000', '0000');
 
 CREATE TABLE `group_notes` (
    `id_group_note` int(11) not null auto_increment,
@@ -270,7 +266,6 @@ CREATE TABLE `notifications` (
    PRIMARY KEY (`id_notification`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `notifications` (`id_notification`, `id_brand`, `content`, `id_group`, `group_name`, `created`) VALUES
 
 CREATE TABLE `orders` (
    `id_order` int(11) not null auto_increment,
@@ -337,7 +332,6 @@ CREATE TABLE `requests` (
    PRIMARY KEY (`id_request`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `requests` (`id_request`, `code`, `id_brand`, `type`, `status`, `created`, `data`) VALUES
 
 CREATE TABLE `ryadmins` (
    `id_ryadmin` int(11) not null auto_increment,
@@ -459,7 +453,6 @@ CREATE TABLE `user_field_data` (
    PRIMARY KEY (`id_user_field_data`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `user_field_data` (`id_user_field_data`, `id_brand`, `id_user`, `id_user_field`, `field_value`) VALUES
 
 
 CREATE TABLE `user_fields` (
@@ -527,7 +520,6 @@ CREATE TABLE `users` (
    PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO `users` (`id_user`, `id_brand`, `active`, `platform`, `phone_key`, `created`, `last_connection`, `resume_block_1_display`, `resume_block_2_display`, `resume_block_3_display`, `resume_block_4_display`, `resume_block_1_title`, `resume_block_2_title`, `resume_block_3_title`, `resume_block_4_title`, `resume_block_1_data`, `resume_block_2_data`, `resume_block_3_data`, `resume_block_4_data`, `resume_block_1_link_content`, `resume_block_2_link_content`, `resume_block_3_link_content`, `resume_block_4_link_content`, `resume_block_1_link`, `resume_block_2_link`, `resume_block_3_link`, `resume_block_4_link`) VALUES
 
 CREATE TABLE `validated_codes_day_summaries` (
    `id_validated_codes_day_summary` int(11) not null auto_increment,
