@@ -54,24 +54,24 @@
 
 
   //Main page
-  $s["main_loyalty_app"] = "LA APLICACIÓN DE FIDELIZACIÓN";
-  $s["main_to_your_business"] = "PARA TU NEGOCIO";
-  $s["main_from_9_99_month"] = "Desde 9.99€ al mes";
-  $s["main_start_creating_app"] = "EMPIEZA A CREAR TU APP";
+  $s["main_loyalty_app"] = "USA ROYAPPTY PARA CREAR";
+  $s["main_to_your_business1"] = "TU APP DE FIDELIZACION";
+  $s["main_from_9_99_month1"] = "Desde sólo 9,99 € al mes";
+  $s["main_free_trial"] = "empieza a crear tu app";
 
-  $s["main_create_your_own_app"] = "Crea tu propia aplicación.";
-  $s["main_promote_loyalty2"] = "Fideliza a tus clientes";
-  $s["main_royappty_definition"] = "Royappty es una aplicación para Iphone y Android que convierte los móviles de tus clientes en tarjetas de fidelización de última generación";
-  $s["main_to_your_business"] = "PARA TU NEGOCIO";
-  $s["main_importance_of_distinction"] = "Sabemos lo importante que es diferenciarse, por eso te ofrecemos una aplicación que será exclusiva para tu negocio. No compartirás ni espacio ni diseño con otras empresas. Será tuya, sólo tuya.";
-  $s["main_promote_loyalty"] = "FIDELIZA A TUS CLIENTES";
-  $s["main_simple_campaign_creation"] = "Podrás crear campañas para fidelizar a tus clientes de forma sencilla. ¿Qué te parece ofrecer un descuento con la décima compra? Con nuestra App es fácil. ¿Y un par de días con descuentos en tus precios? Eso está hecho. Con nuestro panel de control podrás crear cualquier tipo de campaña y enviarla a todos tus clientes. El único límite es tu imaginación.";
-  $s["main_on_the same_level"] = "DE TÚ A TÚ";
+  $s["main_create_your_own_app"] = "Fideliza a tus clientes";
+  $s["main_promote_loyalty2"] = "";
+  $s["main_royappty_definition"] = "Ofrece a tus clientes tu propia aplicación para teléfonos móviles con la que estar al día de las novedades de tu negocio y beneficiarse de todas tus promociones y descuentos. ";
+  $s["main_to_your_business"] = "TOTALMENTE PERSONALIZADA";
+  $s["main_importance_of_distinction"] = "Tu negocio es único y tu aplicación también. Puedes personalizarla como quieras y según tus necesidades. Todas y cada una de las promociones que crees seguirán tus líneas de diseño.";
+  $s["main_promote_loyalty"] = "ESTADÍSTICAS DETALLADAS";
+  $s["main_simple_campaign_creation"] = "Con Royappty guardarás los datos de todas las compras que usen tu aplicación. Podrás aprovechar el análisis de éstas estadísticas para crear campañas personalizadas y fidelizar a cada cliente según sus necesidades.";
+  $s["main_on_the same_level"] = "NOTIFICACIONES DIRECTAS";
   $s["main_direct_contact_with_clients"] = "Utiliza Royappty como herramienta para comunicarte directamente con tus clientes. ¿No sería genial poder avisarles cuando esté disponible el producto que han pedido? Gracias a nuestro panel de control podrás enviarles una alerta cuando sea necesario.";
 
-  $s["main_start_now"] = "Empieza ahora mismo a crear tu aplicación";
-  $s["main_boost_your_business"] = " y haz realidad todas las ideas que tienes para dinamizar tu negocio";
-  $s["main_start_creating_app"] = "EMPIEZA A CREAR TU APP";
+  $s["main_start_now"] = "Crea ahora mismo tu aplicación";
+  $s["main_boost_your_business"] = "haz realidad todas las ideas que tienes para dinamizar tu negocio";
+  $s["main_start_creating_app"] = "empieza a crear tu app";
 
   $s["main_businesses"] = "NEGOCIOS";
   $s["main_campaigns"] = "CAMPAÑAS";
@@ -136,8 +136,8 @@
 
 
   //Tour page
-  $s["tour_how_does_it_work"] = "Pero... ¿cómo funciona?";
-  $s["tour_we_teach_you"] = "Nuestro sistema es sencillo, tanto para ti como para tus clientes. Te enseñamos el funcionamiento de Royappty en cuatro pasos.";
+  $s["tour_how_does_it_work"] = "¿Cómo funciona?";
+  $s["tour_we_teach_you"] = "Nuestro sistema es sencillo para ti y para tus clientes. Te enseñamos el funcionamiento de Royappty en cuatro pasos.";
 
   $s["tour_creating_your_own"] = "Creando tu propia ";
   $s["tour_APP"] = "APP";
@@ -146,7 +146,7 @@
 
   $s["tour_managing"] = "Gestionando ";
   $s["tour_your_users"] = "tus promociones";
-  $s["tour_simple_app_for_users"] = "Configura tus promociones y descuentos a través del panel de control. Con un par de clicks podrás configurar una campaña de fidelización profesional a la medida de tus necesidades y sin ayuda. Nunca ha sido tan fácil fidelizar a tus clientes.";
+  $s["tour_simple_app_for_users"] = "Configura tus promociones y descuentos a través del panel de control. En pocos pasos podrás configurar una campaña de fidelización profesional a la medida de tus necesidades y sin ayuda. Nunca ha sido tan fácil fidelizar a tus clientes.";
   $s["tour_learn_more2"] = "Saber Más";
 
   $s["tour_use_of"] = "Uso de la ";
@@ -175,16 +175,16 @@
 
   //Tour Promos page
   $s["promos_1_title"] = "Creando una nueva campaña";
-  $s["promos_1_content_1"] = "Poner en marcha una nueva campaña en Royappty es tan sencillo como darle a un botón. Dentro de tu panel de control encontrarás un acceso directo a la creación de campañas en la sección Campañas. Haciendo click en cualquiera de los dos accesos el sistema te dirigirá directamente a la pantalla de creación de campañas.";
+  $s["promos_1_content_1"] = "Poner en marcha una campaña en Royappty es tan sencillo como darle a un botón. En tu panel de control encontrarás un acceso directo a a la creación de campañas. Haciendo click el sistema te dirigirá directamente a la pantalla de creación de campañas.";
 
   $s["promos_2_title"] = "Escoge tu campaña";
-  $s["promos_2_content_1"] = "Ponemos a vuestra disposición campañas estándar con reglas predefinidas. Son campañas que han demostrado ser muy efectivas para fidelizar clientes o para aumentar las ventas en muchos comercios o empresas. Podéis usarlas tal y como están o modificar algunos de sus aspectos para crear vuestra propia versión personalizada.";
-  $s["promos_2_content_2"] = "Estamos actualizando constantemente nuestras campañas predefinidas, investigando las novedades en la fidelización de los clientes y consumidores y compartiendo con el resto de usuarios las campañas tipo que más éxito tienen.";
+  $s["promos_2_content_1"] = "Tenéis disponibles campañas estandar con reglas predefinidas. Son campañas que han demostrado ser muy efectivas fidelizando clientes o aumentando las ventas en muchos comercios y empresas. Podéis usarlas con las reglas predefinidas por nosotros o modificar cualquiera de sus aspectos para crear vuestra propia versión personalizada de dichas campañas.";
+  $s["promos_2_content_2"] = "Acualizamos constantemente estas campañas predefinidas investigando todas las novedades en la fidelización de clientes y consumidores.";
 
-  $s["promos_3_title"] = "Configura tu campaña";
+  $s["promos_3_title"] = "Personaliza tu campaña";
   $s["promos_3_content_1"] = "Escoge un título para tu nueva campaña y descríbela en detalle para que cualquiera de los administradores sepa cuál es su objetivo y qué objetivos tiene.";
   $s["promos_3_content_2"] = "Todas las imagenes que adjuntes como iconos de la campaña se redimensionaran a 500x500 por lo que te recomendamos usar imagenes cuadradas que tengan esa resolución.";
-  $s["promos_3_content_3"] = "Establece el número de veces que un usuario puede beneficiarse de la campaña, el coste en € de la promoción y el beneficio que obtendrás cada vez que se use. De esta forma podemos calcular en todo momento cuánto te está costando fidelizar a cada cliente con cada campaña.";
+  $s["promos_3_content_3"] = "Establece el número de veces que un usuario puede beneficiarse de la campaña, el coste en € de la promoción y el beneficio que obtendrás cada vez que se use. De esta forma podrás calcular en todo momento cuánto te está costando fidelizar a cada cliente con cada campaña.";
 
   //Tour Opportunities page
   $s["opportunities_1_title"] = "Gestiona tus campañas";
@@ -205,12 +205,12 @@
 
   //Tour validation page
   $s["validation_1_title"] = "Envío de notificaciones";
-  $s["validation_1_content_1"] = "Royappty te permite enviar notificaciones a todos los usuarios que hayan descargado tu aplicación. Estas notificaciones aparecerán en el menú de sus terminales móviles como si les hubiese entrado un mensaje nuevo de una aplicación de mensajería. Con nuestras notificaciones podrás informar a tus usuarios de las nuevas campañas que hayas creado o recordarles campañas que aún no hayan usado.";
-  $s["validation_1_content_2"] = "También puedes crear notificaciones personalizadas y enviar notificaciones sólo a determinado grupo de usuarios.";
+  $s["validation_1_content_1"] = "Puedes enviar notificaciones a todos los usuarios de la aplicación. Las notificaciones aparecerán en el menú de sus móviles de forma similar a las aplicaciónes de mensajería. Gracias a estas notificaciones podrás informar a tus usuarios de las nuevas campañas que hayas creado, recordarles que existen campañas de las que aún no se han beneficiado o simplemente saludarles e invitarles a que se pasen de nuevo por tu negocio.";
+  $s["validation_1_content_2"] = "Nuestro sistema de notificaciones también sirve para comunicarse con grupos determinados de usuarios. Puedes enviar mensajes personalizados sólo a tus clientes más fieles o notificar a los amantes del café que tienen disponible una nueva promoción exclusiva para ellos.";
 
   $s["validation_2_title"] = "Consulta de informes";
-  $s["validation_2_content_1"] = "Consulta el historial de consumo de cada uno de los usuarios de tu aplicación y las últimas promociones de las que se ha beneficiado. Con nuestro sistema de informes podrás comprobar además cuánto dinero se ha gastado cada usuario en tu negocio y cuánto beneficio has obtenido con cada una de sus compras.";
-  $s["validation_2_content_2"] = "Con nuestro sistema de informes podrás diferenciar las necesidades de cada uno de tus clientes y crear campañas específicas para fidelizarlos mejor.";
+  $s["validation_2_content_1"] = "Royappty guarda los datos de compras de todos los usuarios de tu aplicación. Puedes consultar el historial de cada usuario para comprobar las últimas promociones de las que se ha beneficiado y sus preferencias de consumo según el tipo de productos que compre. Con este sistema además podrás comprobar cuánto dinero se ha gastado en tu negocio y cuánto beneficio has obtenido con cada una de sus compras.";
+  $s["validation_2_content_2"] = "Nuestro sistema de informes te ayudará a clasificar a tus clientes por gustos y preferencias permitiéndote maximizar el alcance de todas tus promociones.";
 
   $error_s["base"]["title"] = "Error desconocido";
   $error_s["base"]["content"]= "Ha ocurrido un error desconocido mientras se realizaba la operación. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
