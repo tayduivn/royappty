@@ -33,6 +33,10 @@ $s["close_title"] = "We'll back soon";
 $s["close_content"] = "We are busy updating royappty for you and will be back.<br/>If you need to contact us phone us or send us an email.";
 $s["close_contact_info"] = "<i class='fa fa-phone></i>'";
 
+//404.html
+$s["404_title"] = "404! Ups!";
+$s["404_content"] = "La p&aacute;gina que has solicitado no existe";
+
 //Modal errors
 $error_s["ajax_error_title"]="Error in the Server";
 $error_s["ajax_error_content"]="An error occurred in the server while carrying out the operation. Please, try it again later. If the error persists, contact our technical service.";
@@ -49,6 +53,8 @@ $(document).ready(function() {
   $("#s-close-title").html($s["close_title"]);
   $("#s-close-content").html($s["close_content"]);
   $("#s-close-contact-info").html($s["close_contact_info"]);
+  $("#s-404-title").html($s["404_title"]);
+  $("#s-404-content").html($s["404_content"]);
   $("#s-back").html($s["back"]);
   $("#s-close").html($s["close"]);
 });

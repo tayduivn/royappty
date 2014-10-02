@@ -33,6 +33,10 @@ $s["close_title"] = "Pronto estaremos de regreso";
 $s["close_content"] = "Estamos octualizando Royappty para ti y pronto volverá a estar disponible.<br/>Si necesitas contactar con nosotros puedes hacerlo mediante tel&eacute;fono o email.";
 $s["close_contact_info"] = "<i class='fa fa-phone'></i> "+$config["company_phone"]+" <i class='fa fa-envelope-o'></i> "+$config["company_info_mail"];
 
+//404.html
+$s["404_title"] = "404! Ups!";
+$s["404_content"] = "La p&aacute;gina que has solicitado no existe";
+
 //Modal errors
 $error_s["server_connection_title"]="Error en el Servidor";
 $error_s["server_connection_content"]="No se ha podido conectar con el servidor. Por favor vuelva a intentarlo más tarde. En caso de que este error persista contacte con el servico técnico.";
@@ -49,6 +53,8 @@ $(document).ready(function() {
   $("#s-close-title").html($s["close_title"]);
   $("#s-close-content").html($s["close_content"]);
   $("#s-close-contact-info").html($s["close_contact_info"]);
+  $("#s-404-title").html($s["404_title"]);
+  $("#s-404-content").html($s["404_content"]);
   $("#s-back").html($s["back"]);
   $("#s-close").html($s["close"]);
 });

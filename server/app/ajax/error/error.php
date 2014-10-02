@@ -50,7 +50,7 @@
 			<img class='m-t-40 m-b-0' style='width:320px' src='".$url_server."server/app/assets/img/royappty-logo.png' />
 			<h3>".htmlentities($error_s[$error_code]["title"], ENT_QUOTES, "UTF-8")."</h3>
 			<p class='text-justify'>".htmlentities($error_s[$error_code]["content"], ENT_QUOTES, "UTF-8")."</p>
-			<a href='../' class='btn btn-white'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
+			<a href='../' class='btn btn-white btn-small'>".htmlentities($s["back"], ENT_QUOTES, "UTF-8")."</a>
 		</div>";
 
 	/*********************************************************
